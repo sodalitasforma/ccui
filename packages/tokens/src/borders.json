@@ -3,6 +3,9 @@
     "none": "none",
     "hairline": "1px solid var(--forma-color-border-subtle)",
     "strong": "1px solid var(--forma-color-border-strong)",
-    "gold": "1px solid var(--forma-color-accent-gold-muted)"
+    "dark": "1px solid var(--forma-color-border-dark)",
+    "gold": "1px solid var(--forma-color-accent-gold)",
+    "active": "2px solid var(--forma-color-accent-active)",
+    "institutional": "1px solid rgba(90, 46, 11, 0.3)"
   }
 }

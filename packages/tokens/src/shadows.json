@@ -1,9 +1,10 @@
 {
   "shadow": {
     "none": "none",
-    "hairline": "0 1px 0 rgba(23, 21, 18, 0.08)",
-    "card": "0 10px 30px rgba(23, 21, 18, 0.08)",
-    "raised": "0 18px 50px rgba(23, 21, 18, 0.14)",
-    "inset": "inset 0 1px 0 rgba(255, 255, 255, 0.55)"
+    "hairline": "0 1px 0 rgba(90, 46, 11, 0.2)",
+    "brown-sm": "0 2px 2px rgba(85, 85, 85, 0.23)",
+    "brown-md": "0 4px 8px rgba(90, 46, 11, 0.4)",
+    "brown-lg": "0 8px 4px -4px rgba(90, 46, 11, 0.4)",
+    "inset-brown": "inset 0 1px 1px rgba(0, 0, 0, 0.2)"
   }
 }

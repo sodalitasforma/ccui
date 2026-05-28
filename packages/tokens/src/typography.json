@@ -1,22 +1,47 @@
 {
   "typography": {
     "fontFamily": {
-      "display": "EB Garamond, Cormorant Garamond, Georgia, serif",
-      "document": "EB Garamond, Georgia, serif",
-      "interface": "Inter, Source Sans 3, system-ui, sans-serif",
-      "fallbackSerif": "Noto Serif, Georgia, serif",
-      "fallbackSans": "Noto Sans, system-ui, sans-serif"
+      "display": "Cormorant Garamond, EB Garamond, Georgia, Times New Roman, serif",
+      "inscription": "Cinzel, Trajan Pro, Charlemagne, Georgia, Times New Roman, serif",
+      "document": "EB Garamond, Georgia, Times New Roman, serif",
+      "interface": "Inter, Source Sans 3, Tahoma, Verdana, Segoe UI, system-ui, sans-serif",
+      "fallbackSerif": "Georgia, Times New Roman, serif",
+      "fallbackSans": "Tahoma, Verdana, Segoe UI, system-ui, sans-serif",
+      "mono": "Lucida Console, Courier New, monospace"
     },
     "scale": {
+      "2xs": "0.625rem",
       "xs": "0.75rem",
-      "sm": "0.875rem",
-      "base": "1rem",
+      "sm": "0.8125rem",
+      "base": "0.875rem",
+      "md": "1rem",
       "lg": "1.125rem",
       "xl": "1.25rem",
       "2xl": "1.5rem",
-      "3xl": "1.875rem",
-      "4xl": "2.25rem",
+      "3xl": "2rem",
+      "4xl": "2.5rem",
       "5xl": "3rem"
+    },
+    "lineHeight": {
+      "tight": "1.2",
+      "base": "1.35",
+      "relaxed": "1.5",
+      "loose": "2"
+    },
+    "weight": {
+      "regular": "400",
+      "medium": "500",
+      "semibold": "600",
+      "bold": "700"
+    },
+    "letterSpacing": {
+      "normal": "normal",
+      "nav": "0.1em",
+      "tightDisplay": "-0.06em"
+    },
+    "textTransform": {
+      "institutional": "uppercase",
+      "normal": "none"
     }
   }
 }

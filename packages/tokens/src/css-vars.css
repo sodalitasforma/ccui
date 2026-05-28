@@ -1,34 +1,78 @@
 :root {
-  /* Color: raw */
+  /* Color: raw — Vatican-derived institutional palette */
+  --forma-color-brown-950: #240F03;
+  --forma-color-brown-900: #4D290C;
+  --forma-color-brown-800: #5A2E0B;
+  --forma-color-brown-700: #663300;
+  --forma-color-brown-600: #936A3D;
+
   --forma-color-ink-950: #171512;
-  --forma-color-ink-800: #3A342C;
-  --forma-color-ink-600: #5F574C;
-  --forma-color-ivory-50: #FAF8F1;
-  --forma-color-ivory-100: #F8F5EC;
-  --forma-color-linen-100: #F3EFE4;
-  --forma-color-parchment-200: #E8E1D0;
-  --forma-color-gold-300: #C8B76B;
+  --forma-color-ink-900: #240F03;
+  --forma-color-ink-800: #333333;
+  --forma-color-ink-700: #343A40;
+  --forma-color-ink-600: #495057;
+  --forma-color-ink-500: #666666;
+
+  --forma-color-paper-50: #FDF5D8;
+  --forma-color-paper-100: #F4EDDA;
+  --forma-color-paper-200: #E8D6BC;
+  --forma-color-paper-300: #DDD4BB;
+
+  --forma-color-gold-300: #D7BA94;
+  --forma-color-gold-400: #C5A377;
+  --forma-color-gold-500: #B69B7E;
   --forma-color-gold-600: #A88D2B;
-  --forma-color-gold-800: #6F5C18;
-  --forma-color-blue-700: #2F5D8C;
+  --forma-color-gold-700: #664D03;
+
+  --forma-color-orange-600: #DF621C;
+  --forma-color-yellow-500: #E9BF40;
+
+  --forma-color-blue-700: #244B77;
+  --forma-color-blue-600: #0A58CA;
+
   --forma-color-red-700: #9F2D2D;
   --forma-color-green-700: #2E6B45;
   --forma-color-violet-700: #5B3A70;
   --forma-color-rose-500: #C97A8B;
 
+  --forma-color-gray-50: #F7F7F7;
+  --forma-color-gray-100: #F5F5F5;
+  --forma-color-gray-200: #E6E6E6;
+  --forma-color-gray-300: #DDDDDD;
+  --forma-color-gray-400: #CCCCCC;
+  --forma-color-gray-500: #999999;
+  --forma-color-gray-700: #444444;
+
+  --forma-color-white: #FFFFFF;
+  --forma-color-black: #000000;
+
   /* Color: semantic */
-  --forma-color-text-primary: var(--forma-color-ink-950);
-  --forma-color-text-muted: var(--forma-color-ink-600);
-  --forma-color-surface-page: var(--forma-color-ivory-50);
-  --forma-color-surface-subtle: var(--forma-color-linen-100);
-  --forma-color-surface-raised: #ffffff;
-  --forma-color-surface-parchment: var(--forma-color-parchment-200);
-  --forma-color-border-subtle: rgba(23, 21, 18, 0.14);
-  --forma-color-border-strong: rgba(23, 21, 18, 0.28);
-  --forma-color-accent-gold: var(--forma-color-gold-600);
+  --forma-color-text-primary: var(--forma-color-brown-950);
+  --forma-color-text-secondary: var(--forma-color-ink-800);
+  --forma-color-text-muted: var(--forma-color-ink-500);
+  --forma-color-text-inverse: var(--forma-color-white);
+
+  --forma-color-link-primary: var(--forma-color-brown-700);
+  --forma-color-link-hover: var(--forma-color-black);
+  --forma-color-link-active: var(--forma-color-orange-600);
+
+  --forma-color-surface-page: var(--forma-color-paper-50);
+  --forma-color-surface-subtle: var(--forma-color-paper-100);
+  --forma-color-surface-parchment: var(--forma-color-paper-200);
+  --forma-color-surface-institutional: var(--forma-color-paper-300);
+  --forma-color-surface-raised: var(--forma-color-white);
+  --forma-color-surface-dark: var(--forma-color-brown-950);
+
+  --forma-color-border-subtle: rgba(90, 46, 11, 0.2);
+  --forma-color-border-strong: rgba(90, 46, 11, 0.4);
+  --forma-color-border-dark: var(--forma-color-brown-900);
+
+  --forma-color-accent-brown: var(--forma-color-brown-700);
+  --forma-color-accent-gold: var(--forma-color-gold-400);
   --forma-color-accent-gold-muted: var(--forma-color-gold-300);
-  --forma-color-accent-gold-strong: var(--forma-color-gold-800);
+  --forma-color-accent-active: var(--forma-color-orange-600);
   --forma-color-accent-blue: var(--forma-color-blue-700);
+
   --forma-color-danger: var(--forma-color-red-700);
   --forma-color-success: var(--forma-color-green-700);
 
@@ -41,25 +85,29 @@
   --forma-liturgical-black: #1F1B18;
   --forma-liturgical-gold: #A88D2B;
 
-  /* Radius */
+  /* Radius — Vatican signal is mostly small, restrained radius */
   --forma-radius-none: 0;
-  --forma-radius-sm: 0.25rem;
-  --forma-radius-md: 0.5rem;
-  --forma-radius-lg: 0.75rem;
+  --forma-radius-xs: 2px;
+  --forma-radius-sm: 4px;
+  --forma-radius-md: 5px;
+  --forma-radius-lg: 8px;
   --forma-radius-xl: 1rem;
-  --forma-radius-2xl: 1.5rem;
   --forma-radius-pill: 999px;
 
-  /* Shadow */
+  /* Shadow — brown institutional shadow family */
   --forma-shadow-none: none;
-  --forma-shadow-hairline: 0 1px 0 rgba(23, 21, 18, 0.08);
-  --forma-shadow-card: 0 10px 30px rgba(23, 21, 18, 0.08);
-  --forma-shadow-raised: 0 18px 50px rgba(23, 21, 18, 0.14);
-  --forma-shadow-inset: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+  --forma-shadow-hairline: 0 1px 0 rgba(90, 46, 11, 0.2);
+  --forma-shadow-brown-sm: 0 2px 2px rgba(85, 85, 85, 0.23);
+  --forma-shadow-brown-md: 0 4px 8px rgba(90, 46, 11, 0.4);
+  --forma-shadow-brown-lg: 0 8px 4px -4px rgba(90, 46, 11, 0.4);
+  --forma-shadow-inset-brown: inset 0 1px 1px rgba(0, 0, 0, 0.2);
 
   /* Motion */
+  --forma-motion-duration-instant: 0ms;
   --forma-motion-duration-fast: 120ms;
   --forma-motion-duration-base: 180ms;
   --forma-motion-duration-slow: 280ms;
   --forma-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --forma-motion-easing-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --forma-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
 }
