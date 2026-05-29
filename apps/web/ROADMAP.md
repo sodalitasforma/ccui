@@ -185,25 +185,25 @@ Phase 7 should support real embedded media sources. Media examples should make i
 
 These components map Forma to Catholic Digital Commons Foundation-style projects, APIs, ontologies, datasets, and semantic infrastructure.
 
-- ProjectCard
-- ProjectStatusBadge
-- RepositoryLink
-- ContributorList
-- DatasetCard
-- ApiEndpointCard
-- OntologyClassCard
-- OntologyPropertyTable
-- NamespaceBadge
-- ReviewStatusBadge
-- CanonicalSourceCard
-- SemanticRelationGraph
-- EntityCard
-- EntityRelationshipList
-- TermDefinitionCard
-- TranslationVariantCard
-- AuthorityLevelBadge
-- ProvenanceTrail
-- MachineReadableBadge
+- ✅ ProjectCard
+- ✅ ProjectStatusBadge
+- ✅ RepositoryLink
+- ✅ ContributorList
+- ✅ DatasetCard
+- ✅ ApiEndpointCard
+- ✅ OntologyClassCard
+- ✅ OntologyPropertyTable
+- ✅ NamespaceBadge
+- ✅ ReviewStatusBadge
+- ✅ CanonicalSourceCard
+- ✅ SemanticRelationGraph
+- ✅ EntityCard
+- ✅ EntityRelationshipList
+- ✅ TermDefinitionCard
+- ✅ TranslationVariantCard
+- ✅ AuthorityLevelBadge
+- ✅ ProvenanceTrail
+- ✅ MachineReadableBadge
 
 Initial mappings:
 
