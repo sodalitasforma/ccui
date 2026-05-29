@@ -62,6 +62,21 @@ import {
   StaffProfile,
 } from "../../../../packages/catholic/src";
 
+import {
+  accordionExamples,
+  buttonExamples,
+  mediaFrameExample,
+  noticeExamples,
+  tableRows,
+} from "./docs/examples";
+import {
+  accordionExamplesCode,
+  buttonExamplesCode,
+  mediaFrameExampleCode,
+  noticeExamplesCode,
+  tableExampleCode,
+} from "./docs/codegen";
+
 import colors from "../../../../packages/tokens/src/colors.json";
 import liturgicalColors from "../../../../packages/tokens/src/liturgical-colors.json";
 
@@ -293,35 +308,28 @@ export default function Home() {
               <ComponentBlock
                 title="Button"
                 description="Primary, secondary, gold, ghost, and danger actions."
-                code={`<Button>Primary</Button>
-<Button variant="secondary">Secondary</Button>
-<Button variant="gold">Gold</Button>`}
+                code={buttonExamplesCode}
               >
                 <Cluster gap="sm">
-                  <Button>Primary</Button>
-                  <Button variant="secondary">Secondary</Button>
-                  <Button variant="gold">Gold</Button>
-                  <Button variant="ghost">Ghost</Button>
-                  <Button variant="danger">Danger</Button>
+                  {buttonExamples.map((button) => (
+                    <Button key={button.label} variant={button.variant}>
+                      {button.label}
+                    </Button>
+                  ))}
                 </Cluster>
               </ComponentBlock>
 
               <ComponentBlock
                 title="Notice"
-                description="Official and liturgical notices for institutional communication."
-                code={`<Notice variant="official">
-  Parish office notice.
-</Notice>`}
+                description="A bordered communication block for official notes, liturgical context, warnings, and system states."
+                code={noticeExamplesCode}
               >
-                <Stack gap="md">
-                  <Notice variant="official">
-                    The parish office will publish an updated Holy Day schedule
-                    before the end of the week.
-                  </Notice>
-                  <Notice variant="liturgical">
-                    Liturgical notices use a restrained visual treatment and a
-                    clear left border.
-                  </Notice>
+                <Stack gap="sm">
+                  {noticeExamples.map((notice) => (
+                    <Notice key={notice.variant} variant={notice.variant}>
+                      {notice.children}
+                    </Notice>
+                  ))}
                 </Stack>
               </ComponentBlock>
 
@@ -383,60 +391,49 @@ export default function Home() {
 
               <ComponentBlock
                 title="Accordion"
-                description="Disclosure for office details, sacrament preparation, and menus."
-                code={`<Accordion>
-  <AccordionItem>
-    <AccordionTrigger open>Confession</AccordionTrigger>
-    <AccordionContent>...</AccordionContent>
-  </AccordionItem>
-</Accordion>`}
+                description="A disclosure pattern for structured Catholic institutional content."
+                code={accordionExamplesCode}
               >
                 <Accordion>
-                  <AccordionItem defaultOpen>
-                    <AccordionTrigger>Confession schedule</AccordionTrigger>
-                    <AccordionContent>
-                      Saturday, 3:30 PM to 4:30 PM, or by appointment.
-                    </AccordionContent>
-                  </AccordionItem>
-                  <AccordionItem>
-                    <AccordionTrigger>Sacrament preparation</AccordionTrigger>
-                    <AccordionContent>
-                      Preparation details may be disclosed here.
-                    </AccordionContent>
-                  </AccordionItem>
+                  {accordionExamples.map((item) => (
+                    <AccordionItem key={item.title} defaultOpen={item.defaultOpen}>
+                      <AccordionTrigger>{item.title}</AccordionTrigger>
+                      <AccordionContent>
+                        <Text tone="secondary">{item.content}</Text>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
                 </Accordion>
               </ComponentBlock>
 
               <ComponentBlock
                 title="Table"
-                description="Dense, legible institutional records."
-                code={`<TableWrapper>
-  <Table>
-    <THead>...</THead>
-    <TBody>...</TBody>
-  </Table>
-</TableWrapper>`}
+                description="A restrained table wrapper for records, schedules, and structured institutional data."
+                code={tableExampleCode}
               >
                 <TableWrapper>
                   <Table>
                     <THead>
                       <TR>
-                        <TH>Day</TH>
-                        <TH>Time</TH>
-                        <TH>Location</TH>
+                        <TH>Office</TH>
+                        <TH>Status</TH>
+                        <TH>Next step</TH>
                       </TR>
                     </THead>
                     <TBody>
-                      <TR>
-                        <TD>Sunday</TD>
-                        <TD>8:00 AM</TD>
-                        <TD>Nave</TD>
-                      </TR>
-                      <TR>
-                        <TD>Sunday</TD>
-                        <TD>10:30 AM</TD>
-                        <TD>Nave</TD>
-                      </TR>
+                      {tableRows.map((row) => (
+                        <TR key={row.office}>
+                          <TD>{row.office}</TD>
+                          <TD>
+                            <Badge variant={row.statusVariant}>{row.status}</Badge>
+                          </TD>
+                          <TD>
+                            <Button size="sm" variant={row.actionVariant}>
+                              {row.action}
+                            </Button>
+                          </TD>
+                        </TR>
+                      ))}
                     </TBody>
                   </Table>
                 </TableWrapper>
@@ -480,18 +477,21 @@ export default function Home() {
 
               <ComponentBlock
                 title="MediaFrame"
-                description="Formal frame for images, video, and future feast-day hero media."
-                code={`<MediaFrame ratio="video" surface="dark">
-  ...
-</MediaFrame>`}
+                description="A media container that can render database, CMS, Vatican News, YouTube, or public website media URLs."
+                code={mediaFrameExampleCode}
               >
-                <MediaFrame ratio="video" surface="dark">
-                  <div className="docs-media-placeholder">
-                    <IconFrame tone="inverse" size="lg">
-                      ✦
-                    </IconFrame>
-                  </div>
-                </MediaFrame>
+                <Stack gap="sm">
+                  <MediaFrame ratio="video" surface="dark">
+                    <iframe
+                      src={mediaFrameExample.src}
+                      title={mediaFrameExample.title}
+                      allowFullScreen
+                    />
+                  </MediaFrame>
+                  <Text size="xs" tone="muted">
+                    {mediaFrameExample.caption}
+                  </Text>
+                </Stack>
               </ComponentBlock>
 
               <ComponentBlock
