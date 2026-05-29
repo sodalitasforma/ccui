@@ -38,3 +38,27 @@ export const mediaFrameExample = {
   src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
   caption: "MediaFrame accepts a URL-driven embed source. Replace this with a Vatican News, YouTube, CMS, or database media URL.",
 } as const;
+
+export const filterBarExample = {
+  searchPlaceholder: "Search offices",
+  selectLabel: "All offices",
+  buttonLabel: "Apply filters",
+} as const;
+
+export const tabExamples = [
+  { label: "News", content: "News panel: parish, diocesan, and institutional updates." },
+  { label: "Calendar", content: "Calendar panel: public events, liturgies, and office closures." },
+  { label: "Media", content: "Media panel: photo galleries, videos, and featured stories." },
+] as const;
+
+export const timelineExamples = [
+  { title: "Reference audit", meta: "Phase 1", description: "Vatican homepage structure, colors, typography, and contrast reviewed." },
+  { title: "Core primitives", meta: "Phase 2", description: "Layout, typography, actions, forms, data, and media primitives added." },
+  { title: "Institutional components", meta: "Phase 3", description: "Public-facing Catholic institutional components added." },
+] as const;
+
+export const emptyStateExample = {
+  title: "No bulletins found",
+  description: "Try changing the year, ministry, or document type filter.",
+  actionLabel: "Clear filters",
+} as const;

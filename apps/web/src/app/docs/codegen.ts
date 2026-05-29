@@ -1,9 +1,13 @@
 import {
   accordionExamples,
   buttonExamples,
+  emptyStateExample,
+  filterBarExample,
   mediaFrameExample,
   noticeExamples,
+  tabExamples,
   tableRows,
+  timelineExamples,
 } from "./examples";
 
 function prop(name: string, value: unknown) {
@@ -71,3 +75,47 @@ export const mediaFrameExampleCode =
     allowFullScreen
   />
 </MediaFrame>`;
+
+export const filterBarExampleCode =
+`<FilterBar>
+  <SearchInput placeholder="${filterBarExample.searchPlaceholder}" />
+  <Select aria-label="Office filter">
+    <option>${filterBarExample.selectLabel}</option>
+  </Select>
+  <Button size="sm">${filterBarExample.buttonLabel}</Button>
+</FilterBar>`;
+
+export const tabExamplesCode =
+  `<Tabs>\n  <TabList>\n` +
+  tabExamples.map((tab) => `    <Tab>${tab.label}</Tab>`).join("\n") +
+  `\n  </TabList>\n` +
+  tabExamples
+    .map(
+      (tab, index) => `  <TabPanel index={${index}}>
+    <Text tone="secondary">${tab.content}</Text>
+  </TabPanel>`
+    )
+    .join("\n") +
+  `\n</Tabs>`;
+
+export const timelineExamplesCode =
+  `<Timeline>\n` +
+  timelineExamples
+    .map(
+      (item) => `  <TimelineItem>
+    <Text size="xs" tone="goldText">${item.meta}</Text>
+    <Heading level={3} size="sm">${item.title}</Heading>
+    <Text tone="secondary">${item.description}</Text>
+  </TimelineItem>`
+    )
+    .join("\n") +
+  `\n</Timeline>`;
+
+export const emptyStateExampleCode =
+`<EmptyState>
+  <Stack gap="sm">
+    <Heading level={3} size="md">${emptyStateExample.title}</Heading>
+    <Text tone="secondary">${emptyStateExample.description}</Text>
+    <Button variant="secondary">${emptyStateExample.actionLabel}</Button>
+  </Stack>
+</EmptyState>`;

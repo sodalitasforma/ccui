@@ -65,16 +65,24 @@ import {
 import {
   accordionExamples,
   buttonExamples,
+  emptyStateExample,
+  filterBarExample,
   mediaFrameExample,
   noticeExamples,
+  tabExamples,
   tableRows,
+  timelineExamples,
 } from "./docs/examples";
 import {
   accordionExamplesCode,
   buttonExamplesCode,
+  emptyStateExampleCode,
+  filterBarExampleCode,
   mediaFrameExampleCode,
   noticeExamplesCode,
+  tabExamplesCode,
   tableExampleCode,
+  timelineExamplesCode,
 } from "./docs/codegen";
 
 import colors from "../../../../packages/tokens/src/colors.json";
@@ -335,57 +343,34 @@ export default function Home() {
 
               <ComponentBlock
                 title="FilterBar"
-                description="Search and filter composition for directories and archives."
-                code={`<FilterBar>
-  <SearchInput placeholder="Search" />
-  <Select><option>All</option></Select>
-  <Button>Apply</Button>
-</FilterBar>`}
+                description="A compact row for search, select, and filter actions."
+                code={filterBarExampleCode}
               >
                 <FilterBar>
-                  <SearchInput placeholder="Search by name" />
-                  <Select aria-label="Type">
-                    <option>All records</option>
-                    <option>Parishes</option>
-                    <option>Schools</option>
-                    <option>Offices</option>
+                  <SearchInput placeholder={filterBarExample.searchPlaceholder} />
+                  <Select aria-label="Office filter">
+                    <option>{filterBarExample.selectLabel}</option>
                   </Select>
-                  <Button variant="secondary">Apply</Button>
+                  <Button size="sm">{filterBarExample.buttonLabel}</Button>
                 </FilterBar>
               </ComponentBlock>
 
               <ComponentBlock
                 title="Tabs"
-                description="Native tab primitives for news, calendars, and content panels."
-                code={`<Tabs>
-  <TabList>
-    <Tab active>News</Tab>
-    <Tab>Calendar</Tab>
-  </TabList>
-  <TabPanel>...</TabPanel>
-</Tabs>`}
+                description="A switchable panel pattern for news, calendar, media, and directory views."
+                code={tabExamplesCode}
               >
                 <Tabs>
                   <TabList>
-                    <Tab>News</Tab>
-                    <Tab>Calendar</Tab>
-                    <Tab>Media</Tab>
+                    {tabExamples.map((tab) => (
+                      <Tab key={tab.label}>{tab.label}</Tab>
+                    ))}
                   </TabList>
-                  <TabPanel index={0}>
-                    <Text tone="secondary">
-                      News panel: parish, diocesan, and institutional updates.
-                    </Text>
-                  </TabPanel>
-                  <TabPanel index={1}>
-                    <Text tone="secondary">
-                      Calendar panel: public events, liturgies, and office closures.
-                    </Text>
-                  </TabPanel>
-                  <TabPanel index={2}>
-                    <Text tone="secondary">
-                      Media panel: photo galleries, videos, and featured stories.
-                    </Text>
-                  </TabPanel>
+                  {tabExamples.map((tab, index) => (
+                    <TabPanel key={tab.label} index={index}>
+                      <Text tone="secondary">{tab.content}</Text>
+                    </TabPanel>
+                  ))}
                 </Tabs>
               </ComponentBlock>
 
@@ -441,37 +426,25 @@ export default function Home() {
 
               <ComponentBlock
                 title="Timeline"
-                description="History, provenance, sacramental steps, and project milestones."
-                code={`<Timeline>
-  <TimelineItem>
-    <TimelineMarker tone="gold" />
-    <TimelineContent>...</TimelineContent>
-  </TimelineItem>
-</Timeline>`}
+                description="A vertical sequence for process steps, project history, sacramental preparation, or institutional chronology."
+                code={timelineExamplesCode}
               >
                 <Timeline>
-                  <TimelineItem>
-                    <TimelineMarker tone="gold" />
-                    <TimelineContent>
-                      <Text as="p" size="sm">
-                        Vatican reference audit
-                      </Text>
-                      <Text as="p" size="xs" tone="muted">
-                        Institutional grammar extracted.
-                      </Text>
-                    </TimelineContent>
-                  </TimelineItem>
-                  <TimelineItem>
-                    <TimelineMarker tone="success" />
-                    <TimelineContent>
-                      <Text as="p" size="sm">
-                        Core primitives complete
-                      </Text>
-                      <Text as="p" size="xs" tone="muted">
-                        26 primitives added.
-                      </Text>
-                    </TimelineContent>
-                  </TimelineItem>
+                  {timelineExamples.map((item) => (
+                    <TimelineItem key={item.title}>
+                      <Stack gap="xs">
+                        <Text size="xs" tone="goldText">
+                          {item.meta}
+                        </Text>
+                        <Heading level={3} size="sm">
+                          {item.title}
+                        </Heading>
+                        <Text tone="secondary">
+                          {item.description}
+                        </Text>
+                      </Stack>
+                    </TimelineItem>
+                  ))}
                 </Timeline>
               </ComponentBlock>
 
@@ -496,19 +469,18 @@ export default function Home() {
 
               <ComponentBlock
                 title="EmptyState"
-                description="Quiet blank states for unpublished institutional records."
-                code={`<EmptyState tone="official">
-  <Heading>No records published</Heading>
-</EmptyState>`}
+                description="A useful no-results state for directories, searches, calendars, and archives."
+                code={emptyStateExampleCode}
               >
-                <EmptyState tone="official">
+                <EmptyState>
                   <Stack gap="sm">
-                    <Heading level={3} size="lg">
-                      No records published
+                    <Heading level={3} size="md">
+                      {emptyStateExample.title}
                     </Heading>
-                    <Text tone="muted">
-                      Empty states stay sober and useful.
+                    <Text tone="secondary">
+                      {emptyStateExample.description}
                     </Text>
+                    <Button variant="secondary">{emptyStateExample.actionLabel}</Button>
                   </Stack>
                 </EmptyState>
               </ComponentBlock>
