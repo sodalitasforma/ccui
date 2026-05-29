@@ -44,6 +44,9 @@ import {
 
 import {
   AnnouncementBanner,
+  EntityRelationshipList,
+  EntityCard,
+  SemanticRelationGraph,
   MachineReadableBadge,
   ProvenanceTrail,
   AuthorityLevelBadge,
@@ -156,6 +159,9 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  semanticRelationGraphExample,
+  entityRelationshipListExample,
+  entityCardExample,
   provenanceTrailExample,
   machineReadableBadgeExample,
   canonicalSourceCardExample,
@@ -249,6 +255,9 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  semanticRelationGraphExampleCode,
+  entityRelationshipListExampleCode,
+  entityCardExampleCode,
   provenanceTrailExampleCode,
   machineReadableBadgeExampleCode,
   canonicalSourceCardExampleCode,
@@ -471,6 +480,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#catholic-infrastructure-projects">Phase 8 infrastructure</a>
             <a className="docs-nav-small" href="#ontology-schema-components">Phase 8 ontology/schema</a>
             <a className="docs-nav-small" href="#canon-provenance-authority">Phase 8 canon/provenance</a>
+            <a className="docs-nav-small" href="#entity-graph-components">Phase 8 entity graph</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1815,6 +1825,46 @@ export default function Home() {
                 code={machineReadableBadgeExampleCode}
               >
                 <MachineReadableBadge {...machineReadableBadgeExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="entity-graph-components" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 8</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Entity graph components
+                </Heading>
+                <Text tone="muted">
+                  Components for showing Catholic knowledge as connected infrastructure: liturgical days, readings, saints, documents, places, authorities, terms, translations, datasets, and ontology classes.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="SemanticRelationGraph"
+                description="A composed graph interface showing entities and relationships together."
+                code={semanticRelationGraphExampleCode}
+              >
+                <SemanticRelationGraph {...semanticRelationGraphExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="EntityCard"
+                description="A compact card for a Catholic semantic entity."
+                code={entityCardExampleCode}
+              >
+                <EntityCard {...entityCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="EntityRelationshipList"
+                description="A readable list of semantic relationships between Catholic entities."
+                code={entityRelationshipListExampleCode}
+              >
+                <EntityRelationshipList {...entityRelationshipListExample} />
               </ComponentBlock>
             </Stack>
           </Container>

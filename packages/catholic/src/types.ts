@@ -609,3 +609,54 @@ export type MachineReadableBadgeData = {
   status: MachineReadableStatus | string;
   label?: string;
 };
+
+export type CatholicEntityType =
+  | "liturgical-day"
+  | "bible-passage"
+  | "saint"
+  | "place"
+  | "document"
+  | "authority"
+  | "parish"
+  | "diocese"
+  | "term"
+  | "translation"
+  | "dataset"
+  | "ontology-class"
+  | "custom";
+
+export type EntityData = {
+  id: string;
+  title: string;
+  entityType: CatholicEntityType | string;
+  description?: string;
+  href?: string;
+  authorityLevel?: AuthorityLevel | string;
+  reviewStatus?: ReviewStatus | string;
+  machineReadable?: MachineReadableStatus | string;
+};
+
+export type EntityRelationshipData = {
+  sourceId: string;
+  targetId: string;
+  predicate: string;
+  label?: string;
+  description?: string;
+  href?: string;
+  authorityLevel?: AuthorityLevel | string;
+};
+
+export type SemanticRelationGraphData = {
+  title?: string;
+  description?: string;
+  entities: readonly EntityData[];
+  relationships: readonly EntityRelationshipData[];
+};
+
+export type EntityCardData = EntityData;
+
+export type EntityRelationshipListData = {
+  title?: string;
+  relationships: readonly EntityRelationshipData[];
+  entities?: readonly EntityData[];
+};

@@ -1305,3 +1305,68 @@ export const provenanceTrailExample = {
     },
   ],
 } as const;
+
+export const entityCardExample = {
+  id: "liturgical-day:corpus-christi-2026",
+  title: "Corpus Christi",
+  entityType: "liturgical-day",
+  description: "A liturgical day entity with readings, rank, season, and calendar metadata.",
+  href: "#",
+  authorityLevel: "semantic",
+  reviewStatus: "reviewed",
+  machineReadable: "available",
+} as const;
+
+export const entityRelationshipListExample = {
+  title: "Entity relationships",
+  entities: [
+    entityCardExample,
+    {
+      id: "bible-passage:luke-9-11b-17",
+      title: "Luke 9:11b–17",
+      entityType: "bible-passage",
+      description: "Gospel reading entity.",
+      href: "#",
+      authorityLevel: "canonical",
+      reviewStatus: "reviewed",
+      machineReadable: "available",
+    },
+    {
+      id: "term:solemnity",
+      title: "Solemnity",
+      entityType: "term",
+      description: "Liturgical rank term.",
+      href: "#",
+      authorityLevel: "semantic",
+      reviewStatus: "reviewed",
+      machineReadable: "available",
+    },
+  ],
+  relationships: [
+    {
+      sourceId: "liturgical-day:corpus-christi-2026",
+      predicate: "hasReading",
+      targetId: "bible-passage:luke-9-11b-17",
+      label: "Corpus Christi has Gospel reading Luke 9:11b–17",
+      description: "Connects a liturgical day to its lectionary reading.",
+      href: "#",
+      authorityLevel: "canonical",
+    },
+    {
+      sourceId: "liturgical-day:corpus-christi-2026",
+      predicate: "hasRank",
+      targetId: "term:solemnity",
+      label: "Corpus Christi has rank Solemnity",
+      description: "Connects a liturgical day to a canonical rank term.",
+      href: "#",
+      authorityLevel: "semantic",
+    },
+  ],
+} as const;
+
+export const semanticRelationGraphExample = {
+  title: "Liturgical day knowledge graph",
+  description: "A visual interface for Catholic knowledge relationships that can power APIs, search, source trails, and semantic applications.",
+  entities: entityRelationshipListExample.entities,
+  relationships: entityRelationshipListExample.relationships,
+} as const;

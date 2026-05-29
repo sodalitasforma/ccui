@@ -1001,3 +1001,28 @@
 .forma-provenance-trail__item {
   padding-left: var(--forma-space-2);
 }
+
+.forma-semantic-relation-graph__surface,
+.forma-entity-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-entity-card__id,
+.forma-entity-relationship-list__predicate {
+  padding: var(--forma-space-1) var(--forma-space-2);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-sm);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-mono);
+  font-size: var(--forma-font-size-sm);
+}
+
+.forma-entity-relationship-list__title,
+.forma-entity-relationship-list__label,
+.forma-semantic-relation-graph__heading {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}

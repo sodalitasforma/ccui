@@ -112,3 +112,7 @@ export { AuthorityLevelBadge } from "./authority-level-badge";
 export { ProvenanceTrail } from "./provenance-trail";
 export { MachineReadableBadge } from "./machine-readable-badge";
 export type { AuthorityLevel, AuthorityLevelBadgeData, CanonicalSourceCardData, MachineReadableBadgeData, MachineReadableStatus, ProvenanceStepData, ProvenanceTrailData } from "./types";
+export { SemanticRelationGraph } from "./semantic-relation-graph";
+export { EntityCard } from "./entity-card";
+export { EntityRelationshipList } from "./entity-relationship-list";
+export type { CatholicEntityType, EntityCardData, EntityData, EntityRelationshipData, EntityRelationshipListData, SemanticRelationGraphData } from "./types";

@@ -20,6 +20,9 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  semanticRelationGraphExample,
+  entityRelationshipListExample,
+  entityCardExample,
   provenanceTrailExample,
   machineReadableBadgeExample,
   canonicalSourceCardExample,
@@ -1055,4 +1058,31 @@ export const provenanceTrailExampleCode =
 `<ProvenanceTrail
   title="${provenanceTrailExample.title}"
   steps={${arrayCode(provenanceTrailExample.steps)}}
+/>`;
+
+export const entityCardExampleCode =
+`<EntityCard
+  id="${entityCardExample.id}"
+  title="${entityCardExample.title}"
+  entityType="${entityCardExample.entityType}"
+  description="${entityCardExample.description}"
+  href="${entityCardExample.href}"
+  authorityLevel="${entityCardExample.authorityLevel}"
+  reviewStatus="${entityCardExample.reviewStatus}"
+  machineReadable="${entityCardExample.machineReadable}"
+/>`;
+
+export const entityRelationshipListExampleCode =
+`<EntityRelationshipList
+  title="${entityRelationshipListExample.title}"
+  entities={${arrayCode(entityRelationshipListExample.entities)}}
+  relationships={${arrayCode(entityRelationshipListExample.relationships)}}
+/>`;
+
+export const semanticRelationGraphExampleCode =
+`<SemanticRelationGraph
+  title="${semanticRelationGraphExample.title}"
+  description="${semanticRelationGraphExample.description}"
+  entities={${arrayCode(semanticRelationGraphExample.entities)}}
+  relationships={${arrayCode(semanticRelationGraphExample.relationships)}}
 />`;
