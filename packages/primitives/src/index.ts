@@ -13,4 +13,7 @@ export { Button } from "./button";
 export { Link } from "./link";
 export { Badge } from "./badge";
 export { Tag } from "./tag";
+export { SearchInput } from "./search-input";
+export { Select } from "./select";
+export { FilterBar } from "./filter-bar";
 export { Notice } from "./notice";
