@@ -825,3 +825,13 @@
 .forma-institutional-directory {
   width: 100%;
 }
+
+.forma-pontiff-directory {
+  width: 100%;
+}
+
+.forma-pontiff-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}

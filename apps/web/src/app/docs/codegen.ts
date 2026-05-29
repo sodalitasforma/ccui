@@ -20,6 +20,13 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  schoolDirectoryExample,
+  saintDirectoryExample,
+  pontiffDirectoryExample,
+  pontiffCardExample,
+  parishDirectoryExample,
+  officeDirectoryExample,
+  clergyDirectoryExample,
   nameFilterExample,
   institutionalDirectoryExample,
   directoryFilterExample,
@@ -734,4 +741,60 @@ export const institutionalDirectoryExampleCode =
   description="${institutionalDirectoryExample.description}"
   items={${arrayCode(institutionalDirectoryExample.items)}}
   filter={<DirectoryFilter {...directoryFilterExample} />}
+/>`;
+
+export const pontiffDirectoryExampleCode =
+`<PontiffDirectory
+  title="${pontiffDirectoryExample.title}"
+  description="${pontiffDirectoryExample.description}"
+  centuries={${arrayCode(pontiffDirectoryExample.centuries)}}
+  pontiffs={${arrayCode(pontiffDirectoryExample.pontiffs)}}
+/>`;
+
+export const pontiffCardExampleCode =
+`<PontiffCard
+  title="${pontiffCardExample.title}"
+  description="${pontiffCardExample.description}"
+  pontificateStart="${pontiffCardExample.pontificateStart}"
+  pontificateEnd="${pontiffCardExample.pontificateEnd}"
+  century="${pontiffCardExample.century}"
+  meta="${pontiffCardExample.meta}"
+  status="${pontiffCardExample.status}"
+  href="${pontiffCardExample.href}"
+/>`;
+
+export const clergyDirectoryExampleCode =
+`<ClergyDirectory
+  title="${clergyDirectoryExample.title}"
+  description="${clergyDirectoryExample.description}"
+  clergy={${arrayCode(clergyDirectoryExample.clergy)}}
+/>`;
+
+export const parishDirectoryExampleCode =
+`<ParishDirectory
+  title="${parishDirectoryExample.title}"
+  description="${parishDirectoryExample.description}"
+  parishes={${arrayCode(parishDirectoryExample.parishes)}}
+/>`;
+
+export const schoolDirectoryExampleCode =
+`<SchoolDirectory
+  title="${schoolDirectoryExample.title}"
+  description="${schoolDirectoryExample.description}"
+  schools={${arrayCode(schoolDirectoryExample.schools)}}
+/>`;
+
+export const officeDirectoryExampleCode =
+`<OfficeDirectory
+  title="${officeDirectoryExample.title}"
+  description="${officeDirectoryExample.description}"
+  offices={${arrayCode(officeDirectoryExample.offices)}}
+/>`;
+
+export const saintDirectoryExampleCode =
+`<SaintDirectory
+  title="${saintDirectoryExample.title}"
+  description="${saintDirectoryExample.description}"
+  centuries={${arrayCode(saintDirectoryExample.centuries)}}
+  saints={${arrayCode(saintDirectoryExample.saints)}}
 />`;

@@ -44,6 +44,13 @@ import {
 
 import {
   AnnouncementBanner,
+  SaintDirectory,
+  OfficeDirectory,
+  SchoolDirectory,
+  ParishDirectory,
+  ClergyDirectory,
+  PontiffCard,
+  PontiffDirectory,
   NameFilter,
   CenturyFilter,
   DateRangeLabel,
@@ -123,6 +130,13 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  schoolDirectoryExample,
+  saintDirectoryExample,
+  pontiffDirectoryExample,
+  pontiffCardExample,
+  parishDirectoryExample,
+  officeDirectoryExample,
+  clergyDirectoryExample,
   nameFilterExample,
   institutionalDirectoryExample,
   directoryFilterExample,
@@ -183,6 +197,13 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  schoolDirectoryExampleCode,
+  saintDirectoryExampleCode,
+  pontiffDirectoryExampleCode,
+  pontiffCardExampleCode,
+  parishDirectoryExampleCode,
+  officeDirectoryExampleCode,
+  clergyDirectoryExampleCode,
   nameFilterExampleCode,
   institutionalDirectoryExampleCode,
   directoryFilterExampleCode,
@@ -366,6 +387,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#document-archive-mechanics">Phase 5 archive mechanics</a>
             <a className="docs-nav-small" href="#source-citation-scripture">Phase 5 sources</a>
             <a className="docs-nav-small" href="#directory-infrastructure">Phase 6 directories</a>
+            <a className="docs-nav-small" href="#specific-directories">Phase 6 specific directories</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1345,6 +1367,83 @@ export default function Home() {
                 code={nameFilterExampleCode}
               >
                 <NameFilter {...nameFilterExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="specific-directories" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 6</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Specific Catholic directory components
+                </Heading>
+                <Text tone="muted">
+                  Thin Catholic-specific wrappers around the shared directory infrastructure.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="PontiffDirectory"
+                description="A Vatican-style pontiff directory with name and century filters."
+                code={pontiffDirectoryExampleCode}
+              >
+                <PontiffDirectory
+                  title={pontiffDirectoryExample.title}
+                  description={pontiffDirectoryExample.description}
+                  centuries={pontiffDirectoryExample.centuries}
+                  pontiffs={pontiffDirectoryExample.pontiffs}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PontiffCard"
+                description="A formal card for pontiff records and pontificate date ranges."
+                code={pontiffCardExampleCode}
+              >
+                <PontiffCard {...pontiffCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ClergyDirectory"
+                description="A directory wrapper for priests, deacons, and religious."
+                code={clergyDirectoryExampleCode}
+              >
+                <ClergyDirectory {...clergyDirectoryExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ParishDirectory"
+                description="A parish and mission directory wrapper."
+                code={parishDirectoryExampleCode}
+              >
+                <ParishDirectory {...parishDirectoryExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="SchoolDirectory"
+                description="A Catholic schools directory wrapper."
+                code={schoolDirectoryExampleCode}
+              >
+                <SchoolDirectory {...schoolDirectoryExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="OfficeDirectory"
+                description="A chancery and diocesan office directory wrapper."
+                code={officeDirectoryExampleCode}
+              >
+                <OfficeDirectory {...officeDirectoryExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="SaintDirectory"
+                description="A directory wrapper for saints, blesseds, feast records, and historical filters."
+                code={saintDirectoryExampleCode}
+              >
+                <SaintDirectory {...saintDirectoryExample} />
               </ComponentBlock>
             </Stack>
           </Container>

@@ -340,3 +340,39 @@ export type CenturyFilterData = {
   name?: string;
   centuries: readonly DirectoryFilterOption[];
 };
+
+export type PontiffData = DirectoryEntityData & {
+  pontificateStart?: string;
+  pontificateEnd?: string;
+  century?: string;
+};
+
+export type ClergyDirectoryData = {
+  title: string;
+  description?: string;
+  clergy: readonly DirectoryEntityData[];
+};
+
+export type ParishDirectoryData = {
+  title: string;
+  description?: string;
+  parishes: readonly DirectoryEntityData[];
+};
+
+export type SchoolDirectoryData = {
+  title: string;
+  description?: string;
+  schools: readonly DirectoryEntityData[];
+};
+
+export type OfficeDirectoryData = {
+  title: string;
+  description?: string;
+  offices: readonly DirectoryEntityData[];
+};
+
+export type SaintDirectoryData = {
+  title: string;
+  description?: string;
+  saints: readonly DirectoryEntityData[];
+};

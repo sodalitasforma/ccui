@@ -806,3 +806,157 @@ export const institutionalDirectoryExample = {
     },
   ],
 } as const;
+
+export const pontiffDirectoryExample = {
+  title: "Pontiff Directory",
+  description: "A Vatican-style directory of pontiffs with pontificate date ranges.",
+  centuries: [
+    { label: "19th century", value: "19" },
+    { label: "20th century", value: "20" },
+    { label: "21st century", value: "21" },
+  ],
+  pontiffs: [
+    {
+      title: "Leo XIII",
+      description: "Supreme Pontiff of the Catholic Church.",
+      pontificateStart: "1878",
+      pontificateEnd: "1903",
+      century: "19th century",
+      meta: "Rome",
+      status: "Historical",
+      href: "#",
+    },
+    {
+      title: "Pius X",
+      description: "Supreme Pontiff of the Catholic Church.",
+      pontificateStart: "1903",
+      pontificateEnd: "1914",
+      century: "20th century",
+      meta: "Rome",
+      status: "Saint",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const pontiffCardExample = pontiffDirectoryExample.pontiffs[0];
+
+export const clergyDirectoryExample = {
+  title: "Clergy Directory",
+  description: "Directory of clergy records for public diocesan and parish websites.",
+  clergy: [
+    {
+      eyebrow: "Priest",
+      title: "Rev. Thomas Aquinas",
+      description: "Pastor, Saint Anselm Parish.",
+      meta: "Parish clergy",
+      status: "Active",
+      href: "#",
+    },
+    {
+      eyebrow: "Deacon",
+      title: "Deacon John Fisher",
+      description: "Permanent deacon serving parish liturgy and catechesis.",
+      meta: "Diaconate",
+      status: "Active",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const parishDirectoryExample = {
+  title: "Parish Directory",
+  description: "A public parish directory for diocesan websites.",
+  parishes: [
+    {
+      eyebrow: "Parish",
+      title: "Saint Anselm Parish",
+      description: "Masses, confessions, parish office, ministries, and bulletins.",
+      meta: "Santa Fe, NM",
+      status: "Active",
+      href: "#",
+    },
+    {
+      eyebrow: "Mission",
+      title: "San Miguel Mission",
+      description: "Historic mission church with public Mass schedule.",
+      meta: "Northern deanery",
+      status: "Mission",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const schoolDirectoryExample = {
+  title: "School Directory",
+  description: "Catholic schools directory for public institutional sites.",
+  schools: [
+    {
+      eyebrow: "School",
+      title: "Saint Catherine Academy",
+      description: "Classical Catholic school serving K–8 students.",
+      meta: "K–8",
+      status: "Open",
+      href: "#",
+    },
+    {
+      eyebrow: "High School",
+      title: "Aquinas Preparatory",
+      description: "Catholic preparatory high school.",
+      meta: "9–12",
+      status: "Open",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const officeDirectoryExample = {
+  title: "Office Directory",
+  description: "Chancery and diocesan office directory.",
+  offices: [
+    {
+      eyebrow: "Office",
+      title: "Office of Divine Worship",
+      description: "Supports liturgy, sacraments, and parish guidance.",
+      meta: "Chancery",
+      status: "Public",
+      href: "#",
+    },
+    {
+      eyebrow: "Office",
+      title: "Office of Catholic Schools",
+      description: "Supports Catholic school governance and formation.",
+      meta: "Education",
+      status: "Public",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const saintDirectoryExample = {
+  title: "Saint Directory",
+  description: "Directory structure for saints, blesseds, and feast records.",
+  centuries: [
+    { label: "1st century", value: "1" },
+    { label: "13th century", value: "13" },
+    { label: "16th century", value: "16" },
+  ],
+  saints: [
+    {
+      eyebrow: "Saint",
+      title: "Saint Thomas Aquinas",
+      description: "Doctor of the Church.",
+      meta: "13th century",
+      status: "Doctor",
+      href: "#",
+    },
+    {
+      eyebrow: "Saint",
+      title: "Saint Teresa of Ávila",
+      description: "Doctor of the Church and Carmelite reformer.",
+      meta: "16th century",
+      status: "Doctor",
+      href: "#",
+    },
+  ],
+} as const;
