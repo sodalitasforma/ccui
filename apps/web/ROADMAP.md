@@ -53,32 +53,45 @@ These are the minimum building blocks needed before Catholic-specific components
 
 These support parishes, dioceses, chancery offices, Catholic schools, ministries, foundations, and public-facing Church institutions.
 
-- InstitutionalHeader
-- InstitutionalFooter
-- PrimaryNav
-- UtilityNav
-- LanguageNav
-- FullscreenMenu
-- SearchTool
-- Breadcrumb
-- PageHeader
-- Directory
-- DirectoryCard
-- ContactBlock
-- OfficeHours
-- LocationBlock
-- StaffProfile
-- ClergyProfile
-- AnnouncementBanner
-- DocumentList
-- DocumentCard
-- ResourceLink
-- EventList
-- EventCard
+- ✅ InstitutionalHeader
+- ✅ InstitutionalFooter
+- ✅ PrimaryNav
+- ✅ UtilityNav
+- ✅ LanguageNav
+- ✅ FullscreenMenu
+- ✅ SearchTool
+- ✅ Breadcrumb
+- ✅ PageHeader
+- ✅ Directory
+- ✅ DirectoryCard
+- ✅ ContactBlock
+- ✅ OfficeHours
+- ✅ LocationBlock
+- ✅ StaffProfile
+- ✅ ClergyProfile
+- ✅ AnnouncementBanner
+- ✅ DocumentList
+- ✅ DocumentCard
+- ✅ ResourceLink
+- ✅ EventList
+- ✅ EventCard
+
+Phase 3 follow-up polish:
+
+- Make LanguageNav support a Vatican-style spelled-out language dropdown.
+- Improve InstitutionalHeader examples so language, utility, search, and primary navigation are visually separable.
+- Add component documentation examples with one preview and one accurate code block per component.
+- Avoid sample-page blobs inside the docs page unless presented as a full-page composition example.
 
 ## Phase 4 — Parish and liturgical components
 
 These are the first Catholic-native components churches will actually need.
+
+Phase 4 should also absorb the parish-specific refinements discovered during Phase 3 documentation review:
+
+- Show multiple Notice / ExceptionNotice variants with matching code examples.
+- Add status indicators and action affordances where parish tables need them.
+- Ensure schedule tables can show cancellation, moved location, livestream, confession available, and exception states.
 
 - MassScheduleBlock
 - MassTimeRow
@@ -102,6 +115,8 @@ These are the first Catholic-native components churches will actually need.
 ## Phase 5 — Documents, archives, and magisterium
 
 These support Church documents, diocesan records, Vatican-style archives, official notices, citations, and canonical source display.
+
+Phase 5 should include a dedicated document/media treatment for papal letters, encyclicals, apostolic letters, diocesan decrees, parish bulletins, official PDFs, source citations, and downloadable files.
 
 - ChurchDocumentHeader
 - ChurchDocumentCard
@@ -142,6 +157,8 @@ The Vatican homepage strongly suggests directory primitives as first-class Catho
 ## Phase 7 — Media, news, and calendar
 
 These support parish notices, diocesan newsrooms, Vatican-style media pages, public calendars, and institutional communication.
+
+Phase 7 should support real embedded media sources. Media examples should make it clear whether media comes from a database, a CMS, YouTube, Vatican News, or another public website URL.
 
 - NewsCard
 - NewsList
@@ -197,3 +214,14 @@ Initial mappings:
 - Component status display
 - Installation documentation
 - Accessibility notes
+
+Documentation polish backlog:
+
+- Rename the current token section to Colors.
+- Remove the standalone component index section unless it becomes a compact sidebar or registry table.
+- Make docs examples show exactly what each component is, with one component preview and one matching code block.
+- Make code blocks visually distinct from component surfaces.
+- Ensure every interactive primitive example actually works: Tabs, Accordion, dropdowns, filters, and future media inputs.
+- Add tasteful accordion indicators, such as plus/minus or chevron states.
+- Add table examples with status indicators, actions, and realistic institutional data.
+- Avoid hard-coded demo-only behavior where a real prop, URL, data object, or registry entry should drive the example.
