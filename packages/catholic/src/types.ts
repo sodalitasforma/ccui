@@ -58,7 +58,7 @@ export type ScheduleTime = ScheduleMeta & {
 export type ScheduleDay = {
   day: string;
   date?: string;
-  times: ScheduleTime[];
+  times: readonly ScheduleTime[];
 };
 
 export type ScheduleException = {
@@ -72,7 +72,48 @@ export type ScheduleBlockData = {
   title: string;
   subtitle?: string;
   badge?: string;
-  days: ScheduleDay[];
-  exceptions?: ScheduleException[];
+  days: readonly ScheduleDay[];
+  exceptions?: readonly ScheduleException[];
+  source?: CatholicSource;
+};
+
+export type LiturgicalSeason =
+  | "Advent"
+  | "Christmas"
+  | "Lent"
+  | "Easter"
+  | "Ordinary Time"
+  | "Triduum"
+  | "Sanctoral"
+  | "Other";
+
+export type LiturgicalRank =
+  | "Solemnity"
+  | "Feast"
+  | "Memorial"
+  | "Optional Memorial"
+  | "Ferial"
+  | "Sunday"
+  | "Holy Day"
+  | "Other";
+
+export type ReadingReferenceData = {
+  label: string;
+  citation: string;
+  book?: string;
+  chapter?: number;
+  verses?: string;
+  translation?: string;
+  source?: CatholicSource;
+};
+
+export type LiturgicalDayData = {
+  title: string;
+  date: string;
+  season: LiturgicalSeason | string;
+  color: LiturgicalColor;
+  rank?: LiturgicalRank | string;
+  description?: string;
+  readings?: readonly ReadingReferenceData[];
   source?: CatholicSource;
 };

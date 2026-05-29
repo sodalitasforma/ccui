@@ -571,3 +571,75 @@
 .forma-mass-time-row__label {
   font-weight: var(--forma-font-weight-bold);
 }
+
+.forma-liturgical-color-dot {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-pill);
+  box-shadow: var(--forma-shadow-hairline);
+}
+
+.forma-liturgical-color-dot--white {
+  background: var(--forma-liturgical-white);
+}
+
+.forma-liturgical-color-dot--green {
+  background: var(--forma-liturgical-green);
+}
+
+.forma-liturgical-color-dot--violet {
+  background: var(--forma-liturgical-violet);
+}
+
+.forma-liturgical-color-dot--red {
+  background: var(--forma-liturgical-red);
+}
+
+.forma-liturgical-color-dot--rose {
+  background: var(--forma-liturgical-rose);
+}
+
+.forma-liturgical-color-dot--black {
+  background: var(--forma-liturgical-black);
+}
+
+.forma-liturgical-color-dot--gold {
+  background: var(--forma-liturgical-gold);
+}
+
+.forma-liturgical-season-badge .forma-cluster {
+  line-height: 1;
+}
+
+.forma-reading-reference {
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-reading-reference__label,
+.forma-liturgical-day-card__rank,
+.forma-feast-day-hero__rank {
+  color: var(--forma-color-accent-gold-text);
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-reading-reference__citation {
+  font-family: var(--forma-font-document);
+  font-weight: var(--forma-font-weight-semibold);
+}
+
+.forma-liturgical-day-card,
+.forma-feast-day-hero {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-feast-day-hero__description {
+  max-width: 48rem;
+}
