@@ -117,3 +117,60 @@ export type LiturgicalDayData = {
   readings?: readonly ReadingReferenceData[];
   source?: CatholicSource;
 };
+
+export type PrayerCardData = {
+  title: string;
+  text: string;
+  tradition?: string;
+  language?: string;
+  source?: CatholicSource;
+};
+
+export type ParishAnnouncementData = {
+  title: string;
+  description?: string;
+  date?: string;
+  severity?: ExceptionSeverity;
+  href?: string;
+};
+
+export type BulletinData = {
+  title: string;
+  date: string;
+  description?: string;
+  href?: string;
+  fileType?: string;
+};
+
+export type MinistryData = {
+  title: string;
+  description?: string;
+  category?: string;
+  leader?: string;
+  meetingTime?: string;
+  href?: string;
+};
+
+export type DonationCalloutData = {
+  title: string;
+  description?: string;
+  amountLabel?: string;
+  actionLabel: string;
+  actionHref: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+};
+
+export type ParishContactData = {
+  title: string;
+  phone?: string;
+  email?: string;
+  website?: string;
+  addressLines?: readonly string[];
+  officeHours?: readonly {
+    day: string;
+    hours: string;
+  }[];
+  mapHref?: string;
+  locationNote?: string;
+};

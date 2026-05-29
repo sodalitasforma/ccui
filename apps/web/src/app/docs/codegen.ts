@@ -20,6 +20,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  prayerCardExample,
+  parishContactCardExample,
+  parishAnnouncementCardExample,
+  ministryCardExample,
+  donationCalloutExample,
+  bulletinCardExample,
   readingReferenceExample,
   liturgicalSeasonBadgeExample,
   liturgicalDayExample,
@@ -453,4 +459,64 @@ export const liturgicalColorDotExampleCode =
 `<LiturgicalColorDot
   color="${liturgicalColorDotExample.color}"
   label="${liturgicalColorDotExample.label}"
+/>`;
+
+export const prayerCardExampleCode =
+`<PrayerCard
+  title="${prayerCardExample.title}"
+  text="${prayerCardExample.text}"
+  tradition="${prayerCardExample.tradition}"
+  language="${prayerCardExample.language}"
+  source={{ label: "${prayerCardExample.source.label}", href: "${prayerCardExample.source.href}", authorityLevel: "${prayerCardExample.source.authorityLevel}" }}
+/>`;
+
+export const parishAnnouncementCardExampleCode =
+`<ParishAnnouncementCard
+  title="${parishAnnouncementCardExample.title}"
+  description="${parishAnnouncementCardExample.description}"
+  date="${parishAnnouncementCardExample.date}"
+  severity="${parishAnnouncementCardExample.severity}"
+  href="${parishAnnouncementCardExample.href}"
+/>`;
+
+export const bulletinCardExampleCode =
+`<BulletinCard
+  title="${bulletinCardExample.title}"
+  date="${bulletinCardExample.date}"
+  description="${bulletinCardExample.description}"
+  href="${bulletinCardExample.href}"
+  fileType="${bulletinCardExample.fileType}"
+/>`;
+
+export const ministryCardExampleCode =
+`<MinistryCard
+  title="${ministryCardExample.title}"
+  description="${ministryCardExample.description}"
+  category="${ministryCardExample.category}"
+  leader="${ministryCardExample.leader}"
+  meetingTime="${ministryCardExample.meetingTime}"
+  href="${ministryCardExample.href}"
+/>`;
+
+export const donationCalloutExampleCode =
+`<DonationCallout
+  title="${donationCalloutExample.title}"
+  description="${donationCalloutExample.description}"
+  amountLabel="${donationCalloutExample.amountLabel}"
+  actionLabel="${donationCalloutExample.actionLabel}"
+  actionHref="${donationCalloutExample.actionHref}"
+  secondaryLabel="${donationCalloutExample.secondaryLabel}"
+  secondaryHref="${donationCalloutExample.secondaryHref}"
+/>`;
+
+export const parishContactCardExampleCode =
+`<ParishContactCard
+  title="${parishContactCardExample.title}"
+  phone="${parishContactCardExample.phone}"
+  email="${parishContactCardExample.email}"
+  website="${parishContactCardExample.website}"
+  addressLines={${arrayCode(parishContactCardExample.addressLines)}}
+  officeHours={${arrayCode(parishContactCardExample.officeHours)}}
+  mapHref="${parishContactCardExample.mapHref}"
+  locationNote="${parishContactCardExample.locationNote}"
 />`;

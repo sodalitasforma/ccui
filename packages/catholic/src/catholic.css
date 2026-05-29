@@ -643,3 +643,26 @@
 .forma-feast-day-hero__description {
   max-width: 48rem;
 }
+
+.forma-prayer-card,
+.forma-donation-callout {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-prayer-card__text {
+  font-family: var(--forma-font-document);
+  line-height: var(--forma-line-height-relaxed);
+}
+
+.forma-donation-callout__amount {
+  color: var(--forma-color-accent-gold-text);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xl);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-parish-contact-card {
+  width: 100%;
+}

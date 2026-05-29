@@ -44,6 +44,12 @@ import {
 
 import {
   AnnouncementBanner,
+  ParishContactCard,
+  DonationCallout,
+  MinistryCard,
+  BulletinCard,
+  ParishAnnouncementCard,
+  PrayerCard,
   ReadingReference,
   LiturgicalSeasonBadge,
   LiturgicalDayCard,
@@ -94,6 +100,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  parishContactCardExample,
+  donationCalloutExample,
+  ministryCardExample,
+  bulletinCardExample,
+  parishAnnouncementCardExample,
+  prayerCardExample,
   readingReferenceExample,
   liturgicalSeasonBadgeExample,
   liturgicalDayExample,
@@ -126,6 +138,12 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  parishContactCardExampleCode,
+  donationCalloutExampleCode,
+  ministryCardExampleCode,
+  bulletinCardExampleCode,
+  parishAnnouncementCardExampleCode,
+  prayerCardExampleCode,
   readingReferenceExampleCode,
   liturgicalSeasonBadgeExampleCode,
   liturgicalDayExampleCode,
@@ -275,6 +293,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#institutional">Phase 3 institutional</a>
             <a className="docs-nav-small" href="#parish-schedules">Phase 4 parish schedules</a>
             <a className="docs-nav-small" href="#liturgical-identity">Phase 4 liturgical identity</a>
+            <a className="docs-nav-small" href="#parish-content">Phase 4 parish content</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -931,6 +950,70 @@ export default function Home() {
                   />
                   <Text>{liturgicalColorDotExample.label}</Text>
                 </Cluster>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="parish-content" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 4</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Parish content and action components
+                </Heading>
+                <Text tone="muted">
+                  Components for prayer, announcements, bulletins, ministries, giving, and parish contact details.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="PrayerCard"
+                description="A prayer or devotional text card with source metadata for future canon and prayer datasets."
+                code={prayerCardExampleCode}
+              >
+                <PrayerCard {...prayerCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ParishAnnouncementCard"
+                description="A parish-specific announcement card built on the same notice language as schedule exceptions."
+                code={parishAnnouncementCardExampleCode}
+              >
+                <ParishAnnouncementCard {...parishAnnouncementCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="BulletinCard"
+                description="A parish bulletin wrapper built from the existing DocumentCard pattern."
+                code={bulletinCardExampleCode}
+              >
+                <BulletinCard {...bulletinCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="MinistryCard"
+                description="A ministry card for parish groups, apostolates, and volunteer programs."
+                code={ministryCardExampleCode}
+              >
+                <MinistryCard {...ministryCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DonationCallout"
+                description="A giving callout for parish campaigns, restoration funds, and recurring support."
+                code={donationCalloutExampleCode}
+              >
+                <DonationCallout {...donationCalloutExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ParishContactCard"
+                description="A parish contact composition reusing ContactBlock, OfficeHours, and LocationBlock."
+                code={parishContactCardExampleCode}
+              >
+                <ParishContactCard {...parishContactCardExample} />
               </ComponentBlock>
             </Stack>
           </Container>

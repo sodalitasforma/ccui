@@ -490,3 +490,64 @@ export const liturgicalColorDotExample = {
   color: "violet",
   label: "Violet liturgical color",
 } as const;
+
+export const prayerCardExample = {
+  title: "Prayer Before Mass",
+  text: "O Lord Jesus Christ, who art about to come to me under the veil of the Eucharist, prepare my heart to receive Thee worthily.",
+  tradition: "Devotional",
+  language: "English",
+  source: {
+    label: "Catholic Semantic Canon",
+    href: "#",
+    authorityLevel: "devotional",
+  },
+} as const;
+
+export const parishAnnouncementCardExample = {
+  title: "Corpus Christi procession after the principal Mass",
+  description: "The procession will begin immediately after the 10:30 AM Mass. Families and parish ministries are invited to gather near the west doors.",
+  date: "June 7",
+  severity: "liturgical",
+  href: "#",
+} as const;
+
+export const bulletinCardExample = {
+  title: "Parish Bulletin",
+  date: "June 7, 2026",
+  description: "Weekly bulletin with announcements, Mass intentions, ministry notes, and upcoming events.",
+  href: "#",
+  fileType: "PDF",
+} as const;
+
+export const ministryCardExample = {
+  title: "St. Martha Hospitality Guild",
+  description: "Welcomes visitors, organizes Sunday coffee, and assists with parish receptions.",
+  category: "Hospitality",
+  leader: "Maria Sanchez",
+  meetingTime: "First Sundays",
+  href: "#",
+} as const;
+
+export const donationCalloutExample = {
+  title: "Support the parish restoration fund",
+  description: "Help preserve the church, chapel, sacred art, and parish facilities for future generations.",
+  amountLabel: "$50 funds one restoration hour",
+  actionLabel: "Give now",
+  actionHref: "#",
+  secondaryLabel: "Learn about the project",
+  secondaryHref: "#",
+} as const;
+
+export const parishContactCardExample = {
+  title: "Saint Anselm Parish Office",
+  phone: "(505) 555-0188",
+  email: "office@saintanselm.example",
+  website: "https://example.com",
+  addressLines: ["123 Mission Road", "Santa Fe, NM 87501"],
+  officeHours: [
+    { day: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
+    { day: "Friday", hours: "9:00 AM – Noon" },
+  ],
+  mapHref: "#",
+  locationNote: "Office entrance is on the courtyard side of the parish hall.",
+} as const;
