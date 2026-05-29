@@ -26,7 +26,7 @@
   justify-content: center;
   border: 1px solid var(--forma-color-accent-gold);
   border-radius: var(--forma-radius-sm);
-  background: rgba(197, 163, 119, 0.18);
+  background: color-mix(in srgb, var(--forma-color-accent-gold) 18%, transparent);
   color: var(--forma-color-accent-gold-text);
 }
 
@@ -52,7 +52,7 @@
 
 .forma-primary-nav__link:hover,
 .forma-primary-nav__link.is-current {
-  background: rgba(90, 46, 11, 0.1);
+  background: color-mix(in srgb, var(--forma-color-text-primary) 10%, transparent);
   color: var(--forma-color-link-hover);
 }
 
@@ -77,7 +77,7 @@
 .forma-utility-nav__link.is-current,
 .forma-language-nav__link:hover,
 .forma-language-nav__link.is-current {
-  background: rgba(90, 46, 11, 0.08);
+  background: color-mix(in srgb, var(--forma-color-text-primary) 8%, transparent);
   color: var(--forma-color-link-primary);
 }
 
@@ -414,7 +414,7 @@
 }
 
 .forma-announcement-banner__link:hover {
-  background: rgba(90, 46, 11, 0.08);
+  background: color-mix(in srgb, var(--forma-color-text-primary) 8%, transparent);
 }
 
 .forma-resource-link {
@@ -533,7 +533,7 @@
 
 .forma-schedule-block {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.52), transparent 14rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 52%, transparent), transparent 14rem),
     var(--forma-color-surface-raised);
 }
 
@@ -636,7 +636,7 @@
 .forma-liturgical-day-card,
 .forma-feast-day-hero {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -647,7 +647,7 @@
 .forma-prayer-card,
 .forma-donation-callout {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -808,7 +808,7 @@
 .forma-official-notice-card,
 .forma-prayer-block {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -832,7 +832,7 @@
 
 .forma-pontiff-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -858,7 +858,7 @@
 
 .forma-featured-story {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -909,14 +909,14 @@
   place-items: center;
   padding: 0 var(--forma-space-2);
   border-radius: var(--forma-radius-pill);
-  background: rgba(0, 0, 0, 0.64);
+  background: color-mix(in srgb, var(--forma-color-text-primary) 64%, transparent);
   font-weight: var(--forma-font-weight-bold);
 }
 
 .forma-project-card,
 .forma-dataset-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -945,7 +945,7 @@
 .forma-term-definition-card,
 .forma-translation-variant-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -973,7 +973,7 @@
 
 .forma-canonical-source-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 
@@ -1005,7 +1005,7 @@
 .forma-semantic-relation-graph__surface,
 .forma-entity-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
     var(--forma-color-surface-raised);
 }
 

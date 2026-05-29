@@ -92,8 +92,9 @@ function audit() {
   const catholicTokenRefs = countMatches(catholicCss, /var\(--forma-/g);
   const globalsTokenRefs = countMatches(globalsCss, /var\(--forma-/g);
 
-  const catholicHardHex = [...catholicCss.matchAll(/#[0-9a-fA-F]{3,8}/g)].map((m) => m[0]);
-  const primitiveHardHex = [...primitiveCss.matchAll(/#[0-9a-fA-F]{3,8}/g)].map((m) => m[0]);
+  const catholicHardHex = [...catholicCss.matchAll(/(?:#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/g)].map((m) => m[0]);
+  const primitiveHardHex = [...primitiveCss.matchAll(/(?:#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/g)].map((m) => m[0]);
+  const appHardHex = [...globalsCss.matchAll(/(?:#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/g)].map((m) => m[0]);
 
   const catholicFiles = fs
     .readdirSync(path.join(root, "packages/catholic/src"))
@@ -124,8 +125,9 @@ function audit() {
     "",
     "## Hard-coded color check",
     "",
-    `- Hard-coded hex colors in primitives.css: ${primitiveHardHex.length}`,
-    `- Hard-coded hex colors in catholic.css: ${catholicHardHex.length}`,
+    `- Hard-coded hex/rgb colors in primitives.css: ${primitiveHardHex.length}`,
+    `- Hard-coded hex/rgb colors in catholic.css: ${catholicHardHex.length}`,
+    `- Hard-coded hex/rgb colors in globals.css: ${appHardHex.length}`,
     "",
     primitiveHardHex.length
       ? `Primitive hard-coded colors: ${[...new Set(primitiveHardHex)].join(", ")}`
@@ -134,6 +136,10 @@ function audit() {
     catholicHardHex.length
       ? `Catholic hard-coded colors: ${[...new Set(catholicHardHex)].join(", ")}`
       : "Catholic hard-coded colors: none found.",
+    "",
+    appHardHex.length
+      ? `App/global hard-coded colors: ${[...new Set(appHardHex)].join(", ")}`
+      : "App/global hard-coded colors: none found.",
     "",
     "## Canary status",
     "",
