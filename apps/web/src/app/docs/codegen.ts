@@ -20,6 +20,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  nameFilterExample,
+  institutionalDirectoryExample,
+  directoryFilterExample,
+  dateRangeLabelExample,
+  centuryFilterExample,
   sourceCardExample,
   prayerBlockExample,
   officialNoticeCardExample,
@@ -691,4 +696,42 @@ export const biblePassageCardExampleCode =
   chapter={${biblePassageCardExample.chapter}}
   verses="${biblePassageCardExample.verses}"
   source={{ label: "${biblePassageCardExample.source.label}", href: "${biblePassageCardExample.source.href}", authorityLevel: "${biblePassageCardExample.source.authorityLevel}" }}
+/>`;
+
+export const directoryFilterExampleCode =
+`<DirectoryFilter
+  searchPlaceholder="${directoryFilterExample.searchPlaceholder}"
+  searchName="${directoryFilterExample.searchName}"
+  categoryLabel="${directoryFilterExample.categoryLabel}"
+  categoryName="${directoryFilterExample.categoryName}"
+  categories={${arrayCode(directoryFilterExample.categories)}}
+  actionLabel="${directoryFilterExample.actionLabel}"
+/>`;
+
+export const dateRangeLabelExampleCode =
+`<DateRangeLabel
+  label="${dateRangeLabelExample.label}"
+  startDate="${dateRangeLabelExample.startDate}"
+  endDate="${dateRangeLabelExample.endDate}"
+/>`;
+
+export const centuryFilterExampleCode =
+`<CenturyFilter
+  label="${centuryFilterExample.label}"
+  name="${centuryFilterExample.name}"
+  centuries={${arrayCode(centuryFilterExample.centuries)}}
+/>`;
+
+export const nameFilterExampleCode =
+`<NameFilter
+  name="${nameFilterExample.name}"
+  placeholder="${nameFilterExample.placeholder}"
+/>`;
+
+export const institutionalDirectoryExampleCode =
+`<InstitutionalDirectory
+  title="${institutionalDirectoryExample.title}"
+  description="${institutionalDirectoryExample.description}"
+  items={${arrayCode(institutionalDirectoryExample.items)}}
+  filter={<DirectoryFilter {...directoryFilterExample} />}
 />`;

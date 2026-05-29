@@ -44,6 +44,11 @@ import {
 
 import {
   AnnouncementBanner,
+  NameFilter,
+  CenturyFilter,
+  DateRangeLabel,
+  DirectoryFilter,
+  InstitutionalDirectory,
   BiblePassageCard,
   PrayerBlock,
   OfficialNoticeCard,
@@ -118,6 +123,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  nameFilterExample,
+  institutionalDirectoryExample,
+  directoryFilterExample,
+  dateRangeLabelExample,
+  centuryFilterExample,
   sourceCardExample,
   prayerBlockExample,
   officialNoticeCardExample,
@@ -173,6 +183,11 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  nameFilterExampleCode,
+  institutionalDirectoryExampleCode,
+  directoryFilterExampleCode,
+  dateRangeLabelExampleCode,
+  centuryFilterExampleCode,
   sourceCardExampleCode,
   prayerBlockExampleCode,
   officialNoticeCardExampleCode,
@@ -350,6 +365,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#church-documents">Phase 5 documents</a>
             <a className="docs-nav-small" href="#document-archive-mechanics">Phase 5 archive mechanics</a>
             <a className="docs-nav-small" href="#source-citation-scripture">Phase 5 sources</a>
+            <a className="docs-nav-small" href="#directory-infrastructure">Phase 6 directories</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1268,6 +1284,67 @@ export default function Home() {
                 code={biblePassageCardExampleCode}
               >
                 <BiblePassageCard {...biblePassageCardExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="directory-infrastructure" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 6</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Directory infrastructure components
+                </Heading>
+                <Text tone="muted">
+                  Components for Vatican-style Catholic directories, filters, date ranges, names, and institutional record lists.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="InstitutionalDirectory"
+                description="A reusable directory shell built from Directory and DirectoryCard."
+                code={institutionalDirectoryExampleCode}
+              >
+                <InstitutionalDirectory
+                  title={institutionalDirectoryExample.title}
+                  description={institutionalDirectoryExample.description}
+                  items={institutionalDirectoryExample.items}
+                  filter={<DirectoryFilter {...directoryFilterExample} />}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DirectoryFilter"
+                description="A filter row for directory search and category filtering."
+                code={directoryFilterExampleCode}
+              >
+                <DirectoryFilter {...directoryFilterExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DateRangeLabel"
+                description="A compact date range label for pontificates, tenures, archives, and historical directories."
+                code={dateRangeLabelExampleCode}
+              >
+                <DateRangeLabel {...dateRangeLabelExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CenturyFilter"
+                description="A select control for historical directories such as pontiffs, saints, and councils."
+                code={centuryFilterExampleCode}
+              >
+                <CenturyFilter {...centuryFilterExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="NameFilter"
+                description="A directory search input specialized for names."
+                code={nameFilterExampleCode}
+              >
+                <NameFilter {...nameFilterExample} />
               </ComponentBlock>
             </Stack>
           </Container>

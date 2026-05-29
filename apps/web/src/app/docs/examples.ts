@@ -740,3 +740,69 @@ export const biblePassageCardExample = {
     authorityLevel: "scripture",
   },
 } as const;
+
+export const directoryFilterExample = {
+  searchPlaceholder: "Search offices, parishes, schools, or clergy",
+  searchName: "q",
+  categoryLabel: "All directory types",
+  categoryName: "type",
+  categories: [
+    { label: "Parishes", value: "parishes" },
+    { label: "Schools", value: "schools" },
+    { label: "Offices", value: "offices" },
+    { label: "Clergy", value: "clergy" },
+  ],
+  actionLabel: "Filter directory",
+} as const;
+
+export const dateRangeLabelExample = {
+  label: "Active years",
+  startDate: "1878",
+  endDate: "1903",
+} as const;
+
+export const centuryFilterExample = {
+  label: "All centuries",
+  name: "century",
+  centuries: [
+    { label: "19th century", value: "19" },
+    { label: "20th century", value: "20" },
+    { label: "21st century", value: "21" },
+  ],
+} as const;
+
+export const nameFilterExample = {
+  name: "name",
+  placeholder: "Search by name",
+} as const;
+
+export const institutionalDirectoryExample = {
+  title: "Institutional Directory",
+  description: "A reusable directory shell for Catholic institutions and records.",
+  items: [
+    {
+      eyebrow: "Parish",
+      title: "Saint Anselm Parish",
+      description: "Sunday Mass, confessions, parish office, ministries, and bulletins.",
+      meta: "Santa Fe, NM",
+      status: "Active",
+      href: "#",
+    },
+    {
+      eyebrow: "School",
+      title: "Saint Catherine Academy",
+      description: "Catholic school directory record with public contact and office data.",
+      meta: "K–8",
+      status: "Open",
+      href: "#",
+    },
+    {
+      eyebrow: "Office",
+      title: "Office of Divine Worship",
+      description: "Diocesan office supporting liturgy, sacraments, and parish guidance.",
+      meta: "Chancery",
+      status: "Public",
+      href: "#",
+    },
+  ],
+} as const;

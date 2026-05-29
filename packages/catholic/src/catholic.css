@@ -817,3 +817,11 @@
   font-family: var(--forma-font-document);
   line-height: var(--forma-line-height-relaxed);
 }
+
+.forma-date-range-label {
+  display: inline-flex;
+}
+
+.forma-institutional-directory {
+  width: 100%;
+}

@@ -305,3 +305,38 @@ export type BiblePassageData = {
   verses?: string;
   source?: CatholicSource;
 };
+
+export type DirectoryEntityData = {
+  title: string;
+  description?: string;
+  eyebrow?: string;
+  meta?: string;
+  status?: string;
+  href?: string;
+};
+
+export type DirectoryFilterOption = {
+  label: string;
+  value: string;
+};
+
+export type DirectoryFilterData = {
+  searchPlaceholder?: string;
+  searchName?: string;
+  categoryLabel?: string;
+  categoryName?: string;
+  categories?: readonly DirectoryFilterOption[];
+  actionLabel?: string;
+};
+
+export type DateRangeLabelData = {
+  label?: string;
+  startDate?: string;
+  endDate?: string;
+};
+
+export type CenturyFilterData = {
+  label?: string;
+  name?: string;
+  centuries: readonly DirectoryFilterOption[];
+};
