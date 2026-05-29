@@ -709,3 +709,71 @@
 .forma-church-document-header__description {
   max-width: 52rem;
 }
+
+.forma-file-type-icon__label {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+}
+
+.forma-download-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.forma-download-link:hover {
+  border-color: var(--forma-color-border-strong);
+}
+
+.forma-download-link__label {
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-paragraph-anchor {
+  margin: 0;
+  scroll-margin-top: var(--forma-space-8);
+}
+
+.forma-paragraph-anchor__number {
+  flex: 0 0 auto;
+  min-width: 2rem;
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-paragraph-anchor__text {
+  font-family: var(--forma-font-document);
+  line-height: var(--forma-line-height-relaxed);
+}
+
+.forma-footnote-list__title,
+.forma-related-documents__title {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-footnote-list__items {
+  display: grid;
+  gap: var(--forma-space-3);
+  margin: 0;
+  padding-left: var(--forma-space-5);
+}
+
+.forma-footnote-list__item {
+  padding-left: var(--forma-space-2);
+}
+
+.forma-footnote-list__marker {
+  margin-right: var(--forma-space-2);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-footnote-list__backlink {
+  margin-left: var(--forma-space-2);
+}
+
+.forma-archive-search-result__excerpt {
+  max-width: 52rem;
+}

@@ -20,6 +20,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  relatedDocumentsExample,
+  paragraphAnchorExample,
+  footnoteListExample,
+  fileTypeIconExample,
+  downloadLinkExample,
+  archiveSearchResultExample,
   documentTypeBadgeExample,
   documentCitationExample,
   documentAuthorityBadgeExample,
@@ -577,3 +583,50 @@ export const documentCitationExampleCode =
   label="${documentCitationExample.label}"
   citation="${documentCitationExample.citation}"
 />`;
+
+export const paragraphAnchorExampleCode =
+`<ParagraphAnchor
+  id="${paragraphAnchorExample.id}"
+  number="${paragraphAnchorExample.number}"
+  href="${paragraphAnchorExample.href}"
+>
+  ${paragraphAnchorExample.children}
+</ParagraphAnchor>`;
+
+export const footnoteListExampleCode =
+`<FootnoteList
+  title="${footnoteListExample.title}"
+  items={${arrayCode(footnoteListExample.items)}}
+/>`;
+
+export const relatedDocumentsExampleCode =
+`<RelatedDocuments
+  title="${relatedDocumentsExample.title}"
+  documents={${arrayCode(relatedDocumentsExample.documents)}}
+/>`;
+
+export const archiveSearchResultExampleCode =
+`<ArchiveSearchResult
+  title="${archiveSearchResultExample.title}"
+  subtitle="${archiveSearchResultExample.subtitle}"
+  documentType="${archiveSearchResultExample.documentType}"
+  authority="${archiveSearchResultExample.authority}"
+  authorityLabel="${archiveSearchResultExample.authorityLabel}"
+  date="${archiveSearchResultExample.date}"
+  language="${archiveSearchResultExample.language}"
+  excerpt="${archiveSearchResultExample.excerpt}"
+  href="${archiveSearchResultExample.href}"
+  source={{ label: "${archiveSearchResultExample.source.label}", href: "${archiveSearchResultExample.source.href}", authorityLevel: "${archiveSearchResultExample.source.authorityLevel}" }}
+/>`;
+
+export const downloadLinkExampleCode =
+`<DownloadLink
+  label="${downloadLinkExample.label}"
+  href="${downloadLinkExample.href}"
+  fileType="${downloadLinkExample.fileType}"
+  fileSize="${downloadLinkExample.fileSize}"
+  description="${downloadLinkExample.description}"
+/>`;
+
+export const fileTypeIconExampleCode =
+`<FileTypeIcon fileType="${fileTypeIconExample.fileType}" />`;

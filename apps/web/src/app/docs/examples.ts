@@ -592,3 +592,80 @@ export const documentCitationExample = {
   label: "Citation",
   citation: "Francis, Encyclical Letter Dilexit nos, 24 October 2024.",
 } as const;
+
+export const paragraphAnchorExample = {
+  id: "p-1",
+  number: "1",
+  children: "The Church proposes the Gospel in every age through visible signs, public teaching, sacramental life, and ordered charity.",
+  href: "#p-1",
+} as const;
+
+export const footnoteListExample = {
+  title: "Footnotes",
+  items: [
+    {
+      id: "fn-1",
+      marker: "1",
+      text: "See the related magisterial source and local diocesan implementation notes.",
+      href: "#p-1",
+    },
+    {
+      id: "fn-2",
+      marker: "2",
+      text: "This example demonstrates source-backed reference display for future archive pages.",
+    },
+  ],
+} as const;
+
+export const relatedDocumentsExample = {
+  title: "Related documents",
+  documents: [
+    {
+      title: "Pastoral Letter on Parish Life",
+      documentType: "pastoral-letter",
+      authority: "bishop",
+      authorityLabel: "Bishop",
+      date: "2026",
+      language: "English",
+      relationship: "Related diocesan guidance.",
+      href: "#",
+      source: { label: "Diocese", href: "#", authorityLevel: "official" },
+    },
+    {
+      title: "Parish Bulletin Archive",
+      documentType: "bulletin",
+      authority: "parish",
+      authorityLabel: "Parish",
+      date: "2026",
+      language: "English",
+      relationship: "Local parish implementation and notices.",
+      href: "#",
+      source: { label: "Parish office", href: "#", authorityLevel: "local" },
+    },
+  ],
+} as const;
+
+export const archiveSearchResultExample = {
+  title: "Dilexit nos",
+  subtitle: "On the Human and Divine Love of the Heart of Jesus Christ",
+  documentType: "encyclical",
+  authority: "pope",
+  authorityLabel: "Pope",
+  date: "24 October 2024",
+  language: "English",
+  excerpt: "Search result excerpt showing why this document matched the query.",
+  href: "#",
+  source: { label: "Holy See", href: "#", authorityLevel: "official" },
+} as const;
+
+export const downloadLinkExample = {
+  label: "Download official PDF",
+  href: "#",
+  fileType: "PDF",
+  fileSize: "428 KB",
+  description: "Official document download.",
+} as const;
+
+export const fileTypeIconExample = {
+  fileType: "PDF",
+} as const;

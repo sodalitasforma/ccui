@@ -44,6 +44,12 @@ import {
 
 import {
   AnnouncementBanner,
+  FileTypeIcon,
+  DownloadLink,
+  ArchiveSearchResult,
+  RelatedDocuments,
+  FootnoteList,
+  ParagraphAnchor,
   DocumentCitation,
   DocumentTypeBadge,
   DocumentAuthorityBadge,
@@ -106,6 +112,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  relatedDocumentsExample,
+  paragraphAnchorExample,
+  footnoteListExample,
+  fileTypeIconExample,
+  downloadLinkExample,
+  archiveSearchResultExample,
   documentTypeBadgeExample,
   documentCitationExample,
   documentAuthorityBadgeExample,
@@ -149,6 +161,12 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  relatedDocumentsExampleCode,
+  paragraphAnchorExampleCode,
+  footnoteListExampleCode,
+  fileTypeIconExampleCode,
+  downloadLinkExampleCode,
+  archiveSearchResultExampleCode,
   documentCitationExampleCode,
   documentTypeBadgeExampleCode,
   documentAuthorityBadgeExampleCode,
@@ -312,6 +330,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#liturgical-identity">Phase 4 liturgical identity</a>
             <a className="docs-nav-small" href="#parish-content">Phase 4 parish content</a>
             <a className="docs-nav-small" href="#church-documents">Phase 5 documents</a>
+            <a className="docs-nav-small" href="#document-archive-mechanics">Phase 5 archive mechanics</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1096,6 +1115,76 @@ export default function Home() {
                 code={documentCitationExampleCode}
               >
                 <DocumentCitation {...documentCitationExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="document-archive-mechanics" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 5</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Document body and archive mechanics
+                </Heading>
+                <Text tone="muted">
+                  Components for anchored paragraphs, footnotes, related documents, archive results, downloads, and file indicators.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="ParagraphAnchor"
+                description="An anchorable numbered paragraph for document pages and canonical references."
+                code={paragraphAnchorExampleCode}
+              >
+                <ParagraphAnchor
+                  id={paragraphAnchorExample.id}
+                  number={paragraphAnchorExample.number}
+                  href={paragraphAnchorExample.href}
+                >
+                  {paragraphAnchorExample.children}
+                </ParagraphAnchor>
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="FootnoteList"
+                description="A document footnote list for source references and backlinks."
+                code={footnoteListExampleCode}
+              >
+                <FootnoteList title={footnoteListExample.title} items={footnoteListExample.items} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="RelatedDocuments"
+                description="A related-document stack using ChurchDocumentCard for source continuity."
+                code={relatedDocumentsExampleCode}
+              >
+                <RelatedDocuments title={relatedDocumentsExample.title} documents={relatedDocumentsExample.documents} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ArchiveSearchResult"
+                description="A search result component for Vatican-style, diocesan, parish, and canonical archives."
+                code={archiveSearchResultExampleCode}
+              >
+                <ArchiveSearchResult {...archiveSearchResultExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DownloadLink"
+                description="A formal download affordance for official PDFs, HTML files, forms, and source documents."
+                code={downloadLinkExampleCode}
+              >
+                <DownloadLink {...downloadLinkExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="FileTypeIcon"
+                description="A compact file-type indicator for downloads and archive results."
+                code={fileTypeIconExampleCode}
+              >
+                <FileTypeIcon {...fileTypeIconExample} />
               </ComponentBlock>
             </Stack>
           </Container>

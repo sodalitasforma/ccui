@@ -223,3 +223,33 @@ export type ChurchDocumentMetadataItem = {
   value: string;
   href?: string;
 };
+
+export type ParagraphAnchorData = {
+  id: string;
+  number?: string;
+  children: string;
+  href?: string;
+};
+
+export type FootnoteData = {
+  id: string;
+  marker: string;
+  text: string;
+  href?: string;
+};
+
+export type RelatedDocumentData = ChurchDocumentData & {
+  relationship?: string;
+};
+
+export type ArchiveSearchResultData = ChurchDocumentData & {
+  excerpt?: string;
+};
+
+export type DownloadLinkData = {
+  label: string;
+  href: string;
+  fileType: string;
+  fileSize?: string;
+  description?: string;
+};
