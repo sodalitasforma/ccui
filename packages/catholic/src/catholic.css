@@ -835,3 +835,33 @@
     linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
     var(--forma-color-surface-raised);
 }
+
+.forma-news-list__title,
+.forma-calendar-item__date-value,
+.forma-press-office-notice__title {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-calendar-item__date {
+  min-width: 6rem;
+}
+
+.forma-calendar-item__date-value {
+  color: var(--forma-color-text-primary);
+}
+
+.forma-calendar-item__body {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.forma-featured-story {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-featured-story__action {
+  font-weight: var(--forma-font-weight-bold);
+}

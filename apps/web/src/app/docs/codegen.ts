@@ -20,6 +20,13 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  pressReleaseCardExample,
+  pressOfficeNoticeExample,
+  newsListExample,
+  newsCardExample,
+  featuredStoryExample,
+  calendarTabsExample,
+  calendarItemExample,
   schoolDirectoryExample,
   saintDirectoryExample,
   pontiffDirectoryExample,
@@ -797,4 +804,71 @@ export const saintDirectoryExampleCode =
   description="${saintDirectoryExample.description}"
   centuries={${arrayCode(saintDirectoryExample.centuries)}}
   saints={${arrayCode(saintDirectoryExample.saints)}}
+/>`;
+
+export const newsCardExampleCode =
+`<NewsCard
+  title="${newsCardExample.title}"
+  description="${newsCardExample.description}"
+  date="${newsCardExample.date}"
+  category="${newsCardExample.category}"
+  href="${newsCardExample.href}"
+  source={{ label: "${newsCardExample.source.label}", href: "${newsCardExample.source.href}", authorityLevel: "${newsCardExample.source.authorityLevel}" }}
+/>`;
+
+export const newsListExampleCode =
+`<NewsList
+  title="${newsListExample.title}"
+  description="${newsListExample.description}"
+  items={${arrayCode(newsListExample.items)}}
+/>`;
+
+export const calendarItemExampleCode =
+`<CalendarItem
+  title="${calendarItemExample.title}"
+  date="${calendarItemExample.date}"
+  time="${calendarItemExample.time}"
+  location="${calendarItemExample.location}"
+  category="${calendarItemExample.category}"
+  description="${calendarItemExample.description}"
+  href="${calendarItemExample.href}"
+/>`;
+
+export const calendarTabsExampleCode =
+`<CalendarTabs
+  upcoming={${arrayCode(calendarTabsExample.upcoming)}}
+  liturgical={${arrayCode(calendarTabsExample.liturgical)}}
+  meetings={${arrayCode(calendarTabsExample.meetings)}}
+/>`;
+
+export const featuredStoryExampleCode =
+`<FeaturedStory
+  eyebrow="${featuredStoryExample.eyebrow}"
+  title="${featuredStoryExample.title}"
+  description="${featuredStoryExample.description}"
+  date="${featuredStoryExample.date}"
+  category="${featuredStoryExample.category}"
+  href="${featuredStoryExample.href}"
+  source={{ label: "${featuredStoryExample.source.label}", href: "${featuredStoryExample.source.href}", authorityLevel: "${featuredStoryExample.source.authorityLevel}" }}
+/>`;
+
+export const pressReleaseCardExampleCode =
+`<PressReleaseCard
+  title="${pressReleaseCardExample.title}"
+  description="${pressReleaseCardExample.description}"
+  date="${pressReleaseCardExample.date}"
+  category="${pressReleaseCardExample.category}"
+  office="${pressReleaseCardExample.office}"
+  href="${pressReleaseCardExample.href}"
+  source={{ label: "${pressReleaseCardExample.source.label}", href: "${pressReleaseCardExample.source.href}", authorityLevel: "${pressReleaseCardExample.source.authorityLevel}" }}
+/>`;
+
+export const pressOfficeNoticeExampleCode =
+`<PressOfficeNotice
+  title="${pressOfficeNoticeExample.title}"
+  description="${pressOfficeNoticeExample.description}"
+  date="${pressOfficeNoticeExample.date}"
+  office="${pressOfficeNoticeExample.office}"
+  severity="${pressOfficeNoticeExample.severity}"
+  href="${pressOfficeNoticeExample.href}"
 />`;

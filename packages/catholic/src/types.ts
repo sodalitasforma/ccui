@@ -376,3 +376,39 @@ export type SaintDirectoryData = {
   description?: string;
   saints: readonly DirectoryEntityData[];
 };
+
+export type NewsItemData = {
+  title: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  href?: string;
+  source?: CatholicSource;
+};
+
+export type CalendarItemData = {
+  title: string;
+  date: string;
+  time?: string;
+  location?: string;
+  category?: string;
+  description?: string;
+  href?: string;
+};
+
+export type PressReleaseData = NewsItemData & {
+  office?: string;
+};
+
+export type PressOfficeNoticeData = {
+  title: string;
+  description?: string;
+  date?: string;
+  office?: string;
+  severity?: "official" | "info" | "warning" | "danger";
+  href?: string;
+};
+
+export type FeaturedStoryData = NewsItemData & {
+  eyebrow?: string;
+};

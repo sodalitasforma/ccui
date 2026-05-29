@@ -44,6 +44,13 @@ import {
 
 import {
   AnnouncementBanner,
+  PressOfficeNotice,
+  PressReleaseCard,
+  FeaturedStory,
+  CalendarItem,
+  CalendarTabs,
+  NewsList,
+  NewsCard,
   SaintDirectory,
   OfficeDirectory,
   SchoolDirectory,
@@ -130,6 +137,13 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  pressReleaseCardExample,
+  pressOfficeNoticeExample,
+  newsListExample,
+  newsCardExample,
+  featuredStoryExample,
+  calendarTabsExample,
+  calendarItemExample,
   schoolDirectoryExample,
   saintDirectoryExample,
   pontiffDirectoryExample,
@@ -197,6 +211,13 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  pressReleaseCardExampleCode,
+  pressOfficeNoticeExampleCode,
+  newsListExampleCode,
+  newsCardExampleCode,
+  featuredStoryExampleCode,
+  calendarTabsExampleCode,
+  calendarItemExampleCode,
   schoolDirectoryExampleCode,
   saintDirectoryExampleCode,
   pontiffDirectoryExampleCode,
@@ -388,6 +409,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#source-citation-scripture">Phase 5 sources</a>
             <a className="docs-nav-small" href="#directory-infrastructure">Phase 6 directories</a>
             <a className="docs-nav-small" href="#specific-directories">Phase 6 specific directories</a>
+            <a className="docs-nav-small" href="#news-calendar">Phase 7 news/calendar</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1444,6 +1466,78 @@ export default function Home() {
                 code={saintDirectoryExampleCode}
               >
                 <SaintDirectory {...saintDirectoryExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="news-calendar" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 7</Eyebrow>
+                <Heading level={2} size="2xl">
+                  News and calendar components
+                </Heading>
+                <Text tone="muted">
+                  Components for parish notices, diocesan newsrooms, public calendars, and institutional communication.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="FeaturedStory"
+                description="A prominent story treatment for diocesan news, parish features, and school announcements."
+                code={featuredStoryExampleCode}
+              >
+                <FeaturedStory {...featuredStoryExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="NewsCard"
+                description="A public news card for parish, diocesan, school, and ministry updates."
+                code={newsCardExampleCode}
+              >
+                <NewsCard {...newsCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="NewsList"
+                description="A stacked list of news cards."
+                code={newsListExampleCode}
+              >
+                <NewsList {...newsListExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CalendarItem"
+                description="A public calendar item for liturgies, events, meetings, and office closures."
+                code={calendarItemExampleCode}
+              >
+                <CalendarItem {...calendarItemExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CalendarTabs"
+                description="Tabbed public calendar display for upcoming, liturgical, and meeting events."
+                code={calendarTabsExampleCode}
+              >
+                <CalendarTabs {...calendarTabsExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PressReleaseCard"
+                description="A formal press release card for diocesan and institutional communications."
+                code={pressReleaseCardExampleCode}
+              >
+                <PressReleaseCard {...pressReleaseCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PressOfficeNotice"
+                description="A formal press office notice for official communications."
+                code={pressOfficeNoticeExampleCode}
+              >
+                <PressOfficeNotice {...pressOfficeNoticeExample} />
               </ComponentBlock>
             </Stack>
           </Container>

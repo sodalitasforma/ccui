@@ -960,3 +960,104 @@ export const saintDirectoryExample = {
     },
   ],
 } as const;
+
+export const newsCardExample = {
+  title: "Parish announces Corpus Christi procession",
+  description: "The procession will follow the principal Sunday Mass and conclude with Benediction.",
+  date: "June 7, 2026",
+  category: "Parish news",
+  href: "#",
+  source: { label: "Parish office", href: "#", authorityLevel: "local" },
+} as const;
+
+export const newsListExample = {
+  title: "Latest news",
+  description: "Public notices and institutional updates.",
+  items: [
+    newsCardExample,
+    {
+      title: "Catholic school registration opens",
+      description: "Enrollment for the coming academic year is now open.",
+      date: "June 10, 2026",
+      category: "School",
+      href: "#",
+      source: { label: "School office", href: "#", authorityLevel: "local" },
+    },
+  ],
+} as const;
+
+export const calendarItemExample = {
+  title: "Corpus Christi Procession",
+  date: "Jun 7",
+  time: "11:30 AM",
+  location: "Church grounds",
+  category: "Liturgical",
+  description: "Procession immediately following the principal Mass.",
+  href: "#",
+} as const;
+
+export const calendarTabsExample = {
+  upcoming: [
+    calendarItemExample,
+    {
+      title: "Parish Council Meeting",
+      date: "Jun 12",
+      time: "6:00 PM",
+      location: "Parish hall",
+      category: "Meeting",
+      description: "Monthly council meeting.",
+      href: "#",
+    },
+  ],
+  liturgical: [
+    {
+      title: "Solemnity Mass",
+      date: "Jun 29",
+      time: "7:00 PM",
+      location: "Church",
+      category: "Holy Day",
+      description: "Evening Mass for the solemnity.",
+      href: "#",
+    },
+  ],
+  meetings: [
+    {
+      title: "Finance Council",
+      date: "Jul 2",
+      time: "5:30 PM",
+      location: "Office",
+      category: "Meeting",
+      description: "Quarterly finance council meeting.",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const featuredStoryExample = {
+  eyebrow: "Featured story",
+  title: "A new chapter for the parish school",
+  description: "A public-facing story treatment for diocesan newsrooms, school announcements, and parish features.",
+  date: "June 2026",
+  category: "Education",
+  href: "#",
+  source: { label: "Diocese", href: "#", authorityLevel: "official" },
+} as const;
+
+export const pressReleaseCardExample = {
+  title: "Diocese announces new office hours",
+  description: "The chancery has published updated public office hours for the summer.",
+  date: "June 3, 2026",
+  category: "Press release",
+  office: "Communications",
+  href: "#",
+  source: { label: "Press office", href: "#", authorityLevel: "official" },
+} as const;
+
+export const pressOfficeNoticeExample = {
+  title: "Official notice from the communications office",
+  description: "This notice demonstrates a formal newsroom alert with authority and date context.",
+  date: "June 3, 2026",
+  office: "Press Office",
+  severity: "official",
+  href: "#",
+} as const;
