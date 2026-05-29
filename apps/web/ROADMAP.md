@@ -151,18 +151,18 @@ Phase 5 should include a dedicated document/media treatment for papal letters, e
 
 The Vatican homepage strongly suggests directory primitives as first-class Catholic infrastructure.
 
-- InstitutionalDirectory
-- DirectoryFilter
-- DateRangeLabel
-- PontiffDirectory
-- PontiffCard
-- CenturyFilter
-- NameFilter
-- ClergyDirectory
-- ParishDirectory
-- SchoolDirectory
-- OfficeDirectory
-- SaintDirectory
+- ✅ InstitutionalDirectory
+- ✅ DirectoryFilter
+- ✅ DateRangeLabel
+- ✅ PontiffDirectory
+- ✅ PontiffCard
+- ✅ CenturyFilter
+- ✅ NameFilter
+- ✅ ClergyDirectory
+- ✅ ParishDirectory
+- ✅ SchoolDirectory
+- ✅ OfficeDirectory
+- ✅ SaintDirectory
 
 ## Phase 7 — Media, news, and calendar
 
