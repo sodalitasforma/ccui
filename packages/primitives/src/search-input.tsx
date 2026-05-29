@@ -5,7 +5,7 @@ type SearchInputSize = "sm" | "md" | "lg";
 
 type SearchInputProps = {
   size?: SearchInputSize;
-} & ComponentPropsWithoutRef<"input">;
+} & Omit<ComponentPropsWithoutRef<"input">, "size">;
 
 export function SearchInput({
   size = "md",

@@ -5,7 +5,7 @@ type SelectSize = "sm" | "md" | "lg";
 
 type SelectProps = {
   size?: SelectSize;
-} & ComponentPropsWithoutRef<"select">;
+} & Omit<ComponentPropsWithoutRef<"select">, "size">;
 
 export function Select({ size = "md", className, children, ...props }: SelectProps) {
   return (
