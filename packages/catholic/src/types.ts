@@ -253,3 +253,55 @@ export type DownloadLinkData = {
   fileSize?: string;
   description?: string;
 };
+
+export type SourceCardData = {
+  title: string;
+  description?: string;
+  authority: ChurchDocumentAuthority | string;
+  authorityLabel?: string;
+  sourceType?: string;
+  href?: string;
+  citation?: string;
+};
+
+export type CitationTrailItem = {
+  label: string;
+  citation: string;
+  href?: string;
+  authority?: ChurchDocumentAuthority | string;
+};
+
+export type CanonicalReferenceData = {
+  label: string;
+  value: string;
+  system?: string;
+  href?: string;
+  description?: string;
+};
+
+export type OfficialNoticeData = {
+  title: string;
+  description?: string;
+  date?: string;
+  authority: ChurchDocumentAuthority | string;
+  authorityLabel?: string;
+  documentType?: ChurchDocumentType | string;
+  href?: string;
+};
+
+export type PrayerBlockData = {
+  title?: string;
+  text: string;
+  language?: string;
+  source?: CatholicSource;
+};
+
+export type BiblePassageData = {
+  reference: string;
+  text: string;
+  translation?: string;
+  book?: string;
+  chapter?: number;
+  verses?: string;
+  source?: CatholicSource;
+};

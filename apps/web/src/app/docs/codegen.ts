@@ -20,6 +20,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  sourceCardExample,
+  prayerBlockExample,
+  officialNoticeCardExample,
+  citationTrailExample,
+  canonicalReferenceExample,
+  biblePassageCardExample,
   relatedDocumentsExample,
   paragraphAnchorExample,
   footnoteListExample,
@@ -630,3 +636,59 @@ export const downloadLinkExampleCode =
 
 export const fileTypeIconExampleCode =
 `<FileTypeIcon fileType="${fileTypeIconExample.fileType}" />`;
+
+export const sourceCardExampleCode =
+`<SourceCard
+  title="${sourceCardExample.title}"
+  description="${sourceCardExample.description}"
+  authority="${sourceCardExample.authority}"
+  authorityLabel="${sourceCardExample.authorityLabel}"
+  sourceType="${sourceCardExample.sourceType}"
+  href="${sourceCardExample.href}"
+  citation="${sourceCardExample.citation}"
+/>`;
+
+export const citationTrailExampleCode =
+`<CitationTrail
+  title="${citationTrailExample.title}"
+  items={${arrayCode(citationTrailExample.items)}}
+/>`;
+
+export const canonicalReferenceExampleCode =
+`<CanonicalReference
+  label="${canonicalReferenceExample.label}"
+  value="${canonicalReferenceExample.value}"
+  system="${canonicalReferenceExample.system}"
+  href="${canonicalReferenceExample.href}"
+  description="${canonicalReferenceExample.description}"
+/>`;
+
+export const officialNoticeCardExampleCode =
+`<OfficialNoticeCard
+  title="${officialNoticeCardExample.title}"
+  description="${officialNoticeCardExample.description}"
+  date="${officialNoticeCardExample.date}"
+  authority="${officialNoticeCardExample.authority}"
+  authorityLabel="${officialNoticeCardExample.authorityLabel}"
+  documentType="${officialNoticeCardExample.documentType}"
+  href="${officialNoticeCardExample.href}"
+/>`;
+
+export const prayerBlockExampleCode =
+`<PrayerBlock
+  title="${prayerBlockExample.title}"
+  text="${prayerBlockExample.text}"
+  language="${prayerBlockExample.language}"
+  source={{ label: "${prayerBlockExample.source.label}", href: "${prayerBlockExample.source.href}", authorityLevel: "${prayerBlockExample.source.authorityLevel}" }}
+/>`;
+
+export const biblePassageCardExampleCode =
+`<BiblePassageCard
+  reference="${biblePassageCardExample.reference}"
+  text="${biblePassageCardExample.text}"
+  translation="${biblePassageCardExample.translation}"
+  book="${biblePassageCardExample.book}"
+  chapter={${biblePassageCardExample.chapter}}
+  verses="${biblePassageCardExample.verses}"
+  source={{ label: "${biblePassageCardExample.source.label}", href: "${biblePassageCardExample.source.href}", authorityLevel: "${biblePassageCardExample.source.authorityLevel}" }}
+/>`;

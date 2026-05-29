@@ -44,6 +44,12 @@ import {
 
 import {
   AnnouncementBanner,
+  BiblePassageCard,
+  PrayerBlock,
+  OfficialNoticeCard,
+  CanonicalReference,
+  CitationTrail,
+  SourceCard,
   FileTypeIcon,
   DownloadLink,
   ArchiveSearchResult,
@@ -112,6 +118,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  sourceCardExample,
+  prayerBlockExample,
+  officialNoticeCardExample,
+  citationTrailExample,
+  canonicalReferenceExample,
+  biblePassageCardExample,
   relatedDocumentsExample,
   paragraphAnchorExample,
   footnoteListExample,
@@ -161,6 +173,12 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  sourceCardExampleCode,
+  prayerBlockExampleCode,
+  officialNoticeCardExampleCode,
+  citationTrailExampleCode,
+  canonicalReferenceExampleCode,
+  biblePassageCardExampleCode,
   relatedDocumentsExampleCode,
   paragraphAnchorExampleCode,
   footnoteListExampleCode,
@@ -331,6 +349,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#parish-content">Phase 4 parish content</a>
             <a className="docs-nav-small" href="#church-documents">Phase 5 documents</a>
             <a className="docs-nav-small" href="#document-archive-mechanics">Phase 5 archive mechanics</a>
+            <a className="docs-nav-small" href="#source-citation-scripture">Phase 5 sources</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1185,6 +1204,70 @@ export default function Home() {
                 code={fileTypeIconExampleCode}
               >
                 <FileTypeIcon {...fileTypeIconExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="source-citation-scripture" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 5</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Source, citation, prayer, and scripture components
+                </Heading>
+                <Text tone="muted">
+                  Components for canonical sources, citation trails, official notices, prayers, and Bible passages.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="SourceCard"
+                description="A canonical source card for official Church, diocesan, parish, canon law, or scripture sources."
+                code={sourceCardExampleCode}
+              >
+                <SourceCard {...sourceCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CitationTrail"
+                description="A source trail showing how a claim or document connects across official references."
+                code={citationTrailExampleCode}
+              >
+                <CitationTrail title={citationTrailExample.title} items={citationTrailExample.items} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CanonicalReference"
+                description="A stable reference component for canon law, scripture, semantic canon, and dataset identifiers."
+                code={canonicalReferenceExampleCode}
+              >
+                <CanonicalReference {...canonicalReferenceExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="OfficialNoticeCard"
+                description="A formal official notice card for diocesan, parish, school, or institutional announcements."
+                code={officialNoticeCardExampleCode}
+              >
+                <OfficialNoticeCard {...officialNoticeCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PrayerBlock"
+                description="A formal prayer block for devotionals, liturgical pages, and source-backed prayer datasets."
+                code={prayerBlockExampleCode}
+              >
+                <PrayerBlock {...prayerBlockExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="BiblePassageCard"
+                description="A scripture passage display for Bible API and lectionary integrations."
+                code={biblePassageCardExampleCode}
+              >
+                <BiblePassageCard {...biblePassageCardExample} />
               </ComponentBlock>
             </Stack>
           </Container>

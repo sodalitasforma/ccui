@@ -1,0 +1,51 @@
+import type { ComponentPropsWithoutRef } from "react";
+import { Card, Cluster, Link, Stack, Text } from "../../primitives/src";
+import { cx } from "../../primitives/src/utils";
+import { DocumentAuthorityBadge } from "./document-authority-badge";
+import type { CitationTrailItem } from "./types";
+
+type CitationTrailProps = {
+  title?: string;
+  items: readonly CitationTrailItem[];
+} & ComponentPropsWithoutRef<"section">;
+
+export function CitationTrail({
+  title = "Citation trail",
+  items,
+  className,
+  ...props
+}: CitationTrailProps) {
+  return (
+    <section className={cx("forma-citation-trail", className)} {...props}>
+      <Stack gap="md">
+        <Text as="h3" size="lg" className="forma-citation-trail__title">
+          {title}
+        </Text>
+
+        <Stack gap="sm">
+          {items.map((item, index) => (
+            <Card key={`${item.label}-${item.citation}`} padding="md" border="subtle">
+              <Cluster align="start" gap="sm">
+                <Text as="span" size="xs" tone="goldText" className="forma-citation-trail__index">
+                  {index + 1}
+                </Text>
+                <Stack gap="xs">
+                  <Cluster gap="xs">
+                    {item.authority ? <DocumentAuthorityBadge authority={item.authority} /> : null}
+                    <Text as="span" className="forma-citation-trail__label">
+                      {item.label}
+                    </Text>
+                  </Cluster>
+                  <Text as="p" tone="secondary">
+                    {item.citation}
+                  </Text>
+                  {item.href ? <Link href={item.href}>Open source</Link> : null}
+                </Stack>
+              </Cluster>
+            </Card>
+          ))}
+        </Stack>
+      </Stack>
+    </section>
+  );
+}

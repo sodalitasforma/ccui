@@ -777,3 +777,43 @@
 .forma-archive-search-result__excerpt {
   max-width: 52rem;
 }
+
+.forma-source-card__citation,
+.forma-citation-trail__label,
+.forma-citation-trail__index,
+.forma-canonical-reference__value {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-source-card__citation {
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-citation-trail__index {
+  display: inline-grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-pill);
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-canonical-reference__value {
+  color: var(--forma-color-text-primary);
+}
+
+.forma-official-notice-card,
+.forma-prayer-block {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-prayer-block__text,
+.forma-bible-passage-card__text {
+  font-family: var(--forma-font-document);
+  line-height: var(--forma-line-height-relaxed);
+}

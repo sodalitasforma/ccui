@@ -669,3 +669,74 @@ export const downloadLinkExample = {
 export const fileTypeIconExample = {
   fileType: "PDF",
 } as const;
+
+export const sourceCardExample = {
+  title: "Holy See source record",
+  description: "Canonical source entry for an official Church document.",
+  authority: "holy-see",
+  authorityLabel: "Holy See",
+  sourceType: "Official source",
+  href: "#",
+  citation: "Holy See, official document source record.",
+} as const;
+
+export const citationTrailExample = {
+  title: "Citation trail",
+  items: [
+    {
+      label: "Official source",
+      citation: "Holy See, official document record.",
+      href: "#",
+      authority: "holy-see",
+    },
+    {
+      label: "Local implementation",
+      citation: "Diocesan pastoral application and parish notice.",
+      href: "#",
+      authority: "diocese",
+    },
+  ],
+} as const;
+
+export const canonicalReferenceExample = {
+  label: "Canonical reference",
+  value: "CIC can. 528 §2",
+  system: "Canon Law",
+  href: "#",
+  description: "A stable canonical reference that can later map to structured Catholic datasets.",
+} as const;
+
+export const officialNoticeCardExample = {
+  title: "Official diocesan notice",
+  description: "A formal notice for diocesan, parish, school, or ministry communication.",
+  date: "June 7, 2026",
+  authority: "diocese",
+  authorityLabel: "Diocese",
+  documentType: "notification",
+  href: "#",
+} as const;
+
+export const prayerBlockExample = {
+  title: "Prayer after Communion",
+  text: "May Thy Body, O Lord, which I have received, and Thy Blood which I have drunk, cleave unto my inmost parts.",
+  language: "English",
+  source: {
+    label: "Catholic Semantic Canon",
+    href: "#",
+    authorityLevel: "devotional",
+  },
+} as const;
+
+export const biblePassageCardExample = {
+  reference: "John 6:51",
+  text: "I am the living bread which came down from heaven.",
+  translation: "Douay-Rheims",
+  book: "John",
+  chapter: 6,
+  verses: "51",
+  source: {
+    label: "Bible API",
+    href: "#",
+    authorityLevel: "scripture",
+  },
+} as const;
