@@ -89,3 +89,7 @@ export { FeaturedStory } from "./featured-story";
 export { PressReleaseCard } from "./press-release-card";
 export { PressOfficeNotice } from "./press-office-notice";
 export type { CalendarItemData, FeaturedStoryData, NewsItemData, PressOfficeNoticeData, PressReleaseData } from "./types";
+export { PhotoGalleryCard } from "./photo-gallery-card";
+export { VideoCard } from "./video-card";
+export { MediaCard } from "./media-card";
+export type { MediaCardData, MediaSourceData, PhotoGalleryCardData, VideoCardData } from "./types";

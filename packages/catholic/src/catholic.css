@@ -865,3 +865,50 @@
 .forma-featured-story__action {
   font-weight: var(--forma-font-weight-bold);
 }
+
+.forma-media-card,
+.forma-video-card,
+.forma-photo-gallery-card {
+  overflow: hidden;
+}
+
+.forma-media-card__body,
+.forma-video-card__body,
+.forma-photo-gallery-card__body {
+  padding: var(--forma-space-4);
+}
+
+.forma-media-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forma-photo-gallery-card__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--forma-color-surface-dark);
+}
+
+.forma-photo-gallery-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forma-photo-gallery-card__more {
+  position: absolute;
+  right: var(--forma-space-3);
+  bottom: var(--forma-space-3);
+  display: inline-grid;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  padding: 0 var(--forma-space-2);
+  border-radius: var(--forma-radius-pill);
+  background: rgba(0, 0, 0, 0.64);
+  font-weight: var(--forma-font-weight-bold);
+}

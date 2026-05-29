@@ -44,6 +44,9 @@ import {
 
 import {
   AnnouncementBanner,
+  PhotoGalleryCard,
+  VideoCard,
+  MediaCard,
   PressOfficeNotice,
   PressReleaseCard,
   FeaturedStory,
@@ -137,6 +140,9 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  videoCardExample,
+  photoGalleryCardExample,
+  mediaCardExample,
   pressReleaseCardExample,
   pressOfficeNoticeExample,
   newsListExample,
@@ -211,6 +217,9 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  videoCardExampleCode,
+  photoGalleryCardExampleCode,
+  mediaCardExampleCode,
   pressReleaseCardExampleCode,
   pressOfficeNoticeExampleCode,
   newsListExampleCode,
@@ -410,6 +419,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#directory-infrastructure">Phase 6 directories</a>
             <a className="docs-nav-small" href="#specific-directories">Phase 6 specific directories</a>
             <a className="docs-nav-small" href="#news-calendar">Phase 7 news/calendar</a>
+            <a className="docs-nav-small" href="#media-components">Phase 7 media</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1538,6 +1548,46 @@ export default function Home() {
                 code={pressOfficeNoticeExampleCode}
               >
                 <PressOfficeNotice {...pressOfficeNoticeExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="media-components" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 7</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Media components
+                </Heading>
+                <Text tone="muted">
+                  Components for photo galleries, videos, media archives, Vatican News links, CMS records, and database-provided media URLs.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="MediaCard"
+                description="A general media card for image-backed media records."
+                code={mediaCardExampleCode}
+              >
+                <MediaCard {...mediaCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="VideoCard"
+                description="A video card for YouTube, Vatican News, CMS, or database-provided iframe URLs."
+                code={videoCardExampleCode}
+              >
+                <VideoCard {...videoCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PhotoGalleryCard"
+                description="A gallery card for event albums, diocesan newsrooms, parish media, and archives."
+                code={photoGalleryCardExampleCode}
+              >
+                <PhotoGalleryCard {...photoGalleryCardExample} />
               </ComponentBlock>
             </Stack>
           </Container>

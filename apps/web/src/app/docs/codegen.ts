@@ -20,6 +20,9 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  videoCardExample,
+  photoGalleryCardExample,
+  mediaCardExample,
   pressReleaseCardExample,
   pressOfficeNoticeExample,
   newsListExample,
@@ -871,4 +874,35 @@ export const pressOfficeNoticeExampleCode =
   office="${pressOfficeNoticeExample.office}"
   severity="${pressOfficeNoticeExample.severity}"
   href="${pressOfficeNoticeExample.href}"
+/>`;
+
+export const mediaCardExampleCode =
+`<MediaCard
+  title="${mediaCardExample.title}"
+  description="${mediaCardExample.description}"
+  date="${mediaCardExample.date}"
+  category="${mediaCardExample.category}"
+  href="${mediaCardExample.href}"
+  media={${objectCode(mediaCardExample.media)}}
+/>`;
+
+export const videoCardExampleCode =
+`<VideoCard
+  title="${videoCardExample.title}"
+  description="${videoCardExample.description}"
+  date="${videoCardExample.date}"
+  category="${videoCardExample.category}"
+  href="${videoCardExample.href}"
+  duration="${videoCardExample.duration}"
+  media={${objectCode(videoCardExample.media)}}
+/>`;
+
+export const photoGalleryCardExampleCode =
+`<PhotoGalleryCard
+  title="${photoGalleryCardExample.title}"
+  description="${photoGalleryCardExample.description}"
+  date="${photoGalleryCardExample.date}"
+  category="${photoGalleryCardExample.category}"
+  href="${photoGalleryCardExample.href}"
+  photos={${arrayCode(photoGalleryCardExample.photos)}}
 />`;

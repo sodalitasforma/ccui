@@ -412,3 +412,33 @@ export type PressOfficeNoticeData = {
 export type FeaturedStoryData = NewsItemData & {
   eyebrow?: string;
 };
+
+export type MediaSourceData = {
+  src: string;
+  title?: string;
+  alt?: string;
+  caption?: string;
+  provider?: string;
+};
+
+export type MediaCardData = {
+  title: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  href?: string;
+  media: MediaSourceData;
+};
+
+export type VideoCardData = MediaCardData & {
+  duration?: string;
+};
+
+export type PhotoGalleryCardData = {
+  title: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  href?: string;
+  photos: readonly MediaSourceData[];
+};

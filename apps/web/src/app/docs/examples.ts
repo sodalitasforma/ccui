@@ -1061,3 +1061,62 @@ export const pressOfficeNoticeExample = {
   severity: "official",
   href: "#",
 } as const;
+
+export const mediaCardExample = {
+  title: "Bishop blesses restored chapel",
+  description: "A general media card for diocesan, parish, school, and Vatican-style media indexes.",
+  date: "June 2026",
+  category: "Photo",
+  href: "#",
+  media: {
+    src: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=1200&q=80",
+    alt: "Church interior",
+    caption: "Example external image URL for CMS or media database content.",
+    provider: "CMS",
+  },
+} as const;
+
+export const videoCardExample = {
+  title: "Papal audience video",
+  description: "A video card that can render YouTube, Vatican News, CMS, or database-provided embed URLs.",
+  date: "June 2026",
+  category: "Video",
+  href: "#",
+  duration: "12 min",
+  media: {
+    src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    title: "Example embedded video",
+    caption: "Example iframe embed URL.",
+    provider: "YouTube",
+  },
+} as const;
+
+export const photoGalleryCardExample = {
+  title: "Corpus Christi procession gallery",
+  description: "A gallery card for parish events, diocesan newsrooms, school albums, and media archives.",
+  date: "June 2026",
+  category: "Gallery",
+  href: "#",
+  photos: [
+    {
+      src: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=600&q=80",
+      alt: "Church interior",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?auto=format&fit=crop&w=600&q=80",
+      alt: "Architectural detail",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=600&q=80",
+      alt: "Sacred architecture",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80",
+      alt: "Outdoor gathering",
+    },
+    {
+      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+      alt: "Landscape",
+    },
+  ],
+} as const;
