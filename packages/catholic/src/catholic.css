@@ -205,3 +205,164 @@
     grid-template-columns: 1fr;
   }
 }
+
+.forma-directory {
+  display: flex;
+  flex-direction: column;
+  gap: var(--forma-space-6);
+}
+
+.forma-directory__title {
+  margin: 0;
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-display);
+  font-size: var(--forma-font-size-3xl);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-directory-card {
+  height: 100%;
+}
+
+.forma-directory-card--linked {
+  transition:
+    border-color var(--forma-motion-duration-fast) var(--forma-motion-easing-standard),
+    box-shadow var(--forma-motion-duration-fast) var(--forma-motion-easing-standard);
+}
+
+.forma-directory-card--linked:hover {
+  border-color: var(--forma-color-border-strong);
+  box-shadow: var(--forma-shadow-brown-sm);
+}
+
+.forma-directory-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.forma-directory-card__eyebrow {
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-directory-card__title,
+.forma-contact-block__title,
+.forma-office-hours__title,
+.forma-location-block__title,
+.forma-staff-profile__name,
+.forma-clergy-profile__name {
+  margin: 0;
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-lg);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-contact-block__list,
+.forma-office-hours__list {
+  display: grid;
+  gap: var(--forma-space-3);
+  margin: 0;
+}
+
+.forma-contact-block__list > div,
+.forma-office-hours__list > div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: var(--forma-space-3);
+}
+
+.forma-contact-block__list dt,
+.forma-office-hours__list dt {
+  color: var(--forma-color-text-muted);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-contact-block__list dd,
+.forma-office-hours__list dd {
+  display: flex;
+  flex-direction: column;
+  gap: var(--forma-space-1);
+  margin: 0;
+  color: var(--forma-color-text-secondary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  line-height: var(--forma-line-height-base);
+}
+
+.forma-contact-block__list a,
+.forma-staff-profile__link,
+.forma-clergy-profile__link {
+  color: var(--forma-color-link-primary);
+  text-decoration: none;
+}
+
+.forma-contact-block__list a:hover,
+.forma-staff-profile__link:hover,
+.forma-clergy-profile__link:hover {
+  text-decoration: underline;
+}
+
+.forma-contact-block__address-line,
+.forma-location-block__address span {
+  display: block;
+}
+
+.forma-location-block__address {
+  margin: 0;
+  color: var(--forma-color-text-secondary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-style: normal;
+  line-height: var(--forma-line-height-base);
+}
+
+.forma-location-block__map-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--forma-color-border-strong);
+  border-radius: var(--forma-radius-sm);
+  background: var(--forma-color-surface-raised);
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: 1;
+  min-height: 2rem;
+  padding-inline: var(--forma-space-3);
+  text-decoration: none;
+}
+
+.forma-location-block__map-link:hover {
+  background: var(--forma-color-surface-subtle);
+  border-color: var(--forma-color-border-dark);
+}
+
+.forma-staff-profile__image,
+.forma-clergy-profile__image {
+  max-height: 22rem;
+}
+
+.forma-staff-profile__link,
+.forma-clergy-profile__link {
+  width: fit-content;
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+}
+
+@media (max-width: 48rem) {
+  .forma-contact-block__list > div,
+  .forma-office-hours__list > div {
+    grid-template-columns: 1fr;
+    gap: var(--forma-space-1);
+  }
+}
