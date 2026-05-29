@@ -45,7 +45,14 @@ importers:
         specifier: ^5
         version: 5.9.3
 
-  packages/catholic: {}
+  packages/catholic:
+    devDependencies:
+      '@types/react':
+        specifier: ^19.2.15
+        version: 19.2.15
+      react:
+        specifier: 19.2.4
+        version: 19.2.4
 
   packages/icons: {}
 

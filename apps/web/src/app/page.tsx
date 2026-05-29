@@ -42,6 +42,26 @@ import {
   Text,
 } from "../../../../packages/primitives/src";
 
+import {
+  AnnouncementBanner,
+  Breadcrumb,
+  ClergyProfile,
+  ContactBlock,
+  Directory,
+  DirectoryCard,
+  DocumentCard,
+  DocumentList,
+  EventCard,
+  EventList,
+  InstitutionalFooter,
+  InstitutionalHeader,
+  LocationBlock,
+  OfficeHours,
+  PageHeader,
+  ResourceLink,
+  StaffProfile,
+} from "../../../../packages/catholic/src";
+
 import colors from "../../../../packages/tokens/src/colors.json";
 import liturgicalColors from "../../../../packages/tokens/src/liturgical-colors.json";
 
@@ -573,6 +593,182 @@ export default function Home() {
             </Stack>
           </Container>
         </Section>
+
+        <Section id="institutional" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 3</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Institutional components
+                </Heading>
+                <Text tone="muted">
+                  Components for parishes, dioceses, chancery offices, Catholic schools, ministries, foundations, and public-facing Church institutions.
+                </Text>
+              </Stack>
+
+              <Card padding="none" border="subtle">
+                <InstitutionalHeader
+                  title="Saint Anselm Parish"
+                  subtitle="A Catholic parish of the Diocese"
+                  primaryItems={[
+                    { label: "Mass Times", href: "#", current: true },
+                    { label: "Sacraments", href: "#" },
+                    { label: "Ministries", href: "#" },
+                    { label: "School", href: "#" },
+                    { label: "Give", href: "#" },
+                  ]}
+                  utilityItems={[
+                    { label: "Bulletin", href: "#" },
+                    { label: "Contact", href: "#" },
+                  ]}
+                  languages={[
+                    { label: "EN", href: "#", current: true },
+                    { label: "ES", href: "#" },
+                  ]}
+                  searchAction="#"
+                />
+              </Card>
+
+              <PageHeader
+                eyebrow="Parish office"
+                title="Institutional page header"
+                description="A formal header for parish, diocesan, school, ministry, and foundation pages."
+                breadcrumbs={[
+                  { label: "Home", href: "#" },
+                  { label: "Parish", href: "#" },
+                  { label: "Office", href: "#" },
+                ]}
+                actions={
+                  <Cluster>
+                    <Button size="sm">Primary action</Button>
+                    <Button size="sm" variant="secondary">Secondary action</Button>
+                  </Cluster>
+                }
+              />
+
+              <AnnouncementBanner
+                badge="Official"
+                title="Parish office closed Friday"
+                description="The office will reopen Monday morning. Sacramental emergencies should use the emergency line."
+                href="#"
+              />
+
+              <Grid columns="2" gap="lg">
+                <Directory title="Institutional directory" description="Directory and directory cards.">
+                  <DirectoryCard
+                    eyebrow="Office"
+                    title="Chancery Office"
+                    description="Administrative office for diocesan governance and records."
+                    meta="Open Monday through Friday"
+                    status="Open"
+                    href="#"
+                  />
+                  <DirectoryCard
+                    eyebrow="Ministry"
+                    title="Marriage Tribunal"
+                    description="Canonical process support and case information."
+                    meta="By appointment"
+                    href="#"
+                  />
+                </Directory>
+
+                <Stack gap="md">
+                  <ContactBlock
+                    title="Contact"
+                    phone="(555) 123-4567"
+                    email="office@example.org"
+                    website="https://example.org"
+                    addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
+                  />
+                  <OfficeHours
+                    items={[
+                      { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
+                      { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" },
+                    ]}
+                  />
+                  <LocationBlock
+                    addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
+                    mapHref="#"
+                    note="Parking available behind the parish hall."
+                  />
+                </Stack>
+              </Grid>
+
+              <Grid columns="2" gap="lg">
+                <StaffProfile
+                  name="Maria Sanchez"
+                  position="Parish Secretary"
+                  department="Office"
+                  email="maria@example.org"
+                  phone="(555) 123-4567"
+                />
+
+                <ClergyProfile
+                  name="Rev. Thomas More"
+                  title="Pastor"
+                  assignment="Saint Anselm Parish"
+                  orderOrPostnominals="Pastor"
+                  email="pastor@example.org"
+                />
+              </Grid>
+
+              <Grid columns="2" gap="lg">
+                <DocumentList title="Documents" description="Document cards and resource links.">
+                  <DocumentCard
+                    title="Parish Registration Form"
+                    documentType="Form"
+                    authority="Parish"
+                    date="May 2026"
+                    fileType="PDF"
+                    href="#"
+                    description="Registration form for new parishioners."
+                  />
+                  <ResourceLink
+                    title="Safe Environment Policy"
+                    description="Policy and training information."
+                    meta="External resource"
+                    href="#"
+                    variant="document"
+                  />
+                </DocumentList>
+
+                <EventList title="Events" description="Event cards for public calendars.">
+                  <EventCard
+                    title="Corpus Christi Procession"
+                    date="Jun 7"
+                    time="11:30 AM"
+                    location="Church grounds"
+                    category="Liturgical"
+                    description="Procession immediately following the principal Mass."
+                    href="#"
+                  />
+                  <EventCard
+                    title="Parish Council Meeting"
+                    date="Jun 12"
+                    time="6:00 PM"
+                    location="Parish hall"
+                    category="Meeting"
+                    href="#"
+                  />
+                </EventList>
+              </Grid>
+
+              <Card padding="none" border="subtle">
+                <InstitutionalFooter
+                  title="Saint Anselm Parish"
+                  description="A public-facing Catholic institution built with Forma."
+                  links={[
+                    { label: "Contact", href: "#" },
+                    { label: "Privacy", href: "#" },
+                    { label: "Giving", href: "#" },
+                  ]}
+                />
+              </Card>
+            </Stack>
+          </Container>
+        </Section>
+
       </div>
     </main>
   );
