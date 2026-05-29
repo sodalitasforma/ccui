@@ -54,7 +54,7 @@
 
   --forma-color-link-primary: var(--forma-color-brown-700);
   --forma-color-link-hover: var(--forma-color-black);
-  --forma-color-link-active: var(--forma-color-orange-600);
+  --forma-color-link-active: var(--forma-color-brown-700);
 
   --forma-color-surface-page: var(--forma-color-paper-50);
   --forma-color-surface-subtle: var(--forma-color-paper-100);
@@ -69,8 +69,10 @@
 
   --forma-color-accent-brown: var(--forma-color-brown-700);
   --forma-color-accent-gold: var(--forma-color-gold-400);
+  --forma-color-accent-gold-text: var(--forma-color-gold-700);
   --forma-color-accent-gold-muted: var(--forma-color-gold-300);
   --forma-color-accent-active: var(--forma-color-orange-600);
+  --forma-color-accent-active-text: var(--forma-color-brown-700);
   --forma-color-accent-blue: var(--forma-color-blue-700);
 
   --forma-color-danger: var(--forma-color-red-700);
