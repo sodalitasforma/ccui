@@ -22,32 +22,32 @@
 
 These are the minimum building blocks needed before Catholic-specific components become useful.
 
-- Container
-- Section
-- Stack
-- Cluster
-- Grid
-- Card
-- Panel
-- Divider
-- Text
-- Heading
-- Eyebrow
-- Button
-- Link
-- Badge
-- Tag
-- Tabs
-- Accordion
-- SearchInput
-- Select
-- FilterBar
-- Table
-- Timeline
-- EmptyState
-- Notice
-- IconFrame
-- MediaFrame
+- ✅ Container
+- ✅ Section
+- ✅ Stack
+- ✅ Cluster
+- ✅ Grid
+- ✅ Card
+- ✅ Panel
+- ✅ Divider
+- ✅ Text
+- ✅ Heading
+- ✅ Eyebrow
+- ✅ Button
+- ✅ Link
+- ✅ Badge
+- ✅ Tag
+- ✅ Tabs
+- ✅ Accordion
+- ✅ SearchInput
+- ✅ Select
+- ✅ FilterBar
+- ✅ Table
+- ✅ Timeline
+- ✅ EmptyState
+- ✅ Notice
+- ✅ IconFrame
+- ✅ MediaFrame
 
 ## Phase 3 — Institutional components
 
