@@ -16,7 +16,7 @@
 - ✅ Parchment, paper, brown, ink, and gold tokens
 - ✅ Liturgical color tokens
 - ✅ Radius, border, and shadow tokens
-- Accessibility contrast review
+- ✅ Accessibility contrast review
 
 ## Phase 2 — Core primitives
 
