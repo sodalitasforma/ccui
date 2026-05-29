@@ -940,3 +940,33 @@
   color: var(--forma-color-text-primary);
   font-size: var(--forma-font-size-sm);
 }
+
+.forma-ontology-class-card,
+.forma-term-definition-card,
+.forma-translation-variant-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-ontology-class-card__class,
+.forma-ontology-property-table__code {
+  padding: var(--forma-space-1) var(--forma-space-2);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-sm);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-mono);
+  font-size: var(--forma-font-size-sm);
+}
+
+.forma-term-definition-card__definition,
+.forma-translation-variant-card__variant {
+  font-family: var(--forma-font-document);
+  line-height: var(--forma-line-height-relaxed);
+}
+
+.forma-translation-variant-card__variant {
+  font-size: var(--forma-font-size-lg);
+  font-weight: var(--forma-font-weight-semibold);
+}

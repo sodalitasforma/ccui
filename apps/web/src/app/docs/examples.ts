@@ -1189,3 +1189,74 @@ export const apiEndpointCardExample = {
   version: "0.1",
   exampleHref: "#",
 } as const;
+
+export const namespaceBadgeExample = {
+  namespace: "csc",
+  label: "Catholic Semantic Canon",
+} as const;
+
+export const reviewStatusBadgeExample = {
+  status: "in-review",
+  label: "In review",
+} as const;
+
+export const ontologyPropertyTableExample = {
+  properties: [
+    {
+      property: "feastDate",
+      expectedType: "Date",
+      required: true,
+      description: "Calendar date on which the feast is observed.",
+    },
+    {
+      property: "liturgicalRank",
+      expectedType: "LiturgicalRank",
+      required: true,
+      description: "Rank such as solemnity, feast, memorial, or optional memorial.",
+    },
+    {
+      property: "associatedSaint",
+      expectedType: "Saint",
+      required: false,
+      description: "Associated saint entity when the day commemorates a saint.",
+    },
+  ],
+} as const;
+
+export const ontologyClassCardExample = {
+  className: "LiturgicalDay",
+  namespace: "csc",
+  label: "Liturgical Day",
+  description: "A machine-readable class for a day in the Catholic liturgical calendar.",
+  reviewStatus: "in-review",
+  properties: ontologyPropertyTableExample.properties,
+  source: {
+    label: "Catholic Semantic Canon",
+    href: "#",
+    authorityLevel: "semantic",
+  },
+} as const;
+
+export const termDefinitionCardExample = {
+  term: "Solemnity",
+  definition: "A liturgical day of the highest rank, observed with particular importance in the Roman Rite calendar.",
+  namespace: "csc",
+  reviewStatus: "reviewed",
+  source: {
+    label: "Catholic Semantic Canon",
+    href: "#",
+    authorityLevel: "semantic",
+  },
+} as const;
+
+export const translationVariantCardExample = {
+  term: "Solemnity",
+  language: "Latin",
+  variant: "Sollemnitas",
+  note: "Latin variant useful for multilingual liturgical and canonical references.",
+  source: {
+    label: "Translation table",
+    href: "#",
+    authorityLevel: "translation",
+  },
+} as const;

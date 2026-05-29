@@ -20,6 +20,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  translationVariantCardExample,
+  termDefinitionCardExample,
+  reviewStatusBadgeExample,
+  ontologyPropertyTableExample,
+  ontologyClassCardExample,
+  namespaceBadgeExample,
   repositoryLinkExample,
   projectStatusBadgeExample,
   projectCardExample,
@@ -969,4 +975,50 @@ export const apiEndpointCardExampleCode =
   authentication="${apiEndpointCardExample.authentication}"
   version="${apiEndpointCardExample.version}"
   exampleHref="${apiEndpointCardExample.exampleHref}"
+/>`;
+
+export const namespaceBadgeExampleCode =
+`<NamespaceBadge
+  namespace="${namespaceBadgeExample.namespace}"
+  label="${namespaceBadgeExample.label}"
+/>`;
+
+export const reviewStatusBadgeExampleCode =
+`<ReviewStatusBadge
+  status="${reviewStatusBadgeExample.status}"
+  label="${reviewStatusBadgeExample.label}"
+/>`;
+
+export const ontologyPropertyTableExampleCode =
+`<OntologyPropertyTable
+  properties={${arrayCode(ontologyPropertyTableExample.properties)}}
+/>`;
+
+export const ontologyClassCardExampleCode =
+`<OntologyClassCard
+  className="${ontologyClassCardExample.className}"
+  namespace="${ontologyClassCardExample.namespace}"
+  label="${ontologyClassCardExample.label}"
+  description="${ontologyClassCardExample.description}"
+  reviewStatus="${ontologyClassCardExample.reviewStatus}"
+  properties={${arrayCode(ontologyClassCardExample.properties)}}
+  source={{ label: "${ontologyClassCardExample.source.label}", href: "${ontologyClassCardExample.source.href}", authorityLevel: "${ontologyClassCardExample.source.authorityLevel}" }}
+/>`;
+
+export const termDefinitionCardExampleCode =
+`<TermDefinitionCard
+  term="${termDefinitionCardExample.term}"
+  definition="${termDefinitionCardExample.definition}"
+  namespace="${termDefinitionCardExample.namespace}"
+  reviewStatus="${termDefinitionCardExample.reviewStatus}"
+  source={{ label: "${termDefinitionCardExample.source.label}", href: "${termDefinitionCardExample.source.href}", authorityLevel: "${termDefinitionCardExample.source.authorityLevel}" }}
+/>`;
+
+export const translationVariantCardExampleCode =
+`<TranslationVariantCard
+  term="${translationVariantCardExample.term}"
+  language="${translationVariantCardExample.language}"
+  variant="${translationVariantCardExample.variant}"
+  note="${translationVariantCardExample.note}"
+  source={{ label: "${translationVariantCardExample.source.label}", href: "${translationVariantCardExample.source.href}", authorityLevel: "${translationVariantCardExample.source.authorityLevel}" }}
 />`;

@@ -509,3 +509,53 @@ export type ApiEndpointCardData = {
   version?: string;
   exampleHref?: string;
 };
+
+export type ReviewStatus =
+  | "draft"
+  | "in-review"
+  | "reviewed"
+  | "accepted"
+  | "deprecated";
+
+export type OntologyPropertyData = {
+  property: string;
+  expectedType?: string;
+  required?: boolean;
+  description?: string;
+};
+
+export type OntologyClassData = {
+  className: string;
+  namespace?: string;
+  label?: string;
+  description?: string;
+  reviewStatus?: ReviewStatus | string;
+  properties?: readonly OntologyPropertyData[];
+  source?: CatholicSource;
+};
+
+export type NamespaceBadgeData = {
+  namespace: string;
+  label?: string;
+};
+
+export type ReviewStatusBadgeData = {
+  status: ReviewStatus | string;
+  label?: string;
+};
+
+export type TermDefinitionData = {
+  term: string;
+  definition: string;
+  namespace?: string;
+  source?: CatholicSource;
+  reviewStatus?: ReviewStatus | string;
+};
+
+export type TranslationVariantData = {
+  term: string;
+  language: string;
+  variant: string;
+  note?: string;
+  source?: CatholicSource;
+};

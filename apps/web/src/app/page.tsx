@@ -44,6 +44,12 @@ import {
 
 import {
   AnnouncementBanner,
+  TranslationVariantCard,
+  TermDefinitionCard,
+  ReviewStatusBadge,
+  NamespaceBadge,
+  OntologyPropertyTable,
+  OntologyClassCard,
   ApiEndpointCard,
   DatasetCard,
   ContributorList,
@@ -146,6 +152,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  translationVariantCardExample,
+  termDefinitionCardExample,
+  reviewStatusBadgeExample,
+  ontologyPropertyTableExample,
+  ontologyClassCardExample,
+  namespaceBadgeExample,
   repositoryLinkExample,
   projectStatusBadgeExample,
   projectCardExample,
@@ -229,6 +241,12 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  translationVariantCardExampleCode,
+  termDefinitionCardExampleCode,
+  reviewStatusBadgeExampleCode,
+  ontologyPropertyTableExampleCode,
+  ontologyClassCardExampleCode,
+  namespaceBadgeExampleCode,
   repositoryLinkExampleCode,
   projectStatusBadgeExampleCode,
   projectCardExampleCode,
@@ -439,6 +457,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#news-calendar">Phase 7 news/calendar</a>
             <a className="docs-nav-small" href="#media-components">Phase 7 media</a>
             <a className="docs-nav-small" href="#catholic-infrastructure-projects">Phase 8 infrastructure</a>
+            <a className="docs-nav-small" href="#ontology-schema-components">Phase 8 ontology/schema</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1671,6 +1690,70 @@ export default function Home() {
                 code={apiEndpointCardExampleCode}
               >
                 <ApiEndpointCard {...apiEndpointCardExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="ontology-schema-components" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 8</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Ontology and schema components
+                </Heading>
+                <Text tone="muted">
+                  Components for making Catholic semantic infrastructure legible: namespaces, ontology classes, properties, definitions, translations, and review status.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="OntologyClassCard"
+                description="A class card for Catholic Semantic Canon or OntoKit-style ontology records."
+                code={ontologyClassCardExampleCode}
+              >
+                <OntologyClassCard {...ontologyClassCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="OntologyPropertyTable"
+                description="A property table for ontology classes, schemas, and structured Catholic datasets."
+                code={ontologyPropertyTableExampleCode}
+              >
+                <OntologyPropertyTable properties={ontologyPropertyTableExample.properties} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="NamespaceBadge"
+                description="A namespace badge for semantic vocabularies and Catholic data domains."
+                code={namespaceBadgeExampleCode}
+              >
+                <NamespaceBadge {...namespaceBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ReviewStatusBadge"
+                description="A review badge for draft, in-review, reviewed, accepted, and deprecated semantic records."
+                code={reviewStatusBadgeExampleCode}
+              >
+                <ReviewStatusBadge {...reviewStatusBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="TermDefinitionCard"
+                description="A term definition card for semantic canon entries, glossaries, and ontology-backed terms."
+                code={termDefinitionCardExampleCode}
+              >
+                <TermDefinitionCard {...termDefinitionCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="TranslationVariantCard"
+                description="A translation variant card for multilingual Catholic terminology."
+                code={translationVariantCardExampleCode}
+              >
+                <TranslationVariantCard {...translationVariantCardExample} />
               </ComponentBlock>
             </Stack>
           </Container>
