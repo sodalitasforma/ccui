@@ -442,3 +442,70 @@ export type PhotoGalleryCardData = {
   href?: string;
   photos: readonly MediaSourceData[];
 };
+
+export type ProjectStatus =
+  | "proposed"
+  | "incubating"
+  | "active"
+  | "maintained"
+  | "reviewed"
+  | "accepted"
+  | "deprecated";
+
+export type ProjectType =
+  | "api"
+  | "dataset"
+  | "ontology"
+  | "standard"
+  | "repository"
+  | "canonical-source"
+  | "tool";
+
+export type ProjectContributorData = {
+  name: string;
+  role?: string;
+  affiliation?: string;
+  href?: string;
+};
+
+export type RepositoryLinkData = {
+  href: string;
+  provider?: string;
+  language?: string;
+  license?: string;
+  openIssues?: number;
+};
+
+export type ProjectCardData = {
+  title: string;
+  description?: string;
+  projectType: ProjectType | string;
+  status: ProjectStatus | string;
+  href?: string;
+  repository?: RepositoryLinkData;
+  standardHref?: string;
+  contributors?: readonly ProjectContributorData[];
+  tags?: readonly string[];
+};
+
+export type DatasetCardData = {
+  title: string;
+  description?: string;
+  coverage?: string;
+  format?: string;
+  license?: string;
+  version?: string;
+  source?: CatholicSource;
+  machineReadable?: boolean;
+  href?: string;
+};
+
+export type ApiEndpointCardData = {
+  method: "GET" | "POST" | "PUT" | "PATCH" | "DELETE" | string;
+  path: string;
+  description?: string;
+  responseFormat?: string;
+  authentication?: string;
+  version?: string;
+  exampleHref?: string;
+};

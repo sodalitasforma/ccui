@@ -912,3 +912,31 @@
   background: rgba(0, 0, 0, 0.64);
   font-weight: var(--forma-font-weight-bold);
 }
+
+.forma-project-card,
+.forma-dataset-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-repository-link {
+  display: block;
+}
+
+.forma-repository-link__provider,
+.forma-contributor-list__title,
+.forma-contributor-list__name,
+.forma-api-endpoint-card__path {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-api-endpoint-card__path {
+  padding: var(--forma-space-1) var(--forma-space-2);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-sm);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-text-primary);
+  font-size: var(--forma-font-size-sm);
+}

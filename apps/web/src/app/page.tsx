@@ -44,6 +44,12 @@ import {
 
 import {
   AnnouncementBanner,
+  ApiEndpointCard,
+  DatasetCard,
+  ContributorList,
+  RepositoryLink,
+  ProjectStatusBadge,
+  ProjectCard,
   PhotoGalleryCard,
   VideoCard,
   MediaCard,
@@ -140,6 +146,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  repositoryLinkExample,
+  projectStatusBadgeExample,
+  projectCardExample,
+  datasetCardExample,
+  contributorListExample,
+  apiEndpointCardExample,
   videoCardExample,
   photoGalleryCardExample,
   mediaCardExample,
@@ -217,6 +229,12 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  repositoryLinkExampleCode,
+  projectStatusBadgeExampleCode,
+  projectCardExampleCode,
+  datasetCardExampleCode,
+  contributorListExampleCode,
+  apiEndpointCardExampleCode,
   videoCardExampleCode,
   photoGalleryCardExampleCode,
   mediaCardExampleCode,
@@ -420,6 +438,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#specific-directories">Phase 6 specific directories</a>
             <a className="docs-nav-small" href="#news-calendar">Phase 7 news/calendar</a>
             <a className="docs-nav-small" href="#media-components">Phase 7 media</a>
+            <a className="docs-nav-small" href="#catholic-infrastructure-projects">Phase 8 infrastructure</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1588,6 +1607,70 @@ export default function Home() {
                 code={photoGalleryCardExampleCode}
               >
                 <PhotoGalleryCard {...photoGalleryCardExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="catholic-infrastructure-projects" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 8</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Catholic infrastructure project components
+                </Heading>
+                <Text tone="muted">
+                  These components are an interface layer for Catholic open-source infrastructure: projects, APIs, datasets, repositories, standards, and machine-readable resources. They complement CDCF-style work without redesigning an existing project website.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="ProjectCard"
+                description="A public face for a Catholic infrastructure project, API, dataset, ontology, standard, tool, or repository."
+                code={projectCardExampleCode}
+              >
+                <ProjectCard {...projectCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ProjectStatusBadge"
+                description="A lifecycle badge for proposed, incubating, active, maintained, reviewed, accepted, or deprecated projects."
+                code={projectStatusBadgeExampleCode}
+              >
+                <ProjectStatusBadge {...projectStatusBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="RepositoryLink"
+                description="A repository link with provider, language, license, and issue metadata."
+                code={repositoryLinkExampleCode}
+              >
+                <RepositoryLink {...repositoryLinkExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ContributorList"
+                description="A contributor list for maintainers, reviewers, implementers, and institutional collaborators."
+                code={contributorListExampleCode}
+              >
+                <ContributorList {...contributorListExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DatasetCard"
+                description="A dataset face component with coverage, format, license, version, source, and machine-readable status."
+                code={datasetCardExampleCode}
+              >
+                <DatasetCard {...datasetCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ApiEndpointCard"
+                description="An API endpoint component for public Catholic APIs and machine-readable services."
+                code={apiEndpointCardExampleCode}
+              >
+                <ApiEndpointCard {...apiEndpointCardExample} />
               </ComponentBlock>
             </Stack>
           </Container>

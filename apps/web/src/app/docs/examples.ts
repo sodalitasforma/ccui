@@ -1120,3 +1120,72 @@ export const photoGalleryCardExample = {
     },
   ],
 } as const;
+
+export const projectStatusBadgeExample = {
+  status: "incubating",
+  label: "Incubating",
+} as const;
+
+export const repositoryLinkExample = {
+  href: "#",
+  provider: "GitHub",
+  language: "TypeScript",
+  license: "MIT",
+  openIssues: 12,
+} as const;
+
+export const contributorListExample = {
+  title: "Contributors",
+  contributors: [
+    {
+      name: "CDCF maintainer",
+      role: "Maintainer",
+      affiliation: "Catholic Digital Commons-style project",
+      href: "#",
+    },
+    {
+      name: "Parish technologist",
+      role: "Contributor",
+      affiliation: "Diocesan implementation partner",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const projectCardExample = {
+  title: "Liturgical Calendar API",
+  description: "A machine-readable liturgical calendar project that can power parish schedules, feast day cards, and Catholic applications.",
+  projectType: "api",
+  status: "incubating",
+  href: "#",
+  repository: repositoryLinkExample,
+  standardHref: "#",
+  contributors: contributorListExample.contributors,
+  tags: ["Liturgical Calendar API", "Machine-readable", "Parish-ready"],
+} as const;
+
+export const datasetCardExample = {
+  title: "Catholic Parish Dataset",
+  description: "A structured dataset for parish entities, locations, contact records, and public institutional metadata.",
+  coverage: "United States",
+  format: "JSON",
+  license: "Open data",
+  version: "0.1",
+  source: {
+    label: "Catholic datasets",
+    href: "#",
+    authorityLevel: "dataset",
+  },
+  machineReadable: true,
+  href: "#",
+} as const;
+
+export const apiEndpointCardExample = {
+  method: "GET",
+  path: "/api/liturgical-calendar/{date}",
+  description: "Returns the liturgical day, season, color, rank, and readings for a given date.",
+  responseFormat: "JSON",
+  authentication: "Public",
+  version: "0.1",
+  exampleHref: "#",
+} as const;

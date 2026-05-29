@@ -20,6 +20,12 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  repositoryLinkExample,
+  projectStatusBadgeExample,
+  projectCardExample,
+  datasetCardExample,
+  contributorListExample,
+  apiEndpointCardExample,
   videoCardExample,
   photoGalleryCardExample,
   mediaCardExample,
@@ -905,4 +911,62 @@ export const photoGalleryCardExampleCode =
   category="${photoGalleryCardExample.category}"
   href="${photoGalleryCardExample.href}"
   photos={${arrayCode(photoGalleryCardExample.photos)}}
+/>`;
+
+export const projectStatusBadgeExampleCode =
+`<ProjectStatusBadge
+  status="${projectStatusBadgeExample.status}"
+  label="${projectStatusBadgeExample.label}"
+/>`;
+
+export const repositoryLinkExampleCode =
+`<RepositoryLink
+  href="${repositoryLinkExample.href}"
+  provider="${repositoryLinkExample.provider}"
+  language="${repositoryLinkExample.language}"
+  license="${repositoryLinkExample.license}"
+  openIssues={${repositoryLinkExample.openIssues}}
+/>`;
+
+export const contributorListExampleCode =
+`<ContributorList
+  title="${contributorListExample.title}"
+  contributors={${arrayCode(contributorListExample.contributors)}}
+/>`;
+
+export const projectCardExampleCode =
+`<ProjectCard
+  title="${projectCardExample.title}"
+  description="${projectCardExample.description}"
+  projectType="${projectCardExample.projectType}"
+  status="${projectCardExample.status}"
+  href="${projectCardExample.href}"
+  repository={${objectCode(projectCardExample.repository)}}
+  standardHref="${projectCardExample.standardHref}"
+  contributors={${arrayCode(projectCardExample.contributors)}}
+  tags={${arrayCode(projectCardExample.tags)}}
+/>`;
+
+export const datasetCardExampleCode =
+`<DatasetCard
+  title="${datasetCardExample.title}"
+  description="${datasetCardExample.description}"
+  coverage="${datasetCardExample.coverage}"
+  format="${datasetCardExample.format}"
+  license="${datasetCardExample.license}"
+  version="${datasetCardExample.version}"
+  source={{ label: "${datasetCardExample.source.label}", href: "${datasetCardExample.source.href}", authorityLevel: "${datasetCardExample.source.authorityLevel}" }}
+  machineReadable={${datasetCardExample.machineReadable}}
+  href="${datasetCardExample.href}"
+/>`;
+
+export const apiEndpointCardExampleCode =
+`<ApiEndpointCard
+  method="${apiEndpointCardExample.method}"
+  path="${apiEndpointCardExample.path}"
+  description="${apiEndpointCardExample.description}"
+  responseFormat="${apiEndpointCardExample.responseFormat}"
+  authentication="${apiEndpointCardExample.authentication}"
+  version="${apiEndpointCardExample.version}"
+  exampleHref="${apiEndpointCardExample.exampleHref}"
 />`;
