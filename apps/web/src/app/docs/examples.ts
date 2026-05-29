@@ -216,3 +216,194 @@ export const institutionalFooterExample = {
     { label: "Giving", href: "#" },
   ],
 } as const;
+
+export const massScheduleExample = {
+  title: "Mass Schedule",
+  subtitle: "Regular parish Mass times with livestream, location, language, and exception states.",
+  badge: "Mass",
+  days: [
+    {
+      day: "Sunday",
+      times: [
+        {
+          time: "8:00 AM",
+          label: "Low Mass",
+          language: "English",
+          location: "Church",
+        },
+        {
+          time: "10:30 AM",
+          label: "Sung Mass",
+          language: "English",
+          location: "Church",
+          livestreamHref: "https://www.youtube.com/",
+          status: "livestream",
+        },
+        {
+          time: "1:00 PM",
+          label: "Misa en Español",
+          language: "Español",
+          location: "Church",
+        },
+      ],
+    },
+    {
+      day: "Monday–Friday",
+      times: [
+        {
+          time: "7:00 AM",
+          label: "Daily Mass",
+          location: "Chapel",
+        },
+        {
+          time: "12:10 PM",
+          label: "Noon Mass",
+          location: "Church",
+          status: "normal",
+        },
+      ],
+    },
+  ],
+  exceptions: [
+    {
+      date: "Friday",
+      title: "No 12:10 PM Mass",
+      description: "The noon Mass is cancelled because of a diocesan clergy day.",
+      severity: "warning",
+    },
+  ],
+  source: {
+    label: "Parish office",
+    href: "#",
+    authorityLevel: "local",
+  },
+} as const;
+
+export const confessionScheduleExample = {
+  title: "Confession",
+  subtitle: "Regular confession times and moved-location notes.",
+  days: [
+    {
+      day: "Saturday",
+      times: [
+        {
+          time: "3:30 PM",
+          label: "Confessions",
+          location: "Church",
+        },
+      ],
+    },
+    {
+      day: "Wednesday",
+      times: [
+        {
+          time: "6:00 PM",
+          label: "Confessions",
+          location: "Chapel",
+          status: "moved",
+          note: "Moved this week",
+        },
+      ],
+    },
+  ],
+  exceptions: [
+    {
+      title: "Confessions may end early before major liturgies",
+      severity: "info",
+    },
+  ],
+} as const;
+
+export const adorationScheduleExample = {
+  title: "Adoration",
+  subtitle: "Public Eucharistic adoration times.",
+  days: [
+    {
+      day: "Thursday",
+      times: [
+        {
+          time: "7:30 AM – 6:00 PM",
+          label: "Exposition and Adoration",
+          location: "Chapel",
+        },
+      ],
+    },
+    {
+      day: "First Friday",
+      times: [
+        {
+          time: "7:30 PM – Midnight",
+          label: "First Friday Adoration",
+          location: "Church",
+        },
+      ],
+    },
+  ],
+} as const;
+
+export const sacramentScheduleExample = {
+  title: "Baptism Preparation",
+  subtitle: "Sacramental preparation schedule for families.",
+  sacrament: "Baptism",
+  days: [
+    {
+      day: "Second Saturday",
+      times: [
+        {
+          time: "10:00 AM",
+          label: "Baptism preparation class",
+          location: "Parish hall",
+          note: "Registration required",
+        },
+      ],
+    },
+  ],
+} as const;
+
+export const holyDayScheduleExample = {
+  title: "Holy Day Schedule",
+  subtitle: "Special schedule for holy days of obligation.",
+  days: [
+    {
+      day: "Vigil",
+      date: "December 7",
+      times: [
+        {
+          time: "6:00 PM",
+          label: "Vigil Mass",
+          location: "Church",
+        },
+      ],
+    },
+    {
+      day: "Holy Day",
+      date: "December 8",
+      times: [
+        {
+          time: "7:00 AM",
+          label: "Mass",
+          location: "Church",
+        },
+        {
+          time: "12:10 PM",
+          label: "Mass",
+          location: "Church",
+        },
+        {
+          time: "6:30 PM",
+          label: "Solemn Mass",
+          location: "Church",
+          livestreamHref: "https://www.youtube.com/",
+          status: "livestream",
+        },
+      ],
+    },
+  ],
+  exceptions: [
+    {
+      title: "Parish office closed",
+      description: "The office is closed for the holy day.",
+      severity: "liturgical",
+    },
+  ],
+} as const;

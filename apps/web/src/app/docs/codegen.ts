@@ -20,6 +20,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  sacramentScheduleExample,
+  massScheduleExample,
+  holyDayScheduleExample,
+  confessionScheduleExample,
+  adorationScheduleExample,
 } from "./examples";
 
 function prop(name: string, value: unknown) {
@@ -273,3 +278,104 @@ export const institutionalFooterExampleCode =
   description="${institutionalFooterExample.description}"
   links={${objectArrayCode(institutionalFooterExample.links)}}
 />`;
+
+function scheduleTimeCode(item: {
+  time: string;
+  label?: string;
+  language?: string;
+  location?: string;
+  livestreamHref?: string;
+  note?: string;
+  status?: string;
+}) {
+  const props = [
+    `time="${item.time}"`,
+    item.label ? `label="${item.label}"` : null,
+    item.language ? `language="${item.language}"` : null,
+    item.location ? `location="${item.location}"` : null,
+    item.livestreamHref ? `livestreamHref="${item.livestreamHref}"` : null,
+    item.note ? `note="${item.note}"` : null,
+    item.status ? `status="${item.status}"` : null,
+  ].filter(Boolean);
+
+  return `{
+      ${props.join(",\n      ")}
+    }`;
+}
+
+function scheduleBlockCode(componentName: string, example: {
+  title: string;
+  subtitle?: string;
+  badge?: string;
+  sacrament?: string;
+  days: readonly {
+    day: string;
+    date?: string;
+    times: readonly {
+      time: string;
+      label?: string;
+      language?: string;
+      location?: string;
+      livestreamHref?: string;
+      note?: string;
+      status?: string;
+    }[];
+  }[];
+  exceptions?: readonly {
+    title: string;
+    description?: string;
+    date?: string;
+    severity?: string;
+  }[];
+  source?: {
+    label: string;
+    href?: string;
+    authorityLevel?: string;
+  };
+}) {
+  const topProps = [
+    `title="${example.title}"`,
+    example.subtitle ? `subtitle="${example.subtitle}"` : null,
+    example.badge && componentName === "MassScheduleBlock" ? `badge="${example.badge}"` : null,
+    example.sacrament && componentName === "SacramentScheduleBlock" ? `sacrament="${example.sacrament}"` : null,
+  ].filter(Boolean);
+
+  const daysCode =
+    `[\n` +
+    example.days
+      .map(
+        (day) => `  {
+    day: "${day.day}"${day.date ? `,\n    date: "${day.date}"` : ""},
+    times: [
+${day.times.map((item) => `      ${scheduleTimeCode(item)}`).join(",\n")}
+    ],
+  }`
+      )
+      .join(",\n") +
+    `\n]`;
+
+  const exceptionsCode = example.exceptions?.length
+    ? `\n  exceptions={[\n${example.exceptions
+        .map(
+          (item) => `    {
+      title: "${item.title}"${item.description ? `,\n      description: "${item.description}"` : ""}${item.date ? `,\n      date: "${item.date}"` : ""}${item.severity ? `,\n      severity: "${item.severity}"` : ""}
+    }`
+        )
+        .join(",\n")}\n  ]}`
+    : "";
+
+  const sourceCode = example.source
+    ? `\n  source={{ label: "${example.source.label}", href: "${example.source.href ?? "#"}"${example.source.authorityLevel ? `, authorityLevel: "${example.source.authorityLevel}"` : ""} }}`
+    : "";
+
+  return `<${componentName}
+  ${topProps.join("\n  ")}
+  days={${daysCode}}${exceptionsCode}${sourceCode}
+/>`;
+}
+
+export const massScheduleExampleCode = scheduleBlockCode("MassScheduleBlock", massScheduleExample);
+export const confessionScheduleExampleCode = scheduleBlockCode("ConfessionScheduleBlock", confessionScheduleExample);
+export const adorationScheduleExampleCode = scheduleBlockCode("AdorationScheduleBlock", adorationScheduleExample);
+export const sacramentScheduleExampleCode = scheduleBlockCode("SacramentScheduleBlock", sacramentScheduleExample);
+export const holyDayScheduleExampleCode = scheduleBlockCode("HolyDayScheduleBlock", holyDayScheduleExample);

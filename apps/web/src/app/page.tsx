@@ -44,6 +44,11 @@ import {
 
 import {
   AnnouncementBanner,
+  SacramentScheduleBlock,
+  MassScheduleBlock,
+  HolyDayScheduleBlock,
+  ConfessionScheduleBlock,
+  AdorationScheduleBlock,
   Breadcrumb,
   ClergyProfile,
   ContactBlock,
@@ -84,6 +89,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  sacramentScheduleExample,
+  massScheduleExample,
+  holyDayScheduleExample,
+  confessionScheduleExample,
+  adorationScheduleExample,
 } from "./docs/examples";
 import {
   accordionExamplesCode,
@@ -106,6 +116,11 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  sacramentScheduleExampleCode,
+  massScheduleExampleCode,
+  holyDayScheduleExampleCode,
+  confessionScheduleExampleCode,
+  adorationScheduleExampleCode,
 } from "./docs/codegen";
 
 import colors from "../../../../packages/tokens/src/colors.json";
@@ -243,6 +258,7 @@ export default function Home() {
           <Stack gap="xs">
             <a className="docs-nav-small" href="#examples">Primitive examples</a>
             <a className="docs-nav-small" href="#institutional">Institutional examples</a>
+            <a className="docs-nav-small" href="#parish-schedules">Parish schedules</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical colors</a>
           </Stack>
         </Stack>
