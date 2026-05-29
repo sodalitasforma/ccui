@@ -559,3 +559,53 @@ export type TranslationVariantData = {
   note?: string;
   source?: CatholicSource;
 };
+
+export type AuthorityLevel =
+  | "official"
+  | "magisterial"
+  | "canonical"
+  | "scholarly"
+  | "dataset"
+  | "semantic"
+  | "local"
+  | "machine"
+  | "unreviewed";
+
+export type MachineReadableStatus =
+  | "available"
+  | "partial"
+  | "planned"
+  | "unavailable";
+
+export type CanonicalSourceCardData = {
+  title: string;
+  description?: string;
+  authorityLevel: AuthorityLevel | string;
+  sourceType?: string;
+  href?: string;
+  citation?: string;
+  reviewStatus?: ReviewStatus | string;
+  machineReadable?: MachineReadableStatus | string;
+};
+
+export type ProvenanceStepData = {
+  label: string;
+  description?: string;
+  href?: string;
+  authorityLevel?: AuthorityLevel | string;
+};
+
+export type ProvenanceTrailData = {
+  title?: string;
+  steps: readonly ProvenanceStepData[];
+};
+
+export type AuthorityLevelBadgeData = {
+  authorityLevel: AuthorityLevel | string;
+  label?: string;
+};
+
+export type MachineReadableBadgeData = {
+  status: MachineReadableStatus | string;
+  label?: string;
+};

@@ -20,6 +20,10 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  provenanceTrailExample,
+  machineReadableBadgeExample,
+  canonicalSourceCardExample,
+  authorityLevelBadgeExample,
   translationVariantCardExample,
   termDefinitionCardExample,
   reviewStatusBadgeExample,
@@ -1021,4 +1025,34 @@ export const translationVariantCardExampleCode =
   variant="${translationVariantCardExample.variant}"
   note="${translationVariantCardExample.note}"
   source={{ label: "${translationVariantCardExample.source.label}", href: "${translationVariantCardExample.source.href}", authorityLevel: "${translationVariantCardExample.source.authorityLevel}" }}
+/>`;
+
+export const authorityLevelBadgeExampleCode =
+`<AuthorityLevelBadge
+  authorityLevel="${authorityLevelBadgeExample.authorityLevel}"
+  label="${authorityLevelBadgeExample.label}"
+/>`;
+
+export const machineReadableBadgeExampleCode =
+`<MachineReadableBadge
+  status="${machineReadableBadgeExample.status}"
+  label="${machineReadableBadgeExample.label}"
+/>`;
+
+export const canonicalSourceCardExampleCode =
+`<CanonicalSourceCard
+  title="${canonicalSourceCardExample.title}"
+  description="${canonicalSourceCardExample.description}"
+  authorityLevel="${canonicalSourceCardExample.authorityLevel}"
+  sourceType="${canonicalSourceCardExample.sourceType}"
+  href="${canonicalSourceCardExample.href}"
+  citation="${canonicalSourceCardExample.citation}"
+  reviewStatus="${canonicalSourceCardExample.reviewStatus}"
+  machineReadable="${canonicalSourceCardExample.machineReadable}"
+/>`;
+
+export const provenanceTrailExampleCode =
+`<ProvenanceTrail
+  title="${provenanceTrailExample.title}"
+  steps={${arrayCode(provenanceTrailExample.steps)}}
 />`;

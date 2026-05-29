@@ -107,3 +107,8 @@ export { ReviewStatusBadge } from "./review-status-badge";
 export { TermDefinitionCard } from "./term-definition-card";
 export { TranslationVariantCard } from "./translation-variant-card";
 export type { NamespaceBadgeData, OntologyClassData, OntologyPropertyData, ReviewStatus, ReviewStatusBadgeData, TermDefinitionData, TranslationVariantData } from "./types";
+export { CanonicalSourceCard } from "./canonical-source-card";
+export { AuthorityLevelBadge } from "./authority-level-badge";
+export { ProvenanceTrail } from "./provenance-trail";
+export { MachineReadableBadge } from "./machine-readable-badge";
+export type { AuthorityLevel, AuthorityLevelBadgeData, CanonicalSourceCardData, MachineReadableBadgeData, MachineReadableStatus, ProvenanceStepData, ProvenanceTrailData } from "./types";

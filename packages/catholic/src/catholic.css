@@ -970,3 +970,34 @@
   font-size: var(--forma-font-size-lg);
   font-weight: var(--forma-font-weight-semibold);
 }
+
+.forma-canonical-source-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.55), transparent 12rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-canonical-source-card__citation {
+  padding-left: var(--forma-space-3);
+  border-left: 3px solid var(--forma-color-border-gold);
+  color: var(--forma-color-text-secondary);
+  font-family: var(--forma-font-document);
+  line-height: var(--forma-line-height-relaxed);
+}
+
+.forma-provenance-trail__title,
+.forma-provenance-trail__label {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-provenance-trail__list {
+  display: grid;
+  gap: var(--forma-space-3);
+  margin: 0;
+  padding-left: var(--forma-space-5);
+}
+
+.forma-provenance-trail__item {
+  padding-left: var(--forma-space-2);
+}

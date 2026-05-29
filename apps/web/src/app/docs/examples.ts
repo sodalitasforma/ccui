@@ -1260,3 +1260,48 @@ export const translationVariantCardExample = {
     authorityLevel: "translation",
   },
 } as const;
+
+export const authorityLevelBadgeExample = {
+  authorityLevel: "magisterial",
+  label: "Magisterial",
+} as const;
+
+export const machineReadableBadgeExample = {
+  status: "available",
+  label: "Machine-readable",
+} as const;
+
+export const canonicalSourceCardExample = {
+  title: "Dilexit nos",
+  description: "Official source record for an encyclical letter exposed as a canonical, citable, machine-readable source.",
+  authorityLevel: "magisterial",
+  sourceType: "Encyclical",
+  href: "#",
+  citation: "Francis, Encyclical Letter Dilexit nos, 24 October 2024.",
+  reviewStatus: "accepted",
+  machineReadable: "available",
+} as const;
+
+export const provenanceTrailExample = {
+  title: "Source provenance",
+  steps: [
+    {
+      label: "Holy See source",
+      description: "Primary official source record.",
+      href: "#",
+      authorityLevel: "official",
+    },
+    {
+      label: "Canonical citation",
+      description: "Normalized citation record for reuse in documents, APIs, and archives.",
+      href: "#",
+      authorityLevel: "canonical",
+    },
+    {
+      label: "Machine-readable export",
+      description: "Structured JSON record consumed by public interfaces and Catholic applications.",
+      href: "#",
+      authorityLevel: "machine",
+    },
+  ],
+} as const;

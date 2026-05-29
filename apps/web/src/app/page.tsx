@@ -44,6 +44,10 @@ import {
 
 import {
   AnnouncementBanner,
+  MachineReadableBadge,
+  ProvenanceTrail,
+  AuthorityLevelBadge,
+  CanonicalSourceCard,
   TranslationVariantCard,
   TermDefinitionCard,
   ReviewStatusBadge,
@@ -152,6 +156,10 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  provenanceTrailExample,
+  machineReadableBadgeExample,
+  canonicalSourceCardExample,
+  authorityLevelBadgeExample,
   translationVariantCardExample,
   termDefinitionCardExample,
   reviewStatusBadgeExample,
@@ -241,6 +249,10 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  provenanceTrailExampleCode,
+  machineReadableBadgeExampleCode,
+  canonicalSourceCardExampleCode,
+  authorityLevelBadgeExampleCode,
   translationVariantCardExampleCode,
   termDefinitionCardExampleCode,
   reviewStatusBadgeExampleCode,
@@ -458,6 +470,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#media-components">Phase 7 media</a>
             <a className="docs-nav-small" href="#catholic-infrastructure-projects">Phase 8 infrastructure</a>
             <a className="docs-nav-small" href="#ontology-schema-components">Phase 8 ontology/schema</a>
+            <a className="docs-nav-small" href="#canon-provenance-authority">Phase 8 canon/provenance</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1754,6 +1767,54 @@ export default function Home() {
                 code={translationVariantCardExampleCode}
               >
                 <TranslationVariantCard {...translationVariantCardExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="canon-provenance-authority" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 8</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Canon, provenance, authority, and machine-readability
+                </Heading>
+                <Text tone="muted">
+                  Trust components for canonical Catholic sources, authority levels, source trails, and machine-readable infrastructure.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="CanonicalSourceCard"
+                description="A canonical source card for official documents, semantic sources, datasets, and machine-readable Catholic references."
+                code={canonicalSourceCardExampleCode}
+              >
+                <CanonicalSourceCard {...canonicalSourceCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="AuthorityLevelBadge"
+                description="A badge for official, magisterial, canonical, scholarly, dataset, semantic, local, machine, and unreviewed authority levels."
+                code={authorityLevelBadgeExampleCode}
+              >
+                <AuthorityLevelBadge {...authorityLevelBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ProvenanceTrail"
+                description="A visible source trail from official source through canonical normalization to machine-readable export."
+                code={provenanceTrailExampleCode}
+              >
+                <ProvenanceTrail {...provenanceTrailExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="MachineReadableBadge"
+                description="A badge showing whether a source, dataset, or canonical record is available to software."
+                code={machineReadableBadgeExampleCode}
+              >
+                <MachineReadableBadge {...machineReadableBadgeExample} />
               </ComponentBlock>
             </Stack>
           </Container>
