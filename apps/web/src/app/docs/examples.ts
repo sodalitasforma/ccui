@@ -407,3 +407,86 @@ export const holyDayScheduleExample = {
     },
   ],
 } as const;
+
+export const liturgicalDayExample = {
+  title: "Corpus Christi",
+  date: "June 7",
+  season: "Ordinary Time",
+  color: "white",
+  rank: "Solemnity",
+  description: "A solemn liturgical day with readings, rank, season, color, and source metadata.",
+  readings: [
+    {
+      label: "First Reading",
+      citation: "Genesis 14:18–20",
+      book: "Genesis",
+      chapter: 14,
+      verses: "18–20",
+      translation: "USCCB",
+      source: { label: "Lectionary", href: "#" },
+    },
+    {
+      label: "Second Reading",
+      citation: "1 Corinthians 11:23–26",
+      book: "1 Corinthians",
+      chapter: 11,
+      verses: "23–26",
+      translation: "USCCB",
+      source: { label: "Lectionary", href: "#" },
+    },
+    {
+      label: "Gospel",
+      citation: "Luke 9:11b–17",
+      book: "Luke",
+      chapter: 9,
+      verses: "11b–17",
+      translation: "USCCB",
+      source: { label: "Lectionary", href: "#" },
+    },
+  ],
+  source: {
+    label: "Liturgical Calendar API",
+    href: "#",
+    authorityLevel: "calendar",
+  },
+} as const;
+
+export const feastDayHeroExample = {
+  title: "The Most Holy Body and Blood of Christ",
+  date: "Sunday, June 7",
+  season: "Ordinary Time",
+  color: "white",
+  rank: "Solemnity",
+  description: "A hero treatment for a major feast, solemnity, or parish liturgical emphasis.",
+  actionHref: "#",
+  actionLabel: "View readings",
+  source: {
+    label: "Liturgical Calendar API",
+    href: "#",
+    authorityLevel: "calendar",
+  },
+} as const;
+
+export const readingReferenceExample = {
+  label: "Gospel",
+  citation: "Luke 9:11b–17",
+  book: "Luke",
+  chapter: 9,
+  verses: "11b–17",
+  translation: "USCCB",
+  source: {
+    label: "Bible API",
+    href: "#",
+    authorityLevel: "scripture",
+  },
+} as const;
+
+export const liturgicalSeasonBadgeExample = {
+  season: "Ordinary Time",
+  color: "green",
+} as const;
+
+export const liturgicalColorDotExample = {
+  color: "violet",
+  label: "Violet liturgical color",
+} as const;

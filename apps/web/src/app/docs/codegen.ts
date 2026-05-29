@@ -20,6 +20,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  readingReferenceExample,
+  liturgicalSeasonBadgeExample,
+  liturgicalDayExample,
+  liturgicalColorDotExample,
+  feastDayHeroExample,
   sacramentScheduleExample,
   massScheduleExample,
   holyDayScheduleExample,
@@ -41,6 +46,28 @@ function objectArrayCode(items: readonly { label: string; href: string; current?
     )
     .join(",\n")}\n  ]`;
 }
+
+function valueCode(value: unknown): string {
+  if (typeof value === "string") return JSON.stringify(value);
+  if (typeof value === "number" || typeof value === "boolean") return String(value);
+  if (value === null) return "null";
+  if (Array.isArray(value)) return arrayCode(value);
+  if (typeof value === "object") return objectCode(value as Record<string, unknown>);
+  return "undefined";
+}
+
+function objectCode(item: Record<string, unknown>): string {
+  const entries = Object.entries(item)
+    .filter(([, value]) => value !== undefined)
+    .map(([key, value]) => `${key}: ${valueCode(value)}`);
+
+  return `{ ${entries.join(", ")} }`;
+}
+
+function arrayCode(items: readonly unknown[]): string {
+  return `[\n${items.map((item) => `  ${valueCode(item)}`).join(",\n")}\n]`;
+}
+
 
 function stringArrayCode(items: readonly string[]) {
   return `[${items.map((item) => `"${item}"`).join(", ")}]`;
@@ -379,3 +406,51 @@ export const confessionScheduleExampleCode = scheduleBlockCode("ConfessionSchedu
 export const adorationScheduleExampleCode = scheduleBlockCode("AdorationScheduleBlock", adorationScheduleExample);
 export const sacramentScheduleExampleCode = scheduleBlockCode("SacramentScheduleBlock", sacramentScheduleExample);
 export const holyDayScheduleExampleCode = scheduleBlockCode("HolyDayScheduleBlock", holyDayScheduleExample);
+
+export const liturgicalDayExampleCode =
+`<LiturgicalDayCard
+  title="${liturgicalDayExample.title}"
+  date="${liturgicalDayExample.date}"
+  season="${liturgicalDayExample.season}"
+  color="${liturgicalDayExample.color}"
+  rank="${liturgicalDayExample.rank}"
+  description="${liturgicalDayExample.description}"
+  readings={${arrayCode(liturgicalDayExample.readings)}}
+  source={{ label: "${liturgicalDayExample.source.label}", href: "${liturgicalDayExample.source.href}", authorityLevel: "${liturgicalDayExample.source.authorityLevel}" }}
+/>`;
+
+export const feastDayHeroExampleCode =
+`<FeastDayHero
+  title="${feastDayHeroExample.title}"
+  date="${feastDayHeroExample.date}"
+  season="${feastDayHeroExample.season}"
+  color="${feastDayHeroExample.color}"
+  rank="${feastDayHeroExample.rank}"
+  description="${feastDayHeroExample.description}"
+  actionHref="${feastDayHeroExample.actionHref}"
+  actionLabel="${feastDayHeroExample.actionLabel}"
+  source={{ label: "${feastDayHeroExample.source.label}", href: "${feastDayHeroExample.source.href}", authorityLevel: "${feastDayHeroExample.source.authorityLevel}" }}
+/>`;
+
+export const readingReferenceExampleCode =
+`<ReadingReference
+  label="${readingReferenceExample.label}"
+  citation="${readingReferenceExample.citation}"
+  book="${readingReferenceExample.book}"
+  chapter={${readingReferenceExample.chapter}}
+  verses="${readingReferenceExample.verses}"
+  translation="${readingReferenceExample.translation}"
+  source={{ label: "${readingReferenceExample.source.label}", href: "${readingReferenceExample.source.href}", authorityLevel: "${readingReferenceExample.source.authorityLevel}" }}
+/>`;
+
+export const liturgicalSeasonBadgeExampleCode =
+`<LiturgicalSeasonBadge
+  season="${liturgicalSeasonBadgeExample.season}"
+  color="${liturgicalSeasonBadgeExample.color}"
+/>`;
+
+export const liturgicalColorDotExampleCode =
+`<LiturgicalColorDot
+  color="${liturgicalColorDotExample.color}"
+  label="${liturgicalColorDotExample.label}"
+/>`;

@@ -44,6 +44,11 @@ import {
 
 import {
   AnnouncementBanner,
+  ReadingReference,
+  LiturgicalSeasonBadge,
+  LiturgicalDayCard,
+  LiturgicalColorDot,
+  FeastDayHero,
   SacramentScheduleBlock,
   MassScheduleBlock,
   HolyDayScheduleBlock,
@@ -89,6 +94,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  readingReferenceExample,
+  liturgicalSeasonBadgeExample,
+  liturgicalDayExample,
+  liturgicalColorDotExample,
+  feastDayHeroExample,
   sacramentScheduleExample,
   massScheduleExample,
   holyDayScheduleExample,
@@ -116,6 +126,11 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  readingReferenceExampleCode,
+  liturgicalSeasonBadgeExampleCode,
+  liturgicalDayExampleCode,
+  liturgicalColorDotExampleCode,
+  feastDayHeroExampleCode,
   sacramentScheduleExampleCode,
   massScheduleExampleCode,
   holyDayScheduleExampleCode,
@@ -256,10 +271,11 @@ export default function Home() {
           <Divider />
 
           <Stack gap="xs">
-            <a className="docs-nav-small" href="#examples">Primitive examples</a>
-            <a className="docs-nav-small" href="#institutional">Institutional examples</a>
-            <a className="docs-nav-small" href="#parish-schedules">Parish schedules</a>
-            <a className="docs-nav-small" href="#liturgical">Liturgical colors</a>
+            <a className="docs-nav-small" href="#examples">Phase 2 primitives</a>
+            <a className="docs-nav-small" href="#institutional">Phase 3 institutional</a>
+            <a className="docs-nav-small" href="#parish-schedules">Phase 4 parish schedules</a>
+            <a className="docs-nav-small" href="#liturgical-identity">Phase 4 liturgical identity</a>
+            <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
       </aside>
@@ -531,9 +547,9 @@ export default function Home() {
           <Container size="lg">
             <Stack gap="lg">
               <Stack gap="sm">
-                <Eyebrow>Liturgical</Eyebrow>
+                <Eyebrow>Foundations</Eyebrow>
                 <Heading level={2} size="2xl">
-                  Catholic-native colors
+                  Liturgical color tokens
                 </Heading>
               </Stack>
 
@@ -739,6 +755,182 @@ export default function Home() {
                   description={institutionalFooterExample.description}
                   links={[...institutionalFooterExample.links]}
                 />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="parish-schedules" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="lg">
+              <Stack gap="xs">
+                <Eyebrow tone="gold">Phase 4</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Parish schedule components
+                </Heading>
+                <Text tone="secondary">
+                  Schedule components are built from existing primitives and shaped for future CDCF data sources such as liturgical calendars, parish datasets, and public Catholic APIs.
+                </Text>
+              </Stack>
+
+              <Grid columns="1" gap="lg">
+            <ComponentBlock
+              title="MassScheduleBlock"
+              description="A parish Mass schedule with languages, locations, livestreams, exceptions, and source metadata."
+              code={massScheduleExampleCode}
+            >
+              <MassScheduleBlock
+                title={massScheduleExample.title}
+                subtitle={massScheduleExample.subtitle}
+                badge={massScheduleExample.badge}
+                days={massScheduleExample.days}
+                exceptions={massScheduleExample.exceptions}
+                source={massScheduleExample.source}
+              />
+            </ComponentBlock>
+
+            <ComponentBlock
+              title="ConfessionScheduleBlock"
+              description="A confession schedule using the same schedule data shape and MassTimeRow infrastructure."
+              code={confessionScheduleExampleCode}
+            >
+              <ConfessionScheduleBlock
+                title={confessionScheduleExample.title}
+                subtitle={confessionScheduleExample.subtitle}
+                days={confessionScheduleExample.days}
+                exceptions={confessionScheduleExample.exceptions}
+              />
+            </ComponentBlock>
+
+            <ComponentBlock
+              title="AdorationScheduleBlock"
+              description="A public Eucharistic adoration schedule."
+              code={adorationScheduleExampleCode}
+            >
+              <AdorationScheduleBlock
+                title={adorationScheduleExample.title}
+                subtitle={adorationScheduleExample.subtitle}
+                days={adorationScheduleExample.days}
+              />
+            </ComponentBlock>
+
+            <ComponentBlock
+              title="SacramentScheduleBlock"
+              description="A reusable schedule block for sacramental preparation and parish sacrament programs."
+              code={sacramentScheduleExampleCode}
+            >
+              <SacramentScheduleBlock
+                title={sacramentScheduleExample.title}
+                subtitle={sacramentScheduleExample.subtitle}
+                sacrament={sacramentScheduleExample.sacrament}
+                days={sacramentScheduleExample.days}
+              />
+            </ComponentBlock>
+
+            <ComponentBlock
+              title="HolyDayScheduleBlock"
+              description="A holy day schedule with vigil, feast-day, livestream, and office-closure exception support."
+              code={holyDayScheduleExampleCode}
+            >
+              <HolyDayScheduleBlock
+                title={holyDayScheduleExample.title}
+                subtitle={holyDayScheduleExample.subtitle}
+                days={holyDayScheduleExample.days}
+                exceptions={holyDayScheduleExample.exceptions}
+              />
+            </ComponentBlock>
+              </Grid>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="liturgical-identity" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 4</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Liturgical identity components
+                </Heading>
+                <Text tone="muted">
+                  Components for displaying liturgical days, seasons, colors, feast days, and reading references from future CDCF data sources.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="FeastDayHero"
+                description="A hero treatment for solemnities, feast days, and parish liturgical emphasis."
+                code={feastDayHeroExampleCode}
+              >
+                <FeastDayHero
+                  title={feastDayHeroExample.title}
+                  date={feastDayHeroExample.date}
+                  season={feastDayHeroExample.season}
+                  color={feastDayHeroExample.color}
+                  rank={feastDayHeroExample.rank}
+                  description={feastDayHeroExample.description}
+                  actionHref={feastDayHeroExample.actionHref}
+                  actionLabel={feastDayHeroExample.actionLabel}
+                  source={feastDayHeroExample.source}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="LiturgicalDayCard"
+                description="A compact card for a liturgical day with season, rank, color, readings, and source metadata."
+                code={liturgicalDayExampleCode}
+              >
+                <LiturgicalDayCard
+                  title={liturgicalDayExample.title}
+                  date={liturgicalDayExample.date}
+                  season={liturgicalDayExample.season}
+                  color={liturgicalDayExample.color}
+                  rank={liturgicalDayExample.rank}
+                  description={liturgicalDayExample.description}
+                  readings={liturgicalDayExample.readings}
+                  source={liturgicalDayExample.source}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ReadingReference"
+                description="A citation display for lectionary readings and future Bible API data."
+                code={readingReferenceExampleCode}
+              >
+                <ReadingReference
+                  label={readingReferenceExample.label}
+                  citation={readingReferenceExample.citation}
+                  book={readingReferenceExample.book}
+                  chapter={readingReferenceExample.chapter}
+                  verses={readingReferenceExample.verses}
+                  translation={readingReferenceExample.translation}
+                  source={readingReferenceExample.source}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="LiturgicalSeasonBadge"
+                description="A season badge paired with a liturgical color."
+                code={liturgicalSeasonBadgeExampleCode}
+              >
+                <LiturgicalSeasonBadge
+                  season={liturgicalSeasonBadgeExample.season}
+                  color={liturgicalSeasonBadgeExample.color}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="LiturgicalColorDot"
+                description="A small liturgical color indicator for calendars, schedules, and feast cards."
+                code={liturgicalColorDotExampleCode}
+              >
+                <Cluster gap="sm" align="center">
+                  <LiturgicalColorDot
+                    color={liturgicalColorDotExample.color}
+                    label={liturgicalColorDotExample.label}
+                  />
+                  <Text>{liturgicalColorDotExample.label}</Text>
+                </Cluster>
               </ComponentBlock>
             </Stack>
           </Container>
