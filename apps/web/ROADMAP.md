@@ -79,9 +79,9 @@ These support parishes, dioceses, chancery offices, Catholic schools, ministries
 Phase 3 follow-up polish:
 
 - Make LanguageNav support a Vatican-style spelled-out language dropdown.
-- Improve InstitutionalHeader examples so language, utility, search, and primary navigation are visually separable.
-- Add component documentation examples with one preview and one accurate code block per component.
-- Avoid sample-page blobs inside the docs page unless presented as a full-page composition example.
+- ✅ Improve InstitutionalHeader examples so language, utility, search, and primary navigation are visually separable.
+- ✅ Add component documentation examples with one preview and one accurate code block per component.
+- ✅ Avoid sample-page blobs inside the docs page unless presented as a full-page composition example.
 
 ## Phase 4 — Parish and liturgical components
 
@@ -217,11 +217,24 @@ Initial mappings:
 
 Documentation polish backlog:
 
-- Rename the current token section to Colors.
-- Remove the standalone component index section unless it becomes a compact sidebar or registry table.
-- Make docs examples show exactly what each component is, with one component preview and one matching code block.
-- Make code blocks visually distinct from component surfaces.
+- ✅ Rename the current token section to Colors.
+- ✅ Remove the standalone component index section unless it becomes a compact sidebar or registry table.
+- ✅ Make docs examples show exactly what each component is, with one component preview and one matching code block.
+- ✅ Make code blocks visually distinct from component surfaces.
 - Ensure every interactive primitive example actually works: Tabs, Accordion, dropdowns, filters, and future media inputs.
-- Add tasteful accordion indicators, such as plus/minus or chevron states.
-- Add table examples with status indicators, actions, and realistic institutional data.
-- Avoid hard-coded demo-only behavior where a real prop, URL, data object, or registry entry should drive the example.
+- ✅ Add tasteful accordion indicators, such as plus/minus or chevron states.
+- ✅ Add table examples with status indicators, actions, and realistic institutional data.
+- ✅ Avoid hard-coded demo-only behavior where a real prop, URL, data object, or registry entry should drive the example.
+- ✅ Add programmatic docs-example audit to detect hard-coded or drifting examples.
+- ✅ Generate all current docs examples from shared example data.
+
+## Mature documentation outcome
+
+Forma should eventually move from shared example data to source-backed examples:
+
+- Each docs example should live as a real `.tsx` example file.
+- The docs page should render that real example file as the live preview.
+- The displayed code block should be read directly from that same source file.
+- The docs audit should verify that every component example has a source-backed preview and code block.
+- This prevents the documentation from drifting away from the actual components.
+
