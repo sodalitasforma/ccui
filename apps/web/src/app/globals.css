@@ -3,6 +3,20 @@
 @import "../../../../packages/primitives/src/primitives.css";
 @import "../../../../packages/catholic/src/catholic.css";
 
+/* Forma app-level semantic surfaces */
+:root {
+  --forma-app-surface-white: var(--forma-color-surface-raised);
+  --forma-app-surface-page-start: var(--forma-color-surface-raised);
+  --forma-app-nav-background: color-mix(in srgb, var(--forma-color-surface-raised) 92%, transparent);
+  --forma-app-border-soft: color-mix(in srgb, var(--forma-color-border-subtle) 60%, transparent);
+  --forma-app-gold-wash: color-mix(in srgb, var(--forma-color-accent-gold) 8%, transparent);
+  --forma-app-gold-wash-strong: color-mix(in srgb, var(--forma-color-accent-gold) 18%, transparent);
+  --forma-app-white-wash: color-mix(in srgb, var(--forma-color-surface-raised) 90%, transparent);
+  --forma-app-white-wash-strong: color-mix(in srgb, var(--forma-color-surface-raised) 94%, transparent);
+  --forma-app-parchment-wash: color-mix(in srgb, var(--forma-color-surface-page) 72%, transparent);
+}
+
+
 * {
   box-sizing: border-box;
 }
@@ -66,7 +80,7 @@ a {
 
 .docs-nav a:hover,
 .docs-nav-small:hover {
-  background: rgba(90, 46, 11, 0.08);
+  background: var(--forma-app-gold-wash);
   color: var(--forma-color-link-primary);
 }
 
@@ -146,7 +160,7 @@ a {
   min-height: 16rem;
   place-items: center;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.08), transparent),
+    linear-gradient(135deg, color-mix(in srgb, var(--forma-color-surface-raised) 8%, transparent), transparent),
     var(--forma-color-surface-dark);
 }
 
@@ -168,5 +182,165 @@ a {
     height: auto;
     border-right: 0;
     border-bottom: 1px solid var(--forma-color-border-subtle);
+  }
+}
+
+
+.home-shell {
+  min-height: 100vh;
+  background:
+    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-app-surface-white) 30rem, var(--forma-color-surface-page) 100%);
+}
+
+.home-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  padding: var(--forma-space-4) var(--forma-space-6);
+  border-bottom: 1px solid var(--forma-app-border-soft);
+  background: var(--forma-app-nav-background);
+  backdrop-filter: blur(16px);
+}
+
+.home-brand {
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.home-centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
+.home-hero {
+  min-height: calc(100vh - 4.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  background:
+    radial-gradient(circle at 50% 50%, var(--forma-app-gold-wash), transparent 28rem),
+    var(--forma-app-surface-white);
+  text-align: center;
+}
+
+.home-hero > .forma-container {
+  width: 100%;
+}
+
+.home-hero__copy {
+  max-width: 64rem;
+  margin-inline: auto;
+  align-items: center;
+}
+
+.home-hero__copy h1 {
+  max-width: 58rem;
+  margin-inline: auto;
+  line-height: 0.94;
+}
+
+.home-hero__lede {
+  max-width: 48rem;
+  margin-inline: auto;
+}
+
+.home-interface {
+  background: var(--forma-app-surface-white);
+}
+
+.home-section-heading {
+  align-items: end;
+}
+
+.home-section-heading__copy {
+  max-width: 34rem;
+}
+
+.home-kicker {
+  color: var(--forma-color-accent-gold-text);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.home-tabs-card {
+  background: var(--forma-app-white-wash);
+}
+
+.home-tab-panel {
+  align-items: start;
+  padding-top: var(--forma-space-5);
+}
+
+.home-component-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-2);
+}
+
+
+
+.home-interface {
+  background:
+    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-color-surface-page) 100%);
+  padding-top: var(--forma-space-12);
+}
+
+.home-interface-board {
+  padding: var(--forma-space-6);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-lg);
+  background:
+    linear-gradient(180deg, var(--forma-app-white-wash-strong), var(--forma-app-parchment-wash)),
+    var(--forma-color-surface-raised);
+}
+
+.home-interface-grid {
+  align-items: start;
+}
+
+.home-proof {
+  background:
+    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-color-surface-page) 100%);
+}
+
+.home-proof-grid {
+  align-items: start;
+}
+
+.home-final-card {
+  background:
+    linear-gradient(180deg, var(--forma-app-nav-background), var(--forma-app-parchment-wash)),
+    var(--forma-color-surface-raised);
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    min-height: auto;
+    padding-top: var(--forma-space-10) !important;
+    padding-bottom: var(--forma-space-10) !important;
+  }
+
+  
+
+  .home-nav {
+    position: static;
+  }
+
+  .home-section-heading {
+    align-items: start;
+  }
+
+  .home-tab-panel,
+  .home-proof-grid {
+    grid-template-columns: 1fr;
   }
 }

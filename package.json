@@ -6,9 +6,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "pnpm --filter @forma/web dev",
-    "build": "pnpm --filter @forma/web build",
+    "build": "pnpm generate:stats && pnpm --filter @forma/web build",
     "lint": "pnpm --filter @forma/web lint",
-    "typecheck": "pnpm --filter @forma/web typecheck"
+    "typecheck": "pnpm --filter @forma/web typecheck",
+    "generate:stats": "node apps/web/scripts/generate-system-stats.mjs"
   },
   "keywords": [
     "catholic",

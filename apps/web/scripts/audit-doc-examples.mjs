@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
-const pagePath = path.resolve("apps/web/src/app/page.tsx");
+const pagePath = path.resolve("apps/web/src/app/components-gallery/page.tsx");
 const source = fs.readFileSync(pagePath, "utf8");
 
 const componentBlockRegex =
