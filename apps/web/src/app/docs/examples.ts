@@ -62,3 +62,157 @@ export const emptyStateExample = {
   description: "Try changing the year, ministry, or document type filter.",
   actionLabel: "Clear filters",
 } as const;
+
+export const institutionalHeaderExample = {
+  title: "Saint Anselm Parish",
+  subtitle: "A Catholic parish of the Diocese",
+  primaryItems: [
+    { label: "Mass Times", href: "#", current: true },
+    { label: "Sacraments", href: "#" },
+    { label: "Ministries", href: "#" },
+    { label: "School", href: "#" },
+    { label: "Give", href: "#" },
+  ],
+  utilityItems: [
+    { label: "Bulletin", href: "#" },
+    { label: "Contact", href: "#" },
+  ],
+  languages: [
+    { label: "English", href: "#", current: true },
+    { label: "Español", href: "#" },
+    { label: "Latine", href: "#" },
+  ],
+  searchAction: "#",
+} as const;
+
+export const pageHeaderExample = {
+  eyebrow: "Parish office",
+  title: "Institutional page header",
+  description: "A formal header for parish, diocesan, school, ministry, and foundation pages.",
+  breadcrumbs: [
+    { label: "Home", href: "#" },
+    { label: "Parish", href: "#" },
+    { label: "Office", href: "#" },
+  ],
+} as const;
+
+export const announcementBannerExample = {
+  badge: "Official",
+  title: "Parish office closed Friday",
+  description: "The office will reopen Monday morning. Sacramental emergencies should use the emergency line.",
+  href: "#",
+} as const;
+
+export const directoryExample = {
+  title: "Institutional directory",
+  description: "Directory and directory cards.",
+  cards: [
+    {
+      eyebrow: "Office",
+      title: "Chancery Office",
+      description: "Administrative office for diocesan governance and records.",
+      meta: "Open Monday through Friday",
+      status: "Open",
+      href: "#",
+    },
+    {
+      eyebrow: "Ministry",
+      title: "Marriage Tribunal",
+      description: "Canonical process support and case information.",
+      meta: "By appointment",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const contactBlockExample = {
+  title: "Contact",
+  phone: "(555) 123-4567",
+  email: "office@example.org",
+  website: "https://example.org",
+  addressLines: ["123 Cathedral Place", "Santa Fe, NM 87501"],
+} as const;
+
+export const officeHoursExample = {
+  items: [
+    { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
+    { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" },
+  ],
+} as const;
+
+export const locationBlockExample = {
+  addressLines: ["123 Cathedral Place", "Santa Fe, NM 87501"],
+  mapHref: "#",
+  note: "Parking available behind the parish hall.",
+} as const;
+
+export const staffProfileExample = {
+  name: "Maria Sanchez",
+  position: "Parish Secretary",
+  department: "Office",
+  email: "maria@example.org",
+  phone: "(555) 123-4567",
+} as const;
+
+export const clergyProfileExample = {
+  name: "Rev. Thomas More",
+  title: "Pastor",
+  assignment: "Saint Anselm Parish",
+  orderOrPostnominals: "Pastor",
+  email: "pastor@example.org",
+} as const;
+
+export const documentListExample = {
+  title: "Documents",
+  description: "Document cards and resource links.",
+  document: {
+    title: "Parish Registration Form",
+    documentType: "Form",
+    authority: "Parish",
+    date: "May 2026",
+    fileType: "PDF",
+    href: "#",
+    description: "Registration form for new parishioners.",
+  },
+  resource: {
+    title: "Safe Environment Policy",
+    description: "Policy and training information.",
+    meta: "External resource",
+    href: "#",
+    variant: "document",
+  },
+} as const;
+
+export const eventListExample = {
+  title: "Events",
+  description: "Event cards for public calendars.",
+  events: [
+    {
+      title: "Corpus Christi Procession",
+      date: "Jun 7",
+      time: "11:30 AM",
+      location: "Church grounds",
+      category: "Liturgical",
+      description: "Procession immediately following the principal Mass.",
+      href: "#",
+    },
+    {
+      title: "Parish Council Meeting",
+      date: "Jun 12",
+      time: "6:00 PM",
+      location: "Parish hall",
+      category: "Meeting",
+      href: "#",
+    },
+  ],
+} as const;
+
+export const institutionalFooterExample = {
+  title: "Saint Anselm Parish",
+  description: "A public-facing Catholic institution built with Forma.",
+  links: [
+    { label: "Contact", href: "#" },
+    { label: "Privacy", href: "#" },
+    { label: "Giving", href: "#" },
+  ],
+} as const;

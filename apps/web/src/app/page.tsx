@@ -64,22 +64,45 @@ import {
 
 import {
   accordionExamples,
+  announcementBannerExample,
   buttonExamples,
+  clergyProfileExample,
+  contactBlockExample,
+  directoryExample,
+  documentListExample,
   emptyStateExample,
+  eventListExample,
   filterBarExample,
+  institutionalFooterExample,
+  institutionalHeaderExample,
+  locationBlockExample,
   mediaFrameExample,
   noticeExamples,
+  officeHoursExample,
+  pageHeaderExample,
+  staffProfileExample,
   tabExamples,
   tableRows,
   timelineExamples,
 } from "./docs/examples";
 import {
   accordionExamplesCode,
+  announcementBannerExampleCode,
   buttonExamplesCode,
+  contactBlockExampleCode,
+  directoryExampleCode,
+  documentListExampleCode,
   emptyStateExampleCode,
+  eventListExampleCode,
   filterBarExampleCode,
+  institutionalFooterExampleCode,
+  institutionalHeaderExampleCode,
+  locationBlockExampleCode,
   mediaFrameExampleCode,
   noticeExamplesCode,
+  officeHoursExampleCode,
+  pageHeaderExampleCode,
+  staffAndClergyExampleCode,
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
@@ -545,70 +568,28 @@ export default function Home() {
               <ComponentBlock
                 title="InstitutionalHeader"
                 description="Top-level identity, language, utility, search, and primary navigation for a Catholic institution."
-                code={`<InstitutionalHeader
-  title="Saint Anselm Parish"
-  subtitle="A Catholic parish of the Diocese"
-  primaryItems={[
-    { label: "Mass Times", href: "#", current: true },
-    { label: "Sacraments", href: "#" },
-    { label: "Ministries", href: "#" }
-  ]}
-  utilityItems={[
-    { label: "Bulletin", href: "#" },
-    { label: "Contact", href: "#" }
-  ]}
-  languages={[
-    { label: "EN", href: "#", current: true },
-    { label: "ES", href: "#" }
-  ]}
-  searchAction="#"
-/>`}
+                code={institutionalHeaderExampleCode}
               >
                 <InstitutionalHeader
-                  title="Saint Anselm Parish"
-                  subtitle="A Catholic parish of the Diocese"
-                  primaryItems={[
-                    { label: "Mass Times", href: "#", current: true },
-                    { label: "Sacraments", href: "#" },
-                    { label: "Ministries", href: "#" },
-                    { label: "School", href: "#" },
-                    { label: "Give", href: "#" },
-                  ]}
-                  utilityItems={[
-                    { label: "Bulletin", href: "#" },
-                    { label: "Contact", href: "#" },
-                  ]}
-                  languages={[
-                    { label: "EN", href: "#", current: true },
-                    { label: "ES", href: "#" },
-                  ]}
-                  searchAction="#"
+                  title={institutionalHeaderExample.title}
+                  subtitle={institutionalHeaderExample.subtitle}
+                  primaryItems={[...institutionalHeaderExample.primaryItems]}
+                  utilityItems={[...institutionalHeaderExample.utilityItems]}
+                  languages={[...institutionalHeaderExample.languages]}
+                  searchAction={institutionalHeaderExample.searchAction}
                 />
               </ComponentBlock>
 
               <ComponentBlock
                 title="PageHeader + Breadcrumb"
                 description="Formal page opening with optional breadcrumbs, eyebrow, description, and actions."
-                code={`<PageHeader
-  eyebrow="Parish office"
-  title="Institutional page header"
-  description="A formal header for parish, diocesan, school, ministry, and foundation pages."
-  breadcrumbs={[
-    { label: "Home", href: "#" },
-    { label: "Parish", href: "#" },
-    { label: "Office", href: "#" }
-  ]}
-/>`}
+                code={pageHeaderExampleCode}
               >
                 <PageHeader
-                  eyebrow="Parish office"
-                  title="Institutional page header"
-                  description="A formal header for parish, diocesan, school, ministry, and foundation pages."
-                  breadcrumbs={[
-                    { label: "Home", href: "#" },
-                    { label: "Parish", href: "#" },
-                    { label: "Office", href: "#" },
-                  ]}
+                  eyebrow={pageHeaderExample.eyebrow}
+                  title={pageHeaderExample.title}
+                  description={pageHeaderExample.description}
+                  breadcrumbs={[...pageHeaderExample.breadcrumbs]}
                   actions={
                     <Cluster>
                       <Button size="sm">Primary action</Button>
@@ -621,138 +602,90 @@ export default function Home() {
               <ComponentBlock
                 title="AnnouncementBanner"
                 description="Official, liturgical, warning, and emergency announcements."
-                code={`<AnnouncementBanner
-  badge="Official"
-  title="Parish office closed Friday"
-  description="The office will reopen Monday morning."
-  href="#"
-/>`}
+                code={announcementBannerExampleCode}
               >
                 <AnnouncementBanner
-                  badge="Official"
-                  title="Parish office closed Friday"
-                  description="The office will reopen Monday morning. Sacramental emergencies should use the emergency line."
-                  href="#"
+                  badge={announcementBannerExample.badge}
+                  title={announcementBannerExample.title}
+                  description={announcementBannerExample.description}
+                  href={announcementBannerExample.href}
                 />
               </ComponentBlock>
 
               <ComponentBlock
                 title="Directory + DirectoryCard"
                 description="Directory shell and cards for offices, ministries, schools, parishes, staff groups, and institutional records."
-                code={`<Directory title="Institutional directory">
-  <DirectoryCard
-    eyebrow="Office"
-    title="Chancery Office"
-    description="Administrative office for diocesan governance and records."
-    status="Open"
-    href="#"
-  />
-</Directory>`}
+                code={directoryExampleCode}
               >
-                <Directory title="Institutional directory" description="Directory and directory cards.">
-                  <DirectoryCard
-                    eyebrow="Office"
-                    title="Chancery Office"
-                    description="Administrative office for diocesan governance and records."
-                    meta="Open Monday through Friday"
-                    status="Open"
-                    href="#"
-                  />
-                  <DirectoryCard
-                    eyebrow="Ministry"
-                    title="Marriage Tribunal"
-                    description="Canonical process support and case information."
-                    meta="By appointment"
-                    href="#"
-                  />
+                <Directory title={directoryExample.title} description={directoryExample.description}>
+                  {directoryExample.cards.map((card) => (
+                    <DirectoryCard
+                      key={card.title}
+                      eyebrow={card.eyebrow}
+                      title={card.title}
+                      description={card.description}
+                      meta={card.meta}
+                      status={"status" in card ? card.status : undefined}
+                      href={card.href}
+                    />
+                  ))}
                 </Directory>
               </ComponentBlock>
 
               <ComponentBlock
                 title="ContactBlock"
                 description="Structured contact details for parish offices, diocesan offices, ministries, schools, and foundations."
-                code={`<ContactBlock
-  phone="(555) 123-4567"
-  email="office@example.org"
-  website="https://example.org"
-  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
-/>`}
+                code={contactBlockExampleCode}
               >
                 <ContactBlock
-                  title="Contact"
-                  phone="(555) 123-4567"
-                  email="office@example.org"
-                  website="https://example.org"
-                  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
+                  title={contactBlockExample.title}
+                  phone={contactBlockExample.phone}
+                  email={contactBlockExample.email}
+                  website={contactBlockExample.website}
+                  addressLines={[...contactBlockExample.addressLines]}
                 />
               </ComponentBlock>
 
               <ComponentBlock
                 title="OfficeHours"
                 description="Structured office-hour display for public-facing institutional pages."
-                code={`<OfficeHours
-  items={[
-    { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
-    { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" }
-  ]}
-/>`}
+                code={officeHoursExampleCode}
               >
-                <OfficeHours
-                  items={[
-                    { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
-                    { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" },
-                  ]}
-                />
+                <OfficeHours items={[...officeHoursExample.items]} />
               </ComponentBlock>
 
               <ComponentBlock
                 title="LocationBlock"
                 description="Address, map link, and location note for offices, parishes, schools, and ministries."
-                code={`<LocationBlock
-  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
-  mapHref="#"
-  note="Parking available behind the parish hall."
-/>`}
+                code={locationBlockExampleCode}
               >
                 <LocationBlock
-                  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
-                  mapHref="#"
-                  note="Parking available behind the parish hall."
+                  addressLines={[...locationBlockExample.addressLines]}
+                  mapHref={locationBlockExample.mapHref}
+                  note={locationBlockExample.note}
                 />
               </ComponentBlock>
 
               <ComponentBlock
                 title="StaffProfile + ClergyProfile"
                 description="Profile cards for staff and clergy, with clergy receiving a more formal gold treatment."
-                code={`<StaffProfile
-  name="Maria Sanchez"
-  position="Parish Secretary"
-  department="Office"
-  email="maria@example.org"
-/>
-
-<ClergyProfile
-  name="Rev. Thomas More"
-  title="Pastor"
-  assignment="Saint Anselm Parish"
-  orderOrPostnominals="Pastor"
-/>`}
+                code={staffAndClergyExampleCode}
               >
                 <Grid columns="2" gap="md">
                   <StaffProfile
-                    name="Maria Sanchez"
-                    position="Parish Secretary"
-                    department="Office"
-                    email="maria@example.org"
-                    phone="(555) 123-4567"
+                    name={staffProfileExample.name}
+                    position={staffProfileExample.position}
+                    department={staffProfileExample.department}
+                    email={staffProfileExample.email}
+                    phone={staffProfileExample.phone}
                   />
 
                   <ClergyProfile
-                    name="Rev. Thomas More"
-                    title="Pastor"
-                    assignment="Saint Anselm Parish"
-                    orderOrPostnominals="Pastor"
-                    email="pastor@example.org"
+                    name={clergyProfileExample.name}
+                    title={clergyProfileExample.title}
+                    assignment={clergyProfileExample.assignment}
+                    orderOrPostnominals={clergyProfileExample.orderOrPostnominals}
+                    email={clergyProfileExample.email}
                   />
                 </Grid>
               </ComponentBlock>
@@ -760,97 +693,35 @@ export default function Home() {
               <ComponentBlock
                 title="DocumentList + DocumentCard + ResourceLink"
                 description="Official documents, forms, policies, downloads, and external institutional resources."
-                code={`<DocumentList title="Documents">
-  <DocumentCard
-    title="Parish Registration Form"
-    documentType="Form"
-    authority="Parish"
-    fileType="PDF"
-    href="#"
-  />
-  <ResourceLink
-    title="Safe Environment Policy"
-    href="#"
-    variant="document"
-  />
-</DocumentList>`}
+                code={documentListExampleCode}
               >
-                <DocumentList title="Documents" description="Document cards and resource links.">
-                  <DocumentCard
-                    title="Parish Registration Form"
-                    documentType="Form"
-                    authority="Parish"
-                    date="May 2026"
-                    fileType="PDF"
-                    href="#"
-                    description="Registration form for new parishioners."
-                  />
-                  <ResourceLink
-                    title="Safe Environment Policy"
-                    description="Policy and training information."
-                    meta="External resource"
-                    href="#"
-                    variant="document"
-                  />
+                <DocumentList title={documentListExample.title} description={documentListExample.description}>
+                  <DocumentCard {...documentListExample.document} />
+                  <ResourceLink {...documentListExample.resource} />
                 </DocumentList>
               </ComponentBlock>
 
               <ComponentBlock
                 title="EventList + EventCard"
                 description="Public calendar cards for liturgical, parish, school, diocesan, and ministry events."
-                code={`<EventList title="Events">
-  <EventCard
-    title="Corpus Christi Procession"
-    date="Jun 7"
-    time="11:30 AM"
-    location="Church grounds"
-    category="Liturgical"
-    href="#"
-  />
-</EventList>`}
+                code={eventListExampleCode}
               >
-                <EventList title="Events" description="Event cards for public calendars.">
-                  <EventCard
-                    title="Corpus Christi Procession"
-                    date="Jun 7"
-                    time="11:30 AM"
-                    location="Church grounds"
-                    category="Liturgical"
-                    description="Procession immediately following the principal Mass."
-                    href="#"
-                  />
-                  <EventCard
-                    title="Parish Council Meeting"
-                    date="Jun 12"
-                    time="6:00 PM"
-                    location="Parish hall"
-                    category="Meeting"
-                    href="#"
-                  />
+                <EventList title={eventListExample.title} description={eventListExample.description}>
+                  {eventListExample.events.map((event) => (
+                    <EventCard key={event.title} {...event} />
+                  ))}
                 </EventList>
               </ComponentBlock>
 
               <ComponentBlock
                 title="InstitutionalFooter"
                 description="Formal footer for Catholic institutional websites."
-                code={`<InstitutionalFooter
-  title="Saint Anselm Parish"
-  description="A public-facing Catholic institution built with Forma."
-  links={[
-    { label: "Contact", href: "#" },
-    { label: "Privacy", href: "#" },
-    { label: "Giving", href: "#" }
-  ]}
-/>`}
+                code={institutionalFooterExampleCode}
               >
                 <InstitutionalFooter
-                  title="Saint Anselm Parish"
-                  description="A public-facing Catholic institution built with Forma."
-                  links={[
-                    { label: "Contact", href: "#" },
-                    { label: "Privacy", href: "#" },
-                    { label: "Giving", href: "#" },
-                  ]}
+                  title={institutionalFooterExample.title}
+                  description={institutionalFooterExample.description}
+                  links={[...institutionalFooterExample.links]}
                 />
               </ComponentBlock>
             </Stack>
