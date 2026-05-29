@@ -152,3 +152,22 @@ a {
     border-bottom: 1px solid var(--forma-color-border-subtle);
   }
 }
+
+/* TODO: Promote docs-only scaffolding into internal docs components. */
+.docs-shell,
+.docs-sidebar,
+.docs-main,
+.docs-nav,
+.docs-nav-small,
+.docs-lede,
+.docs-code,
+.docs-block,
+.docs-preview,
+.docs-pre,
+.docs-token-row,
+.docs-color-chip,
+.docs-media-placeholder,
+.docs-liturgical-dot {
+  outline: 1px dashed var(--forma-color-success);
+  outline-offset: 2px;
+}
