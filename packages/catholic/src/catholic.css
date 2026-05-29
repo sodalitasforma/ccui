@@ -1,0 +1,207 @@
+.forma-institutional-header {
+  border-bottom: 1px solid var(--forma-color-border-subtle);
+  background: var(--forma-color-surface-raised);
+  padding-block: var(--forma-space-4);
+}
+
+.forma-institutional-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--forma-space-3);
+  color: var(--forma-color-text-primary);
+  text-decoration: none;
+}
+
+.forma-institutional-header__brand > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: var(--forma-space-1);
+}
+
+.forma-institutional-header__mark {
+  display: inline-flex;
+  width: 2.5rem;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--forma-color-accent-gold);
+  border-radius: var(--forma-radius-sm);
+  background: rgba(197, 163, 119, 0.18);
+  color: var(--forma-color-accent-gold-text);
+}
+
+.forma-primary-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-2);
+  border-top: 1px solid var(--forma-color-border-subtle);
+  padding-top: var(--forma-space-3);
+}
+
+.forma-primary-nav__link {
+  border-radius: var(--forma-radius-sm);
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  padding: var(--forma-space-2) var(--forma-space-3);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.forma-primary-nav__link:hover,
+.forma-primary-nav__link.is-current {
+  background: rgba(90, 46, 11, 0.1);
+  color: var(--forma-color-link-hover);
+}
+
+.forma-utility-nav,
+.forma-language-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-1);
+}
+
+.forma-utility-nav__link,
+.forma-language-nav__link {
+  border-radius: var(--forma-radius-sm);
+  color: var(--forma-color-text-muted);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  padding: var(--forma-space-1) var(--forma-space-2);
+  text-decoration: none;
+}
+
+.forma-utility-nav__link:hover,
+.forma-utility-nav__link.is-current,
+.forma-language-nav__link:hover,
+.forma-language-nav__link.is-current {
+  background: rgba(90, 46, 11, 0.08);
+  color: var(--forma-color-link-primary);
+}
+
+.forma-search-tool {
+  display: flex;
+  gap: var(--forma-space-2);
+  min-width: min(100%, 18rem);
+}
+
+.forma-breadcrumb {
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+}
+
+.forma-breadcrumb__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.forma-breadcrumb__item {
+  color: var(--forma-color-text-muted);
+}
+
+.forma-breadcrumb__item:not(:last-child)::after {
+  content: "/";
+  margin-left: var(--forma-space-2);
+  color: var(--forma-color-border-strong);
+}
+
+.forma-breadcrumb__item a {
+  color: var(--forma-color-link-primary);
+  text-decoration: none;
+}
+
+.forma-page-header {
+  border-bottom: 1px solid var(--forma-color-border-subtle);
+  background: var(--forma-color-surface-page);
+  padding-block: var(--forma-space-10);
+}
+
+.forma-page-header__description {
+  max-width: 48rem;
+}
+
+.forma-page-header__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-3);
+}
+
+.forma-fullscreen-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background: var(--forma-color-surface-page);
+  padding-block: var(--forma-space-10);
+}
+
+.forma-fullscreen-menu__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(16rem, 1fr);
+  gap: var(--forma-space-10);
+}
+
+.forma-fullscreen-menu__primary,
+.forma-fullscreen-menu__secondary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--forma-space-3);
+}
+
+.forma-fullscreen-menu__primary a {
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-display);
+  font-size: var(--forma-font-size-3xl);
+  line-height: var(--forma-line-height-tight);
+  text-decoration: none;
+}
+
+.forma-fullscreen-menu__secondary a {
+  color: var(--forma-color-text-secondary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-md);
+  text-decoration: none;
+}
+
+.forma-institutional-footer {
+  background: var(--forma-color-surface-dark);
+  color: var(--forma-color-text-inverse);
+  padding-block: var(--forma-space-10);
+}
+
+.forma-institutional-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-3);
+}
+
+.forma-institutional-footer__links a {
+  color: var(--forma-color-text-inverse);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  text-decoration: none;
+}
+
+.forma-institutional-footer__links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 64rem) {
+  .forma-institutional-header .forma-cluster {
+    align-items: flex-start;
+  }
+
+  .forma-search-tool {
+    width: 100%;
+  }
+
+  .forma-fullscreen-menu__grid {
+    grid-template-columns: 1fr;
+  }
+}
