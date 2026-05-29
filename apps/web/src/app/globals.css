@@ -99,8 +99,9 @@ a {
   margin: 0;
   overflow-x: auto;
   border: 1px solid var(--forma-color-border-subtle);
+  border-left: 4px solid var(--forma-color-accent-blue);
   border-radius: var(--forma-radius-md);
-  background: var(--forma-color-surface-raised);
+  background: var(--forma-color-gray-50);
   color: var(--forma-color-text-secondary);
   font-family: var(--forma-font-mono);
   font-size: var(--forma-font-size-sm);
