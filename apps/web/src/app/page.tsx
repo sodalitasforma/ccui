@@ -186,7 +186,7 @@ export default function Home() {
 
           <nav className="docs-nav" aria-label="Documentation">
             <a href="#introduction">Introduction</a>
-            <a href="#tokens">Tokens</a>
+            <a href="#colors">Colors</a>
             <a href="#components">Components</a>
             <a href="#examples">Examples</a>
             <a href="#liturgical">Liturgical</a>
@@ -195,11 +195,9 @@ export default function Home() {
           <Divider />
 
           <Stack gap="xs">
-            {categories.map((category) => (
-              <a className="docs-nav-small" key={category} href={`#${category.toLowerCase()}`}>
-                {category}
-              </a>
-            ))}
+            <a className="docs-nav-small" href="#examples">Primitive examples</a>
+            <a className="docs-nav-small" href="#institutional">Institutional examples</a>
+            <a className="docs-nav-small" href="#liturgical">Liturgical colors</a>
           </Stack>
         </Stack>
       </aside>
@@ -233,17 +231,17 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section id="tokens" surface="page" spacing="md">
+        <Section id="colors" surface="page" spacing="md">
           <Container size="lg">
             <Stack gap="lg">
               <Stack gap="sm">
                 <Eyebrow>Foundations</Eyebrow>
                 <Heading level={2} size="2xl">
-                  Tokens
+                  Colors
                 </Heading>
                 <Text tone="muted">
-                  Semantic tokens are the source of truth. Components consume
-                  variables, not one-off styles.
+                  Vatican-derived institutional colors, corrected into semantic
+                  tokens for accessible Catholic interfaces.
                 </Text>
               </Stack>
 
@@ -278,52 +276,6 @@ export default function Home() {
                   </Stack>
                 </Panel>
               </Grid>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="components" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Primitives</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Component index
-                </Heading>
-                <Text tone="muted">
-                  The current package exports these primitives from{" "}
-                  <Code>@forma/primitives</Code>.
-                </Text>
-              </Stack>
-
-              {categories.map((category) => (
-                <section key={category} id={category.toLowerCase()}>
-                  <Stack gap="md">
-                    <Heading level={3} size="lg" family="interface">
-                      {category}
-                    </Heading>
-                    <Grid columns="2" gap="md">
-                      {primitives
-                        .filter((primitive) => primitive.category === category)
-                        .map((primitive) => (
-                          <Card key={primitive.name} padding="md" border="subtle">
-                            <Stack gap="sm">
-                              <Cluster justify="between" align="start">
-                                <Text as="p" size="md">
-                                  {primitive.name}
-                                </Text>
-                                <Badge variant="success">{primitive.status}</Badge>
-                              </Cluster>
-                              <Text as="p" size="sm" tone="muted">
-                                {primitive.description}
-                              </Text>
-                            </Stack>
-                          </Card>
-                        ))}
-                    </Grid>
-                  </Stack>
-                </section>
-              ))}
             </Stack>
           </Container>
         </Section>
