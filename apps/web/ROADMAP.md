@@ -103,24 +103,24 @@ Phase 4 should also absorb the parish-specific refinements discovered during Pha
 
 - Docs examples must use shared example data and generated code blocks, audited by the docs-example script.
 
-- MassScheduleBlock
-- MassTimeRow
-- ConfessionScheduleBlock
-- AdorationScheduleBlock
-- SacramentScheduleBlock
-- HolyDayScheduleBlock
-- ExceptionNotice
-- LiturgicalDayCard
-- LiturgicalSeasonBadge
-- LiturgicalColorDot
-- FeastDayHero
-- ReadingReference
-- PrayerCard
-- ParishAnnouncementCard
-- BulletinCard
-- MinistryCard
-- DonationCallout
-- ParishContactCard
+- ✅ MassScheduleBlock
+- ✅ MassTimeRow
+- ✅ ConfessionScheduleBlock
+- ✅ AdorationScheduleBlock
+- ✅ SacramentScheduleBlock
+- ✅ HolyDayScheduleBlock
+- ✅ ExceptionNotice
+- ✅ LiturgicalDayCard
+- ✅ LiturgicalSeasonBadge
+- ✅ LiturgicalColorDot
+- ✅ FeastDayHero
+- ✅ ReadingReference
+- ✅ PrayerCard
+- ✅ ParishAnnouncementCard
+- ✅ BulletinCard
+- ✅ MinistryCard
+- ✅ DonationCallout
+- ✅ ParishContactCard
 
 ## Phase 5 — Documents, archives, and magisterium
 
@@ -128,24 +128,24 @@ These support Church documents, diocesan records, Vatican-style archives, offici
 
 Phase 5 should include a dedicated document/media treatment for papal letters, encyclicals, apostolic letters, diocesan decrees, parish bulletins, official PDFs, source citations, and downloadable files.
 
-- ChurchDocumentHeader
-- ChurchDocumentCard
-- DocumentCitation
-- DocumentMetadata
-- DocumentAuthorityBadge
-- DocumentTypeBadge
-- ParagraphAnchor
-- FootnoteList
-- SourceCard
-- CitationTrail
-- RelatedDocuments
-- ArchiveSearchResult
-- DownloadLink
-- FileTypeIcon
-- CanonicalReference
-- OfficialNoticeCard
-- PrayerBlock
-- BiblePassageCard
+- ✅ ChurchDocumentHeader
+- ✅ ChurchDocumentCard
+- ✅ DocumentCitation
+- ✅ DocumentMetadata
+- ✅ DocumentAuthorityBadge
+- ✅ DocumentTypeBadge
+- ✅ ParagraphAnchor
+- ✅ FootnoteList
+- ✅ SourceCard
+- ✅ CitationTrail
+- ✅ RelatedDocuments
+- ✅ ArchiveSearchResult
+- ✅ DownloadLink
+- ✅ FileTypeIcon
+- ✅ CanonicalReference
+- ✅ OfficialNoticeCard
+- ✅ PrayerBlock
+- ✅ BiblePassageCard
 
 ## Phase 6 — Directories
 
