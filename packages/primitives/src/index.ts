@@ -13,7 +13,32 @@ export { Button } from "./button";
 export { Link } from "./link";
 export { Badge } from "./badge";
 export { Tag } from "./tag";
+export { Tabs, TabList, Tab, TabPanel } from "./tabs";
+export {
+  Accordion,
+  AccordionItem,
+  AccordionTrigger,
+  AccordionContent
+} from "./accordion";
+export {
+  TableWrapper,
+  Table,
+  THead,
+  TBody,
+  TR,
+  TH,
+  TD
+} from "./table";
+export {
+  Timeline,
+  TimelineItem,
+  TimelineMarker,
+  TimelineContent
+} from "./timeline";
+export { EmptyState } from "./empty-state";
+export { Notice } from "./notice";
+export { IconFrame } from "./icon-frame";
+export { MediaFrame } from "./media-frame";
 export { SearchInput } from "./search-input";
 export { Select } from "./select";
 export { FilterBar } from "./filter-bar";
-export { Notice } from "./notice";
