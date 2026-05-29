@@ -551,3 +551,44 @@ export const parishContactCardExample = {
   mapHref: "#",
   locationNote: "Office entrance is on the courtyard side of the parish hall.",
 } as const;
+
+export const churchDocumentExample = {
+  title: "Dilexit nos",
+  subtitle: "On the Human and Divine Love of the Heart of Jesus Christ",
+  citation: "Francis, Encyclical Letter Dilexit nos, 24 October 2024.",
+  documentType: "encyclical",
+  authority: "pope",
+  authorityLabel: "Pope",
+  date: "24 October 2024",
+  language: "English",
+  description: "A Church document header/card pattern for papal, diocesan, parish, canonical, and source-backed documents.",
+  href: "#",
+  source: {
+    label: "Holy See",
+    href: "#",
+    authorityLevel: "official",
+  },
+} as const;
+
+export const churchDocumentMetadataExample = {
+  items: [
+    { label: "Authority", value: "Pope" },
+    { label: "Type", value: "Encyclical" },
+    { label: "Date", value: "24 October 2024" },
+    { label: "Source", value: "Holy See", href: "#" },
+  ],
+} as const;
+
+export const documentAuthorityBadgeExample = {
+  authority: "bishop",
+  label: "Bishop",
+} as const;
+
+export const documentTypeBadgeExample = {
+  documentType: "pastoral-letter",
+} as const;
+
+export const documentCitationExample = {
+  label: "Citation",
+  citation: "Francis, Encyclical Letter Dilexit nos, 24 October 2024.",
+} as const;

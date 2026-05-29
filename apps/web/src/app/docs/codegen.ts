@@ -20,6 +20,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  documentTypeBadgeExample,
+  documentCitationExample,
+  documentAuthorityBadgeExample,
+  churchDocumentMetadataExample,
+  churchDocumentExample,
   prayerCardExample,
   parishContactCardExample,
   parishAnnouncementCardExample,
@@ -519,4 +524,56 @@ export const parishContactCardExampleCode =
   officeHours={${arrayCode(parishContactCardExample.officeHours)}}
   mapHref="${parishContactCardExample.mapHref}"
   locationNote="${parishContactCardExample.locationNote}"
+/>`;
+
+export const churchDocumentHeaderExampleCode =
+`<ChurchDocumentHeader
+  title="${churchDocumentExample.title}"
+  subtitle="${churchDocumentExample.subtitle}"
+  citation="${churchDocumentExample.citation}"
+  documentType="${churchDocumentExample.documentType}"
+  authority="${churchDocumentExample.authority}"
+  authorityLabel="${churchDocumentExample.authorityLabel}"
+  date="${churchDocumentExample.date}"
+  language="${churchDocumentExample.language}"
+  description="${churchDocumentExample.description}"
+  href="${churchDocumentExample.href}"
+  source={{ label: "${churchDocumentExample.source.label}", href: "${churchDocumentExample.source.href}", authorityLevel: "${churchDocumentExample.source.authorityLevel}" }}
+/>`;
+
+export const churchDocumentCardExampleCode =
+`<ChurchDocumentCard
+  title="${churchDocumentExample.title}"
+  subtitle="${churchDocumentExample.subtitle}"
+  citation="${churchDocumentExample.citation}"
+  documentType="${churchDocumentExample.documentType}"
+  authority="${churchDocumentExample.authority}"
+  authorityLabel="${churchDocumentExample.authorityLabel}"
+  date="${churchDocumentExample.date}"
+  language="${churchDocumentExample.language}"
+  description="${churchDocumentExample.description}"
+  href="${churchDocumentExample.href}"
+  source={{ label: "${churchDocumentExample.source.label}", href: "${churchDocumentExample.source.href}", authorityLevel: "${churchDocumentExample.source.authorityLevel}" }}
+/>`;
+
+export const documentMetadataExampleCode =
+`<DocumentMetadata
+  items={${arrayCode(churchDocumentMetadataExample.items)}}
+/>`;
+
+export const documentAuthorityBadgeExampleCode =
+`<DocumentAuthorityBadge
+  authority="${documentAuthorityBadgeExample.authority}"
+  label="${documentAuthorityBadgeExample.label}"
+/>`;
+
+export const documentTypeBadgeExampleCode =
+`<DocumentTypeBadge
+  documentType="${documentTypeBadgeExample.documentType}"
+/>`;
+
+export const documentCitationExampleCode =
+`<DocumentCitation
+  label="${documentCitationExample.label}"
+  citation="${documentCitationExample.citation}"
 />`;

@@ -174,3 +174,52 @@ export type ParishContactData = {
   mapHref?: string;
   locationNote?: string;
 };
+
+export type ChurchDocumentAuthority =
+  | "pope"
+  | "holy-see"
+  | "dicastery"
+  | "bishop"
+  | "diocese"
+  | "parish"
+  | "council"
+  | "canon-law"
+  | "scripture"
+  | "other";
+
+export type ChurchDocumentType =
+  | "encyclical"
+  | "apostolic-letter"
+  | "apostolic-constitution"
+  | "motu-proprio"
+  | "homily"
+  | "audience"
+  | "decree"
+  | "instruction"
+  | "notification"
+  | "pastoral-letter"
+  | "bulletin"
+  | "policy"
+  | "form"
+  | "source"
+  | "other";
+
+export type ChurchDocumentData = {
+  title: string;
+  subtitle?: string;
+  citation?: string;
+  documentType: ChurchDocumentType | string;
+  authority: ChurchDocumentAuthority | string;
+  authorityLabel?: string;
+  date?: string;
+  language?: string;
+  description?: string;
+  href?: string;
+  source?: CatholicSource;
+};
+
+export type ChurchDocumentMetadataItem = {
+  label: string;
+  value: string;
+  href?: string;
+};

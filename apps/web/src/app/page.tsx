@@ -44,6 +44,12 @@ import {
 
 import {
   AnnouncementBanner,
+  DocumentCitation,
+  DocumentTypeBadge,
+  DocumentAuthorityBadge,
+  DocumentMetadata,
+  ChurchDocumentCard,
+  ChurchDocumentHeader,
   ParishContactCard,
   DonationCallout,
   MinistryCard,
@@ -100,6 +106,11 @@ import {
   tabExamples,
   tableRows,
   timelineExamples,
+  documentTypeBadgeExample,
+  documentCitationExample,
+  documentAuthorityBadgeExample,
+  churchDocumentMetadataExample,
+  churchDocumentExample,
   parishContactCardExample,
   donationCalloutExample,
   ministryCardExample,
@@ -138,6 +149,12 @@ import {
   tabExamplesCode,
   tableExampleCode,
   timelineExamplesCode,
+  documentCitationExampleCode,
+  documentTypeBadgeExampleCode,
+  documentAuthorityBadgeExampleCode,
+  documentMetadataExampleCode,
+  churchDocumentCardExampleCode,
+  churchDocumentHeaderExampleCode,
   parishContactCardExampleCode,
   donationCalloutExampleCode,
   ministryCardExampleCode,
@@ -294,6 +311,7 @@ export default function Home() {
             <a className="docs-nav-small" href="#parish-schedules">Phase 4 parish schedules</a>
             <a className="docs-nav-small" href="#liturgical-identity">Phase 4 liturgical identity</a>
             <a className="docs-nav-small" href="#parish-content">Phase 4 parish content</a>
+            <a className="docs-nav-small" href="#church-documents">Phase 5 documents</a>
             <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
           </Stack>
         </Stack>
@@ -1014,6 +1032,70 @@ export default function Home() {
                 code={parishContactCardExampleCode}
               >
                 <ParishContactCard {...parishContactCardExample} />
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="church-documents" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Phase 5</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Church document identity components
+                </Heading>
+                <Text tone="muted">
+                  Components for Church documents, official notices, Vatican-style archives, citations, and canonical source display.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                title="ChurchDocumentHeader"
+                description="A formal header for papal, diocesan, parish, canonical, and source-backed document pages."
+                code={churchDocumentHeaderExampleCode}
+              >
+                <ChurchDocumentHeader {...churchDocumentExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ChurchDocumentCard"
+                description="A reusable card for document search results, related documents, and archive lists."
+                code={churchDocumentCardExampleCode}
+              >
+                <ChurchDocumentCard {...churchDocumentExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DocumentMetadata"
+                description="A structured metadata row for date, authority, type, language, and source."
+                code={documentMetadataExampleCode}
+              >
+                <DocumentMetadata items={churchDocumentMetadataExample.items} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DocumentAuthorityBadge"
+                description="A badge for source authority such as pope, bishop, diocese, parish, canon law, or scripture."
+                code={documentAuthorityBadgeExampleCode}
+              >
+                <DocumentAuthorityBadge {...documentAuthorityBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DocumentTypeBadge"
+                description="A type badge for encyclicals, decrees, pastoral letters, policies, forms, and sources."
+                code={documentTypeBadgeExampleCode}
+              >
+                <DocumentTypeBadge {...documentTypeBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DocumentCitation"
+                description="A citation display for canonical, magisterial, and archival references."
+                code={documentCitationExampleCode}
+              >
+                <DocumentCitation {...documentCitationExample} />
               </ComponentBlock>
             </Stack>
           </Container>

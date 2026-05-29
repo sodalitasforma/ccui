@@ -666,3 +666,46 @@
 .forma-parish-contact-card {
   width: 100%;
 }
+
+.forma-document-metadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--forma-space-3);
+  margin: 0;
+}
+
+.forma-document-metadata__item {
+  min-width: 0;
+}
+
+.forma-document-metadata dt,
+.forma-document-metadata dd {
+  margin: 0;
+}
+
+.forma-document-citation {
+  margin: 0;
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-document-citation__label,
+.forma-church-document-card__citation {
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-document-citation__text {
+  font-family: var(--forma-font-document);
+  font-size: var(--forma-font-size-lg);
+  line-height: var(--forma-line-height-relaxed);
+}
+
+.forma-church-document-card {
+  background: var(--forma-color-surface-raised);
+}
+
+.forma-church-document-header__description {
+  max-width: 52rem;
+}
