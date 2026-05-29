@@ -18,3 +18,10 @@ export type { OfficeHourItem } from "./office-hours";
 export { LocationBlock } from "./location-block";
 export { StaffProfile } from "./staff-profile";
 export { ClergyProfile } from "./clergy-profile";
+
+export { AnnouncementBanner } from "./announcement-banner";
+export { DocumentList } from "./document-list";
+export { DocumentCard } from "./document-card";
+export { ResourceLink } from "./resource-link";
+export { EventList } from "./event-list";
+export { EventCard } from "./event-card";

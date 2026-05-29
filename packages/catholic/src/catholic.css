@@ -366,3 +366,167 @@
     gap: var(--forma-space-1);
   }
 }
+
+.forma-announcement-banner {
+  border: 1px solid var(--forma-color-border-subtle);
+  border-left-width: 4px;
+  border-radius: var(--forma-radius-md);
+  padding: var(--forma-space-4);
+  background: var(--forma-color-surface-raised);
+}
+
+.forma-announcement-banner--variant-official {
+  border-left-color: var(--forma-color-brown-700);
+  background: var(--forma-color-surface-parchment);
+}
+
+.forma-announcement-banner--variant-liturgical {
+  border-left-color: var(--forma-liturgical-violet);
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-announcement-banner--variant-warning {
+  border-left-color: var(--forma-color-accent-gold);
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-announcement-banner--variant-emergency {
+  border-left-color: var(--forma-color-danger);
+}
+
+.forma-announcement-banner__title {
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-announcement-banner__link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--forma-color-border-strong);
+  border-radius: var(--forma-radius-sm);
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  min-height: 2rem;
+  padding-inline: var(--forma-space-3);
+  text-decoration: none;
+}
+
+.forma-announcement-banner__link:hover {
+  background: rgba(90, 46, 11, 0.08);
+}
+
+.forma-resource-link {
+  display: block;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-md);
+  background: var(--forma-color-surface-raised);
+  color: inherit;
+  padding: var(--forma-space-3);
+  text-decoration: none;
+  transition:
+    border-color var(--forma-motion-duration-fast) var(--forma-motion-easing-standard),
+    box-shadow var(--forma-motion-duration-fast) var(--forma-motion-easing-standard);
+}
+
+.forma-resource-link:hover {
+  border-color: var(--forma-color-border-strong);
+  box-shadow: var(--forma-shadow-brown-sm);
+}
+
+.forma-resource-link__title {
+  color: var(--forma-color-link-primary);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-document-list,
+.forma-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--forma-space-6);
+}
+
+.forma-document-list__title,
+.forma-event-list__title {
+  margin: 0;
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-display);
+  font-size: var(--forma-font-size-3xl);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-document-card,
+.forma-event-card {
+  transition:
+    border-color var(--forma-motion-duration-fast) var(--forma-motion-easing-standard),
+    box-shadow var(--forma-motion-duration-fast) var(--forma-motion-easing-standard);
+}
+
+.forma-document-card--linked:hover,
+.forma-event-card--linked:hover {
+  border-color: var(--forma-color-border-strong);
+  box-shadow: var(--forma-shadow-brown-sm);
+}
+
+.forma-document-card__link,
+.forma-event-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.forma-document-card__type {
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-document-card__title,
+.forma-event-card__title {
+  margin: 0;
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-lg);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-event-card__date {
+  display: grid;
+  min-width: 4.75rem;
+  justify-items: center;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-sm);
+  background: var(--forma-color-surface-parchment);
+  padding: var(--forma-space-2);
+  text-align: center;
+}
+
+.forma-event-card__date span:first-child {
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.forma-event-card__date span:last-child {
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-display);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-event-card__body {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (max-width: 48rem) {
+  .forma-announcement-banner .forma-cluster,
+  .forma-event-card .forma-cluster {
+    align-items: flex-start;
+  }
+
+  .forma-event-card__date {
+    min-width: 4rem;
+  }
+}
