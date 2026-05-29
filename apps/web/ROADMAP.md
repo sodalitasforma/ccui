@@ -170,16 +170,16 @@ These support parish notices, diocesan newsrooms, Vatican-style media pages, pub
 
 Phase 7 should support real embedded media sources. Media examples should make it clear whether media comes from a database, a CMS, YouTube, Vatican News, or another public website URL.
 
-- NewsCard
-- NewsList
-- CalendarTabs
-- CalendarItem
-- PhotoGalleryCard
-- VideoCard
-- MediaCard
-- FeaturedStory
-- PressReleaseCard
-- PressOfficeNotice
+- ✅ NewsCard
+- ✅ NewsList
+- ✅ CalendarTabs
+- ✅ CalendarItem
+- ✅ PhotoGalleryCard
+- ✅ VideoCard
+- ✅ MediaCard
+- ✅ FeaturedStory
+- ✅ PressReleaseCard
+- ✅ PressOfficeNotice
 
 ## Phase 8 — CDCF project mappings
 
