@@ -93,6 +93,16 @@ Phase 4 should also absorb the parish-specific refinements discovered during Pha
 - Add status indicators and action affordances where parish tables need them.
 - Ensure schedule tables can show cancellation, moved location, livestream, confession available, and exception states.
 
+- Build parish/liturgical components from existing tokens, primitives, and institutional components where appropriate.
+
+- Add shared Catholic data types before adding visual components.
+
+- Shape component props so they can later consume Liturgical Calendar API, Bible API, Catholic Semantic Canon, OntoKit, and Catholic datasets.
+
+- Avoid one-off CSS unless the style becomes a reusable token or component pattern.
+
+- Docs examples must use shared example data and generated code blocks, audited by the docs-example script.
+
 - MassScheduleBlock
 - MassTimeRow
 - ConfessionScheduleBlock

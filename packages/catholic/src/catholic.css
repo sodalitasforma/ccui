@@ -530,3 +530,44 @@
     min-width: 4rem;
   }
 }
+
+.forma-schedule-block {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.52), transparent 14rem),
+    var(--forma-color-surface-raised);
+}
+
+.forma-schedule-day {
+  padding-block: var(--forma-space-3);
+  border-top: 1px solid var(--forma-color-border-subtle);
+}
+
+.forma-schedule-day:first-of-type {
+  border-top: 0;
+}
+
+.forma-mass-time-row {
+  padding: var(--forma-space-3);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-md);
+  background: var(--forma-color-surface-subtle);
+  box-shadow: var(--forma-shadow-hairline);
+}
+
+.forma-mass-time-row__main {
+  min-width: 0;
+}
+
+.forma-mass-time-row__time {
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-lg);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: var(--forma-line-height-tight);
+  white-space: nowrap;
+}
+
+.forma-exception-notice__title,
+.forma-mass-time-row__label {
+  font-weight: var(--forma-font-weight-bold);
+}
