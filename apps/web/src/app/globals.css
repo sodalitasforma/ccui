@@ -90,19 +90,35 @@ a {
 
 .docs-preview {
   min-height: 9rem;
+  background: transparent;
+  box-shadow: none;
 }
 
 .docs-pre {
+  position: relative;
   margin: 0;
   overflow-x: auto;
   border: 1px solid var(--forma-color-border-subtle);
   border-radius: var(--forma-radius-md);
-  background: var(--forma-color-brown-950);
-  color: var(--forma-color-text-inverse);
+  background: var(--forma-color-surface-raised);
+  color: var(--forma-color-text-secondary);
   font-family: var(--forma-font-mono);
   font-size: var(--forma-font-size-sm);
   line-height: var(--forma-line-height-relaxed);
-  padding: var(--forma-space-4);
+  padding: var(--forma-space-6) var(--forma-space-4) var(--forma-space-4);
+}
+
+.docs-pre::before {
+  content: "tsx";
+  position: absolute;
+  top: var(--forma-space-2);
+  right: var(--forma-space-3);
+  color: var(--forma-color-text-muted);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-nav);
+  text-transform: uppercase;
 }
 
 .docs-token-row {
@@ -152,23 +168,4 @@ a {
     border-right: 0;
     border-bottom: 1px solid var(--forma-color-border-subtle);
   }
-}
-
-/* TODO: Promote docs-only scaffolding into internal docs components. */
-.docs-shell,
-.docs-sidebar,
-.docs-main,
-.docs-nav,
-.docs-nav-small,
-.docs-lede,
-.docs-code,
-.docs-block,
-.docs-preview,
-.docs-pre,
-.docs-token-row,
-.docs-color-chip,
-.docs-media-placeholder,
-.docs-liturgical-dot {
-  outline: 1px dashed var(--forma-color-success);
-  outline-offset: 2px;
 }

@@ -407,13 +407,23 @@ export default function Home() {
               >
                 <Tabs>
                   <TabList>
-                    <Tab active>News</Tab>
+                    <Tab>News</Tab>
                     <Tab>Calendar</Tab>
                     <Tab>Media</Tab>
                   </TabList>
-                  <TabPanel>
+                  <TabPanel index={0}>
                     <Text tone="secondary">
-                      Tabs can power Vatican-style news/calendar sections.
+                      News panel: parish, diocesan, and institutional updates.
+                    </Text>
+                  </TabPanel>
+                  <TabPanel index={1}>
+                    <Text tone="secondary">
+                      Calendar panel: public events, liturgies, and office closures.
+                    </Text>
+                  </TabPanel>
+                  <TabPanel index={2}>
+                    <Text tone="secondary">
+                      Media panel: photo galleries, videos, and featured stories.
                     </Text>
                   </TabPanel>
                 </Tabs>
@@ -425,14 +435,14 @@ export default function Home() {
                 code={`<Accordion>
   <AccordionItem>
     <AccordionTrigger open>Confession</AccordionTrigger>
-    <AccordionContent open>...</AccordionContent>
+    <AccordionContent>...</AccordionContent>
   </AccordionItem>
 </Accordion>`}
               >
                 <Accordion>
-                  <AccordionItem>
-                    <AccordionTrigger open>Confession schedule</AccordionTrigger>
-                    <AccordionContent open>
+                  <AccordionItem defaultOpen>
+                    <AccordionTrigger>Confession schedule</AccordionTrigger>
+                    <AccordionContent>
                       Saturday, 3:30 PM to 4:30 PM, or by appointment.
                     </AccordionContent>
                   </AccordionItem>
@@ -594,6 +604,7 @@ export default function Home() {
           </Container>
         </Section>
 
+
         <Section id="institutional" surface="page" spacing="md">
           <Container size="lg">
             <Stack gap="xl">
@@ -607,7 +618,28 @@ export default function Home() {
                 </Text>
               </Stack>
 
-              <Card padding="none" border="subtle">
+              <ComponentBlock
+                title="InstitutionalHeader"
+                description="Top-level identity, language, utility, search, and primary navigation for a Catholic institution."
+                code={`<InstitutionalHeader
+  title="Saint Anselm Parish"
+  subtitle="A Catholic parish of the Diocese"
+  primaryItems={[
+    { label: "Mass Times", href: "#", current: true },
+    { label: "Sacraments", href: "#" },
+    { label: "Ministries", href: "#" }
+  ]}
+  utilityItems={[
+    { label: "Bulletin", href: "#" },
+    { label: "Contact", href: "#" }
+  ]}
+  languages={[
+    { label: "EN", href: "#", current: true },
+    { label: "ES", href: "#" }
+  ]}
+  searchAction="#"
+/>`}
+              >
                 <InstitutionalHeader
                   title="Saint Anselm Parish"
                   subtitle="A Catholic parish of the Diocese"
@@ -628,33 +660,71 @@ export default function Home() {
                   ]}
                   searchAction="#"
                 />
-              </Card>
+              </ComponentBlock>
 
-              <PageHeader
-                eyebrow="Parish office"
-                title="Institutional page header"
-                description="A formal header for parish, diocesan, school, ministry, and foundation pages."
-                breadcrumbs={[
-                  { label: "Home", href: "#" },
-                  { label: "Parish", href: "#" },
-                  { label: "Office", href: "#" },
-                ]}
-                actions={
-                  <Cluster>
-                    <Button size="sm">Primary action</Button>
-                    <Button size="sm" variant="secondary">Secondary action</Button>
-                  </Cluster>
-                }
-              />
+              <ComponentBlock
+                title="PageHeader + Breadcrumb"
+                description="Formal page opening with optional breadcrumbs, eyebrow, description, and actions."
+                code={`<PageHeader
+  eyebrow="Parish office"
+  title="Institutional page header"
+  description="A formal header for parish, diocesan, school, ministry, and foundation pages."
+  breadcrumbs={[
+    { label: "Home", href: "#" },
+    { label: "Parish", href: "#" },
+    { label: "Office", href: "#" }
+  ]}
+/>`}
+              >
+                <PageHeader
+                  eyebrow="Parish office"
+                  title="Institutional page header"
+                  description="A formal header for parish, diocesan, school, ministry, and foundation pages."
+                  breadcrumbs={[
+                    { label: "Home", href: "#" },
+                    { label: "Parish", href: "#" },
+                    { label: "Office", href: "#" },
+                  ]}
+                  actions={
+                    <Cluster>
+                      <Button size="sm">Primary action</Button>
+                      <Button size="sm" variant="secondary">Secondary action</Button>
+                    </Cluster>
+                  }
+                />
+              </ComponentBlock>
 
-              <AnnouncementBanner
-                badge="Official"
-                title="Parish office closed Friday"
-                description="The office will reopen Monday morning. Sacramental emergencies should use the emergency line."
-                href="#"
-              />
+              <ComponentBlock
+                title="AnnouncementBanner"
+                description="Official, liturgical, warning, and emergency announcements."
+                code={`<AnnouncementBanner
+  badge="Official"
+  title="Parish office closed Friday"
+  description="The office will reopen Monday morning."
+  href="#"
+/>`}
+              >
+                <AnnouncementBanner
+                  badge="Official"
+                  title="Parish office closed Friday"
+                  description="The office will reopen Monday morning. Sacramental emergencies should use the emergency line."
+                  href="#"
+                />
+              </ComponentBlock>
 
-              <Grid columns="2" gap="lg">
+              <ComponentBlock
+                title="Directory + DirectoryCard"
+                description="Directory shell and cards for offices, ministries, schools, parishes, staff groups, and institutional records."
+                code={`<Directory title="Institutional directory">
+  <DirectoryCard
+    eyebrow="Office"
+    title="Chancery Office"
+    description="Administrative office for diocesan governance and records."
+    status="Open"
+    href="#"
+  />
+</Directory>`}
+              >
                 <Directory title="Institutional directory" description="Directory and directory cards.">
                   <DirectoryCard
                     eyebrow="Office"
@@ -672,48 +742,115 @@ export default function Home() {
                     href="#"
                   />
                 </Directory>
+              </ComponentBlock>
 
-                <Stack gap="md">
-                  <ContactBlock
-                    title="Contact"
-                    phone="(555) 123-4567"
-                    email="office@example.org"
-                    website="https://example.org"
-                    addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
-                  />
-                  <OfficeHours
-                    items={[
-                      { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
-                      { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" },
-                    ]}
-                  />
-                  <LocationBlock
-                    addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
-                    mapHref="#"
-                    note="Parking available behind the parish hall."
-                  />
-                </Stack>
-              </Grid>
-
-              <Grid columns="2" gap="lg">
-                <StaffProfile
-                  name="Maria Sanchez"
-                  position="Parish Secretary"
-                  department="Office"
-                  email="maria@example.org"
+              <ComponentBlock
+                title="ContactBlock"
+                description="Structured contact details for parish offices, diocesan offices, ministries, schools, and foundations."
+                code={`<ContactBlock
+  phone="(555) 123-4567"
+  email="office@example.org"
+  website="https://example.org"
+  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
+/>`}
+              >
+                <ContactBlock
+                  title="Contact"
                   phone="(555) 123-4567"
+                  email="office@example.org"
+                  website="https://example.org"
+                  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
                 />
+              </ComponentBlock>
 
-                <ClergyProfile
-                  name="Rev. Thomas More"
-                  title="Pastor"
-                  assignment="Saint Anselm Parish"
-                  orderOrPostnominals="Pastor"
-                  email="pastor@example.org"
+              <ComponentBlock
+                title="OfficeHours"
+                description="Structured office-hour display for public-facing institutional pages."
+                code={`<OfficeHours
+  items={[
+    { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
+    { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" }
+  ]}
+/>`}
+              >
+                <OfficeHours
+                  items={[
+                    { days: "Monday–Thursday", hours: "9:00 AM – 4:00 PM" },
+                    { days: "Friday", hours: "9:00 AM – Noon", note: "Summer hours" },
+                  ]}
                 />
-              </Grid>
+              </ComponentBlock>
 
-              <Grid columns="2" gap="lg">
+              <ComponentBlock
+                title="LocationBlock"
+                description="Address, map link, and location note for offices, parishes, schools, and ministries."
+                code={`<LocationBlock
+  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
+  mapHref="#"
+  note="Parking available behind the parish hall."
+/>`}
+              >
+                <LocationBlock
+                  addressLines={["123 Cathedral Place", "Santa Fe, NM 87501"]}
+                  mapHref="#"
+                  note="Parking available behind the parish hall."
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="StaffProfile + ClergyProfile"
+                description="Profile cards for staff and clergy, with clergy receiving a more formal gold treatment."
+                code={`<StaffProfile
+  name="Maria Sanchez"
+  position="Parish Secretary"
+  department="Office"
+  email="maria@example.org"
+/>
+
+<ClergyProfile
+  name="Rev. Thomas More"
+  title="Pastor"
+  assignment="Saint Anselm Parish"
+  orderOrPostnominals="Pastor"
+/>`}
+              >
+                <Grid columns="2" gap="md">
+                  <StaffProfile
+                    name="Maria Sanchez"
+                    position="Parish Secretary"
+                    department="Office"
+                    email="maria@example.org"
+                    phone="(555) 123-4567"
+                  />
+
+                  <ClergyProfile
+                    name="Rev. Thomas More"
+                    title="Pastor"
+                    assignment="Saint Anselm Parish"
+                    orderOrPostnominals="Pastor"
+                    email="pastor@example.org"
+                  />
+                </Grid>
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="DocumentList + DocumentCard + ResourceLink"
+                description="Official documents, forms, policies, downloads, and external institutional resources."
+                code={`<DocumentList title="Documents">
+  <DocumentCard
+    title="Parish Registration Form"
+    documentType="Form"
+    authority="Parish"
+    fileType="PDF"
+    href="#"
+  />
+  <ResourceLink
+    title="Safe Environment Policy"
+    href="#"
+    variant="document"
+  />
+</DocumentList>`}
+              >
                 <DocumentList title="Documents" description="Document cards and resource links.">
                   <DocumentCard
                     title="Parish Registration Form"
@@ -732,7 +869,22 @@ export default function Home() {
                     variant="document"
                   />
                 </DocumentList>
+              </ComponentBlock>
 
+              <ComponentBlock
+                title="EventList + EventCard"
+                description="Public calendar cards for liturgical, parish, school, diocesan, and ministry events."
+                code={`<EventList title="Events">
+  <EventCard
+    title="Corpus Christi Procession"
+    date="Jun 7"
+    time="11:30 AM"
+    location="Church grounds"
+    category="Liturgical"
+    href="#"
+  />
+</EventList>`}
+              >
                 <EventList title="Events" description="Event cards for public calendars.">
                   <EventCard
                     title="Corpus Christi Procession"
@@ -752,9 +904,21 @@ export default function Home() {
                     href="#"
                   />
                 </EventList>
-              </Grid>
+              </ComponentBlock>
 
-              <Card padding="none" border="subtle">
+              <ComponentBlock
+                title="InstitutionalFooter"
+                description="Formal footer for Catholic institutional websites."
+                code={`<InstitutionalFooter
+  title="Saint Anselm Parish"
+  description="A public-facing Catholic institution built with Forma."
+  links={[
+    { label: "Contact", href: "#" },
+    { label: "Privacy", href: "#" },
+    { label: "Giving", href: "#" }
+  ]}
+/>`}
+              >
                 <InstitutionalFooter
                   title="Saint Anselm Parish"
                   description="A public-facing Catholic institution built with Forma."
@@ -764,7 +928,7 @@ export default function Home() {
                     { label: "Giving", href: "#" },
                   ]}
                 />
-              </Card>
+              </ComponentBlock>
             </Stack>
           </Container>
         </Section>
