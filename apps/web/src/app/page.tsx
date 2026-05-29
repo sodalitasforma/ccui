@@ -43,538 +43,537 @@ import {
 } from "../../../../packages/primitives/src";
 
 import colors from "../../../../packages/tokens/src/colors.json";
-import typography from "../../../../packages/tokens/src/typography.json";
-import spacing from "../../../../packages/tokens/src/spacing.json";
-import radius from "../../../../packages/tokens/src/radius.json";
-import shadows from "../../../../packages/tokens/src/shadows.json";
-import borders from "../../../../packages/tokens/src/borders.json";
-import motion from "../../../../packages/tokens/src/motion.json";
 import liturgicalColors from "../../../../packages/tokens/src/liturgical-colors.json";
 
-type RawColors = Record<string, string>;
+type Primitive = {
+  name: string;
+  description: string;
+  status: "Added";
+  category: "Layout" | "Typography" | "Surface" | "Action" | "Forms" | "Data" | "Media";
+};
 
-const rawColors = colors.color.raw as RawColors;
+const primitives: Primitive[] = [
+  { name: "Container", description: "Centers page content at stable institutional widths.", status: "Added", category: "Layout" },
+  { name: "Section", description: "Applies page, subtle, parchment, raised, or dark surfaces.", status: "Added", category: "Layout" },
+  { name: "Stack", description: "Vertical rhythm using spacing tokens.", status: "Added", category: "Layout" },
+  { name: "Cluster", description: "Inline wrapping groups for actions, metadata, and nav.", status: "Added", category: "Layout" },
+  { name: "Grid", description: "Responsive card and directory layouts.", status: "Added", category: "Layout" },
+  { name: "Text", description: "Body copy with text-safe semantic tones.", status: "Added", category: "Typography" },
+  { name: "Heading", description: "Serif, document, interface, and inscriptional heading styles.", status: "Added", category: "Typography" },
+  { name: "Eyebrow", description: "Uppercase institutional section labels.", status: "Added", category: "Typography" },
+  { name: "Card", description: "Restrained raised content surface.", status: "Added", category: "Surface" },
+  { name: "Panel", description: "Grouped institutional module surface.", status: "Added", category: "Surface" },
+  { name: "Divider", description: "Subtle, strong, gold, and active separators.", status: "Added", category: "Surface" },
+  { name: "Notice", description: "Official, liturgical, warning, danger, success, and info notices.", status: "Added", category: "Surface" },
+  { name: "Button", description: "Primary, secondary, gold, ghost, and danger actions.", status: "Added", category: "Action" },
+  { name: "Link", description: "Brown-first institutional links.", status: "Added", category: "Action" },
+  { name: "Badge", description: "Compact status, season, and category labels.", status: "Added", category: "Action" },
+  { name: "Tag", description: "Lightweight filter and metadata labels.", status: "Added", category: "Action" },
+  { name: "SearchInput", description: "Search field for directories and archives.", status: "Added", category: "Forms" },
+  { name: "Select", description: "Native select styled for filters and language controls.", status: "Added", category: "Forms" },
+  { name: "FilterBar", description: "Composed search/filter/action row.", status: "Added", category: "Forms" },
+  { name: "Tabs", description: "News, calendar, and section switching.", status: "Added", category: "Data" },
+  { name: "Accordion", description: "Disclosure sections for menus and structured details.", status: "Added", category: "Data" },
+  { name: "Table", description: "Dense institutional records and metadata.", status: "Added", category: "Data" },
+  { name: "Timeline", description: "Historical, sacramental, and project chronology.", status: "Added", category: "Data" },
+  { name: "EmptyState", description: "Sober blank states for unpublished records.", status: "Added", category: "Data" },
+  { name: "IconFrame", description: "Restrained framed icon container.", status: "Added", category: "Media" },
+  { name: "MediaFrame", description: "Formal image, video, and hero media frame.", status: "Added", category: "Media" },
+];
+
+const categories = ["Layout", "Typography", "Surface", "Action", "Forms", "Data", "Media"] as const;
+
+const rawColors = colors.color.raw as Record<string, string>;
 const semanticColors = colors.color.semantic as Record<string, string>;
 
 function resolveColor(value: string) {
   const match = value.match(/^\{color\.raw\.(.+)\}$/);
-
-  if (!match) {
-    return value;
-  }
-
+  if (!match) return value;
   return rawColors[match[1]] || value;
 }
 
-function entries<T extends Record<string, unknown>>(value: T) {
-  return Object.entries(value);
+function Code({ children }: { children: string }) {
+  return <code className="docs-code">{children}</code>;
 }
 
-function TokenCode({ children }: { children: string }) {
-  return <code className="gallery-code">{children}</code>;
-}
-
-function ColorSwatch({
-  name,
-  value,
-  resolved,
+function ComponentBlock({
+  title,
+  description,
+  children,
+  code,
 }: {
-  name: string;
-  value: string;
-  resolved: string;
+  title: string;
+  description: string;
+  children: React.ReactNode;
+  code: string;
 }) {
   return (
-    <Card padding="sm" border="subtle" className="gallery-swatch-card">
-      <div
-        className="gallery-swatch"
-        style={{ background: resolved }}
-        aria-hidden="true"
-      />
-      <Stack gap="xs">
+    <section className="docs-block">
+      <Stack gap="sm">
+        <Cluster justify="between" align="start">
+          <Stack gap="xs">
+            <Heading level={2} size="xl" family="interface">
+              {title}
+            </Heading>
+            <Text tone="muted">{description}</Text>
+          </Stack>
+          <Badge variant="success">Added</Badge>
+        </Cluster>
+
+        <Card padding="lg" border="subtle" className="docs-preview">
+          {children}
+        </Card>
+
+        <pre className="docs-pre">
+          <code>{code}</code>
+        </pre>
+      </Stack>
+    </section>
+  );
+}
+
+function ColorRow({ name, value }: { name: string; value: string }) {
+  const resolved = resolveColor(value);
+
+  return (
+    <div className="docs-token-row">
+      <div className="docs-color-chip" style={{ background: resolved }} aria-hidden="true" />
+      <div>
         <Text as="p" size="sm">
           {name}
         </Text>
         <Text as="p" size="xs" tone="muted">
           {value}
         </Text>
-        {resolved !== value ? (
-          <Text as="p" size="xs" tone="muted">
-            {resolved}
-          </Text>
-        ) : null}
-      </Stack>
-    </Card>
+      </div>
+    </div>
   );
 }
 
 export default function Home() {
-  const primitiveNames = [
-    "Container",
-    "Section",
-    "Stack",
-    "Cluster",
-    "Grid",
-    "Card",
-    "Panel",
-    "Divider",
-    "Text",
-    "Heading",
-    "Eyebrow",
-    "Button",
-    "Link",
-    "Badge",
-    "Tag",
-    "Tabs",
-    "Accordion",
-    "SearchInput",
-    "Select",
-    "FilterBar",
-    "Table",
-    "Timeline",
-    "EmptyState",
-    "Notice",
-    "IconFrame",
-    "MediaFrame",
-  ];
-
   return (
-    <main>
-      <Section surface="page" spacing="xl">
-        <Container size="xl">
-          <Stack gap="xl">
-            <Stack gap="md">
+    <main className="docs-shell">
+      <aside className="docs-sidebar">
+        <Stack gap="lg">
+          <Stack gap="xs">
+            <Text as="p" size="md">
+              Forma
+            </Text>
+            <Text as="p" size="xs" tone="muted">
+              Catholic UI Kit
+            </Text>
+          </Stack>
+
+          <nav className="docs-nav" aria-label="Documentation">
+            <a href="#introduction">Introduction</a>
+            <a href="#tokens">Tokens</a>
+            <a href="#components">Components</a>
+            <a href="#examples">Examples</a>
+            <a href="#liturgical">Liturgical</a>
+          </nav>
+
+          <Divider />
+
+          <Stack gap="xs">
+            {categories.map((category) => (
+              <a className="docs-nav-small" key={category} href={`#${category.toLowerCase()}`}>
+                {category}
+              </a>
+            ))}
+          </Stack>
+        </Stack>
+      </aside>
+
+      <div className="docs-main">
+        <Section id="introduction" surface="page" spacing="lg">
+          <Container size="lg">
+            <Stack gap="lg">
               <Cluster gap="sm">
-                <Badge variant="gold">Forma</Badge>
-                <Tag variant="brown">Catholic UI Kit</Tag>
-                <Tag variant="active">Vatican-derived tokens</Tag>
+                <Badge variant="gold">v0.0.1</Badge>
+                <Tag variant="brown">Phase 2 complete</Tag>
+                <Tag variant="active">26 primitives</Tag>
               </Cluster>
 
               <Stack gap="sm">
-                <Eyebrow tone="gold">Design system gallery</Eyebrow>
-                <Heading level={1} size="5xl" family="display">
-                  A visual grammar for Catholic digital institutions.
+                <Heading level={1} size="4xl" family="display">
+                  Components
                 </Heading>
-                <Text size="lg" tone="secondary" className="gallery-lede">
-                  This page is built from Forma primitives and Forma tokens. It
-                  shows the current token system, primitive inventory, and first
-                  component states before Catholic-specific components are added.
+                <Text size="lg" tone="secondary" className="docs-lede">
+                  Beautiful, accessible, token-bound primitives for Catholic
+                  institutions. Built from a Vatican-informed visual grammar,
+                  corrected into a reusable design system.
                 </Text>
               </Stack>
 
               <Cluster gap="sm">
-                <Button>Primary action</Button>
-                <Button variant="secondary">Secondary action</Button>
-                <Button variant="gold">Gold action</Button>
-                <Link href="#primitives">View primitives</Link>
+                <Button>Get started</Button>
+                <Button variant="secondary">View registry</Button>
               </Cluster>
             </Stack>
+          </Container>
+        </Section>
 
-            <Notice variant="official">
-              Vatican reference work informed the palette, type direction,
-              restrained borders, and institutional hierarchy. Forma keeps the
-              feeling while enforcing text-safe semantic tokens.
-            </Notice>
-          </Stack>
-        </Container>
-      </Section>
+        <Section id="tokens" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="lg">
+              <Stack gap="sm">
+                <Eyebrow>Foundations</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Tokens
+                </Heading>
+                <Text tone="muted">
+                  Semantic tokens are the source of truth. Components consume
+                  variables, not one-off styles.
+                </Text>
+              </Stack>
 
-      <Section surface="subtle" spacing="lg">
-        <Container size="xl">
-          <Stack gap="lg">
-            <Stack gap="sm">
-              <Eyebrow>Tokens</Eyebrow>
-              <Heading level={2}>Color system</Heading>
-              <Text tone="muted">
-                Raw colors provide the palette. Semantic colors define safe UI
-                usage.
-              </Text>
+              <Grid columns="2" gap="lg">
+                <Panel surface="raised" padding="md">
+                  <Stack gap="md">
+                    <Heading level={3} size="lg" family="interface">
+                      Semantic colors
+                    </Heading>
+                    <Stack gap="xs">
+                      {Object.entries(semanticColors)
+                        .slice(0, 14)
+                        .map(([name, value]) => (
+                          <ColorRow key={name} name={name} value={String(value)} />
+                        ))}
+                    </Stack>
+                  </Stack>
+                </Panel>
+
+                <Panel surface="raised" padding="md">
+                  <Stack gap="md">
+                    <Heading level={3} size="lg" family="interface">
+                      Raw palette
+                    </Heading>
+                    <Stack gap="xs">
+                      {Object.entries(rawColors)
+                        .slice(0, 14)
+                        .map(([name, value]) => (
+                          <ColorRow key={name} name={name} value={String(value)} />
+                        ))}
+                    </Stack>
+                  </Stack>
+                </Panel>
+              </Grid>
             </Stack>
+          </Container>
+        </Section>
 
-            <Panel>
-              <Stack gap="lg">
-                <Stack gap="sm">
-                  <Heading level={3} size="lg">
-                    Raw palette
-                  </Heading>
-                  <Grid columns="auto" gap="md">
-                    {entries(rawColors).map(([name, value]) => (
-                      <ColorSwatch
-                        key={name}
-                        name={name}
-                        value={String(value)}
-                        resolved={String(value)}
-                      />
-                    ))}
-                  </Grid>
-                </Stack>
-
-                <Divider />
-
-                <Stack gap="sm">
-                  <Heading level={3} size="lg">
-                    Semantic colors
-                  </Heading>
-                  <Grid columns="auto" gap="md">
-                    {entries(semanticColors).map(([name, value]) => (
-                      <ColorSwatch
-                        key={name}
-                        name={name}
-                        value={String(value)}
-                        resolved={resolveColor(String(value))}
-                      />
-                    ))}
-                  </Grid>
-                </Stack>
+        <Section id="components" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Primitives</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Component index
+                </Heading>
+                <Text tone="muted">
+                  The current package exports these primitives from{" "}
+                  <Code>@forma/primitives</Code>.
+                </Text>
               </Stack>
-            </Panel>
-          </Stack>
-        </Container>
-      </Section>
 
-      <Section surface="page" spacing="lg">
-        <Container size="xl">
-          <Grid columns="2" gap="lg">
-            <Panel>
-              <Stack gap="md">
-                <Eyebrow>Typography</Eyebrow>
-                <Heading level={2}>Type tokens</Heading>
+              {categories.map((category) => (
+                <section key={category} id={category.toLowerCase()}>
+                  <Stack gap="md">
+                    <Heading level={3} size="lg" family="interface">
+                      {category}
+                    </Heading>
+                    <Grid columns="2" gap="md">
+                      {primitives
+                        .filter((primitive) => primitive.category === category)
+                        .map((primitive) => (
+                          <Card key={primitive.name} padding="md" border="subtle">
+                            <Stack gap="sm">
+                              <Cluster justify="between" align="start">
+                                <Text as="p" size="md">
+                                  {primitive.name}
+                                </Text>
+                                <Badge variant="success">{primitive.status}</Badge>
+                              </Cluster>
+                              <Text as="p" size="sm" tone="muted">
+                                {primitive.description}
+                              </Text>
+                            </Stack>
+                          </Card>
+                        ))}
+                    </Grid>
+                  </Stack>
+                </section>
+              ))}
+            </Stack>
+          </Container>
+        </Section>
 
-                <Stack gap="sm">
-                  {entries(typography.typography.fontFamily).map(
-                    ([name, value]) => (
-                      <Card key={name} padding="sm">
-                        <Stack gap="xs">
-                          <Text size="xs" tone="muted">
-                            {name}
-                          </Text>
-                          <p
-                            className="gallery-type-sample"
-                            style={{ fontFamily: String(value) }}
-                          >
-                            Forma Ecclesiae
-                          </p>
-                          <Text size="xs" tone="muted">
-                            {String(value)}
-                          </Text>
-                        </Stack>
-                      </Card>
-                    )
-                  )}
-                </Stack>
+        <Section id="examples" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl">
+              <Stack gap="sm">
+                <Eyebrow>Show, don’t tell</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Examples
+                </Heading>
               </Stack>
-            </Panel>
 
-            <Panel surface="raised">
-              <Stack gap="md">
-                <Eyebrow>Scale</Eyebrow>
-                <Heading level={2}>Size, radius, shadow</Heading>
+              <ComponentBlock
+                title="Button"
+                description="Primary, secondary, gold, ghost, and danger actions."
+                code={`<Button>Primary</Button>
+<Button variant="secondary">Secondary</Button>
+<Button variant="gold">Gold</Button>`}
+              >
+                <Cluster gap="sm">
+                  <Button>Primary</Button>
+                  <Button variant="secondary">Secondary</Button>
+                  <Button variant="gold">Gold</Button>
+                  <Button variant="ghost">Ghost</Button>
+                  <Button variant="danger">Danger</Button>
+                </Cluster>
+              </ComponentBlock>
 
+              <ComponentBlock
+                title="Notice"
+                description="Official and liturgical notices for institutional communication."
+                code={`<Notice variant="official">
+  Parish office notice.
+</Notice>`}
+              >
+                <Stack gap="md">
+                  <Notice variant="official">
+                    The parish office will publish an updated Holy Day schedule
+                    before the end of the week.
+                  </Notice>
+                  <Notice variant="liturgical">
+                    Liturgical notices use a restrained visual treatment and a
+                    clear left border.
+                  </Notice>
+                </Stack>
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="FilterBar"
+                description="Search and filter composition for directories and archives."
+                code={`<FilterBar>
+  <SearchInput placeholder="Search" />
+  <Select><option>All</option></Select>
+  <Button>Apply</Button>
+</FilterBar>`}
+              >
+                <FilterBar>
+                  <SearchInput placeholder="Search by name" />
+                  <Select aria-label="Type">
+                    <option>All records</option>
+                    <option>Parishes</option>
+                    <option>Schools</option>
+                    <option>Offices</option>
+                  </Select>
+                  <Button variant="secondary">Apply</Button>
+                </FilterBar>
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="Tabs"
+                description="Native tab primitives for news, calendars, and content panels."
+                code={`<Tabs>
+  <TabList>
+    <Tab active>News</Tab>
+    <Tab>Calendar</Tab>
+  </TabList>
+  <TabPanel>...</TabPanel>
+</Tabs>`}
+              >
+                <Tabs>
+                  <TabList>
+                    <Tab active>News</Tab>
+                    <Tab>Calendar</Tab>
+                    <Tab>Media</Tab>
+                  </TabList>
+                  <TabPanel>
+                    <Text tone="secondary">
+                      Tabs can power Vatican-style news/calendar sections.
+                    </Text>
+                  </TabPanel>
+                </Tabs>
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="Accordion"
+                description="Disclosure for office details, sacrament preparation, and menus."
+                code={`<Accordion>
+  <AccordionItem>
+    <AccordionTrigger open>Confession</AccordionTrigger>
+    <AccordionContent open>...</AccordionContent>
+  </AccordionItem>
+</Accordion>`}
+              >
+                <Accordion>
+                  <AccordionItem>
+                    <AccordionTrigger open>Confession schedule</AccordionTrigger>
+                    <AccordionContent open>
+                      Saturday, 3:30 PM to 4:30 PM, or by appointment.
+                    </AccordionContent>
+                  </AccordionItem>
+                  <AccordionItem>
+                    <AccordionTrigger>Sacrament preparation</AccordionTrigger>
+                    <AccordionContent>
+                      Preparation details may be disclosed here.
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="Table"
+                description="Dense, legible institutional records."
+                code={`<TableWrapper>
+  <Table>
+    <THead>...</THead>
+    <TBody>...</TBody>
+  </Table>
+</TableWrapper>`}
+              >
                 <TableWrapper>
-                  <Table density="compact">
+                  <Table>
                     <THead>
                       <TR>
-                        <TH>Token</TH>
-                        <TH>Value</TH>
+                        <TH>Day</TH>
+                        <TH>Time</TH>
+                        <TH>Location</TH>
                       </TR>
                     </THead>
                     <TBody>
-                      {entries(typography.typography.scale).map(
-                        ([name, value]) => (
-                          <TR key={`type-${name}`}>
-                            <TD>
-                              <TokenCode>{`font.${name}`}</TokenCode>
-                            </TD>
-                            <TD>{String(value)}</TD>
-                          </TR>
-                        )
-                      )}
-                      {entries(radius.radius).map(([name, value]) => (
-                        <TR key={`radius-${name}`}>
-                          <TD>
-                            <TokenCode>{`radius.${name}`}</TokenCode>
-                          </TD>
-                          <TD>{String(value)}</TD>
-                        </TR>
-                      ))}
-                      {entries(shadows.shadow).map(([name, value]) => (
-                        <TR key={`shadow-${name}`}>
-                          <TD>
-                            <TokenCode>{`shadow.${name}`}</TokenCode>
-                          </TD>
-                          <TD>{String(value)}</TD>
-                        </TR>
-                      ))}
+                      <TR>
+                        <TD>Sunday</TD>
+                        <TD>8:00 AM</TD>
+                        <TD>Nave</TD>
+                      </TR>
+                      <TR>
+                        <TD>Sunday</TD>
+                        <TD>10:30 AM</TD>
+                        <TD>Nave</TD>
+                      </TR>
                     </TBody>
                   </Table>
                 </TableWrapper>
-              </Stack>
-            </Panel>
-          </Grid>
-        </Container>
-      </Section>
+              </ComponentBlock>
 
-      <Section surface="parchment" spacing="lg" id="primitives">
-        <Container size="xl">
-          <Stack gap="lg">
-            <Stack gap="sm">
-              <Eyebrow tone="active">Phase 2 complete</Eyebrow>
-              <Heading level={2}>Core primitive inventory</Heading>
-              <Text tone="muted">
-                These primitives are the foundation for parish, diocesan,
-                liturgical, document, directory, media, and CDCF components.
-              </Text>
-            </Stack>
-
-            <Grid columns="auto" gap="md">
-              {primitiveNames.map((name) => (
-                <Card key={name} padding="sm" border="subtle">
-                  <Cluster justify="between">
-                    <Text as="p" size="sm">
-                      {name}
-                    </Text>
-                    <Badge variant="success">Added</Badge>
-                  </Cluster>
-                </Card>
-              ))}
-            </Grid>
-          </Stack>
-        </Container>
-      </Section>
-
-      <Section surface="page" spacing="lg">
-        <Container size="xl">
-          <Stack gap="lg">
-            <Stack gap="sm">
-              <Eyebrow>Primitive specimens</Eyebrow>
-              <Heading level={2}>What we can render now</Heading>
-            </Stack>
-
-            <Grid columns="2" gap="lg">
-              <Card padding="lg" shadow="sm">
-                <Stack gap="md">
-                  <Eyebrow tone="gold">Parish notice</Eyebrow>
-                  <Heading level={3} size="xl">
-                    Holy Day schedule
-                  </Heading>
-                  <Text tone="secondary">
-                    The parish office may publish schedule changes using Notice,
-                    Card, Badge, Text, and Button primitives.
-                  </Text>
-                  <Cluster>
-                    <Badge variant="liturgicalWhite">Solemnity</Badge>
-                    <Tag variant="brown">Updated today</Tag>
-                  </Cluster>
-                  <Divider />
-                  <Cluster>
-                    <Button size="sm">View schedule</Button>
-                    <Button size="sm" variant="ghost">
-                      Contact office
-                    </Button>
-                  </Cluster>
-                </Stack>
-              </Card>
-
-              <Panel tone="official">
-                <Stack gap="md">
-                  <Eyebrow>Filters</Eyebrow>
-                  <Heading level={3} size="xl">
-                    Directory controls
-                  </Heading>
-                  <FilterBar>
-                    <SearchInput placeholder="Search by name" />
-                    <Select aria-label="Century">
-                      <option>All centuries</option>
-                      <option>XXI Century</option>
-                      <option>XX Century</option>
-                    </Select>
-                    <Button variant="secondary">Apply</Button>
-                  </FilterBar>
-                </Stack>
-              </Panel>
-
-              <Card padding="lg">
-                <Stack gap="md">
-                  <Eyebrow>Tabs</Eyebrow>
-                  <Tabs>
-                    <TabList>
-                      <Tab active>News</Tab>
-                      <Tab>Calendar</Tab>
-                      <Tab>Media</Tab>
-                    </TabList>
-                    <TabPanel>
-                      <Text tone="secondary">
-                        Tabs are ready for Vatican-style news/calendar panels
-                        and parish schedule sections.
+              <ComponentBlock
+                title="Timeline"
+                description="History, provenance, sacramental steps, and project milestones."
+                code={`<Timeline>
+  <TimelineItem>
+    <TimelineMarker tone="gold" />
+    <TimelineContent>...</TimelineContent>
+  </TimelineItem>
+</Timeline>`}
+              >
+                <Timeline>
+                  <TimelineItem>
+                    <TimelineMarker tone="gold" />
+                    <TimelineContent>
+                      <Text as="p" size="sm">
+                        Vatican reference audit
                       </Text>
-                    </TabPanel>
-                  </Tabs>
-                </Stack>
-              </Card>
+                      <Text as="p" size="xs" tone="muted">
+                        Institutional grammar extracted.
+                      </Text>
+                    </TimelineContent>
+                  </TimelineItem>
+                  <TimelineItem>
+                    <TimelineMarker tone="success" />
+                    <TimelineContent>
+                      <Text as="p" size="sm">
+                        Core primitives complete
+                      </Text>
+                      <Text as="p" size="xs" tone="muted">
+                        26 primitives added.
+                      </Text>
+                    </TimelineContent>
+                  </TimelineItem>
+                </Timeline>
+              </ComponentBlock>
 
-              <Card padding="lg">
-                <Stack gap="md">
-                  <Eyebrow>Accordion</Eyebrow>
-                  <Accordion>
-                    <AccordionItem>
-                      <AccordionTrigger open>
-                        Confession and adoration
-                      </AccordionTrigger>
-                      <AccordionContent open>
-                        Times, locations, exceptions, and notes can be revealed
-                        in structured sections.
-                      </AccordionContent>
-                    </AccordionItem>
-                    <AccordionItem>
-                      <AccordionTrigger>Sacrament preparation</AccordionTrigger>
-                      <AccordionContent>
-                        Hidden content remains native and accessible.
-                      </AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
-                </Stack>
-              </Card>
+              <ComponentBlock
+                title="MediaFrame"
+                description="Formal frame for images, video, and future feast-day hero media."
+                code={`<MediaFrame ratio="video" surface="dark">
+  ...
+</MediaFrame>`}
+              >
+                <MediaFrame ratio="video" surface="dark">
+                  <div className="docs-media-placeholder">
+                    <IconFrame tone="inverse" size="lg">
+                      ✦
+                    </IconFrame>
+                  </div>
+                </MediaFrame>
+              </ComponentBlock>
 
-              <Card padding="lg">
-                <Stack gap="md">
-                  <Eyebrow>Timeline</Eyebrow>
-                  <Timeline>
-                    <TimelineItem>
-                      <TimelineMarker tone="gold" />
-                      <TimelineContent>
-                        <Text as="p" size="sm">
-                          Vatican reference audit
-                        </Text>
-                        <Text as="p" size="xs" tone="muted">
-                          Visual grammar extracted
-                        </Text>
-                      </TimelineContent>
-                    </TimelineItem>
-                    <TimelineItem>
-                      <TimelineMarker tone="success" />
-                      <TimelineContent>
-                        <Text as="p" size="sm">
-                          Core primitives complete
-                        </Text>
-                        <Text as="p" size="xs" tone="muted">
-                          26 / 26 added
-                        </Text>
-                      </TimelineContent>
-                    </TimelineItem>
-                  </Timeline>
-                </Stack>
-              </Card>
-
-              <Card padding="lg">
-                <Stack gap="md">
-                  <Eyebrow>Media</Eyebrow>
-                  <MediaFrame ratio="video" surface="dark">
-                    <div className="gallery-media-placeholder">
-                      <IconFrame tone="inverse" size="lg">
-                        ✦
-                      </IconFrame>
-                    </div>
-                  </MediaFrame>
-                  <Text size="sm" tone="muted">
-                    MediaFrame is ready for photos, videos, feast-day hero
-                    imagery, and diocesan media cards.
-                  </Text>
-                </Stack>
-              </Card>
-
-              <EmptyState tone="official">
-                <Stack gap="sm">
-                  <Heading level={3} size="lg">
-                    No records published
-                  </Heading>
-                  <Text tone="muted">
-                    Empty states stay sober and institutional.
-                  </Text>
-                </Stack>
-              </EmptyState>
-
-              <Notice variant="liturgical">
-                Liturgical and official notices can now be composed before
-                Catholic-specific components exist.
-              </Notice>
-            </Grid>
-          </Stack>
-        </Container>
-      </Section>
-
-      <Section surface="dark" spacing="lg">
-        <Container size="xl">
-          <Grid columns="3" gap="lg">
-            <Stack gap="sm">
-              <Eyebrow tone="inverse">Spacing</Eyebrow>
-              {entries(spacing.spacing).slice(0, 8).map(([name, value]) => (
-                <Text key={name} tone="inverse" size="sm">
-                  {name}: {String(value)}
-                </Text>
-              ))}
+              <ComponentBlock
+                title="EmptyState"
+                description="Quiet blank states for unpublished institutional records."
+                code={`<EmptyState tone="official">
+  <Heading>No records published</Heading>
+</EmptyState>`}
+              >
+                <EmptyState tone="official">
+                  <Stack gap="sm">
+                    <Heading level={3} size="lg">
+                      No records published
+                    </Heading>
+                    <Text tone="muted">
+                      Empty states stay sober and useful.
+                    </Text>
+                  </Stack>
+                </EmptyState>
+              </ComponentBlock>
             </Stack>
+          </Container>
+        </Section>
 
-            <Stack gap="sm">
-              <Eyebrow tone="inverse">Borders</Eyebrow>
-              {entries(borders.border).map(([name, value]) => (
-                <Text key={name} tone="inverse" size="sm">
-                  {name}: {String(value)}
-                </Text>
-              ))}
-            </Stack>
+        <Section id="liturgical" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="lg">
+              <Stack gap="sm">
+                <Eyebrow>Liturgical</Eyebrow>
+                <Heading level={2} size="2xl">
+                  Catholic-native colors
+                </Heading>
+              </Stack>
 
-            <Stack gap="sm">
-              <Eyebrow tone="inverse">Motion</Eyebrow>
-              {entries(motion.motion.duration).map(([name, value]) => (
-                <Text key={`duration-${name}`} tone="inverse" size="sm">
-                  {name}: {String(value)}
-                </Text>
-              ))}
-              {entries(motion.motion.easing).map(([name, value]) => (
-                <Text key={`easing-${name}`} tone="inverse" size="sm">
-                  {name}: {String(value)}
-                </Text>
-              ))}
-            </Stack>
-          </Grid>
-        </Container>
-      </Section>
-
-      <Section surface="page" spacing="lg">
-        <Container size="xl">
-          <Stack gap="md">
-            <Eyebrow>Liturgical colors</Eyebrow>
-            <Heading level={2}>Catholic-native token set</Heading>
-            <Grid columns="auto" gap="md">
-              {liturgicalColors.liturgicalColors.map((item) => {
-                const cssVar = `var(--forma-${item.token.replace(".", "-")})`;
-
-                return (
-                  <Card key={item.token} padding="sm">
+              <Grid columns="2" gap="md">
+                {liturgicalColors.liturgicalColors.map((item) => (
+                  <Card key={item.token} padding="md" border="subtle">
                     <Cluster align="start">
                       <div
-                        className="gallery-liturgical-dot"
-                        style={{ background: cssVar }}
+                        className="docs-liturgical-dot"
+                        style={{
+                          background: `var(--forma-${item.token.replace(".", "-")})`,
+                        }}
                         aria-hidden="true"
                       />
                       <Stack gap="xs">
-                        <Text as="p" size="sm">
+                        <Text as="p" size="md">
                           {item.name}
                         </Text>
                         <Text as="p" size="xs" tone="muted">
                           {item.token}
                         </Text>
-                        <Text as="p" size="xs" tone="secondary">
+                        <Text as="p" size="sm" tone="secondary">
                           {item.use}
                         </Text>
                       </Stack>
                     </Cluster>
                   </Card>
-                );
-              })}
-            </Grid>
-          </Stack>
-        </Container>
-      </Section>
+                ))}
+              </Grid>
+            </Stack>
+          </Container>
+        </Section>
+      </div>
     </main>
   );
 }
