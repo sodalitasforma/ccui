@@ -3,7 +3,7 @@
 @import "../../../../packages/primitives/src/primitives.css";
 @import "../../../../packages/catholic/src/catholic.css";
 
-/* Forma app-level semantic surfaces */
+/* CCUI app-level semantic surfaces */
 :root {
   --forma-app-surface-white: var(--forma-color-surface-raised);
   --forma-app-surface-page-start: var(--forma-color-surface-raised);

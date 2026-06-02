@@ -46,7 +46,7 @@ export function InstitutionalFooter({
           <Divider tone="gold" />
 
           <Text as="p" size="xs" tone="inverse">
-            Built with Forma.
+            Built with Catholic Commons UI.
           </Text>
         </Stack>
       </Container>

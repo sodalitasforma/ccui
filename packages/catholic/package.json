@@ -2,7 +2,7 @@
   "name": "@ccui/catholic",
   "version": "0.0.1",
   "private": true,
-  "description": "Catholic-specific UI components for Forma.",
+  "description": "Catholic-specific UI components for Catholic Commons UI.",
   "main": "src/index.ts",
   "types": "src/index.ts",
   "peerDependencies": {

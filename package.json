@@ -2,7 +2,7 @@
   "name": "ccui",
   "version": "0.0.1",
   "private": true,
-  "description": "A Catholic UI Kit and design system for shared digital form, beauty, and usability across Catholic digital projects.",
+  "description": "An open-source Catholic interface system for shared digital form, beauty, and usability across Catholic digital projects.",
   "license": "MIT",
   "scripts": {
     "dev": "pnpm --filter @ccui/web dev",
