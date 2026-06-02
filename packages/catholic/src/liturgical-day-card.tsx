@@ -25,7 +25,7 @@ export function LiturgicalDayCard({
       as="article"
       padding="lg"
       border="gold"
-      className={cx("forma-liturgical-day-card", className)}
+      className={cx("ccui-liturgical-day-card", className)}
       {...props}
     >
       <Stack gap="md">
@@ -46,7 +46,7 @@ export function LiturgicalDayCard({
         {rank || description ? (
           <Stack gap="xs">
             {rank ? (
-              <Text as="p" className="forma-liturgical-day-card__rank">
+              <Text as="p" className="ccui-liturgical-day-card__rank">
                 {rank}
               </Text>
             ) : null}

@@ -15,23 +15,23 @@ export function FootnoteList({
   ...props
 }: FootnoteListProps) {
   return (
-    <section className={cx("forma-footnote-list", className)} {...props}>
+    <section className={cx("ccui-footnote-list", className)} {...props}>
       <Stack gap="md">
-        <Text as="h3" size="lg" className="forma-footnote-list__title">
+        <Text as="h3" size="lg" className="ccui-footnote-list__title">
           {title}
         </Text>
         <Divider tone="subtle" />
-        <ol className="forma-footnote-list__items">
+        <ol className="ccui-footnote-list__items">
           {items.map((item) => (
-            <li id={item.id} key={item.id} className="forma-footnote-list__item">
-              <Text as="span" size="sm" className="forma-footnote-list__marker">
+            <li id={item.id} key={item.id} className="ccui-footnote-list__item">
+              <Text as="span" size="sm" className="ccui-footnote-list__marker">
                 {item.marker}
               </Text>
               <Text as="span" size="sm" tone="secondary">
                 {item.text}
               </Text>
               {item.href ? (
-                <Link href={item.href} className="forma-footnote-list__backlink">
+                <Link href={item.href} className="ccui-footnote-list__backlink">
                   Back
                 </Link>
               ) : null}

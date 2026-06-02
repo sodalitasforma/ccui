@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { FormaSignalBell } from "../../primitives/src";
+import { CCUISignalBell } from "../../primitives/src";
 import { cx } from "../../primitives/src/utils";
 
 export type ParishNotificationBellProps = {
@@ -22,17 +22,17 @@ export function ParishNotificationBell({
       type="button"
       aria-label={hasCount ? `${label}: ${count} unread` : label}
       className={cx(
-        "forma-parish-notification-bell",
-        active && "forma-parish-notification-bell--active",
+        "ccui-parish-notification-bell",
+        active && "ccui-parish-notification-bell--active",
         className
       )}
       {...props}
     >
-      <FormaSignalBell tone={active || hasCount ? "gold" : "muted"} title="" />
+      <CCUISignalBell tone={active || hasCount ? "gold" : "muted"} title="" />
       {hasCount ? (
-        <span className="forma-parish-notification-bell__count">{count}</span>
+        <span className="ccui-parish-notification-bell__count">{count}</span>
       ) : (
-        <span className="forma-parish-notification-bell__dot" aria-hidden="true" />
+        <span className="ccui-parish-notification-bell__dot" aria-hidden="true" />
       )}
     </button>
   );

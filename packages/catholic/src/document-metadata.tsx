@@ -13,9 +13,9 @@ export function DocumentMetadata({
   ...props
 }: DocumentMetadataProps) {
   return (
-    <dl className={cx("forma-document-metadata", className)} {...props}>
+    <dl className={cx("ccui-document-metadata", className)} {...props}>
       {items.map((item) => (
-        <div className="forma-document-metadata__item" key={`${item.label}-${item.value}`}>
+        <div className="ccui-document-metadata__item" key={`${item.label}-${item.value}`}>
           <dt>
             <Text as="span" size="xs" tone="muted">
               {item.label}

@@ -5,15 +5,15 @@
 
 /* CCUI app-level semantic surfaces */
 :root {
-  --forma-app-surface-white: var(--forma-color-surface-raised);
-  --forma-app-surface-page-start: var(--forma-color-surface-raised);
-  --forma-app-nav-background: color-mix(in srgb, var(--forma-color-surface-raised) 92%, transparent);
-  --forma-app-border-soft: color-mix(in srgb, var(--forma-color-border-subtle) 60%, transparent);
-  --forma-app-gold-wash: color-mix(in srgb, var(--forma-color-accent-gold) 8%, transparent);
-  --forma-app-gold-wash-strong: color-mix(in srgb, var(--forma-color-accent-gold) 18%, transparent);
-  --forma-app-white-wash: color-mix(in srgb, var(--forma-color-surface-raised) 90%, transparent);
-  --forma-app-white-wash-strong: color-mix(in srgb, var(--forma-color-surface-raised) 94%, transparent);
-  --forma-app-parchment-wash: color-mix(in srgb, var(--forma-color-surface-page) 72%, transparent);
+  --ccui-app-surface-white: var(--ccui-color-surface-raised);
+  --ccui-app-surface-page-start: var(--ccui-color-surface-raised);
+  --ccui-app-nav-background: color-mix(in srgb, var(--ccui-color-surface-raised) 92%, transparent);
+  --ccui-app-border-soft: color-mix(in srgb, var(--ccui-color-border-subtle) 60%, transparent);
+  --ccui-app-gold-wash: color-mix(in srgb, var(--ccui-color-accent-gold) 8%, transparent);
+  --ccui-app-gold-wash-strong: color-mix(in srgb, var(--ccui-color-accent-gold) 18%, transparent);
+  --ccui-app-white-wash: color-mix(in srgb, var(--ccui-color-surface-raised) 90%, transparent);
+  --ccui-app-white-wash-strong: color-mix(in srgb, var(--ccui-color-surface-raised) 94%, transparent);
+  --ccui-app-parchment-wash: color-mix(in srgb, var(--ccui-color-surface-page) 72%, transparent);
 }
 
 
@@ -32,8 +32,8 @@ html {
 }
 
 body {
-  background: var(--forma-color-surface-page);
-  color: var(--forma-color-text-primary);
+  background: var(--ccui-color-surface-page);
+  color: var(--ccui-color-text-primary);
 }
 
 a {
@@ -41,14 +41,14 @@ a {
 }
 
 .docs-shell {
-  background: var(--forma-color-surface-raised);
+  background: var(--ccui-color-surface-raised);
   display: grid;
   grid-template-columns: 17rem minmax(0, 1fr);
   min-height: 100vh;
 }
 
 .docs-main {
-  background: var(--forma-color-surface-raised);
+  background: var(--ccui-color-surface-raised);
   min-width: 0;
 }
 
@@ -56,24 +56,24 @@ a {
 .docs-nav-small {
   display: flex;
   flex-direction: column;
-  gap: var(--forma-space-1);
+  gap: var(--ccui-space-1);
 }
 
 .docs-nav a,
 .docs-nav-small {
-  border-radius: var(--forma-radius-sm);
-  color: var(--forma-color-text-muted);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-sm);
-  line-height: var(--forma-line-height-tight);
-  padding: var(--forma-space-2) var(--forma-space-3);
+  border-radius: var(--ccui-radius-sm);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-tight);
+  padding: var(--ccui-space-2) var(--ccui-space-3);
   text-decoration: none;
 }
 
 .docs-nav a:hover,
 .docs-nav-small:hover {
-  background: var(--forma-app-gold-wash);
-  color: var(--forma-color-link-primary);
+  background: var(--ccui-app-gold-wash);
+  color: var(--ccui-color-link-primary);
 }
 
 .docs-lede {
@@ -81,11 +81,11 @@ a {
 }
 
 .docs-code {
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-xs);
-  background: var(--forma-color-surface-subtle);
-  color: var(--forma-color-brown-900);
-  font-family: var(--forma-font-mono);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-xs);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-900);
+  font-family: var(--ccui-font-mono);
   font-size: 0.85em;
   padding: 0.1rem 0.3rem;
 }
@@ -94,45 +94,45 @@ a {
 .docs-pre {
   position: relative;
   margin: 0;
-  padding: var(--forma-space-5);
+  padding: var(--ccui-space-5);
   overflow: auto;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-md);
-  background: var(--forma-color-surface-raised);
-  color: var(--forma-color-text-primary);
-  font-family: var(--forma-font-mono);
-  font-size: var(--forma-font-size-sm);
-  line-height: var(--forma-line-height-relaxed);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-mono);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-relaxed);
   white-space: pre-wrap;
 }
 
 .docs-pre::before {
   content: "TSX";
   position: absolute;
-  top: var(--forma-space-3);
-  right: var(--forma-space-4);
-  color: var(--forma-color-text-muted);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-xs);
-  font-weight: var(--forma-font-weight-bold);
-  letter-spacing: var(--forma-letter-spacing-wide);
+  top: var(--ccui-space-3);
+  right: var(--ccui-space-4);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
 }
 
 .docs-token-row {
   display: grid;
   grid-template-columns: 2.25rem minmax(0, 1fr);
-  gap: var(--forma-space-3);
+  gap: var(--ccui-space-3);
   align-items: center;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-sm);
-  padding: var(--forma-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  padding: var(--ccui-space-2);
 }
 
 .docs-color-chip {
   width: 2.25rem;
   height: 2.25rem;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-sm);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
 }
 
 .docs-media-placeholder {
@@ -142,16 +142,16 @@ a {
   min-height: 16rem;
   place-items: center;
   background:
-    linear-gradient(135deg, color-mix(in srgb, var(--forma-color-surface-raised) 8%, transparent), transparent),
-    var(--forma-color-surface-dark);
+    linear-gradient(135deg, color-mix(in srgb, var(--ccui-color-surface-raised) 8%, transparent), transparent),
+    var(--ccui-color-surface-dark);
 }
 
 .docs-liturgical-dot {
   width: 1rem;
   height: 1rem;
   margin-top: 0.2rem;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-pill);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
 }
 
 @media (max-width: 64rem) {
@@ -165,16 +165,16 @@ a {
 .home-shell {
   min-height: 100vh;
   background:
-    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-app-surface-white) 30rem, var(--forma-color-surface-page) 100%);
+    linear-gradient(180deg, var(--ccui-app-surface-white) 0%, var(--ccui-app-surface-white) 30rem, var(--ccui-color-surface-page) 100%);
 }
 
 .home-nav {
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
-  padding: var(--forma-space-3) var(--forma-space-5);
-  border-bottom: 1px solid var(--forma-color-border-subtle);
-  background: var(--forma-app-nav-background);
+  padding: var(--ccui-space-3) var(--ccui-space-5);
+  border-bottom: 1px solid var(--ccui-color-border-subtle);
+  background: var(--ccui-app-nav-background);
   backdrop-filter: blur(12px);
 }
 
@@ -183,28 +183,28 @@ a {
 .home-nav-links {
   display: flex;
   align-items: center;
-  gap: var(--forma-space-5);
-  font-size: var(--forma-font-size-sm);
+  gap: var(--ccui-space-5);
+  font-size: var(--ccui-font-size-sm);
 }
 
-.home-nav-links .forma-link {
-  color: var(--forma-color-text-secondary);
+.home-nav-links .ccui-link {
+  color: var(--ccui-color-text-secondary);
   text-decoration: none;
 }
 
-.home-nav-links .forma-link:hover {
-  color: var(--forma-color-text-primary);
+.home-nav-links .ccui-link:hover {
+  color: var(--ccui-color-text-primary);
   text-decoration: none;
 }
 
-.home-nav-links .forma-button {
-  margin-left: var(--forma-space-2);
+.home-nav-links .ccui-button {
+  margin-left: var(--ccui-space-2);
 }
 
 .home-brand {
-  font-family: var(--forma-font-interface);
-  font-weight: var(--forma-font-weight-bold);
-  letter-spacing: var(--forma-letter-spacing-tight);
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-tight);
 }
 
 .home-centered {
@@ -223,12 +223,12 @@ a {
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   background:
-    radial-gradient(circle at 50% 50%, var(--forma-app-gold-wash), transparent 28rem),
-    var(--forma-app-surface-white);
+    radial-gradient(circle at 50% 50%, var(--ccui-app-gold-wash), transparent 28rem),
+    var(--ccui-app-surface-white);
   text-align: center;
 }
 
-.home-hero > .forma-container {
+.home-hero > .ccui-container {
   width: 100%;
 }
 
@@ -254,7 +254,7 @@ a {
   z-index: 2;
   margin-top: -10rem;
   background:
-    linear-gradient(180deg, transparent 0%, var(--forma-color-surface-page) 22rem);
+    linear-gradient(180deg, transparent 0%, var(--ccui-color-surface-page) 22rem);
   padding-top: 0;
 }
 
@@ -267,44 +267,44 @@ a {
 }
 
 .home-kicker {
-  color: var(--forma-color-accent-gold-text);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-xs);
-  font-weight: var(--forma-font-weight-bold);
-  letter-spacing: var(--forma-letter-spacing-nav);
+  color: var(--ccui-color-accent-gold-text);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
   text-transform: uppercase;
 }
 
 .home-tabs-card {
-  background: var(--forma-app-white-wash);
+  background: var(--ccui-app-white-wash);
 }
 
 .home-tab-panel {
   align-items: start;
-  padding-top: var(--forma-space-5);
+  padding-top: var(--ccui-space-5);
 }
 
 .home-component-list {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--forma-space-2);
+  gap: var(--ccui-space-2);
 }
 
 
 
 .home-interface {
   background:
-    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-color-surface-page) 100%);
-  padding-top: var(--forma-space-12);
+    linear-gradient(180deg, var(--ccui-app-surface-white) 0%, var(--ccui-color-surface-page) 100%);
+  padding-top: var(--ccui-space-12);
 }
 
 .home-interface-board {
-  padding: var(--forma-space-6);
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-lg);
+  padding: var(--ccui-space-6);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
   background:
-    linear-gradient(180deg, var(--forma-app-white-wash-strong), var(--forma-app-parchment-wash)),
-    var(--forma-color-surface-raised);
+    linear-gradient(180deg, var(--ccui-app-white-wash-strong), var(--ccui-app-parchment-wash)),
+    var(--ccui-color-surface-raised);
 }
 
 .home-interface-grid {
@@ -315,54 +315,54 @@ a {
 
 .home-interface {
   background:
-    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-color-surface-page) 100%);
+    linear-gradient(180deg, var(--ccui-app-surface-white) 0%, var(--ccui-color-surface-page) 100%);
   padding-top: 0;
 }
 
 .home-interface-peek {
   margin-top: 0;
-  margin-bottom: var(--forma-space-12);
+  margin-bottom: var(--ccui-space-12);
 }
 
 .home-section-interface {
   width: min(76rem, 100%);
   margin-inline: auto;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-lg);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
   background:
     linear-gradient(
       180deg,
-      var(--forma-app-white-wash-strong),
-      var(--forma-app-parchment-wash)
+      var(--ccui-app-white-wash-strong),
+      var(--ccui-app-parchment-wash)
     ),
-    var(--forma-color-surface-raised);
-  box-shadow: var(--forma-shadow-lg);
+    var(--ccui-color-surface-raised);
+  box-shadow: var(--ccui-shadow-lg);
   overflow: hidden;
 }
 
 .home-section-interface__chrome {
   display: flex;
-  gap: var(--forma-space-2);
+  gap: var(--ccui-space-2);
   align-items: center;
   height: 2.5rem;
-  padding-inline: var(--forma-space-4);
-  border-bottom: 1px solid var(--forma-color-border-subtle);
+  padding-inline: var(--ccui-space-4);
+  border-bottom: 1px solid var(--ccui-color-border-subtle);
 }
 
 .home-section-interface__chrome span {
   width: 0.625rem;
   height: 0.625rem;
-  border: 1px solid var(--forma-color-border-subtle);
+  border: 1px solid var(--ccui-color-border-subtle);
   border-radius: 999px;
-  background: var(--forma-color-surface-subtle);
+  background: var(--ccui-color-surface-subtle);
 }
 
 .home-section-interface__body {
-  padding: var(--forma-space-5);
+  padding: var(--ccui-space-5);
 }
 
-.home-section-interface__body .forma-institutional-header {
-  margin-bottom: var(--forma-space-5);
+.home-section-interface__body .ccui-institutional-header {
+  margin-bottom: var(--ccui-space-5);
 }
 
 .home-section-interface__grid {
@@ -381,7 +381,7 @@ a {
 
 .home-proof {
   background:
-    linear-gradient(180deg, var(--forma-app-surface-white) 0%, var(--forma-color-surface-page) 100%);
+    linear-gradient(180deg, var(--ccui-app-surface-white) 0%, var(--ccui-color-surface-page) 100%);
 }
 
 .home-proof-grid {
@@ -390,15 +390,15 @@ a {
 
 .home-final-card {
   background:
-    linear-gradient(180deg, var(--forma-app-nav-background), var(--forma-app-parchment-wash)),
-    var(--forma-color-surface-raised);
+    linear-gradient(180deg, var(--ccui-app-nav-background), var(--ccui-app-parchment-wash)),
+    var(--ccui-color-surface-raised);
 }
 
 @media (max-width: 900px) {
   .home-hero {
     min-height: auto;
-    padding-top: var(--forma-space-10) !important;
-    padding-bottom: var(--forma-space-10) !important;
+    padding-top: var(--ccui-space-10) !important;
+    padding-bottom: var(--ccui-space-10) !important;
   }
 
   
@@ -422,7 +422,7 @@ a {
   overflow: hidden;
 }
 
-.home-hero .forma-container {
+.home-hero .ccui-container {
   position: relative;
   z-index: 2;
 }
@@ -442,12 +442,12 @@ a {
 
 
 .home-parish-preview-hero {
-  margin-bottom: var(--forma-space-6);
+  margin-bottom: var(--ccui-space-6);
 }
 
 .home-parish-preview-grid {
   align-items: start;
-  margin-bottom: var(--forma-space-6);
+  margin-bottom: var(--ccui-space-6);
 }
 
 .home-parish-preview-main {
@@ -458,8 +458,8 @@ a {
   min-width: 0;
 }
 
-.home-section-interface__body .forma-institutional-footer {
-  margin-top: var(--forma-space-6);
+.home-section-interface__body .ccui-institutional-footer {
+  margin-top: var(--ccui-space-6);
 }
 
 @media (max-width: 900px) {
@@ -473,7 +473,7 @@ a {
 }
 
 
-.home-parish-preview-rail .forma-auto-tithe-card {
+.home-parish-preview-rail .ccui-auto-tithe-card {
   order: -1;
 }
 
@@ -483,11 +483,11 @@ a {
   align-items: start;
 }
 
-.home-preview-compact-grid .forma-mass-schedule-block,
-.home-preview-compact-grid .forma-worship-aid-card,
-.home-preview-compact-grid .forma-auto-tithe-card,
-.home-preview-compact-grid .forma-safeguarding-notice,
-.home-preview-compact-grid .forma-api-endpoint-card {
+.home-preview-compact-grid .ccui-mass-schedule-block,
+.home-preview-compact-grid .ccui-worship-aid-card,
+.home-preview-compact-grid .ccui-auto-tithe-card,
+.home-preview-compact-grid .ccui-safeguarding-notice,
+.home-preview-compact-grid .ccui-api-endpoint-card {
   min-height: 0;
 }
 
@@ -498,13 +498,13 @@ a {
 
 
 .docs-nav--start a[aria-current="page"] {
-  color: var(--forma-color-text-primary);
-  font-weight: var(--forma-font-weight-bold);
+  color: var(--ccui-color-text-primary);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 .docs-nav--sections a[aria-current="location"] {
-  color: var(--forma-color-link-primary);
-  font-weight: var(--forma-font-weight-bold);
+  color: var(--ccui-color-link-primary);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 
@@ -515,47 +515,47 @@ a {
 
 .docs-nav-group-heading {
   display: block;
-  margin-top: var(--forma-space-3);
-  padding-block: var(--forma-space-1);
-  color: var(--forma-color-text-muted);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-xs);
-  font-weight: var(--forma-font-weight-bold);
-  letter-spacing: var(--forma-letter-spacing-wide);
-  line-height: var(--forma-line-height-base);
+  margin-top: var(--ccui-space-3);
+  padding-block: var(--ccui-space-1);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  line-height: var(--ccui-line-height-base);
   text-transform: uppercase;
 }
 
 .docs-nav--start a[aria-current="page"] {
-  color: var(--forma-color-text-primary);
-  font-weight: var(--forma-font-weight-bold);
+  color: var(--ccui-color-text-primary);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 .docs-nav--sections a[aria-current="location"] {
-  color: var(--forma-color-link-primary);
-  font-weight: var(--forma-font-weight-bold);
+  color: var(--ccui-color-link-primary);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 .docs-nav-disabled {
   display: flex;
   align-items: center;
-  gap: var(--forma-space-2);
-  color: var(--forma-color-text-muted);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-sm);
-  line-height: var(--forma-line-height-base);
-  padding-block: var(--forma-space-1);
-  padding-left: var(--forma-space-3);
+  gap: var(--ccui-space-2);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-base);
+  padding-block: var(--ccui-space-1);
+  padding-left: var(--ccui-space-3);
   cursor: not-allowed;
 }
 
-.docs-main .forma-section--surface-page {
-  background: var(--forma-color-surface-raised);
+.docs-main .ccui-section--surface-page {
+  background: var(--ccui-color-surface-raised);
 }
 
 .docs-pre::before {
-  top: var(--forma-space-3);
-  right: var(--forma-space-4);
+  top: var(--ccui-space-3);
+  right: var(--ccui-space-4);
   opacity: 0.72;
 }
 
@@ -569,7 +569,7 @@ a {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--forma-space-2);
+  gap: var(--ccui-space-2);
 }
 
 .docs-nav--start .docs-nav-link-with-badge,
@@ -581,25 +581,25 @@ a {
 
 .docs-preview {
   position: relative;
-  padding: var(--forma-space-6);
+  padding: var(--ccui-space-6);
   border: 0;
-  border-radius: var(--forma-radius-lg);
+  border-radius: var(--ccui-radius-lg);
   background:
     linear-gradient(
       180deg,
-      var(--forma-color-surface-raised),
-      var(--forma-color-surface-page)
+      var(--ccui-color-surface-raised),
+      var(--ccui-color-surface-page)
     );
   box-shadow:
-    inset 0 0 0 1px var(--forma-color-border-subtle);
+    inset 0 0 0 1px var(--ccui-color-border-subtle);
 }
 
-.docs-preview > .forma-cluster {
+.docs-preview > .ccui-cluster {
   align-items: center;
 }
 
 .docs-code-disclosure {
-  margin-top: var(--forma-space-2);
+  margin-top: var(--ccui-space-2);
 }
 
 .docs-code-toggle {
@@ -615,14 +615,14 @@ a {
   display: inline-flex;
   width: fit-content;
   align-items: center;
-  gap: var(--forma-space-2);
-  color: var(--forma-color-text-muted);
+  gap: var(--ccui-space-2);
+  color: var(--ccui-color-text-muted);
   cursor: pointer;
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-xs);
-  font-weight: var(--forma-font-weight-bold);
-  letter-spacing: var(--forma-letter-spacing-wide);
-  line-height: var(--forma-line-height-tight);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  line-height: var(--ccui-line-height-tight);
   text-transform: uppercase;
 }
 
@@ -642,13 +642,13 @@ a {
 }
 
 .docs-code-disclosure .docs-pre {
-  margin-top: var(--forma-space-3);
+  margin-top: var(--ccui-space-3);
   max-height: 22rem;
   overflow: auto;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-lg);
-  background: var(--forma-color-surface-raised);
-  color: var(--forma-color-text-primary);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
 }
 
 .docs-code-toggle:not(:checked) ~ .docs-pre {
@@ -659,33 +659,33 @@ a {
   display: block;
 }
 
-.docs-display-specimen > .forma-eyebrow {
+.docs-display-specimen > .ccui-eyebrow {
   width: fit-content;
-  padding-bottom: var(--forma-space-2);
-  border-bottom: 1px solid var(--forma-color-border-subtle);
+  padding-bottom: var(--ccui-space-2);
+  border-bottom: 1px solid var(--ccui-color-border-subtle);
 }
 
 .docs-floating-search {
   position: fixed;
-  top: var(--forma-space-4);
-  right: var(--forma-space-4);
+  top: var(--ccui-space-4);
+  right: var(--ccui-space-4);
   z-index: 40;
-  width: min(24rem, calc(100vw - var(--forma-space-8)));
+  width: min(24rem, calc(100vw - var(--ccui-space-8)));
 }
 
 .docs-sidebar {
   position: sticky;
   top: 0;
   height: 100vh;
-  border-right: 1px solid var(--forma-color-border-subtle);
-  background: var(--forma-color-surface-raised);
-  padding: var(--forma-space-6);
+  border-right: 1px solid var(--ccui-color-border-subtle);
+  background: var(--ccui-color-surface-raised);
+  padding: var(--ccui-space-6);
   overflow-y: auto;
 }
 
 .docs-sidebar-footer {
-  margin-top: var(--forma-space-8);
-  padding-top: var(--forma-space-4);
+  margin-top: var(--ccui-space-8);
+  padding-top: var(--ccui-space-4);
 }
 
 .docs-sidebar-manifesto {
@@ -694,19 +694,19 @@ a {
 
 .docs-type-matrix {
   display: grid;
-  border: 1px solid var(--forma-color-border-subtle);
-  border-radius: var(--forma-radius-lg);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
   overflow: hidden;
-  background: var(--forma-color-surface-raised);
+  background: var(--ccui-color-surface-raised);
 }
 
 .docs-type-matrix__row {
   display: grid;
   grid-template-columns: minmax(10rem, 0.7fr) minmax(0, 1.4fr) minmax(0, 1fr);
-  gap: var(--forma-space-4);
+  gap: var(--ccui-space-4);
   align-items: center;
-  padding: var(--forma-space-4) var(--forma-space-5);
-  border-top: 1px solid var(--forma-color-border-subtle);
+  padding: var(--ccui-space-4) var(--ccui-space-5);
+  border-top: 1px solid var(--ccui-color-border-subtle);
 }
 
 .docs-type-matrix__row:first-child {
@@ -714,63 +714,63 @@ a {
 }
 
 .docs-type-matrix__row--head {
-  padding-block: var(--forma-space-3);
-  background: var(--forma-color-surface-subtle);
+  padding-block: var(--ccui-space-3);
+  background: var(--ccui-color-surface-subtle);
 }
 
 .docs-type-matrix__cell {
   margin: 0;
-  color: var(--forma-color-text-muted);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-xs);
-  font-weight: var(--forma-font-weight-bold);
-  letter-spacing: var(--forma-letter-spacing-wide);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
   text-transform: uppercase;
 }
 
 .docs-type-matrix__voice {
   display: flex;
   align-items: center;
-  gap: var(--forma-space-3);
+  gap: var(--ccui-space-3);
 }
 
 .docs-type-matrix__sample {
   display: inline-flex;
   min-width: 3rem;
-  color: var(--forma-color-link-primary);
+  color: var(--ccui-color-link-primary);
   line-height: 0.9;
 }
 
 .docs-type-matrix__sample--display {
-  font-family: var(--forma-font-display);
-  font-size: var(--forma-font-size-4xl);
-  font-weight: var(--forma-font-weight-bold);
+  font-family: var(--ccui-font-display);
+  font-size: var(--ccui-font-size-4xl);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 .docs-type-matrix__sample--interface {
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-3xl);
-  font-weight: var(--forma-font-weight-bold);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-3xl);
+  font-weight: var(--ccui-font-weight-bold);
   letter-spacing: -0.04em;
 }
 
 .docs-type-matrix__sample--document {
-  font-family: var(--forma-font-serif);
-  font-size: var(--forma-font-size-3xl);
-  font-weight: var(--forma-font-weight-bold);
+  font-family: var(--ccui-font-serif);
+  font-size: var(--ccui-font-size-3xl);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 .docs-type-matrix__name {
   margin: 0;
-  color: var(--forma-color-text-primary);
-  font-family: var(--forma-font-interface);
-  font-weight: var(--forma-font-weight-bold);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 @media (max-width: 920px) {
   .docs-type-matrix__row {
     grid-template-columns: 1fr;
-    gap: var(--forma-space-2);
+    gap: var(--ccui-space-2);
   }
 
   .docs-type-matrix__row--head {
@@ -779,31 +779,31 @@ a {
 }
 
 .docs-section-intro {
-  padding-bottom: var(--forma-space-6);
-  border-bottom: 1px solid var(--forma-color-border-subtle);
+  padding-bottom: var(--ccui-space-6);
+  border-bottom: 1px solid var(--ccui-color-border-subtle);
 }
 
 /* Components gallery specimen rhythm */
 
 .docs-component-list {
-  margin-top: var(--forma-space-10);
+  margin-top: var(--ccui-space-10);
 }
 
 .docs-block {
-  padding-top: var(--forma-space-8);
-  padding-bottom: var(--forma-space-8);
-  border-top: 1px solid var(--forma-color-border-subtle);
+  padding-top: var(--ccui-space-8);
+  padding-bottom: var(--ccui-space-8);
+  border-top: 1px solid var(--ccui-color-border-subtle);
 }
 
-.docs-block > .forma-stack {
-  gap: var(--forma-space-5);
+.docs-block > .ccui-stack {
+  gap: var(--ccui-space-5);
 }
 
 .home-logo {
   display: inline-flex;
   align-items: center;
-  gap: var(--forma-space-2);
-  color: var(--forma-color-link-primary);
+  gap: var(--ccui-space-2);
+  color: var(--ccui-color-link-primary);
   text-decoration: none;
 }
 
@@ -818,9 +818,9 @@ a {
 }
 
 .home-logo__wordmark {
-  color: var(--forma-color-link-primary);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-sm);
-  font-weight: var(--forma-font-weight-bold);
-  line-height: var(--forma-line-height-tight);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
 }

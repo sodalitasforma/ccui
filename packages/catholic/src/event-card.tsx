@@ -25,7 +25,7 @@ export function EventCard({
 }: EventCardProps) {
   const content = (
     <Cluster align="start" gap="md">
-      <div className="forma-event-card__date">
+      <div className="ccui-event-card__date">
         <Text as="span" size="xs" tone="muted">
           {date.split(" ")[0] || date}
         </Text>
@@ -34,9 +34,9 @@ export function EventCard({
         </Text>
       </div>
 
-      <Stack gap="sm" className="forma-event-card__body">
+      <Stack gap="sm" className="ccui-event-card__body">
         <Cluster justify="between" align="start">
-          <h3 className="forma-event-card__title">{title}</h3>
+          <h3 className="ccui-event-card__title">{title}</h3>
           {category ? <Badge variant="gold">{category}</Badge> : null}
         </Cluster>
 
@@ -67,11 +67,11 @@ export function EventCard({
       as="article"
       padding="md"
       border="subtle"
-      className={cx("forma-event-card", href && "forma-event-card--linked", className)}
+      className={cx("ccui-event-card", href && "ccui-event-card--linked", className)}
       {...props}
     >
       {href ? (
-        <a className="forma-event-card__link" href={href}>
+        <a className="ccui-event-card__link" href={href}>
           {content}
         </a>
       ) : (

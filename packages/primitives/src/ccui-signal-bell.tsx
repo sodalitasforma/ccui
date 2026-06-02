@@ -1,23 +1,23 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { cx } from "./utils";
 
-type FormaSignalBellSize = "sm" | "md" | "lg";
-type FormaSignalBellTone = "default" | "muted" | "gold";
+type CCUISignalBellSize = "sm" | "md" | "lg";
+type CCUISignalBellTone = "default" | "muted" | "gold";
 
-export type FormaSignalBellProps = {
-  size?: FormaSignalBellSize;
-  tone?: FormaSignalBellTone;
+export type CCUISignalBellProps = {
+  size?: CCUISignalBellSize;
+  tone?: CCUISignalBellTone;
   title?: string;
 } & ComponentPropsWithoutRef<"svg">;
 
-export function FormaSignalBell({
+export function CCUISignalBell({
   size = "md",
   tone = "default",
   title,
   className,
   ...props
-}: FormaSignalBellProps) {
-  const titleId = title ? `forma-signal-bell-${title.replace(/\s+/g, "-").toLowerCase()}` : undefined;
+}: CCUISignalBellProps) {
+  const titleId = title ? `ccui-signal-bell-${title.replace(/\s+/g, "-").toLowerCase()}` : undefined;
 
   return (
     <svg
@@ -27,32 +27,32 @@ export function FormaSignalBell({
       aria-labelledby={titleId}
       focusable="false"
       className={cx(
-        "forma-signal-bell",
-        `forma-signal-bell--${size}`,
-        `forma-signal-bell--${tone}`,
+        "ccui-signal-bell",
+        `ccui-signal-bell--${size}`,
+        `ccui-signal-bell--${tone}`,
         className
       )}
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
       <path
-        className="forma-signal-bell__halo"
+        className="ccui-signal-bell__halo"
         d="M16 3.75c-5.2 0-9.4 4.2-9.4 9.4"
       />
       <path
-        className="forma-signal-bell__halo"
+        className="ccui-signal-bell__halo"
         d="M25.4 13.15c0-5.2-4.2-9.4-9.4-9.4"
       />
       <path
-        className="forma-signal-bell__body"
+        className="ccui-signal-bell__body"
         d="M9.15 23.2c1.35-1.15 1.95-2.82 1.95-5.35v-3.35c0-3.15 2.02-5.45 4.9-5.45s4.9 2.3 4.9 5.45v3.35c0 2.53.6 4.2 1.95 5.35H9.15Z"
       />
       <path
-        className="forma-signal-bell__clapper"
+        className="ccui-signal-bell__clapper"
         d="M13.65 24.85c.42 1.58 1.18 2.42 2.35 2.42s1.93-.84 2.35-2.42"
       />
       <path
-        className="forma-signal-bell__cross"
+        className="ccui-signal-bell__cross"
         d="M16 6.2v3.2M14.4 7.8h3.2"
       />
     </svg>

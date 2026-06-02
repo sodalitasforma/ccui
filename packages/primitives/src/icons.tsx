@@ -1,13 +1,13 @@
 import type { ComponentPropsWithoutRef } from "react";
 import { cx } from "./utils";
 
-export type FormaIconProps = {
+export type CCUIIconProps = {
   size?: "xs" | "sm" | "md";
   title?: string;
 } & ComponentPropsWithoutRef<"svg">;
 
-function iconSizeClass(size: FormaIconProps["size"] = "sm") {
-  return `forma-icon--${size}`;
+function iconSizeClass(size: CCUIIconProps["size"] = "sm") {
+  return `ccui-icon--${size}`;
 }
 
 export function ArrowRightIcon({
@@ -15,9 +15,9 @@ export function ArrowRightIcon({
   title,
   className,
   ...props
-}: FormaIconProps) {
+}: CCUIIconProps) {
   const titleId = title
-    ? `forma-icon-arrow-right-${title.replace(/\s+/g, "-").toLowerCase()}`
+    ? `ccui-icon-arrow-right-${title.replace(/\s+/g, "-").toLowerCase()}`
     : undefined;
 
   return (
@@ -27,7 +27,7 @@ export function ArrowRightIcon({
       aria-hidden={title ? undefined : true}
       aria-labelledby={titleId}
       focusable="false"
-      className={cx("forma-icon", iconSizeClass(size), className)}
+      className={cx("ccui-icon", iconSizeClass(size), className)}
       {...props}
     >
       {title ? <title id={titleId}>{title}</title> : null}
@@ -43,10 +43,10 @@ export function ArrowRightIcon({
   );
 }
 
-export function CheckIcon({ size = "sm", className, ...props }: FormaIconProps) {
+export function CheckIcon({ size = "sm", className, ...props }: CCUIIconProps) {
   return (
     <svg
-      className={cx("forma-icon", `forma-icon--${size}`, className)}
+      className={cx("ccui-icon", `ccui-icon--${size}`, className)}
       viewBox="0 0 16 16"
       fill="none"
       aria-hidden="true"

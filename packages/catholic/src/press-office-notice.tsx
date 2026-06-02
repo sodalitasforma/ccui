@@ -26,7 +26,7 @@ export function PressOfficeNotice({
     <Notice
       as="section"
       variant={noticeVariantBySeverity[severity]}
-      className={cx("forma-press-office-notice", className)}
+      className={cx("ccui-press-office-notice", className)}
       {...props}
     >
       <Stack gap="xs">
@@ -35,7 +35,7 @@ export function PressOfficeNotice({
           {date ? <Tag>{date}</Tag> : null}
         </Cluster>
 
-        <Text as="p" className="forma-press-office-notice__title">
+        <Text as="p" className="ccui-press-office-notice__title">
           {href ? <Link href={href}>{title}</Link> : title}
         </Text>
 

@@ -41,13 +41,13 @@ function ButtonContent({
   return (
     <>
       {iconBefore ? (
-        <span className="forma-button__icon forma-button__icon--before" aria-hidden="true">
+        <span className="ccui-button__icon ccui-button__icon--before" aria-hidden="true">
           {iconBefore}
         </span>
       ) : null}
-      <span className="forma-button__label">{children}</span>
+      <span className="ccui-button__label">{children}</span>
       {iconAfter ? (
-        <span className="forma-button__icon forma-button__icon--after" aria-hidden="true">
+        <span className="ccui-button__icon ccui-button__icon--after" aria-hidden="true">
           {iconAfter}
         </span>
       ) : null}
@@ -66,9 +66,9 @@ export function Button(props: ButtonProps) {
   } = props;
 
   const classes = cx(
-    "forma-button",
-    `forma-button--variant-${variant}`,
-    `forma-button--size-${size}`,
+    "ccui-button",
+    `ccui-button--variant-${variant}`,
+    `ccui-button--size-${size}`,
     className
   );
 

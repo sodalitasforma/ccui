@@ -31,7 +31,7 @@ export function ChurchDocumentHeader({
   ].filter(Boolean) as ChurchDocumentMetadataItem[];
 
   return (
-    <header className={cx("forma-church-document-header", className)} {...props}>
+    <header className={cx("ccui-church-document-header", className)} {...props}>
       <Section surface="parchment" spacing="lg">
         <Container size="lg">
           <Stack gap="lg">
@@ -55,7 +55,7 @@ export function ChurchDocumentHeader({
               ) : null}
 
               {description ? (
-                <Text as="p" tone="secondary" className="forma-church-document-header__description">
+                <Text as="p" tone="secondary" className="ccui-church-document-header__description">
                   {description}
                 </Text>
               ) : null}

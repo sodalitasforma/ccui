@@ -35,15 +35,15 @@ export function MassTimeRow({
   ...props
 }: MassTimeRowProps) {
   return (
-    <div className={cx("forma-mass-time-row", className)} {...props}>
+    <div className={cx("ccui-mass-time-row", className)} {...props}>
       <Cluster align="start" justify="between" gap="md">
-        <Stack gap="xs" className="forma-mass-time-row__main">
+        <Stack gap="xs" className="ccui-mass-time-row__main">
           <Cluster gap="sm" align="baseline">
-            <Text as="p" className="forma-mass-time-row__time">
+            <Text as="p" className="ccui-mass-time-row__time">
               {time}
             </Text>
             {label ? (
-              <Text as="p" className="forma-mass-time-row__label">
+              <Text as="p" className="ccui-mass-time-row__label">
                 {label}
               </Text>
             ) : null}

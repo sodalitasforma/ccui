@@ -18,10 +18,10 @@ export function NewsList({
   ...props
 }: NewsListProps) {
   return (
-    <section className={cx("forma-news-list", className)} {...props}>
+    <section className={cx("ccui-news-list", className)} {...props}>
       <Stack gap="md">
         <Stack gap="xs">
-          <Text as="h3" size="lg" className="forma-news-list__title">
+          <Text as="h3" size="lg" className="ccui-news-list__title">
             {title}
           </Text>
           {description ? <Text as="p" tone="secondary">{description}</Text> : null}

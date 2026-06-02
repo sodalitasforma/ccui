@@ -47,11 +47,11 @@ export function ParishHero({
       as="section"
       padding="none"
       border="gold"
-      className={cx("forma-parish-hero", !media && "forma-parish-hero--no-media", className)}
+      className={cx("ccui-parish-hero", !media && "ccui-parish-hero--no-media", className)}
       {...props}
     >
-      <div className="forma-parish-hero__grid">
-        <Stack gap="lg" className="forma-parish-hero__content">
+      <div className="ccui-parish-hero__grid">
+        <Stack gap="lg" className="ccui-parish-hero__content">
           <Stack gap="md">
             <Cluster gap="sm">
               <Badge variant="gold">{designation}</Badge>
@@ -64,7 +64,7 @@ export function ParishHero({
               </Heading>
 
               {description ? (
-                <Text size="md" tone="secondary" className="forma-parish-hero__description">
+                <Text size="md" tone="secondary" className="ccui-parish-hero__description">
                   {description}
                 </Text>
               ) : null}
@@ -72,7 +72,7 @@ export function ParishHero({
           </Stack>
 
           {addressLines.length ? (
-            <address className="forma-parish-hero__address">
+            <address className="ccui-parish-hero__address">
               {addressLines.map((line) => (
                 <span key={line}>{line}</span>
               ))}
@@ -97,7 +97,7 @@ export function ParishHero({
         </Stack>
 
         {media ? (
-          <div className="forma-parish-hero__media" aria-label={imageLabel}>
+          <div className="ccui-parish-hero__media" aria-label={imageLabel}>
             {media}
           </div>
         ) : null}

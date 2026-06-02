@@ -18,13 +18,13 @@ export function DocumentCitation({
       as="blockquote"
       padding="md"
       border="gold"
-      className={cx("forma-document-citation", className)}
+      className={cx("ccui-document-citation", className)}
       {...props}
     >
-      <Text as="p" size="xs" tone="goldText" className="forma-document-citation__label">
+      <Text as="p" size="xs" tone="goldText" className="ccui-document-citation__label">
         {label}
       </Text>
-      <Text as="p" className="forma-document-citation__text">
+      <Text as="p" className="ccui-document-citation__text">
         {citation}
       </Text>
     </Card>

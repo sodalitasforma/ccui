@@ -22,9 +22,9 @@ export function IconFrame<T extends ElementType = "span">({
   return (
     <Component
       className={cx(
-        "forma-icon-frame",
-        `forma-icon-frame--tone-${tone}`,
-        `forma-icon-frame--size-${size}`,
+        "ccui-icon-frame",
+        `ccui-icon-frame--tone-${tone}`,
+        `ccui-icon-frame--size-${size}`,
         className
       )}
       {...props}

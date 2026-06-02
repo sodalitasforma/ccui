@@ -15,7 +15,7 @@ export function PrayerCard({
   ...props
 }: PrayerCardProps) {
   return (
-    <Card as="article" padding="lg" border="gold" className={cx("forma-prayer-card", className)} {...props}>
+    <Card as="article" padding="lg" border="gold" className={cx("ccui-prayer-card", className)} {...props}>
       <Stack gap="md">
         <Stack gap="xs">
           <Eyebrow tone="gold">Prayer</Eyebrow>
@@ -24,7 +24,7 @@ export function PrayerCard({
           </Heading>
         </Stack>
 
-        <Text as="p" size="lg" className="forma-prayer-card__text">
+        <Text as="p" size="lg" className="ccui-prayer-card__text">
           {text}
         </Text>
 

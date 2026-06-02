@@ -9,7 +9,7 @@ export type AccordionProps = HTMLAttributes<HTMLDivElement>;
 
 export function Accordion({ className, children, ...props }: AccordionProps) {
   return (
-    <div className={cx("forma-accordion", className)} {...props}>
+    <div className={cx("ccui-accordion", className)} {...props}>
       {children}
     </div>
   );
@@ -27,7 +27,7 @@ export function AccordionItem({
 }: AccordionItemProps) {
   return (
     <details
-      className={cx("forma-accordion-item", className)}
+      className={cx("ccui-accordion-item", className)}
       open={defaultOpen}
       {...props}
     >
@@ -46,9 +46,9 @@ export function AccordionTrigger({
   ...props
 }: AccordionTriggerProps) {
   return (
-    <summary className={cx("forma-accordion-trigger", className)} {...props}>
-      <span className="forma-accordion-trigger__label">{children}</span>
-      <span className="forma-accordion-icon" aria-hidden="true" />
+    <summary className={cx("ccui-accordion-trigger", className)} {...props}>
+      <span className="ccui-accordion-trigger__label">{children}</span>
+      <span className="ccui-accordion-icon" aria-hidden="true" />
     </summary>
   );
 }
@@ -61,7 +61,7 @@ export function AccordionContent({
   ...props
 }: AccordionContentProps) {
   return (
-    <div className={cx("forma-accordion-content", className)} {...props}>
+    <div className={cx("ccui-accordion-content", className)} {...props}>
       {children}
     </div>
   );

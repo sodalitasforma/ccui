@@ -16,10 +16,10 @@ export function DocumentList({
   ...props
 }: DocumentListProps) {
   return (
-    <section className={cx("forma-document-list", className)} {...props}>
+    <section className={cx("ccui-document-list", className)} {...props}>
       {(title || description) ? (
-        <Stack gap="xs" className="forma-document-list__header">
-          {title ? <h2 className="forma-document-list__title">{title}</h2> : null}
+        <Stack gap="xs" className="ccui-document-list__header">
+          {title ? <h2 className="ccui-document-list__title">{title}</h2> : null}
           {description ? (
             <Text as="p" size="sm" tone="muted">
               {description}
@@ -28,7 +28,7 @@ export function DocumentList({
         </Stack>
       ) : null}
 
-      <Stack gap="md" className="forma-document-list__items">
+      <Stack gap="md" className="ccui-document-list__items">
         {children}
       </Stack>
     </section>

@@ -21,11 +21,11 @@ export function EntityCard({
   ...props
 }: EntityCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-entity-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-entity-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <Tag variant="blue">{entityType}</Tag>
-          <Text as="code" className="forma-entity-card__id">
+          <Text as="code" className="ccui-entity-card__id">
             {id}
           </Text>
         </Cluster>

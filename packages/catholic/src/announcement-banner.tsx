@@ -28,8 +28,8 @@ export function AnnouncementBanner({
   return (
     <section
       className={cx(
-        "forma-announcement-banner",
-        `forma-announcement-banner--variant-${variant}`,
+        "ccui-announcement-banner",
+        `ccui-announcement-banner--variant-${variant}`,
         className
       )}
       {...props}
@@ -39,7 +39,7 @@ export function AnnouncementBanner({
           {badge ? <Badge variant={variant === "emergency" ? "danger" : "gold"}>{badge}</Badge> : null}
 
           <div>
-            <Text as="p" size="md" className="forma-announcement-banner__title">
+            <Text as="p" size="md" className="ccui-announcement-banner__title">
               {title}
             </Text>
             {description ? (
@@ -51,9 +51,9 @@ export function AnnouncementBanner({
         </Cluster>
 
         {actions ? (
-          <div className="forma-announcement-banner__actions">{actions}</div>
+          <div className="ccui-announcement-banner__actions">{actions}</div>
         ) : href ? (
-          <a className="forma-announcement-banner__link" href={href}>
+          <a className="ccui-announcement-banner__link" href={href}>
             {actionLabel}
           </a>
         ) : null}

@@ -19,10 +19,10 @@ export function Directory<T extends ElementType = "section">({
   const Component = as || "section";
 
   return (
-    <Component className={cx("forma-directory", className)} {...props}>
+    <Component className={cx("ccui-directory", className)} {...props}>
       {title || description ? (
-        <Stack gap="xs" className="forma-directory__header">
-          {title ? <h2 className="forma-directory__title">{title}</h2> : null}
+        <Stack gap="xs" className="ccui-directory__header">
+          {title ? <h2 className="ccui-directory__title">{title}</h2> : null}
           {description ? (
             <Text tone="muted" size="sm">
               {description}
@@ -31,7 +31,7 @@ export function Directory<T extends ElementType = "section">({
         </Stack>
       ) : null}
 
-      <Grid columns="auto" gap="md" className="forma-directory__grid">
+      <Grid columns="auto" gap="md" className="ccui-directory__grid">
         {children}
       </Grid>
     </Component>

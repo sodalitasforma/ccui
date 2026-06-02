@@ -36,13 +36,13 @@ export function SafeguardingNotice({
       as="aside"
       padding="lg"
       border="gold"
-      className={cx("forma-safeguarding-notice", className)}
+      className={cx("ccui-safeguarding-notice", className)}
       {...props}
     >
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-safeguarding-notice__eyebrow">
+            <Text as="p" className="ccui-safeguarding-notice__eyebrow">
               Safeguarding
             </Text>
 
@@ -63,12 +63,12 @@ export function SafeguardingNotice({
         ) : null}
 
         <Cluster gap="sm">
-          <Link href={reportHref} className="forma-safeguarding-notice__primary">
+          <Link href={reportHref} className="ccui-safeguarding-notice__primary">
             {reportLabel}
           </Link>
 
           {auditHref ? (
-            <Link href={auditHref} className="forma-safeguarding-notice__secondary">
+            <Link href={auditHref} className="ccui-safeguarding-notice__secondary">
               {auditLabel}
             </Link>
           ) : null}

@@ -17,7 +17,7 @@ export function InstitutionalFooter({
   ...props
 }: InstitutionalFooterProps) {
   return (
-    <footer className={cx("forma-institutional-footer", className)} {...props}>
+    <footer className={cx("ccui-institutional-footer", className)} {...props}>
       <Container size="xl">
         <Stack gap="lg">
           <Cluster justify="between" align="start">
@@ -33,7 +33,7 @@ export function InstitutionalFooter({
             </Stack>
 
             {links.length > 0 ? (
-              <nav className="forma-institutional-footer__links" aria-label="Footer">
+              <nav className="ccui-institutional-footer__links" aria-label="Footer">
                 {links.map((item) => (
                   <a key={`${item.label}-${item.href}`} href={item.href}>
                     {item.label}

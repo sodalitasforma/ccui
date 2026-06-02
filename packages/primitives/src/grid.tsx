@@ -22,9 +22,9 @@ export function Grid<T extends ElementType = "div">({
   return (
     <Component
       className={cx(
-        "forma-grid",
-        `forma-grid--columns-${columns}`,
-        `forma-grid--gap-${gap}`,
+        "ccui-grid",
+        `ccui-grid--columns-${columns}`,
+        `ccui-grid--gap-${gap}`,
         className
       )}
       {...props}

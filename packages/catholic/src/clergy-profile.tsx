@@ -22,10 +22,10 @@ export function ClergyProfile({
   ...props
 }: ClergyProfileProps) {
   return (
-    <Card as="article" padding="md" border="gold" className={cx("forma-clergy-profile", className)} {...props}>
+    <Card as="article" padding="md" border="gold" className={cx("ccui-clergy-profile", className)} {...props}>
       <Stack gap="md">
         {imageUrl ? (
-          <MediaFrame ratio="portrait" surface="parchment" className="forma-clergy-profile__image">
+          <MediaFrame ratio="portrait" surface="parchment" className="ccui-clergy-profile__image">
             <img src={imageUrl} alt="" />
           </MediaFrame>
         ) : null}
@@ -33,7 +33,7 @@ export function ClergyProfile({
         <Stack gap="xs">
           <Cluster justify="between" align="start">
             <Stack gap="xs">
-              <h3 className="forma-clergy-profile__name">{name}</h3>
+              <h3 className="ccui-clergy-profile__name">{name}</h3>
               <Text as="p" size="sm" tone="secondary">
                 {title}
               </Text>
@@ -49,7 +49,7 @@ export function ClergyProfile({
           ) : null}
 
           {email ? (
-            <a className="forma-clergy-profile__link" href={`mailto:${email}`}>
+            <a className="ccui-clergy-profile__link" href={`mailto:${email}`}>
               {email}
             </a>
           ) : null}

@@ -26,9 +26,9 @@ export function Heading<T extends ElementType = "h2">({
   return (
     <Component
       className={cx(
-        "forma-heading",
-        `forma-heading--family-${family}`,
-        `forma-heading--size-${resolvedSize}`,
+        "ccui-heading",
+        `ccui-heading--family-${family}`,
+        `ccui-heading--size-${resolvedSize}`,
         className
       )}
       {...props}

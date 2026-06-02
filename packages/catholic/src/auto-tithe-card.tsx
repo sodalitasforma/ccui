@@ -36,12 +36,12 @@ export function AutoTitheCard({
   ...props
 }: AutoTitheCardProps) {
   return (
-    <section className={cx("forma-auto-tithe-card", className)} {...props}>
-      <Card padding="lg" border="gold" className="forma-auto-tithe-card__surface">
+    <section className={cx("ccui-auto-tithe-card", className)} {...props}>
+      <Card padding="lg" border="gold" className="ccui-auto-tithe-card__surface">
         <Stack gap="md">
           <Cluster justify="between" align="start" gap="md">
             <Stack gap="xs">
-              <Text as="p" className="forma-auto-tithe-card__eyebrow">
+              <Text as="p" className="ccui-auto-tithe-card__eyebrow">
                 Giving
               </Text>
               <Heading level={3} size="xl">
@@ -54,7 +54,7 @@ export function AutoTitheCard({
           <Text tone="secondary">{description}</Text>
 
           <Stack gap="xs">
-            <Text as="p" size="sm" className="forma-auto-tithe-card__label">
+            <Text as="p" size="sm" className="ccui-auto-tithe-card__label">
               Amount
             </Text>
             <Cluster gap="sm">
@@ -62,8 +62,8 @@ export function AutoTitheCard({
                 <span
                   key={amount.value}
                   className={cx(
-                    "forma-auto-tithe-card__choice",
-                    amount.selected && "forma-auto-tithe-card__choice--selected"
+                    "ccui-auto-tithe-card__choice",
+                    amount.selected && "ccui-auto-tithe-card__choice--selected"
                   )}
                 >
                   {amount.label}
@@ -73,7 +73,7 @@ export function AutoTitheCard({
           </Stack>
 
           <Stack gap="xs">
-            <Text as="p" size="sm" className="forma-auto-tithe-card__label">
+            <Text as="p" size="sm" className="ccui-auto-tithe-card__label">
               Frequency
             </Text>
             <Cluster gap="sm">
@@ -81,8 +81,8 @@ export function AutoTitheCard({
                 <span
                   key={frequency.value}
                   className={cx(
-                    "forma-auto-tithe-card__choice",
-                    frequency.selected && "forma-auto-tithe-card__choice--selected"
+                    "ccui-auto-tithe-card__choice",
+                    frequency.selected && "ccui-auto-tithe-card__choice--selected"
                   )}
                 >
                   {frequency.label}
@@ -95,7 +95,7 @@ export function AutoTitheCard({
             <Text as="p" size="sm" tone="muted">
               {note}
             </Text>
-            <Link href={href} className="forma-auto-tithe-card__action">
+            <Link href={href} className="ccui-auto-tithe-card__action">
               {ctaLabel}
             </Link>
           </Cluster>

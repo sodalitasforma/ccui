@@ -17,7 +17,7 @@ export function PressReleaseCard({
   ...props
 }: PressReleaseCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-press-release-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-press-release-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster gap="xs">
           <Tag variant="blue">{category}</Tag>

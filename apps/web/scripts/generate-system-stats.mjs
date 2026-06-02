@@ -9,13 +9,13 @@ function listFiles(dir, filter) {
 
 function countCssVariableDefinitions(filePath) {
   const text = readFileSync(join(root, filePath), "utf8");
-  const matches = text.match(/--forma-[a-zA-Z0-9-_]+:/g) || [];
+  const matches = text.match(/--ccui-[a-zA-Z0-9-_]+:/g) || [];
   return new Set(matches.map((item) => item.replace(":", ""))).size;
 }
 
 function countCssTokenReferences(filePath) {
   const text = readFileSync(join(root, filePath), "utf8");
-  return (text.match(/var\(--forma-[a-zA-Z0-9-_]+\)/g) || []).length;
+  return (text.match(/var\(--ccui-[a-zA-Z0-9-_]+\)/g) || []).length;
 }
 
 function countExports(filePath, pattern) {

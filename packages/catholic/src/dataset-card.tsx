@@ -19,7 +19,7 @@ export function DatasetCard({
   ...props
 }: DatasetCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-dataset-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-dataset-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <Tag variant="blue">Dataset</Tag>

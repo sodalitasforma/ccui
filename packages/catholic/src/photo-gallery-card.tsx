@@ -85,14 +85,14 @@ export function PhotoGalleryCard({
       as="article"
       padding="none"
       border="subtle"
-      className={cx("forma-photo-gallery-card", className)}
+      className={cx("ccui-photo-gallery-card", className)}
       {...props}
     >
-      <div className="forma-photo-gallery-card__stage">
+      <div className="ccui-photo-gallery-card__stage">
         {activePhoto ? (
           <button
             type="button"
-            className="forma-photo-gallery-card__image-button"
+            className="ccui-photo-gallery-card__image-button"
             onClick={() => setIsFullscreen(true)}
             aria-label={`Open ${activePhoto.alt} full screen`}
           >
@@ -101,23 +101,23 @@ export function PhotoGalleryCard({
               alt={activePhoto.alt}
               loading="lazy"
               style={{
-                "--forma-photo-gallery-fit": activePhoto.fit ?? fit,
-                "--forma-photo-gallery-position": activePhoto.position ?? position,
+                "--ccui-photo-gallery-fit": activePhoto.fit ?? fit,
+                "--ccui-photo-gallery-position": activePhoto.position ?? position,
               } as React.CSSProperties}
             />
           </button>
         ) : (
-          <div className="forma-photo-gallery-card__empty" aria-hidden="true" />
+          <div className="ccui-photo-gallery-card__empty" aria-hidden="true" />
         )}
 
         {activePhoto?.alt ? (
-          <span className="forma-photo-gallery-card__alt-label">
+          <span className="ccui-photo-gallery-card__alt-label">
             {activePhoto.alt}
           </span>
         ) : null}
 
         {photos.length > 1 ? (
-          <div className="forma-photo-gallery-card__controls" aria-label="Gallery controls">
+          <div className="ccui-photo-gallery-card__controls" aria-label="Gallery controls">
             <button type="button" onClick={goPrevious} disabled={!canGoPrevious} aria-label="Previous photo">
               ‹
             </button>
@@ -132,14 +132,14 @@ export function PhotoGalleryCard({
       </div>
 
       {photos.length > 1 ? (
-        <div className="forma-photo-gallery-card__thumbs" aria-label="Gallery thumbnails">
+        <div className="ccui-photo-gallery-card__thumbs" aria-label="Gallery thumbnails">
           {photos.map((photo, index) => (
             <button
               key={`${photo.src}-${index}`}
               type="button"
               className={cx(
-                "forma-photo-gallery-card__thumb",
-                index === activeIndex && "forma-photo-gallery-card__thumb--active",
+                "ccui-photo-gallery-card__thumb",
+                index === activeIndex && "ccui-photo-gallery-card__thumb--active",
               )}
               onClick={() => setActiveIndex(index)}
               aria-label={`Show photo ${index + 1}: ${photo.alt}`}
@@ -150,8 +150,8 @@ export function PhotoGalleryCard({
                 alt=""
                 loading="lazy"
                 style={{
-                  "--forma-photo-gallery-fit": photo.fit ?? fit,
-                  "--forma-photo-gallery-position": photo.position ?? position,
+                  "--ccui-photo-gallery-fit": photo.fit ?? fit,
+                  "--ccui-photo-gallery-position": photo.position ?? position,
                 } as React.CSSProperties}
               />
             </button>
@@ -159,7 +159,7 @@ export function PhotoGalleryCard({
         </div>
       ) : null}
 
-      <Stack gap="sm" className="forma-photo-gallery-card__body">
+      <Stack gap="sm" className="ccui-photo-gallery-card__body">
         <Cluster justify="between" align="center" gap="sm">
           <Badge variant="gold">{category}</Badge>
           {date ? (
@@ -170,7 +170,7 @@ export function PhotoGalleryCard({
         </Cluster>
 
         <Stack gap="xs">
-          <Heading level={3} size="lg" className="forma-photo-gallery-card__title">
+          <Heading level={3} size="lg" className="ccui-photo-gallery-card__title">
             {title}
           </Heading>
 
@@ -196,10 +196,10 @@ export function PhotoGalleryCard({
       </Stack>
 
       {isFullscreen && activePhoto ? (
-        <div className="forma-photo-gallery-card__lightbox" role="dialog" aria-modal="true" aria-label={title}>
+        <div className="ccui-photo-gallery-card__lightbox" role="dialog" aria-modal="true" aria-label={title}>
           <button
             type="button"
-            className="forma-photo-gallery-card__lightbox-close"
+            className="ccui-photo-gallery-card__lightbox-close"
             onClick={() => setIsFullscreen(false)}
             aria-label="Close full screen gallery"
           >
@@ -209,7 +209,7 @@ export function PhotoGalleryCard({
           {photos.length > 1 ? (
             <button
               type="button"
-              className="forma-photo-gallery-card__lightbox-previous"
+              className="ccui-photo-gallery-card__lightbox-previous"
               onClick={goPrevious}
               aria-label="Previous photo"
             >
@@ -217,7 +217,7 @@ export function PhotoGalleryCard({
             </button>
           ) : null}
 
-          <figure className="forma-photo-gallery-card__lightbox-figure">
+          <figure className="ccui-photo-gallery-card__lightbox-figure">
             <img src={activePhoto.src} alt={activePhoto.alt} />
             <figcaption>
               <span>{activePhoto.caption ?? activePhoto.alt}</span>
@@ -230,7 +230,7 @@ export function PhotoGalleryCard({
           {photos.length > 1 ? (
             <button
               type="button"
-              className="forma-photo-gallery-card__lightbox-next"
+              className="ccui-photo-gallery-card__lightbox-next"
               onClick={goNext}
               aria-label="Next photo"
             >

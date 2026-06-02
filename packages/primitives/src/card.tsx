@@ -28,11 +28,11 @@ export function Card<T extends ElementType = "div">({
   return (
     <Component
       className={cx(
-        "forma-card",
-        `forma-card--surface-${surface}`,
-        `forma-card--padding-${padding}`,
-        `forma-card--border-${border}`,
-        `forma-card--shadow-${shadow}`,
+        "ccui-card",
+        `ccui-card--surface-${surface}`,
+        `ccui-card--padding-${padding}`,
+        `ccui-card--border-${border}`,
+        `ccui-card--shadow-${shadow}`,
         className
       )}
       {...props}

@@ -18,9 +18,9 @@ export function Link({
   return (
     <a
       className={cx(
-        "forma-link",
-        `forma-link--variant-${variant}`,
-        `forma-link--underline-${underline}`,
+        "ccui-link",
+        `ccui-link--variant-${variant}`,
+        `ccui-link--underline-${underline}`,
         className
       )}
       {...props}

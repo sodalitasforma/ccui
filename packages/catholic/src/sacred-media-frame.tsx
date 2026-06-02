@@ -28,26 +28,26 @@ export function SacredMediaFrame({
   return (
     <figure
       className={cx(
-        "forma-sacred-media-frame",
-        `forma-sacred-media-frame--${src ? "image" : variant}`,
+        "ccui-sacred-media-frame",
+        `ccui-sacred-media-frame--${src ? "image" : variant}`,
         className
       )}
       {...props}
     >
       {src ? (
-        <img className="forma-sacred-media-frame__image" src={src} alt={alt} />
+        <img className="ccui-sacred-media-frame__image" src={src} alt={alt} />
       ) : (
-        <div className="forma-sacred-media-frame__pattern" aria-hidden="true">
-          <span className="forma-sacred-media-frame__ring forma-sacred-media-frame__ring--outer" />
-          <span className="forma-sacred-media-frame__ring forma-sacred-media-frame__ring--middle" />
-          <span className="forma-sacred-media-frame__ring forma-sacred-media-frame__ring--inner" />
-          <span className="forma-sacred-media-frame__cross" />
+        <div className="ccui-sacred-media-frame__pattern" aria-hidden="true">
+          <span className="ccui-sacred-media-frame__ring ccui-sacred-media-frame__ring--outer" />
+          <span className="ccui-sacred-media-frame__ring ccui-sacred-media-frame__ring--middle" />
+          <span className="ccui-sacred-media-frame__ring ccui-sacred-media-frame__ring--inner" />
+          <span className="ccui-sacred-media-frame__cross" />
         </div>
       )}
 
-      <Stack gap="xs" className="forma-sacred-media-frame__content">
+      <Stack gap="xs" className="ccui-sacred-media-frame__content">
         {label ? (
-          <Text as="p" size="xs" className="forma-sacred-media-frame__label">
+          <Text as="p" size="xs" className="ccui-sacred-media-frame__label">
             {label}
           </Text>
         ) : null}

@@ -18,7 +18,7 @@ export function Notice<T extends ElementType = "div">({
 
   return (
     <Component
-      className={cx("forma-notice", `forma-notice--variant-${variant}`, className)}
+      className={cx("ccui-notice", `ccui-notice--variant-${variant}`, className)}
       role="note"
       {...props}
     />

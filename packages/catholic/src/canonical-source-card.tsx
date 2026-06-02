@@ -21,7 +21,7 @@ export function CanonicalSourceCard({
   ...props
 }: CanonicalSourceCardProps) {
   return (
-    <Card as="article" padding="md" border="gold" className={cx("forma-canonical-source-card", className)} {...props}>
+    <Card as="article" padding="md" border="gold" className={cx("ccui-canonical-source-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <Cluster gap="xs">
@@ -39,7 +39,7 @@ export function CanonicalSourceCard({
         </Stack>
 
         {citation ? (
-          <Text as="p" className="forma-canonical-source-card__citation">
+          <Text as="p" className="ccui-canonical-source-card__citation">
             {citation}
           </Text>
         ) : null}

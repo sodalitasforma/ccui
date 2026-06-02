@@ -59,7 +59,7 @@ function DocumentCardInner({
     meta;
 
   return (
-    <Card padding="lg" border="gold" className="forma-document-card__surface">
+    <Card padding="lg" border="gold" className="ccui-document-card__surface">
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
@@ -69,7 +69,7 @@ function DocumentCardInner({
               {status ? <Badge variant="gold">{status}</Badge> : null}
             </Cluster>
 
-            <Heading level={3} size="lg" className="forma-document-card__title">
+            <Heading level={3} size="lg" className="ccui-document-card__title">
               {title}
             </Heading>
 
@@ -82,7 +82,7 @@ function DocumentCardInner({
         </Cluster>
 
         {hasMetadata ? (
-          <dl className="forma-document-card__metadata">
+          <dl className="ccui-document-card__metadata">
             {authority ? (
               <div>
                 <dt>Authority</dt>
@@ -132,7 +132,7 @@ function DocumentCardInner({
         {children}
 
         {href ? (
-          <Link href={href} className="forma-document-card__action">
+          <Link href={href} className="ccui-document-card__action">
             {actionLabel}
           </Link>
         ) : null}
@@ -147,7 +147,7 @@ export function DocumentCard({
   ...props
 }: DocumentCardProps) {
   return (
-    <article className={cx("forma-document-card", href && "forma-document-card--linked", className)}>
+    <article className={cx("ccui-document-card", href && "ccui-document-card--linked", className)}>
       {href ? (
         <DocumentCardInner href={href} {...props} />
       ) : (

@@ -20,12 +20,12 @@ export function OntologyClassCard({
   ...props
 }: OntologyClassCardProps) {
   return (
-    <Card as="article" padding="lg" border="subtle" className={cx("forma-ontology-class-card", className)} {...props}>
+    <Card as="article" padding="lg" border="subtle" className={cx("ccui-ontology-class-card", className)} {...props}>
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="sm">
           <Cluster gap="xs">
             {namespace ? <NamespaceBadge namespace={namespace} /> : null}
-            <Text as="code" className="forma-ontology-class-card__class">
+            <Text as="code" className="ccui-ontology-class-card__class">
               {ontologyClassName}
             </Text>
           </Cluster>

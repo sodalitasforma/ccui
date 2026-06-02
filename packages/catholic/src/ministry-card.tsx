@@ -16,7 +16,7 @@ export function MinistryCard({
   ...props
 }: MinistryCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-ministry-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-ministry-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <Heading level={3} size="md">

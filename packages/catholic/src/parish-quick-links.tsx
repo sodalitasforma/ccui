@@ -23,7 +23,7 @@ export function ParishQuickLinks({
   ...props
 }: ParishQuickLinksProps) {
   return (
-    <section className={cx("forma-parish-quick-links", className)} {...props}>
+    <section className={cx("ccui-parish-quick-links", className)} {...props}>
       <Stack gap="md">
         <Stack gap="xs">
           <Heading level={2} size="lg">
@@ -34,19 +34,19 @@ export function ParishQuickLinks({
           ) : null}
         </Stack>
 
-        <div className="forma-parish-quick-links__grid">
+        <div className="ccui-parish-quick-links__grid">
           {items.map((item) => (
             <a
               key={`${item.label}-${item.href}`}
               href={item.href}
-              className="forma-parish-quick-links__item"
+              className="ccui-parish-quick-links__item"
             >
-              <span className="forma-parish-quick-links__item-main">
-                <span className="forma-parish-quick-links__label">
+              <span className="ccui-parish-quick-links__item-main">
+                <span className="ccui-parish-quick-links__label">
                   {item.label}
                 </span>
                 {item.description ? (
-                  <span className="forma-parish-quick-links__description">
+                  <span className="ccui-parish-quick-links__description">
                     {item.description}
                   </span>
                 ) : null}

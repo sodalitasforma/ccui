@@ -8,13 +8,13 @@ type BreadcrumbProps = {
 
 export function Breadcrumb({ items, className, ...props }: BreadcrumbProps) {
   return (
-    <nav className={cx("forma-breadcrumb", className)} aria-label="Breadcrumb" {...props}>
-      <ol className="forma-breadcrumb__list">
+    <nav className={cx("ccui-breadcrumb", className)} aria-label="Breadcrumb" {...props}>
+      <ol className="ccui-breadcrumb__list">
         {items.map((item, index) => {
           const isLast = index === items.length - 1;
 
           return (
-            <li className="forma-breadcrumb__item" key={`${item.label}-${item.href}`}>
+            <li className="ccui-breadcrumb__item" key={`${item.label}-${item.href}`}>
               {isLast ? (
                 <span aria-current="page">{item.label}</span>
               ) : (

@@ -16,10 +16,10 @@ export function EventList({
   ...props
 }: EventListProps) {
   return (
-    <section className={cx("forma-event-list", className)} {...props}>
+    <section className={cx("ccui-event-list", className)} {...props}>
       {(title || description) ? (
-        <Stack gap="xs" className="forma-event-list__header">
-          {title ? <h2 className="forma-event-list__title">{title}</h2> : null}
+        <Stack gap="xs" className="ccui-event-list__header">
+          {title ? <h2 className="ccui-event-list__title">{title}</h2> : null}
           {description ? (
             <Text as="p" size="sm" tone="muted">
               {description}
@@ -28,7 +28,7 @@ export function EventList({
         </Stack>
       ) : null}
 
-      <Stack gap="md" className="forma-event-list__items">
+      <Stack gap="md" className="ccui-event-list__items">
         {children}
       </Stack>
     </section>

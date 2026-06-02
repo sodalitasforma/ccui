@@ -19,12 +19,12 @@ export function RepositoryLink({
       as="article"
       padding="md"
       border="subtle"
-      className={cx("forma-repository-link", className)}
+      className={cx("ccui-repository-link", className)}
       {...props}
     >
       <Stack gap="xs">
         <Cluster justify="between" align="center" gap="sm">
-          <Text as="span" className="forma-repository-link__provider">
+          <Text as="span" className="ccui-repository-link__provider">
             {provider}
           </Text>
           <Link href={href}>Open repository</Link>

@@ -34,7 +34,7 @@ export function ArchiveSearchResult({
       as="article"
       padding="md"
       border="subtle"
-      className={cx("forma-archive-search-result", className)}
+      className={cx("ccui-archive-search-result", className)}
       {...props}
     >
       <Stack gap="sm">
@@ -51,7 +51,7 @@ export function ArchiveSearchResult({
         </Stack>
 
         {excerpt ? (
-          <Text as="p" tone="secondary" className="forma-archive-search-result__excerpt">
+          <Text as="p" tone="secondary" className="ccui-archive-search-result__excerpt">
             {excerpt}
           </Text>
         ) : null}

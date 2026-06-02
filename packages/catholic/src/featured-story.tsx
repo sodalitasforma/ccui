@@ -17,7 +17,7 @@ export function FeaturedStory({
   ...props
 }: FeaturedStoryProps) {
   return (
-    <Card as="article" padding="lg" border="gold" className={cx("forma-featured-story", className)} {...props}>
+    <Card as="article" padding="lg" border="gold" className={cx("ccui-featured-story", className)} {...props}>
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="sm">
           <Eyebrow tone="gold">{eyebrow}</Eyebrow>
@@ -33,7 +33,7 @@ export function FeaturedStory({
 
         <Cluster gap="sm">
           {date ? <Tag>{date}</Tag> : null}
-          {href ? <Link href={href} className="forma-featured-story__action">Read story</Link> : null}
+          {href ? <Link href={href} className="ccui-featured-story__action">Read story</Link> : null}
         </Cluster>
 
         {source?.href ? (

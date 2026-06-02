@@ -33,12 +33,12 @@ export function SocialLinks({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-social-links", className)}
+      className={cx("ccui-social-links", className)}
       {...props}
     >
       <Stack gap="md">
         <Stack gap="xs">
-          <Text as="p" className="forma-social-links__eyebrow">
+          <Text as="p" className="ccui-social-links__eyebrow">
             Social
           </Text>
           <Heading level={3} size="lg">
@@ -54,12 +54,12 @@ export function SocialLinks({
             <Link
               key={`${item.platform}-${item.href}`}
               href={item.href}
-              className="forma-social-links__item"
+              className="ccui-social-links__item"
             >
-              <span className="forma-social-links__platform">
+              <span className="ccui-social-links__platform">
                 {item.platform}
               </span>
-              <span className="forma-social-links__label">
+              <span className="ccui-social-links__label">
                 {item.label}
               </span>
             </Link>

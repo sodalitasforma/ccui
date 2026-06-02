@@ -17,7 +17,7 @@ export function BiblePassageCard({
   ...props
 }: BiblePassageCardProps) {
   return (
-    <Card as="article" padding="lg" border="subtle" className={cx("forma-bible-passage-card", className)} {...props}>
+    <Card as="article" padding="lg" border="subtle" className={cx("ccui-bible-passage-card", className)} {...props}>
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="sm">
           <Heading level={3} size="xl">
@@ -26,7 +26,7 @@ export function BiblePassageCard({
           {translation ? <Tag variant="gold">{translation}</Tag> : null}
         </Cluster>
 
-        <Text as="p" size="lg" className="forma-bible-passage-card__text">
+        <Text as="p" size="lg" className="ccui-bible-passage-card__text">
           {text}
         </Text>
 

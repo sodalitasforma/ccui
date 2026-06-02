@@ -23,7 +23,7 @@ export function OntologyPropertyTable({
   ...props
 }: OntologyPropertyTableProps) {
   return (
-    <div className={cx("forma-ontology-property-table", className)} {...props}>
+    <div className={cx("ccui-ontology-property-table", className)} {...props}>
       <TableWrapper>
         <Table>
           <THead>
@@ -38,7 +38,7 @@ export function OntologyPropertyTable({
             {properties.map((property) => (
               <TR key={property.property}>
                 <TD>
-                  <Text as="code" className="forma-ontology-property-table__code">
+                  <Text as="code" className="ccui-ontology-property-table__code">
                     {property.property}
                   </Text>
                 </TD>

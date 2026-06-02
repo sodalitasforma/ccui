@@ -15,7 +15,7 @@ export function DateRangeLabel({
   const value = startDate && endDate ? `${startDate} – ${endDate}` : startDate ?? endDate ?? "All dates";
 
   return (
-    <span className={cx("forma-date-range-label", className)} {...props}>
+    <span className={cx("ccui-date-range-label", className)} {...props}>
       <Cluster gap="xs" align="center">
         <Tag variant="brown">{label}</Tag>
         <Text as="span" size="sm" tone="secondary">

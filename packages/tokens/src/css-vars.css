@@ -1,195 +1,195 @@
 :root {
   /* Color: raw — Vatican-derived institutional palette */
-  --forma-color-brown-950: #240F03;
-  --forma-color-brown-900: #4D290C;
-  --forma-color-brown-800: #5A2E0B;
-  --forma-color-brown-700: #663300;
-  --forma-color-brown-600: #936A3D;
+  --ccui-color-brown-950: #240F03;
+  --ccui-color-brown-900: #4D290C;
+  --ccui-color-brown-800: #5A2E0B;
+  --ccui-color-brown-700: #663300;
+  --ccui-color-brown-600: #936A3D;
 
-  --forma-color-ink-950: #171512;
-  --forma-color-ink-900: #240F03;
-  --forma-color-ink-800: #333333;
-  --forma-color-ink-700: #343A40;
-  --forma-color-ink-600: #495057;
-  --forma-color-ink-500: #666666;
+  --ccui-color-ink-950: #171512;
+  --ccui-color-ink-900: #240F03;
+  --ccui-color-ink-800: #333333;
+  --ccui-color-ink-700: #343A40;
+  --ccui-color-ink-600: #495057;
+  --ccui-color-ink-500: #666666;
 
-  --forma-color-paper-50: #FDF5D8;
-  --forma-color-paper-100: #F4EDDA;
-  --forma-color-paper-200: #E8D6BC;
-  --forma-color-paper-300: #DDD4BB;
+  --ccui-color-paper-50: #FDF5D8;
+  --ccui-color-paper-100: #F4EDDA;
+  --ccui-color-paper-200: #E8D6BC;
+  --ccui-color-paper-300: #DDD4BB;
 
-  --forma-color-gold-300: #D7BA94;
-  --forma-color-gold-400: #C5A377;
-  --forma-color-gold-500: #B69B7E;
-  --forma-color-gold-600: #A88D2B;
-  --forma-color-gold-700: #664D03;
+  --ccui-color-gold-300: #D7BA94;
+  --ccui-color-gold-400: #C5A377;
+  --ccui-color-gold-500: #B69B7E;
+  --ccui-color-gold-600: #A88D2B;
+  --ccui-color-gold-700: #664D03;
 
-  --forma-color-orange-600: #DF621C;
-  --forma-color-yellow-500: #E9BF40;
+  --ccui-color-orange-600: #DF621C;
+  --ccui-color-yellow-500: #E9BF40;
 
-  --forma-color-blue-700: #244B77;
-  --forma-color-blue-600: #0A58CA;
+  --ccui-color-blue-700: #244B77;
+  --ccui-color-blue-600: #0A58CA;
 
-  --forma-color-red-700: #9F2D2D;
-  --forma-color-green-700: #2E6B45;
-  --forma-color-violet-700: #5B3A70;
-  --forma-color-rose-500: #C97A8B;
+  --ccui-color-red-700: #9F2D2D;
+  --ccui-color-green-700: #2E6B45;
+  --ccui-color-violet-700: #5B3A70;
+  --ccui-color-rose-500: #C97A8B;
 
-  --forma-color-gray-50: #F7F7F7;
-  --forma-color-gray-100: #F5F5F5;
-  --forma-color-gray-200: #E6E6E6;
-  --forma-color-gray-300: #DDDDDD;
-  --forma-color-gray-400: #CCCCCC;
-  --forma-color-gray-500: #999999;
-  --forma-color-gray-700: #444444;
+  --ccui-color-gray-50: #F7F7F7;
+  --ccui-color-gray-100: #F5F5F5;
+  --ccui-color-gray-200: #E6E6E6;
+  --ccui-color-gray-300: #DDDDDD;
+  --ccui-color-gray-400: #CCCCCC;
+  --ccui-color-gray-500: #999999;
+  --ccui-color-gray-700: #444444;
 
-  --forma-color-white: #FFFFFF;
-  --forma-color-black: #000000;
+  --ccui-color-white: #FFFFFF;
+  --ccui-color-black: #000000;
 
   /* Color: semantic */
-  --forma-color-text-primary: var(--forma-color-brown-950);
-  --forma-color-text-secondary: var(--forma-color-ink-800);
-  --forma-color-text-muted: var(--forma-color-ink-500);
-  --forma-color-text-inverse: var(--forma-color-white);
+  --ccui-color-text-primary: var(--ccui-color-brown-950);
+  --ccui-color-text-secondary: var(--ccui-color-ink-800);
+  --ccui-color-text-muted: var(--ccui-color-ink-500);
+  --ccui-color-text-inverse: var(--ccui-color-white);
 
-  --forma-color-link-primary: var(--forma-color-brown-700);
-  --forma-color-link-hover: var(--forma-color-black);
-  --forma-color-link-active: var(--forma-color-brown-700);
+  --ccui-color-link-primary: var(--ccui-color-brown-700);
+  --ccui-color-link-hover: var(--ccui-color-black);
+  --ccui-color-link-active: var(--ccui-color-brown-700);
 
-  --forma-color-surface-page: var(--forma-color-paper-50);
-  --forma-color-surface-subtle: var(--forma-color-paper-100);
-  --forma-color-surface-parchment: var(--forma-color-paper-200);
-  --forma-color-surface-institutional: var(--forma-color-paper-300);
-  --forma-color-surface-raised: var(--forma-color-white);
-  --forma-color-surface-dark: var(--forma-color-brown-950);
+  --ccui-color-surface-page: var(--ccui-color-paper-50);
+  --ccui-color-surface-subtle: var(--ccui-color-paper-100);
+  --ccui-color-surface-parchment: var(--ccui-color-paper-200);
+  --ccui-color-surface-institutional: var(--ccui-color-paper-300);
+  --ccui-color-surface-raised: var(--ccui-color-white);
+  --ccui-color-surface-dark: var(--ccui-color-brown-950);
 
-  --forma-color-border-subtle: rgba(90, 46, 11, 0.2);
-  --forma-color-border-strong: rgba(90, 46, 11, 0.4);
-  --forma-color-border-dark: var(--forma-color-brown-900);
+  --ccui-color-border-subtle: rgba(90, 46, 11, 0.2);
+  --ccui-color-border-strong: rgba(90, 46, 11, 0.4);
+  --ccui-color-border-dark: var(--ccui-color-brown-900);
 
-  --forma-color-accent-brown: var(--forma-color-brown-700);
-  --forma-color-accent-gold: var(--forma-color-gold-400);
-  --forma-color-accent-gold-text: var(--forma-color-gold-700);
-  --forma-color-accent-gold-muted: var(--forma-color-gold-300);
-  --forma-color-accent-active: var(--forma-color-orange-600);
-  --forma-color-accent-active-text: var(--forma-color-brown-700);
-  --forma-color-accent-blue: var(--forma-color-blue-700);
+  --ccui-color-accent-brown: var(--ccui-color-brown-700);
+  --ccui-color-accent-gold: var(--ccui-color-gold-400);
+  --ccui-color-accent-gold-text: var(--ccui-color-gold-700);
+  --ccui-color-accent-gold-muted: var(--ccui-color-gold-300);
+  --ccui-color-accent-active: var(--ccui-color-orange-600);
+  --ccui-color-accent-active-text: var(--ccui-color-brown-700);
+  --ccui-color-accent-blue: var(--ccui-color-blue-700);
 
-  --forma-color-danger: var(--forma-color-red-700);
-  --forma-color-success: var(--forma-color-green-700);
+  --ccui-color-danger: var(--ccui-color-red-700);
+  --ccui-color-success: var(--ccui-color-green-700);
 
   /* Liturgical colors */
-  --forma-liturgical-white: #F7F3E8;
-  --forma-liturgical-green: #2E6B45;
-  --forma-liturgical-violet: #5B3A70;
-  --forma-liturgical-red: #9F2D2D;
-  --forma-liturgical-rose: #C97A8B;
-  --forma-liturgical-black: #1F1B18;
-  --forma-liturgical-gold: #A88D2B;
+  --ccui-liturgical-white: #F7F3E8;
+  --ccui-liturgical-green: #2E6B45;
+  --ccui-liturgical-violet: #5B3A70;
+  --ccui-liturgical-red: #9F2D2D;
+  --ccui-liturgical-rose: #C97A8B;
+  --ccui-liturgical-black: #1F1B18;
+  --ccui-liturgical-gold: #A88D2B;
 
   /* Radius — Vatican signal is mostly small, restrained radius */
-  --forma-radius-none: 0;
-  --forma-radius-xs: 2px;
-  --forma-radius-sm: 4px;
-  --forma-radius-md: 5px;
-  --forma-radius-lg: 8px;
-  --forma-radius-xl: 1rem;
-  --forma-radius-pill: 999px;
+  --ccui-radius-none: 0;
+  --ccui-radius-xs: 2px;
+  --ccui-radius-sm: 4px;
+  --ccui-radius-md: 5px;
+  --ccui-radius-lg: 8px;
+  --ccui-radius-xl: 1rem;
+  --ccui-radius-pill: 999px;
 
   /* Shadow — mature institutional elevation system */
-  --forma-shadow-none: none;
-  --forma-shadow-hairline: 0 1px 0 color-mix(in srgb, var(--forma-color-text-primary) 10%, transparent);
+  --ccui-shadow-none: none;
+  --ccui-shadow-hairline: 0 1px 0 color-mix(in srgb, var(--ccui-color-text-primary) 10%, transparent);
 
-  --forma-shadow-sm:
-    0 1px 2px color-mix(in srgb, var(--forma-color-text-primary) 8%, transparent),
-    0 8px 20px color-mix(in srgb, var(--forma-color-text-primary) 4%, transparent);
+  --ccui-shadow-sm:
+    0 1px 2px color-mix(in srgb, var(--ccui-color-text-primary) 8%, transparent),
+    0 8px 20px color-mix(in srgb, var(--ccui-color-text-primary) 4%, transparent);
 
-  --forma-shadow-md:
-    0 2px 4px color-mix(in srgb, var(--forma-color-text-primary) 8%, transparent),
-    0 16px 36px color-mix(in srgb, var(--forma-color-text-primary) 7%, transparent);
+  --ccui-shadow-md:
+    0 2px 4px color-mix(in srgb, var(--ccui-color-text-primary) 8%, transparent),
+    0 16px 36px color-mix(in srgb, var(--ccui-color-text-primary) 7%, transparent);
 
-  --forma-shadow-lg:
-    0 4px 8px color-mix(in srgb, var(--forma-color-text-primary) 8%, transparent),
-    0 24px 56px color-mix(in srgb, var(--forma-color-text-primary) 10%, transparent);
+  --ccui-shadow-lg:
+    0 4px 8px color-mix(in srgb, var(--ccui-color-text-primary) 8%, transparent),
+    0 24px 56px color-mix(in srgb, var(--ccui-color-text-primary) 10%, transparent);
 
-  --forma-shadow-beautiful:
-    0 28px 80px -28px color-mix(in srgb, var(--forma-color-text-primary) 18%, transparent),
-    0 8px 24px -16px color-mix(in srgb, var(--forma-color-text-primary) 12%, transparent);
+  --ccui-shadow-beautiful:
+    0 28px 80px -28px color-mix(in srgb, var(--ccui-color-text-primary) 18%, transparent),
+    0 8px 24px -16px color-mix(in srgb, var(--ccui-color-text-primary) 12%, transparent);
 
-  --forma-shadow-gold-sm:
-    0 1px 2px color-mix(in srgb, var(--forma-color-accent-gold-text) 10%, transparent),
-    0 10px 24px color-mix(in srgb, var(--forma-color-accent-gold-text) 6%, transparent);
+  --ccui-shadow-gold-sm:
+    0 1px 2px color-mix(in srgb, var(--ccui-color-accent-gold-text) 10%, transparent),
+    0 10px 24px color-mix(in srgb, var(--ccui-color-accent-gold-text) 6%, transparent);
 
-  --forma-shadow-focus:
-    0 0 0 3px color-mix(in srgb, var(--forma-color-accent-gold-text) 18%, transparent);
+  --ccui-shadow-focus:
+    0 0 0 3px color-mix(in srgb, var(--ccui-color-accent-gold-text) 18%, transparent);
 
-  --forma-shadow-inset-border: inset 0 0 0 1px var(--forma-color-border-subtle);
-  --forma-shadow-inset-gold: inset 0 0 0 1px var(--forma-color-border-gold);
+  --ccui-shadow-inset-border: inset 0 0 0 1px var(--ccui-color-border-subtle);
+  --ccui-shadow-inset-gold: inset 0 0 0 1px var(--ccui-color-border-gold);
 
   /* Backward-compatible aliases */
-  --forma-shadow-brown-sm: var(--forma-shadow-sm);
-  --forma-shadow-brown-md: var(--forma-shadow-md);
-  --forma-shadow-brown-lg: var(--forma-shadow-lg);
-  --forma-shadow-inset-brown: var(--forma-shadow-inset-border);
+  --ccui-shadow-brown-sm: var(--ccui-shadow-sm);
+  --ccui-shadow-brown-md: var(--ccui-shadow-md);
+  --ccui-shadow-brown-lg: var(--ccui-shadow-lg);
+  --ccui-shadow-inset-brown: var(--ccui-shadow-inset-border);
 
   /* Motion */
-  --forma-motion-duration-instant: 0ms;
-  --forma-motion-duration-fast: 120ms;
-  --forma-motion-duration-base: 180ms;
-  --forma-motion-duration-slow: 280ms;
-  --forma-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
-  --forma-motion-easing-entrance: cubic-bezier(0, 0, 0.2, 1);
-  --forma-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
+  --ccui-motion-duration-instant: 0ms;
+  --ccui-motion-duration-fast: 120ms;
+  --ccui-motion-duration-base: 180ms;
+  --ccui-motion-duration-slow: 280ms;
+  --ccui-motion-easing-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ccui-motion-easing-entrance: cubic-bezier(0, 0, 0.2, 1);
+  --ccui-motion-easing-exit: cubic-bezier(0.4, 0, 1, 1);
 }
 
 :root {
   /* Spacing */
-  --forma-space-0: 0;
-  --forma-space-1: 0.25rem;
-  --forma-space-2: 0.5rem;
-  --forma-space-3: 0.75rem;
-  --forma-space-4: 1rem;
-  --forma-space-5: 1.25rem;
-  --forma-space-6: 1.5rem;
-  --forma-space-7: 2rem;
-  --forma-space-8: 2rem;
-  --forma-space-10: 2.5rem;
-  --forma-space-12: 3rem;
-  --forma-space-16: 4rem;
-  --forma-space-20: 5rem;
-  --forma-space-24: 6rem;
+  --ccui-space-0: 0;
+  --ccui-space-1: 0.25rem;
+  --ccui-space-2: 0.5rem;
+  --ccui-space-3: 0.75rem;
+  --ccui-space-4: 1rem;
+  --ccui-space-5: 1.25rem;
+  --ccui-space-6: 1.5rem;
+  --ccui-space-7: 2rem;
+  --ccui-space-8: 2rem;
+  --ccui-space-10: 2.5rem;
+  --ccui-space-12: 3rem;
+  --ccui-space-16: 4rem;
+  --ccui-space-20: 5rem;
+  --ccui-space-24: 6rem;
 
   /* Typography */
-  --forma-font-display: Cormorant Garamond, EB Garamond, Georgia, Times New Roman, serif;
-  --forma-font-inscription: Cinzel, Trajan Pro, Charlemagne, Georgia, Times New Roman, serif;
-  --forma-font-document: EB Garamond, Georgia, Times New Roman, serif;
-  --forma-font-interface: Inter, Source Sans 3, Tahoma, Verdana, Segoe UI, system-ui, sans-serif;
-  --forma-font-mono: Lucida Console, Courier New, monospace;
+  --ccui-font-display: Cormorant Garamond, EB Garamond, Georgia, Times New Roman, serif;
+  --ccui-font-inscription: Cinzel, Trajan Pro, Charlemagne, Georgia, Times New Roman, serif;
+  --ccui-font-document: EB Garamond, Georgia, Times New Roman, serif;
+  --ccui-font-interface: Inter, Source Sans 3, Tahoma, Verdana, Segoe UI, system-ui, sans-serif;
+  --ccui-font-mono: Lucida Console, Courier New, monospace;
 
-  --forma-font-size-2xs: 0.625rem;
-  --forma-font-size-xs: 0.75rem;
-  --forma-font-size-sm: 0.8125rem;
-  --forma-font-size-base: 0.875rem;
-  --forma-font-size-md: 1rem;
-  --forma-font-size-lg: 1.125rem;
-  --forma-font-size-xl: 1.25rem;
-  --forma-font-size-2xl: 1.5rem;
-  --forma-font-size-3xl: 2rem;
-  --forma-font-size-4xl: 2.5rem;
-  --forma-font-size-5xl: 3rem;
+  --ccui-font-size-2xs: 0.625rem;
+  --ccui-font-size-xs: 0.75rem;
+  --ccui-font-size-sm: 0.8125rem;
+  --ccui-font-size-base: 0.875rem;
+  --ccui-font-size-md: 1rem;
+  --ccui-font-size-lg: 1.125rem;
+  --ccui-font-size-xl: 1.25rem;
+  --ccui-font-size-2xl: 1.5rem;
+  --ccui-font-size-3xl: 2rem;
+  --ccui-font-size-4xl: 2.5rem;
+  --ccui-font-size-5xl: 3rem;
 
-  --forma-line-height-tight: 1.2;
-  --forma-line-height-display: 1.06;
-  --forma-line-height-base: 1.35;
-  --forma-line-height-relaxed: 1.5;
-  --forma-line-height-loose: 2;
+  --ccui-line-height-tight: 1.2;
+  --ccui-line-height-display: 1.06;
+  --ccui-line-height-base: 1.35;
+  --ccui-line-height-relaxed: 1.5;
+  --ccui-line-height-loose: 2;
 
-  --forma-font-weight-regular: 400;
-  --forma-font-weight-medium: 500;
-  --forma-font-weight-semibold: 600;
-  --forma-font-weight-bold: 700;
+  --ccui-font-weight-regular: 400;
+  --ccui-font-weight-medium: 500;
+  --ccui-font-weight-semibold: 600;
+  --ccui-font-weight-bold: 700;
 
-  --forma-letter-spacing-normal: normal;
-  --forma-letter-spacing-nav: 0.1em;
-  --forma-letter-spacing-tight-display: -0.06em;
+  --ccui-letter-spacing-normal: normal;
+  --ccui-letter-spacing-nav: 0.1em;
+  --ccui-letter-spacing-tight-display: -0.06em;
 }

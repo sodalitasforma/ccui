@@ -18,7 +18,7 @@ export function Stack<T extends ElementType = "div">({
 
   return (
     <Component
-      className={cx("forma-stack", `forma-stack--gap-${gap}`, className)}
+      className={cx("ccui-stack", `ccui-stack--gap-${gap}`, className)}
       {...props}
     />
   );

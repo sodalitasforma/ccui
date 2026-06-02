@@ -18,7 +18,7 @@ export function CalendarTabs({
   ...props
 }: CalendarTabsProps) {
   return (
-    <section className={cx("forma-calendar-tabs", className)} {...props}>
+    <section className={cx("ccui-calendar-tabs", className)} {...props}>
       <Tabs>
         <TabList>
           <Tab>Upcoming</Tab>

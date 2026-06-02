@@ -15,9 +15,9 @@ export function ContributorList({
   ...props
 }: ContributorListProps) {
   return (
-    <section className={cx("forma-contributor-list", className)} {...props}>
+    <section className={cx("ccui-contributor-list", className)} {...props}>
       <Stack gap="md">
-        <Text as="h3" size="lg" className="forma-contributor-list__title">
+        <Text as="h3" size="lg" className="ccui-contributor-list__title">
           {title}
         </Text>
 
@@ -26,7 +26,7 @@ export function ContributorList({
             <Card key={`${contributor.name}-${contributor.role ?? ""}`} padding="md" border="subtle">
               <Cluster justify="between" align="start" gap="sm">
                 <Stack gap="xs">
-                  <Text as="p" className="forma-contributor-list__name">
+                  <Text as="p" className="ccui-contributor-list__name">
                     {contributor.href ? (
                       <Link href={contributor.href}>{contributor.name}</Link>
                     ) : (

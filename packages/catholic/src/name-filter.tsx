@@ -17,7 +17,7 @@ export function NameFilter({
     <SearchInput
       name={name}
       placeholder={placeholder}
-      className={cx("forma-name-filter", className)}
+      className={cx("ccui-name-filter", className)}
       {...props}
     />
   );

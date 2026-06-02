@@ -39,13 +39,13 @@ export function VisitorInfoBlock({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-visitor-info-block", className)}
+      className={cx("ccui-visitor-info-block", className)}
       {...props}
     >
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-visitor-info-block__eyebrow">
+            <Text as="p" className="ccui-visitor-info-block__eyebrow">
               Visitors
             </Text>
             <Heading level={3} size="lg">
@@ -60,7 +60,7 @@ export function VisitorInfoBlock({
           <Text tone="secondary">{description}</Text>
         ) : null}
 
-        <dl className="forma-visitor-info-block__hours">
+        <dl className="ccui-visitor-info-block__hours">
           {hours.map((item) => (
             <div key={`${item.label}-${item.value}`}>
               <dt>{item.label}</dt>
@@ -79,7 +79,7 @@ export function VisitorInfoBlock({
         ) : null}
 
         {disruptionNote ? (
-          <Text as="p" size="sm" className="forma-visitor-info-block__notice">
+          <Text as="p" size="sm" className="ccui-visitor-info-block__notice">
             {disruptionNote}
           </Text>
         ) : null}

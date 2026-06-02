@@ -16,8 +16,8 @@ export function LiturgicalColorDot({
   return (
     <span
       className={cx(
-        "forma-liturgical-color-dot",
-        `forma-liturgical-color-dot--${color}`,
+        "ccui-liturgical-color-dot",
+        `ccui-liturgical-color-dot--${color}`,
         className
       )}
       aria-label={label ?? `${color} liturgical color`}

@@ -33,13 +33,13 @@ export function ParishHistoryTimeline({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-parish-history-timeline", className)}
+      className={cx("ccui-parish-history-timeline", className)}
       {...props}
     >
       <Stack gap="lg">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-parish-history-timeline__eyebrow">
+            <Text as="p" className="ccui-parish-history-timeline__eyebrow">
               History
             </Text>
 
@@ -55,13 +55,13 @@ export function ParishHistoryTimeline({
           <Badge variant="gold">{items.length} moments</Badge>
         </Cluster>
 
-        <ol className="forma-parish-history-timeline__list">
+        <ol className="ccui-parish-history-timeline__list">
           {items.map((item) => (
-            <li key={`${item.date}-${item.title}`} className="forma-parish-history-timeline__item">
-              <div className="forma-parish-history-timeline__marker" aria-hidden="true" />
+            <li key={`${item.date}-${item.title}`} className="ccui-parish-history-timeline__item">
+              <div className="ccui-parish-history-timeline__marker" aria-hidden="true" />
 
-              <Stack gap="xs" className="forma-parish-history-timeline__content">
-                <Text as="p" className="forma-parish-history-timeline__date">
+              <Stack gap="xs" className="ccui-parish-history-timeline__content">
+                <Text as="p" className="ccui-parish-history-timeline__date">
                   {item.date}
                 </Text>
 

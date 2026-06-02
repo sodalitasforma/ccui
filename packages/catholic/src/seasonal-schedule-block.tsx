@@ -56,13 +56,13 @@ export function SeasonalScheduleBlock({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-seasonal-schedule-block", className)}
+      className={cx("ccui-seasonal-schedule-block", className)}
       {...props}
     >
       <Stack gap="lg">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-seasonal-schedule-block__eyebrow">
+            <Text as="p" className="ccui-seasonal-schedule-block__eyebrow">
               Seasonal schedule
             </Text>
 
@@ -78,7 +78,7 @@ export function SeasonalScheduleBlock({
           {season ? <Badge variant="gold">{season}</Badge> : null}
         </Cluster>
 
-        <div className="forma-seasonal-schedule-block__list">
+        <div className="ccui-seasonal-schedule-block__list">
           {items.map((item) => {
             const status = item.status ?? "scheduled";
 
@@ -86,14 +86,14 @@ export function SeasonalScheduleBlock({
               <article
                 key={`${item.date}-${item.title}-${item.time ?? ""}`}
                 className={cx(
-                  "forma-seasonal-schedule-block__item",
-                  `forma-seasonal-schedule-block__item--${status}`
+                  "ccui-seasonal-schedule-block__item",
+                  `ccui-seasonal-schedule-block__item--${status}`
                 )}
               >
                 <Cluster justify="between" align="start" gap="md">
-                  <Stack gap="xs" className="forma-seasonal-schedule-block__main">
+                  <Stack gap="xs" className="ccui-seasonal-schedule-block__main">
                     <Cluster gap="sm">
-                      <Text as="p" className="forma-seasonal-schedule-block__date">
+                      <Text as="p" className="ccui-seasonal-schedule-block__date">
                         {item.date}
                       </Text>
                       <Badge variant={badgeVariantByStatus[status]}>
@@ -112,7 +112,7 @@ export function SeasonalScheduleBlock({
                     ) : null}
                   </Stack>
 
-                  <Stack gap="xs" className="forma-seasonal-schedule-block__meta">
+                  <Stack gap="xs" className="ccui-seasonal-schedule-block__meta">
                     {item.time ? (
                       <Text as="p" size="sm">
                         {item.time}
@@ -131,7 +131,7 @@ export function SeasonalScheduleBlock({
         </div>
 
         {note ? (
-          <Text as="p" size="sm" className="forma-seasonal-schedule-block__note">
+          <Text as="p" size="sm" className="ccui-seasonal-schedule-block__note">
             {note}
           </Text>
         ) : null}

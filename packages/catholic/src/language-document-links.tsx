@@ -39,13 +39,13 @@ export function LanguageDocumentLinks({
       as="article"
       padding="lg"
       border="gold"
-      className={cx("forma-language-document-links", className)}
+      className={cx("ccui-language-document-links", className)}
       {...props}
     >
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-language-document-links__eyebrow">
+            <Text as="p" className="ccui-language-document-links__eyebrow">
               Official document
             </Text>
 
@@ -70,10 +70,10 @@ export function LanguageDocumentLinks({
             <Link
               key={`${item.language}-${item.href}`}
               href={item.href}
-              className="forma-language-document-links__link"
+              className="ccui-language-document-links__link"
             >
               <span>{item.label}</span>
-              <span className="forma-language-document-links__language">
+              <span className="ccui-language-document-links__language">
                 {item.language}
               </span>
             </Link>

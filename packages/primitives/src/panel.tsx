@@ -25,10 +25,10 @@ export function Panel<T extends ElementType = "section">({
   return (
     <Component
       className={cx(
-        "forma-panel",
-        `forma-panel--surface-${surface}`,
-        `forma-panel--padding-${padding}`,
-        `forma-panel--tone-${tone}`,
+        "ccui-panel",
+        `ccui-panel--surface-${surface}`,
+        `ccui-panel--padding-${padding}`,
+        `ccui-panel--tone-${tone}`,
         className
       )}
       {...props}

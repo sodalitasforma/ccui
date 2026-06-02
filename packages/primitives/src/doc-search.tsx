@@ -81,14 +81,14 @@ export function DocSearch({
   return (
     <div
       ref={rootRef}
-      className={cx("forma-doc-search", className)}
+      className={cx("ccui-doc-search", className)}
       onFocusCapture={() => setOpen(true)}
       onBlurCapture={handleBlur}
       {...props}
     >
       <input
         ref={inputRef}
-        className="forma-doc-search__input"
+        className="ccui-doc-search__input"
         type="search"
         value={query}
         placeholder={label}
@@ -104,27 +104,27 @@ export function DocSearch({
       />
 
       {shortcut ? (
-        <span className="forma-doc-search__shortcut" aria-hidden="true">
+        <span className="ccui-doc-search__shortcut" aria-hidden="true">
           {shortcut}
         </span>
       ) : null}
 
       {open ? (
-        <div className="forma-doc-search__popover">
+        <div className="ccui-doc-search__popover">
           {results.length ? (
             results.map((item) => (
               <a
                 key={`${item.category}-${item.title}`}
-                className="forma-doc-search__result"
+                className="ccui-doc-search__result"
                 href={item.href}
                 onClick={() => setOpen(false)}
               >
-                <span className="forma-doc-search__result-title">{item.title}</span>
-                <span className="forma-doc-search__result-category">{item.category}</span>
+                <span className="ccui-doc-search__result-title">{item.title}</span>
+                <span className="ccui-doc-search__result-category">{item.category}</span>
               </a>
             ))
           ) : (
-            <div className="forma-doc-search__empty">No results</div>
+            <div className="ccui-doc-search__empty">No results</div>
           )}
         </div>
       ) : null}

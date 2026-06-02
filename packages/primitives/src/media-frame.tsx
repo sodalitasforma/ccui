@@ -22,9 +22,9 @@ export function MediaFrame<T extends ElementType = "figure">({
   return (
     <Component
       className={cx(
-        "forma-media-frame",
-        `forma-media-frame--ratio-${ratio}`,
-        `forma-media-frame--surface-${surface}`,
+        "ccui-media-frame",
+        `ccui-media-frame--ratio-${ratio}`,
+        `ccui-media-frame--surface-${surface}`,
         className
       )}
       {...props}

@@ -16,7 +16,7 @@ export function SearchInput({
   return (
     <input
       type={type}
-      className={cx("forma-search-input", `forma-search-input--size-${size}`, className)}
+      className={cx("ccui-search-input", `ccui-search-input--size-${size}`, className)}
       {...props}
     />
   );

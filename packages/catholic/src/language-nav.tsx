@@ -8,11 +8,11 @@ type LanguageNavProps = {
 
 export function LanguageNav({ items, className, ...props }: LanguageNavProps) {
   return (
-    <nav className={cx("forma-language-nav", className)} aria-label="Languages" {...props}>
+    <nav className={cx("ccui-language-nav", className)} aria-label="Languages" {...props}>
       {items.map((item) => (
         <a
           key={`${item.label}-${item.href}`}
-          className={cx("forma-language-nav__link", item.current && "is-current")}
+          className={cx("ccui-language-nav__link", item.current && "is-current")}
           href={item.href}
           hrefLang={item.lang}
           aria-current={item.current ? "page" : undefined}

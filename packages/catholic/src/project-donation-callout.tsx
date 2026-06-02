@@ -42,28 +42,28 @@ export function ProjectDonationCallout({
       as="section"
       padding="none"
       border="gold"
-      className={cx("forma-project-donation-callout", className)}
+      className={cx("ccui-project-donation-callout", className)}
       {...props}
     >
-      <div className="forma-project-donation-callout__inner">
-        <Stack gap="sm" className="forma-project-donation-callout__copy">
+      <div className="ccui-project-donation-callout__inner">
+        <Stack gap="sm" className="ccui-project-donation-callout__copy">
           <Eyebrow tone="gold">Giving</Eyebrow>
 
-          <Heading level={2} size="xl" className="forma-project-donation-callout__title">
+          <Heading level={2} size="xl" className="ccui-project-donation-callout__title">
             {title}
           </Heading>
 
           {description ? (
-            <Text as="p" tone="secondary" className="forma-project-donation-callout__description">
+            <Text as="p" tone="secondary" className="ccui-project-donation-callout__description">
               {description}
             </Text>
           ) : null}
         </Stack>
 
         {(amounts.length || resolvedSelectedAmount || impact || primaryAction || resolvedSecondaryActions.length) ? (
-          <aside className="forma-project-donation-callout__panel" aria-label="Giving options">
+          <aside className="ccui-project-donation-callout__panel" aria-label="Giving options">
             {amounts.length ? (
-              <div className="forma-project-donation-callout__amounts" aria-label="Suggested donation amounts">
+              <div className="ccui-project-donation-callout__amounts" aria-label="Suggested donation amounts">
                 {amounts.map((option) => {
                   const selected = option === resolvedSelectedAmount;
 
@@ -71,8 +71,8 @@ export function ProjectDonationCallout({
                     <span
                       key={option}
                       className={cx(
-                        "forma-project-donation-callout__amount-option",
-                        selected && "forma-project-donation-callout__amount-option--selected"
+                        "ccui-project-donation-callout__amount-option",
+                        selected && "ccui-project-donation-callout__amount-option--selected"
                       )}
                       aria-current={selected ? "true" : undefined}
                     >
@@ -82,25 +82,25 @@ export function ProjectDonationCallout({
                 })}
               </div>
             ) : resolvedSelectedAmount ? (
-              <Text as="p" className="forma-project-donation-callout__amount">
+              <Text as="p" className="ccui-project-donation-callout__amount">
                 {resolvedSelectedAmount}
               </Text>
             ) : null}
 
             {impact ? (
-              <Text as="p" tone="secondary" className="forma-project-donation-callout__impact">
+              <Text as="p" tone="secondary" className="ccui-project-donation-callout__impact">
                 {impact}
               </Text>
             ) : null}
 
             {primaryAction ? (
-              <Button href={primaryAction.href} className="forma-project-donation-callout__primary-action">
+              <Button href={primaryAction.href} className="ccui-project-donation-callout__primary-action">
                 {primaryAction.label}
               </Button>
             ) : null}
 
             {resolvedSecondaryActions.length ? (
-              <Cluster gap="sm" className="forma-project-donation-callout__secondary-actions">
+              <Cluster gap="sm" className="ccui-project-donation-callout__secondary-actions">
                 {resolvedSecondaryActions.map((action) => (
                   <Link key={`${action.label}-${action.href}`} href={action.href}>
                     {action.label}

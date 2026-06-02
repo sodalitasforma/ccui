@@ -20,7 +20,7 @@ export function OfficialNoticeCard({
   ...props
 }: OfficialNoticeCardProps) {
   return (
-    <Card as="article" padding="lg" border="gold" className={cx("forma-official-notice-card", className)} {...props}>
+    <Card as="article" padding="lg" border="gold" className={cx("ccui-official-notice-card", className)} {...props}>
       <Stack gap="md">
         <Cluster gap="xs">
           <DocumentAuthorityBadge authority={authority} label={authorityLabel} />

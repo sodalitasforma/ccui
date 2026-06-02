@@ -35,13 +35,13 @@ export function ExternalCatholicResourceCard({
       as="article"
       padding="lg"
       border="gold"
-      className={cx("forma-external-catholic-resource-card", className)}
+      className={cx("ccui-external-catholic-resource-card", className)}
       {...props}
     >
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-external-catholic-resource-card__eyebrow">
+            <Text as="p" className="ccui-external-catholic-resource-card__eyebrow">
               Catholic resource
             </Text>
 
@@ -60,7 +60,7 @@ export function ExternalCatholicResourceCard({
         <Cluster justify="between" align="center" gap="md">
           {provider ? <Tag variant="brown">{provider}</Tag> : <span />}
 
-          <Link href={href} className="forma-external-catholic-resource-card__action">
+          <Link href={href} className="ccui-external-catholic-resource-card__action">
             {ctaLabel}
           </Link>
         </Cluster>

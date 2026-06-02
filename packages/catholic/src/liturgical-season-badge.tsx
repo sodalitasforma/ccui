@@ -28,7 +28,7 @@ export function LiturgicalSeasonBadge({
   return (
     <Badge
       variant={badgeVariantByColor[color]}
-      className={cx("forma-liturgical-season-badge", className)}
+      className={cx("ccui-liturgical-season-badge", className)}
       {...props}
     >
       <Cluster gap="xs" align="center">

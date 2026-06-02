@@ -25,10 +25,10 @@ export function Cluster<T extends ElementType = "div">({
   return (
     <Component
       className={cx(
-        "forma-cluster",
-        `forma-cluster--gap-${gap}`,
-        `forma-cluster--align-${align}`,
-        `forma-cluster--justify-${justify}`,
+        "ccui-cluster",
+        `ccui-cluster--gap-${gap}`,
+        `ccui-cluster--align-${align}`,
+        `ccui-cluster--justify-${justify}`,
         className
       )}
       {...props}

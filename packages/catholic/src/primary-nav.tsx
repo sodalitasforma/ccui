@@ -8,11 +8,11 @@ type PrimaryNavProps = {
 
 export function PrimaryNav({ items, className, ...props }: PrimaryNavProps) {
   return (
-    <nav className={cx("forma-primary-nav", className)} aria-label="Primary" {...props}>
+    <nav className={cx("ccui-primary-nav", className)} aria-label="Primary" {...props}>
       {items.map((item) => (
         <a
           key={`${item.label}-${item.href}`}
-          className={cx("forma-primary-nav__link", item.current && "is-current")}
+          className={cx("ccui-primary-nav__link", item.current && "is-current")}
           href={item.href}
           aria-current={item.current ? "page" : undefined}
         >

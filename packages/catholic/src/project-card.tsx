@@ -22,7 +22,7 @@ export function ProjectCard({
   ...props
 }: ProjectCardProps) {
   return (
-    <Card as="article" padding="lg" border="subtle" className={cx("forma-project-card", className)} {...props}>
+    <Card as="article" padding="lg" border="subtle" className={cx("ccui-project-card", className)} {...props}>
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="sm">
           <Tag variant="blue">{projectType}</Tag>

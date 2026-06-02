@@ -10,7 +10,7 @@ type DividerProps = {
 export function Divider({ tone = "subtle", className, ...props }: DividerProps) {
   return (
     <hr
-      className={cx("forma-divider", `forma-divider--tone-${tone}`, className)}
+      className={cx("ccui-divider", `ccui-divider--tone-${tone}`, className)}
       {...props}
     />
   );

@@ -20,11 +20,11 @@ export function ContactBlock({
   ...props
 }: ContactBlockProps) {
   return (
-    <Card as="section" padding="md" border="subtle" className={cx("forma-contact-block", className)} {...props}>
+    <Card as="section" padding="md" border="subtle" className={cx("ccui-contact-block", className)} {...props}>
       <Stack gap="sm">
-        <h3 className="forma-contact-block__title">{title}</h3>
+        <h3 className="ccui-contact-block__title">{title}</h3>
 
-        <dl className="forma-contact-block__list">
+        <dl className="ccui-contact-block__list">
           {phone ? (
             <div>
               <dt>Phone</dt>
@@ -58,7 +58,7 @@ export function ContactBlock({
               <dd>
                 <Text as="span" size="sm">
                   {addressLines.map((line) => (
-                    <span key={line} className="forma-contact-block__address-line">
+                    <span key={line} className="ccui-contact-block__address-line">
                       {line}
                     </span>
                   ))}

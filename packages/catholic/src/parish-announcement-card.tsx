@@ -21,7 +21,7 @@ export function ParishAnnouncementCard({
       as="article"
       padding="md"
       border="subtle"
-      className={cx("forma-parish-announcement-card", className)}
+      className={cx("ccui-parish-announcement-card", className)}
       {...props}
     >
       <Stack gap="sm">

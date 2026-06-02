@@ -17,8 +17,8 @@ export function SemanticRelationGraph({
   ...props
 }: SemanticRelationGraphProps) {
   return (
-    <section className={cx("forma-semantic-relation-graph", className)} {...props}>
-      <Card padding="lg" border="gold" className="forma-semantic-relation-graph__surface">
+    <section className={cx("ccui-semantic-relation-graph", className)} {...props}>
+      <Card padding="lg" border="gold" className="ccui-semantic-relation-graph__surface">
         <Stack gap="lg">
           <Cluster justify="between" align="start" gap="sm">
             <Stack gap="xs">
@@ -38,7 +38,7 @@ export function SemanticRelationGraph({
 
           <Grid columns="2" gap="md">
             <Stack gap="sm">
-              <Text as="h4" size="md" className="forma-semantic-relation-graph__heading">
+              <Text as="h4" size="md" className="ccui-semantic-relation-graph__heading">
                 Entities
               </Text>
               {entities.map((entity) => (

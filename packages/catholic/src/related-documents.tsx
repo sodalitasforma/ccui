@@ -16,9 +16,9 @@ export function RelatedDocuments({
   ...props
 }: RelatedDocumentsProps) {
   return (
-    <section className={cx("forma-related-documents", className)} {...props}>
+    <section className={cx("ccui-related-documents", className)} {...props}>
       <Stack gap="md">
-        <Text as="h3" size="lg" className="forma-related-documents__title">
+        <Text as="h3" size="lg" className="ccui-related-documents__title">
           {title}
         </Text>
         <Stack gap="sm">

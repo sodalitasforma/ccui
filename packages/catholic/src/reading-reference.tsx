@@ -22,18 +22,18 @@ export function ReadingReference({
       as="article"
       padding="md"
       border="subtle"
-      className={cx("forma-reading-reference", className)}
+      className={cx("ccui-reading-reference", className)}
       {...props}
     >
       <Stack gap="xs">
         <Cluster justify="between" align="start" gap="sm">
-          <Text as="p" size="sm" className="forma-reading-reference__label">
+          <Text as="p" size="sm" className="ccui-reading-reference__label">
             {label}
           </Text>
           {translation ? <Tag variant="gold">{translation}</Tag> : null}
         </Cluster>
 
-        <Text as="p" size="lg" className="forma-reading-reference__citation">
+        <Text as="p" size="lg" className="ccui-reading-reference__citation">
           {citation}
         </Text>
 

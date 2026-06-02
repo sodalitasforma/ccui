@@ -20,7 +20,7 @@ export function PontiffCard({
   ...props
 }: PontiffCardProps) {
   return (
-    <Card as="article" padding="md" border="gold" className={cx("forma-pontiff-card", className)} {...props}>
+    <Card as="article" padding="md" border="gold" className={cx("ccui-pontiff-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <DocumentAuthorityBadge authority="pope" label="Pontiff" />

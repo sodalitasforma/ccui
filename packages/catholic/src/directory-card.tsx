@@ -26,11 +26,11 @@ export function DirectoryCard({
       <Cluster justify="between" align="start">
         <Stack gap="xs">
           {eyebrow ? (
-            <Text as="p" size="xs" tone="goldText" className="forma-directory-card__eyebrow">
+            <Text as="p" size="xs" tone="goldText" className="ccui-directory-card__eyebrow">
               {eyebrow}
             </Text>
           ) : null}
-          <h3 className="forma-directory-card__title">{title}</h3>
+          <h3 className="ccui-directory-card__title">{title}</h3>
         </Stack>
 
         {status ? <Badge variant="gold">{status}</Badge> : null}
@@ -55,11 +55,11 @@ export function DirectoryCard({
       as="article"
       padding="md"
       border="subtle"
-      className={cx("forma-directory-card", href && "forma-directory-card--linked", className)}
+      className={cx("ccui-directory-card", href && "ccui-directory-card--linked", className)}
       {...props}
     >
       {href ? (
-        <a className="forma-directory-card__link" href={href}>
+        <a className="ccui-directory-card__link" href={href}>
           {content}
         </a>
       ) : (

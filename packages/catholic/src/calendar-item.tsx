@@ -17,18 +17,18 @@ export function CalendarItem({
   ...props
 }: CalendarItemProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-calendar-item", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-calendar-item", className)} {...props}>
       <Cluster align="start" gap="md">
-        <Stack gap="xs" className="forma-calendar-item__date">
+        <Stack gap="xs" className="ccui-calendar-item__date">
           <Text as="span" size="xs" tone="muted">
             Date
           </Text>
-          <Text as="span" className="forma-calendar-item__date-value">
+          <Text as="span" className="ccui-calendar-item__date-value">
             {date}
           </Text>
         </Stack>
 
-        <Stack gap="sm" className="forma-calendar-item__body">
+        <Stack gap="sm" className="ccui-calendar-item__body">
           <Cluster gap="xs">
             {category ? <Tag variant="brown">{category}</Tag> : null}
             {time ? <Tag variant="gold">{time}</Tag> : null}

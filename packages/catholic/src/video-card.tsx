@@ -31,9 +31,9 @@ export function VideoCard({
   ...props
 }: VideoCardProps) {
   return (
-    <a href={href} className={cx("forma-video-card", className)} {...props}>
-      <Card padding="none" border="subtle" className="forma-video-card__surface">
-        <div className="forma-video-card__frame">
+    <a href={href} className={cx("ccui-video-card", className)} {...props}>
+      <Card padding="none" border="subtle" className="ccui-video-card__surface">
+        <div className="ccui-video-card__frame">
           <iframe
             src={media.src}
             title={media.title}
@@ -41,7 +41,7 @@ export function VideoCard({
           />
         </div>
 
-        <Stack gap="sm" className="forma-video-card__body">
+        <Stack gap="sm" className="ccui-video-card__body">
           <Cluster justify="between" align="center" gap="sm">
             <Cluster gap="xs" align="center">
               <Badge variant="gold">{category}</Badge>
@@ -56,7 +56,7 @@ export function VideoCard({
           </Cluster>
 
           <Stack gap="xs">
-            <Heading level={3} size="lg" className="forma-video-card__title">
+            <Heading level={3} size="lg" className="ccui-video-card__title">
               {title}
             </Heading>
 

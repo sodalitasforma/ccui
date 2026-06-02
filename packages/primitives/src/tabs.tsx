@@ -47,7 +47,7 @@ export function Tabs<T extends ElementType = "div">({
 
   return (
     <TabsContext.Provider value={value}>
-      <Component className={cx("forma-tabs", className)} {...props} />
+      <Component className={cx("ccui-tabs", className)} {...props} />
     </TabsContext.Provider>
   );
 }
@@ -66,7 +66,7 @@ export function TabList<T extends ElementType = "div">({
 
   return (
     <Component
-      className={cx("forma-tab-list", className)}
+      className={cx("ccui-tab-list", className)}
       role="tablist"
       {...props}
     >
@@ -102,7 +102,7 @@ export function Tab<T extends ElementType = "button">({
 
   return (
     <Component
-      className={cx("forma-tab", isActive && "is-active", className)}
+      className={cx("ccui-tab", isActive && "is-active", className)}
       role="tab"
       aria-selected={isActive}
       type={Component === "button" ? type || "button" : type}
@@ -133,7 +133,7 @@ export function TabPanel<T extends ElementType = "div">({
 
   return (
     <Component
-      className={cx("forma-tab-panel", className)}
+      className={cx("ccui-tab-panel", className)}
       role="tabpanel"
       hidden={hidden}
       {...props}

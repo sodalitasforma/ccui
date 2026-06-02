@@ -65,13 +65,13 @@ export function OfficeHours({
     <Card
       as="section"
       padding="lg"
-      className={cx("forma-office-hours", className)}
+      className={cx("ccui-office-hours", className)}
       {...props}
     >
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Heading level={3} size="lg" className="forma-office-hours__title">
+            <Heading level={3} size="lg" className="ccui-office-hours__title">
               {title}
             </Heading>
 
@@ -83,7 +83,7 @@ export function OfficeHours({
           <Badge variant="gold">Hours</Badge>
         </Cluster>
 
-        <dl className="forma-office-hours__list">
+        <dl className="ccui-office-hours__list">
           {officeHours.map((item) => {
             const status = item.status;
             const dayLabel = item.day ?? item.days ?? "";
@@ -109,13 +109,13 @@ export function OfficeHours({
                         ) : null}
                         {session.value}
                         {session.note ? (
-                          <span className="forma-office-hours__note"> — {session.note}</span>
+                          <span className="ccui-office-hours__note"> — {session.note}</span>
                         ) : null}
                       </span>
                     ))}
 
                     {item.note ? (
-                      <span className="forma-office-hours__note">{item.note}</span>
+                      <span className="ccui-office-hours__note">{item.note}</span>
                     ) : null}
                   </Stack>
                 </dd>
@@ -131,7 +131,7 @@ export function OfficeHours({
         ) : null}
 
         {disruptionNote ? (
-          <Text as="p" size="sm" className="forma-office-hours__disruption">
+          <Text as="p" size="sm" className="ccui-office-hours__disruption">
             {disruptionNote}
           </Text>
         ) : null}

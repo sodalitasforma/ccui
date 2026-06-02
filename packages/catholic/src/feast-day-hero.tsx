@@ -27,7 +27,7 @@ export function FeastDayHero({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-feast-day-hero", `forma-feast-day-hero--${color}`, className)}
+      className={cx("ccui-feast-day-hero", `ccui-feast-day-hero--${color}`, className)}
       {...props}
     >
       <Stack gap="lg">
@@ -42,7 +42,7 @@ export function FeastDayHero({
                 {date}
               </Text>
               {rank ? (
-                <Text as="p" className="forma-feast-day-hero__rank">
+                <Text as="p" className="ccui-feast-day-hero__rank">
                   {rank}
                 </Text>
               ) : null}
@@ -53,7 +53,7 @@ export function FeastDayHero({
         </Cluster>
 
         {description ? (
-          <Text as="p" size="lg" tone="secondary" className="forma-feast-day-hero__description">
+          <Text as="p" size="lg" tone="secondary" className="ccui-feast-day-hero__description">
             {description}
           </Text>
         ) : null}

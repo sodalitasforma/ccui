@@ -41,18 +41,18 @@ export function WorshipAidCard({
       as="article"
       padding="lg"
       border="gold"
-      className={cx("forma-worship-aid-card", className)}
+      className={cx("ccui-worship-aid-card", className)}
       {...props}
     >
       <Stack gap="md">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-worship-aid-card__eyebrow">
+            <Text as="p" className="ccui-worship-aid-card__eyebrow">
               Worship aid
             </Text>
 
             <Heading level={3} size="lg">
-              <Link href={href} className="forma-worship-aid-card__title-link">
+              <Link href={href} className="ccui-worship-aid-card__title-link">
                 {title}
               </Link>
             </Heading>

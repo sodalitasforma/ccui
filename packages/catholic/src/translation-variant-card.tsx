@@ -15,7 +15,7 @@ export function TranslationVariantCard({
   ...props
 }: TranslationVariantCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-translation-variant-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-translation-variant-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <Tag variant="blue">{language}</Tag>
@@ -26,7 +26,7 @@ export function TranslationVariantCard({
           <Heading level={3} size="lg">
             {term}
           </Heading>
-          <Text as="p" className="forma-translation-variant-card__variant">
+          <Text as="p" className="ccui-translation-variant-card__variant">
             {variant}
           </Text>
           {note ? <Text as="p" tone="secondary">{note}</Text> : null}

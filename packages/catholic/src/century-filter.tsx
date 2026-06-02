@@ -17,7 +17,7 @@ export function CenturyFilter({
     <Select
       name={name}
       aria-label={label}
-      className={cx("forma-century-filter", className)}
+      className={cx("ccui-century-filter", className)}
       {...props}
     >
       <option value="">{label}</option>

@@ -26,7 +26,7 @@ export function ExceptionNotice({
   return (
     <Notice variant={noticeVariantBySeverity[severity]} {...props}>
       <Stack gap="xs">
-        <Text as="p" className="forma-exception-notice__title">
+        <Text as="p" className="ccui-exception-notice__title">
           {date ? `${date} — ${title}` : title}
         </Text>
         {description ? (

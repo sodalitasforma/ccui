@@ -41,7 +41,7 @@ export function Timeline({
       : children;
 
   return (
-    <div className={cx("forma-timeline", className)} {...props}>
+    <div className={cx("ccui-timeline", className)} {...props}>
       {resolvedChildren}
     </div>
   );
@@ -67,19 +67,19 @@ export function TimelineItem({
   return (
     <div
       className={cx(
-        "forma-timeline-item",
-        status ? `forma-timeline-item--${status}` : undefined,
+        "ccui-timeline-item",
+        status ? `ccui-timeline-item--${status}` : undefined,
         className,
       )}
       data-step={step}
       data-status={status}
       {...props}
     >
-      <div className="forma-timeline-marker" aria-hidden="true">
+      <div className="ccui-timeline-marker" aria-hidden="true">
         {icon ?? (typeof step === "number" ? step : null)}
       </div>
 
-      <div className="forma-timeline-content">{children}</div>
+      <div className="ccui-timeline-content">{children}</div>
     </div>
   );
 }
@@ -92,7 +92,7 @@ export function TimelineMarker({
   ...props
 }: TimelineMarkerProps) {
   return (
-    <div className={cx("forma-timeline-marker", className)} {...props}>
+    <div className={cx("ccui-timeline-marker", className)} {...props}>
       {children}
     </div>
   );
@@ -106,7 +106,7 @@ export function TimelineContent({
   ...props
 }: TimelineContentProps) {
   return (
-    <div className={cx("forma-timeline-content", className)} {...props}>
+    <div className={cx("ccui-timeline-content", className)} {...props}>
       {children}
     </div>
   );

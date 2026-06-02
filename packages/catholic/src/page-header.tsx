@@ -22,7 +22,7 @@ export function PageHeader({
   ...props
 }: PageHeaderProps) {
   return (
-    <section className={cx("forma-page-header", className)} {...props}>
+    <section className={cx("ccui-page-header", className)} {...props}>
       <Container size="xl">
         <Stack gap="md">
           {breadcrumbs.length > 0 ? <Breadcrumb items={breadcrumbs} /> : null}
@@ -33,13 +33,13 @@ export function PageHeader({
               {title}
             </Heading>
             {description ? (
-              <Text size="lg" tone="secondary" className="forma-page-header__description">
+              <Text size="lg" tone="secondary" className="ccui-page-header__description">
                 {description}
               </Text>
             ) : null}
           </Stack>
 
-          {actions ? <div className="forma-page-header__actions">{actions}</div> : null}
+          {actions ? <div className="ccui-page-header__actions">{actions}</div> : null}
         </Stack>
       </Container>
     </section>

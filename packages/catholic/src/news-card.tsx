@@ -16,7 +16,7 @@ export function NewsCard({
   ...props
 }: NewsCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-news-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-news-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           {category ? <Tag variant="blue">{category}</Tag> : null}

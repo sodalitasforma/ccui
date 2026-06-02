@@ -16,9 +16,9 @@ export function CitationTrail({
   ...props
 }: CitationTrailProps) {
   return (
-    <section className={cx("forma-citation-trail", className)} {...props}>
+    <section className={cx("ccui-citation-trail", className)} {...props}>
       <Stack gap="md">
-        <Text as="h3" size="lg" className="forma-citation-trail__title">
+        <Text as="h3" size="lg" className="ccui-citation-trail__title">
           {title}
         </Text>
 
@@ -26,13 +26,13 @@ export function CitationTrail({
           {items.map((item, index) => (
             <Card key={`${item.label}-${item.citation}`} padding="md" border="subtle">
               <Cluster align="start" gap="sm">
-                <Text as="span" size="xs" tone="goldText" className="forma-citation-trail__index">
+                <Text as="span" size="xs" tone="goldText" className="ccui-citation-trail__index">
                   {index + 1}
                 </Text>
                 <Stack gap="xs">
                   <Cluster gap="xs">
                     {item.authority ? <DocumentAuthorityBadge authority={item.authority} /> : null}
-                    <Text as="span" className="forma-citation-trail__label">
+                    <Text as="span" className="ccui-citation-trail__label">
                       {item.label}
                     </Text>
                   </Cluster>

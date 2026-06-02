@@ -17,7 +17,7 @@ export function Tag<T extends ElementType = "span">({
 
   return (
     <Component
-      className={cx("forma-tag", `forma-tag--variant-${variant}`, className)}
+      className={cx("ccui-tag", `ccui-tag--variant-${variant}`, className)}
       {...props}
     />
   );

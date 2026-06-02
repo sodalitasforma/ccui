@@ -22,7 +22,7 @@ export function PontiffDirectory({
   ...props
 }: PontiffDirectoryProps) {
   return (
-    <section className={cx("forma-pontiff-directory", className)} {...props}>
+    <section className={cx("ccui-pontiff-directory", className)} {...props}>
       <Stack gap="md">
         <Stack gap="sm">
           <NameFilter placeholder="Search pontiffs" />

@@ -14,7 +14,7 @@ export function SearchTool({
   ...props
 }: SearchToolProps) {
   return (
-    <form className={cx("forma-search-tool", className)} action={action} role="search" {...props}>
+    <form className={cx("ccui-search-tool", className)} action={action} role="search" {...props}>
       <SearchInput name="q" size="sm" placeholder={placeholder} aria-label={placeholder} />
       <Button size="sm" variant="secondary" type="submit">
         Search

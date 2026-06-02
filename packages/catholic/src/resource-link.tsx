@@ -30,7 +30,7 @@ export function ResourceLink({
 }: ResourceLinkProps) {
   return (
     <a
-      className={cx("forma-resource-link", `forma-resource-link--variant-${variant}`, className)}
+      className={cx("ccui-resource-link", `ccui-resource-link--variant-${variant}`, className)}
       href={href}
       {...props}
     >
@@ -40,7 +40,7 @@ export function ResourceLink({
         </IconFrame>
 
         <Stack gap="xs">
-          <Text as="span" size="sm" className="forma-resource-link__title">
+          <Text as="span" size="sm" className="ccui-resource-link__title">
             {title}
           </Text>
           {description ? (

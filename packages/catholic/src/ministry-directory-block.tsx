@@ -37,13 +37,13 @@ export function MinistryDirectoryBlock({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-ministry-directory-block", className)}
+      className={cx("ccui-ministry-directory-block", className)}
       {...props}
     >
       <Stack gap="lg">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-ministry-directory-block__eyebrow">
+            <Text as="p" className="ccui-ministry-directory-block__eyebrow">
               Parish life
             </Text>
 
@@ -59,11 +59,11 @@ export function MinistryDirectoryBlock({
           <Badge variant="gold">{ministries.length} ministries</Badge>
         </Cluster>
 
-        <div className="forma-ministry-directory-block__grid">
+        <div className="ccui-ministry-directory-block__grid">
           {ministries.map((ministry) => (
             <article
               key={`${ministry.category}-${ministry.name}`}
-              className="forma-ministry-directory-block__item"
+              className="ccui-ministry-directory-block__item"
             >
               <Stack gap="sm">
                 <Cluster gap="sm">
@@ -85,7 +85,7 @@ export function MinistryDirectoryBlock({
                 {ministry.contactHref && ministry.contactLabel ? (
                   <Link
                     href={ministry.contactHref}
-                    className="forma-ministry-directory-block__contact"
+                    className="ccui-ministry-directory-block__contact"
                   >
                     {ministry.contactLabel}
                   </Link>

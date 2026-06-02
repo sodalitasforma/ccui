@@ -39,21 +39,21 @@ export function MediaCard({
   ...props
 }: MediaCardProps) {
   return (
-    <a href={href} className={cx("forma-media-card", className)} {...props}>
-      <Card padding="none" border="subtle" className="forma-media-card__surface">
-        <div className="forma-media-card__frame">
+    <a href={href} className={cx("ccui-media-card", className)} {...props}>
+      <Card padding="none" border="subtle" className="ccui-media-card__surface">
+        <div className="ccui-media-card__frame">
           <img
             src={media.src}
             alt={media.alt}
             loading="lazy"
             style={{
-              "--forma-media-card-fit": media.fit ?? fit,
-              "--forma-media-card-position": media.position ?? position,
+              "--ccui-media-card-fit": media.fit ?? fit,
+              "--ccui-media-card-position": media.position ?? position,
             } as React.CSSProperties}
           />
         </div>
 
-        <Stack gap="sm" className="forma-media-card__body">
+        <Stack gap="sm" className="ccui-media-card__body">
           <Cluster justify="between" align="center" gap="sm">
             <Badge variant="gold">{category}</Badge>
 
@@ -65,7 +65,7 @@ export function MediaCard({
           </Cluster>
 
           <Stack gap="xs">
-            <Heading level={3} size="lg" className="forma-media-card__title">
+            <Heading level={3} size="lg" className="ccui-media-card__title">
               {title}
             </Heading>
 

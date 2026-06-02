@@ -34,9 +34,9 @@ export function Badge({
   return (
     <span
       className={cx(
-        "forma-badge",
-        `forma-badge--${variant}`,
-        `forma-badge--${size}`,
+        "ccui-badge",
+        `ccui-badge--${variant}`,
+        `ccui-badge--${size}`,
         className,
       )}
       {...props}

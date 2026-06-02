@@ -30,12 +30,12 @@ export function PhotoGallery({
   ...props
 }: PhotoGalleryProps) {
   return (
-    <section className={cx("forma-photo-gallery", className)} {...props}>
+    <section className={cx("ccui-photo-gallery", className)} {...props}>
       <Stack gap="lg">
         <Cluster justify="between" align="end" gap="md">
           <Stack gap="xs">
             <Badge variant="gold">{category}</Badge>
-            <Heading level={3} size="xl" className="forma-photo-gallery__title">
+            <Heading level={3} size="xl" className="ccui-photo-gallery__title">
               {title}
             </Heading>
             {description ? (
@@ -51,25 +51,25 @@ export function PhotoGallery({
           </Cluster>
         </Cluster>
 
-        <div className="forma-photo-gallery__grid">
+        <div className="ccui-photo-gallery__grid">
           {photos.map((photo, index) => (
             <Card
               key={`${photo.src}-${index}`}
               padding="none"
               border="subtle"
               className={cx(
-                "forma-photo-gallery__item",
-                index === 0 && "forma-photo-gallery__item--lead",
+                "ccui-photo-gallery__item",
+                index === 0 && "ccui-photo-gallery__item--lead",
               )}
             >
-              <figure className="forma-photo-gallery__figure">
+              <figure className="ccui-photo-gallery__figure">
                 <img
                   src={photo.src}
                   alt={photo.alt}
                   loading="lazy"
                   style={{
-                    "--forma-photo-gallery-fit": photo.fit ?? fit,
-                    "--forma-photo-gallery-position": photo.position ?? position,
+                    "--ccui-photo-gallery-fit": photo.fit ?? fit,
+                    "--ccui-photo-gallery-position": photo.position ?? position,
                   } as React.CSSProperties}
                 />
                 {photo.caption ? (

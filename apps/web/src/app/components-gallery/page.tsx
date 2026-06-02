@@ -558,7 +558,7 @@ export default function Home() {
                       <div
                         className="docs-liturgical-dot"
                         style={{
-                          background: `var(--forma-${item.token.replace(".", "-")})`,
+                          background: `var(--ccui-${item.token.replace(".", "-")})`,
                         }}
                         aria-hidden="true"
                       />

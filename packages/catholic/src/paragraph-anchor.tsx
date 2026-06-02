@@ -15,14 +15,14 @@ export function ParagraphAnchor({
   ...props
 }: ParagraphAnchorProps) {
   return (
-    <div id={id} className={cx("forma-paragraph-anchor", className)} {...props}>
+    <div id={id} className={cx("ccui-paragraph-anchor", className)} {...props}>
       <Cluster align="start" gap="sm">
         {number ? (
-          <Link href={href ?? `#${id}`} className="forma-paragraph-anchor__number">
+          <Link href={href ?? `#${id}`} className="ccui-paragraph-anchor__number">
             {number}
           </Link>
         ) : null}
-        <Text as="p" className="forma-paragraph-anchor__text">
+        <Text as="p" className="ccui-paragraph-anchor__text">
           {children}
         </Text>
       </Cluster>

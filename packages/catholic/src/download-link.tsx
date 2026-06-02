@@ -21,13 +21,13 @@ export function DownloadLink({
       href={href}
       padding="md"
       border="subtle"
-      className={cx("forma-download-link", className)}
+      className={cx("ccui-download-link", className)}
       {...props}
     >
       <Cluster align="center" gap="sm">
         <FileTypeIcon fileType={fileType} />
         <Stack gap="xs">
-          <Text as="span" className="forma-download-link__label">
+          <Text as="span" className="ccui-download-link__label">
             {label}
           </Text>
           <Cluster gap="xs">

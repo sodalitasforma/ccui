@@ -27,7 +27,7 @@ export function ParishContactCard({
   const locationAddressLines = addressLines ? [...addressLines] : [];
 
   return (
-    <section className={cx("forma-parish-contact-card", className)} {...props}>
+    <section className={cx("ccui-parish-contact-card", className)} {...props}>
       <Grid columns="3" gap="md">
         <ContactBlock
           title={title}

@@ -30,9 +30,9 @@ export function Text<T extends ElementType = "p">({
   return (
     <Component
       className={cx(
-        "forma-text",
-        `forma-text--tone-${tone}`,
-        `forma-text--size-${size}`,
+        "ccui-text",
+        `ccui-text--tone-${tone}`,
+        `ccui-text--size-${size}`,
         className
       )}
       {...props}

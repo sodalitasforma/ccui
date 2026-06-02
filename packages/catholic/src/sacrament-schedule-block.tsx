@@ -48,7 +48,7 @@ export function SacramentScheduleBlock({
     contactRole || leadTime || appointmentRequired || registrationHref || pastoralNote;
 
   return (
-    <section className={cx("forma-sacrament-schedule-block", className)}>
+    <section className={cx("ccui-sacrament-schedule-block", className)}>
       <Stack gap="md">
         <MassScheduleBlock
           badge={badge ?? sacrament ?? "Sacrament"}
@@ -59,11 +59,11 @@ export function SacramentScheduleBlock({
         />
 
         {hasPreparationMeta ? (
-          <Card padding="lg" border="gold" className="forma-sacrament-schedule-block__preparation">
+          <Card padding="lg" border="gold" className="ccui-sacrament-schedule-block__preparation">
             <Stack gap="md">
               <Cluster justify="between" align="start" gap="md">
                 <Stack gap="xs">
-                  <Text as="p" className="forma-sacrament-schedule-block__eyebrow">
+                  <Text as="p" className="ccui-sacrament-schedule-block__eyebrow">
                     Preparation
                   </Text>
 
@@ -79,7 +79,7 @@ export function SacramentScheduleBlock({
                 )}
               </Cluster>
 
-              <dl className="forma-sacrament-schedule-block__meta">
+              <dl className="ccui-sacrament-schedule-block__meta">
                 {contactRole ? (
                   <div>
                     <dt>Contact</dt>
@@ -113,7 +113,7 @@ export function SacramentScheduleBlock({
               ) : null}
 
               {registrationHref ? (
-                <Link href={registrationHref} className="forma-sacrament-schedule-block__action">
+                <Link href={registrationHref} className="ccui-sacrament-schedule-block__action">
                   {registrationLabel}
                 </Link>
               ) : null}

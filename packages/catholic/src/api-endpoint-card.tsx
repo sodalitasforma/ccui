@@ -17,11 +17,11 @@ export function ApiEndpointCard({
   ...props
 }: ApiEndpointCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-api-endpoint-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-api-endpoint-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster gap="sm" align="center">
           <Tag variant="active">{method}</Tag>
-          <Text as="code" className="forma-api-endpoint-card__path">
+          <Text as="code" className="ccui-api-endpoint-card__path">
             {path}
           </Text>
         </Cluster>

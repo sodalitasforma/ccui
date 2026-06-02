@@ -1,11 +1,11 @@
 {
   "border": {
     "none": "none",
-    "hairline": "1px solid var(--forma-color-border-subtle)",
-    "strong": "1px solid var(--forma-color-border-strong)",
-    "dark": "1px solid var(--forma-color-border-dark)",
-    "gold": "1px solid var(--forma-color-accent-gold)",
-    "active": "2px solid var(--forma-color-accent-active)",
+    "hairline": "1px solid var(--ccui-color-border-subtle)",
+    "strong": "1px solid var(--ccui-color-border-strong)",
+    "dark": "1px solid var(--ccui-color-border-dark)",
+    "gold": "1px solid var(--ccui-color-accent-gold)",
+    "active": "2px solid var(--ccui-color-accent-active)",
     "institutional": "1px solid rgba(90, 46, 11, 0.3)"
   }
 }

@@ -37,13 +37,13 @@ export function ParishFormLinks({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-parish-form-links", className)}
+      className={cx("ccui-parish-form-links", className)}
       {...props}
     >
       <Stack gap="lg">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-parish-form-links__eyebrow">
+            <Text as="p" className="ccui-parish-form-links__eyebrow">
               Registration
             </Text>
 
@@ -59,11 +59,11 @@ export function ParishFormLinks({
           <Badge variant="gold">{forms.length} forms</Badge>
         </Cluster>
 
-        <div className="forma-parish-form-links__grid">
+        <div className="ccui-parish-form-links__grid">
           {forms.map((form) => (
             <article
               key={`${form.title}-${form.href}`}
-              className="forma-parish-form-links__item"
+              className="ccui-parish-form-links__item"
             >
               <Stack gap="sm">
                 <Cluster gap="sm">
@@ -83,7 +83,7 @@ export function ParishFormLinks({
                   ) : null}
                 </Stack>
 
-                <Link href={form.href} className="forma-parish-form-links__action">
+                <Link href={form.href} className="ccui-parish-form-links__action">
                   Open form
                 </Link>
               </Stack>

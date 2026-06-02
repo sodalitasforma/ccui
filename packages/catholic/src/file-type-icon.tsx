@@ -18,11 +18,11 @@ export function FileTypeIcon({
       as="span"
       size="sm"
       tone="gold"
-      className={cx("forma-file-type-icon", className)}
+      className={cx("ccui-file-type-icon", className)}
       aria-label={`${label} file`}
       {...props}
     >
-      <Text as="span" size="2xs" tone="goldText" className="forma-file-type-icon__label">
+      <Text as="span" size="2xs" tone="goldText" className="ccui-file-type-icon__label">
         {label}
       </Text>
     </IconFrame>

@@ -83,7 +83,7 @@ export function ChurchDocumentCard({
       as="article"
       padding="lg"
       border="gold"
-      className={cx("forma-church-document-card", className)}
+      className={cx("ccui-church-document-card", className)}
       {...props}
     >
       <Stack gap="md">
@@ -95,7 +95,7 @@ export function ChurchDocumentCard({
               {authority || authorityLabel ? <Badge variant="gold">{authorityLabel ?? authority}</Badge> : null}
             </Cluster>
 
-            <Heading level={3} size="lg" className="forma-church-document-card__title">
+            <Heading level={3} size="lg" className="ccui-church-document-card__title">
               {title}
             </Heading>
 
@@ -108,13 +108,13 @@ export function ChurchDocumentCard({
         </Cluster>
 
         {citation ? (
-          <Text as="p" size="sm" className="forma-church-document-card__citation">
+          <Text as="p" size="sm" className="ccui-church-document-card__citation">
             {citation}
           </Text>
         ) : null}
 
         {hasMetadata ? (
-          <dl className="forma-church-document-card__metadata">
+          <dl className="ccui-church-document-card__metadata">
             {date ? (
               <div>
                 <dt>Date</dt>
@@ -155,12 +155,12 @@ export function ChurchDocumentCard({
         ) : null}
 
         {pairs.length ? (
-          <div className="forma-church-document-card__language-pairs">
+          <div className="ccui-church-document-card__language-pairs">
             {pairs.map((pair) => (
               <Link
                 key={`${pair.language}-${pair.href}`}
                 href={pair.href}
-                className="forma-church-document-card__language-link"
+                className="ccui-church-document-card__language-link"
               >
                 <span>{pair.label}</span>
                 <span>{pair.language}</span>
@@ -173,7 +173,7 @@ export function ChurchDocumentCard({
         {children}
 
         {href ? (
-          <Link href={href} className="forma-church-document-card__action">
+          <Link href={href} className="ccui-church-document-card__action">
             View document
           </Link>
         ) : null}

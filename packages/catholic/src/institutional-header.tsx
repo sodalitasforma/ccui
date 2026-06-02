@@ -81,7 +81,7 @@ function SearchAction({ action }: { action: InstitutionalHeaderSearchAction }) {
         href={action}
         size="xs"
         variant="secondary"
-        className="forma-institutional-header__search"
+        className="ccui-institutional-header__search"
       >
         Search
       </Button>
@@ -94,7 +94,7 @@ function SearchAction({ action }: { action: InstitutionalHeaderSearchAction }) {
         href={action.href}
         size="xs"
         variant="secondary"
-        className="forma-institutional-header__search"
+        className="ccui-institutional-header__search"
       >
         {action.label}
       </Button>
@@ -129,9 +129,9 @@ export function InstitutionalHeader({
       : contactAction;
 
   return (
-    <header className={cx("forma-institutional-header", className)} {...props}>
+    <header className={cx("ccui-institutional-header", className)} {...props}>
       {notice ? (
-        <div className="forma-institutional-header__notice">
+        <div className="ccui-institutional-header__notice">
           <Container size="xl">
             <Text as="p" size="sm">
               {notice}
@@ -141,23 +141,23 @@ export function InstitutionalHeader({
       ) : null}
 
       <Container size="xl">
-        <div className="forma-institutional-header__inner">
-          <div className="forma-institutional-header__masthead">
-            <Cluster gap="md" align="center" className="forma-institutional-header__identity">
-              <div className="forma-institutional-header__logo" aria-hidden={logo || logoSrc ? undefined : true}>
+        <div className="ccui-institutional-header__inner">
+          <div className="ccui-institutional-header__masthead">
+            <Cluster gap="md" align="center" className="ccui-institutional-header__identity">
+              <div className="ccui-institutional-header__logo" aria-hidden={logo || logoSrc ? undefined : true}>
                 {logoSrc ? (
                   <img
-                    className="forma-institutional-header__logo-image"
+                    className="ccui-institutional-header__logo-image"
                     src={logoSrc}
                     alt={logoAlt ?? ""}
                   />
                 ) : (
-                  logo ?? <span className="forma-institutional-header__mark">PX</span>
+                  logo ?? <span className="ccui-institutional-header__mark">PX</span>
                 )}
               </div>
 
-              <Stack gap="xs" className="forma-institutional-header__identity-copy">
-                <Heading level={1} size="lg" className="forma-institutional-header__title">
+              <Stack gap="xs" className="ccui-institutional-header__identity-copy">
+                <Heading level={1} size="lg" className="ccui-institutional-header__title">
                   {title}
                 </Heading>
 
@@ -169,31 +169,31 @@ export function InstitutionalHeader({
               </Stack>
             </Cluster>
 
-            <div className="forma-institutional-header__nav-area">
+            <div className="ccui-institutional-header__nav-area">
               {hasUtilityRail ? (
                 <Cluster
                   justify="end"
                   align="center"
                   gap="sm"
-                  className="forma-institutional-header__utility-inline"
+                  className="ccui-institutional-header__utility-inline"
                 >
                   {utilityItems.map((item) => (
                     <HeaderLink
                       key={`utility-${item.label}-${item.href}`}
                       item={item}
-                      className="forma-institutional-header__utility-link"
+                      className="ccui-institutional-header__utility-link"
                     />
                   ))}
 
                   {languages.length ? (
-                    <span className="forma-institutional-header__utility-divider" aria-hidden="true" />
+                    <span className="ccui-institutional-header__utility-divider" aria-hidden="true" />
                   ) : null}
 
                   {languages.map((language) => (
                     <HeaderLink
                       key={`language-${language.label}-${language.href}`}
                       item={language}
-                      className="forma-institutional-header__language-link"
+                      className="ccui-institutional-header__language-link"
                     />
                   ))}
 
@@ -202,19 +202,19 @@ export function InstitutionalHeader({
               ) : null}
 
               {hasPrimaryRail ? (
-                <nav className="forma-institutional-header__primary" aria-label="Primary navigation">
+                <nav className="ccui-institutional-header__primary" aria-label="Primary navigation">
                   {primaryItems.map((item) => (
                     <HeaderLink
                       key={`primary-${item.label}-${item.href}`}
                       item={item}
-                      className="forma-institutional-header__primary-link"
+                      className="ccui-institutional-header__primary-link"
                     />
                   ))}
 
                   {navGroups.map((group) => (
                     <details
                       key={`${group.label}-${group.href ?? ""}`}
-                      className="forma-institutional-header__nav-group"
+                      className="ccui-institutional-header__nav-group"
                     >
                       <summary>
                         {group.href ? (
@@ -224,7 +224,7 @@ export function InstitutionalHeader({
                         )}
                       </summary>
 
-                      <Card padding="md" border="gold" className="forma-institutional-header__mega">
+                      <Card padding="md" border="gold" className="ccui-institutional-header__mega">
                         <Stack gap="md">
                           <Stack gap="xs">
                             <Heading level={2} size="md">
@@ -239,7 +239,7 @@ export function InstitutionalHeader({
                           </Stack>
 
                           {group.items?.length ? (
-                            <div className="forma-institutional-header__mega-links">
+                            <div className="ccui-institutional-header__mega-links">
                               {group.items.map((item) => (
                                 <Link key={`${group.label}-${item.label}-${item.href}`} href={item.href}>
                                   {item.label}
@@ -257,7 +257,7 @@ export function InstitutionalHeader({
                       href={resolvedContactAction.href}
                       size="xs"
                       variant="secondary"
-                      className="forma-institutional-header__contact"
+                      className="ccui-institutional-header__contact"
                     >
                       {resolvedContactAction.label}
                     </Button>
@@ -266,7 +266,7 @@ export function InstitutionalHeader({
               ) : null}
 
               {socialItems.length ? (
-                <Cluster gap="xs" align="center" className="forma-institutional-header__social">
+                <Cluster gap="xs" align="center" className="ccui-institutional-header__social">
                   {socialItems.map((item) => (
                     <Link key={`${item.label}-${item.href}`} href={item.href} aria-label={item.label}>
                       {item.icon ?? item.label}

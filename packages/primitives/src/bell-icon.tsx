@@ -8,9 +8,9 @@ export type BellIconProps = {
 } & ComponentPropsWithoutRef<"svg">;
 
 const sizeClassBySize: Record<IconSize, string> = {
-  xs: "forma-icon--xs",
-  sm: "forma-icon--sm",
-  md: "forma-icon--md",
+  xs: "ccui-icon--xs",
+  sm: "ccui-icon--sm",
+  md: "ccui-icon--md",
 };
 
 export function BellIcon({ size = "sm", className, ...props }: BellIconProps) {
@@ -23,7 +23,7 @@ export function BellIcon({ size = "sm", className, ...props }: BellIconProps) {
       strokeWidth="1.8"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={cx("forma-icon", sizeClassBySize[size], className)}
+      className={cx("ccui-icon", sizeClassBySize[size], className)}
       {...props}
     >
       <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />

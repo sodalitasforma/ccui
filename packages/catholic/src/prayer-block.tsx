@@ -14,7 +14,7 @@ export function PrayerBlock({
   ...props
 }: PrayerBlockProps) {
   return (
-    <Card as="section" padding="lg" border="gold" className={cx("forma-prayer-block", className)} {...props}>
+    <Card as="section" padding="lg" border="gold" className={cx("ccui-prayer-block", className)} {...props}>
       <Stack gap="md">
         {title ? (
           <Heading level={3} size="xl">
@@ -22,7 +22,7 @@ export function PrayerBlock({
           </Heading>
         ) : null}
 
-        <Text as="p" size="lg" className="forma-prayer-block__text">
+        <Text as="p" size="lg" className="ccui-prayer-block__text">
           {text}
         </Text>
 

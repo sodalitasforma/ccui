@@ -66,19 +66,19 @@ export function TitheIcon({
   return (
     <div
       className={cx(
-        "forma-tithe-icon",
-        `forma-tithe-icon--${placement}`,
-        open && "forma-tithe-icon--open",
+        "ccui-tithe-icon",
+        `ccui-tithe-icon--${placement}`,
+        open && "ccui-tithe-icon--open",
         className
       )}
       {...props}
     >
       {open ? (
-        <Card padding="none" border="subtle" className="forma-tithe-icon__panel">
-          <div className="forma-tithe-icon__panel-inner">
+        <Card padding="none" border="subtle" className="ccui-tithe-icon__panel">
+          <div className="ccui-tithe-icon__panel-inner">
             <button
               type="button"
-              className="forma-tithe-icon__close"
+              className="ccui-tithe-icon__close"
               aria-label="Close giving panel"
               onClick={() => setOpen(false)}
             >
@@ -88,24 +88,24 @@ export function TitheIcon({
             <Stack gap="md">
               <Stack gap="xs">
                 <Cluster gap="sm" align="center">
-                  <span className="forma-tithe-icon__mark" aria-hidden="true">
+                  <span className="ccui-tithe-icon__mark" aria-hidden="true">
                     <HeartIcon size="xs" />
                   </span>
-                  <Text as="p" size="xs" className="forma-tithe-icon__eyebrow">
+                  <Text as="p" size="xs" className="ccui-tithe-icon__eyebrow">
                     Parish giving
                   </Text>
                 </Cluster>
 
-                <Heading level={2} size="lg" className="forma-tithe-icon__title">
+                <Heading level={2} size="lg" className="ccui-tithe-icon__title">
                   {title}
                 </Heading>
 
-                <Text as="p" size="sm" tone="secondary" className="forma-tithe-icon__description">
+                <Text as="p" size="sm" tone="secondary" className="ccui-tithe-icon__description">
                   {description}
                 </Text>
               </Stack>
 
-              <div className="forma-tithe-icon__control-group" aria-label="Suggested tithe amounts">
+              <div className="ccui-tithe-icon__control-group" aria-label="Suggested tithe amounts">
                 {formattedAmounts.map((amount) => {
                   const selected = amount.label === selectedAmountLabel || amount.raw === selectedAmount;
 
@@ -113,8 +113,8 @@ export function TitheIcon({
                     <span
                       key={amount.label}
                       className={cx(
-                        "forma-tithe-icon__choice",
-                        selected && "forma-tithe-icon__choice--selected"
+                        "ccui-tithe-icon__choice",
+                        selected && "ccui-tithe-icon__choice--selected"
                       )}
                       aria-current={selected ? "true" : undefined}
                     >
@@ -124,7 +124,7 @@ export function TitheIcon({
                 })}
               </div>
 
-              <div className="forma-tithe-icon__frequency" aria-label="Giving frequency">
+              <div className="ccui-tithe-icon__frequency" aria-label="Giving frequency">
                 {frequencies.map((frequency) => {
                   const selected = frequency === selectedFrequency;
 
@@ -132,8 +132,8 @@ export function TitheIcon({
                     <span
                       key={frequency}
                       className={cx(
-                        "forma-tithe-icon__frequency-choice",
-                        selected && "forma-tithe-icon__frequency-choice--selected"
+                        "ccui-tithe-icon__frequency-choice",
+                        selected && "ccui-tithe-icon__frequency-choice--selected"
                       )}
                       aria-current={selected ? "true" : undefined}
                     >
@@ -143,12 +143,12 @@ export function TitheIcon({
                 })}
               </div>
 
-              <Button href={giveHref} className="forma-tithe-icon__primary-action" iconAfter={<HeartIcon size="xs" />}>
+              <Button href={giveHref} className="ccui-tithe-icon__primary-action" iconAfter={<HeartIcon size="xs" />}>
                 {primaryLabel}
               </Button>
 
               {secondaryHref ? (
-                <Button href={secondaryHref} variant="ghost" className="forma-tithe-icon__secondary-action">
+                <Button href={secondaryHref} variant="ghost" className="ccui-tithe-icon__secondary-action">
                   {secondaryLabel}
                 </Button>
               ) : null}
@@ -160,7 +160,7 @@ export function TitheIcon({
       <Button
         type="button"
         variant="floating"
-        className="forma-tithe-icon__trigger"
+        className="ccui-tithe-icon__trigger"
         iconAfter={<HeartIcon size="xs" />}
         aria-expanded={open}
         onClick={() => setOpen((value) => !value)}

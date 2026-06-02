@@ -29,7 +29,7 @@ export function MassScheduleBlock({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-schedule-block forma-mass-schedule-block", className)}
+      className={cx("ccui-schedule-block ccui-mass-schedule-block", className)}
       {...props}
     >
       <Stack gap="md">
@@ -47,7 +47,7 @@ export function MassScheduleBlock({
           </Stack>
 
           {action ? (
-            <div className="forma-schedule-block__action">{action}</div>
+            <div className="ccui-schedule-block__action">{action}</div>
           ) : null}
         </Cluster>
 
@@ -61,7 +61,7 @@ export function MassScheduleBlock({
 
         <Stack gap="md">
           {days.map((day) => (
-            <Stack key={`${day.day}-${day.date ?? ""}`} gap="sm" className="forma-schedule-day">
+            <Stack key={`${day.day}-${day.date ?? ""}`} gap="sm" className="ccui-schedule-day">
               <Cluster justify="between" align="baseline">
                 <Heading level={3} size="md">
                   {day.day}
@@ -84,7 +84,7 @@ export function MassScheduleBlock({
 
         {source?.href || lastUpdated || sourceNote ? (
           <>
-            <Stack gap="xs" className="forma-schedule-block__source-meta">
+            <Stack gap="xs" className="ccui-schedule-block__source-meta">
               {source?.href ? (
                 <Text as="p" size="sm" tone="muted">
                   Source: <Link href={source.href}>{source.label}</Link>

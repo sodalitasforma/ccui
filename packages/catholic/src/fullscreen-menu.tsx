@@ -22,7 +22,7 @@ export function FullscreenMenu({
 }: FullscreenMenuProps) {
   return (
     <div
-      className={cx("forma-fullscreen-menu", open && "is-open", className)}
+      className={cx("ccui-fullscreen-menu", open && "is-open", className)}
       hidden={!open}
       {...props}
     >
@@ -37,8 +37,8 @@ export function FullscreenMenu({
             </Button>
           </Cluster>
 
-          <div className="forma-fullscreen-menu__grid">
-            <nav aria-label="Primary menu" className="forma-fullscreen-menu__primary">
+          <div className="ccui-fullscreen-menu__grid">
+            <nav aria-label="Primary menu" className="ccui-fullscreen-menu__primary">
               {primaryItems.map((item) => (
                 <a key={`${item.label}-${item.href}`} href={item.href}>
                   {item.label}
@@ -46,7 +46,7 @@ export function FullscreenMenu({
               ))}
             </nav>
 
-            <nav aria-label="Secondary menu" className="forma-fullscreen-menu__secondary">
+            <nav aria-label="Secondary menu" className="ccui-fullscreen-menu__secondary">
               {secondaryItems.map((item) => (
                 <a key={`${item.label}-${item.href}`} href={item.href}>
                   {item.label}

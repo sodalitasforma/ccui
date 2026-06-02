@@ -22,9 +22,9 @@ export function FilterBar<T extends ElementType = "div">({
   return (
     <Component
       className={cx(
-        "forma-filter-bar",
-        `forma-filter-bar--density-${density}`,
-        `forma-filter-bar--align-${align}`,
+        "ccui-filter-bar",
+        `ccui-filter-bar--density-${density}`,
+        `ccui-filter-bar--align-${align}`,
         className
       )}
       {...props}

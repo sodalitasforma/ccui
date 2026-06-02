@@ -10,37 +10,37 @@ const files = {
   report: path.join(root, ".scratch/design-system-cascade-audit.md"),
 };
 
-const TOKEN_START = "/* forma-cascade-canary:token-start */";
-const TOKEN_END = "/* forma-cascade-canary:token-end */";
-const PRIMITIVE_START = "/* forma-cascade-canary:primitive-start */";
-const PRIMITIVE_END = "/* forma-cascade-canary:primitive-end */";
+const TOKEN_START = "/* ccui-cascade-canary:token-start */";
+const TOKEN_END = "/* ccui-cascade-canary:token-end */";
+const PRIMITIVE_START = "/* ccui-cascade-canary:primitive-start */";
+const PRIMITIVE_END = "/* ccui-cascade-canary:primitive-end */";
 
 const tokenBlock = `
 ${TOKEN_START}
 :root {
-  --forma-radius-sm: 0.75rem !important;
-  --forma-radius-md: 1.15rem !important;
-  --forma-radius-lg: 1.75rem !important;
-  --forma-color-border-subtle: #9a5a12 !important;
-  --forma-color-border-gold: #7a3f00 !important;
-  --forma-shadow-hairline: 0 0 0 1px rgba(122, 63, 0, 0.34), 0 14px 34px rgba(74, 45, 20, 0.14) !important;
+  --ccui-radius-sm: 0.75rem !important;
+  --ccui-radius-md: 1.15rem !important;
+  --ccui-radius-lg: 1.75rem !important;
+  --ccui-color-border-subtle: #9a5a12 !important;
+  --ccui-color-border-gold: #7a3f00 !important;
+  --ccui-shadow-hairline: 0 0 0 1px rgba(122, 63, 0, 0.34), 0 14px 34px rgba(74, 45, 20, 0.14) !important;
 }
 ${TOKEN_END}
 `;
 
 const primitiveBlock = `
 ${PRIMITIVE_START}
-.forma-button {
+.ccui-button {
   transform: translateY(-1px);
 }
 
-.forma-card,
-.forma-panel {
+.ccui-card,
+.ccui-panel {
   outline: 1px solid rgba(122, 63, 0, 0.16);
 }
 
-.forma-badge,
-.forma-tag {
+.ccui-badge,
+.ccui-tag {
   letter-spacing: 0.08em;
 }
 ${PRIMITIVE_END}
@@ -88,9 +88,9 @@ function audit() {
   const catholicCss = read(files.catholic);
   const globalsCss = read(files.globals);
 
-  const primitiveTokenRefs = countMatches(primitiveCss, /var\(--forma-/g);
-  const catholicTokenRefs = countMatches(catholicCss, /var\(--forma-/g);
-  const globalsTokenRefs = countMatches(globalsCss, /var\(--forma-/g);
+  const primitiveTokenRefs = countMatches(primitiveCss, /var\(--ccui-/g);
+  const catholicTokenRefs = countMatches(catholicCss, /var\(--ccui-/g);
+  const globalsTokenRefs = countMatches(globalsCss, /var\(--ccui-/g);
 
   const catholicHardHex = [...catholicCss.matchAll(/(?:#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/g)].map((m) => m[0]);
   const primitiveHardHex = [...primitiveCss.matchAll(/(?:#[0-9a-fA-F]{3,8}|rgba?\([^)]*\))/g)].map((m) => m[0]);

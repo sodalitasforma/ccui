@@ -40,7 +40,7 @@ export function DocumentAuthorityBadge({
   return (
     <Badge
       variant={variant}
-      className={cx("forma-document-authority-badge", className)}
+      className={cx("ccui-document-authority-badge", className)}
       {...props}
     >
       {label ?? labelize(key)}

@@ -17,7 +17,7 @@ export function TermDefinitionCard({
   ...props
 }: TermDefinitionCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-term-definition-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-term-definition-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           {namespace ? <NamespaceBadge namespace={namespace} /> : null}
@@ -28,7 +28,7 @@ export function TermDefinitionCard({
           <Heading level={3} size="lg">
             {term}
           </Heading>
-          <Text as="p" tone="secondary" className="forma-term-definition-card__definition">
+          <Text as="p" tone="secondary" className="ccui-term-definition-card__definition">
             {definition}
           </Text>
         </Stack>

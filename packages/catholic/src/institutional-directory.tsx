@@ -21,7 +21,7 @@ export function InstitutionalDirectory({
   ...props
 }: InstitutionalDirectoryProps) {
   return (
-    <section className={cx("forma-institutional-directory", className)} {...props}>
+    <section className={cx("ccui-institutional-directory", className)} {...props}>
       <Stack gap="md">
         {filter}
         <Directory title={title} description={description}>

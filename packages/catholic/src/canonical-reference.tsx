@@ -16,7 +16,7 @@ export function CanonicalReference({
   ...props
 }: CanonicalReferenceProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-canonical-reference", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-canonical-reference", className)} {...props}>
       <Stack gap="xs">
         <Cluster justify="between" align="start" gap="sm">
           <Text as="p" size="sm" tone="muted">
@@ -25,7 +25,7 @@ export function CanonicalReference({
           {system ? <Tag variant="blue">{system}</Tag> : null}
         </Cluster>
 
-        <Text as="p" className="forma-canonical-reference__value">
+        <Text as="p" className="ccui-canonical-reference__value">
           {href ? <Link href={href}>{value}</Link> : value}
         </Text>
 

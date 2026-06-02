@@ -39,13 +39,13 @@ export function SacramentalPreparationBlock({
       as="section"
       padding="lg"
       border="gold"
-      className={cx("forma-sacramental-preparation-block", className)}
+      className={cx("ccui-sacramental-preparation-block", className)}
       {...props}
     >
       <Stack gap="lg">
         <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Text as="p" className="forma-sacramental-preparation-block__eyebrow">
+            <Text as="p" className="ccui-sacramental-preparation-block__eyebrow">
               Sacraments
             </Text>
 
@@ -61,11 +61,11 @@ export function SacramentalPreparationBlock({
           <Badge variant="gold">{items.length} sacraments</Badge>
         </Cluster>
 
-        <div className="forma-sacramental-preparation-block__grid">
+        <div className="ccui-sacramental-preparation-block__grid">
           {items.map((item) => (
             <article
               key={item.sacrament}
-              className="forma-sacramental-preparation-block__item"
+              className="ccui-sacramental-preparation-block__item"
             >
               <Stack gap="sm">
                 <Cluster gap="sm">
@@ -79,7 +79,7 @@ export function SacramentalPreparationBlock({
                   {item.description}
                 </Text>
 
-                <dl className="forma-sacramental-preparation-block__meta">
+                <dl className="ccui-sacramental-preparation-block__meta">
                   {item.contactRole ? (
                     <div>
                       <dt>Contact</dt>
@@ -104,7 +104,7 @@ export function SacramentalPreparationBlock({
                 {item.registrationHref ? (
                   <Link
                     href={item.registrationHref}
-                    className="forma-sacramental-preparation-block__action"
+                    className="ccui-sacramental-preparation-block__action"
                   >
                     Start preparation
                   </Link>

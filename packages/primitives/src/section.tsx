@@ -22,9 +22,9 @@ export function Section<T extends ElementType = "section">({
   return (
     <Component
       className={cx(
-        "forma-section",
-        `forma-section--surface-${surface}`,
-        `forma-section--spacing-${spacing}`,
+        "ccui-section",
+        `ccui-section--surface-${surface}`,
+        `ccui-section--spacing-${spacing}`,
         className
       )}
       {...props}

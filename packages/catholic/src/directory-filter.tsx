@@ -19,7 +19,7 @@ export function DirectoryFilter({
   return (
     <FilterBar
       as="form"
-      className={cx("forma-directory-filter", className)}
+      className={cx("ccui-directory-filter", className)}
       {...props}
     >
       <NameFilter name={searchName} placeholder={searchPlaceholder} />

@@ -18,7 +18,7 @@ export function Eyebrow<T extends ElementType = "p">({
 
   return (
     <Component
-      className={cx("forma-eyebrow", `forma-eyebrow--tone-${tone}`, className)}
+      className={cx("ccui-eyebrow", `ccui-eyebrow--tone-${tone}`, className)}
       {...props}
     />
   );

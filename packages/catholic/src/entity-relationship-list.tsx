@@ -19,9 +19,9 @@ export function EntityRelationshipList({
   ...props
 }: EntityRelationshipListProps) {
   return (
-    <section className={cx("forma-entity-relationship-list", className)} {...props}>
+    <section className={cx("ccui-entity-relationship-list", className)} {...props}>
       <Stack gap="md">
-        <Text as="h3" size="lg" className="forma-entity-relationship-list__title">
+        <Text as="h3" size="lg" className="ccui-entity-relationship-list__title">
           {title}
         </Text>
 
@@ -35,14 +35,14 @@ export function EntityRelationshipList({
               <Stack gap="xs">
                 <Cluster gap="xs">
                   <Tag variant="brown">{entityTitle(entities, relationship.sourceId)}</Tag>
-                  <Text as="code" className="forma-entity-relationship-list__predicate">
+                  <Text as="code" className="ccui-entity-relationship-list__predicate">
                     {relationship.predicate}
                   </Text>
                   <Tag variant="blue">{entityTitle(entities, relationship.targetId)}</Tag>
                 </Cluster>
 
                 {relationship.label ? (
-                  <Text as="p" className="forma-entity-relationship-list__label">
+                  <Text as="p" className="ccui-entity-relationship-list__label">
                     {relationship.href ? <Link href={relationship.href}>{relationship.label}</Link> : relationship.label}
                   </Text>
                 ) : null}

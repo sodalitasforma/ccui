@@ -10,7 +10,7 @@ type SelectProps = {
 export function Select({ size = "md", className, children, ...props }: SelectProps) {
   return (
     <select
-      className={cx("forma-select", `forma-select--size-${size}`, className)}
+      className={cx("ccui-select", `ccui-select--size-${size}`, className)}
       {...props}
     >
       {children}

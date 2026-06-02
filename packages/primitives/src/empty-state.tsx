@@ -18,7 +18,7 @@ export function EmptyState<T extends ElementType = "div">({
 
   return (
     <Component
-      className={cx("forma-empty-state", `forma-empty-state--tone-${tone}`, className)}
+      className={cx("ccui-empty-state", `ccui-empty-state--tone-${tone}`, className)}
       {...props}
     />
   );

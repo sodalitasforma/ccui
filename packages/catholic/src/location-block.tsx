@@ -18,11 +18,11 @@ export function LocationBlock({
   ...props
 }: LocationBlockProps) {
   return (
-    <Card as="section" padding="md" border="subtle" className={cx("forma-location-block", className)} {...props}>
+    <Card as="section" padding="md" border="subtle" className={cx("ccui-location-block", className)} {...props}>
       <Stack gap="sm">
-        <h3 className="forma-location-block__title">{title}</h3>
+        <h3 className="ccui-location-block__title">{title}</h3>
 
-        <address className="forma-location-block__address">
+        <address className="ccui-location-block__address">
           {addressLines.map((line) => (
             <span key={line}>{line}</span>
           ))}
@@ -35,7 +35,7 @@ export function LocationBlock({
         ) : null}
 
         {mapHref ? (
-          <a className="forma-location-block__map-link" href={mapHref}>
+          <a className="ccui-location-block__map-link" href={mapHref}>
             View map
           </a>
         ) : null}

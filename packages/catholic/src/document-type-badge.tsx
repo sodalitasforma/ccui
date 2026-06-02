@@ -45,7 +45,7 @@ export function DocumentTypeBadge({
   return (
     <Tag
       variant={variant}
-      className={cx("forma-document-type-badge", className)}
+      className={cx("ccui-document-type-badge", className)}
       {...props}
     >
       {label ?? labelize(key)}

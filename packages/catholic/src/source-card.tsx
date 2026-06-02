@@ -18,7 +18,7 @@ export function SourceCard({
   ...props
 }: SourceCardProps) {
   return (
-    <Card as="article" padding="md" border="subtle" className={cx("forma-source-card", className)} {...props}>
+    <Card as="article" padding="md" border="subtle" className={cx("ccui-source-card", className)} {...props}>
       <Stack gap="sm">
         <Cluster justify="between" align="start" gap="sm">
           <DocumentAuthorityBadge authority={authority} label={authorityLabel} />
@@ -35,7 +35,7 @@ export function SourceCard({
         {citation ? (
           <>
             <Divider tone="subtle" />
-            <Text as="p" size="sm" className="forma-source-card__citation">
+            <Text as="p" size="sm" className="ccui-source-card__citation">
               {citation}
             </Text>
           </>

@@ -18,7 +18,7 @@ export function Container<T extends ElementType = "div">({
 
   return (
     <Component
-      className={cx("forma-container", `forma-container--${size}`, className)}
+      className={cx("ccui-container", `ccui-container--${size}`, className)}
       {...props}
     />
   );
