@@ -1,5 +1,5 @@
 {
-  "name": "@forma/catholic",
+  "name": "@ccui/catholic",
   "version": "0.0.1",
   "private": true,
   "description": "Catholic-specific UI components for Forma.",

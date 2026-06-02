@@ -1,14 +1,14 @@
 {
-  "name": "forma",
+  "name": "ccui",
   "version": "0.0.1",
   "private": true,
   "description": "A Catholic UI Kit and design system for shared digital form, beauty, and usability across Catholic digital projects.",
   "license": "MIT",
   "scripts": {
-    "dev": "pnpm --filter @forma/web dev",
-    "build": "pnpm generate:stats && pnpm --filter @forma/web build",
-    "lint": "pnpm --filter @forma/web lint",
-    "typecheck": "pnpm --filter @forma/web typecheck",
+    "dev": "pnpm --filter @ccui/web dev",
+    "build": "pnpm generate:stats && pnpm --filter @ccui/web build",
+    "lint": "pnpm --filter @ccui/web lint",
+    "typecheck": "pnpm --filter @ccui/web typecheck",
     "generate:stats": "node apps/web/scripts/generate-system-stats.mjs"
   },
   "keywords": [

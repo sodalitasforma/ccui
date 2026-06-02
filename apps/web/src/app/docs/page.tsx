@@ -60,8 +60,8 @@ export default function DocsPage() {
                 and templates show complete institutional use cases.
               </Text>
               <Card padding="lg" border="subtle" className="docs-preview">
-                <pre className="docs-pre"><code>{`import { Button, Card, Stack } from "@forma/primitives";
-import { MassScheduleBlock, ChurchDocumentCard } from "@forma/catholic";`}</code></pre>
+                <pre className="docs-pre"><code>{`import { Button, Card, Stack } from "@ccui/primitives";
+import { MassScheduleBlock, ChurchDocumentCard } from "@ccui/catholic";`}</code></pre>
               </Card>
             </Stack>
           </Container>

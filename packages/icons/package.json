@@ -1,6 +1,6 @@
 {
-  "name": "@forma/icons",
+  "name": "@ccui/icons",
   "version": "0.0.1",
   "private": true,
-  "description": "Icons for Forma."
+  "description": "Icons for Catholic Commons UI."
 }
