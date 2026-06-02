@@ -10,6 +10,15 @@ importers:
 
   apps/web:
     dependencies:
+      '@ccui/catholic':
+        specifier: workspace:*
+        version: link:../../packages/catholic
+      '@ccui/primitives':
+        specifier: workspace:*
+        version: link:../../packages/primitives
+      '@ccui/tokens':
+        specifier: workspace:*
+        version: link:../../packages/tokens
       next:
         specifier: 16.2.6
         version: 16.2.6(@babel/core@7.29.7)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)
@@ -46,6 +55,13 @@ importers:
         version: 5.9.3
 
   packages/catholic:
+    dependencies:
+      '@ccui/primitives':
+        specifier: workspace:*
+        version: link:../primitives
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
     devDependencies:
       '@types/react':
         specifier: ^19.2.15
@@ -57,6 +73,10 @@ importers:
   packages/icons: {}
 
   packages/primitives:
+    dependencies:
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
     devDependencies:
       '@types/react':
         specifier: ^19.2.15

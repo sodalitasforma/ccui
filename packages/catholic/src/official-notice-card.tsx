@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Divider, Heading, Link, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Card, Cluster, Divider, Heading, Link, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { DocumentAuthorityBadge } from "./document-authority-badge";
 import { DocumentTypeBadge } from "./document-type-badge";
 import type { OfficialNoticeData } from "./types";

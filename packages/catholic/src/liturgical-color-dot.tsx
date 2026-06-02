@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { cx } from "../../primitives/src/utils";
+import { cx } from "@ccui/primitives";
 import type { LiturgicalColor } from "./types";
 
 type LiturgicalColorDotProps = {

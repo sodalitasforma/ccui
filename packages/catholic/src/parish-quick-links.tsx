@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge, Heading, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Badge, Heading, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 export type ParishQuickLinkItem = {
   label: string;

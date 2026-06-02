@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge, Card, Cluster, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Badge, Card, Cluster, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 type EventCardProps = {
   title: string;

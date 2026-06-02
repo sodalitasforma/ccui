@@ -50,3 +50,4 @@ export { ArrowRightIcon, CheckIcon } from "./icons";
 export type { CCUIIconProps } from "./icons";
 export { BellIcon } from "./bell-icon";
 export { HeartIcon } from "./heart-icon";
+export { cx } from "./utils";

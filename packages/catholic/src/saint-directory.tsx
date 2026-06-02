@@ -3,7 +3,7 @@ import { CenturyFilter } from "./century-filter";
 import { InstitutionalDirectory } from "./institutional-directory";
 import { NameFilter } from "./name-filter";
 import type { DirectoryFilterOption, SaintDirectoryData } from "./types";
-import { Stack } from "../../primitives/src";
+import { Stack } from "@ccui/primitives";
 
 type SaintDirectoryProps = SaintDirectoryData & {
   centuries?: readonly DirectoryFilterOption[];

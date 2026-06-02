@@ -6,8 +6,8 @@ import {
   Heading,
   Stack,
   Text,
-} from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+} from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 export type SeasonalScheduleItemStatus = "scheduled" | "cancelled" | "moved" | "special";
 

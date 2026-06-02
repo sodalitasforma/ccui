@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, Link, Notice, Stack, Tag, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Cluster, Link, Notice, Stack, Tag, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { PressOfficeNoticeData } from "./types";
 
 type PressOfficeNoticeProps = PressOfficeNoticeData & ComponentPropsWithoutRef<"section">;

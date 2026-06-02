@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Link, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Card, Cluster, Link, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { AuthorityLevelBadge } from "./authority-level-badge";
 import type { ProvenanceTrailData } from "./types";
 

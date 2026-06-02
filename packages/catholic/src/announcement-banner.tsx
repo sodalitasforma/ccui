@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { Badge, Cluster, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Badge, Cluster, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 type AnnouncementBannerVariant = "official" | "liturgical" | "warning" | "emergency";
 

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Grid, Stack } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Grid, Stack } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { ContactBlock } from "./contact-block";
 import { LocationBlock } from "./location-block";
 import { OfficeHours } from "./office-hours";

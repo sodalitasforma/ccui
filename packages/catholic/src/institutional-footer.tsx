@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, Container, Divider, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Cluster, Container, Divider, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { NavItem } from "./types";
 
 type InstitutionalFooterProps = {

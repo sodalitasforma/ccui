@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { Card, Cluster, Divider, Eyebrow, Heading, Link, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Card, Cluster, Divider, Eyebrow, Heading, Link, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { ExceptionNotice } from "./exception-notice";
 import { MassTimeRow } from "./mass-time-row";
 import type { ScheduleBlockData } from "./types";

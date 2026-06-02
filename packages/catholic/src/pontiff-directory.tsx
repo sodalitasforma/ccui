@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Grid, Stack } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Grid, Stack } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { CenturyFilter } from "./century-filter";
 import { NameFilter } from "./name-filter";
 import { PontiffCard } from "./pontiff-card";

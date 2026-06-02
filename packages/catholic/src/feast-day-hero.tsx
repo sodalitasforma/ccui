@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Eyebrow, Heading, Link, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Card, Cluster, Eyebrow, Heading, Link, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { LiturgicalSeasonBadge } from "./liturgical-season-badge";
 import type { LiturgicalDayData } from "./types";
 

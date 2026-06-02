@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 type DocumentListProps = {
   title?: string;

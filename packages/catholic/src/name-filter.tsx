@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { SearchInput } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { SearchInput } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 type NameFilterProps = {
   name?: string;

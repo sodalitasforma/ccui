@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Tag } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Tag } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { ChurchDocumentType } from "./types";
 
 type DocumentTypeBadgeProps = {

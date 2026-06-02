@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, Tag, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Cluster, Tag, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { DateRangeLabelData } from "./types";
 
 type DateRangeLabelProps = DateRangeLabelData & ComponentPropsWithoutRef<"span">;

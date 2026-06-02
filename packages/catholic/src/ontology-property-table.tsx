@@ -9,8 +9,8 @@ import {
   THead,
   TR,
   Text,
-} from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+} from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { OntologyPropertyData } from "./types";
 
 type OntologyPropertyTableProps = {

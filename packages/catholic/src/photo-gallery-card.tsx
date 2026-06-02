@@ -3,8 +3,8 @@
 import type * as React from "react";
 import type { HTMLAttributes } from "react";
 import { useEffect, useState } from "react";
-import { Badge, Card, Cluster, Heading, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Badge, Card, Cluster, Heading, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 export type PhotoGalleryImageFit = "cover" | "contain" | "fill" | "scale-down" | "none";
 export type PhotoGalleryImagePosition = "center" | "top" | "bottom" | "left" | "right";

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Button, Card, Cluster, Eyebrow, Heading, Link, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Button, Card, Cluster, Eyebrow, Heading, Link, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 export type ProjectDonationCalloutAction = {
   label: string;

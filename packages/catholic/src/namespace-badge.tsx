@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Tag } from "../../primitives/src";
+import { Tag } from "@ccui/primitives";
 import type { NamespaceBadgeData } from "./types";
 
 type NamespaceBadgeProps = NamespaceBadgeData & ComponentPropsWithoutRef<"span">;

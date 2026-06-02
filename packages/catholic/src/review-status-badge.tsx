@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge } from "../../primitives/src";
+import { Badge } from "@ccui/primitives";
 import type { ReviewStatus } from "./types";
 
 type BadgeVariant =

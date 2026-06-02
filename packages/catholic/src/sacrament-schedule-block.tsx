@@ -8,8 +8,8 @@ import {
   Stack,
   Tag,
   Text,
-} from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+} from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { MassScheduleBlock } from "./mass-schedule-block";
 import type { ScheduleBlockData } from "./types";
 

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Badge } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { ChurchDocumentAuthority } from "./types";
 
 type DocumentAuthorityBadgeProps = {

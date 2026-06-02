@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
-import { Stack } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Stack } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { Directory } from "./directory";
 import { DirectoryCard } from "./directory-card";
 import type { DirectoryEntityData } from "./types";

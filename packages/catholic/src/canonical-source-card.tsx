@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Divider, Heading, Link, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Card, Cluster, Divider, Heading, Link, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { AuthorityLevelBadge } from "./authority-level-badge";
 import { MachineReadableBadge } from "./machine-readable-badge";
 import { ReviewStatusBadge } from "./review-status-badge";

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Select } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Select } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { CenturyFilterData } from "./types";
 
 type CenturyFilterProps = CenturyFilterData &

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef, ElementType } from "react";
-import { Grid, Stack, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Grid, Stack, Text } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 
 type DirectoryProps<T extends ElementType = "section"> = {
   as?: T;

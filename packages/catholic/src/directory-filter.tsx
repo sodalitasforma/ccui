@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Button, FilterBar, Select } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Button, FilterBar, Select } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import { NameFilter } from "./name-filter";
 import type { DirectoryFilterData } from "./types";
 

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Button, Cluster, Container, Heading, Stack } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
+import { Button, Cluster, Container, Heading, Stack } from "@ccui/primitives";
+import { cx } from "@ccui/primitives";
 import type { NavItem } from "./types";
 
 type FullscreenMenuProps = {
