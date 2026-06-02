@@ -15,7 +15,7 @@ import {
   ArrowRightIcon,
 } from "../../../../../packages/primitives/src";
 
-type FormaSidebarProps = {
+type CCUISidebarProps = {
   current?: "docs" | "components" | "templates" | "typography";
 };
 
@@ -36,7 +36,7 @@ type SidebarItem =
     };
 
 const pageSections: Record<
-  NonNullable<FormaSidebarProps["current"]>,
+  NonNullable<CCUISidebarProps["current"]>,
   {
     label: string;
     items: readonly SidebarItem[];
@@ -96,7 +96,7 @@ function hrefToHash(href: string) {
   return hashIndex >= 0 ? href.slice(hashIndex + 1) : "";
 }
 
-export function FormaSidebar({ current = "components" }: FormaSidebarProps) {
+export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
   const section = pageSections[current];
 
   const sectionIds = useMemo(() => {
@@ -155,7 +155,7 @@ export function FormaSidebar({ current = "components" }: FormaSidebarProps) {
               Catholic Commons UI
             </Link>
             <Text as="p" size="xs" tone="muted">
-              Open-source Catholic interface system
+              Catholic Commons UI
             </Text>
           </Stack>
 

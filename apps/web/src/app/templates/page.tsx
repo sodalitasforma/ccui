@@ -7,12 +7,12 @@ import {
   Text,
 } from "../../../../../packages/primitives/src";
 
-import { FormaSidebar } from "../components/forma-sidebar";
+import { CCUISidebar } from "../components/ccui-sidebar";
 
 export default function TemplatesPage() {
   return (
     <main className="docs-shell">
-      <FormaSidebar current="templates" />
+      <CCUISidebar current="templates" />
 
       <div className="docs-main">
         <Section id="overview" surface="page" spacing="lg">

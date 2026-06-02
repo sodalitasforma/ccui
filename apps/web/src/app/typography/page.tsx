@@ -1,4 +1,4 @@
-import { FormaSidebar } from "../components/forma-sidebar";
+import { CCUISidebar } from "../components/ccui-sidebar";
 
 import {
   Badge,
@@ -15,7 +15,7 @@ import {
 export default function TypographyPage() {
   return (
     <main className="docs-shell">
-      <FormaSidebar current="typography" />
+      <CCUISidebar current="typography" />
 
       <div className="docs-main">
         <Section id="overview" surface="page" spacing="lg">

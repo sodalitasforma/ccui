@@ -1,4 +1,4 @@
-import { FormaSidebar } from "../components/forma-sidebar";
+import { CCUISidebar } from "../components/ccui-sidebar";
 
 import {
   Accordion,
@@ -469,7 +469,7 @@ function ColorRow({ name, value }: { name: string; value: string }) {
 export default function Home() {
   return (
     <main className="docs-shell">
-      <FormaSidebar current="components" />
+      <CCUISidebar current="components" />
 
       <div className="docs-main">
         <Section id="introduction" surface="page" spacing="lg">

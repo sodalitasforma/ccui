@@ -1,4 +1,4 @@
-import { FormaSidebar } from "../components/forma-sidebar";
+import { CCUISidebar } from "../components/ccui-sidebar";
 
 import {
   Button,
@@ -21,7 +21,7 @@ import {
 export default function DocsPage() {
   return (
     <main className="docs-shell">
-      <FormaSidebar current="docs" />
+      <CCUISidebar current="docs" />
 
       <div className="docs-main">
         <Section id="overview" surface="page" spacing="lg">

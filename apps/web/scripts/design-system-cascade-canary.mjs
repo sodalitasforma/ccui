@@ -106,7 +106,7 @@ function audit() {
   );
 
   const report = [
-    "# Forma design-system cascade audit",
+    "# CCUI design-system cascade audit",
     "",
     "This report checks whether the design system is behaving like a cascade:",
     "",
