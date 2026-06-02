@@ -1050,3 +1050,506 @@ a {
 .home-hero > .ccui-container {
   width: 100%;
 }
+
+.home-nav-link-with-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccui-space-2);
+}
+
+.home-nav-disabled {
+  color: var(--ccui-color-text-secondary);
+  cursor: default;
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.home-nav-badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
+  padding: 0.1rem var(--ccui-space-2);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+  white-space: nowrap;
+}
+
+.home-nav-links .home-nav-link-with-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccui-space-2);
+  white-space: nowrap;
+}
+
+.home-nav-links .home-nav-badge {
+  margin-left: var(--ccui-space-2);
+}
+
+.home-nav-links {
+  align-items: center;
+}
+
+.home-nav-links .home-nav-disabled {
+  display: grid;
+  justify-items: center;
+  gap: 0.05rem;
+  color: var(--ccui-color-text-muted);
+  cursor: default;
+  line-height: var(--ccui-line-height-tight);
+  white-space: nowrap;
+}
+
+.home-nav-disabled__label {
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.home-nav-disabled__meta {
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-2xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.home-nav-links .home-nav-badge,
+.home-nav-link-with-badge {
+  margin-left: 0;
+}
+
+.home-nav-links {
+  display: flex;
+  align-items: center;
+  gap: var(--ccui-space-6);
+}
+
+.home-nav-links .home-nav-disabled {
+  display: inline-flex;
+  align-items: center;
+  color: var(--ccui-color-text-muted);
+  cursor: default;
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-tight);
+  white-space: nowrap;
+}
+
+.home-nav-links .home-nav-disabled:hover {
+  background: transparent;
+}
+
+.docs-url-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ccui-space-2);
+}
+
+.docs-url-strip__link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+  text-decoration: none;
+}
+
+.docs-url-strip__link:hover {
+  background: var(--ccui-app-gold-wash);
+  text-decoration: none;
+}
+
+.docs-definition-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-cascade-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-principles {
+  display: grid;
+  gap: var(--ccui-space-3);
+  border-left: 2px solid var(--ccui-color-accent-gold);
+  padding-left: var(--ccui-space-5);
+}
+
+@media (max-width: 960px) {
+  .docs-definition-grid,
+  .docs-cascade-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .docs-definition-grid,
+  .docs-cascade-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.docs-install-hero {
+  max-width: 58rem;
+}
+
+.docs-install-card {
+  background:
+    linear-gradient(
+      180deg,
+      var(--ccui-color-surface-raised),
+      color-mix(in srgb, var(--ccui-color-surface-raised) 92%, var(--ccui-color-surface-page))
+    );
+}
+
+.docs-install-card .docs-pre {
+  margin: 0;
+}
+
+.docs-url-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ccui-space-2);
+}
+
+.docs-url-strip__link {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+  text-decoration: none;
+}
+
+.docs-url-strip__link:hover {
+  background: var(--ccui-app-gold-wash);
+  text-decoration: none;
+}
+
+.docs-main--installation {
+  padding-top: var(--ccui-space-12);
+}
+
+.docs-install-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 13rem;
+  gap: var(--ccui-space-12);
+  align-items: start;
+}
+
+.docs-install-content {
+  max-width: 50rem;
+}
+
+.docs-install-content .ccui-section {
+  padding-block: var(--ccui-space-8);
+}
+
+.docs-install-content .ccui-section:first-child {
+  padding-top: 0;
+}
+
+.docs-install-note {
+  background: var(--ccui-color-surface-raised);
+}
+
+.docs-install-options .docs-install-option {
+  min-height: 9rem;
+}
+
+.docs-code-card .docs-pre {
+  margin: 0;
+}
+
+.docs-code-card--muted {
+  opacity: 0.72;
+}
+
+.docs-page-link {
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  text-decoration: none;
+}
+
+.docs-page-link:hover {
+  color: var(--ccui-color-link-primary);
+  text-decoration: none;
+}
+
+.docs-framework-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ccui-space-3);
+}
+
+.docs-install-toc {
+  position: sticky;
+  top: var(--ccui-space-8);
+  padding-top: var(--ccui-space-2);
+}
+
+.docs-install-toc nav {
+  display: grid;
+  gap: var(--ccui-space-2);
+}
+
+.docs-install-toc a {
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-tight);
+  text-decoration: none;
+}
+
+.docs-install-toc a:hover {
+  color: var(--ccui-color-link-primary);
+  text-decoration: none;
+}
+
+.docs-page-footer-nav {
+  padding-block: var(--ccui-space-8);
+}
+
+@media (max-width: 1180px) {
+  .docs-install-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-install-toc {
+    display: none;
+  }
+
+  .docs-install-content {
+    max-width: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .docs-install-options {
+    grid-template-columns: 1fr;
+  }
+
+  .docs-framework-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* CCUI installation docs: compact technical page. */
+.docs-main--install {
+  padding-block: var(--ccui-space-12);
+}
+
+.docs-install-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 42rem) 12rem;
+  gap: var(--ccui-space-16);
+  align-items: start;
+  justify-content: center;
+}
+
+.docs-install-article {
+  min-width: 0;
+}
+
+.docs-install-article .ccui-section {
+  padding-block: var(--ccui-space-8);
+}
+
+.docs-install-article .ccui-section:first-child {
+  padding-top: 0;
+}
+
+.docs-install-title {
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-3xl);
+  letter-spacing: var(--ccui-letter-spacing-normal);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.docs-install-section-title {
+  font-family: var(--ccui-font-interface);
+  letter-spacing: var(--ccui-letter-spacing-normal);
+}
+
+.docs-install-lede {
+  font-size: var(--ccui-font-size-md);
+}
+
+.docs-install-prev-next {
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.docs-install-prev-next a,
+.docs-install-footer-nav a {
+  color: var(--ccui-color-text-muted);
+  text-decoration: none;
+}
+
+.docs-install-prev-next a:hover,
+.docs-install-footer-nav a:hover {
+  color: var(--ccui-color-link-primary);
+  text-decoration: none;
+}
+
+.docs-install-recommendation {
+  border: 1px solid color-mix(in srgb, var(--ccui-color-success) 42%, var(--ccui-color-border-subtle));
+  border-radius: var(--ccui-radius-lg);
+  padding: var(--ccui-space-4) var(--ccui-space-5);
+  background: color-mix(in srgb, var(--ccui-color-success) 12%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.docs-install-prompt {
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-medium);
+}
+
+.docs-install-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-install-option {
+  display: grid;
+  gap: var(--ccui-space-3);
+  min-height: 7.5rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  padding: var(--ccui-space-5);
+  background: color-mix(in srgb, var(--ccui-color-surface-raised) 82%, var(--ccui-color-surface-page));
+}
+
+.docs-install-option__title {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-normal);
+}
+
+.docs-install-code {
+  overflow-x: auto;
+  margin: 0;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  padding: var(--ccui-space-5);
+  background: color-mix(in srgb, var(--ccui-color-surface-raised) 88%, var(--ccui-color-surface-page));
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-mono);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.docs-install-code--muted {
+  opacity: 0.68;
+}
+
+.docs-install-note {
+  border-left: 2px solid var(--ccui-color-accent-gold);
+  padding: var(--ccui-space-3) var(--ccui-space-4);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-secondary);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.docs-framework-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ccui-space-3);
+}
+
+.docs-framework-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ccui-space-3);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  padding: var(--ccui-space-3) var(--ccui-space-4);
+  background: var(--ccui-color-surface-raised);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.docs-install-toc {
+  position: sticky;
+  top: var(--ccui-space-8);
+  padding-top: var(--ccui-space-1);
+}
+
+.docs-install-toc__title {
+  margin-bottom: var(--ccui-space-3);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.docs-install-toc nav {
+  display: grid;
+  gap: var(--ccui-space-3);
+}
+
+.docs-install-toc a {
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-tight);
+  text-decoration: none;
+}
+
+.docs-install-toc a:hover {
+  color: var(--ccui-color-link-primary);
+  text-decoration: none;
+}
+
+.docs-install-footer-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ccui-space-6);
+  padding-block: var(--ccui-space-8);
+  font-family: var(--ccui-font-interface);
+}
+
+@media (max-width: 1180px) {
+  .docs-install-shell {
+    grid-template-columns: minmax(0, 1fr);
+    justify-content: stretch;
+  }
+
+  .docs-install-toc {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .docs-install-options,
+  .docs-framework-list {
+    grid-template-columns: 1fr;
+  }
+}

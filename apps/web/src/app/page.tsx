@@ -43,7 +43,7 @@ export default function Home() {
             <nav className="home-nav-links" aria-label="Primary navigation">
               <Link href="/docs">Docs</Link>
               <Link href="/components-gallery">Components</Link>
-              <Link href="/templates">Templates</Link>
+              <span className="home-nav-disabled" aria-disabled="true">Templates</span>
             </nav>
 
             <DocSearch label="Search documentation..." items={docsSearchItems} />
