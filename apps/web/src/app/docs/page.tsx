@@ -25,7 +25,7 @@ const setupOptions = [
     badge: "Coming soon",
   },
   {
-    title: "Existing project",
+    title: "Existing Projects",
     description: "Add CCUI to an app you already created.",
     badge: null,
   },
@@ -99,7 +99,7 @@ export default function DocsPage() {
                 </Stack>
               </Section>
 
-              <Section id="use-packages" surface="page" spacing="lg">
+              <Section id="quick-start" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
@@ -178,11 +178,11 @@ pnpm dlx ccui@latest add institutional-header`}</code></pre>
                 </Stack>
               </Section>
 
-              <Section id="existing-project" surface="page" spacing="lg">
+              <Section id="existing-projects" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
-                      Existing Project
+                      Existing Projects
                     </Heading>
                     <Text tone="secondary">
                       Add the packages, import the styles once, then replace one interface surface
@@ -198,11 +198,11 @@ pnpm dlx ccui@latest add institutional-header`}</code></pre>
                 </Stack>
               </Section>
 
-              <Section id="choose-your-framework" surface="page" spacing="lg">
+              <Section id="frameworks" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
-                      Choose Your Framework
+                      Frameworks
                     </Heading>
                     <Text tone="secondary">
                       Framework-specific guides are coming soon.
@@ -227,20 +227,6 @@ pnpm dlx ccui@latest add institutional-header`}</code></pre>
                 </Button>
               </div>
             </article>
-
-            <aside className="docs-install-toc" aria-label="On this page">
-              <Text as="p" size="xs" tone="muted" className="docs-install-toc__title">
-                On This Page
-              </Text>
-              <nav>
-                <a href="#use-packages">Use packages</a>
-                <a href="#import-styles">Import styles</a>
-                <a href="#use-components">Use components</a>
-                <a href="#use-the-cli">Use the CLI</a>
-                <a href="#existing-project">Existing Project</a>
-                <a href="#choose-your-framework">Choose Your Framework</a>
-              </nav>
-            </aside>
           </div>
         </Container>
       </div>

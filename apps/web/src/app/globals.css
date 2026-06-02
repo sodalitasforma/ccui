@@ -1553,3 +1553,58 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.docs-nav--sections .docs-nav-page-title {
+  color: var(--ccui-color-link-primary);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.docs-nav--sections .docs-nav-page-title + a {
+  margin-top: var(--ccui-space-2);
+}
+
+.docs-nav--sections .docs-nav-page-title ~ a {
+  padding-left: var(--ccui-space-3);
+}
+
+/* Installation docs: remove right rail and widen content. */
+.docs-install-shell {
+  display: block;
+  max-width: 56rem;
+  margin-inline: auto;
+}
+
+.docs-install-article {
+  max-width: 56rem;
+  width: 100%;
+}
+
+.docs-install-toc {
+  display: none;
+}
+
+/* Docs sidebar: Installation is the active page, anchors are children. */
+.docs-nav--sections .docs-nav-page-title {
+  margin-left: 0;
+  padding-left: 0;
+  color: var(--ccui-color-link-primary);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.docs-nav--sections .docs-nav-page-title ~ a {
+  margin-left: 0;
+  padding-left: var(--ccui-space-4);
+}
+
+.docs-nav--sections .docs-nav-page-title[aria-current="location"] {
+  background: transparent;
+}
+
+.docs-sidebar .docs-nav--sections > .docs-nav-page-title {
+  padding-inline-start: 0;
+  margin-inline-start: 0;
+}
+
+.docs-sidebar .docs-nav--sections > .docs-nav-page-title ~ a {
+  padding-inline-start: var(--ccui-space-4);
+}

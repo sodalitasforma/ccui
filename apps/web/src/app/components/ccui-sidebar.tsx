@@ -43,15 +43,14 @@ const pageSections: Record<
   }
 > = {
   docs: {
-    label: "Documentation",
+    label: "",
     items: [
-      { type: "link", label: "Overview", href: "/docs#overview" },
-      { type: "link", label: "Getting started", href: "/docs#getting-started" },
-      { type: "link", label: "Foundations", href: "/docs#foundations" },
-      { type: "link", label: "Component usage", href: "/docs#component-usage" },
-      { type: "link", label: "Catholic principles", href: "/docs#catholic-design-principles" },
-      { type: "link", label: "Accessibility", href: "/docs#accessibility" },
-      { type: "link", label: "Contributing", href: "/docs#contributing" },
+      { type: "link", label: "Installation", href: "/docs#overview" },
+      { type: "link", label: "Introduction", href: "/docs#overview" },
+      { type: "link", label: "Quick Start", href: "/docs#quick-start" },
+      { type: "link", label: "Use the CLI", href: "/docs#use-the-cli" },
+      { type: "link", label: "Existing Projects", href: "/docs#existing-projects" },
+      { type: "link", label: "Frameworks", href: "/docs#frameworks" },
     ],
   },
   components: {
@@ -166,10 +165,12 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
           <Stack gap="xs">
             <nav className="docs-nav docs-nav--start" aria-label="Primary navigation">
               <a href="/">Home</a>
-              <span className="docs-nav-disabled docs-nav-disabled--with-badge">
-                <span>Docs</span>
-                <Badge variant="neutral" size="xs">Coming soon</Badge>
-              </span>
+              <a
+                aria-current={current === "docs" ? "page" : undefined}
+                href="/docs"
+              >
+                Docs
+              </a>
               <a
                 aria-current={current === "components" ? "page" : undefined}
                 href="/components-gallery"
@@ -225,11 +226,14 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                     const id = hrefToHash(item.href);
                     const isActive = id && id === activeSectionId;
 
+                    const isDocsPageTitle = current === "docs" && item.label === "Installation";
+
                     return (
                       <a
                         key={`${item.href}-${item.label}`}
                         href={item.href}
                         aria-current={isActive ? "location" : undefined}
+                        className={isDocsPageTitle ? "docs-nav-page-title" : undefined}
                       >
                         {item.label}
                       </a>
