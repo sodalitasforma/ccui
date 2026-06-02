@@ -32,17 +32,20 @@ export default function Home() {
                 className="home-logo__image"
                 aria-hidden="true"
               />
-              <span className="home-logo__wordmark">Catholic Commons UI</span>
+              <span className="home-logo__copy">
+                <span className="home-logo__wordmark">Catholic Commons UI</span>
+                <span className="home-logo__version">v0.0.1</span>
+              </span>
             </Link>
+          </Cluster>
 
+          <Cluster gap="md" align="center" className="home-nav-actions">
             <nav className="home-nav-links" aria-label="Primary navigation">
               <Link href="/docs">Docs</Link>
               <Link href="/components-gallery">Components</Link>
               <Link href="/templates">Templates</Link>
             </nav>
-          </Cluster>
 
-          <Cluster gap="md" align="center" className="home-nav-actions">
             <DocSearch label="Search documentation..." items={docsSearchItems} />
 
             <span className="home-nav-divider" aria-hidden="true" />
@@ -120,14 +123,6 @@ export default function Home() {
       <InstitutionalFooter
         title="Catholic Commons UI"
         description="An open-source Catholic design system for parishes, Catholic institutions, magisterial documents, liturgical interfaces, and Catholic Digital Commons Foundation infrastructure."
-        links={[
-          { label: "Primitives", href: "/components-gallery#primitive-layout" },
-          { label: "Components", href: "/components-gallery" },
-          { label: "Catholic", href: "/components-gallery#parish-websites" },
-          { label: "CDCF Manifesto", href: "https://catholicdigitalcommons.org/about/manifesto" },
-          { label: "GitHub", href: "https://github.com" },
-          { label: "Contact", href: "mailto:contact@example.com" },
-        ]}
       />
     </main>
   );

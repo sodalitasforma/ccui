@@ -149,25 +149,21 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
   return (
     <aside className="docs-sidebar">
       <Stack gap="lg">
-        <Cluster justify="between" align="start" gap="sm" className="docs-sidebar-brand-row">
-          <Stack gap="xs">
-            <Link href="/" className="docs-sidebar-brand">
-              Catholic Commons UI
-            </Link>
-            <Text as="p" size="xs" tone="muted">
-              Catholic Commons UI
-            </Text>
-          </Stack>
-
-          <Tag variant="brown">v0.0.1</Tag>
-        </Cluster>
+        <Link href="/" className="docs-sidebar-brand-lockup" aria-label="Catholic Commons UI home">
+          <img
+            src="/ccui-logo.png"
+            alt=""
+            className="docs-sidebar-brand-lockup__image"
+            aria-hidden="true"
+          />
+          <span className="docs-sidebar-brand-lockup__copy">
+            <span className="docs-sidebar-brand-lockup__wordmark">Catholic Commons UI</span>
+            <span className="docs-sidebar-brand-lockup__version">v0.0.1</span>
+          </span>
+        </Link>
 
         <Stack gap="md">
           <Stack gap="xs">
-            <Text as="p" size="xs" tone="muted" className="docs-sidebar-label">
-              Start
-            </Text>
-
             <nav className="docs-nav docs-nav--start" aria-label="Primary navigation">
               <a href="/">Home</a>
               <span className="docs-nav-disabled docs-nav-disabled--with-badge">
