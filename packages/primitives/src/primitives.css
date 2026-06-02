@@ -560,26 +560,35 @@
 }
 
 .ccui-button--variant-secondary {
-  background: var(--ccui-color-surface-raised);
-  border-color: var(--ccui-color-border-strong);
-  color: var(--ccui-color-link-primary);
+  border-color: var(--ccui-color-border-gold);
+  background:
+    linear-gradient(180deg, var(--ccui-app-gold-wash), transparent),
+    var(--ccui-color-surface-raised);
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-hairline);
 }
 
 .ccui-button--variant-secondary:hover {
-  background: var(--ccui-color-surface-subtle);
-  border-color: var(--ccui-color-border-dark);
+  border-color: var(--ccui-color-accent-gold);
+  background:
+    linear-gradient(180deg, var(--ccui-app-gold-wash-strong), transparent),
+    var(--ccui-color-surface-raised);
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-brown-sm);
 }
 
 .ccui-button--variant-subtle {
-  background: var(--ccui-color-surface-subtle);
   border-color: var(--ccui-color-border-subtle);
-  color: var(--ccui-color-link-primary);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-secondary);
+  box-shadow: none;
 }
 
 .ccui-button--variant-subtle:hover {
-  background: var(--ccui-color-surface-raised);
   border-color: var(--ccui-color-border-strong);
-  color: var(--ccui-color-link-hover);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+  box-shadow: var(--ccui-shadow-hairline);
 }
 
 .ccui-button--variant-gold {
@@ -594,14 +603,17 @@
 }
 
 .ccui-button--variant-ghost {
-  background: transparent;
   border-color: transparent;
-  color: var(--ccui-color-link-primary);
+  background: transparent;
+  color: var(--ccui-color-text-secondary);
+  box-shadow: none;
 }
 
 .ccui-button--variant-ghost:hover {
-  background: color-mix(in srgb, var(--ccui-color-text-primary) 10%, transparent);
-  color: var(--ccui-color-link-hover);
+  border-color: transparent;
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  box-shadow: none;
 }
 
 .ccui-button--variant-danger {
@@ -1270,104 +1282,6 @@
   font-size: var(--ccui-font-size-md);
 }
 
-.ccui-button--primary {
-  border-color: var(--ccui-color-brown-900);
-  background: var(--ccui-color-brown-900);
-  color: var(--ccui-color-surface-raised);
-  box-shadow: var(--ccui-shadow-brown-sm);
-}
-
-.ccui-button--primary:hover {
-  border-color: var(--ccui-color-brown-800);
-  background: var(--ccui-color-brown-800);
-  color: var(--ccui-color-surface-raised);
-  box-shadow: var(--ccui-shadow-brown-md);
-}
-
-.ccui-button--secondary {
-  border-color: var(--ccui-color-border-gold);
-  background:
-    linear-gradient(180deg, var(--ccui-app-gold-wash), transparent),
-    var(--ccui-color-surface-raised);
-  color: var(--ccui-color-brown-900);
-  box-shadow: var(--ccui-shadow-hairline);
-}
-
-.ccui-button--secondary:hover {
-  border-color: var(--ccui-color-accent-gold);
-  background:
-    linear-gradient(180deg, var(--ccui-app-gold-wash-strong), transparent),
-    var(--ccui-color-surface-raised);
-  color: var(--ccui-color-brown-900);
-  box-shadow: var(--ccui-shadow-brown-sm);
-}
-
-.ccui-button--ghost {
-  border-color: transparent;
-  background: transparent;
-  color: var(--ccui-color-text-secondary);
-}
-
-.ccui-button--ghost:hover {
-  background: var(--ccui-color-surface-subtle);
-  color: var(--ccui-color-text-primary);
-}
-
-.ccui-button--gold {
-  border-color: var(--ccui-color-accent-gold);
-  background: var(--ccui-color-accent-gold);
-  color: var(--ccui-color-brown-900);
-  box-shadow: var(--ccui-shadow-hairline);
-}
-
-.ccui-button--gold:hover {
-  border-color: var(--ccui-color-accent-gold-text);
-  background: var(--ccui-color-accent-gold);
-  color: var(--ccui-color-brown-900);
-  box-shadow: var(--ccui-shadow-brown-sm);
-}
-
-.ccui-button--danger {
-  border-color: var(--ccui-color-danger);
-  background: var(--ccui-color-danger);
-  color: var(--ccui-color-surface-raised);
-}
-
-.ccui-button--danger:hover {
-  border-color: var(--ccui-color-danger);
-  background: var(--ccui-color-danger);
-  color: var(--ccui-color-surface-raised);
-  box-shadow: var(--ccui-shadow-brown-sm);
-}
-
-.ccui-button--size-xs {
-  min-height: 1.75rem;
-  padding: 0 var(--ccui-space-2);
-  font-size: var(--ccui-font-size-xs);
-}
-
-/* Quiet eyebrow-style button variant */
-.ccui-button--size-xs {
-  min-height: 1.875rem;
-  padding: 0 var(--ccui-space-3);
-  border-radius: var(--ccui-radius-pill);
-  font-size: var(--ccui-font-size-xs);
-}
-
-.ccui-button--subtle {
-  border-color: var(--ccui-color-border-subtle);
-  background: var(--ccui-color-surface-subtle);
-  color: var(--ccui-color-text-secondary);
-  box-shadow: none;
-}
-
-.ccui-button--subtle:hover {
-  border-color: var(--ccui-color-border-strong);
-  background: var(--ccui-color-surface-raised);
-  color: var(--ccui-color-text-primary);
-  box-shadow: var(--ccui-shadow-hairline);
-}
-
 .ccui-icon {
   display: inline-block;
   flex: 0 0 auto;
@@ -1851,4 +1765,44 @@
   background: var(--ccui-color-surface-subtle);
   color: var(--ccui-color-brown-800, var(--ccui-color-link-primary));
   border-color: var(--ccui-liturgical-gold);
+}
+
+/* Small subtle buttons: used for quiet gold pill CTAs like CDCF Manifesto. */
+.ccui-button--variant-subtle.ccui-button--size-xs {
+  min-height: 1.875rem;
+  padding-inline: var(--ccui-space-3);
+  border-color: transparent;
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-app-gold-wash);
+  color: var(--ccui-color-brown-900);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  box-shadow: none;
+}
+
+.ccui-button--variant-subtle.ccui-button--size-xs:hover {
+  border-color: transparent;
+  background: var(--ccui-app-gold-wash-strong);
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-hairline);
+}
+
+/* Small subtle buttons: quiet warm pill CTA, used by CDCF Manifesto links. */
+.ccui-button--variant-subtle.ccui-button--size-xs {
+  min-height: 1.875rem;
+  padding-inline: var(--ccui-space-3);
+  border-color: color-mix(in srgb, var(--ccui-color-brown-700) 20%, transparent);
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-900);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  box-shadow: none;
+}
+
+.ccui-button--variant-subtle.ccui-button--size-xs:hover {
+  border-color: color-mix(in srgb, var(--ccui-color-brown-700) 34%, transparent);
+  background: color-mix(in srgb, var(--ccui-color-surface-subtle) 72%, var(--ccui-color-accent-gold));
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-hairline);
 }

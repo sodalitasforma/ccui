@@ -27,7 +27,12 @@ export {
   TBody,
   TR,
   TH,
-  TD
+  TD,
+  THead as TableHead,
+  TBody as TableBody,
+  TR as TableRow,
+  TH as TableHeader,
+  TD as TableCell,
 } from "./table";
 export {
   Timeline,
