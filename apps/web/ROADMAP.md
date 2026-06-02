@@ -1,5 +1,26 @@
 # Roadmap
 
+
+## Current operating method — landing-page-driven system refinement
+
+Forma is now moving from component inventory to composed Catholic interfaces.
+
+The landing page is the proving ground. It must be built from the real cascade:
+
+tokens → primitives → Catholic components → landing page / gallery → CDCF implementations
+
+As the landing page is composed, any missing capability should be pushed down into the reusable system:
+
+- If a visual decision repeats, it should become a token or semantic token.
+- If a layout pattern repeats, it should become a primitive or primitive prop.
+- If a Catholic-specific behavior repeats, it should become a Catholic component prop or new Catholic component.
+- If the homepage needs a one-off workaround, pause and decide whether the need belongs lower in the cascade.
+- App-level CSS should be limited to page composition, not component styling.
+- The component gallery remains the proof surface for the full component inventory.
+- The cascade audit must continue to pass with no hard-coded color regressions.
+
+The immediate objective is to finish the landing page, using only Forma tokens, primitives, and Catholic components, while improving the underlying system whenever the page reveals a reusable need.
+
 ## Phase 0 — Public infrastructure foundation
 
 - ✅ Repository structure
@@ -48,6 +69,7 @@ These are the minimum building blocks needed before Catholic-specific components
 - ✅ Notice
 - ✅ IconFrame
 - ✅ MediaFrame
+- ✅ FormaSignalBell
 
 ## Phase 3 — Institutional components
 
@@ -121,6 +143,9 @@ Phase 4 should also absorb the parish-specific refinements discovered during Pha
 - ✅ MinistryCard
 - ✅ DonationCallout
 - ✅ ParishContactCard
+- ✅ ParishNotificationBell
+- ✅ AutoTitheCard
+- ✅ MassScheduleBlock action slot
 
 ## Phase 5 — Documents, archives, and magisterium
 
@@ -248,3 +273,29 @@ Forma should eventually move from shared example data to source-backed examples:
 - The docs audit should verify that every component example has a source-backed preview and code block.
 - This prevents the documentation from drifting away from the actual components.
 
+## Current checkpoint — landing page as system proof
+
+- ✅ Homepage split from component gallery.
+- ✅ Landing page now composes real Forma primitives and Catholic components.
+- ✅ Parish interface preview added using InstitutionalHeader, FeastDayHero, LiturgicalDayCard, MassScheduleBlock, AutoTitheCard, AnnouncementBanner, EventCard, ContactBlock, and InstitutionalFooter.
+- ✅ New primitive added: FormaSignalBell.
+- ✅ New Catholic components added: ParishNotificationBell and AutoTitheCard.
+- ✅ MassScheduleBlock updated with an action slot after the homepage revealed the need for schedule-level actions.
+- ✅ Typecheck passes.
+- ✅ Production build passes.
+- ✅ Cascade audit passes.
+- ✅ Hard-coded color audit remains clean across primitives.css, catholic.css, and globals.css.
+
+Next landing-page work:
+
+- Improve the landing page story so it clearly explains why shadcn/ui is insufficient for Catholic institutions.
+- Make the hero more specific to CDCF, parishes, the magisterium, Catholic datasets, and source-backed infrastructure.
+- Reduce any remaining app-level styling that should belong to primitives or Catholic components.
+- Add one or two stronger CDCF/project infrastructure compositions beneath the parish composition.
+- Keep updating lower-level components whenever the page reveals a reusable pattern.
+
+## Cathedral Basilica parish parity work
+
+Forma is now using the Cathedral Basilica of St. Francis of Assisi homepage as the first real parish parity target. The objective is to represent the same parish information architecture with Forma tokens, primitives, and Catholic components.
+
+See `apps/web/CATHEDRAL_PARITY_CHECKLIST.md`.

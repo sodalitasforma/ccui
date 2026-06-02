@@ -151,7 +151,7 @@ export type MinistryData = {
   href?: string;
 };
 
-export type DonationCalloutData = {
+export type ProjectDonationCalloutData = {
   title: string;
   description?: string;
   amountLabel?: string;

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Restored chapel interior</title>
+  <desc id="desc">A stylized chapel interior with altar, arches, warm light, and stained glass.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#f7efe0"/>
+      <stop offset="1" stop-color="#e6d3b4"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#b88b55"/>
+      <stop offset="1" stop-color="#5a2e0b"/>
+    </linearGradient>
+    <radialGradient id="light" cx="50%" cy="22%" r="58%">
+      <stop offset="0" stop-color="#fff6c7" stop-opacity=".95"/>
+      <stop offset=".45" stop-color="#f0c36d" stop-opacity=".35"/>
+      <stop offset="1" stop-color="#240f03" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="#240f03"/>
+  <rect x="90" y="70" width="1420" height="660" rx="8" fill="url(#wall)"/>
+  <path d="M90 730h1420v170H90z" fill="url(#floor)"/>
+
+  <path d="M250 730V315c0-112 85-203 190-203s190 91 190 203v415z" fill="#fff8ea" stroke="#c7a36c" stroke-width="8"/>
+  <path d="M970 730V315c0-112 85-203 190-203s190 91 190 203v415z" fill="#fff8ea" stroke="#c7a36c" stroke-width="8"/>
+  <path d="M610 730V230c0-136 85-246 190-246s190 110 190 246v500z" fill="#fff4dc" stroke="#b78742" stroke-width="10"/>
+
+  <path d="M685 350h230v285H685z" fill="#2b1608"/>
+  <path d="M700 365h200v255H700z" fill="#1e4960"/>
+  <path d="M800 365v255M700 492h200" stroke="#d4af6a" stroke-width="8"/>
+  <path d="M700 365h200v255H700z" fill="url(#light)" opacity=".7"/>
+
+  <rect x="520" y="640" width="560" height="70" rx="6" fill="#f9f0dd" stroke="#a87835" stroke-width="6"/>
+  <rect x="585" y="585" width="430" height="60" rx="4" fill="#fff7e8" stroke="#b78742" stroke-width="5"/>
+  <path d="M800 470v105M760 515h80" stroke="#8a5a16" stroke-width="14" stroke-linecap="round"/>
+
+  <path d="M90 730h1420" stroke="#8a5a16" stroke-width="8"/>
+  <path d="M130 805h1340" stroke="#8a5a16" stroke-width="5" opacity=".55"/>
+  <path d="M205 900 700 730M1395 900 900 730" stroke="#2a1306" stroke-width="5" opacity=".35"/>
+
+  <rect width="1600" height="900" fill="url(#light)"/>
+</svg>

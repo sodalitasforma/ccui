@@ -1,0 +1,33 @@
+import type { ComponentPropsWithoutRef } from "react";
+import { cx } from "./utils";
+
+type IconSize = "xs" | "sm" | "md";
+
+export type BellIconProps = {
+  size?: IconSize;
+} & ComponentPropsWithoutRef<"svg">;
+
+const sizeClassBySize: Record<IconSize, string> = {
+  xs: "forma-icon--xs",
+  sm: "forma-icon--sm",
+  md: "forma-icon--md",
+};
+
+export function BellIcon({ size = "sm", className, ...props }: BellIconProps) {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={cx("forma-icon", sizeClassBySize[size], className)}
+      {...props}
+    >
+      <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9" />
+      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
+    </svg>
+  );
+}

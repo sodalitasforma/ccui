@@ -1,35 +1,3 @@
-.forma-institutional-header {
-  border-bottom: 1px solid var(--forma-color-border-subtle);
-  background: var(--forma-color-surface-raised);
-  padding-block: var(--forma-space-4);
-}
-
-.forma-institutional-header__brand {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--forma-space-3);
-  color: var(--forma-color-text-primary);
-  text-decoration: none;
-}
-
-.forma-institutional-header__brand > span:last-child {
-  display: flex;
-  flex-direction: column;
-  gap: var(--forma-space-1);
-}
-
-.forma-institutional-header__mark {
-  display: inline-flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid var(--forma-color-accent-gold);
-  border-radius: var(--forma-radius-sm);
-  background: color-mix(in srgb, var(--forma-color-accent-gold) 18%, transparent);
-  color: var(--forma-color-accent-gold-text);
-}
-
 .forma-primary-nav {
   display: flex;
   flex-wrap: wrap;
@@ -193,10 +161,6 @@
 }
 
 @media (max-width: 64rem) {
-  .forma-institutional-header .forma-cluster {
-    align-items: flex-start;
-  }
-
   .forma-search-tool {
     width: 100%;
   }
@@ -343,7 +307,7 @@
 }
 
 .forma-location-block__map-link:hover {
-  background: var(--forma-color-surface-subtle);
+  background: var(--forma-color-surface-page);
   border-color: var(--forma-color-border-dark);
 }
 
@@ -645,22 +609,9 @@
 }
 
 .forma-prayer-card,
-.forma-donation-callout {
-  background:
-    linear-gradient(180deg, color-mix(in srgb, var(--forma-color-surface-raised) 55%, transparent), transparent 12rem),
-    var(--forma-color-surface-raised);
-}
-
 .forma-prayer-card__text {
   font-family: var(--forma-font-document);
   line-height: var(--forma-line-height-relaxed);
-}
-
-.forma-donation-callout__amount {
-  color: var(--forma-color-accent-gold-text);
-  font-family: var(--forma-font-interface);
-  font-size: var(--forma-font-size-xl);
-  font-weight: var(--forma-font-weight-bold);
 }
 
 .forma-parish-contact-card {
@@ -1025,4 +976,910 @@
 .forma-semantic-relation-graph__heading {
   font-family: var(--forma-font-interface);
   font-weight: var(--forma-font-weight-bold);
+}
+
+/* New parish homepage components */
+
+.forma-parish-hero {
+  overflow: hidden;
+}
+
+.forma-parish-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+  gap: var(--forma-space-6);
+  align-items: center;
+}
+
+.forma-parish-hero--no-media .forma-parish-hero__grid {
+  grid-template-columns: 1fr;
+}
+
+.forma-parish-hero__content {
+  display: grid;
+  gap: var(--forma-space-4);
+}
+
+.forma-parish-hero__description {
+  max-width: 62rem;
+}
+
+.forma-parish-hero__address {
+  color: var(--forma-color-text-muted);
+  font-size: var(--forma-font-size-sm);
+}
+
+.forma-parish-hero__media {
+  overflow: hidden;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-lg);
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-parish-hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.forma-auto-tithe-card {
+  height: 100%;
+}
+
+.forma-auto-tithe-card__surface {
+  height: 100%;
+}
+
+.forma-auto-tithe-card__eyebrow,
+.forma-auto-tithe-card__label {
+  color: var(--forma-color-text-secondary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+}
+
+.forma-auto-tithe-card__choice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--forma-space-1) var(--forma-space-2);
+  border: 1px solid transparent;
+  border-radius: var(--forma-radius-full, 999px);
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+}
+
+.forma-auto-tithe-card__choice--selected {
+  border-color: var(--forma-color-border-strong);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-link-primary);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-auto-tithe-card__action {
+  color: var(--forma-color-text-muted);
+  font-size: var(--forma-font-size-sm);
+}
+
+.forma-safeguarding-notice {
+  display: grid;
+  gap: var(--forma-space-3);
+  padding: var(--forma-space-4);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-lg);
+  background: var(--forma-color-surface-raised);
+}
+
+.forma-safeguarding-notice__eyebrow {
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.forma-safeguarding-notice__primary {
+  color: var(--forma-color-text-primary);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-safeguarding-notice__secondary {
+  color: var(--forma-color-text-secondary);
+}
+
+.forma-worship-aid-card {
+  height: 100%;
+}
+
+.forma-worship-aid-card__eyebrow {
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.forma-worship-aid-card__title-link {
+  color: var(--forma-color-link-primary);
+  text-decoration: none;
+}
+
+.forma-worship-aid-card__title-link:hover {
+  text-decoration: underline;
+}
+
+.forma-schedule-block__action {
+  margin-top: var(--forma-space-2);
+}
+
+.forma-schedule-block__source-meta {
+  padding-top: var(--forma-space-3);
+  border-top: 1px solid var(--forma-color-border-subtle);
+}
+
+.forma-project-card,
+.forma-api-endpoint-card,
+.forma-contact-block {
+  height: 100%;
+}
+
+.forma-api-endpoint-card__path {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--forma-space-1) var(--forma-space-2);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-md);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-mono);
+  font-size: var(--forma-font-size-sm);
+}
+
+.forma-church-document-card__title {
+  color: var(--forma-color-link-primary);
+}
+
+.forma-church-document-card__metadata,
+.forma-church-document-card__language-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--forma-space-2);
+}
+
+.forma-church-document-card__language-link,
+.forma-church-document-card__action {
+  color: var(--forma-color-link-primary);
+}
+
+/* Upgraded Catholic media cards */
+
+.forma-media-card,
+.forma-video-card,
+.forma-photo-gallery-card {
+  display: block;
+  color: var(--forma-color-text-primary);
+  text-decoration: none;
+}
+
+.forma-media-card__surface,
+.forma-video-card__surface {
+  overflow: hidden;
+}
+
+.forma-media-card:hover .forma-media-card__title,
+.forma-video-card:hover .forma-video-card__title,
+.forma-photo-gallery-card:hover .forma-photo-gallery-card__title {
+  color: var(--forma-color-link-primary);
+}
+
+.forma-media-card__frame,
+.forma-video-card__frame {
+  overflow: hidden;
+  background: var(--forma-color-brown-950);
+}
+
+.forma-media-card__frame img,
+.forma-video-card__frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.forma-media-card__frame img {
+  object-fit: var(--forma-media-card-fit, cover);
+  object-position: var(--forma-media-card-position, center);
+}
+
+.forma-media-card__body,
+.forma-video-card__body,
+.forma-photo-gallery-card__body {
+  padding: var(--forma-space-5);
+}
+
+.forma-media-card__title,
+.forma-video-card__title,
+.forma-photo-gallery-card__title {
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-display);
+}
+
+/* PhotoGalleryCard carousel/card treatment */
+
+.forma-photo-gallery-card {
+  overflow: hidden;
+}
+
+.forma-photo-gallery-card__stage {
+  position: relative;
+  overflow: hidden;
+  background: var(--forma-color-brown-950);
+}
+
+.forma-photo-gallery-card__stage img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: var(--forma-photo-gallery-fit, cover);
+  object-position: var(--forma-photo-gallery-position, center);
+}
+
+.forma-photo-gallery-card__alt-label {
+  position: absolute;
+  top: var(--forma-space-3);
+  left: var(--forma-space-3);
+  z-index: 2;
+  max-width: calc(100% - var(--forma-space-6));
+  padding: var(--forma-space-1) var(--forma-space-2);
+  border-radius: var(--forma-radius-md);
+  background: color-mix(in srgb, var(--forma-color-brown-950) 72%, transparent);
+  color: var(--forma-color-text-inverse);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.forma-photo-gallery-card__controls {
+  position: absolute;
+  left: var(--forma-space-3);
+  bottom: var(--forma-space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--forma-space-2);
+  padding: var(--forma-space-2);
+  border-radius: var(--forma-radius-md);
+  background: var(--forma-color-surface-raised);
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+  box-shadow: var(--forma-shadow-sm);
+}
+
+.forma-photo-gallery-card__controls button,
+.forma-photo-gallery-card__image-button,
+.forma-photo-gallery-card__thumb,
+.forma-photo-gallery-card__lightbox-close,
+.forma-photo-gallery-card__lightbox-previous,
+.forma-photo-gallery-card__lightbox-next {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.forma-photo-gallery-card__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border-radius: var(--forma-radius-full, 999px);
+}
+
+.forma-photo-gallery-card__controls button:hover {
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-photo-gallery-card__thumbs {
+  display: flex;
+  gap: var(--forma-space-2);
+  overflow-x: auto;
+  padding: var(--forma-space-3);
+  border-top: 1px solid var(--forma-color-border-subtle);
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-photo-gallery-card__thumb {
+  flex: 0 0 auto;
+  overflow: hidden;
+  inline-size: 4.5rem;
+  block-size: 3rem;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-md);
+  opacity: 0.72;
+}
+
+.forma-photo-gallery-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.forma-photo-gallery-card__thumb--active {
+  border-color: var(--forma-color-link-primary);
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--forma-color-surface-raised);
+}
+
+.forma-photo-gallery-card__count {
+  position: absolute;
+  right: var(--forma-space-3);
+  bottom: var(--forma-space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0 var(--forma-space-2);
+  border-radius: var(--forma-radius-full, 999px);
+  background: var(--forma-color-brown-950);
+  color: var(--forma-color-text-inverse);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-xs);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-photo-gallery-card__empty {
+  aspect-ratio: 16 / 9;
+  background: var(--forma-color-surface-subtle);
+}
+
+/* PhotoGalleryCard lightbox */
+
+.forma-photo-gallery-card__lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--forma-space-6);
+  background: color-mix(in srgb, var(--forma-color-brown-950) 88%, transparent);
+}
+
+.forma-photo-gallery-card__lightbox-figure {
+  position: relative;
+  max-width: min(72rem, 100%);
+  max-height: 90vh;
+}
+
+.forma-photo-gallery-card__lightbox-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--forma-radius-lg);
+  background: var(--forma-color-brown-950);
+}
+
+.forma-photo-gallery-card__lightbox-close,
+.forma-photo-gallery-card__lightbox-previous,
+.forma-photo-gallery-card__lightbox-next {
+  position: absolute;
+  z-index: 101;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: var(--forma-radius-full, 999px);
+  background: var(--forma-color-surface-raised);
+  color: var(--forma-color-text-primary);
+  box-shadow: var(--forma-shadow-sm);
+}
+
+.forma-photo-gallery-card__lightbox-close {
+  top: var(--forma-space-4);
+  right: var(--forma-space-4);
+}
+
+.forma-photo-gallery-card__lightbox-previous {
+  left: var(--forma-space-4);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.forma-photo-gallery-card__lightbox-next {
+  right: var(--forma-space-4);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.forma-institutional-header {
+  width: 100%;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-lg);
+  background: var(--forma-color-surface-raised);
+  box-shadow: none;
+}
+
+.forma-institutional-header__notice {
+  border-bottom: 1px solid var(--forma-color-border-subtle);
+  background: var(--forma-color-surface-subtle);
+  padding-block: var(--forma-space-2);
+}
+
+.forma-institutional-header__inner {
+  padding: var(--forma-space-6);
+}
+
+.forma-institutional-header__masthead {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.95fr) minmax(0, 1.45fr);
+  gap: var(--forma-space-7);
+  align-items: center;
+}
+
+.forma-institutional-header__identity {
+  min-width: 0;
+}
+
+.forma-institutional-header__logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--forma-color-border-gold);
+  border-radius: var(--forma-radius-full);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-display);
+  font-size: var(--forma-font-size-md);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: 1;
+}
+
+.forma-institutional-header__logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.forma-institutional-header__mark {
+  transform: translateY(-0.02em);
+}
+
+.forma-institutional-header__identity-copy {
+  min-width: 0;
+}
+
+.forma-institutional-header__title {
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-display);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-institutional-header__nav-area {
+  display: grid;
+  gap: var(--forma-space-4);
+  justify-items: end;
+  min-width: 0;
+}
+
+.forma-institutional-header__utility-inline {
+  color: var(--forma-color-text-muted);
+}
+
+.forma-institutional-header__utility-link,
+.forma-institutional-header__language-link,
+.forma-institutional-header__primary-link,
+.forma-institutional-header__nav-group summary {
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-interface);
+  text-decoration: none;
+}
+
+.forma-institutional-header__utility-link,
+.forma-institutional-header__language-link {
+  font-size: var(--forma-font-size-sm);
+}
+
+.forma-institutional-header__language-link[aria-current="page"] {
+  color: var(--forma-color-text-primary);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-institutional-header__utility-divider {
+  width: 1px;
+  height: 1rem;
+  background: var(--forma-color-border-subtle);
+}
+
+.forma-institutional-header__primary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--forma-space-1);
+  width: 100%;
+  padding-top: var(--forma-space-3);
+}
+
+.forma-institutional-header__primary-link,
+.forma-institutional-header__nav-group summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: var(--forma-space-1) var(--forma-space-3);
+  border-radius: var(--forma-radius-full);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-institutional-header__primary-link:hover,
+.forma-institutional-header__nav-group summary:hover {
+  background: var(--forma-color-surface-subtle);
+}
+
+.forma-institutional-header__primary-link[aria-current="page"] {
+  background: var(--forma-color-link-primary);
+  color: var(--forma-color-text-inverse);
+}
+
+.forma-institutional-header__contact {
+  margin-left: var(--forma-space-3);
+}
+
+.forma-institutional-header__social {
+  justify-content: flex-end;
+}
+
+.forma-institutional-header__nav-group {
+  position: relative;
+}
+
+.forma-institutional-header__nav-group summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.forma-institutional-header__nav-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.forma-institutional-header__mega {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + var(--forma-space-2));
+  right: 0;
+  width: min(24rem, calc(100vw - var(--forma-space-8)));
+}
+
+.forma-institutional-header__mega-links {
+  display: grid;
+  gap: var(--forma-space-2);
+}
+
+@media (max-width: 860px) {
+  .forma-institutional-header__masthead {
+    grid-template-columns: 1fr;
+    gap: var(--forma-space-5);
+  }
+
+  .forma-institutional-header__nav-area {
+    justify-items: start;
+  }
+
+  .forma-institutional-header__utility-inline,
+  .forma-institutional-header__primary,
+  .forma-institutional-header__social {
+    justify-content: flex-start;
+  }
+
+  .forma-institutional-header__mega {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  }
+
+.forma-project-donation-callout {
+  overflow: hidden;
+}
+
+.forma-project-donation-callout__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: var(--forma-space-7);
+  align-items: stretch;
+  padding: var(--forma-space-6);
+}
+
+.forma-project-donation-callout__copy {
+  min-width: 0;
+  max-width: 40rem;
+  align-self: center;
+}
+
+.forma-project-donation-callout__title {
+  max-width: 34rem;
+  color: var(--forma-color-text-primary);
+}
+
+.forma-project-donation-callout__description {
+  max-width: 42rem;
+}
+
+.forma-project-donation-callout__panel {
+  display: grid;
+  gap: var(--forma-space-4);
+  align-content: center;
+  padding: var(--forma-space-5);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-lg);
+  background: var(--forma-color-surface-raised);
+  box-shadow: none;
+}
+
+.forma-project-donation-callout__amounts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--forma-space-2);
+}
+
+.forma-project-donation-callout__amount-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: var(--forma-space-2) var(--forma-space-3);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-sm);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-project-donation-callout__amount-option--selected {
+  border-color: var(--forma-color-link-primary);
+  background: var(--forma-color-surface-page);
+  color: var(--forma-color-link-primary);
+  box-shadow: none;
+}
+
+.forma-project-donation-callout__amount {
+  color: var(--forma-color-link-primary);
+  font-family: var(--forma-font-display);
+  font-size: var(--forma-font-size-2xl);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-project-donation-callout__impact {
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+}
+
+.forma-project-donation-callout__primary-action {
+  width: 100%;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.forma-project-donation-callout__secondary-actions {
+  justify-content: center;
+  text-align: center;
+  font-size: var(--forma-font-size-sm);
+}
+
+@media (max-width: 860px) {
+  .forma-project-donation-callout__inner {
+    grid-template-columns: 1fr;
+    padding: var(--forma-space-5);
+  }
+
+  .forma-project-donation-callout__panel {
+    max-width: none;
+    border: 1px solid var(--forma-color-border-subtle);
+    padding: var(--forma-space-5);
+  }
+
+  .forma-project-donation-callout__secondary-actions {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+.forma-tithe-icon {
+  display: grid;
+  justify-items: end;
+  gap: var(--forma-space-3);
+}
+
+.forma-tithe-icon--fixed {
+  position: fixed;
+  right: var(--forma-space-5);
+  bottom: var(--forma-space-5);
+  z-index: 50;
+}
+
+.forma-tithe-icon--fixed .forma-tithe-icon__panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--forma-space-3));
+}
+
+.forma-tithe-icon--fixed.forma-tithe-icon--open .forma-tithe-icon__trigger {
+  white-space: nowrap;
+}
+
+
+.forma-tithe-icon--inline {
+  position: relative;
+  justify-items: center;
+  align-content: center;
+  min-block-size: 16rem;
+}
+
+.forma-tithe-icon__trigger {
+  border-radius: var(--forma-radius-pill);
+  box-shadow: var(--forma-shadow-sm);
+}
+
+.forma-tithe-icon__panel {
+  width: min(24rem, calc(100vw - var(--forma-space-10)));
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      color-mix(in srgb, var(--forma-color-surface-subtle) 75%, transparent),
+      transparent 42%
+    ),
+    var(--forma-color-surface-raised);
+  box-shadow: var(--forma-shadow-lg);
+}
+
+.forma-tithe-icon__panel-inner {
+  position: relative;
+  padding: var(--forma-space-6);
+}
+
+.forma-tithe-icon__close {
+  appearance: none;
+  position: absolute;
+  top: var(--forma-space-4);
+  right: var(--forma-space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-pill);
+  background: var(--forma-color-surface-page);
+  color: var(--forma-color-text-secondary);
+  cursor: pointer;
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-md);
+  line-height: 1;
+}
+
+.forma-tithe-icon__close:hover {
+  color: var(--forma-color-text-primary);
+  border-color: var(--forma-color-border-strong);
+}
+
+.forma-tithe-icon__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.45rem;
+  block-size: 1.45rem;
+  border: 1px solid var(--forma-color-border-gold);
+  border-radius: var(--forma-radius-pill);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-link-primary);
+}
+
+.forma-tithe-icon__eyebrow {
+  color: var(--forma-color-accent-gold-text);
+  font-family: var(--forma-font-interface);
+  font-weight: var(--forma-font-weight-bold);
+  letter-spacing: var(--forma-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.forma-tithe-icon__title {
+  max-width: 17rem;
+  color: var(--forma-color-text-primary);
+}
+
+.forma-tithe-icon__description {
+  max-width: 18rem;
+}
+
+.forma-tithe-icon__control-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--forma-space-2);
+}
+
+.forma-tithe-icon__choice,
+.forma-tithe-icon__frequency-choice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.5rem;
+  padding: var(--forma-space-2) var(--forma-space-3);
+  border: 1px solid var(--forma-color-border-subtle);
+  border-radius: var(--forma-radius-md);
+  background: var(--forma-color-surface-page);
+  color: var(--forma-color-text-primary);
+  font-family: var(--forma-font-interface);
+  font-size: var(--forma-font-size-sm);
+  font-weight: var(--forma-font-weight-bold);
+  line-height: var(--forma-line-height-tight);
+}
+
+.forma-tithe-icon__choice--selected,
+.forma-tithe-icon__frequency-choice--selected {
+  border-color: var(--forma-color-link-primary);
+  background: var(--forma-color-surface-subtle);
+  color: var(--forma-color-link-primary);
+}
+
+.forma-tithe-icon__frequency {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--forma-space-2);
+}
+
+.forma-tithe-icon__primary-action {
+  width: 100%;
+  justify-content: center;
+}
+
+.forma-tithe-icon__secondary-action {
+  width: 100%;
+  justify-content: center;
+}
+
+
+
+
+
+
+@keyframes forma-tithe-button-sheen {
+  0%, 72%, 100% {
+    transform: translateX(-42%);
+    opacity: 0;
+  }
+
+  82% {
+    transform: translateX(42%);
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .forma-tithe-icon__trigger::before {
+    animation: none;
+  }
 }

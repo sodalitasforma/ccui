@@ -1,67 +1,111 @@
-import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Divider, Heading, Link, Stack, Text } from "../../primitives/src";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import {
+  Badge,
+  Card,
+  Cluster,
+  Heading,
+  Link,
+  Stack,
+  Tag,
+  Text,
+} from "../../primitives/src";
 import { cx } from "../../primitives/src/utils";
-import { DocumentAuthorityBadge } from "./document-authority-badge";
-import { DocumentTypeBadge } from "./document-type-badge";
-import { DocumentMetadata } from "./document-metadata";
-import type { ChurchDocumentData, ChurchDocumentMetadataItem } from "./types";
 
-type ChurchDocumentCardProps = ChurchDocumentData & ComponentPropsWithoutRef<"article">;
+export type ChurchDocumentPair = {
+  language: string;
+  label: string;
+  href: string;
+  fileType?: string;
+};
+
+export type ChurchDocumentCardProps = {
+  title: string;
+  description?: string;
+  href?: string;
+  type?: string;
+  documentType?: string;
+  authority?: string;
+  authorityLabel?: string;
+  citation?: string;
+  date?: string;
+  language?: string;
+  sourceLabel?: string;
+  sourceHref?: string;
+  fileType?: string;
+  fileSize?: string;
+  updatedAt?: string;
+  pairedDocuments?: readonly ChurchDocumentPair[];
+  languageLinks?: readonly ChurchDocumentPair[];
+  metadata?: readonly {
+    label: string;
+    value: ReactNode;
+  }[];
+  children?: ReactNode;
+  [key: string]: unknown;
+} & ComponentPropsWithoutRef<"article">;
 
 export function ChurchDocumentCard({
   title,
-  subtitle,
-  citation,
+  description,
+  href,
+  type,
   documentType,
   authority,
   authorityLabel,
+  citation,
   date,
   language,
-  description,
-  href,
-  source,
+  sourceLabel,
+  sourceHref,
+  fileType,
+  fileSize,
+  updatedAt,
+  pairedDocuments,
+  languageLinks,
+  metadata,
+  children,
   className,
   ...props
 }: ChurchDocumentCardProps) {
-  const metadata: ChurchDocumentMetadataItem[] = [
-    date ? { label: "Date", value: date } : null,
-    language ? { label: "Language", value: language } : null,
-    source ? { label: "Source", value: source.label, href: source.href } : null,
-  ].filter(Boolean) as ChurchDocumentMetadataItem[];
+  const docType = documentType ?? type;
+  const pairs = pairedDocuments ?? languageLinks ?? [];
+  const hasMetadata =
+    authority ||
+    citation ||
+    date ||
+    sourceLabel ||
+    fileSize ||
+    updatedAt ||
+    metadata?.length;
 
   return (
     <Card
       as="article"
       padding="lg"
-      border="subtle"
+      border="gold"
       className={cx("forma-church-document-card", className)}
       {...props}
     >
       <Stack gap="md">
-        <Cluster justify="between" align="start" gap="sm">
+        <Cluster justify="between" align="start" gap="md">
           <Stack gap="xs">
-            <Cluster gap="xs">
-              <DocumentAuthorityBadge authority={authority} label={authorityLabel} />
-              <DocumentTypeBadge documentType={documentType} />
+            <Cluster gap="sm">
+              {docType ? <Tag variant="gold">{docType}</Tag> : null}
+              {language ? <Tag variant="brown">{language}</Tag> : null}
+              {authority || authorityLabel ? <Badge variant="gold">{authorityLabel ?? authority}</Badge> : null}
             </Cluster>
 
-            <Heading level={3} size="xl">
-              {href ? <Link href={href}>{title}</Link> : title}
+            <Heading level={3} size="lg" className="forma-church-document-card__title">
+              {title}
             </Heading>
 
-            {subtitle ? (
-              <Text as="p" tone="secondary">
-                {subtitle}
-              </Text>
+            {description ? (
+              <Text tone="secondary">{description}</Text>
             ) : null}
           </Stack>
-        </Cluster>
 
-        {description ? (
-          <Text as="p" tone="secondary">
-            {description}
-          </Text>
-        ) : null}
+          {fileType ? <Badge variant="brown">{fileType}</Badge> : null}
+        </Cluster>
 
         {citation ? (
           <Text as="p" size="sm" className="forma-church-document-card__citation">
@@ -69,11 +113,69 @@ export function ChurchDocumentCard({
           </Text>
         ) : null}
 
-        {metadata.length ? (
-          <>
-            <Divider tone="subtle" />
-            <DocumentMetadata items={metadata} />
-          </>
+        {hasMetadata ? (
+          <dl className="forma-church-document-card__metadata">
+            {date ? (
+              <div>
+                <dt>Date</dt>
+                <dd>{date}</dd>
+              </div>
+            ) : null}
+
+            {sourceLabel ? (
+              <div>
+                <dt>Source</dt>
+                <dd>
+                  {sourceHref ? <Link href={sourceHref}>{sourceLabel}</Link> : sourceLabel}
+                </dd>
+              </div>
+            ) : null}
+
+            {fileSize ? (
+              <div>
+                <dt>File size</dt>
+                <dd>{fileSize}</dd>
+              </div>
+            ) : null}
+
+            {updatedAt ? (
+              <div>
+                <dt>Updated</dt>
+                <dd>{updatedAt}</dd>
+              </div>
+            ) : null}
+
+            {metadata?.map((item) => (
+              <div key={item.label}>
+                <dt>{item.label}</dt>
+                <dd>{item.value}</dd>
+              </div>
+            ))}
+          </dl>
+        ) : null}
+
+        {pairs.length ? (
+          <div className="forma-church-document-card__language-pairs">
+            {pairs.map((pair) => (
+              <Link
+                key={`${pair.language}-${pair.href}`}
+                href={pair.href}
+                className="forma-church-document-card__language-link"
+              >
+                <span>{pair.label}</span>
+                <span>{pair.language}</span>
+                {pair.fileType ? <span>{pair.fileType}</span> : null}
+              </Link>
+            ))}
+          </div>
+        ) : null}
+
+        {children}
+
+        {href ? (
+          <Link href={href} className="forma-church-document-card__action">
+            View document
+          </Link>
         ) : null}
       </Stack>
     </Card>

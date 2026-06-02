@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-05-29T23:58:31.447Z",
-  "components": 125,
-  "primitiveComponents": 26,
-  "catholicComponents": 99,
+  "generatedAt": "2026-06-02T17:05:00.783Z",
+  "components": 149,
+  "primitiveComponents": 31,
+  "catholicComponents": 118,
   "cssTokenDefinitions": 9,
-  "cssTokenReferences": 734,
+  "cssTokenReferences": 1222,
   "tokenFiles": 9,
   "tokenGroups": 9,
-  "docsExamples": 95
+  "docsExamples": 96
 }

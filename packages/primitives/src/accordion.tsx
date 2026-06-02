@@ -1,129 +1,68 @@
-"use client";
-
-import {
-  createContext,
-  useContext,
-  useId,
-  useMemo,
-  useState,
-  type ComponentPropsWithoutRef,
-  type ElementType,
-  type ReactNode,
+import type {
+  DetailsHTMLAttributes,
+  HTMLAttributes,
+  ReactNode,
 } from "react";
 import { cx } from "./utils";
 
-type AccordionItemContextValue = {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-  triggerId: string;
-  panelId: string;
+export type AccordionProps = HTMLAttributes<HTMLDivElement>;
+
+export function Accordion({ className, children, ...props }: AccordionProps) {
+  return (
+    <div className={cx("forma-accordion", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export type AccordionItemProps = DetailsHTMLAttributes<HTMLDetailsElement> & {
+  defaultOpen?: boolean;
 };
 
-const AccordionItemContext = createContext<AccordionItemContextValue | null>(null);
-
-function useAccordionItemContext() {
-  return useContext(AccordionItemContext);
-}
-
-type AccordionProps<T extends ElementType = "div"> = {
-  as?: T;
-} & ComponentPropsWithoutRef<T>;
-
-export function Accordion<T extends ElementType = "div">({
-  as,
+export function AccordionItem({
   className,
+  children,
+  defaultOpen,
   ...props
-}: AccordionProps<T>) {
-  const Component = as || "div";
-  return <Component className={cx("forma-accordion", className)} {...props} />;
+}: AccordionItemProps) {
+  return (
+    <details
+      className={cx("forma-accordion-item", className)}
+      open={defaultOpen}
+      {...props}
+    >
+      {children}
+    </details>
+  );
 }
 
-type AccordionItemProps<T extends ElementType = "div"> = {
-  as?: T;
-  defaultOpen?: boolean;
-  children?: ReactNode;
-} & ComponentPropsWithoutRef<T>;
+export type AccordionTriggerProps = HTMLAttributes<HTMLElement> & {
+  children: ReactNode;
+};
 
-export function AccordionItem<T extends ElementType = "div">({
-  as,
-  defaultOpen = false,
+export function AccordionTrigger({
   className,
   children,
   ...props
-}: AccordionItemProps<T>) {
-  const Component = as || "div";
-  const [open, setOpen] = useState(defaultOpen);
-  const reactId = useId();
-  const triggerId = `forma-accordion-trigger-${reactId}`;
-  const panelId = `forma-accordion-panel-${reactId}`;
-
-  const value = useMemo(
-    () => ({ open, setOpen, triggerId, panelId }),
-    [open, triggerId, panelId]
-  );
-
-  return (
-    <AccordionItemContext.Provider value={value}>
-      <Component className={cx("forma-accordion-item", className)} {...props}>
-        {children}
-      </Component>
-    </AccordionItemContext.Provider>
-  );
-}
-
-type AccordionTriggerProps = {
-  open?: boolean;
-} & ComponentPropsWithoutRef<"button">;
-
-export function AccordionTrigger({
-  open,
-  className,
-  type = "button",
-  onClick,
-  ...props
 }: AccordionTriggerProps) {
-  const context = useAccordionItemContext();
-  const isOpen = context ? context.open : Boolean(open);
-
   return (
-    <button
-      id={context?.triggerId}
-      className={cx("forma-accordion-trigger", isOpen && "is-open", className)}
-      type={type}
-      aria-expanded={isOpen}
-      aria-controls={context?.panelId}
-      onClick={(event) => {
-        context?.setOpen(!isOpen);
-        onClick?.(event);
-      }}
-      {...props}
-    />
+    <summary className={cx("forma-accordion-trigger", className)} {...props}>
+      <span className="forma-accordion-trigger__label">{children}</span>
+      <span className="forma-accordion-icon" aria-hidden="true" />
+    </summary>
   );
 }
 
-type AccordionContentProps<T extends ElementType = "div"> = {
-  as?: T;
-  open?: boolean;
-} & ComponentPropsWithoutRef<T>;
+export type AccordionContentProps = HTMLAttributes<HTMLDivElement>;
 
-export function AccordionContent<T extends ElementType = "div">({
-  as,
-  open,
+export function AccordionContent({
   className,
+  children,
   ...props
-}: AccordionContentProps<T>) {
-  const Component = as || "div";
-  const context = useAccordionItemContext();
-  const isOpen = context ? context.open : Boolean(open);
-
+}: AccordionContentProps) {
   return (
-    <Component
-      id={context?.panelId}
-      className={cx("forma-accordion-content", isOpen && "is-open", className)}
-      role="region"
-      aria-labelledby={context?.triggerId}
-      hidden={!isOpen}
-      {...props}
-    />
+    <div className={cx("forma-accordion-content", className)} {...props}>
+      {children}
+    </div>
   );
 }

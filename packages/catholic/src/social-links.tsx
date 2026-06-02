@@ -1,0 +1,71 @@
+import type { ComponentPropsWithoutRef } from "react";
+import {
+  Card,
+  Cluster,
+  Heading,
+  Link,
+  Stack,
+  Text,
+} from "../../primitives/src";
+import { cx } from "../../primitives/src/utils";
+
+export type SocialLinkItem = {
+  label: string;
+  href: string;
+  platform: string;
+};
+
+export type SocialLinksProps = {
+  title?: string;
+  description?: string;
+  links: readonly SocialLinkItem[];
+} & ComponentPropsWithoutRef<"section">;
+
+export function SocialLinks({
+  title = "Follow us",
+  description,
+  links,
+  className,
+  ...props
+}: SocialLinksProps) {
+  return (
+    <Card
+      as="section"
+      padding="lg"
+      border="gold"
+      className={cx("forma-social-links", className)}
+      {...props}
+    >
+      <Stack gap="md">
+        <Stack gap="xs">
+          <Text as="p" className="forma-social-links__eyebrow">
+            Social
+          </Text>
+          <Heading level={3} size="lg">
+            {title}
+          </Heading>
+          {description ? (
+            <Text tone="secondary">{description}</Text>
+          ) : null}
+        </Stack>
+
+        <Cluster gap="sm">
+          {links.map((item) => (
+            <Link
+              key={`${item.platform}-${item.href}`}
+              href={item.href}
+              className="forma-social-links__item"
+            >
+              <span className="forma-social-links__platform">
+                {item.platform}
+              </span>
+              <span className="forma-social-links__label">
+                {item.label}
+              </span>
+            </Link>
+          ))}
+        </Cluster>
+      </Stack>
+    </Card>
+  );
+}

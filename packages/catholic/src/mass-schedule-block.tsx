@@ -1,20 +1,26 @@
-import type { ComponentPropsWithoutRef } from "react";
-import { Badge, Card, Cluster, Divider, Eyebrow, Heading, Link, Stack, Text } from "../../primitives/src";
+import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { Card, Cluster, Divider, Eyebrow, Heading, Link, Stack, Text } from "../../primitives/src";
 import { cx } from "../../primitives/src/utils";
 import { ExceptionNotice } from "./exception-notice";
 import { MassTimeRow } from "./mass-time-row";
 import type { ScheduleBlockData } from "./types";
 
-type MassScheduleBlockProps = ScheduleBlockData &
-  ComponentPropsWithoutRef<"section">;
+type MassScheduleBlockProps = ScheduleBlockData & {
+  action?: ReactNode;
+  lastUpdated?: string;
+  sourceNote?: string;
+} & ComponentPropsWithoutRef<"section">;
 
 export function MassScheduleBlock({
   title,
   subtitle,
-  badge = "Mass",
+  badge: _badge = "Mass",
   days,
   exceptions,
   source,
+  action,
+  lastUpdated,
+  sourceNote,
   className,
   ...props
 }: MassScheduleBlockProps) {
@@ -40,7 +46,9 @@ export function MassScheduleBlock({
             ) : null}
           </Stack>
 
-          <Badge variant="gold">{badge}</Badge>
+          {action ? (
+            <div className="forma-schedule-block__action">{action}</div>
+          ) : null}
         </Cluster>
 
         {exceptions?.length ? (
@@ -74,12 +82,27 @@ export function MassScheduleBlock({
           ))}
         </Stack>
 
-        {source?.href ? (
+        {source?.href || lastUpdated || sourceNote ? (
           <>
-            <Divider tone="subtle" />
-            <Text as="p" size="sm" tone="muted">
-              Source: <Link href={source.href}>{source.label}</Link>
-            </Text>
+            <Stack gap="xs" className="forma-schedule-block__source-meta">
+              {source?.href ? (
+                <Text as="p" size="sm" tone="muted">
+                  Source: <Link href={source.href}>{source.label}</Link>
+                </Text>
+              ) : null}
+
+              {lastUpdated ? (
+                <Text as="p" size="sm" tone="muted">
+                  Last updated: {lastUpdated}
+                </Text>
+              ) : null}
+
+              {sourceNote ? (
+                <Text as="p" size="sm" tone="muted">
+                  {sourceNote}
+                </Text>
+              ) : null}
+            </Stack>
           </>
         ) : null}
       </Stack>

@@ -1,66 +1,113 @@
-import type { ComponentPropsWithoutRef, ElementType } from "react";
+import {
+  Children,
+  cloneElement,
+  isValidElement,
+  type HTMLAttributes,
+  type ReactElement,
+  type ReactNode,
+} from "react";
 import { cx } from "./utils";
 
-type TimelineProps<T extends ElementType = "ol"> = {
-  as?: T;
-} & ComponentPropsWithoutRef<T>;
+export type TimelineProps = HTMLAttributes<HTMLDivElement> & {
+  currentStep?: number;
+};
 
-type TimelineItemProps<T extends ElementType = "li"> = {
-  as?: T;
-} & ComponentPropsWithoutRef<T>;
-
-type TimelineMarkerProps<T extends ElementType = "span"> = {
-  as?: T;
-  tone?: "neutral" | "gold" | "active" | "success" | "danger";
-} & ComponentPropsWithoutRef<T>;
-
-type TimelineContentProps<T extends ElementType = "div"> = {
-  as?: T;
-} & ComponentPropsWithoutRef<T>;
-
-export function Timeline<T extends ElementType = "ol">({
-  as,
+export function Timeline({
   className,
+  children,
+  currentStep,
   ...props
-}: TimelineProps<T>) {
-  const Component = as || "ol";
+}: TimelineProps) {
+  const resolvedChildren =
+    typeof currentStep === "number"
+      ? Children.map(children, (child) => {
+          if (!isValidElement<TimelineItemProps>(child)) return child;
 
-  return <Component className={cx("forma-timeline", className)} {...props} />;
-}
+          const step = child.props.step;
 
-export function TimelineItem<T extends ElementType = "li">({
-  as,
-  className,
-  ...props
-}: TimelineItemProps<T>) {
-  const Component = as || "li";
+          if (typeof step !== "number" || child.props.status) return child;
 
-  return <Component className={cx("forma-timeline-item", className)} {...props} />;
-}
+          const status =
+            step < currentStep
+              ? "complete"
+              : step === currentStep
+                ? "current"
+                : "upcoming";
 
-export function TimelineMarker<T extends ElementType = "span">({
-  as,
-  tone = "neutral",
-  className,
-  ...props
-}: TimelineMarkerProps<T>) {
-  const Component = as || "span";
+          return cloneElement(child as ReactElement<TimelineItemProps>, {
+            status,
+          });
+        })
+      : children;
 
   return (
-    <Component
-      aria-hidden="true"
-      className={cx("forma-timeline-marker", `forma-timeline-marker--tone-${tone}`, className)}
-      {...props}
-    />
+    <div className={cx("forma-timeline", className)} {...props}>
+      {resolvedChildren}
+    </div>
   );
 }
 
-export function TimelineContent<T extends ElementType = "div">({
-  as,
-  className,
-  ...props
-}: TimelineContentProps<T>) {
-  const Component = as || "div";
+export type TimelineItemStatus = "complete" | "current" | "upcoming";
 
-  return <Component className={cx("forma-timeline-content", className)} {...props} />;
+export type TimelineItemProps = HTMLAttributes<HTMLDivElement> & {
+  children: ReactNode;
+  step?: number;
+  status?: TimelineItemStatus;
+  icon?: ReactNode;
+};
+
+export function TimelineItem({
+  className,
+  children,
+  step,
+  status,
+  icon,
+  ...props
+}: TimelineItemProps) {
+  return (
+    <div
+      className={cx(
+        "forma-timeline-item",
+        status ? `forma-timeline-item--${status}` : undefined,
+        className,
+      )}
+      data-step={step}
+      data-status={status}
+      {...props}
+    >
+      <div className="forma-timeline-marker" aria-hidden="true">
+        {icon ?? (typeof step === "number" ? step : null)}
+      </div>
+
+      <div className="forma-timeline-content">{children}</div>
+    </div>
+  );
+}
+
+export type TimelineMarkerProps = HTMLAttributes<HTMLDivElement>;
+
+export function TimelineMarker({
+  className,
+  children,
+  ...props
+}: TimelineMarkerProps) {
+  return (
+    <div className={cx("forma-timeline-marker", className)} {...props}>
+      {children}
+    </div>
+  );
+}
+
+export type TimelineContentProps = HTMLAttributes<HTMLDivElement>;
+
+export function TimelineContent({
+  className,
+  children,
+  ...props
+}: TimelineContentProps) {
+  return (
+    <div className={cx("forma-timeline-content", className)} {...props}>
+      {children}
+    </div>
+  );
 }

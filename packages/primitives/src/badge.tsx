@@ -1,13 +1,15 @@
-import type { ComponentPropsWithoutRef, ElementType } from "react";
+import type { HTMLAttributes } from "react";
 import { cx } from "./utils";
 
-type BadgeVariant =
+export type BadgeVariant =
   | "neutral"
-  | "brown"
   | "gold"
+  | "brown"
   | "active"
   | "success"
+  | "warning"
   | "danger"
+  | "info"
   | "liturgicalWhite"
   | "liturgicalGreen"
   | "liturgicalViolet"
@@ -16,22 +18,27 @@ type BadgeVariant =
   | "liturgicalBlack"
   | "liturgicalGold";
 
-type BadgeProps<T extends ElementType = "span"> = {
-  as?: T;
+export type BadgeSize = "xs" | "sm";
+
+export type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
   variant?: BadgeVariant;
-} & ComponentPropsWithoutRef<T>;
+  size?: BadgeSize;
+};
 
-export function Badge<T extends ElementType = "span">({
-  as,
-  variant = "neutral",
+export function Badge({
   className,
+  variant = "neutral",
+  size = "sm",
   ...props
-}: BadgeProps<T>) {
-  const Component = as || "span";
-
+}: BadgeProps) {
   return (
-    <Component
-      className={cx("forma-badge", `forma-badge--variant-${variant}`, className)}
+    <span
+      className={cx(
+        "forma-badge",
+        `forma-badge--${variant}`,
+        `forma-badge--${size}`,
+        className,
+      )}
       {...props}
     />
   );

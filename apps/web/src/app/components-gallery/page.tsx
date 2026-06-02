@@ -1,3 +1,5 @@
+import { FormaSidebar } from "../components/forma-sidebar";
+
 import {
   Accordion,
   AccordionContent,
@@ -6,6 +8,7 @@ import {
   Badge,
   Button,
   Card,
+  CheckIcon,
   Cluster,
   Container,
   Divider,
@@ -104,7 +107,8 @@ import {
   ChurchDocumentCard,
   ChurchDocumentHeader,
   ParishContactCard,
-  DonationCallout,
+  ProjectDonationCallout,
+  TitheIcon,
   MinistryCard,
   BulletinCard,
   ParishAnnouncementCard,
@@ -218,7 +222,8 @@ import {
   churchDocumentMetadataExample,
   churchDocumentExample,
   parishContactCardExample,
-  donationCalloutExample,
+  projectDonationCalloutExample,
+  titheIconExample,
   ministryCardExample,
   bulletinCardExample,
   parishAnnouncementCardExample,
@@ -315,7 +320,8 @@ import {
   churchDocumentCardExampleCode,
   churchDocumentHeaderExampleCode,
   parishContactCardExampleCode,
-  donationCalloutExampleCode,
+  projectDonationCalloutExampleCode,
+  titheIconExampleCode,
   ministryCardExampleCode,
   bulletinCardExampleCode,
   parishAnnouncementCardExampleCode,
@@ -391,32 +397,52 @@ function ComponentBlock({
   description,
   children,
   code,
+  variant = "preview",
 }: {
   title: string;
   description: string;
   children: React.ReactNode;
   code: string;
+  variant?: "preview" | "specimen";
 }) {
+  const codeId = `code-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
+
   return (
-    <section className="docs-block">
+    <section className={`docs-block docs-block--${variant}`}>
       <Stack gap="sm">
-        <Cluster justify="between" align="start">
-          <Stack gap="xs">
-            <Heading level={2} size="xl" family="interface">
-              {title}
-            </Heading>
-            <Text tone="muted">{description}</Text>
-          </Stack>
-          <Badge variant="success">Added</Badge>
-        </Cluster>
+        <Stack gap="xs">
+          <Heading level={2} size="xl" family="interface">
+            {title}
+          </Heading>
+          <Text tone="muted">{description}</Text>
+        </Stack>
 
-        <Card padding="lg" border="subtle" className="docs-preview">
-          {children}
-        </Card>
+        {variant === "preview" ? (
+          <Card padding="lg" border="subtle" className="docs-preview">
+            {children}
+          </Card>
+        ) : (
+          <div className="docs-specimen">
+            {children}
+          </div>
+        )}
 
-        <pre className="docs-pre">
-          <code>{code}</code>
-        </pre>
+        <div className="docs-code-disclosure">
+          <input
+            id={codeId}
+            className="docs-code-toggle"
+            type="checkbox"
+          />
+          <label
+            className="docs-code-toggle-label"
+            htmlFor={codeId}
+          >
+            Show code
+          </label>
+          <pre className="docs-pre">
+            <code>{code}</code>
+          </pre>
+        </div>
       </Stack>
     </section>
   );
@@ -443,73 +469,26 @@ function ColorRow({ name, value }: { name: string; value: string }) {
 export default function Home() {
   return (
     <main className="docs-shell">
-      <aside className="docs-sidebar">
-        <Stack gap="lg">
-          <Stack gap="xs">
-            <Text as="p" size="md">
-              Forma
-            </Text>
-            <Text as="p" size="xs" tone="muted">
-              Catholic UI Kit
-            </Text>
-          </Stack>
-
-          <nav className="docs-nav" aria-label="Documentation">
-            <a href="#introduction">Introduction</a>
-            <a href="#colors">Colors</a>
-            <a href="#components">Components</a>
-            <a href="#examples">Examples</a>
-            <a href="#liturgical">Liturgical</a>
-          </nav>
-
-          <Divider />
-
-          <Stack gap="xs">
-            <a className="docs-nav-small" href="#examples">Phase 2 primitives</a>
-            <a className="docs-nav-small" href="#institutional">Phase 3 institutional</a>
-            <a className="docs-nav-small" href="#parish-schedules">Phase 4 parish schedules</a>
-            <a className="docs-nav-small" href="#liturgical-identity">Phase 4 liturgical identity</a>
-            <a className="docs-nav-small" href="#parish-content">Phase 4 parish content</a>
-            <a className="docs-nav-small" href="#church-documents">Phase 5 documents</a>
-            <a className="docs-nav-small" href="#document-archive-mechanics">Phase 5 archive mechanics</a>
-            <a className="docs-nav-small" href="#source-citation-scripture">Phase 5 sources</a>
-            <a className="docs-nav-small" href="#directory-infrastructure">Phase 6 directories</a>
-            <a className="docs-nav-small" href="#specific-directories">Phase 6 specific directories</a>
-            <a className="docs-nav-small" href="#news-calendar">Phase 7 news/calendar</a>
-            <a className="docs-nav-small" href="#media-components">Phase 7 media</a>
-            <a className="docs-nav-small" href="#catholic-infrastructure-projects">Phase 8 infrastructure</a>
-            <a className="docs-nav-small" href="#ontology-schema-components">Phase 8 ontology/schema</a>
-            <a className="docs-nav-small" href="#canon-provenance-authority">Phase 8 canon/provenance</a>
-            <a className="docs-nav-small" href="#entity-graph-components">Phase 8 entity graph</a>
-            <a className="docs-nav-small" href="#liturgical">Liturgical color tokens</a>
-          </Stack>
-        </Stack>
-      </aside>
+      <FormaSidebar current="components" />
 
       <div className="docs-main">
         <Section id="introduction" surface="page" spacing="lg">
           <Container size="lg">
             <Stack gap="lg">
-              <Cluster gap="sm">
-                <Badge variant="gold">v0.0.1</Badge>
-                <Tag variant="brown">Phase 2 complete</Tag>
-                <Tag variant="active">26 primitives</Tag>
-              </Cluster>
-
               <Stack gap="sm">
                 <Heading level={1} size="4xl" family="display">
                   Components
                 </Heading>
                 <Text size="lg" tone="secondary" className="docs-lede">
-                  Beautiful, accessible, token-bound primitives for Catholic
-                  institutions. Built from a Vatican-informed visual grammar,
-                  corrected into a reusable design system.
+                  A component registry for Catholic websites, documents, liturgy,
+                  directories, and digital infrastructure. Built from tokens,
+                  primitives, Catholic components, and reusable page patterns.
                 </Text>
               </Stack>
 
               <Cluster gap="sm">
-                <Button>Get started</Button>
-                <Button variant="secondary">View registry</Button>
+                <Button href="/docs">Read docs</Button>
+                <Button href="/templates" variant="secondary">View templates</Button>
               </Cluster>
             </Stack>
           </Container>
@@ -518,8 +497,7 @@ export default function Home() {
         <Section id="colors" surface="page" spacing="md">
           <Container size="lg">
             <Stack gap="lg">
-              <Stack gap="sm">
-                <Eyebrow>Foundations</Eyebrow>
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
                   Colors
                 </Heading>
@@ -564,196 +542,10 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section id="examples" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Show, don’t tell</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Examples
-                </Heading>
-              </Stack>
-
-              <ComponentBlock
-                title="Button"
-                description="Primary, secondary, gold, ghost, and danger actions."
-                code={buttonExamplesCode}
-              >
-                <Cluster gap="sm">
-                  {buttonExamples.map((button) => (
-                    <Button key={button.label} variant={button.variant}>
-                      {button.label}
-                    </Button>
-                  ))}
-                </Cluster>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="Notice"
-                description="A bordered communication block for official notes, liturgical context, warnings, and system states."
-                code={noticeExamplesCode}
-              >
-                <Stack gap="sm">
-                  {noticeExamples.map((notice) => (
-                    <Notice key={notice.variant} variant={notice.variant}>
-                      {notice.children}
-                    </Notice>
-                  ))}
-                </Stack>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="FilterBar"
-                description="A compact row for search, select, and filter actions."
-                code={filterBarExampleCode}
-              >
-                <FilterBar>
-                  <SearchInput placeholder={filterBarExample.searchPlaceholder} />
-                  <Select aria-label="Office filter">
-                    <option>{filterBarExample.selectLabel}</option>
-                  </Select>
-                  <Button size="sm">{filterBarExample.buttonLabel}</Button>
-                </FilterBar>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="Tabs"
-                description="A switchable panel pattern for news, calendar, media, and directory views."
-                code={tabExamplesCode}
-              >
-                <Tabs>
-                  <TabList>
-                    {tabExamples.map((tab) => (
-                      <Tab key={tab.label}>{tab.label}</Tab>
-                    ))}
-                  </TabList>
-                  {tabExamples.map((tab, index) => (
-                    <TabPanel key={tab.label} index={index}>
-                      <Text tone="secondary">{tab.content}</Text>
-                    </TabPanel>
-                  ))}
-                </Tabs>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="Accordion"
-                description="A disclosure pattern for structured Catholic institutional content."
-                code={accordionExamplesCode}
-              >
-                <Accordion>
-                  {accordionExamples.map((item) => (
-                    <AccordionItem key={item.title} defaultOpen={item.defaultOpen}>
-                      <AccordionTrigger>{item.title}</AccordionTrigger>
-                      <AccordionContent>
-                        <Text tone="secondary">{item.content}</Text>
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="Table"
-                description="A restrained table wrapper for records, schedules, and structured institutional data."
-                code={tableExampleCode}
-              >
-                <TableWrapper>
-                  <Table>
-                    <THead>
-                      <TR>
-                        <TH>Office</TH>
-                        <TH>Status</TH>
-                        <TH>Next step</TH>
-                      </TR>
-                    </THead>
-                    <TBody>
-                      {tableRows.map((row) => (
-                        <TR key={row.office}>
-                          <TD>{row.office}</TD>
-                          <TD>
-                            <Badge variant={row.statusVariant}>{row.status}</Badge>
-                          </TD>
-                          <TD>
-                            <Button size="sm" variant={row.actionVariant}>
-                              {row.action}
-                            </Button>
-                          </TD>
-                        </TR>
-                      ))}
-                    </TBody>
-                  </Table>
-                </TableWrapper>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="Timeline"
-                description="A vertical sequence for process steps, project history, sacramental preparation, or institutional chronology."
-                code={timelineExamplesCode}
-              >
-                <Timeline>
-                  {timelineExamples.map((item) => (
-                    <TimelineItem key={item.title}>
-                      <Stack gap="xs">
-                        <Text size="xs" tone="goldText">
-                          {item.meta}
-                        </Text>
-                        <Heading level={3} size="sm">
-                          {item.title}
-                        </Heading>
-                        <Text tone="secondary">
-                          {item.description}
-                        </Text>
-                      </Stack>
-                    </TimelineItem>
-                  ))}
-                </Timeline>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="MediaFrame"
-                description="A media container that can render database, CMS, Vatican News, YouTube, or public website media URLs."
-                code={mediaFrameExampleCode}
-              >
-                <Stack gap="sm">
-                  <MediaFrame ratio="video" surface="dark">
-                    <iframe
-                      src={mediaFrameExample.src}
-                      title={mediaFrameExample.title}
-                      allowFullScreen
-                    />
-                  </MediaFrame>
-                  <Text size="xs" tone="muted">
-                    {mediaFrameExample.caption}
-                  </Text>
-                </Stack>
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="EmptyState"
-                description="A useful no-results state for directories, searches, calendars, and archives."
-                code={emptyStateExampleCode}
-              >
-                <EmptyState>
-                  <Stack gap="sm">
-                    <Heading level={3} size="md">
-                      {emptyStateExample.title}
-                    </Heading>
-                    <Text tone="secondary">
-                      {emptyStateExample.description}
-                    </Text>
-                    <Button variant="secondary">{emptyStateExample.actionLabel}</Button>
-                  </Stack>
-                </EmptyState>
-              </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
         <Section id="liturgical" surface="page" spacing="md">
           <Container size="lg">
             <Stack gap="lg">
-              <Stack gap="sm">
-                <Eyebrow>Foundations</Eyebrow>
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
                   Liturgical color tokens
                 </Heading>
@@ -790,16 +582,514 @@ export default function Home() {
         </Section>
 
 
-        <Section id="institutional" surface="page" spacing="md">
+
+        <Section id="primitive-layout" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 3</Eyebrow>
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
-                  Institutional components
+                  Layout primitives
                 </Heading>
                 <Text tone="muted">
-                  Components for parishes, dioceses, chancery offices, Catholic schools, ministries, foundations, and public-facing Church institutions.
+                  Layout primitives establish page width, section rhythm, stacked spacing, inline groups, and responsive grids.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Container, Section, Stack, Cluster, Grid"
+                description="The basic page-composition primitives used throughout Forma."
+                code={`<Section surface="page" spacing="md">
+  <Container size="lg">
+    <Stack gap="lg">
+      <Grid columns="3" gap="md">
+        <Card padding="md">First</Card>
+        <Card padding="md">Second</Card>
+        <Card padding="md">Third</Card>
+      </Grid>
+    </Stack>
+  </Container>
+</Section>`}
+              >
+                <Section surface="page" spacing="none">
+                  <Container size="lg">
+                    <Stack gap="lg">
+                      <Grid columns="3" gap="md">
+                        <Card padding="md">First</Card>
+                        <Card padding="md">Second</Card>
+                        <Card padding="md">Third</Card>
+                      </Grid>
+                    </Stack>
+                  </Container>
+                </Section>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-typography" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Typography primitives
+                </Heading>
+                <Text tone="muted">
+                  Choose the right voice for the job: public identity, interface controls,
+                  or readable source-backed text.
+                </Text>
+              </Stack>
+
+              <Divider />
+
+              <div className="docs-type-matrix" aria-label="Typography system summary">
+                <div className="docs-type-matrix__row docs-type-matrix__row--head">
+                  <Text as="p" className="docs-type-matrix__cell">Type role</Text>
+                  <Text as="p" className="docs-type-matrix__cell">Use when</Text>
+                  <Text as="p" className="docs-type-matrix__cell">Primitive</Text>
+                </div>
+
+                <div className="docs-type-matrix__row">
+                  <div className="docs-type-matrix__voice">
+                    <span className="docs-type-matrix__sample docs-type-matrix__sample--display">Aa</span>
+                    <Text as="p" className="docs-type-matrix__name">Display</Text>
+                  </div>
+                  <Text tone="secondary">Public identity, page openings, feast heroes, parish titles.</Text>
+                  <Text tone="muted">Heading family=&quot;display&quot;</Text>
+                </div>
+
+                <div className="docs-type-matrix__row">
+                  <div className="docs-type-matrix__voice">
+                    <span className="docs-type-matrix__sample docs-type-matrix__sample--interface">Aa</span>
+                    <Text as="p" className="docs-type-matrix__name">Interface</Text>
+                  </div>
+                  <Text tone="secondary">Navigation, controls, tables, filters, labels, metadata.</Text>
+                  <Text tone="muted">Heading family=&quot;interface&quot;, Eyebrow, Badge, Button</Text>
+                </div>
+
+                <div className="docs-type-matrix__row">
+                  <div className="docs-type-matrix__voice">
+                    <span className="docs-type-matrix__sample docs-type-matrix__sample--document">Aa</span>
+                    <Text as="p" className="docs-type-matrix__name">Document</Text>
+                  </div>
+                  <Text tone="secondary">Readable records, prayers, citations, notices, source-backed text.</Text>
+                  <Text tone="muted">Text, documents, prayer blocks, citations</Text>
+                </div>
+              </div>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Eyebrow"
+                description="A compact uppercase label for institutional sections, registry categories, and formal metadata."
+                code={`<Eyebrow>Component registry</Eyebrow>`}
+              >
+                <Eyebrow>Component registry</Eyebrow>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Display text"
+                description="Large-scale display heading for page openings, public-facing titles, and institutional identity."
+                code={`<Heading level={1} size="4xl" family="display">
+  A Design System for the Digital Catholic Church
+</Heading>`}
+              >
+                <Heading level={1} size="4xl" family="display">
+                  A Design System for the Digital Catholic Church
+                </Heading>
+              </ComponentBlock>
+
+              <ComponentBlock variant="specimen"
+                title="Interface hierarchy"
+                description="Smaller interface typography for cards, tables, filters, navigation, and registry controls."
+                code={`<Stack gap="md">
+  <Heading level={3} size="lg" family="interface">
+    Search parish records
+  </Heading>
+  <Text size="sm" tone="muted">
+    Filter by parish, sacrament, document type, or publication status.
+  </Text>
+  <Text size="sm" tone="muted">
+    Registry controls use compact interface typography.
+  </Text>
+</Stack>`}
+              >
+                <Stack gap="md">
+                  <Heading level={3} size="lg" family="interface">
+                    Search parish records
+                  </Heading>
+                  <Text size="sm" tone="muted">
+                    Filter by parish, sacrament, document type, or publication status.
+                  </Text>
+                  <Text size="sm" tone="muted">
+                    Registry controls use compact interface typography.
+                  </Text>
+                </Stack>
+              </ComponentBlock>
+
+              <ComponentBlock variant="specimen"
+                title="Text tones"
+                description="Semantic text tones let pages communicate hierarchy without adding page-specific colors."
+                code={`<Stack gap="xs">
+  <Text tone="primary">Primary text for the main readable claim.</Text>
+  <Text tone="secondary">Secondary text for supporting context.</Text>
+  <Text tone="muted">Muted text for metadata and low-emphasis details.</Text>
+  <Text tone="goldText">Gold text for restrained institutional emphasis.</Text>
+</Stack>`}
+              >
+                <Stack gap="xs">
+                  <Text tone="primary">Primary text for the main readable claim.</Text>
+                  <Text tone="secondary">Secondary text for supporting context.</Text>
+                  <Text tone="muted">Muted text for metadata and low-emphasis details.</Text>
+                  <Text tone="goldText">Gold text for restrained institutional emphasis.</Text>
+                </Stack>
+              </ComponentBlock>
+
+              <ComponentBlock variant="specimen"
+                title="Document and citation text"
+                description="Document typography supports official notices, citations, canonical references, and source-backed interfaces."
+                code={`<Stack gap="sm">
+  <Text tone="primary">
+    The faithful have the right to receive public information in a stable, readable, and source-aware form.
+  </Text>
+  <Text size="sm" tone="muted">
+    Source: Canonical reference · Updated June 7
+  </Text>
+</Stack>`}
+              >
+                <Stack gap="sm">
+                  <Text tone="primary">
+                    The faithful have the right to receive public information in a stable, readable, and source-aware form.
+                  </Text>
+                  <Text size="sm" tone="muted">
+                    Source: Canonical reference · Updated June 7
+                  </Text>
+                </Stack>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-surfaces" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Surface primitives
+                </Heading>
+                <Text tone="muted">
+                  Surface primitives hold content, divide regions, and communicate official or system states.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Notice"
+                description="A bordered communication block for official notes, liturgical context, warnings, and system states."
+                code={noticeExamplesCode}
+              >
+                <Stack gap="sm">
+                  {noticeExamples.map((notice) => (
+                    <Notice key={notice.variant} variant={notice.variant}>
+                      {notice.children}
+                    </Notice>
+                  ))}
+                </Stack>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Card, Panel, Divider"
+                description="Raised surfaces, grouped panels, and separators."
+                code={`<Stack gap="md">
+  <Card padding="md" border="subtle">Card surface</Card>
+  <Panel surface="raised" padding="md">Panel surface</Panel>
+  <Divider />
+</Stack>`}
+              >
+                <Stack gap="md">
+                  <Card padding="md" border="subtle">Card surface</Card>
+                  <Panel surface="raised" padding="md">Panel surface</Panel>
+                  <Divider />
+                </Stack>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-actions" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Action and metadata primitives
+                </Heading>
+                <Text tone="muted">
+                  Action primitives cover calls to action, links, badges, and lightweight metadata labels.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Button"
+                description="Primary, secondary, gold, ghost, and danger actions."
+                code={buttonExamplesCode}
+              >
+                <Cluster gap="sm">
+                  {buttonExamples.map((button) => (
+                    <Button key={button.label} variant={button.variant}>
+                      {button.label}
+                    </Button>
+                  ))}
+                </Cluster>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Badge, Tag, Link"
+                description="Compact metadata and institutional links."
+                code={`<Cluster gap="sm">
+  <Link href="#">Read more</Link>
+</Cluster>`}
+              >
+                <Cluster gap="sm">
+                  <Link href="#">Read more</Link>
+                </Cluster>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-forms" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Form primitives
+                </Heading>
+                <Text tone="muted">
+                  Form primitives support search, filters, selects, and compact input/action rows.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                variant="specimen"
+                title="FilterBar"
+                description="A compact row for search, select, and filter actions."
+                code={filterBarExampleCode}
+              >
+                <FilterBar>
+                  <SearchInput placeholder={filterBarExample.searchPlaceholder} />
+                  <Select aria-label="Office filter">
+                    <option>{filterBarExample.selectLabel}</option>
+                  </Select>
+                  <Button size="sm">{filterBarExample.buttonLabel}</Button>
+                </FilterBar>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-data-display" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Data display primitives
+                </Heading>
+                <Text tone="muted">
+                  Data display primitives structure disclosure, tabbed panels, tables, timelines, and empty states.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Tabs"
+                description="A switchable panel pattern for news, calendar, media, and directory views."
+                code={tabExamplesCode}
+              >
+                <Tabs>
+                  <TabList>
+                    {tabExamples.map((tab) => (
+                      <Tab key={tab.label}>{tab.label}</Tab>
+                    ))}
+                  </TabList>
+                  {tabExamples.map((tab, index) => (
+                    <TabPanel key={tab.label} index={index}>
+                      <Text tone="secondary">{tab.content}</Text>
+                    </TabPanel>
+                  ))}
+                </Tabs>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Accordion"
+                description="A disclosure pattern for structured Catholic institutional content."
+                code={accordionExamplesCode}
+              >
+                <Accordion>
+                  {accordionExamples.map((item) => (
+                    <AccordionItem key={item.title} defaultOpen={item.defaultOpen}>
+                      <AccordionTrigger>{item.title}</AccordionTrigger>
+                      <AccordionContent>
+                        <Text tone="secondary">{item.content}</Text>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Table"
+                description="A restrained table wrapper for records, schedules, and structured institutional data."
+                code={tableExampleCode}
+              >
+                <TableWrapper>
+                  <Table>
+                    <THead>
+                      <TR>
+                        <TH>Office</TH>
+                        <TH>Status</TH>
+                        <TH>Next step</TH>
+                      </TR>
+                    </THead>
+                    <TBody>
+                      {tableRows.map((row) => (
+                        <TR key={row.office}>
+                          <TD>{row.office}</TD>
+                          <TD>
+                            <Badge variant={row.statusVariant}>{row.status}</Badge>
+                          </TD>
+                          <TD>
+                            <Button size="sm" variant={row.actionVariant}>
+                              {row.action}
+                            </Button>
+                          </TD>
+                        </TR>
+                      ))}
+                    </TBody>
+                  </Table>
+                </TableWrapper>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="Timeline"
+                description="A vertical sequence for process steps, project history, sacramental preparation, or institutional chronology."
+                code={timelineExamplesCode}
+              >
+                <Timeline currentStep={2}>
+                  {timelineExamples.map((item, index) => {
+                    const step = index + 1;
+
+                    return (
+                      <TimelineItem
+                        key={item.title}
+                        step={step}
+                        icon={step < 2 ? <CheckIcon size="xs" /> : undefined}
+                      >
+                        <Stack gap="xs">
+                          <Text size="xs" tone="goldText">
+                            {item.meta}
+                          </Text>
+                          <Heading level={3} size="sm">
+                            {item.title}
+                          </Heading>
+                          <Text tone="secondary">
+                            {item.description}
+                          </Text>
+                        </Stack>
+                      </TimelineItem>
+                    );
+                  })}
+                </Timeline>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="EmptyState"
+                description="A useful no-results state for directories, searches, calendars, and archives."
+                code={emptyStateExampleCode}
+              >
+                <EmptyState>
+                  <Stack gap="sm">
+                    <Heading level={3} size="md">
+                      {emptyStateExample.title}
+                    </Heading>
+                    <Text tone="secondary">
+                      {emptyStateExample.description}
+                    </Text>
+                    <Button variant="secondary">{emptyStateExample.actionLabel}</Button>
+                  </Stack>
+                </EmptyState>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-media" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Media and icon primitives
+                </Heading>
+                <Text tone="muted">
+                  Media primitives frame video, images, icons, and notification affordances.
+                </Text>
+              </Stack>
+
+              <ComponentBlock
+                variant="specimen"
+                title="MediaFrame"
+                description="A media container that can render database, CMS, Vatican News, YouTube, or public website media URLs."
+                code={mediaFrameExampleCode}
+              >
+                <Stack gap="sm">
+                  <MediaFrame ratio="video" surface="dark">
+                    <iframe
+                      src={mediaFrameExample.src}
+                      title={mediaFrameExample.title}
+                      allowFullScreen
+                    />
+                  </MediaFrame>
+                  <Text size="xs" tone="muted">
+                    {mediaFrameExample.caption}
+                  </Text>
+                </Stack>
+              </ComponentBlock>
+
+              <ComponentBlock
+                variant="specimen"
+                title="IconFrame"
+                description="A restrained framed icon container."
+                code={`<Cluster gap="sm">
+  <IconFrame><span aria-hidden="true">✦</span></IconFrame>
+  <IconFrame><span aria-hidden="true">☩</span></IconFrame>
+</Cluster>`}
+              >
+                <Cluster gap="sm">
+                  <IconFrame><span aria-hidden="true">✦</span></IconFrame>
+                  <IconFrame><span aria-hidden="true">☩</span></IconFrame>
+                </Cluster>
+              </ComponentBlock>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="parish-websites" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
+                <Heading level={2} size="2xl">
+                  Parish websites
+                </Heading>
+                <Text tone="muted">
+                  Components for the public life of a parish: navigation, page headers,
+                  announcements, schedules, ministries, giving, bulletins, news, media,
+                  contact paths, staff, clergy, events, and footer structure.
                 </Text>
               </Stack>
 
@@ -812,9 +1102,7 @@ export default function Home() {
                   title={institutionalHeaderExample.title}
                   subtitle={institutionalHeaderExample.subtitle}
                   primaryItems={[...institutionalHeaderExample.primaryItems]}
-                  utilityItems={[...institutionalHeaderExample.utilityItems]}
-                  languages={[...institutionalHeaderExample.languages]}
-                  searchAction={institutionalHeaderExample.searchAction}
+                  contactAction={institutionalHeaderExample.contactAction}
                 />
               </ComponentBlock>
 
@@ -848,6 +1136,128 @@ export default function Home() {
                   description={announcementBannerExample.description}
                   href={announcementBannerExample.href}
                 />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="MassScheduleBlock"
+                description="A parish Mass schedule with languages, locations, livestreams, exceptions, and source metadata."
+                code={massScheduleExampleCode}
+              >
+                <MassScheduleBlock
+                  title={massScheduleExample.title}
+                  subtitle={massScheduleExample.subtitle}
+                  badge={massScheduleExample.badge}
+                  days={massScheduleExample.days}
+                  exceptions={massScheduleExample.exceptions}
+                  source={massScheduleExample.source}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ConfessionScheduleBlock"
+                description="A confession schedule using the same schedule data shape and MassTimeRow infrastructure."
+                code={confessionScheduleExampleCode}
+              >
+                <ConfessionScheduleBlock
+                  title={confessionScheduleExample.title}
+                  subtitle={confessionScheduleExample.subtitle}
+                  days={confessionScheduleExample.days}
+                  exceptions={confessionScheduleExample.exceptions}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="AdorationScheduleBlock"
+                description="A public Eucharistic adoration schedule."
+                code={adorationScheduleExampleCode}
+              >
+                <AdorationScheduleBlock
+                  title={adorationScheduleExample.title}
+                  subtitle={adorationScheduleExample.subtitle}
+                  days={adorationScheduleExample.days}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="SacramentScheduleBlock"
+                description="A reusable schedule block for sacramental preparation and parish sacrament programs."
+                code={sacramentScheduleExampleCode}
+              >
+                <SacramentScheduleBlock
+                  title={sacramentScheduleExample.title}
+                  subtitle={sacramentScheduleExample.subtitle}
+                  sacrament={sacramentScheduleExample.sacrament}
+                  days={sacramentScheduleExample.days}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="HolyDayScheduleBlock"
+                description="A holy day schedule with vigil, feast-day, livestream, and office-closure exception support."
+                code={holyDayScheduleExampleCode}
+              >
+                <HolyDayScheduleBlock
+                  title={holyDayScheduleExample.title}
+                  subtitle={holyDayScheduleExample.subtitle}
+                  days={holyDayScheduleExample.days}
+                  exceptions={holyDayScheduleExample.exceptions}
+                />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PrayerCard"
+                description="A prayer or devotional text card with source metadata for future canon and prayer datasets."
+                code={prayerCardExampleCode}
+              >
+                <PrayerCard {...prayerCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ParishAnnouncementCard"
+                description="A parish-specific announcement card built on the same notice language as schedule exceptions."
+                code={parishAnnouncementCardExampleCode}
+              >
+                <ParishAnnouncementCard {...parishAnnouncementCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="BulletinCard"
+                description="A parish bulletin wrapper built from the existing DocumentCard pattern."
+                code={bulletinCardExampleCode}
+              >
+                <BulletinCard {...bulletinCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="MinistryCard"
+                description="A ministry card for parish groups, apostolates, and volunteer programs."
+                code={ministryCardExampleCode}
+              >
+                <MinistryCard {...ministryCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ProjectDonationCallout"
+                description="A giving callout for parish campaigns, restoration funds, and recurring support."
+                code={projectDonationCalloutExampleCode}
+              >
+                <ProjectDonationCallout {...projectDonationCalloutExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="TitheIcon"
+                description="A floating give affordance that opens into a recurring tithe call to action."
+                code={titheIconExampleCode}
+              >
+                <TitheIcon {...titheIconExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ParishContactCard"
+                description="A parish contact composition reusing ContactBlock, OfficeHours, and LocationBlock."
+                code={parishContactCardExampleCode}
+              >
+                <ParishContactCard {...parishContactCardExample} />
               </ComponentBlock>
 
               <ComponentBlock
@@ -952,6 +1362,86 @@ export default function Home() {
               </ComponentBlock>
 
               <ComponentBlock
+                title="FeaturedStory"
+                description="A prominent story treatment for diocesan news, parish features, and school announcements."
+                code={featuredStoryExampleCode}
+              >
+                <FeaturedStory {...featuredStoryExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="NewsCard"
+                description="A public news card for parish, diocesan, school, and ministry updates."
+                code={newsCardExampleCode}
+              >
+                <NewsCard {...newsCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="NewsList"
+                description="A stacked list of news cards."
+                code={newsListExampleCode}
+              >
+                <NewsList {...newsListExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CalendarItem"
+                description="A public calendar item for liturgies, events, meetings, and office closures."
+                code={calendarItemExampleCode}
+              >
+                <CalendarItem {...calendarItemExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="CalendarTabs"
+                description="Tabbed public calendar display for upcoming, liturgical, and meeting events."
+                code={calendarTabsExampleCode}
+              >
+                <CalendarTabs {...calendarTabsExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PressReleaseCard"
+                description="A formal press release card for diocesan and institutional communications."
+                code={pressReleaseCardExampleCode}
+              >
+                <PressReleaseCard {...pressReleaseCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PressOfficeNotice"
+                description="A formal press office notice for official communications."
+                code={pressOfficeNoticeExampleCode}
+              >
+                <PressOfficeNotice {...pressOfficeNoticeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="MediaCard"
+                description="A general media card for image-backed media records."
+                code={mediaCardExampleCode}
+              >
+                <MediaCard {...mediaCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="VideoCard"
+                description="A video card for YouTube, Vatican News, CMS, or database-provided iframe URLs."
+                code={videoCardExampleCode}
+              >
+                <VideoCard {...videoCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="PhotoGalleryCard"
+                description="A gallery card for event albums, diocesan newsrooms, parish media, and archives."
+                code={photoGalleryCardExampleCode}
+              >
+                <PhotoGalleryCard {...photoGalleryCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
                 title="InstitutionalFooter"
                 description="Formal footer for Catholic institutional websites."
                 code={institutionalFooterExampleCode}
@@ -966,100 +1456,16 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section id="parish-schedules" surface="page" spacing="md">
+        <Section id="liturgy" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="lg">
-              <Stack gap="xs">
-                <Eyebrow tone="gold">Phase 4</Eyebrow>
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
-                  Parish schedule components
-                </Heading>
-                <Text tone="secondary">
-                  Schedule components are built from existing primitives and shaped for future CDCF data sources such as liturgical calendars, parish datasets, and public Catholic APIs.
-                </Text>
-              </Stack>
-
-              <Grid columns="1" gap="lg">
-            <ComponentBlock
-              title="MassScheduleBlock"
-              description="A parish Mass schedule with languages, locations, livestreams, exceptions, and source metadata."
-              code={massScheduleExampleCode}
-            >
-              <MassScheduleBlock
-                title={massScheduleExample.title}
-                subtitle={massScheduleExample.subtitle}
-                badge={massScheduleExample.badge}
-                days={massScheduleExample.days}
-                exceptions={massScheduleExample.exceptions}
-                source={massScheduleExample.source}
-              />
-            </ComponentBlock>
-
-            <ComponentBlock
-              title="ConfessionScheduleBlock"
-              description="A confession schedule using the same schedule data shape and MassTimeRow infrastructure."
-              code={confessionScheduleExampleCode}
-            >
-              <ConfessionScheduleBlock
-                title={confessionScheduleExample.title}
-                subtitle={confessionScheduleExample.subtitle}
-                days={confessionScheduleExample.days}
-                exceptions={confessionScheduleExample.exceptions}
-              />
-            </ComponentBlock>
-
-            <ComponentBlock
-              title="AdorationScheduleBlock"
-              description="A public Eucharistic adoration schedule."
-              code={adorationScheduleExampleCode}
-            >
-              <AdorationScheduleBlock
-                title={adorationScheduleExample.title}
-                subtitle={adorationScheduleExample.subtitle}
-                days={adorationScheduleExample.days}
-              />
-            </ComponentBlock>
-
-            <ComponentBlock
-              title="SacramentScheduleBlock"
-              description="A reusable schedule block for sacramental preparation and parish sacrament programs."
-              code={sacramentScheduleExampleCode}
-            >
-              <SacramentScheduleBlock
-                title={sacramentScheduleExample.title}
-                subtitle={sacramentScheduleExample.subtitle}
-                sacrament={sacramentScheduleExample.sacrament}
-                days={sacramentScheduleExample.days}
-              />
-            </ComponentBlock>
-
-            <ComponentBlock
-              title="HolyDayScheduleBlock"
-              description="A holy day schedule with vigil, feast-day, livestream, and office-closure exception support."
-              code={holyDayScheduleExampleCode}
-            >
-              <HolyDayScheduleBlock
-                title={holyDayScheduleExample.title}
-                subtitle={holyDayScheduleExample.subtitle}
-                days={holyDayScheduleExample.days}
-                exceptions={holyDayScheduleExample.exceptions}
-              />
-            </ComponentBlock>
-              </Grid>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="liturgical-identity" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 4</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Liturgical identity components
+                  Liturgy
                 </Heading>
                 <Text tone="muted">
-                  Components for displaying liturgical days, seasons, colors, feast days, and reading references from future CDCF data sources.
+                  Components for liturgical days, seasons, colors, feast days, reading references,
+                  and worship-centered Catholic interfaces.
                 </Text>
               </Stack>
 
@@ -1142,80 +1548,16 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section id="parish-content" surface="page" spacing="md">
+        <Section id="documents-authority" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 4</Eyebrow>
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
-                  Parish content and action components
+                  Documents & authority
                 </Heading>
                 <Text tone="muted">
-                  Components for prayer, announcements, bulletins, ministries, giving, and parish contact details.
-                </Text>
-              </Stack>
-
-              <ComponentBlock
-                title="PrayerCard"
-                description="A prayer or devotional text card with source metadata for future canon and prayer datasets."
-                code={prayerCardExampleCode}
-              >
-                <PrayerCard {...prayerCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="ParishAnnouncementCard"
-                description="A parish-specific announcement card built on the same notice language as schedule exceptions."
-                code={parishAnnouncementCardExampleCode}
-              >
-                <ParishAnnouncementCard {...parishAnnouncementCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="BulletinCard"
-                description="A parish bulletin wrapper built from the existing DocumentCard pattern."
-                code={bulletinCardExampleCode}
-              >
-                <BulletinCard {...bulletinCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="MinistryCard"
-                description="A ministry card for parish groups, apostolates, and volunteer programs."
-                code={ministryCardExampleCode}
-              >
-                <MinistryCard {...ministryCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="DonationCallout"
-                description="A giving callout for parish campaigns, restoration funds, and recurring support."
-                code={donationCalloutExampleCode}
-              >
-                <DonationCallout {...donationCalloutExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="ParishContactCard"
-                description="A parish contact composition reusing ContactBlock, OfficeHours, and LocationBlock."
-                code={parishContactCardExampleCode}
-              >
-                <ParishContactCard {...parishContactCardExample} />
-              </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="church-documents" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 5</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Church document identity components
-                </Heading>
-                <Text tone="muted">
-                  Components for Church documents, official notices, Vatican-style archives, citations, and canonical source display.
+                  Components for Church documents, official notices, archives, citations,
+                  canonical sources, source trails, prayer, scripture, and machine-readable trust.
                 </Text>
               </Stack>
 
@@ -1266,22 +1608,6 @@ export default function Home() {
               >
                 <DocumentCitation {...documentCitationExample} />
               </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="document-archive-mechanics" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 5</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Document body and archive mechanics
-                </Heading>
-                <Text tone="muted">
-                  Components for anchored paragraphs, footnotes, related documents, archive results, downloads, and file indicators.
-                </Text>
-              </Stack>
 
               <ComponentBlock
                 title="ParagraphAnchor"
@@ -1336,22 +1662,6 @@ export default function Home() {
               >
                 <FileTypeIcon {...fileTypeIconExample} />
               </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="source-citation-scripture" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 5</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Source, citation, prayer, and scripture components
-                </Heading>
-                <Text tone="muted">
-                  Components for canonical sources, citation trails, official notices, prayers, and Bible passages.
-                </Text>
-              </Stack>
 
               <ComponentBlock
                 title="SourceCard"
@@ -1400,20 +1710,52 @@ export default function Home() {
               >
                 <BiblePassageCard {...biblePassageCardExample} />
               </ComponentBlock>
+
+              <ComponentBlock
+                title="CanonicalSourceCard"
+                description="A canonical source card for official documents, semantic sources, datasets, and machine-readable Catholic references."
+                code={canonicalSourceCardExampleCode}
+              >
+                <CanonicalSourceCard {...canonicalSourceCardExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="AuthorityLevelBadge"
+                description="A badge for official, magisterial, canonical, scholarly, dataset, semantic, local, machine, and unreviewed authority levels."
+                code={authorityLevelBadgeExampleCode}
+              >
+                <AuthorityLevelBadge {...authorityLevelBadgeExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="ProvenanceTrail"
+                description="A visible source trail from official source through canonical normalization to machine-readable export."
+                code={provenanceTrailExampleCode}
+              >
+                <ProvenanceTrail {...provenanceTrailExample} />
+              </ComponentBlock>
+
+              <ComponentBlock
+                title="MachineReadableBadge"
+                description="A badge showing whether a source, dataset, or canonical record is available to software."
+                code={machineReadableBadgeExampleCode}
+              >
+                <MachineReadableBadge {...machineReadableBadgeExample} />
+              </ComponentBlock>
             </Stack>
           </Container>
         </Section>
 
-        <Section id="directory-infrastructure" surface="page" spacing="md">
+        <Section id="directories" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 6</Eyebrow>
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
-                  Directory infrastructure components
+                  Directories
                 </Heading>
                 <Text tone="muted">
-                  Components for Vatican-style Catholic directories, filters, date ranges, names, and institutional record lists.
+                  Components for Catholic directories, filters, date ranges, names,
+                  clergy, parishes, schools, offices, saints, pontiffs, and institutional records.
                 </Text>
               </Stack>
 
@@ -1461,22 +1803,6 @@ export default function Home() {
               >
                 <NameFilter {...nameFilterExample} />
               </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="specific-directories" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 6</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Specific Catholic directory components
-                </Heading>
-                <Text tone="muted">
-                  Thin Catholic-specific wrappers around the shared directory infrastructure.
-                </Text>
-              </Stack>
 
               <ComponentBlock
                 title="PontiffDirectory"
@@ -1542,128 +1868,17 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section id="news-calendar" surface="page" spacing="md">
+        <Section id="catholic-data-infrastructure" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 7</Eyebrow>
+            <Stack gap="xl" className="docs-component-list">
+              <Stack gap="sm" className="docs-section-intro">
                 <Heading level={2} size="2xl">
-                  News and calendar components
+                  Catholic data infrastructure
                 </Heading>
                 <Text tone="muted">
-                  Components for parish notices, diocesan newsrooms, public calendars, and institutional communication.
-                </Text>
-              </Stack>
-
-              <ComponentBlock
-                title="FeaturedStory"
-                description="A prominent story treatment for diocesan news, parish features, and school announcements."
-                code={featuredStoryExampleCode}
-              >
-                <FeaturedStory {...featuredStoryExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="NewsCard"
-                description="A public news card for parish, diocesan, school, and ministry updates."
-                code={newsCardExampleCode}
-              >
-                <NewsCard {...newsCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="NewsList"
-                description="A stacked list of news cards."
-                code={newsListExampleCode}
-              >
-                <NewsList {...newsListExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="CalendarItem"
-                description="A public calendar item for liturgies, events, meetings, and office closures."
-                code={calendarItemExampleCode}
-              >
-                <CalendarItem {...calendarItemExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="CalendarTabs"
-                description="Tabbed public calendar display for upcoming, liturgical, and meeting events."
-                code={calendarTabsExampleCode}
-              >
-                <CalendarTabs {...calendarTabsExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="PressReleaseCard"
-                description="A formal press release card for diocesan and institutional communications."
-                code={pressReleaseCardExampleCode}
-              >
-                <PressReleaseCard {...pressReleaseCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="PressOfficeNotice"
-                description="A formal press office notice for official communications."
-                code={pressOfficeNoticeExampleCode}
-              >
-                <PressOfficeNotice {...pressOfficeNoticeExample} />
-              </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="media-components" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 7</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Media components
-                </Heading>
-                <Text tone="muted">
-                  Components for photo galleries, videos, media archives, Vatican News links, CMS records, and database-provided media URLs.
-                </Text>
-              </Stack>
-
-              <ComponentBlock
-                title="MediaCard"
-                description="A general media card for image-backed media records."
-                code={mediaCardExampleCode}
-              >
-                <MediaCard {...mediaCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="VideoCard"
-                description="A video card for YouTube, Vatican News, CMS, or database-provided iframe URLs."
-                code={videoCardExampleCode}
-              >
-                <VideoCard {...videoCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="PhotoGalleryCard"
-                description="A gallery card for event albums, diocesan newsrooms, parish media, and archives."
-                code={photoGalleryCardExampleCode}
-              >
-                <PhotoGalleryCard {...photoGalleryCardExample} />
-              </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="catholic-infrastructure-projects" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 8</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Catholic infrastructure project components
-                </Heading>
-                <Text tone="muted">
-                  These components are an interface layer for Catholic open-source infrastructure: projects, APIs, datasets, repositories, standards, and machine-readable resources. They complement CDCF-style work without redesigning an existing project website.
+                  Components for Catholic open-source infrastructure: projects, APIs,
+                  datasets, repositories, standards, ontologies, semantic records,
+                  translations, contributors, and entity graphs.
                 </Text>
               </Stack>
 
@@ -1714,22 +1929,6 @@ export default function Home() {
               >
                 <ApiEndpointCard {...apiEndpointCardExample} />
               </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="ontology-schema-components" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 8</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Ontology and schema components
-                </Heading>
-                <Text tone="muted">
-                  Components for making Catholic semantic infrastructure legible: namespaces, ontology classes, properties, definitions, translations, and review status.
-                </Text>
-              </Stack>
 
               <ComponentBlock
                 title="OntologyClassCard"
@@ -1778,70 +1977,6 @@ export default function Home() {
               >
                 <TranslationVariantCard {...translationVariantCardExample} />
               </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="canon-provenance-authority" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 8</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Canon, provenance, authority, and machine-readability
-                </Heading>
-                <Text tone="muted">
-                  Trust components for canonical Catholic sources, authority levels, source trails, and machine-readable infrastructure.
-                </Text>
-              </Stack>
-
-              <ComponentBlock
-                title="CanonicalSourceCard"
-                description="A canonical source card for official documents, semantic sources, datasets, and machine-readable Catholic references."
-                code={canonicalSourceCardExampleCode}
-              >
-                <CanonicalSourceCard {...canonicalSourceCardExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="AuthorityLevelBadge"
-                description="A badge for official, magisterial, canonical, scholarly, dataset, semantic, local, machine, and unreviewed authority levels."
-                code={authorityLevelBadgeExampleCode}
-              >
-                <AuthorityLevelBadge {...authorityLevelBadgeExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="ProvenanceTrail"
-                description="A visible source trail from official source through canonical normalization to machine-readable export."
-                code={provenanceTrailExampleCode}
-              >
-                <ProvenanceTrail {...provenanceTrailExample} />
-              </ComponentBlock>
-
-              <ComponentBlock
-                title="MachineReadableBadge"
-                description="A badge showing whether a source, dataset, or canonical record is available to software."
-                code={machineReadableBadgeExampleCode}
-              >
-                <MachineReadableBadge {...machineReadableBadgeExample} />
-              </ComponentBlock>
-            </Stack>
-          </Container>
-        </Section>
-
-        <Section id="entity-graph-components" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="xl">
-              <Stack gap="sm">
-                <Eyebrow>Phase 8</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Entity graph components
-                </Heading>
-                <Text tone="muted">
-                  Components for showing Catholic knowledge as connected infrastructure: liturgical days, readings, saints, documents, places, authorities, terms, translations, datasets, and ontology classes.
-                </Text>
-              </Stack>
 
               <ComponentBlock
                 title="SemanticRelationGraph"

@@ -1,50 +1,85 @@
-import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Heading, Link, MediaFrame, Stack, Tag, Text } from "../../primitives/src";
+import type { AnchorHTMLAttributes } from "react";
+import { Badge, Card, Cluster, Heading, Stack, Text } from "../../primitives/src";
 import { cx } from "../../primitives/src/utils";
-import type { VideoCardData } from "./types";
 
-type VideoCardProps = VideoCardData & ComponentPropsWithoutRef<"article">;
+export type VideoCardMedia = {
+  src: string;
+  title: string;
+  caption?: string;
+  provider?: string;
+};
+
+export type VideoCardProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "media"> & {
+  title: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  duration?: string;
+  href: string;
+  media: VideoCardMedia;
+};
 
 export function VideoCard({
+  className,
   title,
   description,
   date,
   category = "Video",
+  duration,
   href,
   media,
-  duration,
-  className,
   ...props
 }: VideoCardProps) {
   return (
-    <Card as="article" padding="none" border="subtle" className={cx("forma-video-card", className)} {...props}>
-      <MediaFrame ratio="video" surface="dark">
-        <iframe
-          src={media.src}
-          title={media.title ?? title}
-          allowFullScreen
-        />
-      </MediaFrame>
+    <a href={href} className={cx("forma-video-card", className)} {...props}>
+      <Card padding="none" border="subtle" className="forma-video-card__surface">
+        <div className="forma-video-card__frame">
+          <iframe
+            src={media.src}
+            title={media.title}
+            allowFullScreen
+          />
+        </div>
 
-      <Stack gap="sm" className="forma-video-card__body">
-        <Cluster justify="between" align="start" gap="sm">
-          <Cluster gap="xs">
-            <Tag variant="blue">{category}</Tag>
-            {duration ? <Tag>{duration}</Tag> : null}
+        <Stack gap="sm" className="forma-video-card__body">
+          <Cluster justify="between" align="center" gap="sm">
+            <Cluster gap="xs" align="center">
+              <Badge variant="gold">{category}</Badge>
+              {duration ? <Badge variant="neutral">{duration}</Badge> : null}
+            </Cluster>
+
+            {date ? (
+              <Text as="span" size="xs" tone="muted">
+                {date}
+              </Text>
+            ) : null}
           </Cluster>
-          {date ? <Text as="span" size="xs" tone="muted">{date}</Text> : null}
-        </Cluster>
 
-        <Stack gap="xs">
-          <Heading level={3} size="lg">
-            {href ? <Link href={href}>{title}</Link> : title}
-          </Heading>
-          {description ? <Text as="p" tone="secondary">{description}</Text> : null}
-          {media.caption ? <Text as="p" size="sm" tone="muted">{media.caption}</Text> : null}
+          <Stack gap="xs">
+            <Heading level={3} size="lg" className="forma-video-card__title">
+              {title}
+            </Heading>
+
+            {description ? (
+              <Text as="p" tone="secondary">
+                {description}
+              </Text>
+            ) : null}
+
+            {media.caption ? (
+              <Text as="p" size="sm" tone="muted">
+                {media.caption}
+              </Text>
+            ) : null}
+          </Stack>
+
+          {media.provider ? (
+            <Cluster gap="xs">
+              <Badge variant="neutral">{media.provider}</Badge>
+            </Cluster>
+          ) : null}
         </Stack>
-
-        {media.provider ? <Tag variant="brown">{media.provider}</Tag> : null}
-      </Stack>
-    </Card>
+      </Card>
+    </a>
   );
 }

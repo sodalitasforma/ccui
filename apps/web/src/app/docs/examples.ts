@@ -35,7 +35,7 @@ export const accordionExamples = [
 export const mediaFrameExample = {
   title: "Recent papal video",
   provider: "YouTube",
-  src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+  src: "https://www.youtube.com/embed/HBqOHEnYDxs",
   caption: "MediaFrame accepts a URL-driven embed source. Replace this with a Vatican News, YouTube, CMS, or database media URL.",
 } as const;
 
@@ -73,16 +73,7 @@ export const institutionalHeaderExample = {
     { label: "School", href: "#" },
     { label: "Give", href: "#" },
   ],
-  utilityItems: [
-    { label: "Bulletin", href: "#" },
-    { label: "Contact", href: "#" },
-  ],
-  languages: [
-    { label: "English", href: "#", current: true },
-    { label: "Español", href: "#" },
-    { label: "Latine", href: "#" },
-  ],
-  searchAction: "#",
+  contactAction: { label: "Contact", href: "#" },
 } as const;
 
 export const pageHeaderExample = {
@@ -528,14 +519,16 @@ export const ministryCardExample = {
   href: "#",
 } as const;
 
-export const donationCalloutExample = {
+export const projectDonationCalloutExample = {
   title: "Support the parish restoration fund",
   description: "Help preserve the church, chapel, sacred art, and parish facilities for future generations.",
-  amountLabel: "$50 funds one restoration hour",
-  actionLabel: "Give now",
-  actionHref: "#",
-  secondaryLabel: "Learn about the project",
-  secondaryHref: "#",
+  amounts: ["$25", "$50", "$100"],
+  selectedAmount: "$50",
+  impact: "$50 funds one restoration hour.",
+  primaryAction: { label: "Give now", href: "#" },
+  secondaryActions: [
+    { label: "Learn about the project", href: "#" },
+  ],
 } as const;
 
 export const parishContactCardExample = {
@@ -1069,10 +1062,12 @@ export const mediaCardExample = {
   category: "Photo",
   href: "#",
   media: {
-    src: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=1200&q=80",
+    src: "/examples/buenos-aires-cathedral.jpg",
     alt: "Church interior",
     caption: "Example external image URL for CMS or media database content.",
     provider: "CMS",
+    fit: "cover",
+    position: "center",
   },
 } as const;
 
@@ -1084,7 +1079,7 @@ export const videoCardExample = {
   href: "#",
   duration: "12 min",
   media: {
-    src: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    src: "https://www.youtube.com/embed/HBqOHEnYDxs",
     title: "Example embedded video",
     caption: "Example iframe embed URL.",
     provider: "YouTube",
@@ -1096,27 +1091,29 @@ export const photoGalleryCardExample = {
   description: "A gallery card for parish events, diocesan newsrooms, school albums, and media archives.",
   date: "June 2026",
   category: "Gallery",
-  href: "#",
+  href: "#photo-gallery-expanded-example",
+  provider: "CMS",
+  photoCount: 18,
+  fit: "cover",
+  position: "center",
   photos: [
     {
-      src: "https://images.unsplash.com/photo-1520637836862-4d197d17c90a?auto=format&fit=crop&w=600&q=80",
-      alt: "Church interior",
+      src: "/examples/buenos-aires-cathedral.jpg",
+      alt: "Buenos Aires Cathedral interior",
+      fit: "cover",
+      position: "center",
     },
     {
-      src: "https://images.unsplash.com/photo-1494891848038-7bd202a2afeb?auto=format&fit=crop&w=600&q=80",
-      alt: "Architectural detail",
+      src: "/examples/chapel-detail-1.svg",
+      alt: "Restored chapel altar detail",
     },
     {
-      src: "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=600&q=80",
-      alt: "Sacred architecture",
+      src: "/examples/chapel-detail-2.svg",
+      alt: "Chapel windows and nave detail",
     },
     {
-      src: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=600&q=80",
-      alt: "Outdoor gathering",
-    },
-    {
-      src: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
-      alt: "Landscape",
+      src: "/examples/chapel-detail-3.svg",
+      alt: "Chapel sanctuary detail",
     },
   ],
 } as const;
@@ -1369,4 +1366,14 @@ export const semanticRelationGraphExample = {
   description: "A visual interface for Catholic knowledge relationships that can power APIs, search, source trails, and semantic applications.",
   entities: entityRelationshipListExample.entities,
   relationships: entityRelationshipListExample.relationships,
+} as const;
+
+export const titheIconExample = {
+  placement: "inline",
+  giveHref: "#",
+  secondaryHref: "#",
+  currency: "USD",
+  locale: "en-US",
+  amounts: [25, 50, 100],
+  selectedAmount: 50,
 } as const;

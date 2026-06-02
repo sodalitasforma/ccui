@@ -1,113 +1,78 @@
 import systemStats from "./system-stats.json";
+import { docsSearchItems } from "./docs/search-index";
 
 import {
-  Badge,
   Button,
-  Card,
   Cluster,
   Container,
-  Divider,
-  Grid,
+  DocSearch,
   Heading,
   Link,
   Section,
   Stack,
-  Tab,
-  TabList,
-  TabPanel,
-  Tabs,
   Tag,
   Text,
+  ArrowRightIcon,
 } from "../../../../packages/primitives/src";
 
 import {
-  ApiEndpointCard,
-  ChurchDocumentCard,
-  FeastDayHero,
-  LiturgicalDayCard,
-  MassScheduleBlock,
-  ProjectCard,
+  InstitutionalFooter,
 } from "../../../../packages/catholic/src";
-
-import {
-  apiEndpointCardExample,
-  churchDocumentExample,
-  feastDayHeroExample,
-  liturgicalDayExample,
-  massScheduleExample,
-  projectCardExample,
-} from "./docs/examples";
-
-const tabData = [
-  {
-    label: "Parish",
-    title: "Parish interfaces",
-    description:
-      "Parish websites need structured public information: Mass times, confession schedules, bulletins, announcements, ministries, giving, location, and office contact data.",
-    data: [
-      "MassScheduleBlock",
-      "ConfessionScheduleBlock",
-      "BulletinCard",
-      "MinistryCard",
-      "DonationCallout",
-      "ParishContactCard",
-    ],
-    model: "Parish → schedules → exceptions → documents → ministries → actions",
-    example: "A parish can expose the same schedule data to a public website, calendar feed, bulletin page, and future API.",
-  },
-  {
-    label: "Institution",
-    title: "Institutional interfaces",
-    description:
-      "Dioceses, schools, offices, and foundations need consistent navigation, directories, documents, staff profiles, locations, news, events, and official notices.",
-    data: [
-      "InstitutionalHeader",
-      "Directory",
-      "StaffProfile",
-      "ClergyProfile",
-      "ChurchDocumentCard",
-      "EventCard",
-    ],
-    model: "Institution → offices → people → documents → events → public records",
-    example: "A diocesan office can publish documents, contacts, events, and official notices through reusable records instead of one-off page layouts.",
-  },
-  {
-    label: "Infrastructure",
-    title: "Catholic infrastructure interfaces",
-    description:
-      "CDCF-style projects need UI for APIs, datasets, ontologies, source authority, provenance, semantic relations, machine-readable status, and canonical records.",
-    data: [
-      "ProjectCard",
-      "DatasetCard",
-      "ApiEndpointCard",
-      "OntologyClassCard",
-      "CanonicalSourceCard",
-      "SemanticRelationGraph",
-    ],
-    model: "Source → entity → relation → dataset → API → interface",
-    example: "A liturgical calendar API can power feast cards, parish calendars, reading references, search results, and machine-readable Catholic applications.",
-  },
-] as const;
 
 export default function Home() {
   return (
     <main className="home-shell">
       <header className="home-nav">
-        <Cluster justify="between" align="center">
-          <Cluster gap="sm" align="center">
-            <Text as="p" size="md" className="home-brand">
-              Forma
-            </Text>
-            <Badge variant="gold">Catholic UI Kit</Badge>
+        <Cluster justify="between" align="center" gap="lg">
+          <Cluster gap="lg" align="center">
+            <Link href="/" className="home-logo" aria-label="Forma home">
+              <img
+                src="/ccui-logo.png"
+                alt=""
+                className="home-logo__image"
+                aria-hidden="true"
+              />
+              <span className="home-logo__wordmark">Forma</span>
+            </Link>
+
+            <nav className="home-nav-links" aria-label="Primary navigation">
+              <Link href="/docs">Docs</Link>
+              <Link href="/components-gallery">Components</Link>
+              <Link href="/templates">Templates</Link>
+            </nav>
           </Cluster>
 
-          <Cluster gap="sm" align="center">
-            <Link href="/components-gallery">Components</Link>
-            <Link href="/components-gallery#catholic-infrastructure-projects">
-              Infrastructure
+          <Cluster gap="md" align="center" className="home-nav-actions">
+            <DocSearch label="Search documentation..." items={docsSearchItems} />
+
+            <span className="home-nav-divider" aria-hidden="true" />
+
+            <Link
+              href="https://github.com"
+              className="home-github-link"
+              aria-label="Forma on GitHub"
+            >
+              <svg
+                aria-hidden="true"
+                viewBox="0 0 16 16"
+                width="18"
+                height="18"
+                className="home-github-link__icon"
+              >
+                <path
+                  fill="currentColor"
+                  d="M8 0C3.58 0 0 3.64 0 8.13c0 3.59 2.29 6.63 5.47 7.71.4.08.55-.18.55-.39 0-.19-.01-.83-.01-1.5-2.01.37-2.53-.5-2.69-.96-.09-.23-.48-.96-.82-1.16-.28-.15-.68-.52-.01-.53.63-.01 1.08.59 1.23.83.72 1.23 1.87.88 2.33.67.07-.53.28-.88.51-1.08-1.78-.21-3.64-.91-3.64-4.03 0-.89.31-1.62.82-2.19-.08-.2-.36-1.04.08-2.16 0 0 .67-.22 2.2.84A7.48 7.48 0 0 1 8 3.91c.68 0 1.36.09 2 .27 1.53-1.06 2.2-.84 2.2-.84.44 1.12.16 1.96.08 2.16.51.57.82 1.3.82 2.19 0 3.13-1.87 3.82-3.65 4.03.29.25.54.75.54 1.52 0 1.1-.01 1.98-.01 2.25 0 .21.15.47.55.39A8.07 8.07 0 0 0 16 8.13C16 3.64 12.42 0 8 0Z"
+                />
+              </svg>
             </Link>
-            <Link href="/components-gallery#entity-graph-components">Graph</Link>
-            <Button size="sm">Install</Button>
+
+            <Link href="https://github.com" className="home-stars-link">
+              0 stars
+            </Link>
+
+            <Button href="mailto:contact@example.com" size="sm">
+              Contact
+            </Button>
           </Cluster>
         </Cluster>
       </header>
@@ -115,11 +80,14 @@ export default function Home() {
       <Section surface="page" spacing="lg" className="home-hero">
         <Container size="lg">
           <Stack gap="lg" className="home-centered">
-            <Cluster gap="sm" className="home-centered">
-              <Tag variant="brown">{systemStats.components} components</Tag>
-              <Tag variant="gold">{systemStats.cssTokenReferences} token references</Tag>
-              <Tag variant="blue">{systemStats.docsExamples} live examples</Tag>
-            </Cluster>
+            <Button
+              href="https://catholicdigitalcommons.org/about/manifesto"
+              size="xs"
+              variant="subtle"
+              iconAfter={<ArrowRightIcon size="xs" />}
+            >
+              Read CDCF Manifesto
+            </Button>
 
             <Stack gap="md" className="home-hero__copy">
               <Heading level={1} size="4xl" family="display">
@@ -127,120 +95,40 @@ export default function Home() {
               </Heading>
 
               <Text size="lg" tone="secondary" className="home-hero__lede">
-                Open source components for those called to mend the nets of the Church.
+                Free, open-source components for those called to mend the nets of the Church.
               </Text>
             </Stack>
 
             <Cluster gap="sm" className="home-centered">
-              <Button>View component gallery</Button>
-              <Button variant="secondary">Review system map</Button>
+              <Tag variant="brown">{systemStats.components} components</Tag>
+              <Tag variant="gold">{systemStats.cssTokenReferences} token references</Tag>
+              <Tag variant="blue">{systemStats.docsExamples} live examples</Tag>
+            </Cluster>
+
+            <Cluster gap="sm" className="home-centered">
+              <Button
+                href="/components-gallery"
+                iconAfter={<ArrowRightIcon size="xs" />}
+              >
+                Build your parish website
+              </Button>
             </Cluster>
           </Stack>
         </Container>
       </Section>
 
-      <Section surface="page" spacing="lg" className="home-interface">
-        <Container size="xl">
-          <Stack gap="lg">
-            <Cluster justify="between" align="end" gap="lg" className="home-section-heading">
-              <Stack gap="xs">
-                <Text as="p" className="home-kicker">
-                  Interface surface
-                </Text>
-                <Heading level={2} size="2xl">
-                  One system can render parish life, liturgy, documents, and infrastructure.
-                </Heading>
-              </Stack>
-
-              <Text tone="secondary" className="home-section-heading__copy">
-                This is a composed interface made from Forma components. The same records can power
-                public pages, internal tools, APIs, archives, and source-backed Catholic datasets.
-              </Text>
-            </Cluster>
-
-            <div className="home-interface-board">
-              <Grid columns="2" gap="lg" className="home-interface-grid">
-                <Stack gap="lg">
-                  <FeastDayHero {...feastDayHeroExample} />
-
-                  <MassScheduleBlock
-                    title={massScheduleExample.title}
-                    subtitle={massScheduleExample.subtitle}
-                    badge={massScheduleExample.badge}
-                    days={massScheduleExample.days}
-                    exceptions={massScheduleExample.exceptions}
-                    source={massScheduleExample.source}
-                  />
-                </Stack>
-
-                <Stack gap="lg">
-                  <LiturgicalDayCard {...liturgicalDayExample} />
-                  <ChurchDocumentCard {...churchDocumentExample} />
-                  <ApiEndpointCard {...apiEndpointCardExample} />
-                </Stack>
-              </Grid>
-            </div>
-          </Stack>
-        </Container>
-      </Section>
-
-      <Section surface="page" spacing="lg" className="home-proof">
-        <Container size="xl">
-          <Stack gap="lg">
-            <Cluster justify="between" align="end" gap="lg" className="home-section-heading">
-              <Stack gap="xs">
-                <Text as="p" className="home-kicker">
-                  Built from real components
-                </Text>
-                <Heading level={2} size="2xl">
-                  The homepage explains the system. The gallery proves it.
-                </Heading>
-              </Stack>
-
-              <Text tone="secondary" className="home-section-heading__copy">
-                These examples are not screenshots. They are live components rendered
-                from the same package used by the component gallery.
-              </Text>
-            </Cluster>
-
-            <Grid columns="2" gap="lg" className="home-proof-grid">
-              <Stack gap="lg">
-                <FeastDayHero {...feastDayHeroExample} />
-
-                <MassScheduleBlock
-                  title={massScheduleExample.title}
-                  subtitle={massScheduleExample.subtitle}
-                  badge={massScheduleExample.badge}
-                  days={massScheduleExample.days}
-                  exceptions={massScheduleExample.exceptions}
-                  source={massScheduleExample.source}
-                />
-              </Stack>
-
-              <Stack gap="lg">
-                <ProjectCard {...projectCardExample} />
-                <ApiEndpointCard {...apiEndpointCardExample} />
-              </Stack>
-            </Grid>
-
-            <Card padding="lg" border="gold" className="home-final-card">
-              <Cluster justify="between" align="center" gap="lg">
-                <Stack gap="xs">
-                  <Heading level={3} size="xl">
-                    Continue to the component gallery.
-                  </Heading>
-                  <Text tone="secondary">
-                    The gallery contains the full audited component set, with live previews
-                    and matching generated code examples.
-                  </Text>
-                </Stack>
-
-                <Button>Open gallery</Button>
-              </Cluster>
-            </Card>
-          </Stack>
-        </Container>
-      </Section>
+      <InstitutionalFooter
+        title="Forma"
+        description="An open-source Catholic design system for parishes, Catholic institutions, magisterial documents, liturgical interfaces, and Catholic Digital Commons Foundation infrastructure."
+        links={[
+          { label: "Primitives", href: "/components-gallery#primitive-layout" },
+          { label: "Components", href: "/components-gallery" },
+          { label: "Catholic", href: "/components-gallery#parish-websites" },
+          { label: "CDCF Manifesto", href: "https://catholicdigitalcommons.org/about/manifesto" },
+          { label: "GitHub", href: "https://github.com" },
+          { label: "Contact", href: "mailto:contact@example.com" },
+        ]}
+      />
     </main>
   );
 }

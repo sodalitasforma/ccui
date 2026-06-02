@@ -1,58 +1,244 @@
-import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Heading, Link, Stack, Tag, Text } from "../../primitives/src";
-import { cx } from "../../primitives/src/utils";
-import type { PhotoGalleryCardData } from "./types";
+"use client";
 
-type PhotoGalleryCardProps = PhotoGalleryCardData & ComponentPropsWithoutRef<"article">;
+import type * as React from "react";
+import type { HTMLAttributes } from "react";
+import { useEffect, useState } from "react";
+import { Badge, Card, Cluster, Heading, Stack, Text } from "../../primitives/src";
+import { cx } from "../../primitives/src/utils";
+
+export type PhotoGalleryImageFit = "cover" | "contain" | "fill" | "scale-down" | "none";
+export type PhotoGalleryImagePosition = "center" | "top" | "bottom" | "left" | "right";
+
+export type PhotoGalleryPhoto = {
+  src: string;
+  alt: string;
+  caption?: string;
+  fit?: PhotoGalleryImageFit;
+  position?: PhotoGalleryImagePosition;
+};
+
+export type PhotoGalleryCardProps = HTMLAttributes<HTMLElement> & {
+  title: string;
+  description?: string;
+  date?: string;
+  category?: string;
+  href?: string;
+  photos: readonly PhotoGalleryPhoto[];
+  photoCount?: number;
+  provider?: string;
+  fit?: PhotoGalleryImageFit;
+  position?: PhotoGalleryImagePosition;
+};
 
 export function PhotoGalleryCard({
+  className,
   title,
   description,
   date,
-  category = "Photo gallery",
-  href,
+  category = "Gallery",
   photos,
-  className,
+  photoCount,
+  provider,
+  fit = "cover",
+  position = "center",
   ...props
 }: PhotoGalleryCardProps) {
-  const visiblePhotos = photos.slice(0, 4);
-  const remaining = Math.max(photos.length - visiblePhotos.length, 0);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+
+  const resolvedPhotoCount = photos.length;
+  const activePhoto = photos[activeIndex] ?? photos[0];
+
+  const canGoPrevious = photos.length > 1;
+  const canGoNext = photos.length > 1;
+
+  function goPrevious() {
+    if (!photos.length) return;
+    setActiveIndex((index) => (index - 1 + photos.length) % photos.length);
+  }
+
+  function goNext() {
+    if (!photos.length) return;
+    setActiveIndex((index) => (index + 1) % photos.length);
+  }
+
+  useEffect(() => {
+    if (!isFullscreen) return;
+
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") setIsFullscreen(false);
+      if (event.key === "ArrowLeft") goPrevious();
+      if (event.key === "ArrowRight") goNext();
+    }
+
+    document.addEventListener("keydown", onKeyDown);
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+      document.body.style.overflow = "";
+    };
+  }, [isFullscreen, photos.length]);
 
   return (
-    <Card as="article" padding="none" border="subtle" className={cx("forma-photo-gallery-card", className)} {...props}>
-      <div className="forma-photo-gallery-card__grid" aria-label={`${title} photos`}>
-        {visiblePhotos.map((photo, index) => (
-          <img
-            key={`${photo.src}-${index}`}
-            src={photo.src}
-            alt={photo.alt ?? photo.title ?? `${title} photo ${index + 1}`}
-            className="forma-photo-gallery-card__image"
-          />
-        ))}
-        {remaining ? (
-          <div className="forma-photo-gallery-card__more">
-            <Text as="span" tone="inverse">
-              +{remaining}
-            </Text>
+    <Card
+      as="article"
+      padding="none"
+      border="subtle"
+      className={cx("forma-photo-gallery-card", className)}
+      {...props}
+    >
+      <div className="forma-photo-gallery-card__stage">
+        {activePhoto ? (
+          <button
+            type="button"
+            className="forma-photo-gallery-card__image-button"
+            onClick={() => setIsFullscreen(true)}
+            aria-label={`Open ${activePhoto.alt} full screen`}
+          >
+            <img
+              src={activePhoto.src}
+              alt={activePhoto.alt}
+              loading="lazy"
+              style={{
+                "--forma-photo-gallery-fit": activePhoto.fit ?? fit,
+                "--forma-photo-gallery-position": activePhoto.position ?? position,
+              } as React.CSSProperties}
+            />
+          </button>
+        ) : (
+          <div className="forma-photo-gallery-card__empty" aria-hidden="true" />
+        )}
+
+        {activePhoto?.alt ? (
+          <span className="forma-photo-gallery-card__alt-label">
+            {activePhoto.alt}
+          </span>
+        ) : null}
+
+        {photos.length > 1 ? (
+          <div className="forma-photo-gallery-card__controls" aria-label="Gallery controls">
+            <button type="button" onClick={goPrevious} disabled={!canGoPrevious} aria-label="Previous photo">
+              ‹
+            </button>
+            <span>
+              {activeIndex + 1} / {photos.length}
+            </span>
+            <button type="button" onClick={goNext} disabled={!canGoNext} aria-label="Next photo">
+              ›
+            </button>
           </div>
         ) : null}
       </div>
 
+      {photos.length > 1 ? (
+        <div className="forma-photo-gallery-card__thumbs" aria-label="Gallery thumbnails">
+          {photos.map((photo, index) => (
+            <button
+              key={`${photo.src}-${index}`}
+              type="button"
+              className={cx(
+                "forma-photo-gallery-card__thumb",
+                index === activeIndex && "forma-photo-gallery-card__thumb--active",
+              )}
+              onClick={() => setActiveIndex(index)}
+              aria-label={`Show photo ${index + 1}: ${photo.alt}`}
+              aria-current={index === activeIndex ? "true" : undefined}
+            >
+              <img
+                src={photo.src}
+                alt=""
+                loading="lazy"
+                style={{
+                  "--forma-photo-gallery-fit": photo.fit ?? fit,
+                  "--forma-photo-gallery-position": photo.position ?? position,
+                } as React.CSSProperties}
+              />
+            </button>
+          ))}
+        </div>
+      ) : null}
+
       <Stack gap="sm" className="forma-photo-gallery-card__body">
-        <Cluster justify="between" align="start" gap="sm">
-          <Tag variant="blue">{category}</Tag>
-          {date ? <Text as="span" size="xs" tone="muted">{date}</Text> : null}
+        <Cluster justify="between" align="center" gap="sm">
+          <Badge variant="gold">{category}</Badge>
+          {date ? (
+            <Text as="span" size="xs" tone="muted">
+              {date}
+            </Text>
+          ) : null}
         </Cluster>
 
         <Stack gap="xs">
-          <Heading level={3} size="lg">
-            {href ? <Link href={href}>{title}</Link> : title}
+          <Heading level={3} size="lg" className="forma-photo-gallery-card__title">
+            {title}
           </Heading>
-          {description ? <Text as="p" tone="secondary">{description}</Text> : null}
+
+          {description ? (
+            <Text as="p" tone="secondary">
+              {description}
+            </Text>
+          ) : null}
+
+          {activePhoto?.caption ? (
+            <Text as="p" size="sm" tone="muted">
+              {activePhoto.caption}
+            </Text>
+          ) : null}
         </Stack>
 
-        <Tag variant="brown">{photos.length} photos</Tag>
+        <Cluster gap="xs">
+          {provider ? <Badge variant="neutral">{provider}</Badge> : null}
+          <Text as="span" size="xs" tone="muted">
+            {resolvedPhotoCount} {resolvedPhotoCount === 1 ? "photo" : "photos"}
+          </Text>
+        </Cluster>
       </Stack>
+
+      {isFullscreen && activePhoto ? (
+        <div className="forma-photo-gallery-card__lightbox" role="dialog" aria-modal="true" aria-label={title}>
+          <button
+            type="button"
+            className="forma-photo-gallery-card__lightbox-close"
+            onClick={() => setIsFullscreen(false)}
+            aria-label="Close full screen gallery"
+          >
+            ×
+          </button>
+
+          {photos.length > 1 ? (
+            <button
+              type="button"
+              className="forma-photo-gallery-card__lightbox-previous"
+              onClick={goPrevious}
+              aria-label="Previous photo"
+            >
+              ‹
+            </button>
+          ) : null}
+
+          <figure className="forma-photo-gallery-card__lightbox-figure">
+            <img src={activePhoto.src} alt={activePhoto.alt} />
+            <figcaption>
+              <span>{activePhoto.caption ?? activePhoto.alt}</span>
+              <span>
+                {activeIndex + 1} / {photos.length}
+              </span>
+            </figcaption>
+          </figure>
+
+          {photos.length > 1 ? (
+            <button
+              type="button"
+              className="forma-photo-gallery-card__lightbox-next"
+              onClick={goNext}
+              aria-label="Next photo"
+            >
+              ›
+            </button>
+          ) : null}
+        </div>
+      ) : null}
     </Card>
   );
 }

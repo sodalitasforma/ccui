@@ -82,7 +82,8 @@ import {
   parishContactCardExample,
   parishAnnouncementCardExample,
   ministryCardExample,
-  donationCalloutExample,
+  projectDonationCalloutExample,
+  titheIconExample,
   bulletinCardExample,
   readingReferenceExample,
   liturgicalSeasonBadgeExample,
@@ -246,9 +247,7 @@ export const institutionalHeaderExampleCode =
   title="${institutionalHeaderExample.title}"
   subtitle="${institutionalHeaderExample.subtitle}"
   primaryItems={${objectArrayCode(institutionalHeaderExample.primaryItems)}}
-  utilityItems={${objectArrayCode(institutionalHeaderExample.utilityItems)}}
-  languages={${objectArrayCode(institutionalHeaderExample.languages)}}
-  searchAction="${institutionalHeaderExample.searchAction}"
+  contactAction={{ label: "${institutionalHeaderExample.contactAction.label}", href: "${institutionalHeaderExample.contactAction.href}" }}
 />`;
 
 export const pageHeaderExampleCode =
@@ -556,15 +555,15 @@ export const ministryCardExampleCode =
   href="${ministryCardExample.href}"
 />`;
 
-export const donationCalloutExampleCode =
-`<DonationCallout
-  title="${donationCalloutExample.title}"
-  description="${donationCalloutExample.description}"
-  amountLabel="${donationCalloutExample.amountLabel}"
-  actionLabel="${donationCalloutExample.actionLabel}"
-  actionHref="${donationCalloutExample.actionHref}"
-  secondaryLabel="${donationCalloutExample.secondaryLabel}"
-  secondaryHref="${donationCalloutExample.secondaryHref}"
+export const projectDonationCalloutExampleCode =
+`<ProjectDonationCallout
+  title="${projectDonationCalloutExample.title}"
+  description="${projectDonationCalloutExample.description}"
+  amounts={${JSON.stringify(projectDonationCalloutExample.amounts)}}
+  selectedAmount="${projectDonationCalloutExample.selectedAmount}"
+  impact="${projectDonationCalloutExample.impact}"
+  primaryAction={{ label: "${projectDonationCalloutExample.primaryAction.label}", href: "${projectDonationCalloutExample.primaryAction.href}" }}
+  secondaryActions={${JSON.stringify(projectDonationCalloutExample.secondaryActions)}}
 />`;
 
 export const parishContactCardExampleCode =
@@ -916,15 +915,67 @@ export const videoCardExampleCode =
   media={${objectCode(videoCardExample.media)}}
 />`;
 
-export const photoGalleryCardExampleCode =
-`<PhotoGalleryCard
-  title="${photoGalleryCardExample.title}"
-  description="${photoGalleryCardExample.description}"
-  date="${photoGalleryCardExample.date}"
-  category="${photoGalleryCardExample.category}"
-  href="${photoGalleryCardExample.href}"
-  photos={${arrayCode(photoGalleryCardExample.photos)}}
-/>`;
+export const photoGalleryCardExampleCode = `<Stack gap="xl">
+  <PhotoGalleryCard
+    title="Corpus Christi procession gallery"
+    description="A gallery card for parish events, diocesan newsrooms, school albums, and media archives."
+    date="June 2026"
+    category="Gallery"
+    href="#photo-gallery-expanded-example"
+    provider="CMS"
+    photoCount={18}
+    fit="cover"
+    position="center"
+    photos={[
+      {
+        src: "/examples/buenos-aires-cathedral.jpg",
+        alt: "Buenos Aires Cathedral interior",
+        fit: "cover",
+        position: "center",
+      },
+      {
+        src: "/examples/chapel-detail-1.svg",
+        alt: "Restored chapel altar detail",
+      },
+      {
+        src: "/examples/chapel-detail-2.svg",
+        alt: "Chapel windows and nave detail",
+      },
+      {
+        src: "/examples/chapel-detail-3.svg",
+        alt: "Chapel sanctuary detail",
+      },
+    ]}
+  />
+
+  <PhotoGallery
+    id="photo-gallery-expanded-example"
+    title="Corpus Christi procession gallery"
+    description="Expanded gallery view for all photos in the album."
+    category="Gallery"
+    provider="CMS"
+    fit="cover"
+    position="center"
+    photos={[
+      {
+        src: "/examples/buenos-aires-cathedral.jpg",
+        alt: "Buenos Aires Cathedral interior",
+      },
+      {
+        src: "/examples/chapel-detail-1.svg",
+        alt: "Restored chapel altar detail",
+      },
+      {
+        src: "/examples/chapel-detail-2.svg",
+        alt: "Chapel windows and nave detail",
+      },
+      {
+        src: "/examples/chapel-detail-3.svg",
+        alt: "Chapel sanctuary detail",
+      },
+    ]}
+  />
+</Stack>`;
 
 export const projectStatusBadgeExampleCode =
 `<ProjectStatusBadge
@@ -1085,4 +1136,15 @@ export const semanticRelationGraphExampleCode =
   description="${semanticRelationGraphExample.description}"
   entities={${arrayCode(semanticRelationGraphExample.entities)}}
   relationships={${arrayCode(semanticRelationGraphExample.relationships)}}
+/>`;
+
+export const titheIconExampleCode =
+`<TitheIcon
+  placement="${titheIconExample.placement}"
+  giveHref="${titheIconExample.giveHref}"
+  secondaryHref="${titheIconExample.secondaryHref}"
+  currency="${titheIconExample.currency}"
+  locale="${titheIconExample.locale}"
+  amounts={${JSON.stringify(titheIconExample.amounts)}}
+  selectedAmount={${titheIconExample.selectedAmount}}
 />`;
