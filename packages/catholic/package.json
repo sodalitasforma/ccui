@@ -15,5 +15,14 @@
   },
   "dependencies": {
     "@ccui/primitives": "workspace:*"
-  }
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./catholic.css": "./src/catholic.css",
+    "./src/catholic.css": "./src/catholic.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "./src/catholic.css"
+  ]
 }

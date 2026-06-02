@@ -12,5 +12,14 @@
   "devDependencies": {
     "@types/react": "^19.2.15",
     "react": "19.2.4"
-  }
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./primitives.css": "./src/primitives.css",
+    "./src/primitives.css": "./src/primitives.css",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "./src/primitives.css"
+  ]
 }

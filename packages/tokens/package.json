@@ -2,5 +2,23 @@
   "name": "@ccui/tokens",
   "version": "0.0.1",
   "private": true,
-  "description": "Design tokens for Catholic Commons UI."
+  "description": "Design tokens for Catholic Commons UI.",
+  "exports": {
+    ".": "./src/index.ts",
+    "./css-vars.css": "./src/css-vars.css",
+    "./src/css-vars.css": "./src/css-vars.css",
+    "./borders.json": "./src/borders.json",
+    "./breakpoints.json": "./src/breakpoints.json",
+    "./colors.json": "./src/colors.json",
+    "./liturgical-colors.json": "./src/liturgical-colors.json",
+    "./motion.json": "./src/motion.json",
+    "./radius.json": "./src/radius.json",
+    "./shadows.json": "./src/shadows.json",
+    "./spacing.json": "./src/spacing.json",
+    "./typography.json": "./src/typography.json",
+    "./package.json": "./package.json"
+  },
+  "sideEffects": [
+    "./src/css-vars.css"
+  ]
 }
