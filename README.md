@@ -1,18 +1,18 @@
-# Forma
+# Catholic Commons UI
 
-Forma is a Catholic UI Kit and design system for shared digital form, beauty, and usability across Catholic digital projects.
+Catholic Commons UI is an open-source Catholic interface system for shared digital form, beauty, and usability across Catholic digital projects.
 
-Forma provides design tokens, primitives, Catholic-specific components, templates, and documentation for Catholic open-source tools, parish websites, diocesan projects, and public digital presence.
+Catholic Commons UI provides design tokens, primitives, Catholic-specific components, templates, and documentation for Catholic open-source tools, parish websites, diocesan projects, and public digital presence.
 
 ## Status
 
 Early concept / pre-alpha. The repository structure, token system, component registry, and public gallery are being established.
 
-## Why Forma exists
+## Why Catholic Commons UI exists
 
 Catholic digital projects often rebuild the same interface patterns from scratch: Scripture citations, liturgical calendar cards, parish schedules, Church document views, source references, institutional cards, and public notice layouts.
 
-Forma aims to provide a shared presentation layer for Catholic software so builders can create tools with greater unity, beauty, usability, and accessibility.
+Catholic Commons UI aims to provide a shared presentation layer for Catholic software so builders can create tools with greater unity, beauty, usability, and accessibility.
 
 ## Repository structure
 

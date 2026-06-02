@@ -25,14 +25,14 @@ export default function Home() {
       <header className="home-nav">
         <Cluster justify="between" align="center" gap="lg">
           <Cluster gap="lg" align="center">
-            <Link href="/" className="home-logo" aria-label="Forma home">
+            <Link href="/" className="home-logo" aria-label="Catholic Commons UI home">
               <img
                 src="/ccui-logo.png"
                 alt=""
                 className="home-logo__image"
                 aria-hidden="true"
               />
-              <span className="home-logo__wordmark">Forma</span>
+              <span className="home-logo__wordmark">Catholic Commons UI</span>
             </Link>
 
             <nav className="home-nav-links" aria-label="Primary navigation">
@@ -50,7 +50,7 @@ export default function Home() {
             <Link
               href="https://github.com"
               className="home-github-link"
-              aria-label="Forma on GitHub"
+              aria-label="Catholic Commons UI on GitHub"
             >
               <svg
                 aria-hidden="true"
@@ -118,7 +118,7 @@ export default function Home() {
       </Section>
 
       <InstitutionalFooter
-        title="Forma"
+        title="Catholic Commons UI"
         description="An open-source Catholic design system for parishes, Catholic institutions, magisterial documents, liturgical interfaces, and Catholic Digital Commons Foundation infrastructure."
         links={[
           { label: "Primitives", href: "/components-gallery#primitive-layout" },

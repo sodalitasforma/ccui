@@ -31,7 +31,7 @@ export default function TypographyPage() {
                 </Heading>
 
                 <Text size="lg" tone="secondary" className="docs-lede">
-                  Forma typography will define Catholic-native type hierarchy,
+                  Catholic Commons UI typography will define Catholic-native type hierarchy,
                   display voice, interface text, document rhythm, citations,
                   multilingual support, and future downloadable type assets.
                 </Text>

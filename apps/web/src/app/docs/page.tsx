@@ -32,7 +32,7 @@ export default function DocsPage() {
                   Documentation
                 </Heading>
                 <Text size="lg" tone="secondary" className="docs-lede">
-                  Learn how Forma is organized, how to use its tokens and components,
+                  Learn how Catholic Commons UI is organized, how to use its tokens and components,
                   and how Catholic-specific interfaces should be composed.
                 </Text>
               </Stack>
@@ -55,7 +55,7 @@ export default function DocsPage() {
             <Stack gap="md">
               <Heading level={2} size="2xl">Getting started</Heading>
               <Text tone="secondary">
-                Forma is organized as a cascade: tokens define the design language,
+                Catholic Commons UI is organized as a cascade: tokens define the design language,
                 primitives consume those tokens, Catholic components compose primitives,
                 and templates show complete institutional use cases.
               </Text>
@@ -98,7 +98,7 @@ import { MassScheduleBlock, ChurchDocumentCard } from "@forma/catholic";`}</code
               <Heading level={2} size="2xl">Catholic design principles</Heading>
               <Text tone="secondary">
                 Catholic interfaces should make worship, authority, source, place, office,
-                sacrament, and public trust legible. Forma exists to make that structure reusable.
+                sacrament, and public trust legible. Catholic Commons UI exists to make that structure reusable.
               </Text>
             </Stack>
           </Container>
@@ -129,8 +129,8 @@ import { MassScheduleBlock, ChurchDocumentCard } from "@forma/catholic";`}</code
         </Section>
 
         <InstitutionalFooter
-          title="Forma Docs"
-          description="Documentation for the Forma Catholic design system."
+          title="Catholic Commons UI Docs"
+          description="Documentation for the Catholic Commons UI Catholic design system."
           links={[
             { label: "Components", href: "/components-gallery" },
             { label: "Templates", href: "/templates" },

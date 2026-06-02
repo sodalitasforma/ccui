@@ -152,10 +152,10 @@ export function FormaSidebar({ current = "components" }: FormaSidebarProps) {
         <Cluster justify="between" align="start" gap="sm" className="docs-sidebar-brand-row">
           <Stack gap="xs">
             <Link href="/" className="docs-sidebar-brand">
-              Forma
+              Catholic Commons UI
             </Link>
             <Text as="p" size="xs" tone="muted">
-              Catholic UI Kit
+              Open-source Catholic interface system
             </Text>
           </Stack>
 

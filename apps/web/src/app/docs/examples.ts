@@ -21,8 +21,8 @@ export const tableRows = [
 
 export const accordionExamples = [
   {
-    title: "What is Forma?",
-    content: "Forma is a Catholic UI kit for institutional websites, documents, schedules, and public digital infrastructure.",
+    title: "What is Catholic Commons UI?",
+    content: "Catholic Commons UI is an open-source Catholic interface system for institutional websites, documents, schedules, and public digital infrastructure.",
     defaultOpen: true,
   },
   {
@@ -200,7 +200,7 @@ export const eventListExample = {
 
 export const institutionalFooterExample = {
   title: "Saint Anselm Parish",
-  description: "A public-facing Catholic institution built with Forma.",
+  description: "A public-facing Catholic institution built with Catholic Commons UI.",
   links: [
     { label: "Contact", href: "#" },
     { label: "Privacy", href: "#" },

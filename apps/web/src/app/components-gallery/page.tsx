@@ -598,7 +598,7 @@ export default function Home() {
               <ComponentBlock
                 variant="specimen"
                 title="Container, Section, Stack, Cluster, Grid"
-                description="The basic page-composition primitives used throughout Forma."
+                description="The basic page-composition primitives used throughout Catholic Commons UI."
                 code={`<Section surface="page" spacing="md">
   <Container size="lg">
     <Stack gap="lg">

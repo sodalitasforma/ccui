@@ -5,8 +5,8 @@ import "./globals.css";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Forma",
-  description: "Catholic UI Kit and design system.",
+  title: "Catholic Commons UI",
+  description: "Catholic Commons UI: an open-source Catholic interface system.",
 };
 
 export default function RootLayout({
