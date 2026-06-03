@@ -178,11 +178,11 @@
   --ccui-space-24: 6rem;
 
   /* Typography */
-  --ccui-font-display: Cormorant Garamond, EB Garamond, Georgia, Times New Roman, serif;
-  --ccui-font-inscription: Cinzel, Trajan Pro, Charlemagne, Georgia, Times New Roman, serif;
-  --ccui-font-document: EB Garamond, Georgia, Times New Roman, serif;
-  --ccui-font-interface: Inter, Source Sans 3, Tahoma, Verdana, Segoe UI, system-ui, sans-serif;
-  --ccui-font-mono: Lucida Console, Courier New, monospace;
+  --ccui-font-display: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  --ccui-font-inscription: Cinzel, "Trajan Pro", Charlemagne, Georgia, "Times New Roman", serif;
+  --ccui-font-document: "EB Garamond", Georgia, "Times New Roman", serif;
+  --ccui-font-interface: Inter, "Source Sans 3", Tahoma, Verdana, "Segoe UI", system-ui, sans-serif;
+  --ccui-font-mono: "Lucida Console", "Courier New", monospace;
 
   --ccui-font-size-2xs: 0.625rem;
   --ccui-font-size-xs: 0.75rem;
