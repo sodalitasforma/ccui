@@ -1806,3 +1806,22 @@
   color: var(--ccui-color-brown-900);
   box-shadow: var(--ccui-shadow-hairline);
 }
+
+/* --------------------------------------------------------------------------
+ * CSS contract coverage
+ * These selectors are emitted by package components and must be owned here.
+ * -------------------------------------------------------------------------- */
+
+.ccui-button__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+
+.ccui-empty-state__content {
+  align-items: center;
+  max-width: 32rem;
+}
+
+.ccui-empty-state__action {
+  margin-block-start: var(--ccui-space-2);
+}

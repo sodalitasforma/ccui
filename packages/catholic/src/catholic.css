@@ -1883,3 +1883,469 @@
     animation: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+ * CSS contract coverage
+ * These selectors are emitted by package components and must be owned here.
+ * -------------------------------------------------------------------------- */
+
+.ccui-announcement-banner__actions {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-calendar-tabs {
+  display: block;
+}
+
+.ccui-century-filter {
+  display: block;
+}
+
+.ccui-citation-trail__title {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-confession-schedule-block {
+  display: block;
+}
+
+.ccui-confession-schedule-block__prompt-end-note {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-directory-filter {
+  display: block;
+}
+
+.ccui-directory__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-directory__header {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-authority-badge {
+  display: block;
+}
+
+.ccui-document-card__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-card__metadata {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-card__surface {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-list__header {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-list__items {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-type-badge {
+  display: block;
+}
+
+.ccui-event-list__header {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-event-list__items {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-external-catholic-resource-card {
+  display: block;
+}
+
+.ccui-external-catholic-resource-card__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-external-catholic-resource-card__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-institutional-header__search {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-language-document-links {
+  display: block;
+}
+
+.ccui-language-document-links__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-language-document-links__language {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-language-document-links__link {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-mass-schedule-block {
+  display: block;
+}
+
+.ccui-ministry-card {
+  display: block;
+}
+
+.ccui-ministry-directory-block {
+  display: block;
+}
+
+.ccui-ministry-directory-block__contact {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-ministry-directory-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-ministry-directory-block__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-ministry-directory-block__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-name-filter {
+  display: block;
+}
+
+.ccui-news-card {
+  display: block;
+}
+
+.ccui-office-hours__disruption {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-office-hours__note {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-announcement-card {
+  display: block;
+}
+
+.ccui-parish-form-links {
+  display: block;
+}
+
+.ccui-parish-form-links__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-form-links__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-form-links__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-form-links__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline {
+  display: block;
+}
+
+.ccui-parish-history-timeline__content {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__date {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__list {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__marker {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav {
+  display: block;
+}
+
+.ccui-parish-mega-nav__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__group {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__group-heading {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__group-title {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__item-description {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__item-label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__list {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-mega-nav__surface {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-notification-bell {
+  display: block;
+}
+
+.ccui-parish-notification-bell--active {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-notification-bell__count {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-notification-bell__dot {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-quick-links {
+  display: block;
+}
+
+.ccui-parish-quick-links__description {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-quick-links__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-quick-links__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-quick-links__item-main {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-quick-links__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__figure {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__item--lead {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__title {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-press-release-card {
+  display: block;
+}
+
+.ccui-sacrament-schedule-block {
+  display: block;
+}
+
+.ccui-sacrament-schedule-block__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacrament-schedule-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacrament-schedule-block__meta {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacrament-schedule-block__preparation {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block {
+  display: block;
+}
+
+.ccui-sacramental-preparation-block__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__meta {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame {
+  display: block;
+}
+
+.ccui-sacred-media-frame__content {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__cross {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__image {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__pattern {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring--inner {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring--middle {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring--outer {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block {
+  display: block;
+}
+
+.ccui-seasonal-schedule-block__date {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__list {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__main {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__meta {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__note {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links {
+  display: block;
+}
+
+.ccui-social-links__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links__platform {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-visitor-info-block {
+  display: block;
+}
+
+.ccui-visitor-info-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-visitor-info-block__hours {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-visitor-info-block__notice {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
