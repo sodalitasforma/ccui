@@ -797,6 +797,9 @@ PY
 echo "== Install consumer deps =="
 pnpm install
 
+echo "== Audit external gallery boundary =="
+node "$REPO_DIR/scripts/audit-external-gallery-boundary.mjs" "$APP_DIR"
+
 echo "== Build external gallery =="
 pnpm build
 
