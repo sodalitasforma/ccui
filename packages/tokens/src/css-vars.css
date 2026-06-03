@@ -75,6 +75,24 @@
   --ccui-color-accent-active-text: var(--ccui-color-brown-700);
   --ccui-color-accent-blue: var(--ccui-color-blue-700);
 
+  --ccui-color-gold-50: #FBF4E6;
+  --ccui-color-border-gold: color-mix(in srgb, var(--ccui-color-accent-gold) 58%, var(--ccui-color-border-subtle) 42%);
+  --ccui-color-info: var(--ccui-color-blue-700);
+  --ccui-color-warning: var(--ccui-color-gold-700);
+  --ccui-color-status-info-text: var(--ccui-color-blue-700);
+
+  --ccui-color-accent-gold-wash: color-mix(in srgb, var(--ccui-color-accent-gold) 8%, transparent);
+  --ccui-color-accent-gold-wash-strong: color-mix(in srgb, var(--ccui-color-accent-gold) 18%, transparent);
+
+  --ccui-radius-full: 999px;
+  --ccui-letter-spacing-wide: 0.08em;
+
+  --ccui-media-card-fit: cover;
+  --ccui-media-card-position: center;
+  --ccui-photo-gallery-fit: cover;
+  --ccui-photo-gallery-position: center;
+
+
   --ccui-color-danger: var(--ccui-color-red-700);
   --ccui-color-success: var(--ccui-color-green-700);
 

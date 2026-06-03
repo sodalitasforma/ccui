@@ -226,7 +226,9 @@ function DemoBlock({
           <Tag variant="brown">external package import</Tag>
         </Cluster>
         <Divider />
-        {children}
+        <DemoErrorBoundary name={title}>
+          {children}
+        </DemoErrorBoundary>
       </Stack>
     </Card>
   );
@@ -240,6 +242,35 @@ function TokenSwatch({ name, value }: { name: string; value: string }) {
       <Text as="p" size="xs" tone="muted">{value}</Text>
     </div>
   );
+}
+
+type DemoErrorBoundaryProps = {
+  name: string;
+  children: React.ReactNode;
+};
+
+type DemoErrorBoundaryState = {
+  error: Error | null;
+};
+
+class DemoErrorBoundary extends React.Component<DemoErrorBoundaryProps, DemoErrorBoundaryState> {
+  state: DemoErrorBoundaryState = { error: null };
+
+  static getDerivedStateFromError(error: Error): DemoErrorBoundaryState {
+    return { error };
+  }
+
+  render() {
+    if (this.state.error) {
+      return (
+        <Notice variant="danger" title={`${this.props.name} crashed`}>
+          {this.state.error.message}
+        </Notice>
+      );
+    }
+
+    return this.props.children;
+  }
 }
 
 function App() {

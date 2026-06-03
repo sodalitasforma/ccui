@@ -1,7 +1,4 @@
 @import "tailwindcss";
-@import "../../../../packages/tokens/src/css-vars.css";
-@import "../../../../packages/primitives/src/primitives.css";
-@import "../../../../packages/catholic/src/catholic.css";
 
 /* CCUI app-level semantic surfaces */
 :root {

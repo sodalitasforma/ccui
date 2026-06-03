@@ -562,7 +562,7 @@
 .ccui-button--variant-secondary {
   border-color: var(--ccui-color-border-gold);
   background:
-    linear-gradient(180deg, var(--ccui-app-gold-wash), transparent),
+    linear-gradient(180deg, var(--ccui-color-accent-gold-wash), transparent),
     var(--ccui-color-surface-raised);
   color: var(--ccui-color-brown-900);
   box-shadow: var(--ccui-shadow-hairline);
@@ -571,7 +571,7 @@
 .ccui-button--variant-secondary:hover {
   border-color: var(--ccui-color-accent-gold);
   background:
-    linear-gradient(180deg, var(--ccui-app-gold-wash-strong), transparent),
+    linear-gradient(180deg, var(--ccui-color-accent-gold-wash-strong), transparent),
     var(--ccui-color-surface-raised);
   color: var(--ccui-color-brown-900);
   box-shadow: var(--ccui-shadow-brown-sm);
@@ -1773,7 +1773,7 @@
   padding-inline: var(--ccui-space-3);
   border-color: transparent;
   border-radius: var(--ccui-radius-pill);
-  background: var(--ccui-app-gold-wash);
+  background: var(--ccui-color-accent-gold-wash);
   color: var(--ccui-color-brown-900);
   font-size: var(--ccui-font-size-xs);
   font-weight: var(--ccui-font-weight-bold);
@@ -1782,7 +1782,7 @@
 
 .ccui-button--variant-subtle.ccui-button--size-xs:hover {
   border-color: transparent;
-  background: var(--ccui-app-gold-wash-strong);
+  background: var(--ccui-color-accent-gold-wash-strong);
   color: var(--ccui-color-brown-900);
   box-shadow: var(--ccui-shadow-hairline);
 }
