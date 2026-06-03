@@ -385,9 +385,10 @@ function App() {
                 </Stack>
               </DemoBlock>
 
-              <DemoBlock title="Table" source='import { Table } from "@ccui/primitives"'>
-                <Table>
-                  <TableHead>
+              <DemoBlock title="Table" source='import { TableWrapper, Table } from "@ccui/primitives"'>
+                <TableWrapper>
+                  <Table>
+                    <TableHead>
                     <TableRow>
                       <TableHeader>Component</TableHeader>
                       <TableHeader>Package</TableHeader>
@@ -405,8 +406,9 @@ function App() {
                       <TableCell>@ccui/catholic</TableCell>
                       <TableCell><Badge variant="success" size="xs">Rendered</Badge></TableCell>
                     </TableRow>
-                  </TableBody>
-                </Table>
+                    </TableBody>
+                  </Table>
+                </TableWrapper>
               </DemoBlock>
 
               <DemoBlock title="Timeline" source='import { Timeline } from "@ccui/primitives"'>
