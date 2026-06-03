@@ -117,6 +117,7 @@ import {
   Select,
   Stack,
   Table,
+  TableWrapper,
   TableBody,
   TableCell,
   TableHead,
