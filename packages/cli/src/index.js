@@ -5,21 +5,88 @@ import path from "node:path";
 
 const program = new Command();
 
-const components = [
-  "button",
-  "card",
-  "badge",
-  "mass-schedule-block",
-  "confession-schedule-block",
-  "adoration-schedule-block",
-  "holy-day-schedule-block",
-  "liturgical-day-card",
-  "liturgical-season-badge",
-  "parish-announcement-card",
-  "church-document-card",
-  "church-document-header",
-  "document-citation"
-];
+const componentRegistry = {
+  button: {
+    name: "Button",
+    packageName: "@ccui/primitives",
+    importName: "Button",
+    styleImport: "@ccui/primitives/primitives.css",
+  },
+  card: {
+    name: "Card",
+    packageName: "@ccui/primitives",
+    importName: "Card",
+    styleImport: "@ccui/primitives/primitives.css",
+  },
+  badge: {
+    name: "Badge",
+    packageName: "@ccui/primitives",
+    importName: "Badge",
+    styleImport: "@ccui/primitives/primitives.css",
+  },
+  "mass-schedule-block": {
+    name: "MassScheduleBlock",
+    packageName: "@ccui/catholic",
+    importName: "MassScheduleBlock",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "confession-schedule-block": {
+    name: "ConfessionScheduleBlock",
+    packageName: "@ccui/catholic",
+    importName: "ConfessionScheduleBlock",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "adoration-schedule-block": {
+    name: "AdorationScheduleBlock",
+    packageName: "@ccui/catholic",
+    importName: "AdorationScheduleBlock",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "holy-day-schedule-block": {
+    name: "HolyDayScheduleBlock",
+    packageName: "@ccui/catholic",
+    importName: "HolyDayScheduleBlock",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "liturgical-day-card": {
+    name: "LiturgicalDayCard",
+    packageName: "@ccui/catholic",
+    importName: "LiturgicalDayCard",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "liturgical-season-badge": {
+    name: "LiturgicalSeasonBadge",
+    packageName: "@ccui/catholic",
+    importName: "LiturgicalSeasonBadge",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "parish-announcement-card": {
+    name: "ParishAnnouncementCard",
+    packageName: "@ccui/catholic",
+    importName: "ParishAnnouncementCard",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "church-document-card": {
+    name: "ChurchDocumentCard",
+    packageName: "@ccui/catholic",
+    importName: "ChurchDocumentCard",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "church-document-header": {
+    name: "ChurchDocumentHeader",
+    packageName: "@ccui/catholic",
+    importName: "ChurchDocumentHeader",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+  "document-citation": {
+    name: "DocumentCitation",
+    packageName: "@ccui/catholic",
+    importName: "DocumentCitation",
+    styleImport: "@ccui/catholic/catholic.css",
+  },
+};
+
+const components = Object.keys(componentRegistry).sort();
 
 const configTemplate = {
   "$schema": "https://catholiccommonsui.org/schema.json",
@@ -66,7 +133,10 @@ program
   .command("list")
   .description("List available Catholic Commons UI components")
   .action(() => {
-    for (const component of components) console.log(component);
+    for (const slug of components) {
+      const component = componentRegistry[slug];
+      console.log(slug + " — " + component.importName + " from " + component.packageName);
+    }
   });
 
 program
@@ -74,14 +144,24 @@ program
   .argument("<component>")
   .description("Show import guidance for a Catholic Commons UI component")
   .action((component) => {
-    if (!components.includes(component)) {
+    const entry = componentRegistry[component];
+
+    if (!entry) {
       console.error("Unknown component: " + component);
       console.error("Run ccui list to see available components.");
       process.exit(1);
     }
 
-    console.log("Component: " + component);
-    console.log("Use the matching export from @ccui/primitives or @ccui/catholic.");
+    console.log("Component: " + entry.name);
+    console.log("");
+    console.log("Install package:");
+    console.log("  pnpm add " + entry.packageName);
+    console.log("");
+    console.log("Import component:");
+    console.log('  import { ' + entry.importName + ' } from "' + entry.packageName + '";');
+    console.log("");
+    console.log("Import styles once:");
+    console.log('  import "' + entry.styleImport + '";');
   });
 
 program.parse();
