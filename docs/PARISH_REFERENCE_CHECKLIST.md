@@ -4,7 +4,7 @@ This checklist tracks the work required to make Catholic Commons UI capable of f
 
 ## Goal
 
-Build a virtually identical inCatholic Commons UItion architecture to the Cathedral Basilica homepage with better structure, hierarchy, accessibility, maintainability, and Catholic-native components.
+Build a parish homepage reference implementation with strong structure, hierarchy, accessibility, maintainability, and Catholic-native components.
 
 ## Existing Catholic Commons UI coverage
 
@@ -13,7 +13,7 @@ Build a virtually identical inCatholic Commons UItion architecture to the Cathed
 - [x] MassScheduleBlock and MassTimeRow for Mass schedules
 - [x] ConfessionScheduleBlock for confession schedule
 - [x] SacramentScheduleBlock for sacramental instructions
-- [x] ContactBlock for parish office inCatholic Commons UItion
+- [x] ContactBlock for parish office information
 - [x] OfficeHours for parish office hours
 - [x] LocationBlock for address/location
 - [x] DonationCallout and AutoTitheCard for online giving
@@ -23,7 +23,7 @@ Build a virtually identical inCatholic Commons UItion architecture to the Cathed
 - [x] InstitutionalDirectory / DirectoryCard / SchoolDirectory for related institutions
 - [x] BiblePassageCard for Scripture quotation
 - [x] NewsCard / NewsList / FeaturedStory for news and perspectives
-- [x] InstitutionalFooter for footer links and contact inCatholic Commons UItion
+- [x] InstitutionalFooter for footer links and contact information
 
 ## Missing components to build
 

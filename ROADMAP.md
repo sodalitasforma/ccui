@@ -296,6 +296,6 @@ Next landing-page work:
 
 ## Cathedral Basilica parish parity work
 
-Catholic Commons UI is now using the Cathedral Basilica of St. Francis of Assisi homepage as the first real parish parity target. The objective is to represent the same parish inCatholic Commons UItion architecture with Catholic Commons UI tokens, primitives, and Catholic components.
+Catholic Commons UI is now using the Cathedral Basilica of St. Francis of Assisi homepage as the first real parish parity target. The objective is to represent the same parish information architecture with Catholic Commons UI tokens, primitives, and Catholic components.
 
 See `apps/web/CATHEDRAL_PARITY_CHECKLIST.md`.

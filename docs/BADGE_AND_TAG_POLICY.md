@@ -25,7 +25,7 @@ Use `Eyebrow` for section labels and registry categories.
 
 ## Text
 
-Use normal `Text` when the inCatholic Commons UItion is descriptive rather than metadata.
+Use normal `Text` when the information is descriptive rather than metadata.
 
 ## Test
 
