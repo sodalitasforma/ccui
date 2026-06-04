@@ -62,7 +62,6 @@ const docsExampleCount = countExports(
 );
 
 const stats = {
-  generatedAt: new Date().toISOString(),
   components: totalComponents,
   primitiveComponents,
   catholicComponents,

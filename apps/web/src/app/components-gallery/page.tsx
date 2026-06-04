@@ -37,11 +37,8 @@ import {
   TH,
   THead,
   Timeline,
-  TimelineContent,
   TimelineItem,
-  TimelineMarker,
   TR,
-  Tag,
   Text,
 } from "../../../../../packages/primitives/src";
 
@@ -123,7 +120,6 @@ import {
   HolyDayScheduleBlock,
   ConfessionScheduleBlock,
   AdorationScheduleBlock,
-  Breadcrumb,
   ClergyProfile,
   ContactBlock,
   Directory,
@@ -341,43 +337,6 @@ import {
 import colors from "../../../../../packages/tokens/src/colors.json";
 import liturgicalColors from "../../../../../packages/tokens/src/liturgical-colors.json";
 
-type Primitive = {
-  name: string;
-  description: string;
-  status: "Added";
-  category: "Layout" | "Typography" | "Surface" | "Action" | "Forms" | "Data" | "Media";
-};
-
-const primitives: Primitive[] = [
-  { name: "Container", description: "Centers page content at stable institutional widths.", status: "Added", category: "Layout" },
-  { name: "Section", description: "Applies page, subtle, parchment, raised, or dark surfaces.", status: "Added", category: "Layout" },
-  { name: "Stack", description: "Vertical rhythm using spacing tokens.", status: "Added", category: "Layout" },
-  { name: "Cluster", description: "Inline wrapping groups for actions, metadata, and nav.", status: "Added", category: "Layout" },
-  { name: "Grid", description: "Responsive card and directory layouts.", status: "Added", category: "Layout" },
-  { name: "Text", description: "Body copy with text-safe semantic tones.", status: "Added", category: "Typography" },
-  { name: "Heading", description: "Serif, document, interface, and inscriptional heading styles.", status: "Added", category: "Typography" },
-  { name: "Eyebrow", description: "Uppercase institutional section labels.", status: "Added", category: "Typography" },
-  { name: "Card", description: "Restrained raised content surface.", status: "Added", category: "Surface" },
-  { name: "Panel", description: "Grouped institutional module surface.", status: "Added", category: "Surface" },
-  { name: "Divider", description: "Subtle, strong, gold, and active separators.", status: "Added", category: "Surface" },
-  { name: "Notice", description: "Official, liturgical, warning, danger, success, and info notices.", status: "Added", category: "Surface" },
-  { name: "Button", description: "Primary, secondary, gold, ghost, and danger actions.", status: "Added", category: "Action" },
-  { name: "Link", description: "Brown-first institutional links.", status: "Added", category: "Action" },
-  { name: "Badge", description: "Compact status, season, and category labels.", status: "Added", category: "Action" },
-  { name: "Tag", description: "Lightweight filter and metadata labels.", status: "Added", category: "Action" },
-  { name: "SearchInput", description: "Search field for directories and archives.", status: "Added", category: "Forms" },
-  { name: "Select", description: "Native select styled for filters and language controls.", status: "Added", category: "Forms" },
-  { name: "FilterBar", description: "Composed search/filter/action row.", status: "Added", category: "Forms" },
-  { name: "Tabs", description: "News, calendar, and section switching.", status: "Added", category: "Data" },
-  { name: "Accordion", description: "Disclosure sections for menus and structured details.", status: "Added", category: "Data" },
-  { name: "Table", description: "Dense institutional records and metadata.", status: "Added", category: "Data" },
-  { name: "Timeline", description: "Historical, sacramental, and project chronology.", status: "Added", category: "Data" },
-  { name: "EmptyState", description: "Sober blank states for unpublished records.", status: "Added", category: "Data" },
-  { name: "IconFrame", description: "Restrained framed icon container.", status: "Added", category: "Media" },
-  { name: "MediaFrame", description: "Formal image, video, and hero media frame.", status: "Added", category: "Media" },
-];
-
-const categories = ["Layout", "Typography", "Surface", "Action", "Forms", "Data", "Media"] as const;
 
 const rawColors = colors.color.raw as Record<string, string>;
 const semanticColors = colors.color.semantic as Record<string, string>;
@@ -388,9 +347,6 @@ function resolveColor(value: string) {
   return rawColors[match[1]] || value;
 }
 
-function Code({ children }: { children: string }) {
-  return <code className="docs-code">{children}</code>;
-}
 
 function ComponentBlock({
   title,

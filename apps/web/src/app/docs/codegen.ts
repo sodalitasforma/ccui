@@ -40,7 +40,6 @@ import {
   contributorListExample,
   apiEndpointCardExample,
   videoCardExample,
-  photoGalleryCardExample,
   mediaCardExample,
   pressReleaseCardExample,
   pressOfficeNoticeExample,

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import systemStats from "./system-stats.json";
 import { docsSearchItems } from "./docs/search-index";
 
@@ -26,12 +27,14 @@ export default function Home() {
         <Cluster justify="between" align="center" gap="lg">
           <Cluster gap="lg" align="center">
             <Link href="/" className="home-logo" aria-label="Catholic Commons UI home">
-              <img
-                src="/ccui-logo.png"
-                alt=""
-                className="home-logo__image"
-                aria-hidden="true"
-              />
+              <Image
+                  src="/ccui-logo.png"
+                  alt=""
+                  width={48}
+                  height={48}
+                  className="home-logo__image"
+                  aria-hidden="true"
+                />
               <span className="home-logo__copy">
                 <span className="home-logo__wordmark">Catholic Commons UI</span>
                 <span className="home-logo__version">v0.0.1</span>

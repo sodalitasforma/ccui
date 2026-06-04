@@ -1,16 +1,15 @@
 "use client";
 
+import Image from "next/image";
+import NextLink from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { docsSearchItems } from "../docs/search-index";
 import {
   Badge,
   Button,
-  Cluster,
   Divider,
   DocSearch,
-  Link,
   Stack,
-  Tag,
   Text,
   ArrowRightIcon,
 } from "../../../../../packages/primitives/src";
@@ -148,23 +147,25 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
   return (
     <aside className="docs-sidebar">
       <Stack gap="lg">
-        <Link href="/" className="docs-sidebar-brand-lockup" aria-label="Catholic Commons UI home">
-          <img
-            src="/ccui-logo.png"
-            alt=""
-            className="docs-sidebar-brand-lockup__image"
-            aria-hidden="true"
-          />
+        <NextLink href="/" className="docs-sidebar-brand-lockup" aria-label="Catholic Commons UI home">
+          <Image
+              src="/ccui-logo.png"
+              alt=""
+              width={48}
+              height={48}
+              className="docs-sidebar-brand-lockup__image"
+              aria-hidden="true"
+            />
           <span className="docs-sidebar-brand-lockup__copy">
             <span className="docs-sidebar-brand-lockup__wordmark">Catholic Commons UI</span>
             <span className="docs-sidebar-brand-lockup__version">v0.0.1</span>
           </span>
-        </Link>
+        </NextLink>
 
         <Stack gap="md">
           <Stack gap="xs">
             <nav className="docs-nav docs-nav--start" aria-label="Primary navigation">
-              <a href="/">Home</a>
+              <NextLink href="/">Home</NextLink>
               <a
                 aria-current={current === "docs" ? "page" : undefined}
                 href="/docs"
