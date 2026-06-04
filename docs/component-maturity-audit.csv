@@ -1,0 +1,150 @@
+package,component,maturity,review_notes
+@ccui/primitives,accordion,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,badge,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,bell-icon,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,button,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,card,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,ccui-signal-bell,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,cluster,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,container,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,divider,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,doc-search,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,empty-state,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,eyebrow,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,filter-bar,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,grid,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,heading,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,heart-icon,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,icon-frame,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,icons,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,link,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,media-frame,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,notice,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,panel,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,search-input,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,section,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,select,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,stack,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,table,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,tabs,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,tag,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,text,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/primitives,timeline,stable-candidate,"General primitive; review API naming, accessibility, and composition behavior."
+@ccui/catholic,adoration-schedule-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,announcement-banner,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,api-endpoint-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,archive-search-result,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,authority-level-badge,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,auto-tithe-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,bible-passage-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,breadcrumb,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,bulletin-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,calendar-item,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,calendar-tabs,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,canonical-reference,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,canonical-source-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,century-filter,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,church-document-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,church-document-header,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,citation-trail,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,clergy-directory,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,clergy-profile,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,confession-schedule-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,contact-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,contributor-list,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,dataset-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,date-range-label,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,directory,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,directory-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,directory-filter,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,document-authority-badge,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,document-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,document-citation,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,document-list,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,document-metadata,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,document-type-badge,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,download-link,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,entity-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,entity-relationship-list,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,event-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,event-list,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,exception-notice,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,external-catholic-resource-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,feast-day-hero,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,featured-story,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,file-type-icon,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,footnote-list,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,fullscreen-menu,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,holy-day-schedule-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,institutional-directory,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,institutional-footer,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,institutional-header,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,language-document-links,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,language-nav,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,liturgical-color-dot,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,liturgical-day-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,liturgical-season-badge,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,location-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,machine-readable-badge,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,mass-schedule-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,mass-time-row,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,media-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,ministry-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,ministry-directory-block,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,name-filter,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,namespace-badge,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,news-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,news-list,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,office-directory,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,office-hours,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,official-notice-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,ontology-class-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,ontology-property-table,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,page-header,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,paragraph-anchor,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,parish-announcement-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,parish-contact-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,parish-directory,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,parish-form-links,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,parish-hero,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,parish-history-timeline,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,parish-mega-nav,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,parish-notification-bell,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,parish-quick-links,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,photo-gallery,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,photo-gallery-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,pontiff-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,pontiff-directory,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,prayer-block,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,prayer-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,press-office-notice,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,press-release-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,primary-nav,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,project-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,project-donation-callout,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,project-status-badge,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,provenance-trail,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,reading-reference,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,related-documents,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,repository-link,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,resource-link,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,review-status-badge,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,sacrament-schedule-block,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,sacramental-preparation-block,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,sacred-media-frame,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,safeguarding-notice,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,saint-directory,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,school-directory,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,search-tool,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,seasonal-schedule-block,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,semantic-relation-graph,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,social-links,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,source-card,stable-candidate,Likely reusable Catholic interface pattern; review accessibility and source-data assumptions.
+@ccui/catholic,staff-profile,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,term-definition-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,tithe-icon,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,translation-variant-card,experimental,"Promising Catholic/data-native pattern; needs API, governance, and authority-sensitivity review."
+@ccui/catholic,utility-nav,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,video-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,visitor-info-block,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."
+@ccui/catholic,worship-aid-card,needs-review,"Needs manual classification as stable candidate, experimental, demo-only, or remove/redesign."

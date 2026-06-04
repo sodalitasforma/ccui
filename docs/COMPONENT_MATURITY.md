@@ -46,3 +46,11 @@ Demo-only components or examples are useful for showing direction but should not
 ## Review question
 
 Which components should become stable API, which should remain experimental, and which should be removed or moved into examples?
+
+## Component inventory
+
+A component-by-component maturity audit is maintained in:
+
+```text
+docs/component-maturity-audit.csv
+```
