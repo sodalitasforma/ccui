@@ -144,3 +144,9 @@ vite.config.ts.timestamp-*
 
 # Local inspection artifacts
 .scratch/
+
+# Local agent/tool instructions
+AGENTS.md
+CLAUDE.md
+**/AGENTS.md
+**/CLAUDE.md
