@@ -164,9 +164,9 @@ export function ParishPage() {
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`npm exec @catholiccommons/cli -- init
-npm exec @catholiccommons/cli -- list
-npm exec @catholiccommons/cli -- add mass-schedule-block`}</code></pre>
+                  <pre className="docs-install-code"><code>{`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons list
+pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
                 </Stack>
               </Section>
 
