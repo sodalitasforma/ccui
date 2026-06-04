@@ -1914,7 +1914,7 @@
 }
 
 .ccui-directory-filter {
-  display: block;
+  width: 100%;
 }
 
 .ccui-directory__header {
