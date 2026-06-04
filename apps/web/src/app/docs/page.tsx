@@ -153,6 +153,23 @@ export function ParishPage() {
                 </Stack>
               </Section>
 
+              <Section id="use-the-cli" surface="page" spacing="lg">
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Use the CLI
+                    </Heading>
+                    <Text tone="secondary">
+                      Initialize Catholic Commons UI config, list available components, and add component wrappers.
+                    </Text>
+                  </Stack>
+
+                  <pre className="docs-install-code"><code>{`pnpm dlx @ccui/cli init
+pnpm dlx @ccui/cli list
+pnpm dlx @ccui/cli add mass-schedule-block`}</code></pre>
+                </Stack>
+              </Section>
+
               <Section id="existing-projects" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
