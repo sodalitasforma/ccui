@@ -1,30 +1,30 @@
 # Catholic Commons UI
 
-Catholic Commons UI is an open-source Catholic interface system for shared digital form, beauty, and usability across Catholic digital projects.
+Catholic Commons UI is a design system and React component library for Catholic digital products.
 
-Catholic Commons UI provides design tokens, primitives, Catholic-specific components, templates, and documentation for Catholic open-source tools, parish websites, diocesan projects, and public digital presence.
+It includes design tokens, primitive UI components, Catholic-specific component patterns, and a documentation app for reviewing the system.
 
-## Status
+## Workspace
 
-Early concept / pre-alpha. The repository structure, token system, component registry, and public gallery are being established.
+- `apps/web` — documentation and component gallery
+- `packages/tokens` — design tokens and CSS variables
+- `packages/primitives` — general UI primitives
+- `packages/catholic` — Catholic-specific component patterns
+- `packages/icons` — icon package placeholder
 
-## Why Catholic Commons UI exists
+## Current system stats
 
-Catholic digital projects often rebuild the same interface patterns from scratch: Scripture citations, liturgical calendar cards, parish schedules, Church document views, source references, institutional cards, and public notice layouts.
+- 149 total component files
+- 31 primitive component files
+- 118 Catholic-specific component pattern files
+- 9 token files
+- 9 token groups
+- 1,416 CSS token references
+- 96 documented examples
 
-Catholic Commons UI aims to provide a shared presentation layer for Catholic software so builders can create tools with greater unity, beauty, usability, and accessibility.
+## Development
 
-## Repository structure
+Install dependencies:
 
-- `apps/web` — public landing page, gallery, and documentation
-- `packages/tokens` — design tokens for color, typography, spacing, and liturgical themes
-- `packages/primitives` — foundational UI components
-- `packages/catholic` — Catholic-specific components
-- `packages/icons` — reusable SVG/React icons
-- `registry` — machine-readable component catalog
-- `examples` — copyable example pages
-- `assets` — source artwork, SVGs, ornaments, and reference material
-
-## License
-
-MIT
+```bash
+pnpm install
