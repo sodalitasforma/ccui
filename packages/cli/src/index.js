@@ -142,8 +142,9 @@ program
 program
   .command("add")
   .argument("<component>")
-  .description("Show import guidance for a Catholic Commons UI component")
-  .action((component) => {
+  .description("Add a Catholic Commons UI component wrapper to this project")
+  .option("--dry-run", "Show what would be written without creating files")
+  .action((component, options) => {
     const entry = componentRegistry[component];
 
     if (!entry) {
@@ -152,13 +153,27 @@ program
       process.exit(1);
     }
 
+    const dir = path.join(process.cwd(), "components", "ccui");
+    const target = path.join(dir, component + ".tsx");
+    const source =
+      'export { ' + entry.importName + ' } from "' + entry.packageName + '";\n';
+
     console.log("Component: " + entry.name);
+    console.log("");
+
+    if (options.dryRun) {
+      console.log("Would write:");
+      console.log("  " + target);
+    } else {
+      fs.mkdirSync(dir, { recursive: true });
+      fs.writeFileSync(target, source);
+      console.log("Created:");
+      console.log("  " + target);
+    }
+
     console.log("");
     console.log("Install package:");
     console.log("  pnpm add " + entry.packageName);
-    console.log("");
-    console.log("Import component:");
-    console.log('  import { ' + entry.importName + ' } from "' + entry.packageName + '";');
     console.log("");
     console.log("Import styles once:");
     console.log('  import "' + entry.styleImport + '";');
