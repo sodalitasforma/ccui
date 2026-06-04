@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge, Cluster } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Badge, Cluster } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { LiturgicalColorDot } from "./liturgical-color-dot";
 import type { LiturgicalColor, LiturgicalSeason } from "./types";
 

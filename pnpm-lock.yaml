@@ -13,13 +13,13 @@ importers:
 
   apps/web:
     dependencies:
-      '@ccui/catholic':
+      '@catholiccommons/catholic':
         specifier: workspace:*
         version: link:../../packages/catholic
-      '@ccui/primitives':
+      '@catholiccommons/primitives':
         specifier: workspace:*
         version: link:../../packages/primitives
-      '@ccui/tokens':
+      '@catholiccommons/tokens':
         specifier: workspace:*
         version: link:../../packages/tokens
       next:
@@ -59,7 +59,7 @@ importers:
 
   packages/catholic:
     dependencies:
-      '@ccui/primitives':
+      '@catholiccommons/primitives':
         specifier: workspace:*
         version: link:../primitives
       react-dom:

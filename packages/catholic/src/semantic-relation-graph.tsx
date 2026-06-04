@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Divider, Grid, Heading, Stack, Tag, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Card, Cluster, Divider, Grid, Heading, Stack, Tag, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { EntityCard } from "./entity-card";
 import { EntityRelationshipList } from "./entity-relationship-list";
 import type { SemanticRelationGraphData } from "./types";

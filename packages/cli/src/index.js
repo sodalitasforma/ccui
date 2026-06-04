@@ -8,81 +8,81 @@ const program = new Command();
 const componentRegistry = {
   button: {
     name: "Button",
-    packageName: "@ccui/primitives",
+    packageName: "@catholiccommons/primitives",
     importName: "Button",
-    styleImport: "@ccui/primitives/primitives.css",
+    styleImport: "@catholiccommons/primitives/primitives.css",
   },
   card: {
     name: "Card",
-    packageName: "@ccui/primitives",
+    packageName: "@catholiccommons/primitives",
     importName: "Card",
-    styleImport: "@ccui/primitives/primitives.css",
+    styleImport: "@catholiccommons/primitives/primitives.css",
   },
   badge: {
     name: "Badge",
-    packageName: "@ccui/primitives",
+    packageName: "@catholiccommons/primitives",
     importName: "Badge",
-    styleImport: "@ccui/primitives/primitives.css",
+    styleImport: "@catholiccommons/primitives/primitives.css",
   },
   "mass-schedule-block": {
     name: "MassScheduleBlock",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "MassScheduleBlock",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "confession-schedule-block": {
     name: "ConfessionScheduleBlock",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "ConfessionScheduleBlock",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "adoration-schedule-block": {
     name: "AdorationScheduleBlock",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "AdorationScheduleBlock",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "holy-day-schedule-block": {
     name: "HolyDayScheduleBlock",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "HolyDayScheduleBlock",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "liturgical-day-card": {
     name: "LiturgicalDayCard",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "LiturgicalDayCard",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "liturgical-season-badge": {
     name: "LiturgicalSeasonBadge",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "LiturgicalSeasonBadge",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "parish-announcement-card": {
     name: "ParishAnnouncementCard",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "ParishAnnouncementCard",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "church-document-card": {
     name: "ChurchDocumentCard",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "ChurchDocumentCard",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "church-document-header": {
     name: "ChurchDocumentHeader",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "ChurchDocumentHeader",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
   "document-citation": {
     name: "DocumentCitation",
-    packageName: "@ccui/catholic",
+    packageName: "@catholiccommons/catholic",
     importName: "DocumentCitation",
-    styleImport: "@ccui/catholic/catholic.css",
+    styleImport: "@catholiccommons/catholic/catholic.css",
   },
 };
 
@@ -121,12 +121,12 @@ program
 
     console.log("");
     console.log("Install packages:");
-    console.log("  pnpm add @ccui/tokens @ccui/primitives @ccui/catholic");
+    console.log("  pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic");
     console.log("");
     console.log("Import styles once:");
-    console.log('  import "@ccui/tokens/css-vars.css";');
-    console.log('  import "@ccui/primitives/primitives.css";');
-    console.log('  import "@ccui/catholic/catholic.css";');
+    console.log('  import "@catholiccommons/tokens/css-vars.css";');
+    console.log('  import "@catholiccommons/primitives/primitives.css";');
+    console.log('  import "@catholiccommons/catholic/catholic.css";');
   });
 
 program

@@ -13,9 +13,9 @@
     "next": "16.2.6",
     "react": "19.2.4",
     "react-dom": "19.2.4",
-    "@ccui/tokens": "workspace:*",
-    "@ccui/primitives": "workspace:*",
-    "@ccui/catholic": "workspace:*"
+    "@catholiccommons/tokens": "workspace:*",
+    "@catholiccommons/primitives": "workspace:*",
+    "@catholiccommons/catholic": "workspace:*"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",

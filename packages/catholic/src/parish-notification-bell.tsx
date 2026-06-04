@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { CCUISignalBell } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { CCUISignalBell } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 export type ParishNotificationBellProps = {
   label?: string;

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Divider, Heading, Link, Stack, Tag, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Card, Cluster, Divider, Heading, Link, Stack, Tag, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { ContributorList } from "./contributor-list";
 import { ProjectStatusBadge } from "./project-status-badge";
 import { RepositoryLink } from "./repository-link";

@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge, Card, Cluster, MediaFrame, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Badge, Card, Cluster, MediaFrame, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 type ClergyProfileProps = {
   name: string;

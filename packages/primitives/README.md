@@ -1,4 +1,4 @@
-# @ccui/primitives
+# @catholiccommons/primitives
 
 General UI primitives for Catholic Commons UI.
 

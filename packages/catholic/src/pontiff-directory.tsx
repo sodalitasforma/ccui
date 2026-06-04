@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Grid, Stack } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Grid, Stack } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { CenturyFilter } from "./century-filter";
 import { NameFilter } from "./name-filter";
 import { PontiffCard } from "./pontiff-card";

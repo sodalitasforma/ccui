@@ -1,5 +1,5 @@
 {
-  "name": "@ccui/cli",
+  "name": "@catholiccommons/cli",
   "version": "0.0.1",
   "description": "Command line tools for Catholic Commons UI.",
   "type": "module",

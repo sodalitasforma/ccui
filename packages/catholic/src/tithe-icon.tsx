@@ -2,8 +2,8 @@
 
 import type { ComponentPropsWithoutRef } from "react";
 import { useMemo, useState } from "react";
-import { Button, Card, Cluster, Heading, HeartIcon, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Button, Card, Cluster, Heading, HeartIcon, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 export type TitheIconAmount = number | string;
 

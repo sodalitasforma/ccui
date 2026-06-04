@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Stack, Tab, TabList, TabPanel, Tabs } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Stack, Tab, TabList, TabPanel, Tabs } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { CalendarItem } from "./calendar-item";
 import type { CalendarItemData } from "./types";
 

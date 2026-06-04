@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { cx } from "@ccui/primitives";
+import { cx } from "@catholiccommons/primitives";
 import type { LanguageItem } from "./types";
 
 type LanguageNavProps = {

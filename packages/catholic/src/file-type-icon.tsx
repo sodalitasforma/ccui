@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { IconFrame, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { IconFrame, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 type FileTypeIconProps = {
   fileType: string;

@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Badge } from "@ccui/primitives";
+import { Badge } from "@catholiccommons/primitives";
 import type { AuthorityLevel } from "./types";
 
 type BadgeVariant =

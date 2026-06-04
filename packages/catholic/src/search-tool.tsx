@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Button, SearchInput } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Button, SearchInput } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 type SearchToolProps = {
   action?: string;

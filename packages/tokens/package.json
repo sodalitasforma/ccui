@@ -1,5 +1,5 @@
 {
-  "name": "@ccui/tokens",
+  "name": "@catholiccommons/tokens",
   "version": "0.0.1",
   "description": "Design tokens for Catholic Commons UI.",
   "exports": {

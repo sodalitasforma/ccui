@@ -106,7 +106,7 @@ export default function DocsPage() {
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`pnpm add @ccui/tokens @ccui/primitives @ccui/catholic`}</code></pre>
+                  <pre className="docs-install-code"><code>{`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}</code></pre>
                 </Stack>
               </Section>
 
@@ -121,9 +121,9 @@ export default function DocsPage() {
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`import "@ccui/tokens/css-vars.css";
-import "@ccui/primitives/primitives.css";
-import "@ccui/catholic/catholic.css";`}</code></pre>
+                  <pre className="docs-install-code"><code>{`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}</code></pre>
                 </Stack>
               </Section>
 
@@ -138,8 +138,8 @@ import "@ccui/catholic/catholic.css";`}</code></pre>
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`import { Button } from "@ccui/primitives";
-import { MassScheduleBlock } from "@ccui/catholic";
+                  <pre className="docs-install-code"><code>{`import { Button } from "@catholiccommons/primitives";
+import { MassScheduleBlock } from "@catholiccommons/catholic";
 
 export function ParishPage() {
   return (
@@ -164,9 +164,9 @@ export function ParishPage() {
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`pnpm dlx @ccui/cli init
-pnpm dlx @ccui/cli list
-pnpm dlx @ccui/cli add mass-schedule-block`}</code></pre>
+                  <pre className="docs-install-code"><code>{`pnpm dlx @catholiccommons/cli init
+pnpm dlx @catholiccommons/cli list
+pnpm dlx @catholiccommons/cli add mass-schedule-block`}</code></pre>
                 </Stack>
               </Section>
 

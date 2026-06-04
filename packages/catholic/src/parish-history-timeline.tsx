@@ -6,8 +6,8 @@ import {
   Heading,
   Stack,
   Text,
-} from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+} from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 export type ParishHistoryTimelineItem = {
   date: string;

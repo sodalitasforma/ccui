@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, Link, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Cluster, Link, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import type { ParagraphAnchorData } from "./types";
 
 type ParagraphAnchorProps = ParagraphAnchorData &

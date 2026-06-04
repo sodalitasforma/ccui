@@ -1,6 +1,6 @@
 import type { AnchorHTMLAttributes } from "react";
-import { Badge, Card, Cluster, Heading, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Badge, Card, Cluster, Heading, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 export type VideoCardMedia = {
   src: string;

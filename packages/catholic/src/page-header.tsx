@@ -1,8 +1,8 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 import { Breadcrumb } from "./breadcrumb";
 import type { NavItem } from "./types";
-import { Container, Eyebrow, Heading, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Container, Eyebrow, Heading, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 type PageHeaderProps = {
   eyebrow?: string;

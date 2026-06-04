@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, Container, Divider, Eyebrow, Heading, Link, Section, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Cluster, Container, Divider, Eyebrow, Heading, Link, Section, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { DocumentAuthorityBadge } from "./document-authority-badge";
 import { DocumentCitation } from "./document-citation";
 import { DocumentMetadata } from "./document-metadata";

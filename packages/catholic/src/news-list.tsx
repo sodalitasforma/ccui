@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import { NewsCard } from "./news-card";
 import type { NewsItemData } from "./types";
 

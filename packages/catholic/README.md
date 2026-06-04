@@ -1,4 +1,4 @@
-# @ccui/catholic
+# @catholiccommons/catholic
 
 Catholic-specific component patterns for Catholic Commons UI.
 

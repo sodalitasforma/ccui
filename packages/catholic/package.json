@@ -1,5 +1,5 @@
 {
-  "name": "@ccui/catholic",
+  "name": "@catholiccommons/catholic",
   "version": "0.0.1",
   "description": "Catholic-specific UI components for Catholic Commons UI.",
   "main": "src/index.ts",
@@ -13,7 +13,7 @@
     "react": "19.2.4"
   },
   "dependencies": {
-    "@ccui/primitives": "workspace:*"
+    "@catholiccommons/primitives": "workspace:*"
   },
   "exports": {
     ".": "./src/index.ts",

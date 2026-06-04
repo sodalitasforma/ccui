@@ -1,7 +1,7 @@
 import type * as React from "react";
 import type { AnchorHTMLAttributes } from "react";
-import { Badge, Card, Cluster, Heading, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Badge, Card, Cluster, Heading, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 export type MediaCardFit = "cover" | "contain" | "fill" | "scale-down" | "none";
 export type MediaCardPosition = "center" | "top" | "bottom" | "left" | "right";

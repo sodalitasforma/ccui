@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Cluster, Link, Stack, Tag, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Card, Cluster, Link, Stack, Tag, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import type { ProjectContributorData } from "./types";
 
 type ContributorListProps = {

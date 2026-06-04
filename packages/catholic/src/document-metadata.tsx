@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, Link, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Cluster, Link, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 import type { ChurchDocumentMetadataItem } from "./types";
 
 type DocumentMetadataProps = {

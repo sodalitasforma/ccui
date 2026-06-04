@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Cluster, IconFrame, Stack, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Cluster, IconFrame, Stack, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 type ResourceLinkVariant = "default" | "document" | "external" | "download";
 

@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Notice, Stack, Text } from "@ccui/primitives";
+import { Notice, Stack, Text } from "@catholiccommons/primitives";
 import type { ExceptionSeverity, ScheduleException } from "./types";
 
 type ExceptionNoticeProps = {

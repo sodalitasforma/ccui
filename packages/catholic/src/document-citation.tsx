@@ -1,6 +1,6 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Card, Text } from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+import { Card, Text } from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 type DocumentCitationProps = {
   citation: string;

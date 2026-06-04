@@ -8,8 +8,8 @@ import {
   Stack,
   Tag,
   Text,
-} from "@ccui/primitives";
-import { cx } from "@ccui/primitives";
+} from "@catholiccommons/primitives";
+import { cx } from "@catholiccommons/primitives";
 
 export type WorshipAidCardProps = {
   title: string;
