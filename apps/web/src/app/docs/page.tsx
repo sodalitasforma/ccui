@@ -1,7 +1,6 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
 import {
   Badge,
-  Button,
   Cluster,
   Container,
   Heading,
@@ -9,7 +8,6 @@ import {
   Section,
   Stack,
   Text,
-  ArrowRightIcon,
 } from "../../../../../packages/primitives/src";
 
 const setupOptions = [
@@ -219,12 +217,6 @@ pnpm dlx ccui@latest add institutional-header`}</code></pre>
                 </Stack>
               </Section>
 
-              <div className="docs-install-footer-nav">
-                <Link href="/components-gallery">Introduction</Link>
-                <Button href="/components-gallery" size="sm" iconAfter={<ArrowRightIcon size="xs" />}>
-                  Components
-                </Button>
-              </div>
             </article>
           </div>
         </Container>
