@@ -1,23 +1,50 @@
 # Contributing
 
-Forma is in early formation.
+Catholic Commons UI is currently pre-stable and under review.
 
-Contributions may include:
+## Component additions
 
-- Design tokens
-- Primitive components
-- Catholic-specific components
-- Icons and ornaments
-- Documentation
-- Accessibility review
-- Example pages
-- Vatican/Holy See reference audit notes
-- CDCF project mapping suggestions
+New components should include:
 
-Before contributing a new component, please define:
+- A clear package location
+- Typed props
+- Token-based styling
+- A documentation example
+- A maturity classification
+- Accessibility review before stable status
 
-1. The user need.
-2. The Catholic use case.
-3. Whether it belongs in primitives, Catholic components, or templates.
-4. Required design tokens.
-5. Accessibility considerations.
+## Package placement
+
+Use `packages/primitives` for general UI primitives.
+
+Use `packages/catholic` for Catholic-specific interface patterns.
+
+Use `packages/tokens` for design tokens and CSS variables.
+
+Use `packages/icons` for icon work once that package is active.
+
+## Maturity levels
+
+Components should be classified as one of:
+
+- `stable-candidate`
+- `experimental`
+- `demo-only`
+- `remove-redesign`
+
+The component maturity audit is maintained at:
+
+```text
+docs/component-maturity-audit.csv
+```
+
+## Review gate
+
+Before committing changes, run:
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+pnpm audit
+```
