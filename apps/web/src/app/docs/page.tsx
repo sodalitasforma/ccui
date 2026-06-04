@@ -13,7 +13,12 @@ import {
 const setupOptions = [
   {
     title: "Use packages",
-    description: "Install the package layers directly. Recommended today.",
+    description: "Install the package layers directly.",
+    badge: null,
+  },
+  {
+    title: "Use the CLI",
+    description: "Initialize config and add component wrappers.",
     badge: null,
   },
   {
