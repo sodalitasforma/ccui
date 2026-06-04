@@ -1917,12 +1917,16 @@
   display: block;
 }
 
-.ccui-directory__grid {
-  /* CSS contract: selector owned by package stylesheet. */
+.ccui-directory__header {
+  display: grid;
+  gap: var(--ccui-space-2);
 }
 
-.ccui-directory__header {
-  /* CSS contract: selector owned by package stylesheet. */
+.ccui-directory__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--ccui-space-4);
+  align-items: stretch;
 }
 
 .ccui-document-authority-badge {
