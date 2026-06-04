@@ -17,12 +17,7 @@ const setupOptions = [
     badge: null,
   },
   {
-    title: "Use the CLI",
-    description: "Initialize a project and add components by name.",
-    badge: "Coming soon",
-  },
-  {
-    title: "Existing Projects",
+    title: "Existing Project",
     description: "Add CCUI to an app you already created.",
     badge: null,
   },
@@ -66,7 +61,6 @@ export default function DocsPage() {
                   <div className="docs-install-recommendation">
                     <Text as="p">
                       <strong>Recommended for new projects:</strong> use the CCUI packages directly today.
-                      CLI and registry setup are coming soon.
                     </Text>
                   </div>
 
@@ -154,32 +148,11 @@ export function ParishPage() {
                 </Stack>
               </Section>
 
-              <Section id="use-the-cli" surface="page" spacing="lg">
-                <Stack gap="md">
-                  <Stack gap="xs">
-                    <Cluster gap="sm" align="center">
-                      <Heading level={2} size="xl" className="docs-install-section-title">
-                        Use the CLI
-                      </Heading>
-                      <Badge variant="neutral" size="xs">Coming soon</Badge>
-                    </Cluster>
-
-                    <Text tone="secondary">
-                      The planned CLI will initialize a project and add components by name.
-                    </Text>
-                  </Stack>
-
-                  <pre className="docs-install-code docs-install-code--muted"><code>{`pnpm dlx ccui@latest init
-pnpm dlx ccui@latest add mass-schedule-block
-pnpm dlx ccui@latest add institutional-header`}</code></pre>
-                </Stack>
-              </Section>
-
               <Section id="existing-projects" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
-                      Existing Projects
+                      Existing Project
                     </Heading>
                     <Text tone="secondary">
                       Add the packages, import the styles once, then replace one interface surface
@@ -199,10 +172,10 @@ pnpm dlx ccui@latest add institutional-header`}</code></pre>
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
-                      Frameworks
+                      Choose Your Framework
                     </Heading>
                     <Text tone="secondary">
-                      Framework-specific guides are coming soon.
+                      Framework-specific setup notes are planned.
                     </Text>
                   </Stack>
 

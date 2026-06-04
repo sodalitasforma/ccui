@@ -47,7 +47,6 @@ const pageSections: Record<
       { type: "link", label: "Installation", href: "/docs#overview" },
       { type: "link", label: "Introduction", href: "/docs#overview" },
       { type: "link", label: "Quick Start", href: "/docs#quick-start" },
-      { type: "link", label: "Use the CLI", href: "/docs#use-the-cli" },
       { type: "link", label: "Existing Projects", href: "/docs#existing-projects" },
       { type: "link", label: "Frameworks", href: "/docs#frameworks" },
     ],
