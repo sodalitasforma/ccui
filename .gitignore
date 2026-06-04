@@ -150,3 +150,8 @@ AGENTS.md
 CLAUDE.md
 **/AGENTS.md
 **/CLAUDE.md
+
+# Local/internal scripts and checklists
+.scratch/
+local-scripts/
+internal-docs/
