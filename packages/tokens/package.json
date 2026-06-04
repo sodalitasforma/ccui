@@ -1,7 +1,6 @@
 {
   "name": "@ccui/tokens",
   "version": "0.0.1",
-  "private": true,
   "description": "Design tokens for Catholic Commons UI.",
   "exports": {
     ".": "./src/index.ts",
@@ -20,5 +19,13 @@
   },
   "sideEffects": [
     "./src/css-vars.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "package.json"
   ]
 }

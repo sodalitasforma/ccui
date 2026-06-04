@@ -1,7 +1,6 @@
 {
   "name": "@ccui/primitives",
   "version": "0.0.1",
-  "private": true,
   "description": "Primitive UI components for Catholic Commons UI.",
   "main": "src/index.ts",
   "types": "src/index.ts",
@@ -21,5 +20,13 @@
   },
   "sideEffects": [
     "./src/primitives.css"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src",
+    "README.md",
+    "package.json"
   ]
 }
