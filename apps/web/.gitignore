@@ -34,7 +34,7 @@ yarn-error.log*
 .env*
 
 # deployment cache
-.deployment platform
+.deployment/
 
 # typescript
 *.tsbuildinfo
