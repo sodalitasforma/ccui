@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Forma will be documented here.
+All notable changes to Catholic Commons UI will be documented here.
 
 ## 0.0.1
 

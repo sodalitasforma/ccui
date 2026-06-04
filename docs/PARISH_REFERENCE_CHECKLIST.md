@@ -1,19 +1,19 @@
-# Cathedral Basilica Parish Parity Checklist
+# Parish Reference Checklist
 
-This checklist tracks the work required to make Forma capable of furnishing a near-equivalent parish homepage to the Cathedral Basilica of St. Francis of Assisi site, but using Forma tokens, primitives, and Catholic components.
+This checklist tracks the work required to make Catholic Commons UI capable of furnishing a full parish homepage reference implementation using Catholic Commons UI tokens, primitives, and Catholic components.
 
 ## Goal
 
-Build a virtually identical information architecture to the Cathedral Basilica homepage with better structure, hierarchy, accessibility, maintainability, and Catholic-native components.
+Build a virtually identical inCatholic Commons UItion architecture to the Cathedral Basilica homepage with better structure, hierarchy, accessibility, maintainability, and Catholic-native components.
 
-## Existing Forma coverage
+## Existing Catholic Commons UI coverage
 
 - [x] InstitutionalHeader for parish navigation
 - [x] PrimaryNav / UtilityNav / LanguageNav for navigation layers
 - [x] MassScheduleBlock and MassTimeRow for Mass schedules
 - [x] ConfessionScheduleBlock for confession schedule
 - [x] SacramentScheduleBlock for sacramental instructions
-- [x] ContactBlock for parish office information
+- [x] ContactBlock for parish office inCatholic Commons UItion
 - [x] OfficeHours for parish office hours
 - [x] LocationBlock for address/location
 - [x] DonationCallout and AutoTitheCard for online giving
@@ -23,7 +23,7 @@ Build a virtually identical information architecture to the Cathedral Basilica h
 - [x] InstitutionalDirectory / DirectoryCard / SchoolDirectory for related institutions
 - [x] BiblePassageCard for Scripture quotation
 - [x] NewsCard / NewsList / FeaturedStory for news and perspectives
-- [x] InstitutionalFooter for footer links and contact information
+- [x] InstitutionalFooter for footer links and contact inCatholic Commons UItion
 
 ## Missing components to build
 

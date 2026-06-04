@@ -3,7 +3,7 @@
 
 ## Current operating method — landing-page-driven system refinement
 
-Forma is now moving from component inventory to composed Catholic interfaces.
+Catholic Commons UI is now moving from component inventory to composed Catholic interfaces.
 
 The landing page is the proving ground. It must be built from the real cascade:
 
@@ -19,7 +19,7 @@ As the landing page is composed, any missing capability should be pushed down in
 - The component gallery remains the proof surface for the full component inventory.
 - The cascade audit must continue to pass with no hard-coded color regressions.
 
-The immediate objective is to finish the landing page, using only Forma tokens, primitives, and Catholic components, while improving the underlying system whenever the page reveals a reusable need.
+The immediate objective is to finish the landing page, using only Catholic Commons UI tokens, primitives, and Catholic components, while improving the underlying system whenever the page reveals a reusable need.
 
 ## Phase 0 — Public infrastructure foundation
 
@@ -69,7 +69,7 @@ These are the minimum building blocks needed before Catholic-specific components
 - ✅ Notice
 - ✅ IconFrame
 - ✅ MediaFrame
-- ✅ FormaSignalBell
+- ✅ Catholic Commons UISignalBell
 
 ## Phase 3 — Institutional components
 
@@ -208,7 +208,7 @@ Phase 7 should support real embedded media sources. Media examples should make i
 
 ## Phase 8 — CDCF project mappings
 
-These components map Forma to Catholic Digital Commons Foundation-style projects, APIs, ontologies, datasets, and semantic infrastructure.
+These components map Catholic Commons UI to Catholic Digital Commons Foundation-style projects, APIs, ontologies, datasets, and semantic infrastructure.
 
 - ✅ ProjectCard
 - ✅ ProjectStatusBadge
@@ -265,7 +265,7 @@ Documentation polish backlog:
 
 ## Mature documentation outcome
 
-Forma should eventually move from shared example data to source-backed examples:
+Catholic Commons UI should eventually move from shared example data to source-backed examples:
 
 - Each docs example should live as a real `.tsx` example file.
 - The docs page should render that real example file as the live preview.
@@ -276,9 +276,9 @@ Forma should eventually move from shared example data to source-backed examples:
 ## Current checkpoint — landing page as system proof
 
 - ✅ Homepage split from component gallery.
-- ✅ Landing page now composes real Forma primitives and Catholic components.
+- ✅ Landing page now composes real Catholic Commons UI primitives and Catholic components.
 - ✅ Parish interface preview added using InstitutionalHeader, FeastDayHero, LiturgicalDayCard, MassScheduleBlock, AutoTitheCard, AnnouncementBanner, EventCard, ContactBlock, and InstitutionalFooter.
-- ✅ New primitive added: FormaSignalBell.
+- ✅ New primitive added: Catholic Commons UISignalBell.
 - ✅ New Catholic components added: ParishNotificationBell and AutoTitheCard.
 - ✅ MassScheduleBlock updated with an action slot after the homepage revealed the need for schedule-level actions.
 - ✅ Typecheck passes.
@@ -296,6 +296,6 @@ Next landing-page work:
 
 ## Cathedral Basilica parish parity work
 
-Forma is now using the Cathedral Basilica of St. Francis of Assisi homepage as the first real parish parity target. The objective is to represent the same parish information architecture with Forma tokens, primitives, and Catholic components.
+Catholic Commons UI is now using the Cathedral Basilica of St. Francis of Assisi homepage as the first real parish parity target. The objective is to represent the same parish inCatholic Commons UItion architecture with Catholic Commons UI tokens, primitives, and Catholic components.
 
 See `apps/web/CATHEDRAL_PARITY_CHECKLIST.md`.

@@ -1,6 +1,6 @@
 # Badge and Tag Policy
 
-Forma uses compact labels only when they carry semantic load.
+Catholic Commons UI uses compact labels only when they carry semantic load.
 
 ## Badge
 
@@ -25,7 +25,7 @@ Use `Eyebrow` for section labels and registry categories.
 
 ## Text
 
-Use normal `Text` when the information is descriptive rather than metadata.
+Use normal `Text` when the inCatholic Commons UItion is descriptive rather than metadata.
 
 ## Test
 
