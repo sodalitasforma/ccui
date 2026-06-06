@@ -1,0 +1,90 @@
+.ccui-document-list,
+.ccui-event-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccui-space-6);
+}
+
+.ccui-document-list__title,
+.ccui-event-list__title {
+  margin: 0;
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-display);
+  font-size: var(--ccui-font-size-3xl);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-document-card,
+.ccui-event-card {
+  transition:
+    border-color var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard),
+    box-shadow var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard);
+}
+
+.ccui-document-card--linked:hover,
+.ccui-event-card--linked:hover {
+  border-color: var(--ccui-color-border-strong);
+  box-shadow: var(--ccui-shadow-brown-sm);
+}
+
+.ccui-document-card__link,
+.ccui-event-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ccui-document-card__type {
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-document-card__title,
+.ccui-event-card__title {
+  margin: 0;
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-lg);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-event-card__date {
+  display: grid;
+  min-width: 4.75rem;
+  justify-items: center;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-parchment);
+  padding: var(--ccui-space-2);
+  text-align: center;
+}
+
+.ccui-event-card__date span:first-child {
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-event-card__date span:last-child {
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-display);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-event-card__body {
+  min-width: 0;
+  flex: 1;
+}
+
+@media (max-width: 48rem) {
+  .ccui-announcement-banner .ccui-cluster,
+  .ccui-event-card .ccui-cluster {
+    align-items: flex-start;
+  }
+
+  .ccui-event-card__date {
+    min-width: 4rem;
+  }
+}

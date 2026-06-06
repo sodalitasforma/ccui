@@ -1,0 +1,160 @@
+.ccui-directory {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccui-space-6);
+}
+
+.ccui-directory__title {
+  margin: 0;
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-display);
+  font-size: var(--ccui-font-size-3xl);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-directory-card {
+  height: 100%;
+}
+
+.ccui-directory-card--linked {
+  transition:
+    border-color var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard),
+    box-shadow var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard);
+}
+
+.ccui-directory-card--linked:hover {
+  border-color: var(--ccui-color-border-strong);
+  box-shadow: var(--ccui-shadow-brown-sm);
+}
+
+.ccui-directory-card__link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ccui-directory-card__eyebrow {
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-directory-card__title,
+.ccui-contact-block__title,
+.ccui-office-hours__title,
+.ccui-location-block__title,
+.ccui-staff-profile__name,
+.ccui-clergy-profile__name {
+  margin: 0;
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-lg);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-contact-block__list,
+.ccui-office-hours__list {
+  display: grid;
+  gap: var(--ccui-space-3);
+  margin: 0;
+}
+
+.ccui-contact-block__list > div,
+.ccui-office-hours__list > div {
+  display: grid;
+  grid-template-columns: 7rem minmax(0, 1fr);
+  gap: var(--ccui-space-3);
+}
+
+.ccui-contact-block__list dt,
+.ccui-office-hours__list dt {
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-contact-block__list dd,
+.ccui-office-hours__list dd {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccui-space-1);
+  margin: 0;
+  color: var(--ccui-color-text-secondary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-base);
+}
+
+.ccui-contact-block__list a,
+.ccui-staff-profile__link,
+.ccui-clergy-profile__link {
+  color: var(--ccui-color-link-primary);
+  text-decoration: none;
+}
+
+.ccui-contact-block__list a:hover,
+.ccui-staff-profile__link:hover,
+.ccui-clergy-profile__link:hover {
+  text-decoration: underline;
+}
+
+.ccui-contact-block__address-line,
+.ccui-location-block__address span {
+  display: block;
+}
+
+.ccui-location-block__address {
+  margin: 0;
+  color: var(--ccui-color-text-secondary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-style: normal;
+  line-height: var(--ccui-line-height-base);
+}
+
+.ccui-location-block__map-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--ccui-color-border-strong);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: 1;
+  min-height: 2rem;
+  padding-inline: var(--ccui-space-3);
+  text-decoration: none;
+}
+
+.ccui-location-block__map-link:hover {
+  background: var(--ccui-color-surface-page);
+  border-color: var(--ccui-color-border-dark);
+}
+
+.ccui-staff-profile__image,
+.ccui-clergy-profile__image {
+  max-height: 22rem;
+}
+
+.ccui-staff-profile__link,
+.ccui-clergy-profile__link {
+  width: fit-content;
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+}
+
+@media (max-width: 48rem) {
+  .ccui-contact-block__list > div,
+  .ccui-office-hours__list > div {
+    grid-template-columns: 1fr;
+    gap: var(--ccui-space-1);
+  }
+}

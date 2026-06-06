@@ -1,0 +1,43 @@
+.ccui-sacrament-schedule-block {
+  display: block;
+}
+
+.ccui-sacrament-schedule-block__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacrament-schedule-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacrament-schedule-block__meta {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacrament-schedule-block__preparation {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block {
+  display: block;
+}
+
+.ccui-sacramental-preparation-block__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacramental-preparation-block__meta {
+  /* CSS contract: selector owned by package stylesheet. */
+}

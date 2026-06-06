@@ -1,0 +1,67 @@
+.ccui-seasonal-schedule-block {
+  display: block;
+}
+
+.ccui-seasonal-schedule-block__date {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__list {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__main {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__meta {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-seasonal-schedule-block__note {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links {
+  display: block;
+}
+
+.ccui-social-links__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-social-links__platform {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-visitor-info-block {
+  display: block;
+}
+
+.ccui-visitor-info-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-visitor-info-block__hours {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-visitor-info-block__notice {
+  /* CSS contract: selector owned by package stylesheet. */
+}

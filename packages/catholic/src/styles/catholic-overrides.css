@@ -1,0 +1,43 @@
+.ccui-schedule-block__action {
+  margin-top: var(--ccui-space-2);
+}
+
+.ccui-schedule-block__source-meta {
+  padding-top: var(--ccui-space-3);
+  border-top: 1px solid var(--ccui-color-border-subtle);
+}
+
+.ccui-project-card,
+.ccui-api-endpoint-card,
+.ccui-contact-block {
+  height: 100%;
+}
+
+.ccui-api-endpoint-card__path {
+  display: inline-flex;
+  width: fit-content;
+  max-width: 100%;
+  padding: var(--ccui-space-1) var(--ccui-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-mono);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.ccui-church-document-card__title {
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-church-document-card__metadata,
+.ccui-church-document-card__language-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ccui-space-2);
+}
+
+.ccui-church-document-card__language-link,
+.ccui-church-document-card__action {
+  color: var(--ccui-color-link-primary);
+}

@@ -1,0 +1,203 @@
+.ccui-announcement-banner__actions {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-calendar-tabs {
+  display: block;
+}
+
+.ccui-century-filter {
+  display: block;
+}
+
+.ccui-citation-trail__title {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-confession-schedule-block {
+  display: block;
+}
+
+.ccui-confession-schedule-block__prompt-end-note {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-directory-filter {
+  width: 100%;
+}
+
+.ccui-directory__header {
+  display: grid;
+  gap: var(--ccui-space-2);
+}
+
+.ccui-directory__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  gap: var(--ccui-space-4);
+  align-items: stretch;
+}
+
+.ccui-document-authority-badge {
+  display: block;
+}
+
+.ccui-document-card__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-card__metadata {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-card__surface {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-list__header {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-list__items {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-document-type-badge {
+  display: block;
+}
+
+.ccui-event-list__header {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-event-list__items {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-external-catholic-resource-card {
+  display: block;
+}
+
+.ccui-external-catholic-resource-card__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-external-catholic-resource-card__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-institutional-header__search {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-language-document-links {
+  display: block;
+}
+
+.ccui-language-document-links__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-language-document-links__language {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-language-document-links__link {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-mass-schedule-block {
+  display: block;
+}
+
+.ccui-ministry-card {
+  display: block;
+}
+
+.ccui-ministry-directory-block {
+  display: block;
+}
+
+.ccui-ministry-directory-block__contact {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-ministry-directory-block__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-ministry-directory-block__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-ministry-directory-block__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-name-filter {
+  display: block;
+}
+
+.ccui-news-card {
+  display: block;
+}
+
+.ccui-office-hours__disruption {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-office-hours__note {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-announcement-card {
+  display: block;
+}
+
+.ccui-parish-form-links {
+  display: block;
+}
+
+.ccui-parish-form-links__action {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-form-links__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-form-links__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-form-links__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline {
+  display: block;
+}
+
+.ccui-parish-history-timeline__content {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__date {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__eyebrow {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__list {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-parish-history-timeline__marker {
+  /* CSS contract: selector owned by package stylesheet. */
+}

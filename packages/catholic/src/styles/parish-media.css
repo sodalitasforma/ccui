@@ -1,0 +1,23 @@
+.ccui-photo-gallery__figure {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__grid {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__item {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__item--lead {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-photo-gallery__title {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-press-release-card {
+  display: block;
+}

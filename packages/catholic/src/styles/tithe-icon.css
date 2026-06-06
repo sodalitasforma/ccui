@@ -1,0 +1,181 @@
+.ccui-tithe-icon {
+  display: grid;
+  justify-items: end;
+  gap: var(--ccui-space-3);
+}
+
+.ccui-tithe-icon--fixed {
+  position: fixed;
+  right: var(--ccui-space-5);
+  bottom: var(--ccui-space-5);
+  z-index: 50;
+}
+
+.ccui-tithe-icon--fixed .ccui-tithe-icon__panel {
+  position: absolute;
+  right: 0;
+  bottom: calc(100% + var(--ccui-space-3));
+}
+
+.ccui-tithe-icon--fixed.ccui-tithe-icon--open .ccui-tithe-icon__trigger {
+  white-space: nowrap;
+}
+
+
+.ccui-tithe-icon--inline {
+  position: relative;
+  justify-items: center;
+  align-content: center;
+  min-block-size: 16rem;
+}
+
+.ccui-tithe-icon__trigger {
+  border-radius: var(--ccui-radius-pill);
+  box-shadow: var(--ccui-shadow-sm);
+}
+
+.ccui-tithe-icon__panel {
+  width: min(24rem, calc(100vw - var(--ccui-space-10)));
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at 18% 0%,
+      color-mix(in srgb, var(--ccui-color-surface-subtle) 75%, transparent),
+      transparent 42%
+    ),
+    var(--ccui-color-surface-raised);
+  box-shadow: var(--ccui-shadow-lg);
+}
+
+.ccui-tithe-icon__panel-inner {
+  position: relative;
+  padding: var(--ccui-space-6);
+}
+
+.ccui-tithe-icon__close {
+  appearance: none;
+  position: absolute;
+  top: var(--ccui-space-4);
+  right: var(--ccui-space-4);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.75rem;
+  block-size: 1.75rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-surface-page);
+  color: var(--ccui-color-text-secondary);
+  cursor: pointer;
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-md);
+  line-height: 1;
+}
+
+.ccui-tithe-icon__close:hover {
+  color: var(--ccui-color-text-primary);
+  border-color: var(--ccui-color-border-strong);
+}
+
+.ccui-tithe-icon__mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.45rem;
+  block-size: 1.45rem;
+  border: 1px solid var(--ccui-color-border-gold);
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-tithe-icon__eyebrow {
+  color: var(--ccui-color-accent-gold-text);
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.ccui-tithe-icon__title {
+  max-width: 17rem;
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-tithe-icon__description {
+  max-width: 18rem;
+}
+
+.ccui-tithe-icon__control-group {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ccui-space-2);
+}
+
+.ccui-tithe-icon__choice,
+.ccui-tithe-icon__frequency-choice {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-block-size: 2.5rem;
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-page);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-tithe-icon__choice--selected,
+.ccui-tithe-icon__frequency-choice--selected {
+  border-color: var(--ccui-color-link-primary);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-tithe-icon__frequency {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--ccui-space-2);
+}
+
+.ccui-tithe-icon__primary-action {
+  width: 100%;
+  justify-content: center;
+}
+
+.ccui-tithe-icon__secondary-action {
+  width: 100%;
+  justify-content: center;
+}
+
+
+
+
+
+
+@keyframes ccui-tithe-button-sheen {
+  0%, 72%, 100% {
+    transform: translateX(-42%);
+    opacity: 0;
+  }
+
+  82% {
+    transform: translateX(42%);
+    opacity: 0.75;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ccui-tithe-icon__trigger::before {
+    animation: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ * CSS contract coverage
+ * These selectors are emitted by package components and must be owned here.
+ * -------------------------------------------------------------------------- */

@@ -1,0 +1,150 @@
+.ccui-document-metadata {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+  gap: var(--ccui-space-3);
+  margin: 0;
+}
+
+.ccui-document-metadata__item {
+  min-width: 0;
+}
+
+.ccui-document-metadata dt,
+.ccui-document-metadata dd {
+  margin: 0;
+}
+
+.ccui-document-citation {
+  margin: 0;
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-document-citation__label,
+.ccui-church-document-card__citation {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-document-citation__text {
+  font-family: var(--ccui-font-document);
+  font-size: var(--ccui-font-size-lg);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.ccui-church-document-card {
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-church-document-header__description {
+  max-width: 52rem;
+}
+
+.ccui-file-type-icon__label {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+}
+
+.ccui-download-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ccui-download-link:hover {
+  border-color: var(--ccui-color-border-strong);
+}
+
+.ccui-download-link__label {
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-paragraph-anchor {
+  margin: 0;
+  scroll-margin-top: var(--ccui-space-8);
+}
+
+.ccui-paragraph-anchor__number {
+  flex: 0 0 auto;
+  min-width: 2rem;
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-paragraph-anchor__text {
+  font-family: var(--ccui-font-document);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.ccui-footnote-list__title,
+.ccui-related-documents__title {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-footnote-list__items {
+  display: grid;
+  gap: var(--ccui-space-3);
+  margin: 0;
+  padding-left: var(--ccui-space-5);
+}
+
+.ccui-footnote-list__item {
+  padding-left: var(--ccui-space-2);
+}
+
+.ccui-footnote-list__marker {
+  margin-right: var(--ccui-space-2);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-footnote-list__backlink {
+  margin-left: var(--ccui-space-2);
+}
+
+.ccui-archive-search-result__excerpt {
+  max-width: 52rem;
+}
+
+.ccui-source-card__citation,
+.ccui-citation-trail__label,
+.ccui-citation-trail__index,
+.ccui-canonical-reference__value {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-source-card__citation {
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-citation-trail__index {
+  display: inline-grid;
+  width: 1.75rem;
+  height: 1.75rem;
+  place-items: center;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-canonical-reference__value {
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-official-notice-card,
+.ccui-prayer-block {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-prayer-block__text,
+.ccui-bible-passage-card__text {
+  font-family: var(--ccui-font-document);
+  line-height: var(--ccui-line-height-relaxed);
+}

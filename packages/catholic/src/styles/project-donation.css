@@ -1,0 +1,110 @@
+.ccui-project-donation-callout {
+  overflow: hidden;
+}
+
+.ccui-project-donation-callout__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 22rem;
+  gap: var(--ccui-space-7);
+  align-items: stretch;
+  padding: var(--ccui-space-6);
+}
+
+.ccui-project-donation-callout__copy {
+  min-width: 0;
+  max-width: 40rem;
+  align-self: center;
+}
+
+.ccui-project-donation-callout__title {
+  max-width: 34rem;
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-project-donation-callout__description {
+  max-width: 42rem;
+}
+
+.ccui-project-donation-callout__panel {
+  display: grid;
+  gap: var(--ccui-space-4);
+  align-content: center;
+  padding: var(--ccui-space-5);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-raised);
+  box-shadow: none;
+}
+
+.ccui-project-donation-callout__amounts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--ccui-space-2);
+}
+
+.ccui-project-donation-callout__amount-option {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-project-donation-callout__amount-option--selected {
+  border-color: var(--ccui-color-link-primary);
+  background: var(--ccui-color-surface-page);
+  color: var(--ccui-color-link-primary);
+  box-shadow: none;
+}
+
+.ccui-project-donation-callout__amount {
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-display);
+  font-size: var(--ccui-font-size-2xl);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-project-donation-callout__impact {
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-project-donation-callout__primary-action {
+  width: 100%;
+  justify-content: center;
+  box-shadow: none;
+}
+
+.ccui-project-donation-callout__secondary-actions {
+  justify-content: center;
+  text-align: center;
+  font-size: var(--ccui-font-size-sm);
+}
+
+@media (max-width: 860px) {
+  .ccui-project-donation-callout__inner {
+    grid-template-columns: 1fr;
+    padding: var(--ccui-space-5);
+  }
+
+  .ccui-project-donation-callout__panel {
+    max-width: none;
+    border: 1px solid var(--ccui-color-border-subtle);
+    padding: var(--ccui-space-5);
+  }
+
+  .ccui-project-donation-callout__secondary-actions {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}

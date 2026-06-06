@@ -1,0 +1,113 @@
+.ccui-project-card,
+.ccui-dataset-card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-repository-link {
+  display: block;
+}
+
+.ccui-repository-link__provider,
+.ccui-contributor-list__title,
+.ccui-contributor-list__name,
+.ccui-api-endpoint-card__path {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-api-endpoint-card__path {
+  padding: var(--ccui-space-1) var(--ccui-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.ccui-ontology-class-card,
+.ccui-term-definition-card,
+.ccui-translation-variant-card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-ontology-class-card__class,
+.ccui-ontology-property-table__code {
+  padding: var(--ccui-space-1) var(--ccui-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-mono);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.ccui-term-definition-card__definition,
+.ccui-translation-variant-card__variant {
+  font-family: var(--ccui-font-document);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.ccui-translation-variant-card__variant {
+  font-size: var(--ccui-font-size-lg);
+  font-weight: var(--ccui-font-weight-semibold);
+}
+
+.ccui-canonical-source-card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-canonical-source-card__citation {
+  padding-left: var(--ccui-space-3);
+  border-left: 3px solid var(--ccui-color-border-gold);
+  color: var(--ccui-color-text-secondary);
+  font-family: var(--ccui-font-document);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.ccui-provenance-trail__title,
+.ccui-provenance-trail__label {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-provenance-trail__list {
+  display: grid;
+  gap: var(--ccui-space-3);
+  margin: 0;
+  padding-left: var(--ccui-space-5);
+}
+
+.ccui-provenance-trail__item {
+  padding-left: var(--ccui-space-2);
+}
+
+.ccui-semantic-relation-graph__surface,
+.ccui-entity-card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-entity-card__id,
+.ccui-entity-relationship-list__predicate {
+  padding: var(--ccui-space-1) var(--ccui-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-mono);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.ccui-entity-relationship-list__title,
+.ccui-entity-relationship-list__label,
+.ccui-semantic-relation-graph__heading {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+}

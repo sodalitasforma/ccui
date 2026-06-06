@@ -1,0 +1,122 @@
+.ccui-schedule-block {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 52%, transparent), transparent 14rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-schedule-day {
+  padding-block: var(--ccui-space-3);
+  border-top: 1px solid var(--ccui-color-border-subtle);
+}
+
+.ccui-schedule-day:first-of-type {
+  border-top: 0;
+}
+
+.ccui-mass-time-row {
+  padding: var(--ccui-space-3);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-subtle);
+  box-shadow: var(--ccui-shadow-hairline);
+}
+
+.ccui-mass-time-row__main {
+  min-width: 0;
+}
+
+.ccui-mass-time-row__time {
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-lg);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: var(--ccui-line-height-tight);
+  white-space: nowrap;
+}
+
+.ccui-exception-notice__title,
+.ccui-mass-time-row__label {
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-liturgical-color-dot {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  flex: 0 0 auto;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-pill);
+  box-shadow: var(--ccui-shadow-hairline);
+}
+
+.ccui-liturgical-color-dot--white {
+  background: var(--ccui-liturgical-white);
+}
+
+.ccui-liturgical-color-dot--green {
+  background: var(--ccui-liturgical-green);
+}
+
+.ccui-liturgical-color-dot--violet {
+  background: var(--ccui-liturgical-violet);
+}
+
+.ccui-liturgical-color-dot--red {
+  background: var(--ccui-liturgical-red);
+}
+
+.ccui-liturgical-color-dot--rose {
+  background: var(--ccui-liturgical-rose);
+}
+
+.ccui-liturgical-color-dot--black {
+  background: var(--ccui-liturgical-black);
+}
+
+.ccui-liturgical-color-dot--gold {
+  background: var(--ccui-liturgical-gold);
+}
+
+.ccui-liturgical-season-badge .ccui-cluster {
+  line-height: 1;
+}
+
+.ccui-reading-reference {
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-reading-reference__label,
+.ccui-liturgical-day-card__rank,
+.ccui-feast-day-hero__rank {
+  color: var(--ccui-color-accent-gold-text);
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  text-transform: uppercase;
+}
+
+.ccui-reading-reference__citation {
+  font-family: var(--ccui-font-document);
+  font-weight: var(--ccui-font-weight-semibold);
+}
+
+.ccui-liturgical-day-card,
+.ccui-feast-day-hero {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-feast-day-hero__description {
+  max-width: 48rem;
+}
+
+.ccui-prayer-card,
+.ccui-prayer-card__text {
+  font-family: var(--ccui-font-document);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.ccui-parish-contact-card {
+  width: 100%;
+}

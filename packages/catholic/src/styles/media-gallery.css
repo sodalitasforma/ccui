@@ -1,0 +1,250 @@
+/* Upgraded Catholic media cards */
+
+.ccui-media-card,
+.ccui-video-card,
+.ccui-photo-gallery-card {
+  display: block;
+  color: var(--ccui-color-text-primary);
+  text-decoration: none;
+}
+
+.ccui-media-card__surface,
+.ccui-video-card__surface {
+  overflow: hidden;
+}
+
+.ccui-media-card:hover .ccui-media-card__title,
+.ccui-video-card:hover .ccui-video-card__title,
+.ccui-photo-gallery-card:hover .ccui-photo-gallery-card__title {
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-media-card__frame,
+.ccui-video-card__frame {
+  overflow: hidden;
+  background: var(--ccui-color-brown-950);
+}
+
+.ccui-media-card__frame img,
+.ccui-video-card__frame iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+.ccui-media-card__frame img {
+  object-fit: var(--ccui-media-card-fit, cover);
+  object-position: var(--ccui-media-card-position, center);
+}
+
+.ccui-media-card__body,
+.ccui-video-card__body,
+.ccui-photo-gallery-card__body {
+  padding: var(--ccui-space-5);
+}
+
+.ccui-media-card__title,
+.ccui-video-card__title,
+.ccui-photo-gallery-card__title {
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-display);
+}
+
+/* PhotoGalleryCard carousel/card treatment */
+
+.ccui-photo-gallery-card {
+  overflow: hidden;
+}
+
+.ccui-photo-gallery-card__stage {
+  position: relative;
+  overflow: hidden;
+  background: var(--ccui-color-brown-950);
+}
+
+.ccui-photo-gallery-card__stage img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: var(--ccui-photo-gallery-fit, cover);
+  object-position: var(--ccui-photo-gallery-position, center);
+}
+
+.ccui-photo-gallery-card__alt-label {
+  position: absolute;
+  top: var(--ccui-space-3);
+  left: var(--ccui-space-3);
+  z-index: 2;
+  max-width: calc(100% - var(--ccui-space-6));
+  padding: var(--ccui-space-1) var(--ccui-space-2);
+  border-radius: var(--ccui-radius-md);
+  background: color-mix(in srgb, var(--ccui-color-brown-950) 72%, transparent);
+  color: var(--ccui-color-text-inverse);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.ccui-photo-gallery-card__controls {
+  position: absolute;
+  left: var(--ccui-space-3);
+  bottom: var(--ccui-space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccui-space-2);
+  padding: var(--ccui-space-2);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  box-shadow: var(--ccui-shadow-sm);
+}
+
+.ccui-photo-gallery-card__controls button,
+.ccui-photo-gallery-card__image-button,
+.ccui-photo-gallery-card__thumb,
+.ccui-photo-gallery-card__lightbox-close,
+.ccui-photo-gallery-card__lightbox-previous,
+.ccui-photo-gallery-card__lightbox-next {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ccui-photo-gallery-card__controls button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border-radius: var(--ccui-radius-full, 999px);
+}
+
+.ccui-photo-gallery-card__controls button:hover {
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-photo-gallery-card__thumbs {
+  display: flex;
+  gap: var(--ccui-space-2);
+  overflow-x: auto;
+  padding: var(--ccui-space-3);
+  border-top: 1px solid var(--ccui-color-border-subtle);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-photo-gallery-card__thumb {
+  flex: 0 0 auto;
+  overflow: hidden;
+  inline-size: 4.5rem;
+  block-size: 3rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  opacity: 0.72;
+}
+
+.ccui-photo-gallery-card__thumb img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ccui-photo-gallery-card__thumb--active {
+  border-color: var(--ccui-color-link-primary);
+  opacity: 1;
+  box-shadow: 0 0 0 2px var(--ccui-color-surface-raised);
+}
+
+.ccui-photo-gallery-card__count {
+  position: absolute;
+  right: var(--ccui-space-3);
+  bottom: var(--ccui-space-3);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0 var(--ccui-space-2);
+  border-radius: var(--ccui-radius-full, 999px);
+  background: var(--ccui-color-brown-950);
+  color: var(--ccui-color-text-inverse);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-photo-gallery-card__empty {
+  aspect-ratio: 16 / 9;
+  background: var(--ccui-color-surface-subtle);
+}
+
+/* PhotoGalleryCard lightbox */
+
+.ccui-photo-gallery-card__lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: var(--ccui-space-6);
+  background: color-mix(in srgb, var(--ccui-color-brown-950) 88%, transparent);
+}
+
+.ccui-photo-gallery-card__lightbox-figure {
+  position: relative;
+  max-width: min(72rem, 100%);
+  max-height: 90vh;
+}
+
+.ccui-photo-gallery-card__lightbox-figure img {
+  display: block;
+  max-width: 100%;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-brown-950);
+}
+
+.ccui-photo-gallery-card__lightbox-close,
+.ccui-photo-gallery-card__lightbox-previous,
+.ccui-photo-gallery-card__lightbox-next {
+  position: absolute;
+  z-index: 101;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2.5rem;
+  block-size: 2.5rem;
+  border-radius: var(--ccui-radius-full, 999px);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+  box-shadow: var(--ccui-shadow-sm);
+}
+
+.ccui-photo-gallery-card__lightbox-close {
+  top: var(--ccui-space-4);
+  right: var(--ccui-space-4);
+}
+
+.ccui-photo-gallery-card__lightbox-previous {
+  left: var(--ccui-space-4);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ccui-photo-gallery-card__lightbox-next {
+  right: var(--ccui-space-4);
+  top: 50%;
+  transform: translateY(-50%);
+}

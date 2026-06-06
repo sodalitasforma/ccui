@@ -1,0 +1,46 @@
+.ccui-media-card,
+.ccui-video-card,
+.ccui-photo-gallery-card {
+  overflow: hidden;
+}
+
+.ccui-media-card__body,
+.ccui-video-card__body,
+.ccui-photo-gallery-card__body {
+  padding: var(--ccui-space-4);
+}
+
+.ccui-media-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ccui-photo-gallery-card__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--ccui-color-surface-dark);
+}
+
+.ccui-photo-gallery-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.ccui-photo-gallery-card__more {
+  position: absolute;
+  right: var(--ccui-space-3);
+  bottom: var(--ccui-space-3);
+  display: inline-grid;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  padding: 0 var(--ccui-space-2);
+  border-radius: var(--ccui-radius-pill);
+  background: color-mix(in srgb, var(--ccui-color-text-primary) 64%, transparent);
+  font-weight: var(--ccui-font-weight-bold);
+}

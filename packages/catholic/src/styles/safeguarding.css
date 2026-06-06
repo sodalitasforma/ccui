@@ -1,0 +1,26 @@
+.ccui-safeguarding-notice {
+  display: grid;
+  gap: var(--ccui-space-3);
+  padding: var(--ccui-space-4);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-safeguarding-notice__eyebrow {
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.ccui-safeguarding-notice__primary {
+  color: var(--ccui-color-text-primary);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-safeguarding-notice__secondary {
+  color: var(--ccui-color-text-secondary);
+}

@@ -1,0 +1,191 @@
+.ccui-institutional-header {
+  width: 100%;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-raised);
+  box-shadow: none;
+}
+
+.ccui-institutional-header__notice {
+  border-bottom: 1px solid var(--ccui-color-border-subtle);
+  background: var(--ccui-color-surface-subtle);
+  padding-block: var(--ccui-space-2);
+}
+
+.ccui-institutional-header__inner {
+  padding: var(--ccui-space-6);
+}
+
+.ccui-institutional-header__masthead {
+  display: grid;
+  grid-template-columns: minmax(16rem, 0.95fr) minmax(0, 1.45fr);
+  gap: var(--ccui-space-7);
+  align-items: center;
+}
+
+.ccui-institutional-header__identity {
+  min-width: 0;
+}
+
+.ccui-institutional-header__logo {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--ccui-color-border-gold);
+  border-radius: var(--ccui-radius-full);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-display);
+  font-size: var(--ccui-font-size-md);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: 1;
+}
+
+.ccui-institutional-header__logo-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.ccui-institutional-header__mark {
+  transform: translateY(-0.02em);
+}
+
+.ccui-institutional-header__identity-copy {
+  min-width: 0;
+}
+
+.ccui-institutional-header__title {
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-display);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-institutional-header__nav-area {
+  display: grid;
+  gap: var(--ccui-space-4);
+  justify-items: end;
+  min-width: 0;
+}
+
+.ccui-institutional-header__utility-inline {
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-institutional-header__utility-link,
+.ccui-institutional-header__language-link,
+.ccui-institutional-header__primary-link,
+.ccui-institutional-header__nav-group summary {
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  text-decoration: none;
+}
+
+.ccui-institutional-header__utility-link,
+.ccui-institutional-header__language-link {
+  font-size: var(--ccui-font-size-sm);
+}
+
+.ccui-institutional-header__language-link[aria-current="page"] {
+  color: var(--ccui-color-text-primary);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-institutional-header__utility-divider {
+  width: 1px;
+  height: 1rem;
+  background: var(--ccui-color-border-subtle);
+}
+
+.ccui-institutional-header__primary {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--ccui-space-1);
+  width: 100%;
+  padding-top: var(--ccui-space-3);
+}
+
+.ccui-institutional-header__primary-link,
+.ccui-institutional-header__nav-group summary {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: var(--ccui-space-1) var(--ccui-space-3);
+  border-radius: var(--ccui-radius-full);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-institutional-header__primary-link:hover,
+.ccui-institutional-header__nav-group summary:hover {
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-institutional-header__primary-link[aria-current="page"] {
+  background: var(--ccui-color-link-primary);
+  color: var(--ccui-color-text-inverse);
+}
+
+.ccui-institutional-header__contact {
+  margin-left: var(--ccui-space-3);
+}
+
+.ccui-institutional-header__social {
+  justify-content: flex-end;
+}
+
+.ccui-institutional-header__nav-group {
+  position: relative;
+}
+
+.ccui-institutional-header__nav-group summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.ccui-institutional-header__nav-group summary::-webkit-details-marker {
+  display: none;
+}
+
+.ccui-institutional-header__mega {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + var(--ccui-space-2));
+  right: 0;
+  width: min(24rem, calc(100vw - var(--ccui-space-8)));
+}
+
+.ccui-institutional-header__mega-links {
+  display: grid;
+  gap: var(--ccui-space-2);
+}
+
+@media (max-width: 860px) {
+  .ccui-institutional-header__masthead {
+    grid-template-columns: 1fr;
+    gap: var(--ccui-space-5);
+  }
+
+  .ccui-institutional-header__nav-area {
+    justify-items: start;
+  }
+
+  .ccui-institutional-header__utility-inline,
+  .ccui-institutional-header__primary,
+  .ccui-institutional-header__social {
+    justify-content: flex-start;
+  }
+
+  .ccui-institutional-header__mega {
+    left: 0;
+    right: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  }

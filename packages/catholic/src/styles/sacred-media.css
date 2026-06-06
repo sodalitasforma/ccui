@@ -1,0 +1,39 @@
+.ccui-sacred-media-frame {
+  display: block;
+}
+
+.ccui-sacred-media-frame__content {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__cross {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__image {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__pattern {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring--inner {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring--middle {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+.ccui-sacred-media-frame__ring--outer {
+  /* CSS contract: selector owned by package stylesheet. */
+}

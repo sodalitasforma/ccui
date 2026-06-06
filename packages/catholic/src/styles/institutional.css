@@ -1,0 +1,47 @@
+.ccui-date-range-label {
+  display: inline-flex;
+}
+
+.ccui-institutional-directory {
+  width: 100%;
+}
+
+.ccui-pontiff-directory {
+  width: 100%;
+}
+
+.ccui-pontiff-card {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-news-list__title,
+.ccui-calendar-item__date-value,
+.ccui-press-office-notice__title {
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-calendar-item__date {
+  min-width: 6rem;
+}
+
+.ccui-calendar-item__date-value {
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-calendar-item__body {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.ccui-featured-story {
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--ccui-color-surface-raised) 55%, transparent), transparent 12rem),
+    var(--ccui-color-surface-raised);
+}
+
+.ccui-featured-story__action {
+  font-weight: var(--ccui-font-weight-bold);
+}

@@ -1,0 +1,72 @@
+.ccui-announcement-banner {
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-left-width: 4px;
+  border-radius: var(--ccui-radius-md);
+  padding: var(--ccui-space-4);
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-announcement-banner--variant-official {
+  border-left-color: var(--ccui-color-brown-700);
+  background: var(--ccui-color-surface-parchment);
+}
+
+.ccui-announcement-banner--variant-liturgical {
+  border-left-color: var(--ccui-liturgical-violet);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-announcement-banner--variant-warning {
+  border-left-color: var(--ccui-color-accent-gold);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-announcement-banner--variant-emergency {
+  border-left-color: var(--ccui-color-danger);
+}
+
+.ccui-announcement-banner__title {
+  font-weight: var(--ccui-font-weight-bold);
+}
+
+.ccui-announcement-banner__link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  border: 1px solid var(--ccui-color-border-strong);
+  border-radius: var(--ccui-radius-sm);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  min-height: 2rem;
+  padding-inline: var(--ccui-space-3);
+  text-decoration: none;
+}
+
+.ccui-announcement-banner__link:hover {
+  background: color-mix(in srgb, var(--ccui-color-text-primary) 8%, transparent);
+}
+
+.ccui-resource-link {
+  display: block;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-raised);
+  color: inherit;
+  padding: var(--ccui-space-3);
+  text-decoration: none;
+  transition:
+    border-color var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard),
+    box-shadow var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard);
+}
+
+.ccui-resource-link:hover {
+  border-color: var(--ccui-color-border-strong);
+  box-shadow: var(--ccui-shadow-brown-sm);
+}
+
+.ccui-resource-link__title {
+  color: var(--ccui-color-link-primary);
+  font-weight: var(--ccui-font-weight-bold);
+}

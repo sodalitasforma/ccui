@@ -1,0 +1,43 @@
+/* New parish homepage components */
+
+.ccui-parish-hero {
+  overflow: hidden;
+}
+
+.ccui-parish-hero__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(18rem, 0.75fr);
+  gap: var(--ccui-space-6);
+  align-items: center;
+}
+
+.ccui-parish-hero--no-media .ccui-parish-hero__grid {
+  grid-template-columns: 1fr;
+}
+
+.ccui-parish-hero__content {
+  display: grid;
+  gap: var(--ccui-space-4);
+}
+
+.ccui-parish-hero__description {
+  max-width: 62rem;
+}
+
+.ccui-parish-hero__address {
+  color: var(--ccui-color-text-muted);
+  font-size: var(--ccui-font-size-sm);
+}
+
+.ccui-parish-hero__media {
+  overflow: hidden;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-parish-hero__media img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,21 @@
+.ccui-worship-aid-card {
+  height: 100%;
+}
+
+.ccui-worship-aid-card__eyebrow {
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.ccui-worship-aid-card__title-link {
+  color: var(--ccui-color-link-primary);
+  text-decoration: none;
+}
+
+.ccui-worship-aid-card__title-link:hover {
+  text-decoration: underline;
+}
