@@ -49,16 +49,30 @@
 }
 
 .ccui-tab:focus-visible {
-  outline: 2px solid var(--ccui-color-accent-active);
+  outline: 2px solid var(--ccui-color-focus-ring);
   outline-offset: 2px;
 }
 
 .ccui-tab--active,
 .ccui-tab[aria-selected="true"] {
-  border-bottom-color: var(--ccui-color-accent-active);
-  color: var(--ccui-color-link-active);
+  border-bottom-color: var(--ccui-color-nav-active-border);
+  color: var(--ccui-color-nav-active-text);
 }
 
 .ccui-tab-panel {
   padding-block-start: var(--ccui-space-6);
+}
+
+
+.ccui-tab[data-state="selected"],
+.ccui-tab[aria-current="page"] {
+  border-bottom-color: var(--ccui-color-nav-active-border);
+  color: var(--ccui-color-nav-active-text);
+}
+
+.ccui-tabs--variant-contained .ccui-tab[data-state="selected"],
+.ccui-tabs--variant-contained .ccui-tab[aria-selected="true"],
+.ccui-tabs--variant-contained .ccui-tab[aria-current="page"] {
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-nav-active-bg);
 }
