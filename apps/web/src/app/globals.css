@@ -1699,3 +1699,13 @@ a {
   background: var(--ccui-color-surface-subtle);
   color: var(--ccui-color-brown-900);
 }
+
+.docs-icon-state-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-icon-state-grid .ccui-card {
+  min-height: 11rem;
+}

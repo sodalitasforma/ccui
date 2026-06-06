@@ -1,6 +1,7 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
 import {
   Badge,
+  Button,
   Card,
   Cluster,
   Container,
@@ -13,6 +14,22 @@ import {
 import { iconRegistry } from "@catholiccommons/icons";
 
 const liveIcons = iconRegistry;
+
+function iconByExportName(exportName: string) {
+  const item = iconRegistry.find((icon) => icon.exportName === exportName);
+
+  if (!item) {
+    throw new Error(`Missing icon registry item: ${exportName}`);
+  }
+
+  return item.Icon;
+}
+
+const StateSearchIcon = iconByExportName("SearchIcon");
+const StateCheckIcon = iconByExportName("CheckIcon");
+const StateCopyIcon = iconByExportName("CopyIcon");
+const StateMenuIcon = iconByExportName("MenuIcon");
+const StateCrossIcon = iconByExportName("CrossIcon");
 
 const iconCategories = [
   {
@@ -118,6 +135,84 @@ export default function IconsPage() {
               </div>
 
               <pre className="docs-code-block"><code>{`import { CrossIcon, ChaliceIcon, SearchIcon } from "@catholiccommons/icons";`}</code></pre>
+            </Stack>
+          </Section>
+
+
+          <Section id="icon-states" surface="page" spacing="lg">
+            <Stack gap="md">
+              <Heading level={2} size="xl">
+                Icon states
+              </Heading>
+
+              <Text tone="secondary">
+                Icons inherit color from their parent control through currentColor. Toggle,
+                selected, disabled, and dark-surface states should be owned by the component,
+                not by one-off icon styling.
+              </Text>
+
+              <div className="docs-icon-state-grid">
+                <Card padding="md" border="subtle" surface="raised">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Default icon button
+                    </Heading>
+                    <Button size="icon" variant="ghost" aria-label="Search">
+                      <StateSearchIcon />
+                    </Button>
+                    <Text size="xs" tone="muted">
+                      Inherits the default icon token.
+                    </Text>
+                  </Stack>
+                </Card>
+
+                <Card padding="md" border="subtle" surface="raised">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Selected icon button
+                    </Heading>
+                    <Button size="icon" variant="ghost" aria-label="Toggle selected" aria-pressed="true">
+                      <StateCheckIcon />
+                    </Button>
+                    <Text size="xs" tone="muted">
+                      Uses aria-pressed and selected control tokens.
+                    </Text>
+                  </Stack>
+                </Card>
+
+                <Card padding="md" border="subtle" surface="raised">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Disabled icon button
+                    </Heading>
+                    <Button size="icon" variant="ghost" aria-label="Copy disabled" disabled>
+                      <StateCopyIcon />
+                    </Button>
+                    <Text size="xs" tone="muted">
+                      Uses disabled color and opacity tokens.
+                    </Text>
+                  </Stack>
+                </Card>
+
+                <Card padding="md" border="subtle" surface="dark">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      On dark surface
+                    </Heading>
+                    <Cluster gap="sm">
+                      <Button size="icon" variant="ghost" aria-label="Menu on dark">
+                        <StateMenuIcon />
+                      </Button>
+                      <Button size="icon" variant="ghost" aria-label="Selected on dark" aria-pressed="true">
+                        <StateCrossIcon />
+                      </Button>
+                    </Cluster>
+                    <Text size="xs" tone="inverse">
+                      Verifies icon contrast on inverse surfaces.
+                    </Text>
+                  </Stack>
+                </Card>
+              </div>
             </Stack>
           </Section>
 

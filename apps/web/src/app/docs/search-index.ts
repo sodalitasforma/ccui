@@ -239,6 +239,12 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Starter interface and Catholic SVG icons available in the icons package.",
   },
   {
+    title: "Icon states",
+    category: "Icons",
+    href: "/icons#icon-states",
+    description: "Preview icon buttons in default, selected, disabled, and dark-surface states.",
+  },
+  {
     title: "Icon package plan",
     category: "Icons",
     href: "/icons#package-plan",
