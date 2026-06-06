@@ -4,6 +4,7 @@ import Image from "next/image";
 import NextLink from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { docsSearchItems } from "../docs/search-index";
+import systemStats from "../system-stats.json";
 import {
   Badge,
   Button,
@@ -15,7 +16,7 @@ import {
 } from "../../../../../packages/primitives/src";
 
 type CCUISidebarProps = {
-  current?: "docs" | "components" | "templates" | "typography";
+  current?: "docs" | "components" | "templates" | "typography" | "colors";
 };
 
 type SidebarItem =
@@ -42,48 +43,32 @@ const pageSections: Record<
   }
 > = {
   docs: {
-      label: "",
-      items: [
-        { type: "heading", label: "Sections" },
-        { type: "link", label: "Introduction", href: "/docs#overview" },
-        { type: "link", label: "Components", href: "/components-gallery#introduction" },
-        { type: "link", label: "Installation", href: "/docs#overview" },
-        { type: "link", label: "CLI", href: "/docs#use-the-cli" },
-        { type: "link", label: "Registry", href: "/docs#components-json" },
-
-        { type: "heading", label: "Components" },
-        { type: "link", label: "Button", href: "/components-gallery#primitive-actions" },
-        { type: "link", label: "Card", href: "/components-gallery#primitive-surfaces" },
-        { type: "link", label: "Badge", href: "/components-gallery#primitive-actions" },
-        { type: "link", label: "Mass Schedule Block", href: "/components-gallery#liturgy" },
-        { type: "link", label: "Confession Schedule Block", href: "/components-gallery#liturgy" },
-        { type: "link", label: "Adoration Schedule Block", href: "/components-gallery#liturgy" },
-        { type: "link", label: "Holy Day Schedule Block", href: "/components-gallery#liturgy" },
-        { type: "link", label: "Liturgical Day Card", href: "/components-gallery#liturgy" },
-        { type: "link", label: "Church Document Card", href: "/components-gallery#documents-authority" },
-        { type: "link", label: "Document Citation", href: "/components-gallery#documents-authority" },
-
-        { type: "heading", label: "Get Started" },
-        { type: "link", label: "Installation", href: "/docs#overview" },
-        { type: "link", label: "components.json", href: "/docs#components-json" },
-        { type: "link", label: "Package Imports", href: "/docs#package-imports" },
-        { type: "link", label: "Theming", href: "/components-gallery#colors" },
-        { type: "link", label: "CLI", href: "/docs#use-the-cli" },
-        { type: "link", label: "Frameworks", href: "/docs#frameworks" },
-      ],
-    },
+    label: "",
+    items: [
+      { type: "heading", label: "Docs" },
+      { type: "link", label: "Overview", href: "/docs#overview" },
+      { type: "link", label: "Use the CLI", href: "/docs#use-the-cli" },
+      { type: "link", label: "Existing project", href: "/docs#existing-project" },
+      { type: "link", label: "Next.js", href: "/docs#next-js" },
+      { type: "link", label: "Vite", href: "/docs#vite" },
+      { type: "link", label: "Astro", href: "/docs#astro" },
+      { type: "link", label: "React Router", href: "/docs#react-router" },
+      { type: "link", label: "TanStack Start", href: "/docs#tanstack-start" },
+      { type: "link", label: "React manual", href: "/docs#react-manual" },
+    ],
+  },
     components: {
     label: "",
     items: [
       { type: "link", label: "Overview", href: "/components-gallery#introduction" },
 
       { type: "heading", label: "Foundations" },
-      { type: "link", label: "Colors", href: "/components-gallery#colors" },
-      { type: "link", label: "Liturgical colors", href: "/components-gallery#liturgical" },
+      { type: "link", label: "Colors", href: "/colors#overview" },
+      { type: "link", label: "Liturgical colors", href: "/colors#liturgical-colors" },
 
       { type: "heading", label: "General UI" },
       { type: "link", label: "Layout", href: "/components-gallery#primitive-layout" },
-      { type: "link", label: "Typography", href: "/components-gallery#primitive-typography" },
+      { type: "link", label: "Typography", href: "/typography#overview" },
       { type: "link", label: "Surfaces", href: "/components-gallery#primitive-surfaces" },
       { type: "link", label: "Actions & metadata", href: "/components-gallery#primitive-actions" },
       { type: "link", label: "Forms", href: "/components-gallery#primitive-forms" },
@@ -104,8 +89,27 @@ const pageSections: Record<
     items: [],
   },
   typography: {
-    label: "Typography",
-    items: [],
+    label: "",
+    items: [
+      { type: "link", label: "Overview", href: "/typography#overview" },
+      { type: "link", label: "Type roles", href: "/typography#type-roles" },
+      { type: "link", label: "Heading scale", href: "/typography#heading-scale" },
+      { type: "link", label: "Text scale", href: "/typography#text-scale" },
+      { type: "link", label: "Text rhythm", href: "/typography#text-rhythm" },
+      { type: "link", label: "Typography API", href: "/typography#typography-api" },
+      { type: "link", label: "Token inventory", href: "/typography#token-inventory" },
+    ],
+  },
+  colors: {
+    label: "",
+    items: [
+      { type: "link", label: "Overview", href: "/colors#overview" },
+      { type: "link", label: "Semantic colors", href: "/colors#semantic-colors" },
+      { type: "link", label: "Raw palette", href: "/colors#raw-palette" },
+      { type: "link", label: "Liturgical colors", href: "/colors#liturgical-colors" },
+      { type: "link", label: "CDCF colors", href: "/colors#cdcf-colors" },
+      { type: "link", label: "Usage guidance", href: "/colors#usage-guidance" },
+    ],
   },
 };
 
@@ -198,12 +202,20 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 className="docs-nav-link-with-badge"
               >
                 <span>Components</span>
-                <Badge variant="gold" size="xs">146</Badge>
+                <Badge variant="gold" size="xs">{systemStats.components}</Badge>
               </a>
-              <span className="docs-nav-disabled docs-nav-disabled--with-badge">
-                <span>Typography</span>
-                <Badge variant="neutral" size="xs">Coming soon</Badge>
-              </span>
+              <a
+                aria-current={current === "colors" ? "page" : undefined}
+                href="/colors"
+              >
+                Colors
+              </a>
+              <a
+                aria-current={current === "typography" ? "page" : undefined}
+                href="/typography"
+              >
+                Typography
+              </a>
               <span className="docs-nav-disabled docs-nav-disabled--with-badge">
                 <span>Templates</span>
                 <Badge variant="neutral" size="xs">Coming soon</Badge>
@@ -247,14 +259,11 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                     const id = hrefToHash(item.href);
                     const isActive = id && id === activeSectionId;
 
-                    const isDocsPageTitle = current === "docs" && item.label === "Installation";
-
                     return (
                       <a
                         key={`${item.href}-${item.label}-${index}`}
                         href={item.href}
                         aria-current={isActive ? "location" : undefined}
-                        className={isDocsPageTitle ? "docs-nav-page-title" : undefined}
                       >
                         {item.label}
                       </a>
@@ -282,6 +291,7 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
       <div className="docs-floating-search">
         <DocSearch
           label="Search documentation..."
+          shortcut="⌘ K"
           items={docsSearchItems}
           maxResults={8}
         />

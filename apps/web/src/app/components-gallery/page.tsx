@@ -1,14 +1,17 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsCodeBlock } from "../components/docs-code-block";
 
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
+  ArrowRightIcon,
   Badge,
   Button,
   Card,
   CheckIcon,
+  CopyIcon,
   Cluster,
   Container,
   Divider,
@@ -30,6 +33,7 @@ import {
   TabList,
   TabPanel,
   Tabs,
+  Tag,
   Table,
   TableWrapper,
   TBody,
@@ -140,7 +144,6 @@ import {
 import {
   accordionExamples,
   announcementBannerExample,
-  buttonExamples,
   clergyProfileExample,
   contactBlockExample,
   directoryExample,
@@ -334,18 +337,6 @@ import {
   adorationScheduleExampleCode,
 } from "../docs/codegen";
 
-import colors from "../../../../../packages/tokens/src/colors.json";
-import liturgicalColors from "../../../../../packages/tokens/src/liturgical-colors.json";
-
-
-const rawColors = colors.color.raw as Record<string, string>;
-const semanticColors = colors.color.semantic as Record<string, string>;
-
-function resolveColor(value: string) {
-  const match = value.match(/^\{color\.raw\.(.+)\}$/);
-  if (!match) return value;
-  return rawColors[match[1]] || value;
-}
 
 
 function ComponentBlock({
@@ -361,8 +352,6 @@ function ComponentBlock({
   code: string;
   variant?: "preview" | "specimen";
 }) {
-  const codeId = `code-${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
-
   return (
     <section className={`docs-block docs-block--${variant}`}>
       <Stack gap="sm">
@@ -383,42 +372,31 @@ function ComponentBlock({
           </div>
         )}
 
-        <div className="docs-code-disclosure">
-          <input
-            id={codeId}
-            className="docs-code-toggle"
-            type="checkbox"
-          />
-          <label
-            className="docs-code-toggle-label"
-            htmlFor={codeId}
-          >
+        <details className="docs-code-disclosure">
+          <summary className="docs-code-toggle-label">
             Show code
-          </label>
-          <pre className="docs-pre">
-            <code>{code}</code>
-          </pre>
-        </div>
+          </summary>
+          <DocsCodeBlock code={code} variant="preview" copyable />
+        </details>
       </Stack>
     </section>
   );
 }
 
-function ColorRow({ name, value }: { name: string; value: string }) {
-  const resolved = resolveColor(value);
-
+function SpecimenRow({
+  label,
+  children,
+}: {
+  label: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="docs-token-row">
-      <div className="docs-color-chip" style={{ background: resolved }} aria-hidden="true" />
-      <div>
-        <Text as="p" size="sm">
-          {name}
-        </Text>
-        <Text as="p" size="xs" tone="muted">
-          {value}
-        </Text>
-      </div>
-    </div>
+    <Stack gap="xs">
+      <Eyebrow>{label}</Eyebrow>
+      <Cluster gap="sm" align="center">
+        {children}
+      </Cluster>
+    </Stack>
   );
 }
 
@@ -452,92 +430,22 @@ export default function Home() {
 
         <Section id="colors" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="lg">
-              <Stack gap="sm" className="docs-section-intro">
+            <Panel surface="raised" padding="lg">
+              <Stack gap="sm">
+                <Eyebrow>System foundation</Eyebrow>
                 <Heading level={2} size="2xl">
                   Colors
                 </Heading>
-                <Text tone="muted">
-                  Vatican-derived institutional colors, corrected into semantic
-                  tokens for accessible Catholic interfaces.
+                <Text tone="secondary">
+                  Raw palette, semantic interface colors, liturgical colors, usage guidance, and token inventory now live on the dedicated colors page.
                 </Text>
+                <Cluster>
+                  <Button href="/colors">Open color system</Button>
+                </Cluster>
               </Stack>
-
-              <Grid columns="2" gap="lg">
-                <Panel surface="raised" padding="md">
-                  <Stack gap="md">
-                    <Heading level={3} size="lg" family="interface">
-                      Semantic colors
-                    </Heading>
-                    <Stack gap="xs">
-                      {Object.entries(semanticColors)
-                        .slice(0, 14)
-                        .map(([name, value]) => (
-                          <ColorRow key={name} name={name} value={String(value)} />
-                        ))}
-                    </Stack>
-                  </Stack>
-                </Panel>
-
-                <Panel surface="raised" padding="md">
-                  <Stack gap="md">
-                    <Heading level={3} size="lg" family="interface">
-                      Raw palette
-                    </Heading>
-                    <Stack gap="xs">
-                      {Object.entries(rawColors)
-                        .slice(0, 14)
-                        .map(([name, value]) => (
-                          <ColorRow key={name} name={name} value={String(value)} />
-                        ))}
-                    </Stack>
-                  </Stack>
-                </Panel>
-              </Grid>
-            </Stack>
+            </Panel>
           </Container>
         </Section>
-
-        <Section id="liturgical" surface="page" spacing="md">
-          <Container size="lg">
-            <Stack gap="lg">
-              <Stack gap="sm" className="docs-section-intro">
-                <Heading level={2} size="2xl">
-                  Liturgical color tokens
-                </Heading>
-              </Stack>
-
-              <Grid columns="2" gap="md">
-                {liturgicalColors.liturgicalColors.map((item) => (
-                  <Card key={item.token} padding="md" border="subtle">
-                    <Cluster align="start">
-                      <div
-                        className="docs-liturgical-dot"
-                        style={{
-                          background: `var(--ccui-${item.token.replace(".", "-")})`,
-                        }}
-                        aria-hidden="true"
-                      />
-                      <Stack gap="xs">
-                        <Text as="p" size="md">
-                          {item.name}
-                        </Text>
-                        <Text as="p" size="xs" tone="muted">
-                          {item.token}
-                        </Text>
-                        <Text as="p" size="sm" tone="secondary">
-                          {item.use}
-                        </Text>
-                      </Stack>
-                    </Cluster>
-                  </Card>
-                ))}
-              </Grid>
-            </Stack>
-          </Container>
-        </Section>
-
-
 
         <Section id="primitive-layout" surface="page" spacing="md">
           <Container size="lg">
@@ -585,144 +493,20 @@ export default function Home() {
 
         <Section id="primitive-typography" surface="page" spacing="md">
           <Container size="lg">
-            <Stack gap="xl" className="docs-component-list">
-              <Stack gap="sm" className="docs-section-intro">
+            <Panel surface="raised" padding="lg">
+              <Stack gap="sm">
+                <Eyebrow>System foundation</Eyebrow>
                 <Heading level={2} size="2xl">
-                  Typography primitives
+                  Typography
                 </Heading>
-                <Text tone="muted">
-                  Choose the right voice for the job: public identity, interface controls,
-                  or readable source-backed text.
+                <Text tone="secondary">
+                  Type roles, heading scale, text rhythm, semantic tones, and typography API now live on the dedicated typography page.
                 </Text>
+                <Cluster>
+                  <Button href="/typography">Open typography system</Button>
+                </Cluster>
               </Stack>
-
-              <Divider />
-
-              <div className="docs-type-matrix" aria-label="Typography system summary">
-                <div className="docs-type-matrix__row docs-type-matrix__row--head">
-                  <Text as="p" className="docs-type-matrix__cell">Type role</Text>
-                  <Text as="p" className="docs-type-matrix__cell">Use when</Text>
-                  <Text as="p" className="docs-type-matrix__cell">Primitive</Text>
-                </div>
-
-                <div className="docs-type-matrix__row">
-                  <div className="docs-type-matrix__voice">
-                    <span className="docs-type-matrix__sample docs-type-matrix__sample--display">Aa</span>
-                    <Text as="p" className="docs-type-matrix__name">Display</Text>
-                  </div>
-                  <Text tone="secondary">Public identity, page openings, feast heroes, parish titles.</Text>
-                  <Text tone="muted">Heading family=&quot;display&quot;</Text>
-                </div>
-
-                <div className="docs-type-matrix__row">
-                  <div className="docs-type-matrix__voice">
-                    <span className="docs-type-matrix__sample docs-type-matrix__sample--interface">Aa</span>
-                    <Text as="p" className="docs-type-matrix__name">Interface</Text>
-                  </div>
-                  <Text tone="secondary">Navigation, controls, tables, filters, labels, metadata.</Text>
-                  <Text tone="muted">Heading family=&quot;interface&quot;, Eyebrow, Badge, Button</Text>
-                </div>
-
-                <div className="docs-type-matrix__row">
-                  <div className="docs-type-matrix__voice">
-                    <span className="docs-type-matrix__sample docs-type-matrix__sample--document">Aa</span>
-                    <Text as="p" className="docs-type-matrix__name">Document</Text>
-                  </div>
-                  <Text tone="secondary">Readable records, prayers, citations, notices, source-backed text.</Text>
-                  <Text tone="muted">Text, documents, prayer blocks, citations</Text>
-                </div>
-              </div>
-
-              <ComponentBlock
-                variant="specimen"
-                title="Eyebrow"
-                description="A compact uppercase label for institutional sections, registry categories, and formal metadata."
-                code={`<Eyebrow>Component registry</Eyebrow>`}
-              >
-                <Eyebrow>Component registry</Eyebrow>
-              </ComponentBlock>
-
-              <ComponentBlock
-                variant="specimen"
-                title="Display text"
-                description="Large-scale display heading for page openings, public-facing titles, and institutional identity."
-                code={`<Heading level={1} size="4xl" family="display">
-  A Design System for the Digital Catholic Church
-</Heading>`}
-              >
-                <Heading level={1} size="4xl" family="display">
-                  A Design System for the Digital Catholic Church
-                </Heading>
-              </ComponentBlock>
-
-              <ComponentBlock variant="specimen"
-                title="Interface hierarchy"
-                description="Smaller interface typography for cards, tables, filters, navigation, and registry controls."
-                code={`<Stack gap="md">
-  <Heading level={3} size="lg" family="interface">
-    Search parish records
-  </Heading>
-  <Text size="sm" tone="muted">
-    Filter by parish, sacrament, document type, or publication status.
-  </Text>
-  <Text size="sm" tone="muted">
-    Registry controls use compact interface typography.
-  </Text>
-</Stack>`}
-              >
-                <Stack gap="md">
-                  <Heading level={3} size="lg" family="interface">
-                    Search parish records
-                  </Heading>
-                  <Text size="sm" tone="muted">
-                    Filter by parish, sacrament, document type, or publication status.
-                  </Text>
-                  <Text size="sm" tone="muted">
-                    Registry controls use compact interface typography.
-                  </Text>
-                </Stack>
-              </ComponentBlock>
-
-              <ComponentBlock variant="specimen"
-                title="Text tones"
-                description="Semantic text tones let pages communicate hierarchy without adding page-specific colors."
-                code={`<Stack gap="xs">
-  <Text tone="primary">Primary text for the main readable claim.</Text>
-  <Text tone="secondary">Secondary text for supporting context.</Text>
-  <Text tone="muted">Muted text for metadata and low-emphasis details.</Text>
-  <Text tone="goldText">Gold text for restrained institutional emphasis.</Text>
-</Stack>`}
-              >
-                <Stack gap="xs">
-                  <Text tone="primary">Primary text for the main readable claim.</Text>
-                  <Text tone="secondary">Secondary text for supporting context.</Text>
-                  <Text tone="muted">Muted text for metadata and low-emphasis details.</Text>
-                  <Text tone="goldText">Gold text for restrained institutional emphasis.</Text>
-                </Stack>
-              </ComponentBlock>
-
-              <ComponentBlock variant="specimen"
-                title="Document and citation text"
-                description="Document typography supports official notices, citations, canonical references, and source-backed interfaces."
-                code={`<Stack gap="sm">
-  <Text tone="primary">
-    The faithful have the right to receive public information in a stable, readable, and source-aware form.
-  </Text>
-  <Text size="sm" tone="muted">
-    Source: Canonical reference · Updated June 7
-  </Text>
-</Stack>`}
-              >
-                <Stack gap="sm">
-                  <Text tone="primary">
-                    The faithful have the right to receive public information in a stable, readable, and source-aware form.
-                  </Text>
-                  <Text size="sm" tone="muted">
-                    Source: Canonical reference · Updated June 7
-                  </Text>
-                </Stack>
-              </ComponentBlock>
-            </Stack>
+            </Panel>
           </Container>
         </Section>
 
@@ -756,17 +540,106 @@ export default function Home() {
               <ComponentBlock
                 variant="specimen"
                 title="Card, Panel, Divider"
-                description="Raised surfaces, grouped panels, and separators."
-                code={`<Stack gap="md">
-  <Card padding="md" border="subtle">Card surface</Card>
-  <Panel surface="raised" padding="md">Panel surface</Panel>
-  <Divider />
-</Stack>`}
+                description="Use panels for grouped regions, cards for portable content objects, and dividers for internal separation."
+                code={`<Panel surface="raised" padding="lg">
+  <Stack gap="md">
+    <Stack gap="xs">
+      <Heading level={3} size="md" family="interface">
+        Parish office
+      </Heading>
+      <Text tone="secondary">
+        Group related contact and schedule information inside a panel.
+      </Text>
+    </Stack>
+
+    <Divider />
+
+    <Grid columns="2" gap="md">
+      <Card padding="md" border="subtle" surface="raised">
+        <Stack gap="xs">
+          <Heading level={4} size="sm" family="interface">
+            Office hours
+          </Heading>
+          <Text tone="muted">Monday–Friday · 9:00 AM–4:00 PM</Text>
+        </Stack>
+      </Card>
+
+      <Card padding="md" border="subtle" surface="raised">
+        <Stack gap="xs">
+          <Heading level={4} size="sm" family="interface">
+            Contact
+          </Heading>
+          <Text tone="muted">Call the parish office for appointments.</Text>
+        </Stack>
+      </Card>
+    </Grid>
+  </Stack>
+</Panel>`}
               >
-                <Stack gap="md">
-                  <Card padding="md" border="subtle">Card surface</Card>
-                  <Panel surface="raised" padding="md">Panel surface</Panel>
-                  <Divider />
+                <Stack gap="lg">
+                  <Panel surface="raised" padding="lg">
+                    <Stack gap="md">
+                      <Stack gap="xs">
+                        <Heading level={3} size="md" family="interface">
+                          Parish office
+                        </Heading>
+                        <Text tone="secondary">
+                          Group related contact and schedule information inside a panel.
+                        </Text>
+                      </Stack>
+
+                      <Divider />
+
+                      <Grid columns="2" gap="md">
+                        <Card padding="md" border="subtle" surface="raised">
+                          <Stack gap="xs">
+                            <Heading level={4} size="sm" family="interface">
+                              Office hours
+                            </Heading>
+                            <Text tone="muted">Monday–Friday · 9:00 AM–4:00 PM</Text>
+                          </Stack>
+                        </Card>
+
+                        <Card padding="md" border="subtle" surface="raised">
+                          <Stack gap="xs">
+                            <Heading level={4} size="sm" family="interface">
+                              Contact
+                            </Heading>
+                            <Text tone="muted">Call the parish office for appointments.</Text>
+                          </Stack>
+                        </Card>
+                      </Grid>
+                    </Stack>
+                  </Panel>
+
+                  <TableWrapper>
+                    <Table>
+                      <THead>
+                        <TR>
+                          <TH>Primitive</TH>
+                          <TH>Role</TH>
+                          <TH>Useful props</TH>
+                        </TR>
+                      </THead>
+                      <TBody>
+                        <TR>
+                          <TD>Panel</TD>
+                          <TD>Grouped page region.</TD>
+                          <TD>surface, padding, tone</TD>
+                        </TR>
+                        <TR>
+                          <TD>Card</TD>
+                          <TD>Portable content object inside a region.</TD>
+                          <TD>surface, padding, border, shadow</TD>
+                        </TR>
+                        <TR>
+                          <TD>Divider</TD>
+                          <TD>Separator inside related content.</TD>
+                          <TD>tone</TD>
+                        </TR>
+                      </TBody>
+                    </Table>
+                  </TableWrapper>
                 </Stack>
               </ComponentBlock>
             </Stack>
@@ -788,27 +661,112 @@ export default function Home() {
               <ComponentBlock
                 variant="specimen"
                 title="Button"
-                description="Primary, secondary, gold, ghost, and danger actions."
+                description="Buttons communicate actions with variants, sizes, icons, links, and disabled states."
                 code={buttonExamplesCode}
               >
-                <Cluster gap="sm">
-                  {buttonExamples.map((button) => (
-                    <Button key={button.label} variant={button.variant}>
-                      {button.label}
-                    </Button>
-                  ))}
-                </Cluster>
+                <Stack gap="xl">
+                  <Stack gap="lg">
+                    <SpecimenRow label="Primary actions">
+                      <Button>Save changes</Button>
+                      <Button variant="secondary">Cancel</Button>
+                      <Button variant="ghost">Preview</Button>
+                    </SpecimenRow>
+
+                    <SpecimenRow label="Institutional actions">
+                      <Button variant="gold">Donate</Button>
+                      <Button variant="secondary" iconAfter={<ArrowRightIcon size="sm" />}>
+                        Continue
+                      </Button>
+                      <Button variant="danger">Delete</Button>
+                    </SpecimenRow>
+
+                    <SpecimenRow label="Icon controls">
+                      <Button iconBefore={<CopyIcon size="sm" />}>Copy</Button>
+                      <Button size="icon" variant="ghost" aria-label="Copy code">
+                        <CopyIcon size="sm" />
+                      </Button>
+                      <Button size="icon" variant="ghost" aria-label="Continue">
+                        <ArrowRightIcon size="sm" />
+                      </Button>
+                    </SpecimenRow>
+
+                    <SpecimenRow label="Links and states">
+                      <Button href="/docs">Read docs</Button>
+                      <Button disabled>Disabled</Button>
+                    </SpecimenRow>
+                  </Stack>
+
+                  <div className="docs-component-api">
+                    <Stack gap="md">
+                      <Stack gap="xs">
+                        <Heading level={3} size="md" family="interface">
+                          API
+                        </Heading>
+                        <Text tone="muted">
+                          Button supports semantic variants, standard sizes, optional icons, link rendering, and disabled states.
+                        </Text>
+                      </Stack>
+
+                      <TableWrapper>
+                        <Table>
+                          <THead>
+                            <TR>
+                              <TH>Prop</TH>
+                              <TH>Values</TH>
+                              <TH>Use</TH>
+                            </TR>
+                          </THead>
+                          <TBody>
+                            <TR>
+                              <TD>variant</TD>
+                              <TD>primary, secondary, subtle, ghost, gold, danger, floating</TD>
+                              <TD>Visual priority and intent.</TD>
+                            </TR>
+                            <TR>
+                              <TD>size</TD>
+                              <TD>xs, sm, md, lg, icon</TD>
+                              <TD>Control scale. Use icon for icon-only controls.</TD>
+                            </TR>
+                            <TR>
+                              <TD>iconBefore / iconAfter</TD>
+                              <TD>ReactNode</TD>
+                              <TD>Add an icon before or after the label.</TD>
+                            </TR>
+                            <TR>
+                              <TD>href</TD>
+                              <TD>string</TD>
+                              <TD>Render a link styled as a button.</TD>
+                            </TR>
+                            <TR>
+                              <TD>disabled</TD>
+                              <TD>boolean</TD>
+                              <TD>Disable a native button action.</TD>
+                            </TR>
+                          </TBody>
+                        </Table>
+                      </TableWrapper>
+                    </Stack>
+                  </div>
+                </Stack>
               </ComponentBlock>
 
               <ComponentBlock
                 variant="specimen"
                 title="Badge, Tag, Link"
-                description="Compact metadata and institutional links."
-                code={`<Cluster gap="sm">
+                description="Compact metadata, taxonomy labels, and institutional links."
+                code={`<Cluster gap="sm" align="center">
+  <Badge variant="neutral">Draft</Badge>
+  <Badge variant="gold">Official</Badge>
+  <Tag>Parish</Tag>
+  <Tag>Directory</Tag>
   <Link href="#">Read more</Link>
 </Cluster>`}
               >
-                <Cluster gap="sm">
+                <Cluster gap="sm" align="center">
+                  <Badge variant="neutral">Draft</Badge>
+                  <Badge variant="gold">Official</Badge>
+                  <Tag>Parish</Tag>
+                  <Tag>Directory</Tag>
                   <Link href="#">Read more</Link>
                 </Cluster>
               </ComponentBlock>

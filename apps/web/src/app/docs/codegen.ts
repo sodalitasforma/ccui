@@ -1,7 +1,6 @@
 import {
   accordionExamples,
   announcementBannerExample,
-  buttonExamples,
   clergyProfileExample,
   contactBlockExample,
   directoryExample,
@@ -96,12 +95,6 @@ import {
   adorationScheduleExample,
 } from "./examples";
 
-function prop(name: string, value: unknown) {
-  if (value === undefined || value === false || value === null) return "";
-  if (value === true) return ` ${name}`;
-  return ` ${name}="${String(value)}"`;
-}
-
 function objectArrayCode(items: readonly { label: string; href: string; current?: boolean }[]) {
   return `[\n${items
     .map(
@@ -137,11 +130,36 @@ function stringArrayCode(items: readonly string[]) {
   return `[${items.map((item) => `"${item}"`).join(", ")}]`;
 }
 
-export const buttonExamplesCode = buttonExamples
-  .map((button) =>
-    `<Button${prop("variant", button.variant)}>${button.label}</Button>`
-  )
-  .join("\n");
+export const buttonExamplesCode = `<Stack gap="lg">
+  <SpecimenRow label="Primary actions">
+    <Button>Save changes</Button>
+    <Button variant="secondary">Cancel</Button>
+    <Button variant="ghost">Preview</Button>
+  </SpecimenRow>
+
+  <SpecimenRow label="Institutional actions">
+    <Button variant="gold">Donate</Button>
+    <Button variant="secondary" iconAfter={<ArrowRightIcon size="sm" />}>
+      Continue
+    </Button>
+    <Button variant="danger">Delete</Button>
+  </SpecimenRow>
+
+  <SpecimenRow label="Icon controls">
+    <Button iconBefore={<CopyIcon size="sm" />}>Copy</Button>
+    <Button size="icon" variant="ghost" aria-label="Copy code">
+      <CopyIcon size="sm" />
+    </Button>
+    <Button size="icon" variant="ghost" aria-label="Continue">
+      <ArrowRightIcon size="sm" />
+    </Button>
+  </SpecimenRow>
+
+  <SpecimenRow label="Links and states">
+    <Button href="/docs">Read docs</Button>
+    <Button disabled>Disabled</Button>
+  </SpecimenRow>
+</Stack>`;
 
 export const noticeExamplesCode =
   `<Stack gap="sm">\n` +

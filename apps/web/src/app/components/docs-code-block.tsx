@@ -6,10 +6,18 @@ import { Button, CheckIcon, CopyIcon } from "../../../../../packages/primitives/
 type DocsCodeBlockProps = {
   code: string;
   language?: string;
-  label?: string;
+  copyable?: boolean;
+  className?: string;
+  variant?: "install" | "preview";
 };
 
-export function DocsCodeBlock({ code, language, label = "Copy code" }: DocsCodeBlockProps) {
+export function DocsCodeBlock({
+  code,
+  language,
+  copyable = false,
+  className,
+  variant = "install",
+}: DocsCodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
   async function copyCode() {
@@ -19,21 +27,23 @@ export function DocsCodeBlock({ code, language, label = "Copy code" }: DocsCodeB
   }
 
   return (
-    <div className="docs-code-block">
-      <pre className="docs-install-code">
+    <div className={["docs-code-block", className].filter(Boolean).join(" ")}>
+      <pre className={variant === "preview" ? "docs-pre" : "docs-install-code"}>
         <code data-language={language}>{code}</code>
       </pre>
-      <Button
-        type="button"
-        size="icon"
-        variant="ghost"
-        className="docs-code-block__copy"
-        onClick={copyCode}
-        aria-label={copied ? "Copied code" : label}
-        title={copied ? "Copied" : "Copy"}
-      >
-        {copied ? <CheckIcon size="sm" /> : <CopyIcon size="sm" />}
-      </Button>
+
+      {copyable ? (
+        <Button
+          type="button"
+          size="icon"
+          variant="ghost"
+          className="docs-code-block__copy"
+          onClick={copyCode}
+          aria-label={copied ? "Copied code" : "Copy code"}
+        >
+          {copied ? <CheckIcon size="sm" /> : <CopyIcon size="sm" />}
+        </Button>
+      ) : null}
     </div>
   );
 }

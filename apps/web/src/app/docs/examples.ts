@@ -1,10 +1,18 @@
-export const buttonExamples = [
-  { label: "Primary", variant: undefined },
-  { label: "Secondary", variant: "secondary" },
-  { label: "Gold", variant: "gold" },
-  { label: "Ghost", variant: "ghost" },
-  { label: "Danger", variant: "danger" },
-] as const;
+export const buttonExamples = {
+  variants: [
+    { label: "Primary", variant: undefined },
+    { label: "Secondary", variant: "secondary" },
+    { label: "Gold", variant: "gold" },
+    { label: "Ghost", variant: "ghost" },
+    { label: "Danger", variant: "danger" },
+  ],
+  sizes: [
+    { label: "XS", size: "xs" },
+    { label: "Small", size: "sm" },
+    { label: "Default", size: "md" },
+    { label: "Large", size: "lg" },
+  ],
+} as const;
 
 export const noticeExamples = [
   { variant: "official", children: "Parish office closes at noon on First Fridays." },
