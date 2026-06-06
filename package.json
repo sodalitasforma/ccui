@@ -10,7 +10,8 @@
     "lint": "pnpm --filter @ccui/web lint",
     "typecheck": "pnpm --filter @ccui/web typecheck",
     "generate:stats": "node apps/web/scripts/generate-system-stats.mjs",
-    "check:css-contract": "node apps/web/scripts/audit-css-contracts.mjs"
+    "check:css-contract": "node apps/web/scripts/audit-css-contracts.mjs",
+    "check:docs-search": "node apps/web/scripts/audit-docs-search-anchors.mjs"
   },
   "keywords": [
     "catholic",
