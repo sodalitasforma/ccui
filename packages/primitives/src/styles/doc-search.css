@@ -201,3 +201,31 @@
   background: var(--ccui-color-nav-active-bg);
   color: var(--ccui-color-nav-active-text);
 }
+
+
+/* Dark theme doc search visual polish */
+[data-theme="dark"] .ccui-doc-search {
+  min-height: 2.5rem;
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+  box-shadow: none;
+}
+
+[data-theme="dark"] .ccui-doc-search:focus-within {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ccui-color-focus-ring) 34%, transparent);
+}
+
+[data-theme="dark"] .ccui-doc-search__input {
+  min-height: 2.5rem;
+  background: transparent;
+}
+
+[data-theme="dark"] .ccui-doc-search__shortcut {
+  color: var(--ccui-color-icon-muted);
+}
+
+[data-theme="dark"] .ccui-doc-search__shortcut-key {
+  opacity: 1;
+}
