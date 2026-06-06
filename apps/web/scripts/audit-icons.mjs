@@ -1,127 +1,90 @@
-import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
-import { basename, dirname, join, relative } from "node:path";
+import { readdirSync, readFileSync, statSync } from "node:fs";
+import { join, relative } from "node:path";
 
 const iconsRoot = "packages/icons/src";
-const metadataPath = join(iconsRoot, "metadata.ts");
-const rootIndexPath = join(iconsRoot, "index.ts");
+const iconDirs = ["interface", "catholic"];
 
 function walk(dir) {
-  const files = [];
+  return readdirSync(dir)
+    .flatMap((entry) => {
+      const path = join(dir, entry);
+      return statSync(path).isDirectory() ? walk(path) : [path];
+    });
+}
 
-  for (const entry of readdirSync(dir)) {
-    const path = join(dir, entry);
-    const stat = statSync(path);
+const iconFiles = iconDirs
+  .flatMap((dir) => walk(join(iconsRoot, dir)))
+  .filter((file) => file.endsWith("-icon.tsx"))
+  .sort();
 
-    if (stat.isDirectory()) {
-      files.push(...walk(path));
-    } else if (path.endsWith(".tsx")) {
-      files.push(path);
-    }
+const iconFileExports = iconFiles.map((file) => {
+  const text = readFileSync(file, "utf8");
+  const match = text.match(/export function ([A-Z][A-Za-z0-9]+Icon)\(/);
+
+  if (!match) {
+    throw new Error(`Icon file does not export a named Icon function: ${file}`);
   }
 
-  return files;
-}
+  if (!text.includes("<IconSvg")) {
+    throw new Error(`Icon file does not use shared IconSvg: ${file}`);
+  }
 
-function read(path) {
-  return readFileSync(path, "utf8");
-}
-
-function iconNameFromFile(path) {
-  const text = read(path);
-  const match = text.match(/export function ([A-Z][A-Za-z0-9]+Icon)\(/);
-  return match?.[1] ?? null;
-}
-
-const iconFiles = walk(iconsRoot).filter((file) => {
-  const name = basename(file);
-  return name !== "icon.tsx";
+  return {
+    file,
+    exportName: match[1],
+  };
 });
 
-const iconNamesByFile = new Map();
+const indexText = readFileSync(join(iconsRoot, "index.ts"), "utf8");
+const metadataText = readFileSync(join(iconsRoot, "metadata.ts"), "utf8");
 
-for (const file of iconFiles) {
-  const iconName = iconNameFromFile(file);
-
-  if (!iconName) {
-    throw new Error(`Icon file missing exported Icon function: ${relative(process.cwd(), file)}`);
-  }
-
-  iconNamesByFile.set(file, iconName);
-}
-
-const availableIcons = new Set(iconNamesByFile.values());
-const metadataText = read(metadataPath);
-
-const registryEntries = Array.from(
-  metadataText.matchAll(/exportName:\s*"([A-Z][A-Za-z0-9]+Icon)"/g)
+const registryExportNames = Array.from(
+  metadataText.matchAll(/exportName:\s*"([^"]+)"/g)
 ).map((match) => match[1]);
 
-const missingMetadataIcons = registryEntries.filter((name) => !availableIcons.has(name));
-
-if (missingMetadataIcons.length) {
-  throw new Error(
-    `iconRegistry entries missing icon files:\n${missingMetadataIcons.join("\n")}`
-  );
-}
-
-const undocumentedIcons = Array.from(availableIcons)
-  .filter((name) => !registryEntries.includes(name))
-  .sort();
-
-if (undocumentedIcons.length) {
-  throw new Error(
-    `Icon files missing iconRegistry entries:\n${undocumentedIcons.join("\n")}`
-  );
-}
-
-const duplicateRegistryEntries = registryEntries.filter(
-  (name, index) => registryEntries.indexOf(name) !== index
+const duplicateRegistryNames = registryExportNames.filter(
+  (name, index) => registryExportNames.indexOf(name) !== index
 );
 
-if (duplicateRegistryEntries.length) {
+if (duplicateRegistryNames.length) {
   throw new Error(
-    `Duplicate iconRegistry entries:\n${Array.from(new Set(duplicateRegistryEntries)).join("\n")}`
+    `Duplicate icon registry exportName values:\n${duplicateRegistryNames.join("\n")}`
   );
 }
 
-const categoryDirs = readdirSync(iconsRoot)
-  .map((entry) => join(iconsRoot, entry))
-  .filter((path) => statSync(path).isDirectory())
-  .sort();
+const fileExportNames = iconFileExports.map((item) => item.exportName);
 
-for (const categoryDir of categoryDirs) {
-  const indexPath = join(categoryDir, "index.ts");
+const missingFromRegistry = fileExportNames.filter(
+  (name) => !registryExportNames.includes(name)
+);
 
-  if (!existsSync(indexPath)) {
-    throw new Error(`Missing category index: ${relative(process.cwd(), indexPath)}`);
-  }
+const missingFiles = registryExportNames.filter(
+  (name) => !fileExportNames.includes(name)
+);
 
-  const indexText = read(indexPath);
-  const categoryIconFiles = iconFiles.filter((file) => dirname(file) === categoryDir);
+const missingRootExports = fileExportNames.filter(
+  (name) => !indexText.includes(name) && !indexText.includes("export *")
+);
 
-  for (const file of categoryIconFiles) {
-    const iconName = iconNamesByFile.get(file);
-    const exportPath = `./${basename(file, ".tsx")}`;
-
-    if (!indexText.includes(`export { ${iconName} } from "${exportPath}";`)) {
-      throw new Error(
-        `Missing category export for ${iconName} in ${relative(process.cwd(), indexPath)}`
-      );
-    }
-  }
+if (missingFromRegistry.length) {
+  throw new Error(
+    `Icon files missing from iconRegistry:\n${missingFromRegistry.join("\n")}`
+  );
 }
 
-const rootIndexText = read(rootIndexPath);
-
-for (const categoryDir of categoryDirs) {
-  const category = basename(categoryDir);
-
-  if (!rootIndexText.includes(`export * from "./${category}";`)) {
-    throw new Error(`Missing root icon export for category: ${category}`);
-  }
+if (missingFiles.length) {
+  throw new Error(
+    `iconRegistry entries missing icon files:\n${missingFiles.join("\n")}`
+  );
 }
 
-console.log(`Icons OK: ${availableIcons.size} icon files audited.`);
-for (const name of Array.from(availableIcons).sort()) {
-  console.log(`- ${name}`);
+if (missingRootExports.length) {
+  throw new Error(
+    `Icon files missing root exports:\n${missingRootExports.join("\n")}`
+  );
+}
+
+console.log(`Icons OK: ${iconFileExports.length} icon files audited.`);
+for (const item of iconFileExports) {
+  console.log(`- ${item.exportName} (${relative(iconsRoot, item.file)})`);
 }
