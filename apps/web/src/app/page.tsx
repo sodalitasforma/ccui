@@ -46,10 +46,18 @@ export default function Home() {
             <nav className="home-nav-links" aria-label="Primary navigation">
               <Link href="/docs">Docs</Link>
               <Link href="/components-gallery">Components</Link>
+              <Link href="/colors">Colors</Link>
+              <Link href="/typography">Typography</Link>
               <span className="home-nav-disabled" aria-disabled="true">Templates</span>
             </nav>
 
-            <DocSearch label="Search documentation..." items={docsSearchItems} />
+            <DocSearch
+              label="Search documentation..."
+              shortcut="⌘ K"
+              items={docsSearchItems}
+              maxResults={8}
+              className="home-doc-search"
+            />
 
             <span className="home-nav-divider" aria-hidden="true" />
 

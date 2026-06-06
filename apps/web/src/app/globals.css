@@ -103,17 +103,6 @@ a {
   white-space: pre-wrap;
 }
 
-.docs-pre::before {
-  content: "TSX";
-  position: absolute;
-  top: var(--ccui-space-3);
-  right: var(--ccui-space-4);
-  color: var(--ccui-color-text-muted);
-  font-family: var(--ccui-font-interface);
-  font-size: var(--ccui-font-size-xs);
-  font-weight: var(--ccui-font-weight-bold);
-  letter-spacing: var(--ccui-letter-spacing-wide);
-}
 
 .docs-token-row {
   display: grid;
@@ -201,7 +190,7 @@ a {
 .home-brand {
   font-family: var(--ccui-font-interface);
   font-weight: var(--ccui-font-weight-bold);
-  letter-spacing: var(--ccui-letter-spacing-tight);
+  letter-spacing: var(--ccui-letter-spacing-tight-display);
 }
 
 .home-centered {
@@ -550,11 +539,6 @@ a {
   background: var(--ccui-color-surface-raised);
 }
 
-.docs-pre::before {
-  top: var(--ccui-space-3);
-  right: var(--ccui-space-4);
-  opacity: 0.72;
-}
 
 
 
@@ -752,7 +736,7 @@ a {
 }
 
 .docs-type-matrix__sample--document {
-  font-family: var(--ccui-font-serif);
+  font-family: var(--ccui-font-document);
   font-size: var(--ccui-font-size-3xl);
   font-weight: var(--ccui-font-weight-bold);
 }
@@ -1551,10 +1535,6 @@ a {
   }
 }
 
-.docs-nav--sections .docs-nav-page-title {
-  color: var(--ccui-color-link-primary);
-  font-weight: var(--ccui-font-weight-bold);
-}
 
 .docs-nav--sections .docs-nav-page-title + a {
   margin-top: var(--ccui-space-2);
@@ -1581,12 +1561,6 @@ a {
 }
 
 /* Docs sidebar: Installation is the active page, anchors are children. */
-.docs-nav--sections .docs-nav-page-title {
-  margin-left: 0;
-  padding-left: 0;
-  color: var(--ccui-color-link-primary);
-  font-weight: var(--ccui-font-weight-bold);
-}
 
 .docs-nav--sections .docs-nav-page-title ~ a {
   margin-left: 0;
@@ -1617,7 +1591,76 @@ a {
   right: var(--ccui-space-2);
 }
 
-
-.docs-code-block .docs-install-code {
+.docs-code-block .docs-install-code,
+.docs-code-block .docs-pre {
   padding-right: 3.25rem;
+}
+
+.docs-component-api {
+  border-top: 1px solid var(--ccui-color-border-subtle);
+  padding-top: var(--ccui-space-5);
+}
+
+.docs-code-toggle:not(:checked) ~ .docs-code-block {
+  display: none;
+}
+
+.docs-code-toggle:checked ~ .docs-code-block {
+  display: block;
+}
+
+.docs-code-disclosure > summary {
+  list-style: none;
+}
+
+.docs-code-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.docs-code-disclosure:not([open]) > .docs-code-block {
+  display: none;
+}
+
+.docs-code-disclosure[open] > .docs-code-block {
+  display: block;
+}
+
+
+
+
+
+.docs-page-actions:hover {
+  border-color: var(--ccui-color-border-strong);
+  background: var(--ccui-color-surface-raised);
+}
+
+/* Homepage header search composition */
+
+.home-doc-search {
+  width: 22rem;
+  min-width: 18rem;
+  max-width: 22rem;
+  flex: 0 0 22rem;
+}
+
+.home-nav-actions {
+  flex-wrap: nowrap;
+}
+
+.home-nav-actions .ccui-doc-search__popover {
+  right: 0;
+}
+
+@media (max-width: 72rem) {
+  .home-nav-actions {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .home-doc-search {
+    order: 10;
+    width: min(100%, 24rem);
+    max-width: 24rem;
+    flex: 1 1 20rem;
+  }
 }
