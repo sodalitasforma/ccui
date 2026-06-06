@@ -282,3 +282,21 @@
 .ccui-button--variant-ghost.ccui-button--size-icon:hover {
   background: color-mix(in srgb, var(--ccui-color-surface-subtle) 82%, transparent);
 }
+
+.ccui-button--size-icon.ccui-button--variant-ghost[aria-pressed="true"],
+.ccui-button--size-icon.ccui-button--variant-ghost[aria-selected="true"],
+.ccui-button--size-icon.ccui-button--variant-ghost[data-state="on"],
+.ccui-button--size-icon.ccui-button--variant-ghost[data-state="selected"] {
+  border-color: var(--ccui-color-control-selected-border);
+  background: var(--ccui-color-control-selected-bg);
+  color: var(--ccui-color-control-selected-text);
+}
+
+.ccui-button--size-icon.ccui-button--variant-ghost[aria-pressed="true"]:hover,
+.ccui-button--size-icon.ccui-button--variant-ghost[aria-selected="true"]:hover,
+.ccui-button--size-icon.ccui-button--variant-ghost[data-state="on"]:hover,
+.ccui-button--size-icon.ccui-button--variant-ghost[data-state="selected"]:hover {
+  border-color: var(--ccui-color-control-selected-border);
+  background: var(--ccui-color-control-selected-bg-hover);
+  color: var(--ccui-color-control-selected-text);
+}

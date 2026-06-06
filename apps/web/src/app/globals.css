@@ -1709,3 +1709,27 @@ a {
 .docs-icon-state-grid .ccui-card {
   min-height: 11rem;
 }
+
+.docs-icon-state-grid {
+  align-items: stretch;
+}
+
+.docs-icon-state-grid .ccui-card {
+  display: flex;
+}
+
+.docs-icon-state-grid .ccui-card > .ccui-stack {
+  width: 100%;
+}
+
+.docs-icon-state-grid .ccui-button--size-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  min-width: 2.5rem;
+  min-height: 2.5rem;
+}
+
+.docs-icon-state-grid .ccui-button--size-icon svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
