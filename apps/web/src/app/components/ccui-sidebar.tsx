@@ -74,7 +74,6 @@ const pageSections: Record<
       { type: "link", label: "Forms", href: "/components-gallery#primitive-forms" },
       { type: "link", label: "Data display", href: "/components-gallery#primitive-data-display" },
       { type: "link", label: "Media", href: "/components-gallery#primitive-media" },
-      { type: "disabled", label: "Icons", badge: "Coming soon" },
 
       { type: "heading", label: "Catholic UI" },
       { type: "link", label: "Parish websites", href: "/components-gallery#parish-websites" },
@@ -204,6 +203,10 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 <span>Components</span>
                 <Badge variant="gold" size="xs">{systemStats.components}</Badge>
               </a>
+              <span className="docs-nav-disabled docs-nav-disabled--with-badge">
+                <span>Icons</span>
+                <Badge variant="neutral" size="xs">Coming soon</Badge>
+              </span>
               <a
                 aria-current={current === "colors" ? "page" : undefined}
                 href="/colors"
