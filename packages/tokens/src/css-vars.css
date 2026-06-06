@@ -84,6 +84,34 @@
   --ccui-color-accent-gold-wash: color-mix(in srgb, var(--ccui-color-accent-gold) 8%, transparent);
   --ccui-color-accent-gold-wash-strong: color-mix(in srgb, var(--ccui-color-accent-gold) 18%, transparent);
 
+  /* State and control colors */
+  --ccui-color-control-bg: var(--ccui-color-surface-raised);
+  --ccui-color-control-bg-hover: var(--ccui-color-surface-subtle);
+  --ccui-color-control-bg-active: var(--ccui-color-surface-parchment);
+  --ccui-color-control-border: var(--ccui-color-border-subtle);
+  --ccui-color-control-border-hover: var(--ccui-color-border-strong);
+  --ccui-color-control-text: var(--ccui-color-text-secondary);
+  --ccui-color-control-text-hover: var(--ccui-color-text-primary);
+
+  --ccui-color-control-selected-bg: var(--ccui-color-brown-700);
+  --ccui-color-control-selected-bg-hover: var(--ccui-color-brown-900);
+  --ccui-color-control-selected-border: var(--ccui-color-brown-700);
+  --ccui-color-control-selected-text: var(--ccui-color-text-inverse);
+
+  --ccui-color-icon-default: var(--ccui-color-text-secondary);
+  --ccui-color-icon-muted: var(--ccui-color-text-muted);
+  --ccui-color-icon-active: var(--ccui-color-link-primary);
+  --ccui-color-icon-inverse: var(--ccui-color-text-inverse);
+
+  --ccui-color-nav-active-bg: var(--ccui-color-surface-subtle);
+  --ccui-color-nav-active-text: var(--ccui-color-link-primary);
+  --ccui-color-nav-active-border: var(--ccui-color-accent-gold);
+
+  --ccui-color-focus-ring: var(--ccui-color-accent-active);
+  --ccui-color-disabled-bg: var(--ccui-color-gray-100);
+  --ccui-color-disabled-text: var(--ccui-color-text-muted);
+  --ccui-opacity-disabled: 0.58;
+
   --ccui-radius-full: 999px;
   --ccui-letter-spacing-wide: 0.08em;
 
@@ -234,4 +262,58 @@
   --ccui-letter-spacing-normal: normal;
   --ccui-letter-spacing-nav: 0.1em;
   --ccui-letter-spacing-tight-display: -0.06em;
+}
+
+[data-theme="dark"] {
+  color-scheme: dark;
+
+  --ccui-color-text-primary: var(--ccui-color-paper-50);
+  --ccui-color-text-secondary: var(--ccui-color-paper-100);
+  --ccui-color-text-muted: color-mix(in srgb, var(--ccui-color-paper-100) 68%, transparent);
+  --ccui-color-text-inverse: var(--ccui-color-brown-950);
+
+  --ccui-color-link-primary: var(--ccui-color-gold-400);
+  --ccui-color-link-hover: var(--ccui-color-paper-50);
+  --ccui-color-link-active: var(--ccui-color-gold-300);
+
+  --ccui-color-surface-page: var(--ccui-color-ink-950);
+  --ccui-color-surface-subtle: color-mix(in srgb, var(--ccui-color-brown-950) 78%, var(--ccui-color-ink-900));
+  --ccui-color-surface-parchment: color-mix(in srgb, var(--ccui-color-brown-900) 72%, var(--ccui-color-black));
+  --ccui-color-surface-institutional: color-mix(in srgb, var(--ccui-color-brown-800) 56%, var(--ccui-color-black));
+  --ccui-color-surface-raised: color-mix(in srgb, var(--ccui-color-ink-900) 82%, var(--ccui-color-black));
+  --ccui-color-surface-dark: var(--ccui-color-black);
+
+  --ccui-color-border-subtle: color-mix(in srgb, var(--ccui-color-gold-300) 20%, transparent);
+  --ccui-color-border-strong: color-mix(in srgb, var(--ccui-color-gold-300) 38%, transparent);
+  --ccui-color-border-dark: var(--ccui-color-gold-400);
+
+  --ccui-color-accent-gold-text: var(--ccui-color-gold-300);
+  --ccui-color-accent-active: var(--ccui-color-gold-400);
+  --ccui-color-accent-active-text: var(--ccui-color-gold-300);
+
+  --ccui-color-control-bg: var(--ccui-color-surface-raised);
+  --ccui-color-control-bg-hover: color-mix(in srgb, var(--ccui-color-gold-300) 10%, var(--ccui-color-surface-raised));
+  --ccui-color-control-bg-active: color-mix(in srgb, var(--ccui-color-gold-300) 16%, var(--ccui-color-surface-raised));
+  --ccui-color-control-border: var(--ccui-color-border-subtle);
+  --ccui-color-control-border-hover: var(--ccui-color-border-strong);
+  --ccui-color-control-text: var(--ccui-color-text-secondary);
+  --ccui-color-control-text-hover: var(--ccui-color-text-primary);
+
+  --ccui-color-control-selected-bg: var(--ccui-color-gold-400);
+  --ccui-color-control-selected-bg-hover: var(--ccui-color-gold-300);
+  --ccui-color-control-selected-border: var(--ccui-color-gold-400);
+  --ccui-color-control-selected-text: var(--ccui-color-brown-950);
+
+  --ccui-color-icon-default: var(--ccui-color-text-secondary);
+  --ccui-color-icon-muted: var(--ccui-color-text-muted);
+  --ccui-color-icon-active: var(--ccui-color-gold-300);
+  --ccui-color-icon-inverse: var(--ccui-color-brown-950);
+
+  --ccui-color-nav-active-bg: color-mix(in srgb, var(--ccui-color-gold-300) 12%, transparent);
+  --ccui-color-nav-active-text: var(--ccui-color-gold-300);
+  --ccui-color-nav-active-border: var(--ccui-color-gold-400);
+
+  --ccui-color-focus-ring: var(--ccui-color-gold-400);
+  --ccui-color-disabled-bg: color-mix(in srgb, var(--ccui-color-surface-raised) 68%, transparent);
+  --ccui-color-disabled-text: color-mix(in srgb, var(--ccui-color-text-muted) 78%, transparent);
 }
