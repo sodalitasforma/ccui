@@ -51,7 +51,7 @@ export { CCUISignalBell } from "./ccui-signal-bell";
 export type { CCUISignalBellProps } from "./ccui-signal-bell";
 export { DocSearch } from "./doc-search";
 export type { DocSearchProps } from "./doc-search";
-export { ArrowRightIcon, CheckIcon } from "./icons";
+export { ArrowRightIcon, CheckIcon, CopyIcon } from "./icons";
 export type { CCUIIconProps } from "./icons";
 export { BellIcon } from "./bell-icon";
 export { HeartIcon } from "./heart-icon";

@@ -63,3 +63,46 @@ export function CheckIcon({ size = "sm", className, ...props }: CCUIIconProps) {
     </svg>
   );
 }
+
+
+export function CopyIcon({
+  size = "sm",
+  title,
+  className,
+  ...props
+}: CCUIIconProps) {
+  const titleId = title
+    ? `ccui-icon-copy-${title.replace(/\s+/g, "-").toLowerCase()}`
+    : undefined;
+
+  return (
+    <svg
+      viewBox="0 0 16 16"
+      role={title ? "img" : "presentation"}
+      aria-hidden={title ? undefined : true}
+      aria-labelledby={titleId}
+      focusable="false"
+      className={cx("ccui-icon", iconSizeClass(size), className)}
+      {...props}
+    >
+      {title ? <title id={titleId}>{title}</title> : null}
+      <rect
+        x="6"
+        y="6"
+        width="7"
+        height="7"
+        rx="1.5"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.35"
+      />
+      <path
+        d="M3 10V4.5A1.5 1.5 0 0 1 4.5 3H10"
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="1.35"
+      />
+    </svg>
+  );
+}

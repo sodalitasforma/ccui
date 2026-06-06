@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button } from "../../../../../packages/primitives/src";
+import { Button, CheckIcon, CopyIcon } from "../../../../../packages/primitives/src";
 
 type DocsCodeBlockProps = {
   code: string;
@@ -9,7 +9,7 @@ type DocsCodeBlockProps = {
   label?: string;
 };
 
-export function DocsCodeBlock({ code, language, label = "Copy" }: DocsCodeBlockProps) {
+export function DocsCodeBlock({ code, language, label = "Copy code" }: DocsCodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
   async function copyCode() {
@@ -25,13 +25,14 @@ export function DocsCodeBlock({ code, language, label = "Copy" }: DocsCodeBlockP
       </pre>
       <Button
         type="button"
-        size="sm"
-        variant="secondary"
+        size="icon"
+        variant="ghost"
         className="docs-code-block__copy"
         onClick={copyCode}
-        aria-label={`${label} code`}
+        aria-label={copied ? "Copied code" : label}
+        title={copied ? "Copied" : "Copy"}
       >
-        {copied ? "Copied" : label}
+        {copied ? <CheckIcon size="sm" /> : <CopyIcon size="sm" />}
       </Button>
     </div>
   );

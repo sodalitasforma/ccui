@@ -6,7 +6,7 @@ import type {
 import { cx } from "./utils";
 
 type ButtonVariant = "primary" | "secondary" | "subtle" | "ghost" | "gold" | "danger" | "floating";
-type ButtonSize = "xs" | "sm" | "md" | "lg";
+type ButtonSize = "xs" | "sm" | "md" | "lg" | "icon";
 
 type ButtonBaseProps = {
   children: ReactNode;
