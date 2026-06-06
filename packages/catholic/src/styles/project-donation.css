@@ -108,3 +108,39 @@
     text-align: left;
   }
 }
+
+
+/* Dark theme project donation corrections */
+[data-theme="dark"] .ccui-project-donation-callout {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-project-donation-callout__panel {
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+}
+
+[data-theme="dark"] .ccui-project-donation-callout__amount-option {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, transparent);
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-project-donation-callout__amount-option--selected,
+[data-theme="dark"] .ccui-project-donation-callout__amount-option[aria-current="true"] {
+  border-color: var(--ccui-color-control-selected-border);
+  background: color-mix(in srgb, var(--ccui-color-control-selected-bg) 18%, transparent);
+  color: var(--ccui-color-nav-active-text);
+}
+
+[data-theme="dark"] .ccui-project-donation-callout__primary-action {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  color: var(--ccui-color-control-text-hover);
+}
+
+[data-theme="dark"] .ccui-project-donation-callout__secondary-actions .ccui-link {
+  color: var(--ccui-color-nav-active-text);
+}

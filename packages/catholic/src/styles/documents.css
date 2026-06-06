@@ -174,3 +174,31 @@
   background: var(--ccui-color-control-bg-hover);
   color: var(--ccui-color-control-text-hover);
 }
+
+
+/* Dark theme document metadata corrections */
+[data-theme="dark"] .ccui-church-document-card {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-church-document-card__title {
+  color: var(--ccui-color-nav-active-text);
+}
+
+[data-theme="dark"] .ccui-church-document-card__citation {
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-church-document-card__metadata {
+  border-color: var(--ccui-color-control-border);
+}
+
+[data-theme="dark"] .ccui-church-document-card__action {
+  color: var(--ccui-color-nav-active-text);
+}
+
+[data-theme="dark"] .ccui-church-document-card__action:hover {
+  color: var(--ccui-color-control-text-hover);
+}

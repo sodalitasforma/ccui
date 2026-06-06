@@ -70,3 +70,21 @@
   color: var(--ccui-color-link-primary);
   font-weight: var(--ccui-font-weight-bold);
 }
+
+
+/* Dark theme announcement corrections */
+[data-theme="dark"] .ccui-exception-notice,
+[data-theme="dark"] .ccui-parish-announcement-card {
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-exception-notice__title {
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-exception-notice__description,
+[data-theme="dark"] .ccui-exception-notice__date {
+  color: var(--ccui-color-icon-muted);
+}

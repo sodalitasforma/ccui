@@ -120,3 +120,39 @@
 .ccui-parish-contact-card {
   width: 100%;
 }
+
+
+/* Dark theme liturgy and schedule corrections */
+[data-theme="dark"] .ccui-schedule-block,
+[data-theme="dark"] .ccui-liturgical-day-card {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-schedule-day {
+  border-color: var(--ccui-color-control-border);
+}
+
+[data-theme="dark"] .ccui-schedule-block__source-meta,
+[data-theme="dark"] .ccui-schedule-block__source-meta .ccui-text,
+[data-theme="dark"] .ccui-liturgical-day-card .ccui-text--tone-muted {
+  color: var(--ccui-color-icon-muted);
+}
+
+[data-theme="dark"] .ccui-reading-reference {
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+}
+
+[data-theme="dark"] .ccui-reading-reference__label {
+  color: var(--ccui-color-icon-muted);
+}
+
+[data-theme="dark"] .ccui-reading-reference__citation {
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-liturgical-day-card__rank {
+  color: var(--ccui-color-nav-active-text);
+}
