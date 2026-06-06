@@ -1,7 +1,7 @@
 .ccui-search-input,
 .ccui-select {
   width: 100%;
-  border: 1px solid var(--ccui-color-border-strong);
+  border: 1px solid var(--ccui-color-control-border);
   border-radius: var(--ccui-radius-sm);
   background: var(--ccui-color-control-bg);
   color: var(--ccui-color-control-text);
@@ -20,15 +20,15 @@
 .ccui-search-input:focus,
 .ccui-select:focus {
   outline: none;
-  border-color: var(--ccui-color-accent-active);
+  border-color: var(--ccui-color-focus-ring);
   box-shadow: var(--ccui-shadow-focus);
 }
 
 .ccui-search-input:disabled,
 .ccui-select:disabled {
   cursor: not-allowed;
-  opacity: 0.58;
-  background: var(--ccui-color-gray-100);
+  opacity: var(--ccui-opacity-disabled);
+  background: var(--ccui-color-disabled-bg);
 }
 
 .ccui-search-input--size-sm,
