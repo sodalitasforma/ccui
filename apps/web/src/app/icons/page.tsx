@@ -11,25 +11,15 @@ import {
   Text,
 } from "../../../../../packages/primitives/src";
 
-import { iconRegistry } from "@catholiccommons/icons";
+import {
+  CheckIcon as StateCheckIcon,
+  CopyIcon as StateCopyIcon,
+  CrossIcon as StateCrossIcon,
+  MenuIcon as StateMenuIcon,
+  SearchIcon as StateSearchIcon,
+} from "@catholiccommons/icons";
+import { IconsGallery } from "./icons-gallery";
 
-const liveIcons = iconRegistry;
-
-function iconByExportName(exportName: string) {
-  const item = iconRegistry.find((icon) => icon.exportName === exportName);
-
-  if (!item) {
-    throw new Error(`Missing icon registry item: ${exportName}`);
-  }
-
-  return item.Icon;
-}
-
-const StateSearchIcon = iconByExportName("SearchIcon");
-const StateCheckIcon = iconByExportName("CheckIcon");
-const StateCopyIcon = iconByExportName("CopyIcon");
-const StateMenuIcon = iconByExportName("MenuIcon");
-const StateCrossIcon = iconByExportName("CrossIcon");
 
 const iconCategories = [
   {
@@ -110,34 +100,15 @@ export default function IconsPage() {
               </Heading>
 
               <Text tone="secondary">
-                The first icon package foundation is live. These icons already use the shared
-                24×24 SVG API and can be imported from the package.
+                The first icon package foundation is live. Search by name, symbol, tag,
+                category, or use case, then copy the import line directly.
               </Text>
 
-              <div className="docs-icon-preview-grid">
-                {liveIcons.map(({ name, category, Icon }) => (
-                  <Card key={name} padding="md" border="subtle" surface="raised">
-                    <Stack gap="sm">
-                      <div className="docs-icon-preview">
-                        <Icon size="lg" title={name} />
-                      </div>
-                      <Stack gap="xs">
-                        <Heading level={3} size="sm">
-                          {name}
-                        </Heading>
-                        <Text tone="muted" size="xs">
-                          {category}
-                        </Text>
-                      </Stack>
-                    </Stack>
-                  </Card>
-                ))}
-              </div>
+              <IconsGallery />
 
               <pre className="docs-code-block"><code>{`import { CrossIcon, ChaliceIcon, SearchIcon } from "@catholiccommons/icons";`}</code></pre>
             </Stack>
           </Section>
-
 
           <Section id="icon-states" surface="page" spacing="lg">
             <Stack gap="md">

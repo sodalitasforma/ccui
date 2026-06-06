@@ -1806,3 +1806,46 @@ a {
 .docs-state-specimen-grid .ccui-card {
   min-height: 13rem;
 }
+
+.docs-icon-gallery-filter {
+  flex: 1 1 16rem;
+  min-width: min(100%, 16rem);
+}
+
+.docs-icon-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-icon-gallery-preview {
+  display: grid;
+  place-items: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-900);
+}
+
+.docs-icon-gallery-preview svg {
+  --ccui-icon-stroke-width: 2.5;
+}
+
+.docs-icon-import-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ccui-space-2);
+  align-items: center;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  padding: var(--ccui-space-2);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.docs-icon-import-row .ccui-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
