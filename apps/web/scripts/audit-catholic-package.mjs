@@ -1,5 +1,5 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
-import { basename, join, relative } from "node:path";
+import { join, relative } from "node:path";
 
 const packageRoot = "packages/catholic";
 const srcRoot = join(packageRoot, "src");
