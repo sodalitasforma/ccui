@@ -9,7 +9,8 @@
     "build": "pnpm generate:stats && pnpm --filter @ccui/web build",
     "lint": "pnpm --filter @ccui/web lint",
     "typecheck": "pnpm --filter @ccui/web typecheck",
-    "generate:stats": "node apps/web/scripts/generate-system-stats.mjs"
+    "generate:stats": "node apps/web/scripts/generate-system-stats.mjs",
+    "check:css-contract": "node apps/web/scripts/audit-primitive-css-contract.mjs"
   },
   "keywords": [
     "catholic",
