@@ -103,6 +103,9 @@ importers:
 
   packages/primitives:
     dependencies:
+      '@catholiccommons/icons':
+        specifier: workspace:*
+        version: link:../icons
       react-dom:
         specifier: '>=18'
         version: 19.2.4(react@19.2.4)

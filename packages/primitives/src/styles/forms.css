@@ -56,14 +56,14 @@
   appearance: none;
   padding-right: var(--ccui-space-10);
   background-image:
-    linear-gradient(45deg, transparent 50%, var(--ccui-color-brown-700) 50%),
-    linear-gradient(135deg, var(--ccui-color-brown-700) 50%, transparent 50%);
+    linear-gradient(45deg, transparent 50%, currentColor 50%),
+    linear-gradient(135deg, currentColor 50%, transparent 50%);
   background-position:
-    calc(100% - 1rem) 50%,
-    calc(100% - 0.7rem) 50%;
+    calc(100% - 1.05rem) 52%,
+    calc(100% - 0.76rem) 52%;
   background-size:
-    0.35rem 0.35rem,
-    0.35rem 0.35rem;
+    0.38rem 0.38rem,
+    0.38rem 0.38rem;
   background-repeat: no-repeat;
 }
 

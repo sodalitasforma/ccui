@@ -67,17 +67,15 @@
   justify-content: center;
   flex: none;
   min-width: 2rem;
+  color: currentColor;
   line-height: 1;
   font-size: 0;
 }
 
-.ccui-dropdown__chevron::before {
-  content: "";
-  width: 0.42rem;
-  height: 0.42rem;
-  border-right: 1.5px solid currentColor;
-  border-bottom: 1.5px solid currentColor;
-  transform: translateY(-0.08rem) rotate(45deg);
+.ccui-dropdown__chevron svg {
+  width: 0.9rem;
+  height: 0.9rem;
+  --ccui-icon-stroke-width: 3;
 }
 
 .ccui-dropdown__trigger > .ccui-dropdown__icon:first-child {

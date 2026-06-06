@@ -3,6 +3,7 @@ import {
   CheckIcon,
   CloseIcon,
   CopyIcon,
+  ChevronDownIcon,
   MenuIcon,
   SearchIcon,
 } from "./interface";
@@ -62,6 +63,14 @@ export const iconRegistry = [
     description: "Copy code, text, links, or citations.",
     tags: ["copy", "clipboard", "code", "duplicate"],
     Icon: CopyIcon,
+  },
+  {
+    name: "Chevron down",
+    exportName: "ChevronDownIcon",
+    category: "Interface",
+    description: "Open menus, selects, accordions, and disclosure controls.",
+    tags: ["chevron", "down", "select", "dropdown", "disclosure"],
+    Icon: ChevronDownIcon,
   },
   {
     name: "Menu",

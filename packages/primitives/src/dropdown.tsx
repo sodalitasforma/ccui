@@ -1,4 +1,5 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
+import { ChevronDownIcon } from "@catholiccommons/icons";
 import { cx } from "./utils";
 
 type DropdownProps = ComponentPropsWithoutRef<"details"> & {
@@ -32,7 +33,7 @@ export function Dropdown({
         ) : null}
         <span className="ccui-dropdown__label">{label}</span>
         <span className="ccui-dropdown__chevron" aria-hidden="true">
-          ▾
+          <ChevronDownIcon />
         </span>
       </summary>
 

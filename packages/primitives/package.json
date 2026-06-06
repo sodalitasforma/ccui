@@ -28,5 +28,8 @@
     "src",
     "README.md",
     "package.json"
-  ]
+  ],
+  "dependencies": {
+    "@catholiccommons/icons": "workspace:*"
+  }
 }
