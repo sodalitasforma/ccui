@@ -11,17 +11,26 @@ type TextTone =
   | "activeText";
 
 type TextSize = "2xs" | "xs" | "sm" | "base" | "md" | "lg" | "xl";
+type TextFamily = "interface" | "document" | "display" | "inscription" | "mono";
+type TextLineHeight = "tight" | "base" | "relaxed" | "loose";
+type TextWeight = "regular" | "medium" | "semibold" | "bold";
 
 type TextProps<T extends ElementType = "p"> = {
   as?: T;
   tone?: TextTone;
   size?: TextSize;
+  family?: TextFamily;
+  lineHeight?: TextLineHeight;
+  weight?: TextWeight;
 } & ComponentPropsWithoutRef<T>;
 
 export function Text<T extends ElementType = "p">({
   as,
   tone = "primary",
   size = "base",
+  family = "interface",
+  lineHeight = "base",
+  weight = "regular",
   className,
   ...props
 }: TextProps<T>) {
@@ -31,8 +40,11 @@ export function Text<T extends ElementType = "p">({
     <Component
       className={cx(
         "ccui-text",
+        `ccui-text--family-${family}`,
         `ccui-text--tone-${tone}`,
         `ccui-text--size-${size}`,
+        `ccui-text--line-height-${lineHeight}`,
+        `ccui-text--weight-${weight}`,
         className
       )}
       {...props}

@@ -24,6 +24,7 @@
     },
     "lineHeight": {
       "tight": "1.2",
+      "display": "1.06",
       "base": "1.35",
       "relaxed": "1.5",
       "loose": "2"

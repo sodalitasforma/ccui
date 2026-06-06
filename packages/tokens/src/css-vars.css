@@ -177,6 +177,30 @@
   --ccui-space-20: 5rem;
   --ccui-space-24: 6rem;
 
+  --ccui-color-cdcf-navy-50: #eef1f8;
+  --ccui-color-cdcf-navy-100: #d5daea;
+  --ccui-color-cdcf-navy-200: #aab5d5;
+  --ccui-color-cdcf-navy-300: #7f90c0;
+  --ccui-color-cdcf-navy-400: #556bab;
+  --ccui-color-cdcf-navy-500: #2a4696;
+  --ccui-color-cdcf-navy-600: #213463;
+  --ccui-color-cdcf-navy-700: #1a2a4f;
+  --ccui-color-cdcf-navy-800: #131f3b;
+  --ccui-color-cdcf-navy-900: #0d1528;
+  --ccui-color-cdcf-navy-950: #060a14;
+
+  --ccui-color-cdcf-gold-50: #faf8ef;
+  --ccui-color-cdcf-gold-100: #f0ecd4;
+  --ccui-color-cdcf-gold-200: #e1d9a9;
+  --ccui-color-cdcf-gold-300: #d2c67e;
+  --ccui-color-cdcf-gold-400: #c3b353;
+  --ccui-color-cdcf-gold-500: #9a8432;
+  --ccui-color-cdcf-gold-600: #7b6a28;
+  --ccui-color-cdcf-gold-700: #5c4f1e;
+  --ccui-color-cdcf-gold-800: #3d3514;
+  --ccui-color-cdcf-gold-900: #1f1a0a;
+  --ccui-color-cdcf-gold-950: #0f0d05;
+
   /* Typography */
   --ccui-font-display: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
   --ccui-font-inscription: Cinzel, "Trajan Pro", Charlemagne, Georgia, "Times New Roman", serif;
