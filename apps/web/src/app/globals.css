@@ -1605,3 +1605,13 @@ a {
 .docs-sidebar .docs-nav--sections > .docs-nav-page-title ~ a {
   padding-inline-start: var(--ccui-space-4);
 }
+
+.docs-code-block {
+  position: relative;
+}
+
+.docs-code-block__copy {
+  position: absolute;
+  top: var(--ccui-space-3);
+  right: var(--ccui-space-3);
+}

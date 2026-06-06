@@ -1,4 +1,5 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsCodeBlock } from "../components/docs-code-block";
 import {
   Badge,
   Cluster,
@@ -110,8 +111,11 @@ export default function DocsPage() {
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`pnpm dlx catholiccommons init
-pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}
+                  />
 
                   <Text tone="secondary">
                     To see available components, run <code>pnpm dlx catholiccommons list</code>.
@@ -130,11 +134,17 @@ pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}</code></pre>
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}
+                  />
 
-                  <pre className="docs-install-code"><code>{`import "@catholiccommons/tokens/css-vars.css";
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
-import "@catholiccommons/catholic/catholic.css";`}</code></pre>
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
                 </Stack>
               </Section>
 
@@ -145,7 +155,8 @@ import "@catholiccommons/catholic/catholic.css";`}</code></pre>
                       Choose Your Framework
                     </Heading>
                     <Text tone="secondary">
-                      Pick the framework closest to your app and run the CLI from your project root.
+                      The components work the same everywhere. The only difference is where your framework
+                      wants global styles imported and where it stores route or page components.
                     </Text>
                   </Stack>
 
@@ -160,124 +171,217 @@ import "@catholiccommons/catholic/catholic.css";`}</code></pre>
                 </Stack>
               </Section>
 
-              <Section id="components-json" surface="page" spacing="lg">
-                <Stack gap="md">
-                  <Stack gap="xs">
-                    <Heading level={2} size="xl" className="docs-install-section-title">
-                      components.json
-                    </Heading>
-                    <Text tone="secondary">
-                      The init command creates a small config file for project paths and defaults.
-                    </Text>
-                  </Stack>
-
-                  <pre className="docs-install-code"><code>{`{
-  "$schema": "https://catholiccommonsui.org/schema.json",
-  "style": "default",
-  "typescript": true,
-  "tsx": true,
-  "css": "app/globals.css",
-  "aliases": {
-    "components": "@/components",
-    "lib": "@/lib"
-  }
-}`}</code></pre>
-                </Stack>
-              </Section>
-
-              <Section id="package-imports" surface="page" spacing="lg">
-                <Stack gap="md">
-                  <Stack gap="xs">
-                    <Heading level={2} size="xl" className="docs-install-section-title">
-                      Package Imports
-                    </Heading>
-                    <Text tone="secondary">
-                      Import only the layer you need.
-                    </Text>
-                  </Stack>
-
-                  <pre className="docs-install-code"><code>{`import { Button } from "@catholiccommons/primitives";
-import { MassScheduleBlock } from "@catholiccommons/catholic";
-
-export function ParishPage() {
-  return (
-    <MassScheduleBlock
-      title="Mass Schedule"
-      subtitle="Regular parish Mass times."
-      days={[]}
-    />
-  );
-}`}</code></pre>
-                </Stack>
-              </Section>
-
               <Section id="next-js" surface="page" spacing="lg">
-                <Stack gap="sm">
-                  <Heading level={2} size="xl" className="docs-install-section-title">
-                    Next.js
-                  </Heading>
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Next.js
+                    </Heading>
+                    <Text tone="secondary">
+                      Use this for full parish websites, docs sites, dashboards, or apps that need routing,
+                      layouts, and production deployment conventions.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}
+                  />
+
                   <Text tone="secondary">
-                    Run the CLI from your Next.js app root, then import the Catholic Commons styles in
-                    your global stylesheet or app entrypoint.
+                    Import the styles once in your app root, usually in <code>app/layout.tsx</code>
+                    or wherever your global stylesheet is loaded.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
+
+                  <Text tone="secondary">
+                    Then use Catholic Commons components in pages, layouts, or shared app components.
                   </Text>
                 </Stack>
               </Section>
 
               <Section id="vite" surface="page" spacing="lg">
-                <Stack gap="sm">
-                  <Heading level={2} size="xl" className="docs-install-section-title">
-                    Vite
-                  </Heading>
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Vite
+                    </Heading>
+                    <Text tone="secondary">
+                      Use this for lightweight React apps, prototypes, internal tools, or fast static apps
+                      where you control the React entrypoint directly.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}
+                  />
+
                   <Text tone="secondary">
-                    Run the CLI from your Vite project root, then import the styles in your main app
-                    entrypoint.
+                    Import the styles once in <code>src/main.tsx</code>, <code>src/App.tsx</code>,
+                    or your main stylesheet.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
+
+                  <Text tone="secondary">
+                    Vite is closest to plain React: import styles once, then import components anywhere
+                    in your React tree.
                   </Text>
                 </Stack>
               </Section>
 
               <Section id="astro" surface="page" spacing="lg">
-                <Stack gap="sm">
-                  <Heading level={2} size="xl" className="docs-install-section-title">
-                    Astro
-                  </Heading>
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Astro
+                    </Heading>
+                    <Text tone="secondary">
+                      Use this for content-heavy Catholic sites: parish websites, ministry pages, archives,
+                      landing pages, documentation, and mostly-static pages with a few React islands.
+                    </Text>
+                  </Stack>
+
+                  <pre className="docs-install-code"><code>{`pnpm astro add react
+pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
+
                   <Text tone="secondary">
-                    Use Catholic Commons UI in React islands or React-enabled Astro projects.
+                    Astro needs React enabled before React components can be used. Import Catholic Commons
+                    styles once in a global layout, global stylesheet, or React entry used by your islands.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
+
+                  <Text tone="secondary">
+                    Think of Astro as mostly HTML pages, with Catholic Commons React components placed
+                    where a page needs structured UI.
                   </Text>
                 </Stack>
               </Section>
 
               <Section id="react-router" surface="page" spacing="lg">
-                <Stack gap="sm">
-                  <Heading level={2} size="xl" className="docs-install-section-title">
-                    React Router
-                  </Heading>
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      React Router
+                    </Heading>
+                    <Text tone="secondary">
+                      Use this when your React app is organized around URL routes and route modules.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}
+                  />
+
                   <Text tone="secondary">
-                    Run the CLI from your React Router app and import the global styles once.
+                    Import styles once in your root route, root layout, client entry, or global stylesheet.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
+
+                  <Text tone="secondary">
+                    Then use Catholic Commons components inside route modules, such as a parish route,
+                    events route, or document archive route.
                   </Text>
                 </Stack>
               </Section>
 
               <Section id="tanstack-start" surface="page" spacing="lg">
-                <Stack gap="sm">
-                  <Heading level={2} size="xl" className="docs-install-section-title">
-                    TanStack Start
-                  </Heading>
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      TanStack Start
+                    </Heading>
+                    <Text tone="secondary">
+                      Use this for full-stack React apps built around TanStack Router, server rendering,
+                      and server functions.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}
+                  />
+
                   <Text tone="secondary">
-                    Run the CLI from your TanStack Start app root and keep generated wrappers in your
-                    app components directory.
+                    Import styles once in your root client/app entry or global stylesheet.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
+
+                  <Text tone="secondary">
+                    Then use Catholic Commons components inside route components or shared app components.
                   </Text>
                 </Stack>
               </Section>
 
               <Section id="react-manual" surface="page" spacing="lg">
-                <Stack gap="sm">
-                  <Heading level={2} size="xl" className="docs-install-section-title">
-                    React Manual
-                  </Heading>
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      React Manual
+                    </Heading>
+                    <Text tone="secondary">
+                      Use this when you are not using a framework guide and want to wire the app yourself.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}
+                  />
+
                   <Text tone="secondary">
-                    Install the packages directly, import the styles once, and import components from
-                    the published package layers.
+                    Import the styles once in your React entrypoint.
                   </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}
+                  />
+
+                  <Text tone="secondary">
+                    Then import components directly from the published package layers.
+                  </Text>
+
+                  <pre className="docs-install-code"><code>{`import { Button } from "@catholiccommons/primitives";
+import { MassScheduleBlock } from "@catholiccommons/catholic";`}</code></pre>
                 </Stack>
               </Section>
             </article>
