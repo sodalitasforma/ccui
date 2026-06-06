@@ -148,3 +148,29 @@
   font-family: var(--ccui-font-document);
   line-height: var(--ccui-line-height-relaxed);
 }
+
+
+/* Dark theme church document corrections */
+[data-theme="dark"] .ccui-church-document-card__metadata dt {
+  color: var(--ccui-color-icon-muted);
+}
+
+[data-theme="dark"] .ccui-church-document-card__metadata dd {
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-pairs {
+  gap: var(--ccui-space-2);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-link {
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-control-text);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-link:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  color: var(--ccui-color-control-text-hover);
+}

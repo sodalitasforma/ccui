@@ -155,3 +155,16 @@
   color: color-mix(in srgb, var(--ccui-color-info) 56%, var(--ccui-color-paper-50));
   border-color: color-mix(in srgb, var(--ccui-color-info) 70%, transparent);
 }
+
+
+[data-theme="dark"] .ccui-badge--brown {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 8%, transparent);
+  color: var(--ccui-color-paper-100);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 34%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--brown:hover {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 12%, transparent);
+  color: var(--ccui-color-paper-50);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 44%, transparent);
+}

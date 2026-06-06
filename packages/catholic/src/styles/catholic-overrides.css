@@ -41,3 +41,45 @@
 .ccui-church-document-card__action {
   color: var(--ccui-color-link-primary);
 }
+
+
+/* Church document language links: readable grouped pills */
+.ccui-church-document-card__language-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ccui-space-2);
+}
+
+.ccui-church-document-card__language-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccui-space-2);
+  width: fit-content;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-control-text);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  text-decoration: none;
+}
+
+.ccui-church-document-card__language-link:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  color: var(--ccui-color-control-text-hover);
+  text-decoration: none;
+}
+
+
+/* Church document language link segments */
+.ccui-church-document-card__language-link > span + span {
+  border-left: 1px solid var(--ccui-color-border-subtle);
+  padding-left: var(--ccui-space-2);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-link > span + span {
+  border-left-color: var(--ccui-color-control-border);
+}

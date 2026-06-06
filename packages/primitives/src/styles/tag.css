@@ -34,3 +34,27 @@
   background: color-mix(in srgb, var(--ccui-color-status-info-text) 12%, transparent);
   color: var(--ccui-color-blue-700);
 }
+
+
+/* Dark theme tag corrections */
+[data-theme="dark"] .ccui-tag {
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 24%, transparent);
+}
+
+[data-theme="dark"] .ccui-tag--variant-neutral {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 7%, transparent);
+  color: var(--ccui-color-paper-100);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 28%, transparent);
+}
+
+[data-theme="dark"] .ccui-tag--variant-gold {
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 16%, transparent);
+  color: var(--ccui-color-gold-200, var(--ccui-color-gold-300));
+  border-color: color-mix(in srgb, var(--ccui-color-gold-300) 58%, transparent);
+}
+
+[data-theme="dark"] .ccui-tag--variant-brown {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 10%, transparent);
+  color: var(--ccui-color-paper-100);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 34%, transparent);
+}

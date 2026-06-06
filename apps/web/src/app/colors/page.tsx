@@ -33,6 +33,15 @@ import {
   DocSearch,
 } from "../../../../../packages/primitives/src";
 
+import {
+  ChurchDocumentCard,
+  ConfessionScheduleBlock,
+  LiturgicalDayCard,
+  MassScheduleBlock,
+  ParishAnnouncementCard,
+  ProjectDonationCallout,
+} from "../../../../../packages/catholic/src";
+
 import colors from "../../../../../packages/tokens/src/colors.json";
 
 const rawColors = colors.color.raw as Record<string, string>;
@@ -56,6 +65,43 @@ const cdcfColors = Object.entries(rawColors)
     token: tokenNameToCssVar(name).replace("--ccui-color-", ""),
     value: String(value),
   }));
+
+
+const catholicScheduleDays = [
+  {
+    day: "Sunday",
+    date: "Ordinary Time",
+    times: [
+      { time: "8:00 AM", label: "Low Mass" },
+      { time: "10:30 AM", label: "Sung Mass" },
+    ],
+  },
+  {
+    day: "Wednesday",
+    times: [{ time: "12:10 PM", label: "Daily Mass" }],
+  },
+] as const;
+
+const catholicConfessionDays = [
+  {
+    day: "Saturday",
+    times: [
+      { time: "3:30 PM", label: "Before Vigil Mass" },
+      { time: "By appointment", label: "Parish office" },
+    ],
+  },
+] as const;
+
+const catholicReadings = [
+  { label: "First Reading", citation: "Is 55:10-11" },
+  { label: "Psalm", citation: "Ps 65:10-14" },
+  { label: "Gospel", citation: "Mt 13:1-23" },
+] as const;
+
+const catholicThemeSpecimens = [
+  { label: "Light Catholic", theme: "light" },
+  { label: "Dark Catholic", theme: "dark" },
+] as const;
 
 const sourceBackedLiturgicalColors = [
   {
@@ -581,6 +627,114 @@ in a way that calls for a more determinate token.
                           </Table>
                         </TableWrapper>
                       </Stack>
+                    </Stack>
+                  </Card>
+                ))}
+              </div>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="catholic-theme-specimens" surface="page" spacing="lg">
+          <Container size="lg">
+            <Stack gap="md">
+              <Stack gap="xs">
+                <Heading level={2} size="2xl">
+                  Catholic theme specimens
+                </Heading>
+                <Text tone="secondary">
+                  These specimens test Catholic-native components against the same light and dark
+                  semantic theme tokens used by primitives.
+                </Text>
+              </Stack>
+
+              <div className="docs-theme-specimen-pair">
+                {catholicThemeSpecimens.map(({ label, theme }) => (
+                  <Card
+                    key={theme}
+                    padding="lg"
+                    border="subtle"
+                    surface={theme === "dark" ? "dark" : "raised"}
+                    data-theme={theme}
+                    className="docs-theme-specimen"
+                  >
+                    <Stack gap="lg">
+                      <Cluster justify="between" align="center">
+                        <Heading level={3} size="lg">
+                          {label}
+                        </Heading>
+                        <Badge variant="neutral" size="xs">
+                          data-theme={theme}
+                        </Badge>
+                      </Cluster>
+
+                      <MassScheduleBlock
+                        title="Mass schedule"
+                        subtitle="Ordinary parish schedule specimen."
+                        days={catholicScheduleDays}
+                        source={{ label: "Parish bulletin", href: "/docs" }}
+                        lastUpdated="This week"
+                      />
+
+                      <ConfessionScheduleBlock
+                        title="Confession"
+                        subtitle="Sacramental schedule specimen."
+                        days={catholicConfessionDays}
+                        promptEndNote="Please arrive before the end of the scheduled period."
+                      />
+
+                      <LiturgicalDayCard
+                        title="Fifteenth Sunday in Ordinary Time"
+                        date="Sunday specimen"
+                        season="Ordinary Time"
+                        color="green"
+                        rank="Sunday"
+                        description="A compact liturgical day specimen with readings and source metadata."
+                        readings={catholicReadings}
+                        source={{ label: "Lectionary", href: "/colors#liturgical-colors" }}
+                      />
+
+                      <ParishAnnouncementCard
+                        title="Parish announcement"
+                        description="Office hours are adjusted this week because of a holy day schedule."
+                        date="Updated today"
+                        severity="official"
+                        href="/docs"
+                      />
+
+                      <ChurchDocumentCard
+                        title="Pastoral Letter on Parish Life"
+                        description="Document card specimen for authority, citation, metadata, language links, and action states."
+                        documentType="pastoral-letter"
+                        authority="bishop"
+                        authorityLabel="Bishop"
+                        citation="Diocesan Archive 2026"
+                        date="2026"
+                        language="English"
+                        sourceLabel="Diocesan archive"
+                        sourceHref="/docs"
+                        fileType="PDF"
+                        fileSize="240 KB"
+                        href="/docs"
+                        pairedDocuments={[
+                          {
+                            language: "Spanish",
+                            label: "Carta pastoral",
+                            href: "/docs",
+                            fileType: "PDF",
+                          },
+                        ]}
+                      />
+
+                      <ProjectDonationCallout
+                        title="Restore the sanctuary lamps"
+                        description="Donation callout specimen for Catholic project fundraising."
+                        amounts={["$25", "$100", "$250"]}
+                        selectedAmount="$100"
+                        impact="Funds oil, glass, and maintenance for devotional use."
+                        primaryAction={{ label: "Give now", href: "/docs" }}
+                        secondaryAction={{ label: "Learn more", href: "/docs" }}
+                      />
                     </Stack>
                   </Card>
                 ))}
