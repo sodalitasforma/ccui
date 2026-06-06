@@ -1,7 +1,6 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
 import { DocsCodeBlock } from "../components/docs-code-block";
 import {
-  Badge,
   Button,
   Card,
   Cluster,
@@ -80,12 +79,7 @@ export default function TypographyPage() {
         <Section id="overview" surface="page" spacing="lg">
           <Container size="lg">
             <Stack gap="lg">
-              <Cluster gap="sm">
-                <Badge variant="gold">System foundation</Badge>
-                <Badge variant="neutral">Typography</Badge>
-              </Cluster>
-
-              <Stack gap="sm">
+<Stack gap="sm">
                 <Heading level={1} size="4xl" family="display">
                   Typography
                 </Heading>
