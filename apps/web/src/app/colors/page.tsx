@@ -337,6 +337,101 @@ in a way that calls for a more determinate token.
           </Container>
         </Section>
 
+        <Section id="theme-specimens" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="md">
+              <Stack gap="sm">
+                <Heading level={2} size="xl">
+                  Theme specimens
+                </Heading>
+                <Text tone="secondary">
+                  These paired specimens verify that primitives, icons, form controls, selected
+                  states, disabled states, and dark surfaces respond to semantic theme tokens.
+                </Text>
+              </Stack>
+
+              <div className="docs-theme-specimen-pair">
+                {["light", "dark"].map((theme) => (
+                  <Card
+                    key={theme}
+                    padding="lg"
+                    border="subtle"
+                    surface="raised"
+                    data-theme={theme}
+                    className="docs-theme-specimen"
+                  >
+                    <Stack gap="md">
+                      <Cluster gap="sm" justify="between" align="center">
+                        <Heading level={3} size="md">
+                          {theme === "light" ? "Light theme" : "Dark theme"}
+                        </Heading>
+                        <Badge variant={theme === "light" ? "neutral" : "gold"} size="xs">
+                          data-theme={theme}
+                        </Badge>
+                      </Cluster>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Buttons
+                        </Text>
+                        <Cluster gap="sm">
+                          <Button size="sm">Default</Button>
+                          <Button size="sm" variant="subtle">Subtle</Button>
+                          <Button size="sm" aria-pressed="true">Selected</Button>
+                          <Button size="sm" disabled>Disabled</Button>
+                          <Button size="icon" variant="ghost" aria-label="Icon action">
+                            <ArrowRightIcon />
+                          </Button>
+                        </Cluster>
+                      </Stack>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Forms
+                        </Text>
+                        <div className="docs-theme-specimen-controls">
+                          <SearchInput placeholder="Search records" />
+                          <Select aria-label={`${theme} theme select`} defaultValue="one">
+                            <option value="one">Default select</option>
+                            <option value="two">Second option</option>
+                          </Select>
+                        </div>
+                      </Stack>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Tabs
+                        </Text>
+                        <Tabs>
+                          <TabList aria-label={`${theme} theme tabs`}>
+                            <Tab aria-current="page">Active</Tab>
+                            <Tab>Resting</Tab>
+                            <Tab>Another</Tab>
+                          </TabList>
+                        </Tabs>
+                      </Stack>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Text and badges
+                        </Text>
+                        <Cluster gap="sm">
+                          <Badge variant="gold" size="xs">Gold</Badge>
+                          <Badge variant="success" size="xs">Success</Badge>
+                          <Badge variant="neutral" size="xs">Neutral</Badge>
+                        </Cluster>
+                        <Text tone="secondary">
+                          Secondary text should remain legible against the active theme surface.
+                        </Text>
+                      </Stack>
+                    </Stack>
+                  </Card>
+                ))}
+              </div>
+            </Stack>
+          </Container>
+        </Section>
+
         <Section id="semantic-colors" surface="page" spacing="md">
           <Container size="lg">
             <Stack gap="xl">

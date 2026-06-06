@@ -147,6 +147,12 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Raw palette, semantic interface colors, liturgical colors, and CDCF colors.",
   },
   {
+    title: "Theme specimens",
+    category: "Colors",
+    href: "/colors#theme-specimens",
+    description: "Light and dark theme specimens for buttons, forms, tabs, icons, badges, and text.",
+  },
+  {
     title: "State tokens",
     category: "Colors",
     href: "/colors#state-tokens",

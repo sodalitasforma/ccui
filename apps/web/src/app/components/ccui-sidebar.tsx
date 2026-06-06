@@ -116,6 +116,7 @@ const pageSections: Record<
     items: [
       { type: "link", label: "Overview", href: "/colors#overview" },
       { type: "link", label: "State tokens", href: "/colors#state-tokens" },
+      { type: "link", label: "Theme specimens", href: "/colors#theme-specimens" },
       { type: "link", label: "Semantic colors", href: "/colors#semantic-colors" },
       { type: "link", label: "Raw palette", href: "/colors#raw-palette" },
       { type: "link", label: "Liturgical colors", href: "/colors#liturgical-colors" },

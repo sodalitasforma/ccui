@@ -1869,3 +1869,20 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+.docs-theme-specimen-pair {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-theme-specimen {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+}
+
+.docs-theme-specimen-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
+  gap: var(--ccui-space-3);
+}
