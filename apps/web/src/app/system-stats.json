@@ -1,9 +1,9 @@
 {
-  "components": 149,
-  "primitiveComponents": 31,
+  "components": 150,
+  "primitiveComponents": 32,
   "catholicComponents": 118,
   "cssTokenDefinitions": 9,
-  "cssTokenReferences": 1416,
+  "cssTokenReferences": 1452,
   "tokenFiles": 9,
   "tokenGroups": 9,
   "docsExamples": 96

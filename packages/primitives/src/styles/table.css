@@ -1,0 +1,54 @@
+.ccui-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+}
+
+.ccui-table-header {
+  background: var(--ccui-color-surface-parchment);
+  color: var(--ccui-color-text-primary);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-nav);
+  line-height: var(--ccui-line-height-tight);
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.ccui-table-cell {
+  color: var(--ccui-color-text-secondary);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-base);
+}
+
+.ccui-table-row {
+  border-bottom: 1px solid var(--ccui-color-border-subtle);
+}
+
+.ccui-table-body .ccui-table-row:last-child {
+  border-bottom: 0;
+}
+
+.ccui-table--density-compact .ccui-table-header,
+.ccui-table--density-compact .ccui-table-cell {
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+}
+
+.ccui-table--density-normal .ccui-table-header,
+.ccui-table--density-normal .ccui-table-cell {
+  padding: var(--ccui-space-3) var(--ccui-space-4);
+}
+
+.ccui-table--density-spacious .ccui-table-header,
+.ccui-table--density-spacious .ccui-table-cell {
+  padding: var(--ccui-space-4) var(--ccui-space-5);
+}

@@ -1,0 +1,116 @@
+.ccui-card {
+  border-radius: var(--ccui-radius-md);
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-card--surface-raised {
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-card--surface-subtle {
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-card--surface-parchment {
+  background: var(--ccui-color-surface-parchment);
+}
+
+.ccui-card--surface-dark {
+  background: var(--ccui-color-surface-dark);
+  color: var(--ccui-color-text-inverse);
+}
+
+.ccui-card--padding-none {
+  padding: 0;
+}
+
+.ccui-card--padding-sm {
+  padding: var(--ccui-space-4);
+}
+
+.ccui-card--padding-md {
+  padding: var(--ccui-space-6);
+}
+
+.ccui-card--padding-lg {
+  padding: var(--ccui-space-8);
+}
+
+.ccui-card--border-none {
+  border: 0;
+}
+
+.ccui-card--border-subtle {
+  border: 1px solid var(--ccui-color-border-subtle);
+}
+
+.ccui-card--border-strong {
+  border: 1px solid var(--ccui-color-border-strong);
+}
+
+.ccui-card--border-gold {
+  border: 1px solid var(--ccui-color-accent-gold);
+}
+
+.ccui-card--shadow-none {
+  box-shadow: none;
+}
+
+.ccui-card--shadow-sm {
+  box-shadow: var(--ccui-shadow-brown-sm);
+}
+
+.ccui-card--shadow-md {
+  box-shadow: var(--ccui-shadow-brown-md);
+}
+
+.ccui-panel {
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-panel--surface-subtle {
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-panel--surface-parchment {
+  background: var(--ccui-color-surface-parchment);
+}
+
+.ccui-panel--surface-institutional {
+  background: var(--ccui-color-surface-institutional);
+}
+
+.ccui-panel--surface-raised {
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-panel--surface-dark {
+  background: var(--ccui-color-surface-dark);
+  color: var(--ccui-color-text-inverse);
+}
+
+.ccui-panel--padding-sm {
+  padding: var(--ccui-space-4);
+}
+
+.ccui-panel--padding-md {
+  padding: var(--ccui-space-6);
+}
+
+.ccui-panel--padding-lg {
+  padding: var(--ccui-space-8);
+}
+
+.ccui-panel--tone-gold {
+  border-color: var(--ccui-color-accent-gold);
+}
+
+.ccui-panel--tone-active {
+  border-color: var(--ccui-color-accent-active);
+}
+
+.ccui-panel--tone-official {
+  border-color: var(--ccui-color-border-dark);
+}

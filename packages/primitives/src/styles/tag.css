@@ -1,0 +1,36 @@
+.ccui-tag {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  padding: 0.125rem 0.45rem;
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  line-height: 1.2;
+}
+
+.ccui-tag--variant-neutral {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-tag--variant-brown {
+  background: color-mix(in srgb, var(--ccui-color-text-primary) 10%, transparent);
+  color: var(--ccui-color-brown-900);
+}
+
+.ccui-tag--variant-gold {
+  background: color-mix(in srgb, var(--ccui-color-accent-gold) 18%, transparent);
+  color: var(--ccui-color-accent-gold-text);
+}
+
+.ccui-tag--variant-active {
+  background: color-mix(in srgb, var(--ccui-color-accent-gold-text) 12%, transparent);
+  color: var(--ccui-color-accent-active-text);
+}
+
+.ccui-tag--variant-blue {
+  background: color-mix(in srgb, var(--ccui-color-status-info-text) 12%, transparent);
+  color: var(--ccui-color-blue-700);
+}

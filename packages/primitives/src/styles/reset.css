@@ -1,0 +1,9 @@
+/* CCUI scoped box model
+ * Package components must not depend on an app-level global reset.
+ */
+:where([class^="ccui-"], [class*=" ccui-"]),
+:where([class^="ccui-"], [class*=" ccui-"]) *,
+:where([class^="ccui-"], [class*=" ccui-"])::before,
+:where([class^="ccui-"], [class*=" ccui-"])::after {
+  box-sizing: border-box;
+}

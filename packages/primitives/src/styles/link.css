@@ -1,0 +1,56 @@
+.ccui-link {
+  font-family: inherit;
+  text-underline-offset: 0.18em;
+  transition:
+    color var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard),
+    text-decoration-color var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard);
+}
+
+.ccui-link:focus-visible {
+  outline: 2px solid var(--ccui-color-accent-active);
+  outline-offset: 2px;
+}
+
+.ccui-link--variant-default {
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-link--variant-default:hover {
+  color: var(--ccui-color-link-hover);
+}
+
+.ccui-link--variant-muted {
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-link--variant-muted:hover {
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-link--variant-gold {
+  color: var(--ccui-color-accent-gold-text);
+}
+
+.ccui-link--variant-active {
+  color: var(--ccui-color-link-active);
+}
+
+.ccui-link--variant-inverse {
+  color: var(--ccui-color-text-inverse);
+}
+
+.ccui-link--underline-always {
+  text-decoration-line: underline;
+}
+
+.ccui-link--underline-hover {
+  text-decoration-line: none;
+}
+
+.ccui-link--underline-hover:hover {
+  text-decoration-line: underline;
+}
+
+.ccui-link--underline-none {
+  text-decoration-line: none;
+}

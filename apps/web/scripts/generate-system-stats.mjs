@@ -1,5 +1,5 @@
-import { readdirSync, readFileSync, writeFileSync } from "node:fs";
-import { join } from "node:path";
+import { existsSync, readdirSync, readFileSync, writeFileSync } from "node:fs";
+import { dirname, join, normalize } from "node:path";
 
 const root = process.cwd();
 
@@ -7,14 +7,45 @@ function listFiles(dir, filter) {
   return readdirSync(join(root, dir)).filter(filter);
 }
 
+
+function readCssWithImports(filePath, seen = new Set()) {
+  const normalizedPath = normalize(join(root, filePath));
+
+  if (seen.has(normalizedPath)) return "";
+  seen.add(normalizedPath);
+
+  const text = readFileSync(normalizedPath, "utf8");
+  const baseDir = dirname(normalizedPath);
+
+  const imports = Array.from(text.matchAll(/@import\s+["']([^"']+)["'];/g)).map(
+    (match) => match[1]
+  );
+
+  const importedText = imports
+    .filter((importPath) => importPath.startsWith("./") || importPath.startsWith("../"))
+    .map((importPath) => {
+      const resolved = normalize(join(baseDir, importPath));
+
+      if (!existsSync(resolved)) {
+        throw new Error(`Missing CSS import: ${importPath} from ${filePath}`);
+      }
+
+      const relativeToRoot = resolved.replace(`${root}/`, "");
+      return readCssWithImports(relativeToRoot, seen);
+    })
+    .join("\n");
+
+  return `${text}\n${importedText}`;
+}
+
 function countCssVariableDefinitions(filePath) {
-  const text = readFileSync(join(root, filePath), "utf8");
+  const text = readCssWithImports(filePath);
   const matches = text.match(/--ccui-[a-zA-Z0-9-_]+:/g) || [];
   return new Set(matches.map((item) => item.replace(":", ""))).size;
 }
 
 function countCssTokenReferences(filePath) {
-  const text = readFileSync(join(root, filePath), "utf8");
+  const text = readCssWithImports(filePath);
   return (text.match(/var\(--ccui-[a-zA-Z0-9-_]+\)/g) || []).length;
 }
 

@@ -1,0 +1,158 @@
+/* --------------------------------------------------------------------------
+ * DocSearch
+ * -------------------------------------------------------------------------- */
+
+.ccui-doc-search {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  width: min(100%, 24rem);
+  min-width: 15rem;
+  min-height: 2.25rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-subtle);
+  box-shadow: var(--ccui-shadow-hairline);
+  font-family: var(--ccui-font-interface);
+}
+
+.ccui-doc-search:focus-within {
+  z-index: 80;
+  border-color: var(--ccui-color-border-strong);
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-doc-search__input {
+  width: 100%;
+  min-width: 0;
+  padding: 0 var(--ccui-space-3);
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--ccui-color-text-primary);
+  font: inherit;
+  font-size: var(--ccui-font-size-sm);
+  line-height: 1;
+}
+
+.ccui-doc-search__input::placeholder {
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-doc-search__shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.1875rem;
+  margin-right: var(--ccui-space-2);
+  color: var(--ccui-color-text-muted);
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.ccui-doc-search__shortcut-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.18rem;
+  height: 1.18rem;
+  padding: 0 0.3rem;
+  border: 1px solid color-mix(in srgb, var(--ccui-color-border-gold) 62%, var(--ccui-color-brown-700) 38%);
+  border-radius: 0.275rem;
+  background: color-mix(in srgb, var(--ccui-color-brown-700) 88%, var(--ccui-color-accent-gold) 12%);
+  color: var(--ccui-color-text-inverse);
+  font-family: var(--ccui-font-interface);
+  font-size: 0.64rem;
+  font-weight: var(--ccui-font-weight-semibold);
+  line-height: 1;
+  box-shadow: none;
+  opacity: 0.72;
+}
+
+.ccui-doc-search__popover {
+  position: absolute;
+  top: calc(100% + var(--ccui-space-2));
+  right: 0;
+  z-index: 100;
+  width: min(34rem, calc(100vw - var(--ccui-space-6)));
+  max-height: min(28rem, calc(100vh - 8rem));
+  overflow: auto;
+  padding: var(--ccui-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-raised);
+  box-shadow: var(--ccui-shadow-brown-md);
+}
+
+.ccui-doc-search__result {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ccui-space-3);
+  align-items: start;
+  padding: var(--ccui-space-3);
+  border-radius: var(--ccui-radius-md);
+  color: var(--ccui-color-text-primary);
+  text-decoration: none;
+}
+
+.ccui-doc-search__result:hover,
+.ccui-doc-search__result--active,
+.ccui-doc-search__result[aria-selected="true"] {
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  text-decoration: none;
+}
+
+.ccui-doc-search__result-main {
+  display: grid;
+  gap: var(--ccui-space-1);
+  min-width: 0;
+}
+
+.ccui-doc-search__result-title {
+  color: var(--ccui-color-text-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-semibold);
+  line-height: var(--ccui-line-height-tight);
+}
+
+.ccui-doc-search__result-description {
+  color: var(--ccui-color-text-muted);
+  font-size: var(--ccui-font-size-xs);
+  line-height: var(--ccui-line-height-base);
+}
+
+.ccui-doc-search__result-category {
+  align-self: start;
+  padding-block-start: 0.1rem;
+  color: var(--ccui-color-accent-gold-text);
+  font-size: var(--ccui-font-size-2xs);
+  font-weight: var(--ccui-font-weight-bold);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  line-height: var(--ccui-line-height-tight);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.ccui-doc-search__empty {
+  padding: var(--ccui-space-4);
+  color: var(--ccui-color-text-muted);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  line-height: var(--ccui-line-height-base);
+}
+
+@media (max-width: 56rem) {
+  .ccui-doc-search {
+    min-width: 11rem;
+  }
+
+  .ccui-doc-search__shortcut {
+    display: none;
+  }
+
+  .ccui-doc-search__result {
+    grid-template-columns: 1fr;
+    gap: var(--ccui-space-1);
+  }
+}

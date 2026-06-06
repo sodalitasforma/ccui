@@ -1,0 +1,216 @@
+.ccui-text {
+  margin: 0;
+}
+
+.ccui-text--family-interface {
+  font-family: var(--ccui-font-interface, Inter, "Source Sans 3", Tahoma, Verdana, "Segoe UI", system-ui, sans-serif);
+}
+
+.ccui-text--family-document {
+  font-family: var(--ccui-font-document, "EB Garamond", Georgia, "Times New Roman", serif);
+}
+
+.ccui-text--family-display {
+  font-family: var(--ccui-font-display, "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif);
+}
+
+.ccui-text--family-inscription {
+  font-family: var(--ccui-font-inscription, Cinzel, "Trajan Pro", Charlemagne, Georgia, "Times New Roman", serif);
+  letter-spacing: var(--ccui-letter-spacing-nav, 0.1em);
+  text-transform: uppercase;
+}
+
+.ccui-text--family-mono {
+  font-family: var(--ccui-font-mono, "Lucida Console", "Courier New", monospace);
+}
+
+.ccui-text--tone-primary {
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-text--tone-secondary {
+  color: var(--ccui-color-text-secondary);
+}
+
+.ccui-text--tone-muted {
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-text--tone-inverse {
+  color: var(--ccui-color-text-inverse);
+}
+
+.ccui-text--tone-link {
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-text--tone-goldText {
+  color: var(--ccui-color-accent-gold-text);
+}
+
+.ccui-text--tone-activeText {
+  color: var(--ccui-color-accent-active-text);
+}
+
+.ccui-text--size-2xs {
+  font-size: var(--ccui-font-size-2xs, 0.625rem);
+}
+
+.ccui-text--size-xs {
+  font-size: var(--ccui-font-size-xs, 0.75rem);
+}
+
+.ccui-text--size-sm {
+  font-size: var(--ccui-font-size-sm, 0.8125rem);
+}
+
+.ccui-text--size-base {
+  font-size: var(--ccui-font-size-base, 0.875rem);
+}
+
+.ccui-text--size-md {
+  font-size: var(--ccui-font-size-md, 1rem);
+}
+
+.ccui-text--size-lg {
+  font-size: var(--ccui-font-size-lg, 1.125rem);
+}
+
+.ccui-text--size-xl {
+  font-size: var(--ccui-font-size-xl, 1.25rem);
+}
+
+.ccui-text--line-height-tight {
+  line-height: var(--ccui-line-height-tight, 1.2);
+}
+
+.ccui-text--line-height-base {
+  line-height: var(--ccui-line-height-base, 1.35);
+}
+
+.ccui-text--line-height-relaxed {
+  line-height: var(--ccui-line-height-relaxed, 1.5);
+}
+
+.ccui-text--line-height-loose {
+  line-height: var(--ccui-line-height-loose, 2);
+}
+
+.ccui-text--weight-regular {
+  font-weight: var(--ccui-font-weight-regular, 400);
+}
+
+.ccui-text--weight-medium {
+  font-weight: var(--ccui-font-weight-medium, 500);
+}
+
+.ccui-text--weight-semibold {
+  font-weight: var(--ccui-font-weight-semibold, 600);
+}
+
+.ccui-text--weight-bold {
+  font-weight: var(--ccui-font-weight-bold, 700);
+}
+
+.ccui-heading {
+  margin: 0;
+  color: inherit;
+}
+
+.ccui-heading--family-display {
+  font-family: var(--ccui-font-display, Cormorant Garamond, EB Garamond, Georgia, Times New Roman, serif);
+}
+
+.ccui-heading--family-document {
+  font-family: var(--ccui-font-document, EB Garamond, Georgia, Times New Roman, serif);
+}
+
+.ccui-heading--family-interface {
+  font-family: var(--ccui-font-interface, Inter, Source Sans 3, Tahoma, Verdana, Segoe UI, system-ui, sans-serif);
+}
+
+.ccui-heading--family-inscription {
+  font-family: var(--ccui-font-inscription, Cinzel, Trajan Pro, Charlemagne, Georgia, Times New Roman, serif);
+  letter-spacing: var(--ccui-letter-spacing-nav, 0.1em);
+  text-transform: uppercase;
+}
+
+.ccui-heading--size-sm {
+  font-size: var(--ccui-font-size-lg, 1.125rem);
+}
+
+.ccui-heading--size-md {
+  font-size: var(--ccui-font-size-xl, 1.25rem);
+}
+
+.ccui-heading--size-lg {
+  font-size: var(--ccui-font-size-2xl, 1.5rem);
+}
+
+.ccui-heading--size-xl {
+  font-size: var(--ccui-font-size-3xl, 2rem);
+}
+
+.ccui-heading--size-2xl {
+  font-size: var(--ccui-font-size-4xl, 2.5rem);
+}
+
+.ccui-heading--size-3xl {
+  font-size: var(--ccui-font-size-5xl, 3rem);
+}
+
+.ccui-heading--size-4xl {
+  font-size: clamp(3rem, 6vw, 5rem);
+}
+
+.ccui-heading--size-5xl {
+  font-size: clamp(3.5rem, 8vw, 7rem);
+}
+
+
+.ccui-heading--line-height-tight {
+  line-height: var(--ccui-line-height-tight, 1.2);
+}
+
+.ccui-heading--line-height-display {
+  line-height: var(--ccui-line-height-display, 1.06);
+}
+
+.ccui-heading--line-height-base {
+  line-height: var(--ccui-line-height-base, 1.35);
+}
+
+.ccui-heading--weight-semibold {
+  font-weight: var(--ccui-font-weight-semibold, 600);
+}
+
+.ccui-heading--weight-bold {
+  font-weight: var(--ccui-font-weight-bold, 700);
+}
+
+
+.ccui-eyebrow {
+  margin: 0;
+  font-family: var(--ccui-font-interface, Inter, Source Sans 3, Tahoma, Verdana, Segoe UI, system-ui, sans-serif);
+  font-size: var(--ccui-font-size-xs, 0.75rem);
+  font-weight: var(--ccui-font-weight-bold, 700);
+  letter-spacing: var(--ccui-letter-spacing-nav, 0.1em);
+  line-height: var(--ccui-line-height-tight, 1.2);
+  text-transform: uppercase;
+}
+
+.ccui-eyebrow--tone-muted {
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-eyebrow--tone-gold {
+  color: var(--ccui-color-accent-gold-text);
+}
+
+.ccui-eyebrow--tone-active {
+  color: var(--ccui-color-accent-active-text);
+}
+
+.ccui-eyebrow--tone-inverse {
+  color: var(--ccui-color-text-inverse);
+}

@@ -1,0 +1,95 @@
+.ccui-timeline {
+  position: relative;
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: var(--ccui-space-2) 0;
+}
+
+.ccui-timeline-item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: var(--ccui-space-4);
+  padding: 0 0 var(--ccui-space-6);
+}
+
+.ccui-timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 0;
+  left: 0.9375rem;
+  width: 1px;
+  background: var(--ccui-color-border-subtle);
+}
+
+.ccui-timeline-item:last-child {
+  padding-bottom: 0;
+}
+
+.ccui-timeline-item:last-child::before {
+  display: none;
+}
+
+.ccui-timeline-marker {
+  position: relative;
+  z-index: 1;
+  grid-column: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.875rem;
+  height: 1.875rem;
+  border: 1px solid var(--ccui-color-border-strong);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-link-primary);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: 1;
+}
+
+.ccui-timeline-marker svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
+.ccui-timeline-content {
+  grid-column: 2;
+  min-width: 0;
+  padding: var(--ccui-space-4) 0;
+}
+
+.ccui-timeline-content > * + * {
+  margin-top: var(--ccui-space-2);
+}
+
+.ccui-timeline-item--complete .ccui-timeline-marker {
+  border-color: var(--ccui-color-border-strong);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-link-primary);
+}
+
+.ccui-timeline-item--current .ccui-timeline-marker {
+  border-color: var(--ccui-color-link-primary);
+  background: var(--ccui-color-link-primary);
+  color: var(--ccui-color-text-inverse);
+  box-shadow: var(--ccui-shadow-focus);
+}
+
+.ccui-timeline-item--current .ccui-timeline-content {
+  padding-inline: var(--ccui-space-4);
+  border-left: 2px solid var(--ccui-color-link-primary);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-timeline-item--upcoming .ccui-timeline-marker {
+  border-color: var(--ccui-color-border-subtle);
+  color: var(--ccui-color-text-muted);
+}
+
+.ccui-timeline-item--upcoming .ccui-timeline-content {
+  color: var(--ccui-color-text-secondary);
+}

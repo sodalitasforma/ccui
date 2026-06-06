@@ -1,0 +1,38 @@
+.ccui-notice {
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-left-width: 4px;
+  border-radius: var(--ccui-radius-md);
+  padding: var(--ccui-space-4);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-base);
+  line-height: var(--ccui-line-height-base);
+  color: var(--ccui-color-text-primary);
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-notice--variant-info {
+  border-left-color: var(--ccui-color-accent-blue);
+}
+
+.ccui-notice--variant-success {
+  border-left-color: var(--ccui-color-success);
+}
+
+.ccui-notice--variant-warning {
+  border-left-color: var(--ccui-color-accent-gold);
+  background: var(--ccui-color-surface-subtle);
+}
+
+.ccui-notice--variant-danger {
+  border-left-color: var(--ccui-color-danger);
+}
+
+.ccui-notice--variant-official {
+  border-left-color: var(--ccui-color-brown-700);
+  background: var(--ccui-color-surface-parchment);
+}
+
+.ccui-notice--variant-liturgical {
+  border-left-color: var(--ccui-liturgical-violet);
+  background: var(--ccui-color-surface-subtle);
+}

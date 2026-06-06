@@ -1,0 +1,38 @@
+.ccui-divider {
+  margin: 0;
+  border: 0;
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.ccui-divider--tone-subtle {
+  border-top-color: var(--ccui-color-border-subtle);
+}
+
+.ccui-divider--tone-strong {
+  border-top-color: var(--ccui-color-border-strong);
+}
+
+.ccui-divider--tone-gold {
+  border-top-color: var(--ccui-color-accent-gold);
+}
+
+.ccui-divider--tone-active {
+  border-top-color: var(--ccui-color-accent-active);
+}
+
+@media (max-width: 48rem) {
+  .ccui-grid--columns-2,
+  .ccui-grid--columns-3,
+  .ccui-grid--columns-4 {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .ccui-section--spacing-lg {
+    padding-block: var(--ccui-space-12, 3rem);
+  }
+
+  .ccui-section--spacing-xl {
+    padding-block: var(--ccui-space-16, 4rem);
+  }
+}

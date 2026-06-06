@@ -1,0 +1,221 @@
+.ccui-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-full, 999px);
+  font-family: var(--ccui-font-interface);
+  font-weight: var(--ccui-font-weight-bold);
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.ccui-badge--xs {
+  min-height: 1.15rem;
+  padding: 0.12rem var(--ccui-space-2);
+  font-size: var(--ccui-font-size-xs);
+  letter-spacing: 0.02em;
+}
+
+.ccui-badge--sm {
+  min-height: 1.5rem;
+  padding: 0.2rem var(--ccui-space-3);
+  font-size: var(--ccui-font-size-xs);
+  letter-spacing: var(--ccui-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.ccui-badge--neutral {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-muted);
+  border-color: var(--ccui-color-border-subtle);
+}
+
+.ccui-badge--gold {
+  background: var(--ccui-color-gold-50, var(--ccui-color-surface-subtle));
+  color: var(--ccui-color-brown-800, var(--ccui-color-link-primary));
+  border-color: var(--ccui-color-gold-400, var(--ccui-color-border-strong));
+}
+
+.ccui-badge--brown {
+  background: var(--ccui-color-brown-700, var(--ccui-color-link-primary));
+  color: var(--ccui-color-text-inverse);
+  border-color: var(--ccui-color-brown-700, var(--ccui-color-link-primary));
+}
+
+.ccui-badge--active {
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-link-primary);
+  border-color: var(--ccui-color-link-primary);
+}
+
+.ccui-badge--success {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-success);
+  border-color: var(--ccui-color-success);
+}
+
+.ccui-badge--warning {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-warning);
+  border-color: var(--ccui-color-warning);
+}
+
+.ccui-badge--danger {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-danger);
+  border-color: var(--ccui-color-danger);
+}
+
+.ccui-badge--info {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-info);
+  border-color: var(--ccui-color-info);
+}
+
+.ccui-badge--liturgicalWhite {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+  border-color: var(--ccui-liturgical-white);
+}
+
+.ccui-badge--liturgicalGreen {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-liturgical-green);
+  border-color: var(--ccui-liturgical-green);
+}
+
+.ccui-badge--liturgicalViolet {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-liturgical-violet);
+  border-color: var(--ccui-liturgical-violet);
+}
+
+.ccui-badge--liturgicalRed {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-liturgical-red);
+  border-color: var(--ccui-liturgical-red);
+}
+
+.ccui-badge--liturgicalRose {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-liturgical-rose);
+  border-color: var(--ccui-liturgical-rose);
+}
+
+.ccui-badge--liturgicalBlack {
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-liturgical-black);
+  border-color: var(--ccui-liturgical-black);
+}
+
+.ccui-badge--liturgicalGold {
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-800, var(--ccui-color-link-primary));
+  border-color: var(--ccui-liturgical-gold);
+}
+
+/* Small subtle buttons: used for quiet gold pill CTAs like CDCF Manifesto. */
+.ccui-button--variant-subtle.ccui-button--size-xs {
+  min-height: 1.875rem;
+  padding-inline: var(--ccui-space-3);
+  border-color: transparent;
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-accent-gold-wash);
+  color: var(--ccui-color-brown-900);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  box-shadow: none;
+}
+
+.ccui-button--variant-subtle.ccui-button--size-xs:hover {
+  border-color: transparent;
+  background: var(--ccui-color-accent-gold-wash-strong);
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-hairline);
+}
+
+/* Small subtle buttons: quiet warm pill CTA, used by CDCF Manifesto links. */
+.ccui-button--variant-subtle.ccui-button--size-xs {
+  min-height: 1.875rem;
+  padding-inline: var(--ccui-space-3);
+  border-color: color-mix(in srgb, var(--ccui-color-brown-700) 20%, transparent);
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-900);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  box-shadow: none;
+}
+
+.ccui-button--variant-subtle.ccui-button--size-xs:hover {
+  border-color: color-mix(in srgb, var(--ccui-color-brown-700) 34%, transparent);
+  background: color-mix(in srgb, var(--ccui-color-surface-subtle) 72%, var(--ccui-color-accent-gold));
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-hairline);
+}
+
+/* --------------------------------------------------------------------------
+ * CSS contract coverage
+ * These selectors are emitted by package components and must be owned here.
+ * -------------------------------------------------------------------------- */
+
+.ccui-button__label {
+  /* CSS contract: selector owned by package stylesheet. */
+}
+
+
+.ccui-empty-state__content {
+  align-items: center;
+  max-width: 32rem;
+}
+
+.ccui-empty-state__action {
+  margin-block-start: var(--ccui-space-2);
+}
+
+
+.ccui-button--size-icon {
+  border-radius: var(--ccui-radius-md);
+}
+
+.ccui-button--variant-ghost.ccui-button--size-icon {
+  background: transparent;
+}
+
+.ccui-button--variant-ghost.ccui-button--size-icon:hover {
+  background: color-mix(in srgb, var(--ccui-color-surface-muted) 72%, transparent);
+}
+
+
+.ccui-button--size-icon {
+  inline-size: 1.875rem;
+  block-size: 1.875rem;
+  min-inline-size: 1.875rem;
+  min-block-size: 1.875rem;
+  padding: 0;
+  border-radius: var(--ccui-radius-sm);
+}
+
+.ccui-button--size-icon .ccui-button__label {
+  display: inline-grid;
+  place-items: center;
+}
+
+.ccui-button--size-icon svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+  flex: none;
+  pointer-events: none;
+}
+
+.ccui-button--variant-ghost.ccui-button--size-icon {
+  background: transparent;
+}
+
+.ccui-button--variant-ghost.ccui-button--size-icon:hover {
+  background: color-mix(in srgb, var(--ccui-color-paper) 82%, transparent);
+}

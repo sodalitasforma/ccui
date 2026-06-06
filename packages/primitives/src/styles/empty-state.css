@@ -1,0 +1,22 @@
+.ccui-empty-state {
+  display: grid;
+  place-items: center;
+  min-height: 12rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  padding: var(--ccui-space-8);
+  text-align: center;
+}
+
+.ccui-empty-state--tone-neutral {
+  background: var(--ccui-color-surface-raised);
+}
+
+.ccui-empty-state--tone-official {
+  background: var(--ccui-color-surface-parchment);
+  border-color: var(--ccui-color-border-strong);
+}
+
+.ccui-empty-state--tone-subtle {
+  background: var(--ccui-color-surface-subtle);
+}
