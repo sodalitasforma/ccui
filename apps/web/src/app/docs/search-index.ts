@@ -268,24 +268,6 @@ export const docsSearchItems: DocsSearchItem[] = [
     href: "/icons#live-icons",
     description: "Starter interface and Catholic SVG icons available in the icons package.",
   },
-  {
-    title: "Icon states",
-    category: "Icons",
-    href: "/icons#icon-states",
-    description: "Preview icon buttons in default, selected, disabled, and dark-surface states.",
-  },
-  {
-    title: "Icon package plan",
-    category: "Icons",
-    href: "/icons#package-plan",
-    description: "Package structure for the future icon library.",
-  },
-  {
-    title: "Icon categories",
-    category: "Icons",
-    href: "/icons#categories",
-    description: "Interface, Catholic, liturgy, documents, and parish icon groups.",
-  },
 
   {
     title: "Templates",

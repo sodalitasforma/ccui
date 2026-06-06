@@ -3,11 +3,11 @@
 import { useMemo, useState } from "react";
 import { iconCategories, iconRegistry } from "@catholiccommons/icons";
 import {
-  Badge,
   Button,
   Card,
   Cluster,
   Heading,
+  IconFrame,
   SearchInput,
   Select,
   Stack,
@@ -58,98 +58,92 @@ export function IconsGallery() {
   return (
     <Stack gap="lg">
       <Card padding="md" border="subtle" surface="raised">
-        <Stack gap="md">
-          <Cluster gap="md" align="end" justify="between">
-            <Stack gap="xs" className="docs-icon-gallery-filter">
-              <Text as="label" size="xs" tone="muted" weight="semibold">
-                Search icons
-              </Text>
-              <SearchInput
-                value={query}
-                onChange={(event) => setQuery(event.currentTarget.value)}
-                placeholder="Search by name, symbol, tag, or use case"
-                aria-label="Search icons"
-              />
-            </Stack>
+        <Cluster gap="md" align="end" justify="between">
+          <Stack gap="xs" className="docs-icon-gallery-filter">
+            <Text as="label" size="xs" tone="muted" weight="semibold">
+              Search icons
+            </Text>
+            <SearchInput
+              value={query}
+              onChange={(event) => setQuery(event.currentTarget.value)}
+              placeholder="Search by name, symbol, tag, or use case"
+              aria-label="Search icons"
+            />
+          </Stack>
 
-            <Stack gap="xs" className="docs-icon-gallery-filter">
-              <Text as="label" size="xs" tone="muted" weight="semibold">
-                Category
-              </Text>
-              <Select
-                aria-label="Filter icons by category"
-                value={category}
-                onChange={(event) => setCategory(event.currentTarget.value)}
-              >
-                <option value={allCategory}>All categories</option>
-                {iconCategories.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </Select>
-            </Stack>
-          </Cluster>
-
-          <Cluster gap="sm">
-            <Badge variant="gold" size="xs">
-              {filteredIcons.length} shown
-            </Badge>
-            <Badge variant="neutral" size="xs">
-              {iconRegistry.length} total
-            </Badge>
-          </Cluster>
-        </Stack>
+          <Stack gap="xs" className="docs-icon-gallery-filter">
+            <Text as="label" size="xs" tone="muted" weight="semibold">
+              Category
+            </Text>
+            <Select
+              aria-label="Filter icons by category"
+              value={category}
+              onChange={(event) => setCategory(event.currentTarget.value)}
+            >
+              <option value={allCategory}>All categories</option>
+              {iconCategories.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
+            </Select>
+          </Stack>
+        </Cluster>
       </Card>
 
-      <div className="docs-icon-gallery-grid">
+      <div className="docs-icon-only-grid">
         {filteredIcons.map(({ name, exportName, category: iconCategory, description, tags, Icon }) => (
-          <Card key={exportName} padding="md" border="subtle" surface="raised">
-            <Stack gap="md">
-              <Cluster gap="md" align="center" justify="between">
-                <div className="docs-icon-gallery-preview">
-                  <Icon size="lg" title={name} />
-                </div>
-                <Badge variant={iconCategory === "Catholic" ? "gold" : "neutral"} size="xs">
-                  {iconCategory}
-                </Badge>
-              </Cluster>
+          <div key={exportName} className="docs-icon-only-item">
+            <button
+              type="button"
+              className="docs-icon-only-button"
+              aria-label={`${name}: ${exportName}`}
+            >
+              <IconFrame>
+                <Icon size="lg" title={name} />
+              </IconFrame>
+            </button>
 
-              <Stack gap="xs">
-                <Heading level={3} size="sm">
-                  {name}
-                </Heading>
-                <Text size="xs" tone="muted" family="mono">
-                  {exportName}
-                </Text>
+            <Card padding="md" border="subtle" surface="raised" className="docs-icon-hover-card">
+              <Stack gap="sm">
+                <Cluster justify="between" align="start" gap="sm">
+                  <Stack gap="xs">
+                    <Heading level={3} size="sm">
+                      {name}
+                    </Heading>
+                    <Text size="xs" tone="muted" family="mono">
+                      {exportName}
+                    </Text>
+                  </Stack>
+                  <Text size="xs" tone="muted" weight="semibold">
+                    {iconCategory}
+                  </Text>
+                </Cluster>
+
                 <Text size="sm" tone="secondary">
                   {description}
                 </Text>
-              </Stack>
 
-              <Cluster gap="xs">
-                {tags.slice(0, 4).map((tag) => (
-                  <Badge key={tag} variant="neutral" size="xs">
-                    {tag}
-                  </Badge>
-                ))}
-              </Cluster>
-
-              <div className="docs-icon-import-row">
-                <Text size="xs" family="mono" tone="muted">
-                  {importLine(exportName)}
+                <Text size="xs" tone="muted">
+                  {tags.slice(0, 4).join(" · ")}
                 </Text>
-                <Button
-                  size="xs"
-                  variant="subtle"
-                  type="button"
-                  onClick={() => copyImport(exportName)}
-                >
-                  {copiedExportName === exportName ? "Copied" : "Copy"}
-                </Button>
-              </div>
-            </Stack>
-          </Card>
+
+                <div className="docs-icon-hover-import">
+                  <Text size="xs" family="mono" tone="muted">
+                    {importLine(exportName)}
+                  </Text>
+                  <Button
+                    size="xs"
+                    variant="subtle"
+                    type="button"
+                    onClick={() => copyImport(exportName)}
+                  >
+                    {copiedExportName === exportName ? "Copied" : "Copy"}
+                  </Button>
+                </div>
+              </Stack>
+            </Card>
+          </div>
         ))}
       </div>
 

@@ -19,7 +19,6 @@ export { PencilIcon } from "./pencil-icon";
 export { TrashIcon } from "./trash-icon";
 export { UploadIcon } from "./upload-icon";
 export { RefreshCwIcon } from "./refresh-cw-icon";
-export { SettingsIcon } from "./settings-icon";
 export { HomeIcon } from "./home-icon";
 export { UserIcon } from "./user-icon";
 export { UsersIcon } from "./users-icon";

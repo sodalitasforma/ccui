@@ -38,7 +38,6 @@ import {
   RefreshCwIcon,
   SaveIcon,
   SearchIcon,
-  SettingsIcon,
   ShareIcon,
   StarIcon,
   TrashIcon,
@@ -55,7 +54,6 @@ import {
   ChaliceIcon,
   ChurchIcon,
   CrossIcon,
-  RosaryIcon,
 } from "./catholic";
 
 export type IconCategory =
@@ -89,7 +87,6 @@ export const iconRegistry = [
   { name: "Trash", exportName: "TrashIcon", category: "Interface", description: "Delete, remove, or discard content.", tags: ["trash", "delete", "remove"], Icon: TrashIcon },
   { name: "Upload", exportName: "UploadIcon", category: "Interface", description: "Upload documents, media, files, or records.", tags: ["upload", "file", "document", "media"], Icon: UploadIcon },
   { name: "Refresh clockwise", exportName: "RefreshCwIcon", category: "Interface", description: "Refresh data, reload content, or synchronize state.", tags: ["refresh", "reload", "sync"], Icon: RefreshCwIcon },
-  { name: "Settings", exportName: "SettingsIcon", category: "Interface", description: "Settings, preferences, configuration, and controls.", tags: ["settings", "preferences", "configuration"], Icon: SettingsIcon },
   { name: "Home", exportName: "HomeIcon", category: "Interface", description: "Home pages, dashboards, and primary navigation.", tags: ["home", "dashboard", "navigation"], Icon: HomeIcon },
   { name: "User", exportName: "UserIcon", category: "Interface", description: "Single person, account, profile, or contact.", tags: ["user", "person", "profile", "account"], Icon: UserIcon },
   { name: "Users", exportName: "UsersIcon", category: "Interface", description: "Groups, teams, families, members, or communities.", tags: ["users", "group", "team", "community"], Icon: UsersIcon },
@@ -198,14 +195,6 @@ export const iconRegistry = [
     description: "Primary Christian cross symbol.",
     tags: ["cross", "christian", "catholic", "faith"],
     Icon: CrossIcon,
-  },
-  {
-    name: "Rosary",
-    exportName: "RosaryIcon",
-    category: "Catholic",
-    description: "Rosary symbol for prayer, devotion, and Marian contexts.",
-    tags: ["rosary", "prayer", "marian", "devotion"],
-    Icon: RosaryIcon,
   },
 ] as const satisfies readonly IconRegistryItem[];
 

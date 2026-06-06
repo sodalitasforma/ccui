@@ -1886,3 +1886,95 @@ a {
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr));
   gap: var(--ccui-space-3);
 }
+
+.docs-icon-only-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(2.75rem, 1fr));
+  gap: var(--ccui-space-3);
+  align-items: start;
+}
+
+.docs-icon-only-item {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.docs-icon-only-button {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--ccui-color-link-primary);
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.docs-icon-only-button:hover,
+.docs-icon-only-button:focus-visible {
+  outline: none;
+}
+
+.docs-icon-only-button:hover .ccui-icon-frame,
+.docs-icon-only-button:focus-visible .ccui-icon-frame {
+  border-color: var(--ccui-color-border-strong);
+  background: var(--ccui-color-accent-gold-wash);
+}
+
+.docs-icon-hover-card {
+  position: absolute;
+  left: 50%;
+  top: calc(100% + var(--ccui-space-2));
+  z-index: 50;
+  width: min(18rem, calc(100vw - var(--ccui-space-6)));
+  transform: translateX(-50%) translateY(-0.25rem);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition:
+    opacity var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard),
+    transform var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard),
+    visibility var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard);
+}
+
+.docs-icon-only-item:hover .docs-icon-hover-card,
+.docs-icon-only-item:focus-within .docs-icon-hover-card {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.docs-icon-hover-import {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--ccui-space-2);
+  align-items: center;
+  padding: var(--ccui-space-2);
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  background: var(--ccui-color-surface-parchment);
+}
+
+.docs-icon-hover-import .ccui-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.docs-icon-only-button,
+.docs-icon-only-button:hover,
+.docs-icon-only-button:focus-visible {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.docs-icon-only-button > .ccui-icon-frame {
+  width: 2.25rem;
+  height: 2.25rem;
+}
