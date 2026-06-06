@@ -31,6 +31,12 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Add Catholic Commons UI to an app you already created.",
   },
   {
+    title: "Apply a theme",
+    category: "Docs",
+    href: "/docs#theme-application",
+    description: "Apply light or dark Catholic Commons UI themes with the data-theme attribute.",
+  },
+  {
     title: "Next.js",
     category: "Frameworks",
     href: "/docs#next-js",

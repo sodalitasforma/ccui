@@ -49,6 +49,7 @@ const pageSections: Record<
       { type: "link", label: "Overview", href: "/docs#overview" },
       { type: "link", label: "Use the CLI", href: "/docs#use-the-cli" },
       { type: "link", label: "Existing project", href: "/docs#existing-project" },
+      { type: "link", label: "Apply a theme", href: "/docs#theme-application" },
       { type: "link", label: "Next.js", href: "/docs#next-js" },
       { type: "link", label: "Vite", href: "/docs#vite" },
       { type: "link", label: "Astro", href: "/docs#astro" },

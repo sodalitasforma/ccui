@@ -146,6 +146,80 @@ import "@catholiccommons/catholic/catholic.css";`}
                 </Stack>
               </Section>
 
+              <Section id="theme-application" surface="page" spacing="lg">
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Apply a theme
+                    </Heading>
+                    <Text tone="secondary">
+                      Catholic Commons UI themes are applied with a <code>data-theme</code> attribute.
+                      Put the attribute on your app root, document element, or any subtree that should
+                      inherit the theme.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`// app/layout.tsx
+import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" data-theme="light">
+      <body>{children}</body>
+    </html>
+  );
+}`}
+                    copyable
+                  />
+
+                  <Text tone="secondary">
+                    For dark mode, set the same attribute to <code>dark</code>. The tokens, primitives,
+                    and Catholic components inherit from that root.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`<html lang="en" data-theme="dark">
+  <body>{children}</body>
+</html>`}
+                    copyable
+                  />
+
+                  <Text tone="secondary">
+                    You can also theme only part of a page. This is useful for previews, dashboards,
+                    dark panels, or parish sites with a dark hero area.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`<section data-theme="dark">
+  <MassScheduleBlock
+    title="Mass schedule"
+    days={[
+      {
+        day: "Sunday",
+        times: [
+          { time: "8:00 AM", label: "Low Mass" },
+          { time: "10:30 AM", label: "Sung Mass" },
+        ],
+      },
+    ]}
+  />
+</section>`}
+                    copyable
+                  />
+
+                  <Text tone="secondary">
+                    Use <code>/colors#theme-specimens</code>, <code>/colors#primitive-theme-specimens</code>,
+                    and <code>/colors#catholic-theme-specimens</code> to verify contrast before shipping.
+                  </Text>
+                </Stack>
+              </Section>
+
               <Section id="next-js" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
