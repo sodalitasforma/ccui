@@ -19,14 +19,46 @@
 }
 
 .ccui-button:focus-visible {
-  outline: 2px solid var(--ccui-color-accent-active);
+  outline: 2px solid var(--ccui-color-focus-ring);
   outline-offset: 2px;
 }
 
 .ccui-button:disabled,
 .ccui-button[aria-disabled="true"] {
   cursor: not-allowed;
-  opacity: 0.58;
+  opacity: var(--ccui-opacity-disabled);
+  color: var(--ccui-color-disabled-text);
+}
+
+.ccui-button[aria-pressed="true"],
+.ccui-button[aria-selected="true"],
+.ccui-button[data-state="on"],
+.ccui-button[data-state="selected"] {
+  border-color: var(--ccui-color-control-selected-border);
+  background: var(--ccui-color-control-selected-bg);
+  color: var(--ccui-color-control-selected-text);
+}
+
+.ccui-button[aria-pressed="true"]:hover,
+.ccui-button[aria-selected="true"]:hover,
+.ccui-button[data-state="on"]:hover,
+.ccui-button[data-state="selected"]:hover {
+  border-color: var(--ccui-color-control-selected-border);
+  background: var(--ccui-color-control-selected-bg-hover);
+  color: var(--ccui-color-control-selected-text);
+}
+
+.ccui-button--size-icon {
+  color: var(--ccui-color-icon-default);
+}
+
+.ccui-button--size-icon:hover {
+  color: var(--ccui-color-icon-active);
+}
+
+.ccui-button--size-icon:disabled,
+.ccui-button--size-icon[aria-disabled="true"] {
+  color: var(--ccui-color-disabled-text);
 }
 
 .ccui-button__label {
@@ -125,7 +157,7 @@
 .ccui-button--variant-subtle {
   border-color: var(--ccui-color-border-subtle);
   background: var(--ccui-color-surface-subtle);
-  color: var(--ccui-color-text-secondary);
+  color: var(--ccui-color-control-text);
   box-shadow: none;
 }
 
@@ -150,14 +182,14 @@
 .ccui-button--variant-ghost {
   border-color: transparent;
   background: transparent;
-  color: var(--ccui-color-text-secondary);
+  color: var(--ccui-color-control-text);
   box-shadow: none;
 }
 
 .ccui-button--variant-ghost:hover {
   border-color: transparent;
   background: var(--ccui-color-surface-subtle);
-  color: var(--ccui-color-text-primary);
+  color: var(--ccui-color-control-text-hover);
   box-shadow: none;
 }
 
