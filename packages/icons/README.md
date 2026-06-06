@@ -1,5 +1,5 @@
-# @ccui/icons
+# Catholic Commons Icons
 
-Reserved icon package for Catholic Commons UI.
+SVG React icons for Catholic Commons UI.
 
-This package is present as a workspace boundary while icon work is reviewed.
+Icons use `currentColor`, a 24×24 viewBox, and a shared size/title API.
