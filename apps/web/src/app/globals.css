@@ -1814,8 +1814,9 @@ a {
 
 .docs-icon-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(13.5rem, 1fr));
   gap: var(--ccui-space-4);
+  align-items: stretch;
 }
 
 .docs-icon-gallery-preview {
@@ -1848,4 +1849,23 @@ a {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+
+.docs-icon-gallery-grid .ccui-card {
+  min-height: 16rem;
+}
+
+.docs-icon-gallery-grid .ccui-card > .ccui-stack {
+  height: 100%;
+}
+
+.docs-icon-gallery-grid .docs-icon-import-row {
+  margin-top: auto;
+}
+
+@media (max-width: 42rem) {
+  .docs-icon-gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
