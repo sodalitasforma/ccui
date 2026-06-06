@@ -291,29 +291,29 @@
   --ccui-color-accent-active: var(--ccui-color-gold-400);
   --ccui-color-accent-active-text: var(--ccui-color-gold-300);
 
-  --ccui-color-control-bg: var(--ccui-color-surface-raised);
-  --ccui-color-control-bg-hover: color-mix(in srgb, var(--ccui-color-gold-300) 10%, var(--ccui-color-surface-raised));
-  --ccui-color-control-bg-active: color-mix(in srgb, var(--ccui-color-gold-300) 16%, var(--ccui-color-surface-raised));
-  --ccui-color-control-border: var(--ccui-color-border-subtle);
-  --ccui-color-control-border-hover: var(--ccui-color-border-strong);
-  --ccui-color-control-text: var(--ccui-color-text-secondary);
-  --ccui-color-control-text-hover: var(--ccui-color-text-primary);
+  --ccui-color-control-bg: color-mix(in srgb, var(--ccui-color-paper-50) 7%, var(--ccui-color-surface-raised));
+  --ccui-color-control-bg-hover: color-mix(in srgb, var(--ccui-color-gold-300) 18%, var(--ccui-color-surface-raised));
+  --ccui-color-control-bg-active: color-mix(in srgb, var(--ccui-color-gold-300) 24%, var(--ccui-color-surface-raised));
+  --ccui-color-control-border: color-mix(in srgb, var(--ccui-color-gold-300) 34%, transparent);
+  --ccui-color-control-border-hover: color-mix(in srgb, var(--ccui-color-gold-300) 52%, transparent);
+  --ccui-color-control-text: var(--ccui-color-paper-100);
+  --ccui-color-control-text-hover: var(--ccui-color-paper-50);
 
-  --ccui-color-control-selected-bg: var(--ccui-color-gold-400);
-  --ccui-color-control-selected-bg-hover: var(--ccui-color-gold-300);
-  --ccui-color-control-selected-border: var(--ccui-color-gold-400);
+  --ccui-color-control-selected-bg: var(--ccui-color-gold-300);
+  --ccui-color-control-selected-bg-hover: var(--ccui-color-gold-200);
+  --ccui-color-control-selected-border: var(--ccui-color-gold-300);
   --ccui-color-control-selected-text: var(--ccui-color-brown-950);
 
-  --ccui-color-icon-default: var(--ccui-color-text-secondary);
-  --ccui-color-icon-muted: var(--ccui-color-text-muted);
-  --ccui-color-icon-active: var(--ccui-color-gold-300);
-  --ccui-color-icon-inverse: var(--ccui-color-brown-950);
+  --ccui-color-icon-default: var(--ccui-color-paper-100);
+  --ccui-color-icon-muted: color-mix(in srgb, var(--ccui-color-paper-100) 70%, transparent);
+  --ccui-color-icon-active: var(--ccui-color-gold-200);
+  --ccui-color-icon-inverse: var(--ccui-color-paper-50);
 
-  --ccui-color-nav-active-bg: color-mix(in srgb, var(--ccui-color-gold-300) 12%, transparent);
-  --ccui-color-nav-active-text: var(--ccui-color-gold-300);
-  --ccui-color-nav-active-border: var(--ccui-color-gold-400);
+  --ccui-color-nav-active-bg: color-mix(in srgb, var(--ccui-color-gold-300) 16%, transparent);
+  --ccui-color-nav-active-text: var(--ccui-color-gold-200);
+  --ccui-color-nav-active-border: var(--ccui-color-gold-300);
 
-  --ccui-color-focus-ring: var(--ccui-color-gold-400);
-  --ccui-color-disabled-bg: color-mix(in srgb, var(--ccui-color-surface-raised) 68%, transparent);
-  --ccui-color-disabled-text: color-mix(in srgb, var(--ccui-color-text-muted) 78%, transparent);
+  --ccui-color-focus-ring: var(--ccui-color-gold-300);
+  --ccui-color-disabled-bg: color-mix(in srgb, var(--ccui-color-paper-50) 10%, var(--ccui-color-surface-raised));
+  --ccui-color-disabled-text: color-mix(in srgb, var(--ccui-color-paper-100) 46%, transparent);
 }

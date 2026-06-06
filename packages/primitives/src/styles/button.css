@@ -304,6 +304,7 @@
 .ccui-card--surface-dark .ccui-button--size-icon,
 .ccui-panel--surface-dark .ccui-button--size-icon,
 .ccui-section--surface-dark .ccui-button--size-icon {
+  border-color: color-mix(in srgb, var(--ccui-color-icon-inverse) 24%, transparent);
   color: var(--ccui-color-icon-inverse);
 }
 
