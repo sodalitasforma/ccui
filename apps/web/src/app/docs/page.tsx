@@ -58,11 +58,11 @@ export default function DocsPage() {
 
                     <Cluster gap="sm" className="docs-install-prev-next">
                       <Link href="/components-gallery">Previous</Link>
-                      <Link href="/docs#use-the-cli">Next</Link>
+                      <Link href="/docs#components-json">Next</Link>
                     </Cluster>
 
                     <Text tone="secondary" className="docs-install-lede">
-                      How to install Catholic Commons UI and structure your app.
+                      How to install dependencies and structure your app.
                     </Text>
                   </Stack>
 
@@ -112,29 +112,50 @@ export default function DocsPage() {
 
                   <pre className="docs-install-code"><code>{`pnpm dlx catholiccommons init
 pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
+
+                  <Text tone="secondary">
+                    To see available components, run <code>pnpm dlx catholiccommons list</code>.
+                  </Text>
                 </Stack>
               </Section>
 
-              <Section id="add-components" surface="page" spacing="lg">
+              <Section id="existing-project" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
-                      Add components
+                      Existing Project
                     </Heading>
                     <Text tone="secondary">
-                      Use the CLI to list available components and add a wrapper to your app.
+                      Add Catholic Commons UI to an app you already created.
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`pnpm dlx catholiccommons list
-pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
+                  <pre className="docs-install-code"><code>{`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}</code></pre>
 
-                  <div className="docs-install-note">
-                    <Text as="p">
-                      The add command creates a wrapper such as{" "}
-                      <code>components/ccui/mass-schedule-block.tsx</code> that re-exports the
-                      published Catholic Commons component.
+                  <pre className="docs-install-code"><code>{`import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";`}</code></pre>
+                </Stack>
+              </Section>
+
+              <Section id="frameworks" surface="page" spacing="lg">
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Choose Your Framework
+                    </Heading>
+                    <Text tone="secondary">
+                      Pick the framework closest to your app and run the CLI from your project root.
                     </Text>
+                  </Stack>
+
+                  <div className="docs-framework-list">
+                    {frameworks.map((framework) => (
+                      <Link key={framework.name} href={framework.href} className="docs-framework-item">
+                        <span>{framework.name}</span>
+                        <Badge variant="neutral" size="xs">Guide</Badge>
+                      </Link>
+                    ))}
                   </div>
                 </Stack>
               </Section>
@@ -164,37 +185,11 @@ pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
                 </Stack>
               </Section>
 
-              <Section id="existing-project" surface="page" spacing="lg">
+              <Section id="package-imports" surface="page" spacing="lg">
                 <Stack gap="md">
                   <Stack gap="xs">
                     <Heading level={2} size="xl" className="docs-install-section-title">
-                      Existing Project
-                    </Heading>
-                    <Text tone="secondary">
-                      Add the packages, import the styles once, then replace one interface surface
-                      at a time with Catholic Commons UI components.
-                    </Text>
-                  </Stack>
-
-                  <pre className="docs-install-code"><code>{`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}</code></pre>
-
-                  <pre className="docs-install-code"><code>{`import "@catholiccommons/tokens/css-vars.css";
-import "@catholiccommons/primitives/primitives.css";
-import "@catholiccommons/catholic/catholic.css";`}</code></pre>
-
-                  <div className="docs-install-note">
-                    <Text as="p">
-                      Keep the cascade intact: tokens → primitives → Catholic components → pages.
-                    </Text>
-                  </div>
-                </Stack>
-              </Section>
-
-              <Section id="use-packages" surface="page" spacing="lg">
-                <Stack gap="md">
-                  <Stack gap="xs">
-                    <Heading level={2} size="xl" className="docs-install-section-title">
-                      Package imports
+                      Package Imports
                     </Heading>
                     <Text tone="secondary">
                       Import only the layer you need.
@@ -213,28 +208,6 @@ export function ParishPage() {
     />
   );
 }`}</code></pre>
-                </Stack>
-              </Section>
-
-              <Section id="frameworks" surface="page" spacing="lg">
-                <Stack gap="md">
-                  <Stack gap="xs">
-                    <Heading level={2} size="xl" className="docs-install-section-title">
-                      Choose Your Framework
-                    </Heading>
-                    <Text tone="secondary">
-                      Start with the framework closest to your app, then run the CLI from your project root.
-                    </Text>
-                  </Stack>
-
-                  <div className="docs-framework-list">
-                    {frameworks.map((framework) => (
-                      <Link key={framework.name} href={framework.href} className="docs-framework-item">
-                        <span>{framework.name}</span>
-                        <Badge variant="neutral" size="xs">Guide</Badge>
-                      </Link>
-                    ))}
-                  </div>
                 </Stack>
               </Section>
 
