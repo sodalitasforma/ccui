@@ -20,3 +20,12 @@
 .ccui-empty-state--tone-subtle {
   background: var(--ccui-color-surface-subtle);
 }
+
+.ccui-empty-state__content {
+  align-items: center;
+  max-width: 32rem;
+}
+
+.ccui-empty-state__action {
+  margin-block-start: var(--ccui-space-2);
+}

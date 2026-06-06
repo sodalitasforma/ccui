@@ -201,3 +201,52 @@
     0 14px 30px color-mix(in srgb, var(--ccui-color-link-primary) 26%, transparent),
     0 2px 6px color-mix(in srgb, var(--ccui-color-text-primary) 14%, transparent);
 }
+
+/* Quiet warm pill CTA, used by compact institutional links. */
+.ccui-button--variant-subtle.ccui-button--size-xs {
+  min-height: 1.875rem;
+  padding-inline: var(--ccui-space-3);
+  border-color: color-mix(in srgb, var(--ccui-color-brown-700) 20%, transparent);
+  border-radius: var(--ccui-radius-pill);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-900);
+  font-size: var(--ccui-font-size-xs);
+  font-weight: var(--ccui-font-weight-bold);
+  box-shadow: none;
+}
+
+.ccui-button--variant-subtle.ccui-button--size-xs:hover {
+  border-color: color-mix(in srgb, var(--ccui-color-brown-700) 34%, transparent);
+  background: color-mix(in srgb, var(--ccui-color-surface-subtle) 72%, var(--ccui-color-accent-gold));
+  color: var(--ccui-color-brown-900);
+  box-shadow: var(--ccui-shadow-hairline);
+}
+
+.ccui-button--size-icon {
+  inline-size: 1.875rem;
+  block-size: 1.875rem;
+  min-inline-size: 1.875rem;
+  min-block-size: 1.875rem;
+  padding: 0;
+  border-radius: var(--ccui-radius-sm);
+}
+
+.ccui-button--size-icon .ccui-button__label {
+  display: inline-grid;
+  place-items: center;
+}
+
+.ccui-button--size-icon svg {
+  inline-size: 1rem;
+  block-size: 1rem;
+  flex: none;
+  pointer-events: none;
+}
+
+.ccui-button--variant-ghost.ccui-button--size-icon {
+  background: transparent;
+}
+
+.ccui-button--variant-ghost.ccui-button--size-icon:hover {
+  background: color-mix(in srgb, var(--ccui-color-surface-subtle) 82%, transparent);
+}
