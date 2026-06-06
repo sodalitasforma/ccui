@@ -87,6 +87,7 @@ const pageSections: Record<
     label: "",
     items: [
       { type: "link", label: "Overview", href: "/icons#overview" },
+      { type: "link", label: "Live icons", href: "/icons#live-icons" },
       { type: "link", label: "Icon package plan", href: "/icons#package-plan" },
       { type: "link", label: "Icon categories", href: "/icons#categories" },
       { type: "link", label: "SVG rules", href: "/icons#svg-rules" },

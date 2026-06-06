@@ -1682,3 +1682,20 @@ a {
 .docs-plain-list li + li {
   margin-block-start: var(--ccui-space-2);
 }
+
+.docs-icon-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-icon-preview {
+  display: grid;
+  place-items: center;
+  width: 3.5rem;
+  height: 3.5rem;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-brown-900);
+}

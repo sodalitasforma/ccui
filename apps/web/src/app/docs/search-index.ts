@@ -233,6 +233,12 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Planned Catholic Commons SVG icon package.",
   },
   {
+    title: "Live foundation icons",
+    category: "Icons",
+    href: "/icons#live-icons",
+    description: "Starter interface and Catholic SVG icons available in the icons package.",
+  },
+  {
     title: "Icon package plan",
     category: "Icons",
     href: "/icons#package-plan",

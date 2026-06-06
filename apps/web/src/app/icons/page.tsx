@@ -10,6 +10,32 @@ import {
   Text,
 } from "../../../../../packages/primitives/src";
 
+import {
+  ArrowRightIcon,
+  ChaliceIcon,
+  CheckIcon,
+  ChurchIcon,
+  CloseIcon,
+  CopyIcon,
+  CrossIcon,
+  MenuIcon,
+  RosaryIcon,
+  SearchIcon,
+} from "@catholiccommons/icons";
+
+const liveIcons = [
+  { name: "ArrowRightIcon", category: "Interface", Icon: ArrowRightIcon },
+  { name: "CheckIcon", category: "Interface", Icon: CheckIcon },
+  { name: "CloseIcon", category: "Interface", Icon: CloseIcon },
+  { name: "CopyIcon", category: "Interface", Icon: CopyIcon },
+  { name: "MenuIcon", category: "Interface", Icon: MenuIcon },
+  { name: "SearchIcon", category: "Interface", Icon: SearchIcon },
+  { name: "ChaliceIcon", category: "Catholic", Icon: ChaliceIcon },
+  { name: "ChurchIcon", category: "Catholic", Icon: ChurchIcon },
+  { name: "CrossIcon", category: "Catholic", Icon: CrossIcon },
+  { name: "RosaryIcon", category: "Catholic", Icon: RosaryIcon },
+] as const;
+
 const iconCategories = [
   {
     title: "Interface",
@@ -53,8 +79,8 @@ export default function IconsPage() {
             <Stack gap="lg">
               <Stack gap="md">
                 <Cluster gap="sm">
-                  <Badge variant="neutral" size="xs">Coming soon</Badge>
-                  <Badge variant="gold" size="xs">Package planned</Badge>
+                  <Badge variant="success" size="xs">Foundation live</Badge>
+                  <Badge variant="neutral" size="xs">Expanded library coming soon</Badge>
                 </Cluster>
 
                 <Heading level={1} size="3xl">
@@ -62,15 +88,15 @@ export default function IconsPage() {
                 </Heading>
 
                 <Text tone="secondary" size="lg">
-                  A future Catholic Commons icon package for interface controls, Catholic symbols,
-                  liturgy, documents, parish websites, and Catholic data infrastructure.
+                  Catholic Commons Icons is a new SVG React icon package for interface controls,
+                  Catholic symbols, liturgy, documents, parish websites, and Catholic data infrastructure.
                 </Text>
               </Stack>
 
               <Card padding="lg" border="subtle" surface="raised">
                 <Stack gap="sm">
                   <Heading level={2} size="md">
-                    Goal
+                    Package goal
                   </Heading>
                   <Text tone="secondary">
                     Build a few hundred consistent SVG icons that can be imported as React
@@ -82,6 +108,41 @@ export default function IconsPage() {
             </Stack>
           </Section>
 
+          <Section id="live-icons" surface="page" spacing="lg">
+            <Stack gap="md">
+              <Heading level={2} size="xl">
+                Live foundation icons
+              </Heading>
+
+              <Text tone="secondary">
+                The first icon package foundation is live. These icons already use the shared
+                24×24 SVG API and can be imported from the package.
+              </Text>
+
+              <div className="docs-icon-preview-grid">
+                {liveIcons.map(({ name, category, Icon }) => (
+                  <Card key={name} padding="md" border="subtle" surface="raised">
+                    <Stack gap="sm">
+                      <div className="docs-icon-preview">
+                        <Icon size="lg" title={name} />
+                      </div>
+                      <Stack gap="xs">
+                        <Heading level={3} size="sm">
+                          {name}
+                        </Heading>
+                        <Text tone="muted" size="xs">
+                          {category}
+                        </Text>
+                      </Stack>
+                    </Stack>
+                  </Card>
+                ))}
+              </div>
+
+              <pre className="docs-code-block"><code>{`import { CrossIcon, ChaliceIcon, SearchIcon } from "@catholiccommons/icons";`}</code></pre>
+            </Stack>
+          </Section>
+
           <Section id="package-plan" surface="page" spacing="lg">
             <Stack gap="md">
               <Heading level={2} size="xl">
@@ -89,7 +150,7 @@ export default function IconsPage() {
               </Heading>
 
               <Text tone="secondary">
-                Icons should live in a dedicated package so users can install them independently
+                Icons live in a dedicated package so users can install them independently
                 and import only the symbols they need.
               </Text>
 
