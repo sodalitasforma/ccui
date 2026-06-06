@@ -54,3 +54,10 @@
     width: 100%;
   }
 }
+
+
+/* Dark theme filter bar corrections */
+[data-theme="dark"] .ccui-filter-bar {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 5%, var(--ccui-color-surface-raised));
+}
