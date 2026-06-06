@@ -10,31 +10,9 @@ import {
   Text,
 } from "../../../../../packages/primitives/src";
 
-import {
-  ArrowRightIcon,
-  ChaliceIcon,
-  CheckIcon,
-  ChurchIcon,
-  CloseIcon,
-  CopyIcon,
-  CrossIcon,
-  MenuIcon,
-  RosaryIcon,
-  SearchIcon,
-} from "@catholiccommons/icons";
+import { iconRegistry } from "@catholiccommons/icons";
 
-const liveIcons = [
-  { name: "ArrowRightIcon", category: "Interface", Icon: ArrowRightIcon },
-  { name: "CheckIcon", category: "Interface", Icon: CheckIcon },
-  { name: "CloseIcon", category: "Interface", Icon: CloseIcon },
-  { name: "CopyIcon", category: "Interface", Icon: CopyIcon },
-  { name: "MenuIcon", category: "Interface", Icon: MenuIcon },
-  { name: "SearchIcon", category: "Interface", Icon: SearchIcon },
-  { name: "ChaliceIcon", category: "Catholic", Icon: ChaliceIcon },
-  { name: "ChurchIcon", category: "Catholic", Icon: ChurchIcon },
-  { name: "CrossIcon", category: "Catholic", Icon: CrossIcon },
-  { name: "RosaryIcon", category: "Catholic", Icon: RosaryIcon },
-] as const;
+const liveIcons = iconRegistry;
 
 const iconCategories = [
   {
