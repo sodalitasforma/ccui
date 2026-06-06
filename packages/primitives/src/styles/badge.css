@@ -117,3 +117,41 @@
   color: var(--ccui-color-brown-800, var(--ccui-color-link-primary));
   border-color: var(--ccui-liturgical-gold);
 }
+
+
+/* Dark theme badge corrections */
+[data-theme="dark"] .ccui-badge--neutral {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 6%, transparent);
+  color: var(--ccui-color-paper-100);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 28%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--gold {
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 16%, transparent);
+  color: var(--ccui-color-gold-200, var(--ccui-color-gold-300));
+  border-color: color-mix(in srgb, var(--ccui-color-gold-300) 58%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--success {
+  background: color-mix(in srgb, var(--ccui-color-success) 14%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-success) 68%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-color-success) 70%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--warning {
+  background: color-mix(in srgb, var(--ccui-color-warning) 14%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-warning) 68%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-color-warning) 70%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--danger {
+  background: color-mix(in srgb, var(--ccui-color-danger) 14%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-danger) 60%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-color-danger) 70%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--info {
+  background: color-mix(in srgb, var(--ccui-color-info) 14%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-info) 56%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-color-info) 70%, transparent);
+}

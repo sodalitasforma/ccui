@@ -330,3 +330,44 @@
 .ccui-button--size-icon svg {
   --ccui-icon-stroke-width: 3;
 }
+
+
+/* Dark theme button variant corrections */
+[data-theme="dark"] .ccui-button--variant-primary {
+  border-color: var(--ccui-color-control-border-hover);
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 18%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-paper-50);
+}
+
+[data-theme="dark"] .ccui-button--variant-primary:hover {
+  border-color: var(--ccui-color-gold-300);
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 26%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-paper-50);
+}
+
+[data-theme="dark"] .ccui-button--variant-subtle {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, transparent);
+  color: var(--ccui-color-paper-100);
+}
+
+[data-theme="dark"] .ccui-button--variant-subtle:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 12%, transparent);
+  color: var(--ccui-color-paper-50);
+}
+
+.ccui-button:disabled,
+.ccui-button[aria-disabled="true"] {
+  border-color: color-mix(in srgb, var(--ccui-color-disabled-text) 24%, transparent);
+  background: var(--ccui-color-disabled-bg);
+  color: var(--ccui-color-disabled-text);
+  box-shadow: none;
+}
+
+.ccui-button:disabled:hover,
+.ccui-button[aria-disabled="true"]:hover {
+  border-color: color-mix(in srgb, var(--ccui-color-disabled-text) 24%, transparent);
+  background: var(--ccui-color-disabled-bg);
+  color: var(--ccui-color-disabled-text);
+}
