@@ -10,9 +10,14 @@ import {
   Heading,
   Panel,
   Section,
+  SearchInput,
+  Select,
   Stack,
   Table,
   TableWrapper,
+  Tabs,
+  TabList,
+  Tab,
   TBody,
   TD,
   TH,
@@ -237,6 +242,97 @@ in a way that calls for a more determinate token.
                   View typography
                 </Button>
               </Cluster>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="state-tokens" surface="page" spacing="lg">
+          <Container size="lg">
+            <Stack gap="lg">
+              <Stack gap="sm">
+                <Heading level={2} size="xl">
+                  State tokens
+                </Heading>
+                <Text tone="secondary">
+                  These controls prove the interaction grammar: default, selected,
+                  disabled, focusable, and dark-surface states all resolve through
+                  semantic state tokens instead of one-off colors.
+                </Text>
+              </Stack>
+
+              <div className="docs-state-specimen-grid">
+                <Card padding="md" border="subtle" surface="raised">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Buttons
+                    </Heading>
+                    <Cluster gap="sm">
+                      <Button variant="secondary">Default</Button>
+                      <Button variant="secondary" aria-pressed="true">Selected</Button>
+                      <Button variant="secondary" disabled>Disabled</Button>
+                    </Cluster>
+                    <Text size="xs" tone="muted">
+                      Uses control, selected, focus, and disabled tokens.
+                    </Text>
+                  </Stack>
+                </Card>
+
+                <Card padding="md" border="subtle" surface="raised">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Forms
+                    </Heading>
+                    <Stack gap="sm">
+                      <SearchInput placeholder="Search records" />
+                      <SearchInput placeholder="Disabled search" disabled />
+                      <Select aria-label="Example select" defaultValue="one">
+                        <option value="one">Default select</option>
+                        <option value="two">Second option</option>
+                      </Select>
+                    </Stack>
+                    <Text size="xs" tone="muted">
+                      Uses control background, border, hover, focus, and disabled tokens.
+                    </Text>
+                  </Stack>
+                </Card>
+
+                <Card padding="md" border="subtle" surface="raised">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Tabs
+                    </Heading>
+                    <Tabs>
+                      <TabList aria-label="State token tabs">
+                        <Tab aria-current="page">Active</Tab>
+                        <Tab>Resting</Tab>
+                        <Tab>Another</Tab>
+                      </TabList>
+                    </Tabs>
+                    <Text size="xs" tone="muted">
+                      Uses nav active text, border, and surface tokens.
+                    </Text>
+                  </Stack>
+                </Card>
+
+                <Card padding="md" border="subtle" surface="dark">
+                  <Stack gap="sm">
+                    <Heading level={3} size="sm">
+                      Dark surface
+                    </Heading>
+                    <Cluster gap="sm">
+                      <Button variant="ghost" size="icon" aria-label="Default on dark">
+                        <span aria-hidden="true">⌕</span>
+                      </Button>
+                      <Button variant="ghost" size="icon" aria-label="Selected on dark" aria-pressed="true">
+                        <span aria-hidden="true">✓</span>
+                      </Button>
+                    </Cluster>
+                    <Text size="xs" tone="inverse">
+                      Confirms inverse icon/control contrast on dark surfaces.
+                    </Text>
+                  </Stack>
+                </Card>
+              </div>
             </Stack>
           </Container>
         </Section>

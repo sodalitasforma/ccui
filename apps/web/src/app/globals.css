@@ -1796,3 +1796,13 @@ a {
   background: var(--ccui-color-nav-active-bg);
   color: var(--ccui-color-nav-active-text);
 }
+
+.docs-state-specimen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-state-specimen-grid .ccui-card {
+  min-height: 13rem;
+}
