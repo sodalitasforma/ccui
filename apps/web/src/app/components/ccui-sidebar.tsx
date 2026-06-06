@@ -42,19 +42,37 @@ const pageSections: Record<
   }
 > = {
   docs: {
-    label: "",
-    items: [
-      { type: "link", label: "Installation", href: "/docs#overview" },
-      { type: "link", label: "Introduction", href: "/docs#overview" },
-      { type: "link", label: "Use the CLI", href: "/docs#use-the-cli" },
-      { type: "link", label: "Add components", href: "/docs#add-components" },
-      { type: "link", label: "components.json", href: "/docs#components-json" },
-      { type: "link", label: "Existing Project", href: "/docs#existing-project" },
-      { type: "link", label: "Package imports", href: "/docs#use-packages" },
-      { type: "link", label: "Frameworks", href: "/docs#frameworks" },
-    ],
-  },
-  components: {
+      label: "",
+      items: [
+        { type: "heading", label: "Sections" },
+        { type: "link", label: "Introduction", href: "/docs#overview" },
+        { type: "link", label: "Components", href: "/components-gallery#introduction" },
+        { type: "link", label: "Installation", href: "/docs#overview" },
+        { type: "link", label: "CLI", href: "/docs#use-the-cli" },
+        { type: "link", label: "Registry", href: "/docs#components-json" },
+
+        { type: "heading", label: "Components" },
+        { type: "link", label: "Button", href: "/components-gallery#primitive-actions" },
+        { type: "link", label: "Card", href: "/components-gallery#primitive-surfaces" },
+        { type: "link", label: "Badge", href: "/components-gallery#primitive-actions" },
+        { type: "link", label: "Mass Schedule Block", href: "/components-gallery#liturgy" },
+        { type: "link", label: "Confession Schedule Block", href: "/components-gallery#liturgy" },
+        { type: "link", label: "Adoration Schedule Block", href: "/components-gallery#liturgy" },
+        { type: "link", label: "Holy Day Schedule Block", href: "/components-gallery#liturgy" },
+        { type: "link", label: "Liturgical Day Card", href: "/components-gallery#liturgy" },
+        { type: "link", label: "Church Document Card", href: "/components-gallery#documents-authority" },
+        { type: "link", label: "Document Citation", href: "/components-gallery#documents-authority" },
+
+        { type: "heading", label: "Get Started" },
+        { type: "link", label: "Installation", href: "/docs#overview" },
+        { type: "link", label: "components.json", href: "/docs#components-json" },
+        { type: "link", label: "Package Imports", href: "/docs#package-imports" },
+        { type: "link", label: "Theming", href: "/components-gallery#colors" },
+        { type: "link", label: "CLI", href: "/docs#use-the-cli" },
+        { type: "link", label: "Frameworks", href: "/docs#frameworks" },
+      ],
+    },
+    components: {
     label: "",
     items: [
       { type: "link", label: "Overview", href: "/components-gallery#introduction" },
@@ -205,7 +223,7 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 ) : null}
 
                 <nav className="docs-nav docs-nav--sections" aria-label={section.label || "Page sections"}>
-                  {section.items.map((item) => {
+                  {section.items.map((item, index) => {
                     if (item.type === "heading") {
                       return (
                         <span key={`heading-${item.label}`} className="docs-nav-group-heading">
@@ -233,7 +251,7 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
 
                     return (
                       <a
-                        key={`${item.href}-${item.label}`}
+                        key={`${item.href}-${item.label}-${index}`}
                         href={item.href}
                         aria-current={isActive ? "location" : undefined}
                         className={isDocsPageTitle ? "docs-nav-page-title" : undefined}

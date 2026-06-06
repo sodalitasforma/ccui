@@ -26,7 +26,7 @@ const setupOptions = [
   {
     title: "Use packages",
     description: "Install the package layers directly for manual setup.",
-    href: "/docs#use-packages",
+    href: "/docs#package-imports",
     badge: null,
   },
 ] as const;
