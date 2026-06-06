@@ -16,7 +16,7 @@ import {
 } from "../../../../../packages/primitives/src";
 
 type CCUISidebarProps = {
-  current?: "docs" | "components" | "templates" | "typography" | "colors";
+  current?: "docs" | "components" | "icons" | "templates" | "typography" | "colors";
 };
 
 type SidebarItem =
@@ -81,6 +81,16 @@ const pageSections: Record<
       { type: "link", label: "Documents & authority", href: "/components-gallery#documents-authority" },
       { type: "link", label: "Directories", href: "/components-gallery#directories" },
       { type: "link", label: "Catholic data infrastructure", href: "/components-gallery#catholic-data-infrastructure" },
+    ],
+  },
+  icons: {
+    label: "",
+    items: [
+      { type: "link", label: "Overview", href: "/icons#overview" },
+      { type: "link", label: "Icon package plan", href: "/icons#package-plan" },
+      { type: "link", label: "Icon categories", href: "/icons#categories" },
+      { type: "link", label: "SVG rules", href: "/icons#svg-rules" },
+      { type: "link", label: "Build phases", href: "/icons#build-phases" },
     ],
   },
   templates: {
@@ -203,10 +213,14 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 <span>Components</span>
                 <Badge variant="gold" size="xs">{systemStats.components}</Badge>
               </a>
-              <span className="docs-nav-disabled docs-nav-disabled--with-badge">
+              <a
+                aria-current={current === "icons" ? "page" : undefined}
+                href="/icons"
+                className="docs-nav-link-with-badge"
+              >
                 <span>Icons</span>
                 <Badge variant="neutral" size="xs">Coming soon</Badge>
-              </span>
+              </a>
               <a
                 aria-current={current === "colors" ? "page" : undefined}
                 href="/colors"

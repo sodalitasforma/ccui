@@ -227,6 +227,25 @@ export const docsSearchItems: DocsSearchItem[] = [
   },
 
   {
+    title: "Icons",
+    category: "Icons",
+    href: "/icons#overview",
+    description: "Planned Catholic Commons SVG icon package.",
+  },
+  {
+    title: "Icon package plan",
+    category: "Icons",
+    href: "/icons#package-plan",
+    description: "Package structure for the future icon library.",
+  },
+  {
+    title: "Icon categories",
+    category: "Icons",
+    href: "/icons#categories",
+    description: "Interface, Catholic, liturgy, documents, and parish icon groups.",
+  },
+
+  {
     title: "Templates",
     category: "Templates",
     href: "/templates#overview",

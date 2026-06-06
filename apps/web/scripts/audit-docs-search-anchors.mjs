@@ -1,22 +1,24 @@
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 
-const routeFiles = {
-  "/": "apps/web/src/app/page.tsx",
-  "/docs": "apps/web/src/app/docs/page.tsx",
-  "/components-gallery": "apps/web/src/app/components-gallery/page.tsx",
-  "/colors": "apps/web/src/app/colors/page.tsx",
-  "/typography": "apps/web/src/app/typography/page.tsx",
-  "/templates": "apps/web/src/app/templates/page.tsx",
-};
+const routes = [
+  ["/docs", "apps/web/src/app/docs/page.tsx"],
+  ["/components-gallery", "apps/web/src/app/components-gallery/page.tsx"],
+  ["/colors", "apps/web/src/app/colors/page.tsx"],
+  ["/typography", "apps/web/src/app/typography/page.tsx"],
+  ["/templates", "apps/web/src/app/templates/page.tsx"],
+  ["/icons", "apps/web/src/app/icons/page.tsx"],
+];
 
 const validTargets = new Set();
 
-for (const [route, filePath] of Object.entries(routeFiles)) {
+for (const [route, filePath] of routes) {
+  if (!existsSync(filePath)) {
+    throw new Error(`Missing route file for ${route}: ${filePath}`);
+  }
+
   const text = readFileSync(filePath, "utf8");
 
-  if (route === "/") {
-    validTargets.add("/");
-  }
+  validTargets.add(route);
 
   for (const match of text.matchAll(/<Section\s+id="([^"]+)"/g)) {
     validTargets.add(`${route}#${match[1]}`);
@@ -30,7 +32,6 @@ const hrefs = Array.from(searchIndex.matchAll(/href:\s*"([^"]+)"/g)).map(
 
 const missing = hrefs.filter((href) => {
   if (!href.startsWith("/")) return false;
-  if (!href.includes("#")) return !validTargets.has(href);
   return !validTargets.has(href);
 });
 

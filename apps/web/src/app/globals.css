@@ -1664,3 +1664,21 @@ a {
     flex: 1 1 20rem;
   }
 }
+
+.docs-icon-category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: var(--ccui-space-4);
+}
+
+.docs-plain-list {
+  margin: 0;
+  padding-left: var(--ccui-space-6);
+  color: var(--ccui-color-text-secondary);
+  font-family: var(--ccui-font-interface);
+  line-height: var(--ccui-line-height-relaxed);
+}
+
+.docs-plain-list li + li {
+  margin-block-start: var(--ccui-space-2);
+}
