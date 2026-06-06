@@ -27,6 +27,13 @@ function importLine(exportName: string) {
 export function IconsGallery() {
   const [query, setQuery] = useState("");
   const [category, setCategory] = useState(allCategory);
+  const [copiedExportName, setCopiedExportName] = useState<string | null>(null);
+
+  function copyImport(exportName: string) {
+    navigator.clipboard.writeText(importLine(exportName));
+    setCopiedExportName(exportName);
+    window.setTimeout(() => setCopiedExportName(null), 1400);
+  }
 
   const filteredIcons = useMemo(() => {
     const normalizedQuery = normalize(query);
@@ -136,9 +143,9 @@ export function IconsGallery() {
                   size="xs"
                   variant="subtle"
                   type="button"
-                  onClick={() => navigator.clipboard.writeText(importLine(exportName))}
+                  onClick={() => copyImport(exportName)}
                 >
-                  Copy
+                  {copiedExportName === exportName ? "Copied" : "Copy"}
                 </Button>
               </div>
             </Stack>
