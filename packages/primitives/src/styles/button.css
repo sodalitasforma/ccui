@@ -300,3 +300,32 @@
   background: var(--ccui-color-control-selected-bg-hover);
   color: var(--ccui-color-control-selected-text);
 }
+
+.ccui-card--surface-dark .ccui-button--size-icon,
+.ccui-panel--surface-dark .ccui-button--size-icon,
+.ccui-section--surface-dark .ccui-button--size-icon {
+  color: var(--ccui-color-icon-inverse);
+}
+
+.ccui-card--surface-dark .ccui-button--size-icon:hover,
+.ccui-panel--surface-dark .ccui-button--size-icon:hover,
+.ccui-section--surface-dark .ccui-button--size-icon:hover {
+  border-color: color-mix(in srgb, var(--ccui-color-icon-inverse) 34%, transparent);
+  background: color-mix(in srgb, var(--ccui-color-icon-inverse) 10%, transparent);
+  color: var(--ccui-color-icon-inverse);
+}
+
+.ccui-card--surface-dark .ccui-button--size-icon[aria-pressed="true"],
+.ccui-panel--surface-dark .ccui-button--size-icon[aria-pressed="true"],
+.ccui-section--surface-dark .ccui-button--size-icon[aria-pressed="true"],
+.ccui-card--surface-dark .ccui-button--size-icon[data-state="on"],
+.ccui-panel--surface-dark .ccui-button--size-icon[data-state="on"],
+.ccui-section--surface-dark .ccui-button--size-icon[data-state="on"] {
+  border-color: var(--ccui-color-control-selected-border);
+  background: var(--ccui-color-control-selected-bg);
+  color: var(--ccui-color-control-selected-text);
+}
+
+.ccui-button--size-icon svg {
+  --ccui-icon-stroke-width: 3;
+}

@@ -32,7 +32,7 @@ export function IconSvg({
       height={resolvedSize}
       fill="none"
       stroke="currentColor"
-      strokeWidth="2"
+      strokeWidth="var(--ccui-icon-stroke-width, 2.5)"
       strokeLinecap="round"
       strokeLinejoin="round"
       {...props}
