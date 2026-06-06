@@ -37,6 +37,46 @@
   background: var(--ccui-color-surface-raised);
 }
 
+
+/* Church document language links */
+.ccui-church-document-card__language-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ccui-space-2);
+}
+
+.ccui-church-document-card__language-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccui-space-2);
+  width: fit-content;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-sm);
+  padding: var(--ccui-space-2) var(--ccui-space-3);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-control-text);
+  font-family: var(--ccui-font-interface);
+  font-size: var(--ccui-font-size-sm);
+  font-weight: var(--ccui-font-weight-bold);
+  text-decoration: none;
+}
+
+.ccui-church-document-card__language-link:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  color: var(--ccui-color-control-text-hover);
+  text-decoration: none;
+}
+
+.ccui-church-document-card__language-link > span + span {
+  border-left: 1px solid var(--ccui-color-border-subtle);
+  padding-left: var(--ccui-space-2);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-link > span + span {
+  border-left-color: var(--ccui-color-control-border);
+}
+
 .ccui-church-document-header__description {
   max-width: 52rem;
 }
@@ -151,32 +191,6 @@
 
 
 /* Dark theme church document corrections */
-[data-theme="dark"] .ccui-church-document-card__metadata dt {
-  color: var(--ccui-color-icon-muted);
-}
-
-[data-theme="dark"] .ccui-church-document-card__metadata dd {
-  color: var(--ccui-color-text-primary);
-}
-
-[data-theme="dark"] .ccui-church-document-card__language-pairs {
-  gap: var(--ccui-space-2);
-}
-
-[data-theme="dark"] .ccui-church-document-card__language-link {
-  border-color: var(--ccui-color-control-border);
-  background: var(--ccui-color-control-bg);
-  color: var(--ccui-color-control-text);
-}
-
-[data-theme="dark"] .ccui-church-document-card__language-link:hover {
-  border-color: var(--ccui-color-control-border-hover);
-  background: var(--ccui-color-control-bg-hover);
-  color: var(--ccui-color-control-text-hover);
-}
-
-
-/* Dark theme document metadata corrections */
 [data-theme="dark"] .ccui-church-document-card {
   border-color: var(--ccui-color-control-border);
   background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, var(--ccui-color-surface-raised));
@@ -200,5 +214,26 @@
 }
 
 [data-theme="dark"] .ccui-church-document-card__action:hover {
+  color: var(--ccui-color-control-text-hover);
+}
+
+
+[data-theme="dark"] .ccui-church-document-card__metadata dt {
+  color: var(--ccui-color-icon-muted);
+}
+
+[data-theme="dark"] .ccui-church-document-card__metadata dd {
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-link {
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-control-text);
+}
+
+[data-theme="dark"] .ccui-church-document-card__language-link:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
   color: var(--ccui-color-control-text-hover);
 }
