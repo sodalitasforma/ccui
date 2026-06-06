@@ -147,6 +147,12 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Raw palette, semantic interface colors, liturgical colors, and CDCF colors.",
   },
   {
+    title: "Primitive theme specimens",
+    category: "Colors",
+    href: "/colors#primitive-theme-specimens",
+    description: "Light and dark specimens for panels, notices, dropdowns, filter bars, doc search, links, and tables.",
+  },
+  {
     title: "Theme specimens",
     category: "Colors",
     href: "/colors#theme-specimens",

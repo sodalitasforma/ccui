@@ -10,14 +10,9 @@ import {
   Heading,
   Panel,
   Section,
-  SearchInput,
-  Select,
   Stack,
   Table,
   TableWrapper,
-  Tabs,
-  TabList,
-  Tab,
   TBody,
   TD,
   TH,
@@ -25,6 +20,17 @@ import {
   TR,
   Text,
   ArrowRightIcon,
+  SearchInput,
+  Select,
+  Tabs,
+  TabList,
+  Tab,
+  Link,
+  Notice,
+  FilterBar,
+  Dropdown,
+  DropdownItem,
+  DocSearch,
 } from "../../../../../packages/primitives/src";
 
 import colors from "../../../../../packages/tokens/src/colors.json";
@@ -423,6 +429,157 @@ in a way that calls for a more determinate token.
                         <Text tone="secondary">
                           Secondary text should remain legible against the active theme surface.
                         </Text>
+                      </Stack>
+                    </Stack>
+                  </Card>
+                ))}
+              </div>
+            </Stack>
+          </Container>
+        </Section>
+
+        <Section id="primitive-theme-specimens" surface="page" spacing="md">
+          <Container size="lg">
+            <Stack gap="md">
+              <Stack gap="sm">
+                <Heading level={2} size="xl">
+                  Primitive theme specimens
+                </Heading>
+                <Text tone="secondary">
+                  These specimens extend the theme test bench to more primitives: panels,
+                  notices, dropdowns, filter bars, doc search, links, and tables.
+                </Text>
+              </Stack>
+
+              <div className="docs-theme-specimen-pair">
+                {["light", "dark"].map((theme) => (
+                  <Card
+                    key={theme}
+                    padding="lg"
+                    border="subtle"
+                    surface="raised"
+                    data-theme={theme}
+                    className="docs-theme-specimen"
+                  >
+                    <Stack gap="lg">
+                      <Cluster gap="sm" justify="between" align="center">
+                        <Heading level={3} size="md">
+                          {theme === "light" ? "Light primitives" : "Dark primitives"}
+                        </Heading>
+                        <Badge variant={theme === "light" ? "neutral" : "gold"} size="xs">
+                          data-theme={theme}
+                        </Badge>
+                      </Cluster>
+
+                      <Panel padding="md" surface="parchment" tone="gold">
+                        <Stack gap="sm">
+                          <Heading level={4} size="sm">
+                            Panel and links
+                          </Heading>
+                          <Text tone="secondary" size="sm">
+                            Panels should remain legible while preserving their surface tone.
+                          </Text>
+                          <Cluster gap="sm">
+                            <Link href="/colors#semantic-colors">Semantic colors</Link>
+                            <Link href="/icons#live-icons">Icon gallery</Link>
+                          </Cluster>
+                        </Stack>
+                      </Panel>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Notices
+                        </Text>
+                        <Stack gap="sm">
+                          <Notice variant="official">
+                            <Text size="sm" tone="secondary">
+                              Official notice specimen using the current theme.
+                            </Text>
+                          </Notice>
+                          <Notice variant="success">
+                            <Text size="sm" tone="secondary">
+                              Success notice specimen using the current theme.
+                            </Text>
+                          </Notice>
+                        </Stack>
+                      </Stack>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Dropdown and filter bar
+                        </Text>
+                        <FilterBar density="compact" align="between">
+                          <SearchInput placeholder="Filter records" />
+                          <Select aria-label={`${theme} filter select`} defaultValue="all">
+                            <option value="all">All records</option>
+                            <option value="active">Active only</option>
+                          </Select>
+                          <Dropdown label="Actions" align="start">
+                            <DropdownItem href="/colors#theme-specimens">
+                              Theme specimens
+                            </DropdownItem>
+                            <DropdownItem href="/icons#live-icons">
+                              Icons
+                            </DropdownItem>
+                          </Dropdown>
+                        </FilterBar>
+                      </Stack>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Doc search
+                        </Text>
+                        <DocSearch
+                          id={`${theme}-primitive-doc-search`}
+                          label="Search docs..."
+                          shortcut="⌘ K"
+                          items={[
+                            {
+                              title: "Colors",
+                              category: "Foundation",
+                              href: "/colors#overview",
+                              description: "Color tokens and theme specimens.",
+                            },
+                            {
+                              title: "Icons",
+                              category: "Foundation",
+                              href: "/icons#live-icons",
+                              description: "Searchable Catholic Commons icon gallery.",
+                            },
+                            {
+                              title: "Templates",
+                              category: "Docs",
+                              href: "/templates#overview",
+                              description: "Reusable page structures.",
+                            },
+                          ]}
+                        />
+                      </Stack>
+
+                      <Stack gap="sm">
+                        <Text size="xs" tone="muted" weight="semibold">
+                          Table
+                        </Text>
+                        <TableWrapper>
+                          <Table>
+                            <THead>
+                              <TR>
+                                <TH>Primitive</TH>
+                                <TH>Status</TH>
+                              </TR>
+                            </THead>
+                            <TBody>
+                              <TR>
+                                <TD>Button</TD>
+                                <TD>Theme-aware</TD>
+                              </TR>
+                              <TR>
+                                <TD>Badge</TD>
+                                <TD>Theme-aware</TD>
+                              </TR>
+                            </TBody>
+                          </Table>
+                        </TableWrapper>
                       </Stack>
                     </Stack>
                   </Card>
