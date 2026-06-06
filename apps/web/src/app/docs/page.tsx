@@ -1,4 +1,5 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsPageActions } from "../components/docs-page-actions";
 import { DocsCodeBlock } from "../components/docs-code-block";
 import {
   Badge,
@@ -32,14 +33,10 @@ const setupOptions = [
   },
 ] as const;
 
-const frameworks = [
-  { name: "Next.js", href: "/docs#next-js" },
-  { name: "Vite", href: "/docs#vite" },
-  { name: "Astro", href: "/docs#astro" },
-  { name: "React Router", href: "/docs#react-router" },
-  { name: "TanStack Start", href: "/docs#tanstack-start" },
-  { name: "React Manual", href: "/docs#react-manual" },
-] as const;
+
+
+const docsPageUrl = "https://catholiccommonsui.com/docs";
+
 
 export default function DocsPage() {
   return (
@@ -53,13 +50,11 @@ export default function DocsPage() {
               <Section id="overview" surface="page" spacing="lg">
                 <Stack gap="lg">
                   <Stack gap="sm">
-                    <Heading level={1} size="3xl" className="docs-install-title">
-                      Installation
-                    </Heading>
-
-                    <Cluster gap="sm" className="docs-install-prev-next">
-                      <Link href="/components-gallery">Previous</Link>
-                      <Link href="/docs#components-json">Next</Link>
+                    <Cluster gap="sm" align="center" justify="between" className="docs-page-titlebar">
+                      <Heading level={1} size="3xl" className="docs-install-title">
+                        Installation
+                      </Heading>
+                      <DocsPageActions url={docsPageUrl} />
                     </Cluster>
 
                     <Text tone="secondary" className="docs-install-lede">
@@ -115,6 +110,7 @@ export default function DocsPage() {
                     language="bash"
                     code={`pnpm dlx catholiccommons init
 pnpm dlx catholiccommons add mass-schedule-block`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -137,6 +133,7 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                   <DocsCodeBlock
                     language="bash"
                     code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}
+                    copyable
                   />
 
                   <DocsCodeBlock
@@ -144,30 +141,8 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
-                </Stack>
-              </Section>
-
-              <Section id="frameworks" surface="page" spacing="lg">
-                <Stack gap="md">
-                  <Stack gap="xs">
-                    <Heading level={2} size="xl" className="docs-install-section-title">
-                      Choose Your Framework
-                    </Heading>
-                    <Text tone="secondary">
-                      The components work the same everywhere. The only difference is where your framework
-                      wants global styles imported and where it stores route or page components.
-                    </Text>
-                  </Stack>
-
-                  <div className="docs-framework-list">
-                    {frameworks.map((framework) => (
-                      <Link key={framework.name} href={framework.href} className="docs-framework-item">
-                        <span>{framework.name}</span>
-                        <Badge variant="neutral" size="xs">Guide</Badge>
-                      </Link>
-                    ))}
-                  </div>
                 </Stack>
               </Section>
 
@@ -187,6 +162,7 @@ import "@catholiccommons/catholic/catholic.css";`}
                     language="bash"
                     code={`pnpm dlx catholiccommons init
 pnpm dlx catholiccommons add mass-schedule-block`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -199,6 +175,7 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -223,6 +200,7 @@ import "@catholiccommons/catholic/catholic.css";`}
                     language="bash"
                     code={`pnpm dlx catholiccommons init
 pnpm dlx catholiccommons add mass-schedule-block`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -235,6 +213,7 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -256,9 +235,13 @@ import "@catholiccommons/catholic/catholic.css";`}
                     </Text>
                   </Stack>
 
-                  <pre className="docs-install-code"><code>{`pnpm astro add react
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`pnpm astro add react
 pnpm dlx catholiccommons init
-pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
+pnpm dlx catholiccommons add mass-schedule-block`}
+                    copyable
+                  />
 
                   <Text tone="secondary">
                     Astro needs React enabled before React components can be used. Import Catholic Commons
@@ -270,6 +253,7 @@ pnpm dlx catholiccommons add mass-schedule-block`}</code></pre>
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -294,6 +278,7 @@ import "@catholiccommons/catholic/catholic.css";`}
                     language="bash"
                     code={`pnpm dlx catholiccommons init
 pnpm dlx catholiccommons add mass-schedule-block`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -305,6 +290,7 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -330,6 +316,7 @@ import "@catholiccommons/catholic/catholic.css";`}
                     language="bash"
                     code={`pnpm dlx catholiccommons init
 pnpm dlx catholiccommons add mass-schedule-block`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -341,6 +328,7 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -363,6 +351,7 @@ import "@catholiccommons/catholic/catholic.css";`}
                   <DocsCodeBlock
                     language="bash"
                     code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}
+                    copyable
                   />
 
                   <Text tone="secondary">
@@ -374,14 +363,19 @@ import "@catholiccommons/catholic/catholic.css";`}
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
                   />
 
                   <Text tone="secondary">
                     Then import components directly from the published package layers.
                   </Text>
 
-                  <pre className="docs-install-code"><code>{`import { Button } from "@catholiccommons/primitives";
-import { MassScheduleBlock } from "@catholiccommons/catholic";`}</code></pre>
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import { Button } from "@catholiccommons/primitives";
+import { MassScheduleBlock } from "@catholiccommons/catholic";`}
+                    copyable
+                  />
                 </Stack>
               </Section>
             </article>
