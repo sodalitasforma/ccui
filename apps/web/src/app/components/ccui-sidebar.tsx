@@ -46,9 +46,11 @@ const pageSections: Record<
     items: [
       { type: "link", label: "Installation", href: "/docs#overview" },
       { type: "link", label: "Introduction", href: "/docs#overview" },
-      { type: "link", label: "Quick Start", href: "/docs#quick-start" },
       { type: "link", label: "Use the CLI", href: "/docs#use-the-cli" },
-      { type: "link", label: "Existing Projects", href: "/docs#existing-projects" },
+      { type: "link", label: "Add components", href: "/docs#add-components" },
+      { type: "link", label: "components.json", href: "/docs#components-json" },
+      { type: "link", label: "Existing Project", href: "/docs#existing-project" },
+      { type: "link", label: "Package imports", href: "/docs#use-packages" },
       { type: "link", label: "Frameworks", href: "/docs#frameworks" },
     ],
   },
