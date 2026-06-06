@@ -3,8 +3,8 @@
   width: 100%;
   border: 1px solid var(--ccui-color-border-strong);
   border-radius: var(--ccui-radius-sm);
-  background: var(--ccui-color-surface-raised);
-  color: var(--ccui-color-text-primary);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-control-text);
   font-family: var(--ccui-font-interface);
   line-height: 1;
   transition:
@@ -65,4 +65,29 @@
     0.35rem 0.35rem,
     0.35rem 0.35rem;
   background-repeat: no-repeat;
+}
+
+
+.ccui-search-input:hover,
+.ccui-select:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  color: var(--ccui-color-control-text-hover);
+}
+
+.ccui-search-input:disabled,
+.ccui-select:disabled,
+.ccui-search-input[aria-disabled="true"],
+.ccui-select[aria-disabled="true"] {
+  cursor: not-allowed;
+  background: var(--ccui-color-disabled-bg);
+  color: var(--ccui-color-disabled-text);
+  opacity: var(--ccui-opacity-disabled);
+}
+
+.ccui-search-input:focus-visible,
+.ccui-select:focus-visible {
+  border-color: var(--ccui-color-focus-ring);
+  outline: 2px solid var(--ccui-color-focus-ring);
+  outline-offset: 2px;
 }
