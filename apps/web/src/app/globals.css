@@ -2068,3 +2068,62 @@ body::before {
     max-width: 100vw;
   }
 }
+
+/* Docs page mobile fit polish */
+@media (max-width: 40rem) {
+  .docs-documentation-hero h1,
+  .docs-documentation-hero .ccui-heading {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    font-size: clamp(3rem, 16vw, 4.5rem);
+    line-height: 0.9;
+  }
+
+  .docs-documentation-hero .ccui-text {
+    max-width: 100%;
+  }
+
+  .docs-documentation-hero .ccui-cluster {
+    width: 100%;
+  }
+
+  .docs-documentation-hero .ccui-button {
+    flex: 1 1 auto;
+    min-width: min(100%, 10rem);
+  }
+
+  .docs-page-titlebar {
+    align-items: flex-start;
+  }
+
+  .docs-page-titlebar .ccui-dropdown-split {
+    max-width: 100%;
+  }
+
+  .docs-page-titlebar .ccui-dropdown-split__details .ccui-dropdown__menu {
+    left: 0;
+    right: auto;
+    width: min(calc(100vw - var(--ccui-space-8)), 18rem);
+    max-width: calc(100vw - var(--ccui-space-8));
+  }
+}
+
+@media (max-width: 24rem) {
+  .docs-documentation-hero h1,
+  .docs-documentation-hero .ccui-heading {
+    font-size: clamp(2.75rem, 15vw, 3.75rem);
+  }
+
+  .docs-documentation-hero .ccui-button {
+    width: 100%;
+  }
+
+  .docs-page-titlebar .ccui-dropdown-split {
+    width: 100%;
+  }
+
+  .docs-page-titlebar .ccui-dropdown-split__action {
+    flex: 1 1 auto;
+  }
+}
