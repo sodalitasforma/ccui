@@ -153,30 +153,6 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Raw palette, semantic interface colors, liturgical colors, and CDCF colors.",
   },
   {
-    title: "Catholic theme specimens",
-    category: "Colors",
-    href: "/colors#catholic-theme-specimens",
-    description: "Light and dark specimens for schedules, liturgical cards, announcements, documents, and donation callouts.",
-  },
-  {
-    title: "Primitive theme specimens",
-    category: "Colors",
-    href: "/colors#primitive-theme-specimens",
-    description: "Light and dark specimens for panels, notices, dropdowns, filter bars, doc search, links, and tables.",
-  },
-  {
-    title: "Theme specimens",
-    category: "Colors",
-    href: "/colors#theme-specimens",
-    description: "Light and dark theme specimens for buttons, forms, tabs, icons, badges, and text.",
-  },
-  {
-    title: "State tokens",
-    category: "Colors",
-    href: "/colors#state-tokens",
-    description: "Visual specimens for selected, disabled, focus, nav, form, and dark-surface states.",
-  },
-  {
     title: "Semantic colors",
     category: "Colors",
     href: "/colors#semantic-colors",

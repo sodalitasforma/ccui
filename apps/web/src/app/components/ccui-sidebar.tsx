@@ -63,10 +63,6 @@ const pageSections: Record<
     items: [
       { type: "link", label: "Overview", href: "/components-gallery#introduction" },
 
-      { type: "heading", label: "Foundations" },
-      { type: "link", label: "Colors", href: "/colors#overview" },
-      { type: "link", label: "Liturgical colors", href: "/colors#liturgical-colors" },
-
       { type: "heading", label: "General UI" },
       { type: "link", label: "Layout", href: "/components-gallery#primitive-layout" },
       { type: "link", label: "Typography", href: "/typography#overview" },
@@ -111,10 +107,6 @@ const pageSections: Record<
     label: "",
     items: [
       { type: "link", label: "Overview", href: "/colors#overview" },
-      { type: "link", label: "State tokens", href: "/colors#state-tokens" },
-      { type: "link", label: "Theme specimens", href: "/colors#theme-specimens" },
-      { type: "link", label: "Primitive specimens", href: "/colors#primitive-theme-specimens" },
-      { type: "link", label: "Catholic specimens", href: "/colors#catholic-theme-specimens" },
       { type: "link", label: "Semantic colors", href: "/colors#semantic-colors" },
       { type: "link", label: "Raw palette", href: "/colors#raw-palette" },
       { type: "link", label: "Liturgical colors", href: "/colors#liturgical-colors" },

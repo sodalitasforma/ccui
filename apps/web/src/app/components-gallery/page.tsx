@@ -428,25 +428,6 @@ export default function Home() {
           </Container>
         </Section>
 
-        <Section id="colors" surface="page" spacing="md">
-          <Container size="lg">
-            <Panel surface="raised" padding="lg">
-              <Stack gap="sm">
-                <Eyebrow>System foundation</Eyebrow>
-                <Heading level={2} size="2xl">
-                  Colors
-                </Heading>
-                <Text tone="secondary">
-                  Raw palette, semantic interface colors, liturgical colors, usage guidance, and token inventory now live on the dedicated colors page.
-                </Text>
-                <Cluster>
-                  <Button href="/colors">Open color system</Button>
-                </Cluster>
-              </Stack>
-            </Panel>
-          </Container>
-        </Section>
-
         <Section id="primitive-layout" surface="page" spacing="md">
           <Container size="lg">
             <Stack gap="xl" className="docs-component-list">
