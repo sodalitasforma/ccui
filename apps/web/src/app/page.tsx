@@ -46,7 +46,7 @@ export default function Home() {
               <Link href="/docs">Docs</Link>
             </nav>
 
-            <Link href="https://github.com" className="home-stars-link" aria-label="GitHub stars">
+            <Link href="https://github.com/sodalitasforma/forma" className="home-stars-link" aria-label="GitHub stars">
               0
             </Link>
 
@@ -75,7 +75,7 @@ export default function Home() {
               </Heading>
 
               <Text size="lg" tone="secondary" className="home-hero__lede">
-                Free, open-source components for those called to mend the nets of the Church.
+                A UI kit for Catholic projects and digital services, informed by ecclesiastical websites, official Church documents, liturgical data, parish workflows, and Catholic institutional design patterns.
               </Text>
             </Stack>
 
