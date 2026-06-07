@@ -2074,10 +2074,11 @@ body::before {
   .docs-documentation-hero h1,
   .docs-documentation-hero .ccui-heading {
     max-width: 100%;
-    overflow-wrap: anywhere;
+    overflow-wrap: normal;
     word-break: normal;
-    font-size: clamp(3rem, 16vw, 4.5rem);
-    line-height: 0.9;
+    hyphens: none;
+    font-size: 48px;
+    line-height: 50.88px;
   }
 
   .docs-documentation-hero .ccui-text {
@@ -2112,7 +2113,8 @@ body::before {
 @media (max-width: 24rem) {
   .docs-documentation-hero h1,
   .docs-documentation-hero .ccui-heading {
-    font-size: clamp(2.75rem, 15vw, 3.75rem);
+    font-size: 44px;
+    line-height: 46.64px;
   }
 
   .docs-documentation-hero .ccui-button {
