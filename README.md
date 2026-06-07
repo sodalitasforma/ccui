@@ -1,30 +1,19 @@
 # Catholic Commons UI
 
-Catholic Commons UI is a design system and React component library for Catholic digital products.
+A UI kit and React component system for Catholic projects, websites, documentation systems, and digital services.
 
-It includes design tokens, primitive UI components, Catholic-specific component patterns, and a documentation app for reviewing the system.
+Catholic Commons UI provides design tokens, primitives, icons, and Catholic-specific components informed by ecclesiastical websites, official Church documents, liturgical data, parish workflows, directories, sacramental schedules, and institutional publishing patterns.
 
-## Workspace
+## Documentation
 
-- `apps/web` — documentation and component gallery
-- `packages/tokens` — design tokens and CSS variables
-- `packages/primitives` — general UI primitives
-- `packages/catholic` — Catholic-specific component patterns
-- `packages/icons` — icon package placeholder
+Visit the documentation site:
 
-## Current system stats
+https://forma-web-jade.vercel.app
 
-- 149 total component files
-- 31 primitive component files
-- 118 Catholic-specific component pattern files
-- 9 token files
-- 9 token groups
-- 1,416 CSS token references
-- 96 documented examples
+## Contributing
 
-## Development
+Please read `CONTRIBUTING.md`.
 
-Install dependencies:
+## License
 
-```bash
-pnpm install
+MIT.

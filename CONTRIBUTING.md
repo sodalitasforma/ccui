@@ -21,7 +21,7 @@ Use `packages/catholic` for Catholic-specific interface patterns.
 
 Use `packages/tokens` for design tokens and CSS variables.
 
-Use `packages/icons` for icon work once that package is active.
+Use `packages/icons` for audited interface icons and icon metadata.
 
 ## Maturity levels
 
@@ -43,8 +43,5 @@ docs/component-maturity-audit.csv
 Before committing changes, run:
 
 ```bash
-pnpm lint
-pnpm typecheck
-pnpm build
-pnpm audit
+pnpm check
 ```

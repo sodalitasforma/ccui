@@ -69,7 +69,7 @@ These are the minimum building blocks needed before Catholic-specific components
 - ✅ Notice
 - ✅ IconFrame
 - ✅ MediaFrame
-- ✅ Catholic Commons UISignalBell
+- ✅ ParishNotificationBell
 
 ## Phase 3 — Institutional components
 
@@ -278,7 +278,7 @@ Catholic Commons UI should eventually move from shared example data to source-ba
 - ✅ Homepage split from component gallery.
 - ✅ Landing page now composes real Catholic Commons UI primitives and Catholic components.
 - ✅ Parish interface preview added using InstitutionalHeader, FeastDayHero, LiturgicalDayCard, MassScheduleBlock, AutoTitheCard, AnnouncementBanner, EventCard, ContactBlock, and InstitutionalFooter.
-- ✅ New primitive added: Catholic Commons UISignalBell.
+- ✅ New primitive added: ParishNotificationBell.
 - ✅ New Catholic components added: ParishNotificationBell and AutoTitheCard.
 - ✅ MassScheduleBlock updated with an action slot after the homepage revealed the need for schedule-level actions.
 - ✅ Typecheck passes.

@@ -11,4 +11,4 @@ Design decisions should prioritize:
 5. Compatibility with Catholic open-source projects and public digital presence.
 6. Versioned changes that do not unexpectedly break adopters.
 
-The project is in early Catholic Commons UItion. Governance will mature as contributors and maintainers join.
+The project is in early public development. Governance will mature as contributors and maintainers join.
