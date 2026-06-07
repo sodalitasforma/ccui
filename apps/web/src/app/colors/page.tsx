@@ -1,4 +1,5 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsFloatingSearch } from "../components/docs-floating-search";
 
 import {
   Badge,
@@ -21,15 +22,6 @@ import {
   Text,
   ArrowRightIcon,
 } from "../../../../../packages/primitives/src";
-
-import {
-  ChurchDocumentCard,
-  ConfessionScheduleBlock,
-  LiturgicalDayCard,
-  MassScheduleBlock,
-  ParishAnnouncementCard,
-  ProjectDonationCallout,
-} from "../../../../../packages/catholic/src";
 
 import colors from "../../../../../packages/tokens/src/colors.json";
 
@@ -216,6 +208,7 @@ export default function ColorsPage() {
   return (
     <main className="docs-shell">
       <CCUISidebar current="colors" />
+      <DocsFloatingSearch />
 
       <div className="docs-main">
         <Section id="overview" surface="page" spacing="lg">

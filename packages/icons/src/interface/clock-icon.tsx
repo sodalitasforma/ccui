@@ -1,10 +1,10 @@
 import { IconSvg } from "../icon";
 import type { IconProps } from "../types";
 
-export function CheckIcon(props: IconProps) {
+export function ClockIcon(props: IconProps) {
   return (
     <IconSvg {...props}>
-      <path d="M20 6L9 17l-5-5" />
+      <circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" />
     </IconSvg>
   );
 }

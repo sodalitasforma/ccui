@@ -57,3 +57,21 @@ export { BellIcon } from "./bell-icon";
 export { HeartIcon } from "./heart-icon";
 export { cx } from "./utils";
 export * from "./dropdown";
+
+export { ThemeToggle } from "./theme-toggle";
+export type { ThemeToggleProps, ThemeToggleTheme } from "./theme-toggle";
+
+export {
+  Drawer,
+  DrawerClose,
+  DrawerOverlay,
+  DrawerPanel,
+  DrawerTrigger,
+} from "./drawer";
+export type {
+  DrawerCloseProps,
+  DrawerOverlayProps,
+  DrawerPanelProps,
+  DrawerProps,
+  DrawerTriggerProps,
+} from "./drawer";

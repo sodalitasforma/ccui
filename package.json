@@ -15,7 +15,10 @@
     "check:icons": "node apps/web/scripts/audit-icons.mjs",
     "check:theme-tokens": "node apps/web/scripts/audit-theme-tokens.mjs",
     "check": "pnpm check:icons && pnpm check:catholic && pnpm check:theme-tokens && pnpm check:docs-search && pnpm check:css-contract && pnpm lint && pnpm typecheck && pnpm build && pnpm audit",
-    "check:catholic": "node apps/web/scripts/audit-catholic-package.mjs"
+    "check:catholic": "node apps/web/scripts/audit-catholic-package.mjs",
+    "audit:mobile": "node apps/web/scripts/mobile-audit.mjs",
+    "audit:mobile:serve": "pnpm --filter @ccui/web build && pnpm --filter @ccui/web start",
+    "audit:mobile:summary": "node apps/web/scripts/mobile-audit-summary.mjs"
   },
   "keywords": [
     "catholic",
@@ -30,5 +33,9 @@
     "overrides": {
       "postcss": ">=8.5.10"
     }
+  },
+  "devDependencies": {
+    "@types/react-dom": "^19.2.3",
+    "playwright": "^1.60.0"
   }
 }

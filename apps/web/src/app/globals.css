@@ -74,7 +74,7 @@ a {
 }
 
 .docs-lede {
-  max-width: 46rem;
+  max-width: none;
 }
 
 .docs-code {
@@ -155,6 +155,7 @@ a {
 }
 
 .home-nav {
+  overflow: visible;
   position: fixed;
   inset: 0 0 auto 0;
   z-index: 50;
@@ -650,9 +651,64 @@ a {
   position: fixed;
   top: var(--ccui-space-4);
   right: var(--ccui-space-4);
-  z-index: 40;
-  width: min(24rem, calc(100vw - var(--ccui-space-8)));
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--ccui-space-2);
+  width: min(31rem, calc(100vw - var(--ccui-space-8)));
+  pointer-events: none;
 }
+
+.docs-floating-search > * {
+  pointer-events: auto;
+}
+
+.docs-floating-search .ccui-theme-toggle {
+  flex: 0 0 2.25rem;
+}
+
+.docs-floating-search .ccui-doc-search {
+  flex: 1 1 24rem;
+  min-width: 0;
+  max-width: 24rem;
+}
+
+@media (max-width: 64rem) {
+  .docs-floating-search {
+    top: var(--ccui-space-3);
+    right: var(--ccui-space-3);
+    left: calc(var(--ccui-space-3) + 2.25rem + var(--ccui-space-2));
+    width: auto;
+    gap: var(--ccui-space-2);
+  }
+
+  .docs-floating-search .ccui-doc-search {
+    flex: 1 1 auto;
+    width: auto;
+    min-width: 0;
+    max-width: none;
+  }
+}
+
+@media (max-width: 24rem) {
+  .docs-floating-search {
+    left: calc(var(--ccui-space-2) + 2.25rem + var(--ccui-space-2));
+    right: var(--ccui-space-2);
+    gap: var(--ccui-space-1);
+  }
+
+  .docs-floating-search .ccui-theme-toggle {
+    flex-basis: 2.125rem;
+    width: 2.125rem;
+    height: 2.125rem;
+  }
+
+  .docs-floating-search .ccui-doc-search {
+    min-height: 2.125rem;
+  }
+}
+
 
 .docs-sidebar {
   position: sticky;
@@ -969,6 +1025,7 @@ a {
 }
 
 .home-nav-actions {
+  overflow: visible;
   margin-left: auto;
 }
 
@@ -1339,18 +1396,18 @@ a {
 
 /* CCUI installation docs: compact technical page. */
 .docs-main--install {
-  padding-block: var(--ccui-space-12);
+  padding-bottom: var(--ccui-space-12);
 }
 
 .docs-install-shell {
-  display: grid;
-  grid-template-columns: minmax(0, 42rem) 12rem;
-  gap: var(--ccui-space-16);
-  align-items: start;
-  justify-content: center;
+  display: block;
+  width: 100%;
+  min-width: 0;
 }
 
 .docs-install-article {
+  width: 100%;
+  max-width: none;
   min-width: 0;
 }
 
@@ -1378,39 +1435,15 @@ a {
   font-size: var(--ccui-font-size-md);
 }
 
-.docs-install-prev-next {
-  color: var(--ccui-color-disabled-text);
-  font-family: var(--ccui-font-interface);
-  font-size: var(--ccui-font-size-sm);
-}
-
-.docs-install-prev-next a,
-.docs-install-footer-nav a {
-  color: var(--ccui-color-disabled-text);
-  text-decoration: none;
-}
-
-.docs-install-prev-next a:hover,
-.docs-install-footer-nav a:hover {
-  color: var(--ccui-color-nav-active-text);
-  text-decoration: none;
-}
-
 .docs-install-recommendation {
-  border: 1px solid color-mix(in srgb, var(--ccui-color-success) 42%, var(--ccui-color-border-subtle));
-  border-radius: var(--ccui-radius-lg);
-  padding: var(--ccui-space-4) var(--ccui-space-5);
-  background: color-mix(in srgb, var(--ccui-color-success) 12%, var(--ccui-color-surface-raised));
-  color: var(--ccui-color-text-primary);
-  font-family: var(--ccui-font-interface);
-  font-size: var(--ccui-font-size-sm);
-  line-height: var(--ccui-line-height-relaxed);
+  border: 1px solid var(--ccui-color-border-success);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-success-subtle);
+  padding: var(--ccui-space-4);
 }
 
 .docs-install-prompt {
-  font-family: var(--ccui-font-interface);
-  font-size: var(--ccui-font-size-sm);
-  font-weight: var(--ccui-font-weight-medium);
+  font-weight: var(--ccui-font-weight-bold);
 }
 
 .docs-install-options {
@@ -1420,112 +1453,30 @@ a {
 }
 
 .docs-install-option {
-  display: grid;
-  gap: var(--ccui-space-3);
-  min-height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ccui-space-4);
+  min-height: 9rem;
   border: 1px solid var(--ccui-color-border-subtle);
   border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-surface-raised);
   padding: var(--ccui-space-5);
-  background: color-mix(in srgb, var(--ccui-color-surface-raised) 82%, var(--ccui-color-surface-page));
+  color: inherit;
+  text-decoration: none;
+}
+
+.docs-install-option:hover {
+  border-color: var(--ccui-color-border-strong);
+  background: var(--ccui-color-surface-subtle);
+  text-decoration: none;
 }
 
 .docs-install-option__title {
-  font-family: var(--ccui-font-interface);
-  font-weight: var(--ccui-font-weight-bold);
-  letter-spacing: var(--ccui-letter-spacing-normal);
-}
-
-.docs-install-code {
-  overflow-x: auto;
-  margin: 0;
-  border: 1px solid var(--ccui-color-border-subtle);
-  border-radius: var(--ccui-radius-lg);
-  padding: var(--ccui-space-5);
-  background: color-mix(in srgb, var(--ccui-color-surface-raised) 88%, var(--ccui-color-surface-page));
-  color: var(--ccui-color-text-primary);
-  font-family: var(--ccui-font-mono);
-  font-size: var(--ccui-font-size-sm);
-  line-height: var(--ccui-line-height-relaxed);
-}
-
-.docs-install-code--muted {
-  opacity: 0.68;
-}
-
-.docs-install-note {
-  border-left: 2px solid var(--ccui-color-accent-gold);
-  padding: var(--ccui-space-3) var(--ccui-space-4);
-  background: var(--ccui-color-surface-raised);
-  color: var(--ccui-color-text-secondary);
-  font-size: var(--ccui-font-size-sm);
-}
-
-.docs-framework-list {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--ccui-space-3);
-}
-
-.docs-framework-item {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--ccui-space-3);
-  border: 1px solid var(--ccui-color-border-subtle);
-  border-radius: var(--ccui-radius-md);
-  padding: var(--ccui-space-3) var(--ccui-space-4);
-  background: var(--ccui-color-surface-raised);
-  font-family: var(--ccui-font-interface);
-  font-size: var(--ccui-font-size-sm);
+  color: var(--ccui-color-text-brown);
 }
 
 .docs-install-toc {
-  position: sticky;
-  top: var(--ccui-space-8);
-  padding-top: var(--ccui-space-1);
-}
-
-.docs-install-toc__title {
-  margin-bottom: var(--ccui-space-3);
-  font-weight: var(--ccui-font-weight-bold);
-}
-
-.docs-install-toc nav {
-  display: grid;
-  gap: var(--ccui-space-3);
-}
-
-.docs-install-toc a {
-  color: var(--ccui-color-disabled-text);
-  font-family: var(--ccui-font-interface);
-  font-size: var(--ccui-font-size-sm);
-  line-height: var(--ccui-line-height-tight);
-  text-decoration: none;
-}
-
-.docs-install-toc a:hover {
-  color: var(--ccui-color-nav-active-text);
-  text-decoration: none;
-}
-
-.docs-install-footer-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: var(--ccui-space-6);
-  padding-block: var(--ccui-space-8);
-  font-family: var(--ccui-font-interface);
-}
-
-@media (max-width: 1180px) {
-  .docs-install-shell {
-    grid-template-columns: minmax(0, 1fr);
-    justify-content: stretch;
-  }
-
-  .docs-install-toc {
-    display: none;
-  }
+  display: none;
 }
 
 @media (max-width: 760px) {
@@ -1533,31 +1484,6 @@ a {
   .docs-framework-list {
     grid-template-columns: 1fr;
   }
-}
-
-
-.docs-nav--sections .docs-nav-page-title + a {
-  margin-top: var(--ccui-space-2);
-}
-
-.docs-nav--sections .docs-nav-page-title ~ a {
-  padding-left: var(--ccui-space-3);
-}
-
-/* Installation docs: remove right rail and widen content. */
-.docs-install-shell {
-  display: block;
-  max-width: 56rem;
-  margin-inline: auto;
-}
-
-.docs-install-article {
-  max-width: 56rem;
-  width: 100%;
-}
-
-.docs-install-toc {
-  display: none;
 }
 
 /* Docs sidebar: Installation is the active page, anchors are children. */
@@ -1591,7 +1517,6 @@ a {
   right: var(--ccui-space-2);
 }
 
-.docs-code-block .docs-install-code,
 .docs-code-block .docs-pre {
   padding-right: 3.25rem;
 }
@@ -1647,10 +1572,6 @@ a {
   flex-wrap: nowrap;
 }
 
-.home-nav-actions .ccui-doc-search__popover {
-  right: 0;
-}
-
 @media (max-width: 72rem) {
   .home-nav-actions {
     flex-wrap: wrap;
@@ -1658,92 +1579,11 @@ a {
   }
 
   .home-doc-search {
-    order: 10;
-    width: min(100%, 24rem);
-    max-width: 24rem;
-    flex: 1 1 20rem;
+    width: min(100%, 22rem);
+    min-width: min(100%, 18rem);
+    max-width: 100%;
+    flex: 1 1 18rem;
   }
-}
-
-.docs-icon-category-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
-  gap: var(--ccui-space-4);
-}
-
-.docs-plain-list {
-  margin: 0;
-  padding-left: var(--ccui-space-6);
-  color: var(--ccui-color-text-secondary);
-  font-family: var(--ccui-font-interface);
-  line-height: var(--ccui-line-height-relaxed);
-}
-
-.docs-plain-list li + li {
-  margin-block-start: var(--ccui-space-2);
-}
-
-.docs-icon-preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 11rem), 1fr));
-  gap: var(--ccui-space-4);
-}
-
-.docs-icon-preview {
-  display: grid;
-  place-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
-  border: 1px solid var(--ccui-color-border-subtle);
-  border-radius: var(--ccui-radius-md);
-  background: var(--ccui-color-surface-subtle);
-  color: var(--ccui-color-brown-900);
-}
-
-.docs-icon-state-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
-  gap: var(--ccui-space-4);
-}
-
-.docs-icon-state-grid .ccui-card {
-  min-height: 11rem;
-}
-
-.docs-icon-state-grid {
-  align-items: stretch;
-}
-
-.docs-icon-state-grid .ccui-card {
-  display: flex;
-}
-
-.docs-icon-state-grid .ccui-card > .ccui-stack {
-  width: 100%;
-}
-
-.docs-icon-state-grid .ccui-button--size-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  min-width: 2.5rem;
-  min-height: 2.5rem;
-}
-
-.docs-icon-state-grid .ccui-button--size-icon svg {
-  width: 1.125rem;
-  height: 1.125rem;
-}
-
-.docs-icon-state-grid .ccui-button--size-icon {
-  width: 2.75rem;
-  height: 2.75rem;
-  min-width: 2.75rem;
-  min-height: 2.75rem;
-}
-
-.docs-icon-state-grid .ccui-button--size-icon svg {
-  width: 1.35rem;
-  height: 1.35rem;
 }
 
 /* Icon state specimen sizing: house stroke is heavy, but UI display stays compact. */
@@ -1989,7 +1829,7 @@ a {
   position: absolute;
   left: 0;
   top: calc(100% + var(--ccui-space-1));
-  z-index: 50;
+  z-index: var(--ccui-z-index-popover, 1000);
   width: min(22rem, calc(100vw - 2rem));
   opacity: 0;
   visibility: hidden;
@@ -2024,3 +1864,154 @@ a {
 .docs-icon-item:hover {
   z-index: 60;
 }
+
+
+.docs-floating-search .ccui-doc-search {
+  flex: 1 1 24rem;
+  min-width: 0;
+  max-width: 24rem;
+}
+
+
+
+
+
+
+
+/* Homepage nav compact mode */
+
+.home-nav {
+  min-height: 4rem;
+}
+
+.home-nav > .ccui-cluster,
+.home-nav .ccui-cluster {
+  flex-wrap: nowrap;
+}
+
+.home-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+  gap: var(--ccui-space-4);
+  min-width: 0;
+}
+
+.home-nav-actions .home-nav-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: var(--ccui-space-4);
+  margin-right: 0;
+}
+
+.home-github-link,
+.home-nav-divider,
+.home-nav-disabled {
+  display: none;
+}
+
+.home-stars-link {
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+@media (max-width: 48rem) {
+  .home-nav {
+    padding: var(--ccui-space-3);
+  }
+
+  .home-nav > .ccui-cluster,
+  .home-nav .ccui-cluster {
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: var(--ccui-space-3);
+  }
+
+  .home-logo,
+  .home-nav-actions,
+  .home-nav-actions .home-nav-links {
+    min-width: 0;
+  }
+
+  .home-logo__wordmark {
+    white-space: nowrap;
+  }
+
+  .home-nav-actions {
+    margin-left: auto;
+    gap: var(--ccui-space-3);
+  }
+
+  .home-nav-actions .home-doc-search,
+  .home-nav-actions .ccui-doc-search {
+    display: none;
+  }
+}
+
+@media (max-width: 30rem) {
+  .home-nav {
+    padding-inline: var(--ccui-space-3);
+  }
+
+  .home-logo__image {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .home-logo__wordmark {
+    max-width: 8.75rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .home-logo__version {
+    display: none;
+  }
+
+  .home-nav-actions {
+    gap: var(--ccui-space-2);
+  }
+
+  .home-nav-actions .home-nav-links {
+    gap: var(--ccui-space-2);
+  }
+
+  .home-stars-link {
+    min-width: 1ch;
+  }
+
+  .home-nav-actions .ccui-button {
+    padding-inline: var(--ccui-space-3);
+  }
+}
+
+
+/* Mobile docs page top clearance for floating controls */
+@media (max-width: 64rem) {
+  .docs-main {
+    padding-top: calc(var(--ccui-space-12) + 2.25rem);
+  }
+
+  .docs-main > .ccui-section:first-child {
+    padding-top: var(--ccui-space-6);
+  }
+}
+
+@media (max-width: 30rem) {
+  .docs-main {
+    padding-top: calc(var(--ccui-space-10) + 2.25rem);
+  }
+}
+
+
+
+
+@media (max-width: 64rem) {
+  .docs-documentation-hero > .ccui-container {
+    width: 100%;
+    max-width: var(--ccui-container-lg);
+  }
+}
+

@@ -4,7 +4,7 @@ import type { IconProps } from "../types";
 export function EllipsisIcon(props: IconProps) {
   return (
     <IconSvg {...props}>
-      <path d="M5 12h.01" /><path d="M12 12h.01" /><path d="M19 12h.01" />
+      <circle cx="5" cy="12" r="1" /><circle cx="12" cy="12" r="1" /><circle cx="19" cy="12" r="1" />
     </IconSvg>
   );
 }

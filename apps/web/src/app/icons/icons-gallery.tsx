@@ -29,8 +29,8 @@ export function IconsGallery() {
   const [category, setCategory] = useState(allCategory);
   const [copiedExportName, setCopiedExportName] = useState<string | null>(null);
 
-  function copyImport(exportName: string) {
-    navigator.clipboard.writeText(importLine(exportName));
+  async function copyImport(exportName: string) {
+    await navigator.clipboard.writeText(importLine(exportName));
     setCopiedExportName(exportName);
     window.setTimeout(() => setCopiedExportName(null), 1400);
   }
@@ -91,20 +91,23 @@ export function IconsGallery() {
         </Cluster>
       </Card>
 
-      <div className="docs-icon-only-grid">
+      <div className="docs-icon-gallery-grid">
         {filteredIcons.map(({ name, exportName, category: iconCategory, description, tags, Icon }) => (
-          <div key={exportName} className="docs-icon-only-item">
-            <button
-              type="button"
-              className="docs-icon-only-button"
-              aria-label={`${name}: ${exportName}`}
-            >
+          <div key={exportName} className="docs-icon-item">
+            <button className="docs-icon-only-button" type="button" aria-label={name}>
               <IconFrame>
-                <Icon size="lg" title={name} />
+                <Icon title={name} />
               </IconFrame>
             </button>
 
-            <Card padding="md" border="subtle" surface="raised" className="docs-icon-hover-card">
+            <Card
+              padding="md"
+              border="subtle"
+              surface="raised"
+              className="docs-icon-hover-card"
+              role="group"
+              aria-label={`${name} icon details`}
+            >
               <Stack gap="sm">
                 <Cluster justify="between" align="start" gap="sm">
                   <Stack gap="xs">
@@ -115,6 +118,7 @@ export function IconsGallery() {
                       {exportName}
                     </Text>
                   </Stack>
+
                   <Text size="xs" tone="muted" weight="semibold">
                     {iconCategory}
                   </Text>
@@ -125,10 +129,10 @@ export function IconsGallery() {
                 </Text>
 
                 <Text size="xs" tone="muted">
-                  {tags.slice(0, 4).join(" · ")}
+                  {tags.slice(0, 5).join(" · ")}
                 </Text>
 
-                <div className="docs-icon-hover-import">
+                <div className="docs-icon-import-row">
                   <Text size="xs" family="mono" tone="muted">
                     {importLine(exportName)}
                   </Text>

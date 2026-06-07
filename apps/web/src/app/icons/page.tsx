@@ -1,4 +1,5 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsFloatingSearch } from "../components/docs-floating-search";
 import {
   Container,
   Heading,
@@ -12,6 +13,7 @@ export default function IconsPage() {
   return (
     <main className="docs-shell">
       <CCUISidebar current="icons" />
+      <DocsFloatingSearch />
 
       <div className="docs-main">
         <Container size="lg">

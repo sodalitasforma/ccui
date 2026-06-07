@@ -1,15 +1,20 @@
 "use client";
 
+import "./ccui-sidebar.css";
 import Image from "next/image";
 import NextLink from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { docsSearchItems } from "../docs/search-index";
+import { CloseIcon, MenuIcon } from "@catholiccommons/icons";
 import systemStats from "../system-stats.json";
 import {
   Badge,
   Button,
+  DrawerTrigger,
+  DrawerPanel,
+  DrawerOverlay,
+  DrawerClose,
+  Drawer,
   Divider,
-  DocSearch,
   Stack,
   Text,
   ArrowRightIcon,
@@ -172,7 +177,29 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
   }, [sectionIds]);
 
   return (
-    <aside className="docs-sidebar">
+    <Drawer side="left">
+
+        <DrawerTrigger className="docs-sidebar-mobile-toggle" aria-label="Open navigation">
+
+          <MenuIcon size="sm" />
+
+        </DrawerTrigger>
+
+        <DrawerOverlay className="docs-sidebar-backdrop" />
+
+        <DrawerPanel className="docs-sidebar" closeOnLinkClick>
+
+          <div className="docs-sidebar-mobile-header">
+
+            <span className="docs-sidebar-mobile-title">Navigation</span>
+
+            <DrawerClose className="docs-sidebar-mobile-close" aria-label="Close navigation">
+
+              <CloseIcon size="sm" />
+
+            </DrawerClose>
+
+          </div>
       <Stack gap="lg">
         <NextLink href="/" className="docs-sidebar-brand-lockup" aria-label="Catholic Commons UI home">
           <Image
@@ -213,7 +240,6 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 className="docs-nav-link-with-badge"
               >
                 <span>Icons</span>
-                <Badge variant="neutral" size="xs">Coming soon</Badge>
               </a>
               <a
                 aria-current={current === "colors" ? "page" : undefined}
@@ -231,7 +257,7 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 <span>Templates</span>
                 <Badge variant="neutral" size="xs">Coming soon</Badge>
               </span>
-            </nav>
+      </nav>
           </Stack>
 
           {section.items.length ? (
@@ -299,14 +325,7 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
         </Button>
       </div>
 
-      <div className="docs-floating-search">
-        <DocSearch
-          label="Search documentation..."
-          shortcut="⌘ K"
-          items={docsSearchItems}
-          maxResults={8}
-        />
-      </div>
-    </aside>
+      </DrawerPanel>
+    </Drawer>
   );
 }

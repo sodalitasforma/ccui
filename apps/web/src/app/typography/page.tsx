@@ -1,4 +1,5 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsFloatingSearch } from "../components/docs-floating-search";
 import { DocsCodeBlock } from "../components/docs-code-block";
 import {
   Button,
@@ -74,6 +75,7 @@ export default function TypographyPage() {
   return (
     <main className="docs-shell">
       <CCUISidebar current="typography" />
+      <DocsFloatingSearch />
 
       <div className="docs-main">
         <Section id="overview" surface="page" spacing="lg">

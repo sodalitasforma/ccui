@@ -1,4 +1,5 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsFloatingSearch } from "../components/docs-floating-search";
 import { DocsCodeBlock } from "../components/docs-code-block";
 
 import {
@@ -404,6 +405,7 @@ export default function Home() {
   return (
     <main className="docs-shell">
       <CCUISidebar current="components" />
+      <DocsFloatingSearch />
 
       <div className="docs-main">
         <Section id="introduction" surface="page" spacing="lg">

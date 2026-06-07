@@ -1,10 +1,10 @@
 import { IconSvg } from "../icon";
 import type { IconProps } from "../types";
 
-export function CheckIcon(props: IconProps) {
+export function MailIcon(props: IconProps) {
   return (
     <IconSvg {...props}>
-      <path d="M20 6L9 17l-5-5" />
+      <rect x="3" y="5" width="18" height="14" rx="2" /><path d="M3 7l9 6 9-6" />
     </IconSvg>
   );
 }

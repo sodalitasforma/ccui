@@ -155,3 +155,6 @@ CLAUDE.md
 .scratch/
 local-scripts/
 internal-docs/
+
+# Generated mobile audit artifacts
+apps/web/mobile-audit/

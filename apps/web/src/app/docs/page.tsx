@@ -1,8 +1,10 @@
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsFloatingSearch } from "../components/docs-floating-search";
 import { DocsPageActions } from "../components/docs-page-actions";
 import { DocsCodeBlock } from "../components/docs-code-block";
 import {
   Badge,
+  Button,
   Cluster,
   Container,
   Heading,
@@ -33,25 +35,48 @@ const setupOptions = [
   },
 ] as const;
 
-
-
 const docsPageUrl = "https://catholiccommonsui.com/docs";
-
 
 export default function DocsPage() {
   return (
     <main className="docs-shell">
       <CCUISidebar current="docs" />
-
       <div className="docs-main docs-main--install">
-        <Container size="lg">
+        <DocsFloatingSearch />
+
+        <Section id="documentation" surface="page" spacing="lg" className="docs-documentation-hero">
+          <Container size="lg">
+            <Stack gap="lg">
+              <Stack gap="sm">
+                <Heading level={1} size="4xl" family="display">
+                  Documentation
+                </Heading>
+                <Text size="lg" tone="secondary">
+                  A guide to installing Catholic Commons UI, applying themes, and building with tokens, primitives, Catholic components, and reusable page patterns.
+                </Text>
+              </Stack>
+
+              <Cluster gap="sm">
+                <Button href="/components-gallery">
+                  Browse components
+                </Button>
+                <Button href="/templates" variant="secondary">
+                  View templates
+                </Button>
+              </Cluster>
+            </Stack>
+          </Container>
+        </Section>
+
+<Container size="lg">
           <div className="docs-install-shell">
             <article className="docs-install-article">
+
               <Section id="overview" surface="page" spacing="lg">
                 <Stack gap="lg">
                   <Stack gap="sm">
                     <Cluster gap="sm" align="center" justify="between" className="docs-page-titlebar">
-                      <Heading level={1} size="3xl" className="docs-install-title">
+                      <Heading level={2} size="3xl" className="docs-install-title">
                         Installation
                       </Heading>
                       <DocsPageActions url={docsPageUrl} />
@@ -126,21 +151,64 @@ pnpm dlx catholiccommons add mass-schedule-block`}
                       Existing Project
                     </Heading>
                     <Text tone="secondary">
-                      Add Catholic Commons UI to an app you already created.
+                      Add Catholic Commons UI to an app you already created. Use the CLI path
+                      when you want generated component wrappers, or use packages when you want
+                      direct imports from the published package layers.
                     </Text>
                   </Stack>
 
                   <DocsCodeBlock
                     language="bash"
-                    code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}
+                    code={`pnpm dlx catholiccommons init
+pnpm dlx catholiccommons add mass-schedule-block`}
                     copyable
                   />
+
+                  <Text tone="secondary">
+                    For direct package imports, use <code>Use packages</code> below.
+                  </Text>
+                </Stack>
+              </Section>
+
+              <Section id="package-imports" surface="page" spacing="lg">
+                <Stack gap="md">
+                  <Stack gap="xs">
+                    <Heading level={2} size="xl" className="docs-install-section-title">
+                      Use packages
+                    </Heading>
+                    <Text tone="secondary">
+                      Install the package layers directly when you want to import primitives,
+                      Catholic components, styles, and icons without generated wrappers.
+                    </Text>
+                  </Stack>
+
+                  <DocsCodeBlock
+                    language="bash"
+                    code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic @catholiccommons/icons`}
+                    copyable
+                  />
+
+                  <Text tone="secondary">
+                    Import the styles once in your app root, client entrypoint, or global stylesheet.
+                  </Text>
 
                   <DocsCodeBlock
                     language="tsx"
                     code={`import "@catholiccommons/tokens/css-vars.css";
 import "@catholiccommons/primitives/primitives.css";
 import "@catholiccommons/catholic/catholic.css";`}
+                    copyable
+                  />
+
+                  <Text tone="secondary">
+                    Then import components and icons from the package layer that owns them.
+                  </Text>
+
+                  <DocsCodeBlock
+                    language="tsx"
+                    code={`import { Button } from "@catholiccommons/primitives";
+import { MassScheduleBlock } from "@catholiccommons/catholic";
+import { SearchIcon } from "@catholiccommons/icons";`}
                     copyable
                   />
                 </Stack>
@@ -424,7 +492,7 @@ import "@catholiccommons/catholic/catholic.css";`}
 
                   <DocsCodeBlock
                     language="bash"
-                    code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic`}
+                    code={`pnpm add @catholiccommons/tokens @catholiccommons/primitives @catholiccommons/catholic @catholiccommons/icons`}
                     copyable
                   />
 
@@ -441,13 +509,14 @@ import "@catholiccommons/catholic/catholic.css";`}
                   />
 
                   <Text tone="secondary">
-                    Then import components directly from the published package layers.
+                    Then import primitives, Catholic components, and icons from their package layers.
                   </Text>
 
                   <DocsCodeBlock
                     language="tsx"
                     code={`import { Button } from "@catholiccommons/primitives";
-import { MassScheduleBlock } from "@catholiccommons/catholic";`}
+import { MassScheduleBlock } from "@catholiccommons/catholic";
+import { SearchIcon } from "@catholiccommons/icons";`}
                     copyable
                   />
                 </Stack>

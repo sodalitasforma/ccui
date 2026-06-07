@@ -88,7 +88,7 @@ export function DropdownSplit({
       <details className="ccui-dropdown-split__details">
         <summary className="ccui-dropdown-split__trigger" aria-label="Open menu">
           <span className="ccui-dropdown__chevron" aria-hidden="true">
-            ▾
+            <ChevronDownIcon size="xs" />
           </span>
         </summary>
 

@@ -278,3 +278,19 @@
   background: var(--ccui-color-control-bg-hover);
   color: var(--ccui-color-control-text-hover);
 }
+
+
+.ccui-dropdown-split__details .ccui-dropdown__chevron {
+  transition: transform var(--ccui-motion-duration-fast) var(--ccui-motion-easing-standard);
+}
+
+.ccui-dropdown-split__details[open] .ccui-dropdown__chevron {
+  transform: rotate(180deg);
+}
+
+.ccui-dropdown-split,
+.ccui-dropdown-split *,
+.ccui-dropdown__trigger,
+.ccui-dropdown__trigger * {
+  user-select: none;
+}

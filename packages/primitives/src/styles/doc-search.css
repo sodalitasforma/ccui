@@ -17,9 +17,8 @@
 }
 
 .ccui-doc-search:focus-within {
-  z-index: 80;
-  border-color: var(--ccui-color-border-strong);
-  background: var(--ccui-color-surface-raised);
+  border-color: var(--ccui-color-border-focus);
+  box-shadow: var(--ccui-shadow-focus);
 }
 
 .ccui-doc-search__input {
@@ -69,11 +68,7 @@
 }
 
 .ccui-doc-search__popover {
-  position: absolute;
-  top: calc(100% + var(--ccui-space-2));
-  right: 0;
-  z-index: 100;
-  width: min(34rem, calc(100vw - var(--ccui-space-6)));
+  z-index: 2147483647;
   max-height: min(28rem, calc(100vh - 8rem));
   overflow: auto;
   padding: var(--ccui-space-2);
@@ -205,20 +200,13 @@
 
 /* Dark theme doc search visual polish */
 [data-theme="dark"] .ccui-doc-search {
-  min-height: 2.5rem;
   border-color: var(--ccui-color-control-border);
   background: var(--ccui-color-control-bg);
   box-shadow: none;
 }
 
-[data-theme="dark"] .ccui-doc-search:focus-within {
-  border-color: var(--ccui-color-control-border-hover);
-  background: var(--ccui-color-control-bg-hover);
-  box-shadow: 0 0 0 2px color-mix(in srgb, var(--ccui-color-focus-ring) 34%, transparent);
-}
 
 [data-theme="dark"] .ccui-doc-search__input {
-  min-height: 2.5rem;
   background: transparent;
 }
 

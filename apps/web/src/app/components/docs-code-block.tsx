@@ -16,7 +16,6 @@ export function DocsCodeBlock({
   language,
   copyable = false,
   className,
-  variant = "install",
 }: DocsCodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
@@ -28,7 +27,7 @@ export function DocsCodeBlock({
 
   return (
     <div className={["docs-code-block", className].filter(Boolean).join(" ")}>
-      <pre className={variant === "preview" ? "docs-pre" : "docs-install-code"}>
+      <pre className="docs-pre">
         <code data-language={language}>{code}</code>
       </pre>
 

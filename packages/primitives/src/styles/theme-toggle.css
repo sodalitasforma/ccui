@@ -1,0 +1,55 @@
+/* --------------------------------------------------------------------------
+ * ThemeToggle
+ * -------------------------------------------------------------------------- */
+
+.ccui-theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 2.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  min-height: 2.25rem;
+  padding: 0;
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-md);
+  background: var(--ccui-color-surface-subtle);
+  color: var(--ccui-color-text-primary);
+  box-shadow: var(--ccui-shadow-hairline);
+  font: inherit;
+  cursor: pointer;
+}
+
+.ccui-theme-toggle:hover {
+  border-color: var(--ccui-color-border-strong);
+  background: var(--ccui-color-surface-raised);
+  color: var(--ccui-color-text-primary);
+}
+
+.ccui-theme-toggle:focus-visible {
+  outline: 0;
+  border-color: var(--ccui-color-border-focus);
+  box-shadow: var(--ccui-shadow-focus);
+}
+
+.ccui-theme-toggle:disabled {
+  cursor: not-allowed;
+  opacity: var(--ccui-opacity-disabled);
+}
+
+[data-theme="dark"] .ccui-theme-toggle {
+  border-color: var(--ccui-color-control-border);
+  background: var(--ccui-color-control-bg);
+  color: var(--ccui-color-control-text);
+}
+
+[data-theme="dark"] .ccui-theme-toggle:hover {
+  border-color: var(--ccui-color-control-border-hover);
+  background: var(--ccui-color-control-bg-hover);
+  color: var(--ccui-color-control-text-hover);
+}
+
+[data-theme="dark"] .ccui-theme-toggle:focus-visible {
+  border-color: var(--ccui-color-border-focus);
+  box-shadow: var(--ccui-shadow-focus);
+}

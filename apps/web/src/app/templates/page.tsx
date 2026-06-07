@@ -8,11 +8,13 @@ import {
 } from "../../../../../packages/primitives/src";
 
 import { CCUISidebar } from "../components/ccui-sidebar";
+import { DocsFloatingSearch } from "../components/docs-floating-search";
 
 export default function TemplatesPage() {
   return (
     <main className="docs-shell">
       <CCUISidebar current="templates" />
+      <DocsFloatingSearch />
 
       <div className="docs-main">
         <Section id="overview" surface="page" spacing="lg">

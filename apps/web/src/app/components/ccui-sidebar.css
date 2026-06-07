@@ -1,0 +1,98 @@
+/* --------------------------------------------------------------------------
+ * Docs sidebar app chrome
+ * -------------------------------------------------------------------------- */
+
+.docs-sidebar-mobile-toggle,
+.docs-sidebar-mobile-header {
+  display: none;
+}
+
+/* Desktop: restore docs sidebar behavior even though it uses DrawerPanel. */
+@media (min-width: 64.001rem) {
+  .docs-sidebar-mobile-toggle,
+  .docs-sidebar-backdrop,
+  .docs-sidebar-mobile-header {
+    display: none;
+  }
+
+  .docs-sidebar.ccui-drawer-panel {
+    position: sticky;
+    inset: auto;
+    top: 0;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    z-index: auto;
+    width: auto;
+    max-width: none;
+    height: 100vh;
+    transform: none;
+    transition: none;
+    box-shadow: none;
+    overflow-y: auto;
+  }
+}
+
+/* Mobile: sidebar becomes off-canvas drawer. */
+@media (max-width: 64rem) {
+  .docs-sidebar-mobile-toggle {
+    position: fixed;
+    top: var(--ccui-space-3);
+    left: var(--ccui-space-3);
+    z-index: 1200;
+    display: inline-flex;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .docs-sidebar-mobile-toggle[aria-expanded="true"] {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .docs-sidebar-mobile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--ccui-space-3);
+    margin-bottom: var(--ccui-space-4);
+    padding-bottom: var(--ccui-space-4);
+    border-bottom: 1px solid var(--ccui-color-border-subtle);
+  }
+
+  .docs-sidebar-mobile-title {
+    color: var(--ccui-color-text-muted);
+    font-family: var(--ccui-font-interface);
+    font-size: var(--ccui-font-size-xs);
+    font-weight: var(--ccui-font-weight-semibold);
+    letter-spacing: var(--ccui-letter-spacing-wide);
+    text-transform: uppercase;
+  }
+
+  .docs-sidebar.ccui-drawer-panel {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 1100;
+    width: min(19.5rem, calc(100vw - var(--ccui-space-8)));
+    max-width: calc(100vw - var(--ccui-space-8));
+    height: 100dvh;
+    overflow-y: auto;
+    background: var(--ccui-color-surface-raised);
+    box-shadow: var(--ccui-shadow-brown-md);
+    transform: translateX(calc(-100% - var(--ccui-space-4)));
+    transition: transform var(--ccui-motion-duration-standard) var(--ccui-motion-easing-standard);
+  }
+
+  .docs-sidebar.ccui-drawer-panel[data-open="true"] {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 64rem) {
+  .docs-sidebar-mobile-toggle {
+    top: var(--ccui-space-3);
+    left: var(--ccui-space-3);
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+}
