@@ -4,6 +4,14 @@ import "../../../../packages/catholic/src/catholic.css";
 import "./globals.css";
 import type { Metadata } from "next";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+  viewportFit: "cover",
+};
+
 export const metadata: Metadata = {
   title: "Catholic Commons UI",
   description: "Catholic Commons UI: an open-source Catholic interface system.",
