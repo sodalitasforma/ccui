@@ -72,7 +72,7 @@ export const emptyStateExample = {
 } as const;
 
 export const institutionalHeaderExample = {
-  title: "Saint Anselm Parish",
+  title: "Saint Peter Parish",
   subtitle: "A Catholic parish of the Diocese",
   primaryItems: [
     { label: "Mass Times", href: "#", current: true },
@@ -156,7 +156,7 @@ export const staffProfileExample = {
 export const clergyProfileExample = {
   name: "Rev. Thomas More",
   title: "Pastor",
-  assignment: "Saint Anselm Parish",
+  assignment: "Saint Peter Parish",
   orderOrPostnominals: "Pastor",
   email: "pastor@example.org",
 } as const;
@@ -207,7 +207,7 @@ export const eventListExample = {
 } as const;
 
 export const institutionalFooterExample = {
-  title: "Saint Anselm Parish",
+  title: "Saint Peter Parish",
   description: "A public-facing Catholic institution built with Catholic Commons UI.",
   links: [
     { label: "Contact", href: "#" },
@@ -540,9 +540,9 @@ export const projectDonationCalloutExample = {
 } as const;
 
 export const parishContactCardExample = {
-  title: "Saint Anselm Parish Office",
+  title: "Saint Peter Parish Office",
   phone: "(505) 555-0188",
-  email: "office@saintanselm.example",
+  email: "office@saintpeter.example",
   website: "https://example.com",
   addressLines: ["123 Mission Road", "Santa Fe, NM 87501"],
   officeHours: [
@@ -783,7 +783,7 @@ export const institutionalDirectoryExample = {
   items: [
     {
       eyebrow: "Parish",
-      title: "Saint Anselm Parish",
+      title: "Saint Peter Parish",
       description: "Sunday Mass, confessions, parish office, ministries, and bulletins.",
       meta: "Santa Fe, NM",
       status: "Active",
@@ -849,7 +849,7 @@ export const clergyDirectoryExample = {
     {
       eyebrow: "Priest",
       title: "Rev. Thomas Aquinas",
-      description: "Pastor, Saint Anselm Parish.",
+      description: "Pastor, Saint Peter Parish.",
       meta: "Parish clergy",
       status: "Active",
       href: "#",
@@ -871,7 +871,7 @@ export const parishDirectoryExample = {
   parishes: [
     {
       eyebrow: "Parish",
-      title: "Saint Anselm Parish",
+      title: "Saint Peter Parish",
       description: "Masses, confessions, parish office, ministries, and bulletins.",
       meta: "Santa Fe, NM",
       status: "Active",

@@ -327,7 +327,7 @@ export default function TypographyPage() {
                 title="Typeface roles"
                 description="Distinct type families separate public identity, interface control, source-backed reading, ceremonial labels, and technical identifiers."
                 code={`<Stack gap="md">
-  <Heading family="display" size="2xl">Saint Anselm Parish</Heading>
+  <Heading family="display" size="2xl">Saint Peter Parish</Heading>
   <Heading family="interface" size="lg">Office directory</Heading>
   <Text family="document" size="lg" lineHeight="relaxed">
     The faithful have the right to receive source-backed information in a stable, readable form.
@@ -339,7 +339,7 @@ export default function TypographyPage() {
                 <Stack gap="md">
                   <TypeSpecimenRow label="Display">
                     <Heading family="display" size="2xl">
-                      Saint Anselm Parish
+                      Saint Peter Parish
                     </Heading>
                   </TypeSpecimenRow>
 
