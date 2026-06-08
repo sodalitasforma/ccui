@@ -35,14 +35,14 @@ This project uses semantic versioning.
 
 ### Changed
 
-- Moved from the original Forma project naming toward Catholic Commons UI / CCUI.
+- Moved from the original project naming toward Catholic Commons UI / CCUI.
 - Expanded the system from early component inventory into tokens, primitives, Catholic components, icons, docs, and package boundaries.
 
 ## Commit history appendix
 
 This appendix is generated from the current Git history and is included until the project begins cutting tagged releases.
 
-- `9ba68ef` Initialize Forma design system
+- `9ba68ef` Initialize design system
 - `079e719` Add foundational design tokens
 - `c6f234e` Derive core tokens from Vatican homepage
 - `bc50169` Ignore local inspection artifacts

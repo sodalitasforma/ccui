@@ -46,7 +46,7 @@ export default function Home() {
               <Link href="/docs">Docs</Link>
             </nav>
 
-            <Link href="https://github.com/sodalitasforma/ccui/sodalitasforma/ccui" className="home-stars-link" aria-label="GitHub stars">
+            <Link href="https://github.com/sodalitasforma/ccui" className="home-stars-link" aria-label="GitHub stars">
               0
             </Link>
 
