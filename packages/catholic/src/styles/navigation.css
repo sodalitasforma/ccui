@@ -169,3 +169,36 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* --------------------------------------------------------------------------
+ * InstitutionalFooter theme contract
+ * -------------------------------------------------------------------------- */
+
+.ccui-institutional-footer {
+  border: 1px solid var(--ccui-color-border-subtle);
+  border-radius: var(--ccui-radius-lg);
+  background: var(--ccui-color-link-primary);
+  color: var(--ccui-color-text-inverse);
+}
+
+.ccui-institutional-footer .ccui-text--tone-inverse {
+  color: var(--ccui-color-text-inverse);
+}
+
+[data-theme="dark"] .ccui-institutional-footer {
+  border-color: var(--ccui-color-control-border);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 5%, var(--ccui-color-surface-raised));
+  color: var(--ccui-color-text-primary);
+}
+
+[data-theme="dark"] .ccui-institutional-footer .ccui-text--tone-inverse {
+  color: var(--ccui-color-paper-50);
+}
+
+[data-theme="dark"] .ccui-institutional-footer__links a {
+  color: var(--ccui-color-gold-200, var(--ccui-color-gold-300));
+}
+
+[data-theme="dark"] .ccui-institutional-footer__links a:hover {
+  color: var(--ccui-color-paper-50);
+}
