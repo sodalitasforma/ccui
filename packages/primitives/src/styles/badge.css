@@ -133,9 +133,9 @@
 }
 
 [data-theme="dark"] .ccui-badge--success {
-  background: color-mix(in srgb, var(--ccui-color-success) 14%, transparent);
-  color: color-mix(in srgb, var(--ccui-color-success) 68%, var(--ccui-color-paper-50));
-  border-color: color-mix(in srgb, var(--ccui-color-success) 70%, transparent);
+  background: color-mix(in srgb, var(--ccui-color-success) 24%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-paper-50) 88%, var(--ccui-color-success));
+  border-color: color-mix(in srgb, var(--ccui-color-success) 86%, var(--ccui-color-paper-50));
 }
 
 [data-theme="dark"] .ccui-badge--warning {
@@ -167,4 +167,53 @@
   background: color-mix(in srgb, var(--ccui-color-paper-50) 12%, transparent);
   color: var(--ccui-color-paper-50);
   border-color: color-mix(in srgb, var(--ccui-color-paper-100) 44%, transparent);
+}
+
+
+[data-theme="dark"] .ccui-badge--active {
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 14%, transparent);
+  color: var(--ccui-color-gold-200, var(--ccui-color-gold-300));
+  border-color: color-mix(in srgb, var(--ccui-color-gold-300) 52%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalWhite {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 10%, transparent);
+  color: var(--ccui-color-paper-50);
+  border-color: color-mix(in srgb, var(--ccui-liturgical-white) 70%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalGreen {
+  background: color-mix(in srgb, var(--ccui-liturgical-green) 14%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-paper-50) 82%, var(--ccui-liturgical-green));
+  border-color: color-mix(in srgb, var(--ccui-liturgical-green) 48%, var(--ccui-color-paper-50));
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalViolet {
+  background: color-mix(in srgb, var(--ccui-liturgical-violet) 22%, transparent);
+  color: color-mix(in srgb, var(--ccui-liturgical-violet) 44%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-liturgical-violet) 72%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalRed {
+  background: color-mix(in srgb, var(--ccui-liturgical-red) 18%, transparent);
+  color: color-mix(in srgb, var(--ccui-liturgical-red) 58%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-liturgical-red) 70%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalRose {
+  background: color-mix(in srgb, var(--ccui-liturgical-rose) 20%, transparent);
+  color: color-mix(in srgb, var(--ccui-liturgical-rose) 56%, var(--ccui-color-paper-50));
+  border-color: color-mix(in srgb, var(--ccui-liturgical-rose) 72%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalBlack {
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 8%, transparent);
+  color: var(--ccui-color-paper-100);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 34%, transparent);
+}
+
+[data-theme="dark"] .ccui-badge--liturgicalGold {
+  background: color-mix(in srgb, var(--ccui-liturgical-gold) 18%, transparent);
+  color: var(--ccui-color-gold-200, var(--ccui-color-gold-300));
+  border-color: color-mix(in srgb, var(--ccui-liturgical-gold) 68%, transparent);
 }

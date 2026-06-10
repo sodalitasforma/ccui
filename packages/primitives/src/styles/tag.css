@@ -42,9 +42,9 @@
 }
 
 [data-theme="dark"] .ccui-tag--variant-neutral {
-  background: color-mix(in srgb, var(--ccui-color-paper-50) 7%, transparent);
-  color: var(--ccui-color-paper-100);
-  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 28%, transparent);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 12%, transparent);
+  color: var(--ccui-color-paper-50);
+  border-color: color-mix(in srgb, var(--ccui-color-paper-100) 44%, transparent);
 }
 
 [data-theme="dark"] .ccui-tag--variant-gold {
@@ -57,4 +57,17 @@
   background: color-mix(in srgb, var(--ccui-color-paper-50) 10%, transparent);
   color: var(--ccui-color-paper-100);
   border-color: color-mix(in srgb, var(--ccui-color-paper-100) 34%, transparent);
+}
+
+
+[data-theme="dark"] .ccui-tag--variant-blue {
+  background: color-mix(in srgb, var(--ccui-color-blue-600) 22%, transparent);
+  color: color-mix(in srgb, var(--ccui-color-paper-50) 86%, var(--ccui-color-blue-600));
+  border-color: color-mix(in srgb, var(--ccui-color-blue-600) 62%, transparent);
+}
+
+[data-theme="dark"] .ccui-tag--variant-active {
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 14%, transparent);
+  color: var(--ccui-color-gold-200, var(--ccui-color-gold-300));
+  border-color: color-mix(in srgb, var(--ccui-color-gold-300) 48%, transparent);
 }
