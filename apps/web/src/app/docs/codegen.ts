@@ -95,6 +95,11 @@ import {
   adorationScheduleExample,
 } from "./examples";
 
+
+function withCatholicImport(componentName: string, code: string) {
+  return `import { ${componentName} } from "@catholiccommons/catholic";\n\n${code}`;
+}
+
 function objectArrayCode(items: readonly { label: string; href: string; current?: boolean }[]) {
   return `[\n${items
     .map(
@@ -481,11 +486,11 @@ ${day.times.map((item) => `      ${scheduleTimeCode(item)}`).join(",\n")}
 />`;
 }
 
-export const massScheduleExampleCode = scheduleBlockCode("MassScheduleBlock", massScheduleExample);
-export const confessionScheduleExampleCode = scheduleBlockCode("ConfessionScheduleBlock", confessionScheduleExample);
-export const adorationScheduleExampleCode = scheduleBlockCode("AdorationScheduleBlock", adorationScheduleExample);
-export const sacramentScheduleExampleCode = scheduleBlockCode("SacramentScheduleBlock", sacramentScheduleExample);
-export const holyDayScheduleExampleCode = scheduleBlockCode("HolyDayScheduleBlock", holyDayScheduleExample);
+export const massScheduleExampleCode = withCatholicImport("MassScheduleBlock", scheduleBlockCode("MassScheduleBlock", massScheduleExample));
+export const confessionScheduleExampleCode = withCatholicImport("ConfessionScheduleBlock", scheduleBlockCode("ConfessionScheduleBlock", confessionScheduleExample));
+export const adorationScheduleExampleCode = withCatholicImport("AdorationScheduleBlock", scheduleBlockCode("AdorationScheduleBlock", adorationScheduleExample));
+export const sacramentScheduleExampleCode = withCatholicImport("SacramentScheduleBlock", scheduleBlockCode("SacramentScheduleBlock", sacramentScheduleExample));
+export const holyDayScheduleExampleCode = withCatholicImport("HolyDayScheduleBlock", scheduleBlockCode("HolyDayScheduleBlock", holyDayScheduleExample));
 
 export const liturgicalDayExampleCode =
 `<LiturgicalDayCard
