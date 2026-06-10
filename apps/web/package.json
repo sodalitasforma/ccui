@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prebuild": "pnpm --filter @catholiccommons/icons build && pnpm --filter @catholiccommons/primitives build && pnpm --filter @catholiccommons/catholic build && pnpm --filter @catholiccommons/ui build"
   },
   "dependencies": {
     "@catholiccommons/catholic": "workspace:*",
