@@ -228,7 +228,7 @@ a {
 .home-hero__copy h1 {
   max-width: 58rem;
   margin-inline: auto;
-  line-height: 0.94;
+  line-height: 0.98;
 }
 
 .home-hero__lede {
@@ -2358,7 +2358,7 @@ body::before {
 
   .home-hero__copy h1 {
     font-size: clamp(3.5rem, 15vw, 5rem);
-    line-height: 0.92;
+    line-height: 0.98;
   }
 
   .home-hero__lede {
