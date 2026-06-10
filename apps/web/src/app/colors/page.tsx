@@ -21,7 +21,7 @@ import {
   TR,
   Text,
   ArrowRightIcon,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 import colors from "../../../../../packages/tokens/src/colors.json";
 

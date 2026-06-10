@@ -1,6 +1,6 @@
-import "../../../../packages/tokens/src/css-vars.css";
-import "../../../../packages/primitives/src/primitives.css";
-import "../../../../packages/catholic/src/catholic.css";
+import "@catholiccommons/tokens/css-vars.css";
+import "@catholiccommons/primitives/primitives.css";
+import "@catholiccommons/catholic/catholic.css";
 import "./globals.css";
 import type { Metadata } from "next";
 

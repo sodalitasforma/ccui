@@ -12,7 +12,7 @@ import {
   Section,
   Stack,
   Text,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 const setupOptions = [
   {

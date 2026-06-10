@@ -12,7 +12,7 @@ import {
   Select,
   Stack,
   Text,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 const allCategory = "All";
 

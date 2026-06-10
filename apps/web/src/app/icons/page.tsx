@@ -6,7 +6,7 @@ import {
   Section,
   Stack,
   Text,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 import { IconsGallery } from "./icons-gallery";
 
 export default function IconsPage() {

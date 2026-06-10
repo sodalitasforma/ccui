@@ -1,6 +1,6 @@
 "use client";
 
-import { DocSearch } from "../../../../../packages/primitives/src";
+import { DocSearch } from "@catholiccommons/primitives";
 import { docsSearchItems } from "../docs/search-index";
 import { ThemeTestToggle } from "./theme-test-toggle";
 

@@ -5,7 +5,7 @@ import {
   Section,
   Stack,
   Text,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 import { CCUISidebar } from "../components/ccui-sidebar";
 import { DocsFloatingSearch } from "../components/docs-floating-search";

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ThemeToggle } from "../../../../../packages/primitives/src";
+import { ThemeToggle } from "@catholiccommons/primitives";
 import { MoonIcon, SunIcon } from "@catholiccommons/icons";
 
 type Theme = "light" | "dark";

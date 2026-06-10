@@ -18,7 +18,7 @@ import {
   Stack,
   Text,
   ArrowRightIcon,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 type CCUISidebarProps = {
   current?: "docs" | "components" | "icons" | "templates" | "typography" | "colors" | "changelog";

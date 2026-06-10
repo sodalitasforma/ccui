@@ -1,4 +1,4 @@
-import { DocSearch } from "../../../../packages/primitives/src";
+import { DocSearch } from "@catholiccommons/primitives";
 import { docsSearchItems } from "./docs/search-index";
 import { ThemeTestToggle } from "./components/theme-test-toggle";
 import Image from "next/image";
@@ -15,11 +15,11 @@ import {
   Tag,
   Text,
   ArrowRightIcon,
-} from "../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 import {
   InstitutionalFooter,
-} from "../../../../packages/catholic/src";
+} from "@catholiccommons/catholic";
 
 export default function Home() {
   return (

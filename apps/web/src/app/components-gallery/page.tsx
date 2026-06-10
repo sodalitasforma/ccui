@@ -45,7 +45,7 @@ import {
   TimelineItem,
   TR,
   Text,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 import {
   AnnouncementBanner,
@@ -140,7 +140,7 @@ import {
   PageHeader,
   ResourceLink,
   StaffProfile,
-} from "../../../../../packages/catholic/src";
+} from "@catholiccommons/catholic";
 
 import {
   accordionExamples,

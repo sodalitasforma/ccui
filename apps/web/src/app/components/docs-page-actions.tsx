@@ -6,7 +6,7 @@ import {
   CopyIcon,
   DropdownItem,
   DropdownSplit,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 type DocsPageActionsProps = {
   url: string;

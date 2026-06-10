@@ -22,7 +22,7 @@ import {
   TR,
   Text,
   ArrowRightIcon,
-} from "../../../../../packages/primitives/src";
+} from "@catholiccommons/primitives";
 
 function TypeSpecimenRow({
   label,

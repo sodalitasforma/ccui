@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Button, CheckIcon, CopyIcon } from "../../../../../packages/primitives/src";
+import { Button, CheckIcon, CopyIcon } from "@catholiccommons/primitives";
 
 type DocsCodeBlockProps = {
   code: string;
