@@ -1,9 +1,19 @@
+import { iconRegistry } from "@catholiccommons/icons";
+
 export type DocsSearchItem = {
   title: string;
   category: string;
   href: string;
   description?: string;
 };
+
+const iconSearchItems: DocsSearchItem[] = iconRegistry.map((icon) => ({
+  title: `${icon.name} icon`,
+  category: "Icons",
+  href: "/icons#live-icons",
+  description: `${icon.description} Import ${icon.exportName} from @catholiccommons/icons.`,
+  keywords: [icon.name, icon.exportName, ...icon.tags],
+}));
 
 export const docsSearchItems: DocsSearchItem[] = [
   {
@@ -251,4 +261,6 @@ export const docsSearchItems: DocsSearchItem[] = [
     href: "/templates#overview",
     description: "Reusable page patterns and templates.",
   },
+
+  ...iconSearchItems,
 ];
