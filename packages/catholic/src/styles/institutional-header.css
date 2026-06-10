@@ -246,3 +246,17 @@
   border-radius: 999px;
   background: currentColor;
 }
+
+/* --------------------------------------------------------------------------
+ * InstitutionalHeader mobile identity simplification
+ * -------------------------------------------------------------------------- */
+
+@media (max-width: 48rem) {
+  .ccui-institutional-header__identity-copy .ccui-text {
+    display: none;
+  }
+
+  .ccui-institutional-header__title {
+    line-height: 1;
+  }
+}
