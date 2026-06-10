@@ -2384,3 +2384,46 @@ body::before {
     font-size: clamp(3rem, 14vw, 4rem);
   }
 }
+
+/* --------------------------------------------------------------------------
+ * Home mobile footer boundary
+ * -------------------------------------------------------------------------- */
+
+.home-shell {
+  background: var(--ccui-color-brown-950);
+}
+
+.home-nav,
+.home-hero {
+  background-color: var(--ccui-color-surface-raised);
+}
+
+.home-shell > .ccui-institutional-footer {
+  margin-bottom: 0;
+}
+
+@media (max-width: 48rem) {
+  html,
+  body {
+    overscroll-behavior-y: none;
+  }
+
+  .home-shell {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    background: var(--ccui-color-brown-950);
+  }
+
+  .home-hero {
+    flex: 1 0 auto;
+    min-height: calc(100dvh - 5.25rem);
+    background:
+      radial-gradient(circle at 50% 44%, var(--ccui-app-gold-wash), transparent 22rem),
+      var(--ccui-color-surface-raised);
+  }
+
+  .home-shell > .ccui-institutional-footer {
+    flex: 0 0 auto;
+  }
+}
