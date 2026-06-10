@@ -566,12 +566,7 @@ a {
   padding: var(--ccui-space-6);
   border: 0;
   border-radius: var(--ccui-radius-lg);
-  background:
-    linear-gradient(
-      180deg,
-      var(--ccui-color-surface-raised),
-      var(--ccui-color-surface-page)
-    );
+  background: var(--ccui-color-surface-page);
   box-shadow:
     inset 0 0 0 1px var(--ccui-color-border-subtle);
 }

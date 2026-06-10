@@ -1,5 +1,8 @@
 .ccui-text {
   margin: 0;
+  min-width: 0;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .ccui-text--family-interface {
@@ -114,7 +117,10 @@
 
 .ccui-heading {
   margin: 0;
+  min-width: 0;
   color: inherit;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .ccui-heading--family-display {
@@ -231,6 +237,17 @@
 }
 
 @media (max-width: 48rem) {
+  .ccui-heading {
+    overflow-wrap: anywhere;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ * Text and heading mobile overflow safety
+ * -------------------------------------------------------------------------- */
+
+@media (max-width: 48rem) {
+  .ccui-text,
   .ccui-heading {
     overflow-wrap: anywhere;
   }

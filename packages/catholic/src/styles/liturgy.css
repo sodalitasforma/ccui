@@ -31,7 +31,6 @@
   font-size: var(--ccui-font-size-lg);
   font-weight: var(--ccui-font-weight-bold);
   line-height: var(--ccui-line-height-tight);
-  white-space: nowrap;
 }
 
 .ccui-exception-notice__title,
