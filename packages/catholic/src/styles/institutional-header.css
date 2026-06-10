@@ -133,6 +133,7 @@
 
 .ccui-institutional-header__contact {
   margin-left: var(--ccui-space-3);
+  white-space: nowrap;
 }
 
 .ccui-institutional-header__social {
@@ -187,5 +188,61 @@
   }
 }
 
-@media (max-width: 760px) {
+/* --------------------------------------------------------------------------
+ * InstitutionalHeader mobile menu button
+ * -------------------------------------------------------------------------- */
+
+.ccui-institutional-header__mobile-trigger {
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  .ccui-institutional-header__inner {
+    padding: var(--ccui-space-4);
   }
+
+  .ccui-institutional-header__masthead {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: var(--ccui-space-3);
+    align-items: center;
+  }
+
+  .ccui-institutional-header__mobile-trigger {
+    display: inline-flex;
+    justify-self: end;
+  }
+
+  .ccui-institutional-header__nav-area {
+    display: none;
+  }
+
+  .ccui-institutional-header__identity {
+    flex-wrap: nowrap;
+    gap: var(--ccui-space-3);
+  }
+
+  .ccui-institutional-header__logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .ccui-institutional-header__title {
+    font-size: var(--ccui-font-size-lg);
+    line-height: 1.05;
+    overflow-wrap: normal;
+    word-break: normal;
+  }
+}
+
+.ccui-institutional-header__mobile-trigger-mark {
+  display: inline-grid;
+  gap: 0.1875rem;
+  width: 0.9rem;
+}
+
+.ccui-institutional-header__mobile-trigger-mark span {
+  display: block;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+}

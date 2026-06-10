@@ -127,6 +127,11 @@ export function InstitutionalHeader({
     typeof contactAction === "string"
       ? { label: "Contact", href: contactAction }
       : contactAction;
+  const hasMobileNav = Boolean(
+    hasUtilityRail ||
+      hasPrimaryRail ||
+      socialItems.length
+  );
 
   return (
     <header className={cx("ccui-institutional-header", className)} {...props}>
@@ -168,6 +173,18 @@ export function InstitutionalHeader({
                 ) : null}
               </Stack>
             </Cluster>
+
+            {hasMobileNav ? (
+              <Button
+                type="button"
+                size="icon"
+                variant="secondary"
+                className="ccui-institutional-header__mobile-trigger"
+                aria-label="Institution navigation menu"
+              >
+                <span className="ccui-institutional-header__mobile-trigger-mark" aria-hidden="true"><span /><span /><span /></span>
+              </Button>
+            ) : null}
 
             <div className="ccui-institutional-header__nav-area">
               {hasUtilityRail ? (

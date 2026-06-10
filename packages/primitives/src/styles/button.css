@@ -107,6 +107,12 @@
   height: 1.125rem;
 }
 
+.ccui-button--size-xs {
+  min-height: 1.875rem;
+  padding-inline: var(--ccui-space-3);
+  font-size: var(--ccui-font-size-xs);
+}
+
 .ccui-button--size-sm {
   min-height: 2rem;
   padding-inline: var(--ccui-space-3);
