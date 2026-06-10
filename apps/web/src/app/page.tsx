@@ -52,8 +52,7 @@ export default function Home() {
             <div className="home-doc-search">
               <DocSearch
                 items={docsSearchItems}
-                placeholder="Search docs..."
-                ariaLabel="Search documentation"
+                label="Search documentation..."
               />
             </div>
 
