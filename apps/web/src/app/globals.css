@@ -2254,3 +2254,133 @@ body::before {
     padding-inline: var(--ccui-space-3);
   }
 }
+
+/* --------------------------------------------------------------------------
+ * Final home mobile header and first-fold polish
+ * -------------------------------------------------------------------------- */
+
+@media (max-width: 48rem) {
+  .home-nav {
+    position: static;
+    min-height: auto;
+    padding: var(--ccui-space-4) var(--ccui-space-4);
+  }
+
+  .home-nav > .ccui-cluster {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: var(--ccui-space-3);
+  }
+
+  .home-logo {
+    flex: 1 1 auto;
+    min-width: 0;
+    gap: var(--ccui-space-3);
+    padding: 0;
+  }
+
+  .home-logo__image {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .home-logo__copy {
+    min-width: 0;
+  }
+
+  .home-logo__wordmark {
+    display: block;
+    max-width: 12rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    line-height: 1.05;
+  }
+
+  .home-logo__version {
+    display: none;
+  }
+
+  .home-nav-actions {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    gap: var(--ccui-space-2);
+    margin-left: auto;
+  }
+
+  .home-nav-actions .home-nav-links,
+  .home-nav-links,
+  .home-doc-search,
+  .home-stars-link__count {
+    display: none !important;
+  }
+
+  .home-stars-link {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: var(--ccui-color-link-primary);
+  }
+
+  .home-stars-link__icon {
+    display: block;
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .home-nav-actions .ccui-button {
+    min-height: 2.75rem;
+    padding-inline: var(--ccui-space-4);
+    font-size: var(--ccui-font-size-sm);
+  }
+
+  .home-hero {
+    min-height: calc(100svh - 5.25rem);
+    padding-top: var(--ccui-space-6) !important;
+    padding-bottom: var(--ccui-space-6) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .home-hero > .ccui-container {
+    width: 100%;
+  }
+
+  .home-hero .ccui-stack {
+    justify-content: center;
+  }
+
+  .home-hero__copy h1 {
+    font-size: clamp(3.5rem, 15vw, 5rem);
+    line-height: 0.92;
+  }
+
+  .home-hero__lede {
+    font-size: clamp(1.25rem, 5vw, 1.75rem);
+    line-height: 1.35;
+  }
+
+  .home-hero-stats {
+    display: none;
+  }
+}
+
+@media (max-width: 24rem) {
+  .home-logo__wordmark {
+    max-width: 9.5rem;
+  }
+
+  .home-nav-actions .ccui-button {
+    padding-inline: var(--ccui-space-3);
+  }
+
+  .home-hero__copy h1 {
+    font-size: clamp(3rem, 14vw, 4rem);
+  }
+}

@@ -92,7 +92,7 @@ export default function Home() {
               </Text>
             </Stack>
 
-            <Cluster gap="sm" className="home-centered">
+            <Cluster gap="sm" className="home-centered home-hero-stats">
               <Tag variant="brown">{systemStats.components} components</Tag>
               <Tag variant="gold">{systemStats.cssTokenReferences} token references</Tag>
               <Tag variant="blue">{systemStats.docsExamples} live examples</Tag>
