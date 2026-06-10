@@ -345,6 +345,18 @@
   color: var(--ccui-color-paper-50);
 }
 
+[data-theme="dark"] .ccui-button--variant-secondary {
+  border-color: var(--ccui-color-control-border-hover);
+  background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, transparent);
+  color: var(--ccui-color-paper-50);
+}
+
+[data-theme="dark"] .ccui-button--variant-secondary:hover {
+  border-color: var(--ccui-color-gold-300);
+  background: color-mix(in srgb, var(--ccui-color-gold-300) 14%, transparent);
+  color: var(--ccui-color-paper-50);
+}
+
 [data-theme="dark"] .ccui-button--variant-subtle {
   border-color: var(--ccui-color-control-border);
   background: color-mix(in srgb, var(--ccui-color-paper-50) 4%, transparent);
