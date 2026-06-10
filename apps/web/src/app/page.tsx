@@ -52,6 +52,7 @@ export default function Home() {
             <div className="home-doc-search">
               <DocSearch
                 items={docsSearchItems}
+                maxResults={8}
                 label="Search documentation..."
               />
             </div>

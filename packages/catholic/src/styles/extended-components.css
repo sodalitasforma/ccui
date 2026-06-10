@@ -39,7 +39,7 @@
 }
 
 .ccui-document-authority-badge {
-  display: block;
+  display: inline-flex;
 }
 
 .ccui-document-card__action {

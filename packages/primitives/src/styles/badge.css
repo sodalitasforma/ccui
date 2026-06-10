@@ -2,6 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  vertical-align: middle;
   width: fit-content;
   max-width: 100%;
   border: 1px solid var(--ccui-color-border-subtle);

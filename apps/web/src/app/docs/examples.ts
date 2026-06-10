@@ -75,13 +75,13 @@ export const institutionalHeaderExample = {
   title: "Saint Peter Parish",
   subtitle: "A Catholic parish of the Diocese",
   primaryItems: [
-    { label: "Mass Times", href: "#", current: true },
-    { label: "Sacraments", href: "#" },
-    { label: "Ministries", href: "#" },
-    { label: "School", href: "#" },
-    { label: "Give", href: "#" },
+    { label: "Mass Times", href: "/components-gallery#introduction", current: true },
+    { label: "Sacraments", href: "/components-gallery#introduction" },
+    { label: "Ministries", href: "/components-gallery#introduction" },
+    { label: "School", href: "/components-gallery#introduction" },
+    { label: "Give", href: "/components-gallery#introduction" },
   ],
-  contactAction: { label: "Contact", href: "#" },
+  contactAction: { label: "Contact", href: "/components-gallery#introduction" },
 } as const;
 
 export const pageHeaderExample = {
@@ -89,9 +89,9 @@ export const pageHeaderExample = {
   title: "Institutional page header",
   description: "A formal header for parish, diocesan, school, ministry, and foundation pages.",
   breadcrumbs: [
-    { label: "Home", href: "#" },
-    { label: "Parish", href: "#" },
-    { label: "Office", href: "#" },
+    { label: "Home", href: "/components-gallery#introduction" },
+    { label: "Parish", href: "/components-gallery#introduction" },
+    { label: "Office", href: "/components-gallery#introduction" },
   ],
 } as const;
 
@@ -99,7 +99,7 @@ export const announcementBannerExample = {
   badge: "Official",
   title: "Parish office closed Friday",
   description: "The office will reopen Monday morning. Sacramental emergencies should use the emergency line.",
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const directoryExample = {
@@ -112,14 +112,14 @@ export const directoryExample = {
       description: "Administrative office for diocesan governance and records.",
       meta: "Open Monday through Friday",
       status: "Open",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "Ministry",
       title: "Marriage Tribunal",
       description: "Canonical process support and case information.",
       meta: "By appointment",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -170,14 +170,14 @@ export const documentListExample = {
     authority: "Parish",
     date: "May 2026",
     fileType: "PDF",
-    href: "#",
+    href: "/components-gallery#introduction",
     description: "Registration form for new parishioners.",
   },
   resource: {
     title: "Safe Environment Policy",
     description: "Policy and training information.",
     meta: "External resource",
-    href: "#",
+    href: "/components-gallery#introduction",
     variant: "document",
   },
 } as const;
@@ -193,7 +193,7 @@ export const eventListExample = {
       location: "Church grounds",
       category: "Liturgical",
       description: "Procession immediately following the principal Mass.",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       title: "Parish Council Meeting",
@@ -201,7 +201,7 @@ export const eventListExample = {
       time: "6:00 PM",
       location: "Parish hall",
       category: "Meeting",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -210,9 +210,9 @@ export const institutionalFooterExample = {
   title: "Saint Peter Parish",
   description: "A public-facing Catholic institution built with Catholic Commons UI.",
   links: [
-    { label: "Contact", href: "#" },
-    { label: "Privacy", href: "#" },
-    { label: "Giving", href: "#" },
+    { label: "Contact", href: "/components-gallery#introduction" },
+    { label: "Privacy", href: "/components-gallery#introduction" },
+    { label: "Giving", href: "/components-gallery#introduction" },
   ],
 } as const;
 
@@ -273,7 +273,7 @@ export const massScheduleExample = {
   ],
   source: {
     label: "Parish office",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "local",
   },
 } as const;
@@ -422,7 +422,7 @@ export const liturgicalDayExample = {
       chapter: 14,
       verses: "18–20",
       translation: "USCCB",
-      source: { label: "Lectionary", href: "#" },
+      source: { label: "Lectionary", href: "/components-gallery#introduction" },
     },
     {
       label: "Second Reading",
@@ -431,7 +431,7 @@ export const liturgicalDayExample = {
       chapter: 11,
       verses: "23–26",
       translation: "USCCB",
-      source: { label: "Lectionary", href: "#" },
+      source: { label: "Lectionary", href: "/components-gallery#introduction" },
     },
     {
       label: "Gospel",
@@ -440,12 +440,12 @@ export const liturgicalDayExample = {
       chapter: 9,
       verses: "11b–17",
       translation: "USCCB",
-      source: { label: "Lectionary", href: "#" },
+      source: { label: "Lectionary", href: "/components-gallery#introduction" },
     },
   ],
   source: {
     label: "Liturgical Calendar API",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "calendar",
   },
 } as const;
@@ -461,7 +461,7 @@ export const feastDayHeroExample = {
   actionLabel: "View readings",
   source: {
     label: "Liturgical Calendar API",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "calendar",
   },
 } as const;
@@ -475,7 +475,7 @@ export const readingReferenceExample = {
   translation: "USCCB",
   source: {
     label: "Bible API",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "scripture",
   },
 } as const;
@@ -497,7 +497,7 @@ export const prayerCardExample = {
   language: "English",
   source: {
     label: "Catholic Semantic Canon",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "devotional",
   },
 } as const;
@@ -507,14 +507,14 @@ export const parishAnnouncementCardExample = {
   description: "The procession will begin immediately after the 10:30 AM Mass. Families and parish ministries are invited to gather near the west doors.",
   date: "June 7",
   severity: "liturgical",
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const bulletinCardExample = {
   title: "Parish Bulletin",
   date: "June 7, 2026",
   description: "Weekly bulletin with announcements, Mass intentions, ministry notes, and upcoming events.",
-  href: "#",
+  href: "/components-gallery#introduction",
   fileType: "PDF",
 } as const;
 
@@ -524,7 +524,7 @@ export const ministryCardExample = {
   category: "Hospitality",
   leader: "Maria Sanchez",
   meetingTime: "First Sundays",
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const projectDonationCalloutExample = {
@@ -533,9 +533,9 @@ export const projectDonationCalloutExample = {
   amounts: ["$25", "$50", "$100"],
   selectedAmount: "$50",
   impact: "$50 funds one restoration hour.",
-  primaryAction: { label: "Give now", href: "#" },
+  primaryAction: { label: "Give now", href: "/components-gallery#introduction" },
   secondaryActions: [
-    { label: "Learn about the project", href: "#" },
+    { label: "Learn about the project", href: "/components-gallery#introduction" },
   ],
 } as const;
 
@@ -563,10 +563,10 @@ export const churchDocumentExample = {
   date: "24 October 2024",
   language: "English",
   description: "A Church document header/card pattern for papal, diocesan, parish, canonical, and source-backed documents.",
-  href: "#",
+  href: "/components-gallery#introduction",
   source: {
     label: "Holy See",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "official",
   },
 } as const;
@@ -576,7 +576,7 @@ export const churchDocumentMetadataExample = {
     { label: "Authority", value: "Pope" },
     { label: "Type", value: "Encyclical" },
     { label: "Date", value: "24 October 2024" },
-    { label: "Source", value: "Holy See", href: "#" },
+    { label: "Source", value: "Holy See", href: "/components-gallery#introduction" },
   ],
 } as const;
 
@@ -629,8 +629,8 @@ export const relatedDocumentsExample = {
       date: "2026",
       language: "English",
       relationship: "Related diocesan guidance.",
-      href: "#",
-      source: { label: "Diocese", href: "#", authorityLevel: "official" },
+      href: "/components-gallery#introduction",
+      source: { label: "Diocese", href: "/components-gallery#introduction", authorityLevel: "official" },
     },
     {
       title: "Parish Bulletin Archive",
@@ -640,8 +640,8 @@ export const relatedDocumentsExample = {
       date: "2026",
       language: "English",
       relationship: "Local parish implementation and notices.",
-      href: "#",
-      source: { label: "Parish office", href: "#", authorityLevel: "local" },
+      href: "/components-gallery#introduction",
+      source: { label: "Parish office", href: "/components-gallery#introduction", authorityLevel: "local" },
     },
   ],
 } as const;
@@ -655,13 +655,13 @@ export const archiveSearchResultExample = {
   date: "24 October 2024",
   language: "English",
   excerpt: "Search result excerpt showing why this document matched the query.",
-  href: "#",
-  source: { label: "Holy See", href: "#", authorityLevel: "official" },
+  href: "/components-gallery#introduction",
+  source: { label: "Holy See", href: "/components-gallery#introduction", authorityLevel: "official" },
 } as const;
 
 export const downloadLinkExample = {
   label: "Download official PDF",
-  href: "#",
+  href: "/components-gallery#introduction",
   fileType: "PDF",
   fileSize: "428 KB",
   description: "Official document download.",
@@ -677,7 +677,7 @@ export const sourceCardExample = {
   authority: "holy-see",
   authorityLabel: "Holy See",
   sourceType: "Official source",
-  href: "#",
+  href: "/components-gallery#introduction",
   citation: "Holy See, official document source record.",
 } as const;
 
@@ -687,13 +687,13 @@ export const citationTrailExample = {
     {
       label: "Official source",
       citation: "Holy See, official document record.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authority: "holy-see",
     },
     {
       label: "Local implementation",
       citation: "Diocesan pastoral application and parish notice.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authority: "diocese",
     },
   ],
@@ -703,7 +703,7 @@ export const canonicalReferenceExample = {
   label: "Canonical reference",
   value: "CIC can. 528 §2",
   system: "Canon Law",
-  href: "#",
+  href: "/components-gallery#introduction",
   description: "A stable canonical reference that can later map to structured Catholic datasets.",
 } as const;
 
@@ -714,7 +714,7 @@ export const officialNoticeCardExample = {
   authority: "diocese",
   authorityLabel: "Diocese",
   documentType: "notification",
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const prayerBlockExample = {
@@ -723,7 +723,7 @@ export const prayerBlockExample = {
   language: "English",
   source: {
     label: "Catholic Semantic Canon",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "devotional",
   },
 } as const;
@@ -737,7 +737,7 @@ export const biblePassageCardExample = {
   verses: "51",
   source: {
     label: "Bible API",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "scripture",
   },
 } as const;
@@ -787,7 +787,7 @@ export const institutionalDirectoryExample = {
       description: "Sunday Mass, confessions, parish office, ministries, and bulletins.",
       meta: "Santa Fe, NM",
       status: "Active",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "School",
@@ -795,7 +795,7 @@ export const institutionalDirectoryExample = {
       description: "Catholic school directory record with public contact and office data.",
       meta: "K–8",
       status: "Open",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "Office",
@@ -803,7 +803,7 @@ export const institutionalDirectoryExample = {
       description: "Diocesan office supporting liturgy, sacraments, and parish guidance.",
       meta: "Chancery",
       status: "Public",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -825,7 +825,7 @@ export const pontiffDirectoryExample = {
       century: "19th century",
       meta: "Rome",
       status: "Historical",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       title: "Pius X",
@@ -835,7 +835,7 @@ export const pontiffDirectoryExample = {
       century: "20th century",
       meta: "Rome",
       status: "Saint",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -852,7 +852,7 @@ export const clergyDirectoryExample = {
       description: "Pastor, Saint Peter Parish.",
       meta: "Parish clergy",
       status: "Active",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "Deacon",
@@ -860,7 +860,7 @@ export const clergyDirectoryExample = {
       description: "Permanent deacon serving parish liturgy and catechesis.",
       meta: "Diaconate",
       status: "Active",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -875,7 +875,7 @@ export const parishDirectoryExample = {
       description: "Masses, confessions, parish office, ministries, and bulletins.",
       meta: "Santa Fe, NM",
       status: "Active",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "Mission",
@@ -883,7 +883,7 @@ export const parishDirectoryExample = {
       description: "Historic mission church with public Mass schedule.",
       meta: "Northern deanery",
       status: "Mission",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -898,7 +898,7 @@ export const schoolDirectoryExample = {
       description: "Classical Catholic school serving K–8 students.",
       meta: "K–8",
       status: "Open",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "High School",
@@ -906,7 +906,7 @@ export const schoolDirectoryExample = {
       description: "Catholic preparatory high school.",
       meta: "9–12",
       status: "Open",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -921,7 +921,7 @@ export const officeDirectoryExample = {
       description: "Supports liturgy, sacraments, and parish guidance.",
       meta: "Chancery",
       status: "Public",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "Office",
@@ -929,7 +929,7 @@ export const officeDirectoryExample = {
       description: "Supports Catholic school governance and formation.",
       meta: "Education",
       status: "Public",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -949,7 +949,7 @@ export const saintDirectoryExample = {
       description: "Doctor of the Church.",
       meta: "13th century",
       status: "Doctor",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       eyebrow: "Saint",
@@ -957,7 +957,7 @@ export const saintDirectoryExample = {
       description: "Doctor of the Church and Carmelite reformer.",
       meta: "16th century",
       status: "Doctor",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -967,8 +967,8 @@ export const newsCardExample = {
   description: "The procession will follow the principal Sunday Mass and conclude with Benediction.",
   date: "June 7, 2026",
   category: "Parish news",
-  href: "#",
-  source: { label: "Parish office", href: "#", authorityLevel: "local" },
+  href: "/components-gallery#introduction",
+  source: { label: "Parish office", href: "/components-gallery#introduction", authorityLevel: "local" },
 } as const;
 
 export const newsListExample = {
@@ -981,8 +981,8 @@ export const newsListExample = {
       description: "Enrollment for the coming academic year is now open.",
       date: "June 10, 2026",
       category: "School",
-      href: "#",
-      source: { label: "School office", href: "#", authorityLevel: "local" },
+      href: "/components-gallery#introduction",
+      source: { label: "School office", href: "/components-gallery#introduction", authorityLevel: "local" },
     },
   ],
 } as const;
@@ -994,7 +994,7 @@ export const calendarItemExample = {
   location: "Church grounds",
   category: "Liturgical",
   description: "Procession immediately following the principal Mass.",
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const calendarTabsExample = {
@@ -1007,7 +1007,7 @@ export const calendarTabsExample = {
       location: "Parish hall",
       category: "Meeting",
       description: "Monthly council meeting.",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
   liturgical: [
@@ -1018,7 +1018,7 @@ export const calendarTabsExample = {
       location: "Church",
       category: "Holy Day",
       description: "Evening Mass for the solemnity.",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
   meetings: [
@@ -1029,7 +1029,7 @@ export const calendarTabsExample = {
       location: "Office",
       category: "Meeting",
       description: "Quarterly finance council meeting.",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -1040,8 +1040,8 @@ export const featuredStoryExample = {
   description: "A public-facing story treatment for diocesan newsrooms, school announcements, and parish features.",
   date: "June 2026",
   category: "Education",
-  href: "#",
-  source: { label: "Diocese", href: "#", authorityLevel: "official" },
+  href: "/components-gallery#introduction",
+  source: { label: "Diocese", href: "/components-gallery#introduction", authorityLevel: "official" },
 } as const;
 
 export const pressReleaseCardExample = {
@@ -1050,8 +1050,8 @@ export const pressReleaseCardExample = {
   date: "June 3, 2026",
   category: "Press release",
   office: "Communications",
-  href: "#",
-  source: { label: "Press office", href: "#", authorityLevel: "official" },
+  href: "/components-gallery#introduction",
+  source: { label: "Press office", href: "/components-gallery#introduction", authorityLevel: "official" },
 } as const;
 
 export const pressOfficeNoticeExample = {
@@ -1060,7 +1060,7 @@ export const pressOfficeNoticeExample = {
   date: "June 3, 2026",
   office: "Press Office",
   severity: "official",
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const mediaCardExample = {
@@ -1068,7 +1068,7 @@ export const mediaCardExample = {
   description: "A general media card for diocesan, parish, school, and Vatican-style media indexes.",
   date: "June 2026",
   category: "Photo",
-  href: "#",
+  href: "/components-gallery#introduction",
   media: {
     src: "/examples/buenos-aires-cathedral.jpg",
     alt: "Church interior",
@@ -1084,7 +1084,7 @@ export const videoCardExample = {
   description: "A video card that can render YouTube, Vatican News, CMS, or database-provided embed URLs.",
   date: "June 2026",
   category: "Video",
-  href: "#",
+  href: "https://www.youtube.com/watch?v=HBqOHEnYDxs",
   duration: "12 min",
   media: {
     src: "https://www.youtube.com/embed/HBqOHEnYDxs",
@@ -1132,7 +1132,7 @@ export const projectStatusBadgeExample = {
 } as const;
 
 export const repositoryLinkExample = {
-  href: "#",
+  href: "/components-gallery#introduction",
   provider: "GitHub",
   language: "TypeScript",
   license: "MIT",
@@ -1146,13 +1146,13 @@ export const contributorListExample = {
       name: "CDCF maintainer",
       role: "Maintainer",
       affiliation: "Catholic Digital Commons-style project",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
     {
       name: "Parish technologist",
       role: "Contributor",
       affiliation: "Diocesan implementation partner",
-      href: "#",
+      href: "/components-gallery#introduction",
     },
   ],
 } as const;
@@ -1162,7 +1162,7 @@ export const projectCardExample = {
   description: "A machine-readable liturgical calendar project that can power parish schedules, feast day cards, and Catholic applications.",
   projectType: "api",
   status: "incubating",
-  href: "#",
+  href: "/components-gallery#introduction",
   repository: repositoryLinkExample,
   standardHref: "#",
   contributors: contributorListExample.contributors,
@@ -1178,11 +1178,11 @@ export const datasetCardExample = {
   version: "0.1",
   source: {
     label: "Catholic datasets",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "dataset",
   },
   machineReadable: true,
-  href: "#",
+  href: "/components-gallery#introduction",
 } as const;
 
 export const apiEndpointCardExample = {
@@ -1237,7 +1237,7 @@ export const ontologyClassCardExample = {
   properties: ontologyPropertyTableExample.properties,
   source: {
     label: "Catholic Semantic Canon",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "semantic",
   },
 } as const;
@@ -1249,7 +1249,7 @@ export const termDefinitionCardExample = {
   reviewStatus: "reviewed",
   source: {
     label: "Catholic Semantic Canon",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "semantic",
   },
 } as const;
@@ -1261,7 +1261,7 @@ export const translationVariantCardExample = {
   note: "Latin variant useful for multilingual liturgical and canonical references.",
   source: {
     label: "Translation table",
-    href: "#",
+    href: "/components-gallery#introduction",
     authorityLevel: "translation",
   },
 } as const;
@@ -1281,7 +1281,7 @@ export const canonicalSourceCardExample = {
   description: "Official source record for an encyclical letter exposed as a canonical, citable, machine-readable source.",
   authorityLevel: "magisterial",
   sourceType: "Encyclical",
-  href: "#",
+  href: "/components-gallery#introduction",
   citation: "Francis, Encyclical Letter Dilexit nos, 24 October 2024.",
   reviewStatus: "accepted",
   machineReadable: "available",
@@ -1293,19 +1293,19 @@ export const provenanceTrailExample = {
     {
       label: "Holy See source",
       description: "Primary official source record.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "official",
     },
     {
       label: "Canonical citation",
       description: "Normalized citation record for reuse in documents, APIs, and archives.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "canonical",
     },
     {
       label: "Machine-readable export",
       description: "Structured JSON record consumed by public interfaces and Catholic applications.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "machine",
     },
   ],
@@ -1316,7 +1316,7 @@ export const entityCardExample = {
   title: "Corpus Christi",
   entityType: "liturgical-day",
   description: "A liturgical day entity with readings, rank, season, and calendar metadata.",
-  href: "#",
+  href: "/components-gallery#introduction",
   authorityLevel: "semantic",
   reviewStatus: "reviewed",
   machineReadable: "available",
@@ -1331,7 +1331,7 @@ export const entityRelationshipListExample = {
       title: "Luke 9:11b–17",
       entityType: "bible-passage",
       description: "Gospel reading entity.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "canonical",
       reviewStatus: "reviewed",
       machineReadable: "available",
@@ -1341,7 +1341,7 @@ export const entityRelationshipListExample = {
       title: "Solemnity",
       entityType: "term",
       description: "Liturgical rank term.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "semantic",
       reviewStatus: "reviewed",
       machineReadable: "available",
@@ -1354,7 +1354,7 @@ export const entityRelationshipListExample = {
       targetId: "bible-passage:luke-9-11b-17",
       label: "Corpus Christi has Gospel reading Luke 9:11b–17",
       description: "Connects a liturgical day to its lectionary reading.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "canonical",
     },
     {
@@ -1363,7 +1363,7 @@ export const entityRelationshipListExample = {
       targetId: "term:solemnity",
       label: "Corpus Christi has rank Solemnity",
       description: "Connects a liturgical day to a canonical rank term.",
-      href: "#",
+      href: "/components-gallery#introduction",
       authorityLevel: "semantic",
     },
   ],

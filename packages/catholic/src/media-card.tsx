@@ -1,6 +1,6 @@
 import type * as React from "react";
-import type { AnchorHTMLAttributes } from "react";
-import { Badge, Card, Cluster, Heading, Stack, Text } from "@catholiccommons/primitives";
+import type { HTMLAttributes } from "react";
+import { Badge, Card, Cluster, Heading, Link, Stack, Text } from "@catholiccommons/primitives";
 import { cx } from "@catholiccommons/primitives";
 
 export type MediaCardFit = "cover" | "contain" | "fill" | "scale-down" | "none";
@@ -15,7 +15,7 @@ export type MediaCardMedia = {
   position?: MediaCardPosition;
 };
 
-export type MediaCardProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "media"> & {
+export type MediaCardProps = HTMLAttributes<HTMLElement> & {
   title: string;
   description?: string;
   date?: string;
@@ -39,8 +39,14 @@ export function MediaCard({
   ...props
 }: MediaCardProps) {
   return (
-    <a href={href} className={cx("ccui-media-card", className)} {...props}>
-      <Card padding="none" border="subtle" className="ccui-media-card__surface">
+    <Card
+      as="article"
+      padding="none"
+      border="subtle"
+      className={cx("ccui-media-card", "ccui-media-card__surface", className)}
+      {...props}
+    >
+      <a href={href} className="ccui-media-card__frame-link" aria-label={`Open ${title}`}>
         <div className="ccui-media-card__frame">
           <img
             src={media.src}
@@ -52,43 +58,43 @@ export function MediaCard({
             } as React.CSSProperties}
           />
         </div>
+      </a>
 
-        <Stack gap="sm" className="ccui-media-card__body">
-          <Cluster justify="between" align="center" gap="sm">
-            <Badge variant="gold">{category}</Badge>
+      <Stack gap="sm" className="ccui-media-card__body">
+        <Cluster justify="between" align="center" gap="sm">
+          <Badge variant="gold">{category}</Badge>
 
-            {date ? (
-              <Text as="span" size="xs" tone="muted">
-                {date}
-              </Text>
-            ) : null}
-          </Cluster>
+          {date ? (
+            <Text as="span" size="xs" tone="muted">
+              {date}
+            </Text>
+          ) : null}
+        </Cluster>
 
-          <Stack gap="xs">
-            <Heading level={3} size="lg" className="ccui-media-card__title">
-              {title}
-            </Heading>
+        <Stack gap="xs">
+          <Heading level={3} size="lg" className="ccui-media-card__title">
+            <Link href={href}>{title}</Link>
+          </Heading>
 
-            {description ? (
-              <Text as="p" tone="secondary">
-                {description}
-              </Text>
-            ) : null}
+          {description ? (
+            <Text as="p" tone="secondary">
+              {description}
+            </Text>
+          ) : null}
 
-            {media.caption ? (
-              <Text as="p" size="sm" tone="muted">
-                {media.caption}
-              </Text>
-            ) : null}
-          </Stack>
-
-          {media.provider ? (
-            <Cluster gap="xs">
-              <Badge variant="neutral">{media.provider}</Badge>
-            </Cluster>
+          {media.caption ? (
+            <Text as="p" size="sm" tone="muted">
+              {media.caption}
+            </Text>
           ) : null}
         </Stack>
-      </Card>
-    </a>
+
+        {media.provider ? (
+          <Cluster gap="xs">
+            <Badge variant="neutral">{media.provider}</Badge>
+          </Cluster>
+        ) : null}
+      </Stack>
+    </Card>
   );
 }

@@ -746,7 +746,7 @@ export default function Home() {
   <Badge variant="gold">Official</Badge>
   <Tag>Parish</Tag>
   <Tag>Directory</Tag>
-  <Link href="#">Read more</Link>
+  <Link href="/docs#overview">Read more</Link>
 </Cluster>`}
               >
                 <Cluster gap="sm" align="center">
@@ -754,7 +754,7 @@ export default function Home() {
                   <Badge variant="gold">Official</Badge>
                   <Tag>Parish</Tag>
                   <Tag>Directory</Tag>
-                  <Link href="#">Read more</Link>
+                  <Link href="/docs#overview">Read more</Link>
                 </Cluster>
               </ComponentBlock>
             </Stack>

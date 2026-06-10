@@ -5,6 +5,8 @@ export type DocsSearchItem = {
   category: string;
   href: string;
   description?: string;
+  keywords?: string[];
+  defaultRank?: number;
 };
 
 const iconSearchItems: DocsSearchItem[] = iconRegistry.map((icon) => ({
@@ -13,6 +15,10 @@ const iconSearchItems: DocsSearchItem[] = iconRegistry.map((icon) => ({
   href: "/icons#live-icons",
   description: `${icon.description} Import ${icon.exportName} from @catholiccommons/icons.`,
   keywords: [icon.name, icon.exportName, ...icon.tags],
+  defaultRank:
+    icon.name.toLowerCase() === "heart" || icon.exportName === "HeartIcon"
+      ? 60
+      : undefined,
 }));
 
 export const docsSearchItems: DocsSearchItem[] = [
@@ -24,12 +30,14 @@ export const docsSearchItems: DocsSearchItem[] = [
   },
   {
     title: "Installation",
+    defaultRank: 10,
     category: "Docs",
     href: "/docs#overview",
     description: "Install dependencies and structure your app.",
   },
   {
     title: "Use the CLI",
+    defaultRank: 20,
     category: "Docs",
     href: "/docs#use-the-cli",
     description: "Initialize config and add component wrappers from the terminal.",
@@ -120,6 +128,14 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Tabs, Accordion, Table, Timeline, and EmptyState.",
   },
   {
+    title: "Button",
+    defaultRank: 50,
+    category: "Primitive",
+    href: "/components-gallery#primitive-actions",
+    description: "The canonical action primitive for forms, toolbars, navigation, and interfaces.",
+    keywords: ["button", "cta", "action", "primitive"],
+  },
+  {
     title: "Media and icon primitives",
     category: "Components",
     href: "/components-gallery#primitive-media",
@@ -130,6 +146,14 @@ export const docsSearchItems: DocsSearchItem[] = [
     category: "Catholic UI",
     href: "/components-gallery#parish-websites",
     description: "Headers, schedules, announcements, bulletins, ministries, giving, contacts, staff, events, and footer components.",
+  },
+  {
+    title: "MassScheduleBlock",
+    defaultRank: 70,
+    category: "Catholic",
+    href: "/components-gallery#parish-websites",
+    description: "A Catholic-native schedule block for Mass times, exceptions, locations, and source attribution.",
+    keywords: ["mass", "schedule", "liturgy", "parish", "component"],
   },
   {
     title: "Liturgy",
@@ -150,6 +174,14 @@ export const docsSearchItems: DocsSearchItem[] = [
     description: "Parish, clergy, office, school, saint, and pontiff directories.",
   },
   {
+    title: "PontiffCard",
+    defaultRank: 80,
+    category: "Catholic",
+    href: "/components-gallery#directories",
+    description: "A distinctive Catholic institutional card for pontiffs and historical church records.",
+    keywords: ["pope", "pontiff", "directory", "catholic", "component"],
+  },
+  {
     title: "Catholic data infrastructure",
     category: "Catholic UI",
     href: "/components-gallery#catholic-data-infrastructure",
@@ -158,6 +190,7 @@ export const docsSearchItems: DocsSearchItem[] = [
 
   {
     title: "Colors",
+    defaultRank: 30,
     category: "Foundations",
     href: "/colors#overview",
     description: "Raw palette, semantic interface colors, liturgical colors, and CDCF colors.",
@@ -195,6 +228,7 @@ export const docsSearchItems: DocsSearchItem[] = [
 
   {
     title: "Typography",
+    defaultRank: 40,
     category: "Foundations",
     href: "/typography#overview",
     description: "Typeface roles, heading scale, text scale, rhythm, and typography API.",

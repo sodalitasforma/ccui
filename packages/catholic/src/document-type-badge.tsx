@@ -1,5 +1,5 @@
 import type { ComponentPropsWithoutRef } from "react";
-import { Tag } from "@catholiccommons/primitives";
+import { Badge } from "@catholiccommons/primitives";
 import { cx } from "@catholiccommons/primitives";
 import type { ChurchDocumentType } from "./types";
 
@@ -8,7 +8,7 @@ type DocumentTypeBadgeProps = {
   label?: string;
 } & ComponentPropsWithoutRef<"span">;
 
-const variantByType: Record<string, "neutral" | "brown" | "gold" | "active" | "blue"> = {
+const variantByType: Record<string, "neutral" | "brown" | "gold" | "active" | "info"> = {
   encyclical: "gold",
   "apostolic-letter": "gold",
   "apostolic-constitution": "gold",
@@ -17,9 +17,9 @@ const variantByType: Record<string, "neutral" | "brown" | "gold" | "active" | "b
   audience: "brown",
   decree: "active",
   instruction: "active",
-  notification: "blue",
+  notification: "info",
   "pastoral-letter": "brown",
-  bulletin: "blue",
+  bulletin: "info",
   policy: "neutral",
   form: "neutral",
   source: "active",
@@ -43,12 +43,12 @@ export function DocumentTypeBadge({
   const variant = variantByType[key] ?? "neutral";
 
   return (
-    <Tag
+    <Badge
       variant={variant}
       className={cx("ccui-document-type-badge", className)}
       {...props}
     >
       {label ?? labelize(key)}
-    </Tag>
+    </Badge>
   );
 }

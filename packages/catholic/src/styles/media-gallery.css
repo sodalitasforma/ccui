@@ -248,3 +248,23 @@
   top: 50%;
   transform: translateY(-50%);
 }
+
+.ccui-video-card__frame-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ccui-video-card__frame-link:hover .ccui-video-card__frame {
+  filter: brightness(0.96);
+}
+
+.ccui-media-card__frame-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.ccui-media-card__frame-link:hover .ccui-media-card__frame {
+  filter: brightness(0.96);
+}

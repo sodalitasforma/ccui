@@ -11,6 +11,7 @@ export type DocSearchItem = {
   href: string;
   description?: string;
   keywords?: readonly string[];
+  defaultRank?: number;
 };
 
 export type DocSearchProps = {
@@ -97,7 +98,13 @@ export function DocSearch({
     const trimmed = normalize(query);
 
     if (!trimmed) {
-      return items.slice(0, maxResults);
+      return [...items]
+        .sort(
+          (a, b) =>
+            (a.defaultRank ?? Number.POSITIVE_INFINITY) -
+              (b.defaultRank ?? Number.POSITIVE_INFINITY) || items.indexOf(a) - items.indexOf(b)
+        )
+        .slice(0, maxResults);
     }
 
     return items

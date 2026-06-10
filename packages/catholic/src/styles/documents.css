@@ -164,8 +164,8 @@
 
 .ccui-citation-trail__index {
   display: inline-grid;
-  width: 1.75rem;
-  height: 1.75rem;
+  width: 1.5rem;
+  height: 1.5rem;
   place-items: center;
   border: 1px solid var(--ccui-color-border-subtle);
   border-radius: var(--ccui-radius-pill);
@@ -236,4 +236,27 @@
   border-color: var(--ccui-color-control-border-hover);
   background: var(--ccui-color-control-bg-hover);
   color: var(--ccui-color-control-text-hover);
+}
+
+.ccui-citation-trail__item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--ccui-space-3);
+  align-items: start;
+}
+
+.ccui-citation-trail__body {
+  min-width: 0;
+}
+
+.ccui-citation-trail__item .ccui-cluster {
+  align-items: center;
+}
+
+.ccui-citation-trail__label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  font-size: var(--ccui-font-size-sm);
+  line-height: 1;
 }

@@ -69,7 +69,7 @@
 
 .ccui-doc-search__popover {
   z-index: 2147483647;
-  max-height: min(28rem, calc(100vh - 8rem));
+  max-height: min(38rem, calc(100vh - 8rem));
   overflow: auto;
   padding: var(--ccui-space-2);
   border: 1px solid var(--ccui-color-border-subtle);

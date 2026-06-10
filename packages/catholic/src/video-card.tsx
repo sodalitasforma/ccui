@@ -1,5 +1,5 @@
-import type { AnchorHTMLAttributes } from "react";
-import { Badge, Card, Cluster, Heading, Stack, Text } from "@catholiccommons/primitives";
+import type { HTMLAttributes } from "react";
+import { Badge, Card, Cluster, Heading, Link, Stack, Text } from "@catholiccommons/primitives";
 import { cx } from "@catholiccommons/primitives";
 
 export type VideoCardMedia = {
@@ -9,7 +9,7 @@ export type VideoCardMedia = {
   provider?: string;
 };
 
-export type VideoCardProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "media"> & {
+export type VideoCardProps = HTMLAttributes<HTMLElement> & {
   title: string;
   description?: string;
   date?: string;
@@ -31,17 +31,25 @@ export function VideoCard({
   ...props
 }: VideoCardProps) {
   return (
-    <a href={href} className={cx("ccui-video-card", className)} {...props}>
-      <Card padding="none" border="subtle" className="ccui-video-card__surface">
+    <Card
+      as="article"
+      padding="none"
+      border="subtle"
+      className={cx("ccui-video-card", "ccui-video-card__surface", className)}
+      {...props}
+    >
+      <a href={href} className="ccui-video-card__frame-link" aria-label={`Open ${title}`}>
         <div className="ccui-video-card__frame">
           <iframe
             src={media.src}
             title={media.title}
             allowFullScreen
+            tabIndex={-1}
           />
         </div>
+      </a>
 
-        <Stack gap="sm" className="ccui-video-card__body">
+      <Stack gap="sm" className="ccui-video-card__body">
           <Cluster justify="between" align="center" gap="sm">
             <Cluster gap="xs" align="center">
               <Badge variant="gold">{category}</Badge>
@@ -57,7 +65,7 @@ export function VideoCard({
 
           <Stack gap="xs">
             <Heading level={3} size="lg" className="ccui-video-card__title">
-              {title}
+              <Link href={href}>{title}</Link>
             </Heading>
 
             {description ? (
@@ -78,8 +86,7 @@ export function VideoCard({
               <Badge variant="neutral">{media.provider}</Badge>
             </Cluster>
           ) : null}
-        </Stack>
-      </Card>
-    </a>
+      </Stack>
+    </Card>
   );
 }

@@ -25,12 +25,12 @@ export function CitationTrail({
         <Stack gap="sm">
           {items.map((item, index) => (
             <Card key={`${item.label}-${item.citation}`} padding="md" border="subtle">
-              <Cluster align="start" gap="sm">
+              <div className="ccui-citation-trail__item">
                 <Text as="span" size="xs" tone="goldText" className="ccui-citation-trail__index">
                   {index + 1}
                 </Text>
-                <Stack gap="xs">
-                  <Cluster gap="xs">
+                <Stack gap="xs" className="ccui-citation-trail__body">
+                  <Cluster gap="xs" align="center">
                     {item.authority ? <DocumentAuthorityBadge authority={item.authority} /> : null}
                     <Text as="span" className="ccui-citation-trail__label">
                       {item.label}
@@ -41,7 +41,7 @@ export function CitationTrail({
                   </Text>
                   {item.href ? <Link href={item.href}>Open source</Link> : null}
                 </Stack>
-              </Cluster>
+              </div>
             </Card>
           ))}
         </Stack>
