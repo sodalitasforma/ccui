@@ -1,9 +1,9 @@
 {
   "name": "@catholiccommons/icons",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "SVG icon components for Catholic Commons UI.",
-  "main": "src/index.ts",
-  "types": "src/index.ts",
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
   "peerDependencies": {
     "react": ">=18",
     "react-dom": ">=18"
@@ -13,15 +13,25 @@
     "react": "19.2.4"
   },
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
     "./package.json": "./package.json"
   },
   "publishConfig": {
     "access": "public"
   },
   "files": [
-    "src",
+    "dist",
     "README.md",
     "package.json"
-  ]
+  ],
+  "type": "module",
+  "module": "./dist/index.js",
+  "sideEffects": [],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts --external react --external react-dom --tsconfig ../../tsconfig.package.json && node ../../scripts/prepend-use-client.cjs"
+  }
 }

@@ -9,7 +9,7 @@ export type DocsSearchItem = {
   defaultRank?: number;
 };
 
-const iconSearchItems: DocsSearchItem[] = iconRegistry.map((icon) => ({
+const iconSearchItems: DocsSearchItem[] = Object.values(iconRegistry).map((icon) => ({
   title: `${icon.name} icon`,
   category: "Icons",
   href: "/icons#live-icons",

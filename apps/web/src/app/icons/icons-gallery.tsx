@@ -38,7 +38,7 @@ export function IconsGallery() {
   const filteredIcons = useMemo(() => {
     const normalizedQuery = normalize(query);
 
-    return iconRegistry.filter((icon) => {
+    return Object.values(iconRegistry).filter((icon) => {
       const matchesCategory = category === allCategory || icon.category === category;
 
       const searchable = normalize(
