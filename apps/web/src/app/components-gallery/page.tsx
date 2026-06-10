@@ -340,6 +340,10 @@ import {
 
 
 
+function formatComponentTitle(value: string) {
+  return value.replace(/([a-z])([A-Z])/g, "$1\u00ad$2");
+}
+
 function ComponentBlock({
   title,
   description,
@@ -358,7 +362,7 @@ function ComponentBlock({
       <Stack gap="sm">
         <Stack gap="xs">
           <Heading level={2} size="xl" family="interface">
-            {title}
+            {formatComponentTitle(title)}
           </Heading>
           <Text tone="muted">{description}</Text>
         </Stack>

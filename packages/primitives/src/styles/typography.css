@@ -214,3 +214,24 @@
 .ccui-eyebrow--tone-inverse {
   color: var(--ccui-color-text-inverse);
 }
+
+/* --------------------------------------------------------------------------
+ * Heading overflow safety
+ * -------------------------------------------------------------------------- */
+
+.ccui-heading {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+@supports (text-wrap: balance) {
+  .ccui-heading {
+    text-wrap: balance;
+  }
+}
+
+@media (max-width: 48rem) {
+  .ccui-heading {
+    overflow-wrap: anywhere;
+  }
+}
