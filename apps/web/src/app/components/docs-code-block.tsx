@@ -9,6 +9,7 @@ type DocsCodeBlockProps = {
   copyable?: boolean;
   className?: string;
   variant?: "install" | "preview";
+  label?: string;
 };
 
 export function DocsCodeBlock({
@@ -16,6 +17,7 @@ export function DocsCodeBlock({
   language,
   copyable = false,
   className,
+  label = "JSX example",
 }: DocsCodeBlockProps) {
   const [copied, setCopied] = useState(false);
 
@@ -27,22 +29,25 @@ export function DocsCodeBlock({
 
   return (
     <div className={["docs-code-block", className].filter(Boolean).join(" ")}>
+      {copyable ? (
+        <div className="docs-code-block__toolbar">
+          <span className="docs-code-block__label">{label}</span>
+          <Button
+            type="button"
+            size="icon"
+            variant="ghost"
+            className="docs-code-block__copy"
+            onClick={copyCode}
+            aria-label={copied ? "Copied code" : "Copy code"}
+          >
+            {copied ? <CheckIcon size="sm" /> : <CopyIcon size="sm" />}
+          </Button>
+        </div>
+      ) : null}
+
       <pre className="docs-pre">
         <code data-language={language}>{code}</code>
       </pre>
-
-      {copyable ? (
-        <Button
-          type="button"
-          size="icon"
-          variant="ghost"
-          className="docs-code-block__copy"
-          onClick={copyCode}
-          aria-label={copied ? "Copied code" : "Copy code"}
-        >
-          {copied ? <CheckIcon size="sm" /> : <CopyIcon size="sm" />}
-        </Button>
-      ) : null}
     </div>
   );
 }
