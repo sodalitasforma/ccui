@@ -126,6 +126,27 @@ importers:
 
   packages/tokens: {}
 
+  packages/ui:
+    dependencies:
+      '@catholiccommons/catholic':
+        specifier: workspace:*
+        version: link:../catholic
+      '@catholiccommons/icons':
+        specifier: workspace:*
+        version: link:../icons
+      '@catholiccommons/primitives':
+        specifier: workspace:*
+        version: link:../primitives
+      '@catholiccommons/tokens':
+        specifier: workspace:*
+        version: link:../tokens
+      react:
+        specifier: '>=18'
+        version: 19.2.4
+      react-dom:
+        specifier: '>=18'
+        version: 19.2.4(react@19.2.4)
+
 packages:
 
   '@alloc/quick-lru@5.2.0':

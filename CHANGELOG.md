@@ -10,7 +10,17 @@ This project uses semantic versioning.
 
 ## Unreleased
 
+### Added
+
+- Added `@catholiccommons/ui`, an umbrella package that re-exports primitives, Catholic components, and icons from a single public entrypoint.
+- Added `@catholiccommons/ui/styles.css`, a single stylesheet import for Catholic Commons UI tokens and component styles.
+- Added a Vite consumer smoke test that verifies the documented `@catholiccommons/ui` install/import path builds successfully.
+
 ### Changed
+
+- Updated installation docs to use the umbrella package path: `pnpm add @catholiccommons/ui`.
+- Simplified installation docs around one package install, one stylesheet import, and one component import source.
+- Removed CLI-first installation guidance from the docs page until the CLI path is intentionally supported.
 
 - Simplified public repository documentation.
 - Renamed the repository to `sodalitasforma/ccui`.
