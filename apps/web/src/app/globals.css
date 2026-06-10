@@ -2129,3 +2129,128 @@ body::before {
     flex: 1 1 auto;
   }
 }
+
+
+/* --------------------------------------------------------------------------
+ * Home header desktop navigation refinements
+ * -------------------------------------------------------------------------- */
+
+.home-doc-search {
+  width: min(22rem, 32vw);
+}
+
+.home-stars-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--ccui-space-2);
+}
+
+.home-stars-link__icon {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 48rem) {
+  .home-nav-link-desktop,
+  .home-doc-search,
+  .home-stars-link__icon {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ * Home header spacing refinement
+ * -------------------------------------------------------------------------- */
+
+.home-nav-actions {
+  column-gap: var(--ccui-space-4);
+}
+
+.home-nav-actions .home-doc-search {
+  margin-left: var(--ccui-space-3);
+  margin-right: var(--ccui-space-5);
+}
+
+.home-nav-actions .home-stars-link {
+  margin-left: var(--ccui-space-1);
+}
+
+@media (max-width: 48rem) {
+  .home-nav-actions {
+    column-gap: var(--ccui-space-3);
+  }
+
+  .home-nav-actions .home-doc-search {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* --------------------------------------------------------------------------
+ * Home header mobile composition
+ * -------------------------------------------------------------------------- */
+
+@media (max-width: 48rem) {
+  .home-nav {
+    padding-inline: var(--ccui-space-3);
+  }
+
+  .home-nav > .ccui-cluster {
+    flex-wrap: nowrap;
+    gap: var(--ccui-space-3);
+  }
+
+  .home-logo {
+    min-width: 0;
+  }
+
+  .home-logo__image {
+    width: 2.75rem;
+    height: 2.75rem;
+  }
+
+  .home-logo__copy {
+    min-width: 0;
+  }
+
+  .home-logo__wordmark {
+    max-width: 9.5rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .home-nav-actions {
+    flex: 0 0 auto;
+    gap: var(--ccui-space-2);
+    margin-left: auto;
+  }
+
+  .home-nav-links,
+  .home-doc-search,
+  .home-stars-link__count {
+    display: none;
+  }
+
+  .home-stars-link {
+    display: inline-flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .home-stars-link__icon {
+    display: block;
+    width: 1.05rem;
+    height: 1.05rem;
+  }
+
+  .home-nav-actions .ccui-button {
+    min-height: 2.25rem;
+    padding-inline: var(--ccui-space-3);
+  }
+}
