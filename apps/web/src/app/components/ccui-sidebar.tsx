@@ -21,7 +21,7 @@ import {
 } from "../../../../../packages/primitives/src";
 
 type CCUISidebarProps = {
-  current?: "docs" | "components" | "icons" | "templates" | "typography" | "colors";
+  current?: "docs" | "components" | "icons" | "templates" | "typography" | "colors" | "changelog";
 };
 
 type SidebarItem =
@@ -106,6 +106,16 @@ const pageSections: Record<
       { type: "link", label: "Text rhythm", href: "/typography#text-rhythm" },
       { type: "link", label: "Typography API", href: "/typography#typography-api" },
       { type: "link", label: "Token inventory", href: "/typography#token-inventory" },
+    ],
+  },
+  changelog: {
+    label: "",
+    items: [
+      { type: "heading", label: "Changelog" },
+      { type: "link", label: "Overview", href: "/changelog#overview" },
+      { type: "link", label: "Unreleased", href: "/changelog#unreleased" },
+      { type: "link", label: "0.0.1", href: "/changelog#v0-0-1" },
+      { type: "link", label: "Release workflow", href: "/changelog#release-workflow" },
     ],
   },
   colors: {
@@ -257,6 +267,12 @@ export function CCUISidebar({ current = "components" }: CCUISidebarProps) {
                 <span>Templates</span>
                 <Badge variant="neutral" size="xs">Coming soon</Badge>
               </span>
+              <a
+                aria-current={current === "changelog" ? "page" : undefined}
+                href="/changelog"
+              >
+                Changelog
+              </a>
       </nav>
           </Stack>
 
