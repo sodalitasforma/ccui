@@ -13,8 +13,19 @@ type DocsPageActionsProps = {
 };
 
 function buildAssistantPrompt(url: string) {
-  return `I'm looking at this Catholic Commons UI documentation: ${url}.
-Help me understand how to use it. Be ready to explain concepts, give examples, or help debug based on it.`;
+  return `I am building a Catholic website or app with Catholic Commons UI. Use this documentation as the source of truth: ${url}
+
+The correct setup is:
+
+pnpm add @catholiccommons/ui
+
+import "@catholiccommons/ui/styles.css";
+
+import components from "@catholiccommons/ui";
+
+Help me implement Catholic Commons UI in my project. Prefer practical React or Next.js examples using the documented umbrella package. Do not suggest copying source files or importing from internal package paths unless I explicitly ask to fork the library.
+
+Start by asking what I am building: parish website, ministry page, Mass schedule, Catholic archive, media page, donation page, dashboard, or documentation site. Then recommend a minimal component structure and provide working starter code.`;
 }
 
 function cleanText(value: string) {
